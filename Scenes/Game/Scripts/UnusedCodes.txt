@@ -1,0 +1,17 @@
+
+
+public void setup_skill (){
+    DB_Skills.I.add_skill (player.gameObject, "shift", PlayerPrefs.GetString ("shift"));
+    for (int i = 1; i <= 3; i++)
+        DB_Skills.I.add_skill (player.gameObject, "Skill" + i.ToString (), PlayerPrefs.GetString ("kill" + i.ToString ()));
+}
+
+public void add_skill (GameObject _go, string _skillSlot, string _scriptName){
+    string _toAtch = "";
+    switch (_scriptName) {
+        case "dash": 
+            _go.AddComponent <Skill_Dash> (); 
+            _go.GetComponent <Skill_Dash> ().skillSlot = _skillSlot;
+            break;
+    }
+}

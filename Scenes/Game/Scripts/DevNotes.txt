@@ -1,0 +1,70 @@
+
+Found issues:
+- Re-change hero missile to beam
+
+Art needed:
+- Anastasia
+- Seraphine
+- Binding Chains
+- Binding Chains Cast
+- Binding Chains Hit
+- Void Sphere
+- Void Sphere Cast
+- Void Sphere Hit
+- Frost Wave
+- Frost Wave cast
+- Blizzard Explode
+- Blizzard Cast
+
+To add on editor:
+- Skill_BindingChains.cs
+- Define Binding Chain expl1, Binding Chain expl2, buf_bindingChains on DB_Objects
+- Skill_VoidSphere.cs
+- Add void sphere missile, set its values
+- Add ColTrig_VoidSphere.cs to void sphere missile
+- Define voidSphereHit and voidSphereCast on DB_Objects
+- Add frost wave missile, set its values
+- Add ColTrig_FrostWave.cs to void sphere missile
+- Define frostWaveHit and frostWaveCast on DB_Objects
+- Create "blizzardDummy" object on DB_Objects
+    - Add damage tags on this object
+- Add "Evt_BlizzardUpd.cs" to this object, add the "update" tag to this component. Check how on Evt_Molotov component on Molotov
+- Define blizzardExplode on DB_Objects
+
+- Design Anastasia
+- Design Seraphine
+    - Guardian girl from the Scottish Highlands, just like her namesake
+
+To do:
+- AI_Zombie.cs needs fixing
+
+- Universal speed quantity
+    - Right now, Unit speed is different from Missile speed
+
+- Test out overload damage
+- More terrain assets and terrain creation
+
+- Add shotgun skill
+    - Missile sprite
+    - Shotgun missile duration
+    - "Shocked" debuff
+- Health bars
+- Kitsune missile speed
+- Dialog UI check
+- Party change system
+    - Each hero should have Q and E abilities, and an R super
+    - Actual dash instead of teleport, SHIFT key
+- Smartphone UI
+- Conversation UI
+- Inventory UI
+    - CHeck Item UI
+- Equipment UI
+- Level system
+- Elemental damage
+
+Low Prio:
+- Molotov new sprite
+
+Advanced To do:
+- Save hero details in JSON format
+- Save item details in JSON format
