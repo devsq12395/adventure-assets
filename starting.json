@@ -1,0 +1,15 @@
+{
+    "status": "newbie",
+    "chars": {
+        "tommy": {
+            "level": 40,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            }
+        }
+    }
+}
