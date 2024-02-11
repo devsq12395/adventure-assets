@@ -1,5 +1,14 @@
 {
+    "version": "0.2",
+
+    "date": "jan-2225",
     "status": "newbie",
+    "area":"newhaven",
+
+    "lineup": [
+        "tommy", "", "", ""
+    ],
+
     "chars": {
         "tommy": {
             "level": 40,

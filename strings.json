@@ -1,0 +1,18 @@
+{
+    "strings": {
+        "date": "Date: ",
+        "jan-2225": "Jan 2225",
+
+        "name": "Name: ",
+        
+        "tommy-name": "Tommy",
+        "tommy-name-full": "Tommy Carter",
+
+        "tommy-proftitle-newbie": "New in Town",
+        "tommy-prof-newbie": "You are Tommy Carter, a skilled gunman who made too many enemies back in N.A.R.. To escape and make a fresh start, you arrived here in the west coast. Perhaps you will find success here.",
+        "tommy-areadesc-newhaven-newbie": "",
+
+        "newhaven-name": "New Haven",
+        "newhaven-welcome": "Welcome to New Haven!"
+    }
+}
