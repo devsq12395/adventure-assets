@@ -9,12 +9,15 @@ public class MM_Party : MonoBehaviour {
 	public void Awake(){ I = this; }
 
     public GameObject go;
+    public List<GameObject> buttons;
 
     public struct PartyBtn {
         public Image port;
         public TextMeshProUGUI name, lvl;
 
-        public PartyBtn (_port, _name, _lvl){ port = _port; name = _name; lvl = _lvl; }
+        public PartyBtn (Image _port, TextMeshProUGUI _name, TextMeshProUGUI _lvl){ 
+            port = _port; name = _name; lvl = _lvl; 
+        }
     };
 
     public List<PartyBtn> partyBtns;
@@ -28,6 +31,15 @@ public class MM_Party : MonoBehaviour {
 
         go.SetActive (true); isShow = true;
 
+        for (int i = 0; i < buttons.Count; i++) {
+            Image _img = buttons [i].GetComponent<Image> ();
+            TextMeshProUGUI _txt1 = buttons [i].transform.Find ("BTN_Hero_Name").GetComponent<TextMeshProUGUI> (),
+                            _txt2 = buttons [i].transform.Find ("BTN_Hero_LVL").GetComponent<TextMeshProUGUI> ();
+            PartyBtn _new = new PartyBtn (_img, _txt1, _txt2);
+
+            partyBtns.Add (_new);
+        }
+
         refresh_list ();
 
         go.SetActive (false); isShow = false;
@@ -36,7 +48,8 @@ public class MM_Party : MonoBehaviour {
     public void refresh_list (){
         // Test this part
         lineup.Clear ();
-        string _lineup = MM_Save.I.load ("lineup").Split (',');
+        Debug.Log (MM_Save.I.load ("lineup"));
+        string[] _lineup = MM_Save.I.load ("lineup").Split (',');
         lineup.AddRange (_lineup);
 
         setup_buttons ();
@@ -50,11 +63,11 @@ public class MM_Party : MonoBehaviour {
             _name = lineup [i];
 
             if (_name != "") {
-                partyBtns [i].port = MM_Sprites.I.get_sprite (_name);
+                partyBtns [i].port.sprite = MM_Sprites.I.get_sprite (_name);
                 partyBtns [i].name.text = MM_Strings.I.get_str ($"{_name}-name");
-                partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl") {MM_Save.I.load ($"chars.{_name}.level")}}";
+                partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}";
             } else {
-                partyBtns [i].port = MM_Sprites.I.get_sprite ("dummy");
+                partyBtns [i].port.sprite = MM_Sprites.I.get_sprite ("dummy");
                 partyBtns [i].name.text = "";
                 partyBtns [i].lvl.text = "";
             }

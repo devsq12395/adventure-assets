@@ -73,7 +73,6 @@ public class MM_Save : MonoBehaviour {
     }
 
     public string load(string _key){
-        // Assuming _key is in the format "status.chars.tommy.level"
         string[] keys = _key.Split('.');
         JSONObject nestedData = playData;
 
@@ -86,8 +85,21 @@ public class MM_Save : MonoBehaviour {
             }
         }
 
-        return nestedData[keys[keys.Length - 1]];
+        if (nestedData[keys[keys.Length - 1]].IsArray){
+            JSONArray arrayData = nestedData[keys[keys.Length - 1]].AsArray;
+            string[] result = new string[arrayData.Count];
+
+            for (int i = 0; i < arrayData.Count; i++){
+                result[i] = arrayData[i];
+            }
+
+            return string.Join(",", result);
+        }
+        else{
+            return nestedData[keys[keys.Length - 1]];
+        }
     }
+
 
     private void merge_dictionary(JSONObject target, JSONObject source){
         foreach (var entry in source){

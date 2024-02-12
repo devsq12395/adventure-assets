@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour {
 
         MM_Profile.I.setup ();
         MM_Area.I.setup ();
+        MM_Party.I.setup ();
 
         show_popup ("profile");
     }
@@ -24,9 +25,14 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void show_popup (string _popup){
+        MM_Profile.I.toggle_show (false);
+        MM_Area.I.toggle_show (false);
+        MM_Party.I.toggle_show (false);
+
         switch (_popup) {
             case "profile":             MM_Profile.I.toggle_show (true); break;
             case "area":                MM_Area.I.toggle_show (true); break;
+            case "party":               MM_Party.I.toggle_show (true); break;
         }
     }
 }
