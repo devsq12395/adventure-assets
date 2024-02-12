@@ -14,7 +14,11 @@ public class MM_Save : MonoBehaviour {
     public string login;
     public JSONObject playData;
 
+    private bool OVERWRITE;
+
     public void setup(){
+        OVERWRITE = true;
+
         // TEST
         PlayerPrefs.SetString("login", "tommy");
 
@@ -27,7 +31,7 @@ public class MM_Save : MonoBehaviour {
     }
 
     private void load_json(){
-        if (File.Exists(JSON_SAVE)){
+        if (File.Exists(JSON_SAVE) || OVERWRITE){
             string _json = File.ReadAllText(JSON_SAVE);
             playData = JSON.Parse(_json).AsObject;
 
@@ -67,20 +71,27 @@ public class MM_Save : MonoBehaviour {
             nestedData = nestedData[keys[i]].AsObject;
         }
 
-        nestedData[keys[keys.Length - 1]] = _value;
+        if (nestedData[keys[keys.Length - 1]].IsArray){
+            JSONArray arrayData = nestedData[keys[keys.Length - 1]].AsArray;
+            arrayData.Add(_value);
+            nestedData[keys[keys.Length - 1]] = arrayData;
+        } else{
+            nestedData[keys[keys.Length - 1]] = _value;
+        }
 
         save_json();
     }
 
+
     public string load(string _key){
+        // Assuming _key is in the format "status.chars.tommy.level"
         string[] keys = _key.Split('.');
         JSONObject nestedData = playData;
 
         for (int i = 0; i < keys.Length - 1; i++){
             if (nestedData.HasKey(keys[i])){
                 nestedData = nestedData[keys[i]].AsObject;
-            }
-            else{
+            } else{
                 return null;
             }
         }
@@ -94,8 +105,7 @@ public class MM_Save : MonoBehaviour {
             }
 
             return string.Join(",", result);
-        }
-        else{
+        } else{
             return nestedData[keys[keys.Length - 1]];
         }
     }

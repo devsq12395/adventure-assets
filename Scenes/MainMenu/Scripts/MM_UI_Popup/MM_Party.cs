@@ -46,9 +46,7 @@ public class MM_Party : MonoBehaviour {
     }
 
     public void refresh_list (){
-        // Test this part
         lineup.Clear ();
-        Debug.Log (MM_Save.I.load ("lineup"));
         string[] _lineup = MM_Save.I.load ("lineup").Split (',');
         lineup.AddRange (_lineup);
 
@@ -67,7 +65,7 @@ public class MM_Party : MonoBehaviour {
                 partyBtns [i].name.text = MM_Strings.I.get_str ($"{_name}-name");
                 partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}";
             } else {
-                partyBtns [i].port.sprite = MM_Sprites.I.get_sprite ("dummy");
+                partyBtns [i].port.sprite = MM_Sprites.I.get_sprite ("empty");
                 partyBtns [i].name.text = "";
                 partyBtns [i].lvl.text = "";
             }

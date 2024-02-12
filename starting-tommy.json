@@ -1,5 +1,6 @@
 {
-    "version": "0.2",
+    "version": "0.3",
+    "overwrite": "true",
 
     "date": "jan-2225",
     "status": "newbie",
@@ -9,8 +10,52 @@
         "tommy", "", "", ""
     ],
 
+    "pool": [
+        "tommy", "anastasia", "seraphine", "miguel", "anthony"
+    ],
+
     "chars": {
         "tommy": {
+            "level": 40,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            }
+        },
+        "anastasia": {
+            "level": 40,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            }
+        },
+        "seraphine": {
+            "level": 40,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            }
+        },
+        "miguel": {
+            "level": 40,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            }
+        },
+        "anthony": {
             "level": 40,
             "equip": {
                 "weapon": "",
