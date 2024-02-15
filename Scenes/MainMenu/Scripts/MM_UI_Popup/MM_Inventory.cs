@@ -12,16 +12,16 @@ public class MM_Inventory : MonoBehaviour {
     public GameObject go, goItem, goCanvas;
 
     public struct Item {
-        string name; int stack;
+        public string name; public int stack;
 
         public Item (string _name, int _stack) {
             name = _name; stack = _stack;
         }
     }
-    private struct ItemUI {
-        GameObject go; TextMeshProUGUI name; TextMeshProUGUI stack;
+    public struct ItemUI {
+        public GameObject go; public TextMeshProUGUI name; public TextMeshProUGUI stack;
 
-        public Item (GameObject _go, TextMeshProUGUI _name, TextMeshProUGUI _stack) {
+        public ItemUI (GameObject _go, TextMeshProUGUI _name, TextMeshProUGUI _stack) {
             go = _go; name = _name; stack = _stack;
         }
     }
@@ -35,23 +35,33 @@ public class MM_Inventory : MonoBehaviour {
 
     private void setup_items (){
         items = new List<Item> ();
-        string[] _items = MM_Save.I.load ("items").Split ('^');
-        items.AddRange (_items);
+        string[]    _itemsStr = MM_Save.I.load ("items").Split ('^'),
+                    _itemExtracted;
+        Item _new;
 
         itemUIs = new List<ItemUI> ();
-        for (int _i = 0; _i < items.Count; _i++) {
-            create_item (_i);
+
+        for (int _i = 0; _i < _itemsStr.Length; _i++) {
+            _itemExtracted = _itemsStr [_i].Split ('%');
+            create_item (_itemExtracted [0], _itemExtracted [1]);
         }
     }
 
-    private void create_item (int _index){
+    private void create_item (string _item, string _stack){
+        // Create "Item" object
+        Item _new = new Item (_item, int.Parse (_stack));
+        items.Add (_new);
+
+        // Create the UI
         GameObject _newItemUI = Instantiate(goItem, goCanvas.transform);
         RectTransform _transform = _newItemUI.GetComponent<RectTransform>();
 
         _transform.anchoredPosition = new Vector2(-110f - 100f * items.Count, -118f);
 
-        TextMeshProUGUI _tName = _newCharUI.transform.Find("Name").GetComponent<TextMeshProUGUI>(),
-                        _tStack = _newCharUI.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI _tName = _newItemUI.transform.Find("Name").GetComponent<TextMeshProUGUI>(),
+                        _tStack = _newItemUI.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
+        _tName.text = _new.name;
+        _tStack.text = _new.stack.ToString ();
 
         ItemUI _newUI = new ItemUI(_newItemUI, _tName, _tStack);
         itemUIs.Add(_newUI);
