@@ -16,7 +16,7 @@ public class MM_ChangeParty : MonoBehaviour {
         public TextMeshProUGUI name, lvl;
         public bool isLineup;
 
-        public PartyBtn (Image _port, TextMeshProUGUI _name, TextMeshProUGUI _lvl, bool _isLineup){ 
+        public CharBtn (Image _port, TextMeshProUGUI _name, TextMeshProUGUI _lvl, bool _isLineup){ 
             port = _port; name = _name; lvl = _lvl; 
             isLineup = _isLineup;
         }
@@ -34,26 +34,26 @@ public class MM_ChangeParty : MonoBehaviour {
         mainLineup = new List<CharBtn> ();
         heroPool = new List<CharBtn> ();
 
-        strList_lineup = new<string> ();
-        strList_heroPool = new<string> ();
+        strList_lineup = new List<string> ();
+        strList_heroPool = new List<string> ();
 
         go.SetActive (true); isShow = true;
 
         for (int i = 0; i < go_mainLineup.Count; i++) {
-            mainLineup.Add (get_char_btn (go_mainLineup [i]));
+            mainLineup.Add (get_char_btn (go_mainLineup [i], true));
         }
         for (int i = 0; i < go_heroPool.Count; i++) {
-            heroPool.Add (get_char_btn (go_heroPool [i]));
+            heroPool.Add (get_char_btn (go_heroPool [i], false));
         }
 
         go.SetActive (false); isShow = false;
     }
 
     private CharBtn get_char_btn (GameObject _go, bool _isLineup){
-        Image _img = buttons [i].GetComponent<Image> ();
-        TextMeshProUGUI _txt1 = buttons [i].transform.Find ("BTN_Hero_Name").GetComponent<TextMeshProUGUI> (),
-                        _txt2 = buttons [i].transform.Find ("BTN_Hero_LVL").GetComponent<TextMeshProUGUI> ();
-        PartyBtn _new = new PartyBtn (_img, _txt1, _txt2, _isLineup);
+        Image _img = _go.GetComponent<Image> ();
+        TextMeshProUGUI _txt1 = _go.transform.Find ("BTN_Hero_Name").GetComponent<TextMeshProUGUI> (),
+                        _txt2 = _go.transform.Find ("BTN_Hero_LVL").GetComponent<TextMeshProUGUI> ();
+        CharBtn _new = new CharBtn (_img, _txt1, _txt2, _isLineup);
 
         return _new;
     }
@@ -99,7 +99,7 @@ public class MM_ChangeParty : MonoBehaviour {
 
         strList_heroPool.Clear ();
         string[] _pool = MM_Save.I.load ("pool").Split (',');
-        strList_heroPool.AddRange (_pool)
+        strList_heroPool.AddRange (_pool);
 
         for (int i = 0; i < heroPool.Count; i++) {
             _name = _pool [i];
@@ -131,7 +131,7 @@ public class MM_ChangeParty : MonoBehaviour {
         string _name = strList_lineup [lineupSel];
 
         setup_button (
-            go_mainLineup [lineupSel],
+            mainLineup [lineupSel],
             MM_Sprites.I.get_sprite (_name),
             MM_Strings.I.get_str ($"{_name}-name"),
             $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}"
