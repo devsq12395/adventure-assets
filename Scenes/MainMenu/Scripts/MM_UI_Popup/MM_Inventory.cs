@@ -33,6 +33,10 @@ public class MM_Inventory : MonoBehaviour {
         setup_items ();
     }
 
+    public void show (){
+        go.SetActive (true);
+    }
+
     private void setup_items (){
         items = new List<Item> ();
         string[]    _itemsStr = MM_Save.I.load ("items").Split ('^'),
@@ -43,11 +47,12 @@ public class MM_Inventory : MonoBehaviour {
 
         for (int _i = 0; _i < _itemsStr.Length; _i++) {
             _itemExtracted = _itemsStr [_i].Split ('%');
-            create_item (_itemExtracted [0], _itemExtracted [1]);
+            Debug.Log ($"{_itemExtracted [1]}, {_itemExtracted [0]}");
+            create_item (_itemExtracted [1], _itemExtracted [0]);
         }
     }
 
-    private void create_item (string _item, string _stack){
+    private void create_item (string _item, string _stack){ 
         // Create "Item" object
         Item _new = new Item (_item, int.Parse (_stack));
         items.Add (_new);
@@ -56,7 +61,11 @@ public class MM_Inventory : MonoBehaviour {
         GameObject _newItemUI = Instantiate(goItem, goCanvas.transform);
         RectTransform _transform = _newItemUI.GetComponent<RectTransform>();
 
-        _transform.anchoredPosition = new Vector2(-110f - 100f * items.Count, -118f);
+        int _index = items.Count - 1,
+            _column = _index % 2,
+            _row = _index / 2;
+
+        _transform.anchoredPosition = new Vector2(-220 + _column * 440, -27 + _row * -58);
 
         TextMeshProUGUI _tName = _newItemUI.transform.Find("Name").GetComponent<TextMeshProUGUI>(),
                         _tStack = _newItemUI.transform.Find("Stack").GetComponent<TextMeshProUGUI>();

@@ -12,15 +12,16 @@ public class MM_Sprites : MonoBehaviour {
     public Sprite dummy;
 
     [Header("------ CHAR PORTRAITS ------")]
-    public Sprite portEmpty, portTommy;
+    public Sprite portEmpty;
+    public Sprite portTommy, portAnastasia, portSeraphine, portMiguel, portAnthony;
 
     public Sprite get_sprite (string _name){
         switch (_name) {
             case "tommy":           return portTommy; break;
-            case "anastasia":           return portTommy; break;
-            case "seraphine":           return portTommy; break;
-            case "miguel":           return portTommy; break;
-            case "anthony":           return portTommy; break;
+            case "anastasia":           return portAnastasia; break;
+            case "seraphine":           return portSeraphine; break;
+            case "miguel":           return portMiguel; break;
+            case "anthony":           return portAnthony; break;
 
             case "empty":           return portEmpty; break;
             

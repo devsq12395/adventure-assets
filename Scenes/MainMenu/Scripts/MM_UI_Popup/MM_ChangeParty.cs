@@ -51,8 +51,11 @@ public class MM_ChangeParty : MonoBehaviour {
 
     private CharBtn get_char_btn (GameObject _go, bool _isLineup){
         Image _img = _go.GetComponent<Image> ();
-        TextMeshProUGUI _txt1 = _go.transform.Find ("BTN_Hero_Name").GetComponent<TextMeshProUGUI> (),
-                        _txt2 = _go.transform.Find ("BTN_Hero_LVL").GetComponent<TextMeshProUGUI> ();
+        Transform   _txt1Go = _go.transform.Find ("BTN_Hero_Name"),
+                    _txt2Go = _go.transform.Find ("BTN_Hero_LVL");
+
+        TextMeshProUGUI _txt1 = (_txt1Go) ? _txt1Go.GetComponent<TextMeshProUGUI> () : null,
+                        _txt2 = (_txt2Go) ? _txt2Go.GetComponent<TextMeshProUGUI> () : null;
         CharBtn _new = new CharBtn (_img, _txt1, _txt2, _isLineup);
 
         return _new;
@@ -60,6 +63,7 @@ public class MM_ChangeParty : MonoBehaviour {
 
     public void toggle_show (bool _isShow){
         go.SetActive (_isShow);
+        isShow = _isShow;
 
         setup_show ();
     }
@@ -102,14 +106,19 @@ public class MM_ChangeParty : MonoBehaviour {
         strList_heroPool.AddRange (_pool);
 
         for (int i = 0; i < heroPool.Count; i++) {
-            _name = _pool [i];
+            if (i >= _pool.Length){
+                go_heroPool [i].SetActive (false);
+                break;
+            }
 
-            go_heroPool [i].SetActive (_name != "");
+            _name = _pool [i];
+            go_heroPool [i].SetActive (true);
+
             if (_name != "") {
                 setup_button (
-                    mainLineup [i],
+                    heroPool [i],
                     MM_Sprites.I.get_sprite (_name),
-                    MM_Strings.I.get_str ($"{_name}-name"),
+                    "",
                     $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}"
                 );
             }
@@ -118,7 +127,7 @@ public class MM_ChangeParty : MonoBehaviour {
 
     private void setup_button (CharBtn _btn, Sprite _sprite, string _name, string _lvl){
         _btn.port.sprite = _sprite;
-        _btn.name.text = _name;
+        if (_btn.name) _btn.name.text = _name;
         _btn.lvl.text = _lvl;
     }
 
@@ -127,6 +136,10 @@ public class MM_ChangeParty : MonoBehaviour {
     }
 
     public void btn_pool (int _ind){
+        if (strList_lineup.Contains (strList_heroPool [_ind])) {
+            return;
+        }
+
         strList_lineup [lineupSel] = strList_heroPool [_ind];
         string _name = strList_lineup [lineupSel];
 
