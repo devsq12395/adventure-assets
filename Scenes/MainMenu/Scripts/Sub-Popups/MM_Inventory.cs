@@ -58,7 +58,7 @@ public class MM_Inventory : MonoBehaviour {
         }
 
         string _joined = string.Join ("^", _itemsToJoin.ToArray ());
-        MM_Save.I.save ();
+        MM_Save.I.save ("items", _joined);
     }
 
     private void create_item (string _item, string _stack){ 

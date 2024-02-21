@@ -14,6 +14,8 @@ public class MM_Char : MonoBehaviour {
     public TextMeshProUGUI cName, cLvl, cStats;
 
     public string name;
+    public List<MM_Inventory.ItemUI> itemsUI;
+    public bool isShow;
 
     private readonly string[] equipStrs = {"weapon", "armor", "boots", "accessory1", "accessory2"};
     private readonly string[] statStrs = {"hp", "mp", "attack", "skill", "speed"};
@@ -21,6 +23,25 @@ public class MM_Char : MonoBehaviour {
     public void setup (){
         go.SetActive (true);
 
+        go.SetActive (false);
+    }
+
+    public void toggle_show (bool _isShow){
+        isShow = _isShow;
+
+        if (isShow) show (); else hide ();
+    }
+
+    private void show (){
+        go.SetActive (true);
+        create_equip_items ();
+    }
+
+    private void hide (){
+        for (int _i = itemsUI.Count - 1; _i >= 0; _i--) {
+            Destroy (itemsUI [_i].go);
+            itemsUI.RemoveAt (_i);
+        }
         go.SetActive (false);
     }
 
@@ -40,22 +61,26 @@ public class MM_Char : MonoBehaviour {
     }
 
     public void create_equip_items (){
+        itemsUI = new List<MM_Inventory.ItemUI> ();
+
         foreach (string _equipStr in equipStrs) {
             string _item = MM_Save.I.load ($"chars.{name}.equip.{_equipStr}");
 
             MM_Inventory.Item _new = new MM_Inventory.Item (_item, 1);
-            items.Add (_new);
 
-            GameObject _newItemUI = Instantiate(goItemObj, goCanvas.transform);
-            RectTransform _transform = _newItemUI.GetComponent<RectTransform>();
+            GameObject _newItemUI_go = Instantiate(goItemObj, goCanvas.transform);
+            RectTransform _transform = _newItemUI_go.GetComponent<RectTransform>();
 
-            TextMeshProUGUI     _tName = _newItemUI.transform.Find("Name").GetComponent<TextMeshProUGUI>(),
-                                _tStack = _newItemUI.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI     _tName = _newItemUI_go.transform.Find("Name").GetComponent<TextMeshProUGUI>(),
+                                _tStack = _newItemUI_go.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
 
             _tName.text = _new.name;
             _tStack.text = "";
 
-            _transform.anchoredPosition = new Vector2(-220 + _column * 440, -27 + _row * -58);
+            MM_Inventory.ItemUI _newUI = new MM_Inventory.ItemUI(_newItemUI_go, _tName, _tStack);
+            // _transform.anchoredPosition = new Vector2(-220 + _column * 440, -27 + _row * -58);
+
+            itemsUI.Add (_newUI);
         }
     }
 
