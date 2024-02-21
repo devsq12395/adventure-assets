@@ -5,6 +5,12 @@
 
         "name": "Name: ",
         "lvl": "Lvl",
+
+        "hp": "HP",
+        "mp": "MP",
+        "attack": "Attack",
+        "skill": "Skill",
+        "speed": "Speed",
         
         "tommy-name": "Tommy",
         "tommy-name-full": "Tommy Carter",

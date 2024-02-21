@@ -9,7 +9,7 @@ public class MM_Inventory : MonoBehaviour {
     public static MM_Inventory I;
 	public void Awake(){ I = this; }
 
-    public GameObject go, goItem, goCanvas;
+    public GameObject go, goItemObj, goCanvas;
 
     public struct Item {
         public string name; public int stack;
@@ -47,9 +47,18 @@ public class MM_Inventory : MonoBehaviour {
 
         for (int _i = 0; _i < _itemsStr.Length; _i++) {
             _itemExtracted = _itemsStr [_i].Split ('%');
-            Debug.Log ($"{_itemExtracted [1]}, {_itemExtracted [0]}");
             create_item (_itemExtracted [1], _itemExtracted [0]);
         }
+    }
+
+    public void save_all_items_to_json (){
+        List<string> _itemsToJoin = new List<string>();
+        foreach (Item _item in items) {
+            _itemsToJoin.Add ($"{_item.stack}%{_item.name}");
+        }
+
+        string _joined = string.Join ("^", _itemsToJoin.ToArray ());
+        MM_Save.I.save ();
     }
 
     private void create_item (string _item, string _stack){ 
@@ -58,7 +67,7 @@ public class MM_Inventory : MonoBehaviour {
         items.Add (_new);
 
         // Create the UI
-        GameObject _newItemUI = Instantiate(goItem, goCanvas.transform);
+        GameObject _newItemUI = Instantiate(goItemObj, goCanvas.transform);
         RectTransform _transform = _newItemUI.GetComponent<RectTransform>();
 
         int _index = items.Count - 1,
@@ -74,6 +83,19 @@ public class MM_Inventory : MonoBehaviour {
 
         ItemUI _newUI = new ItemUI(_newItemUI, _tName, _tStack);
         itemUIs.Add(_newUI);
+    }
+
+    public void add_item (string _item, int _stack){
+        Item _new = new Item (_item, _stack);
+        items.Add (_new);
+
+        save_all_items_to_json ();
+    }
+
+    public void remove_item (int _index){
+        items.RemoveAt (_index);
+
+        save_all_items_to_json ();
     }
 
 }

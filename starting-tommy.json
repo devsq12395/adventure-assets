@@ -25,6 +25,13 @@
                 "boots": "",
                 "accessory1": "",
                 "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1
             }
         },
         "anastasia": {
@@ -35,6 +42,13 @@
                 "boots": "",
                 "accessory1": "",
                 "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1
             }
         },
         "seraphine": {
@@ -45,6 +59,13 @@
                 "boots": "",
                 "accessory1": "",
                 "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1
             }
         },
         "miguel": {
@@ -55,6 +76,13 @@
                 "boots": "",
                 "accessory1": "",
                 "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1
             }
         },
         "anthony": {
@@ -65,6 +93,13 @@
                 "boots": "",
                 "accessory1": "",
                 "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1
             }
         }
     }

@@ -1,0 +1,16 @@
+{
+    "items": {
+        "sword": {
+            "name-ui": "Sword",
+            "stackable": false,
+            "stack-max": 1,
+            "tags": []
+        },
+        "plank": {
+            "name-ui": "Wooden Plank",
+            "stackable": true,
+            "stack-max": 9999,
+            "tags": []
+        }
+    }
+}

@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour {
 
         MM_ChangeParty.I.setup ();
         MM_Inventory.I.setup ();
+        MM_Char.I.setup ();
+        MM_MissionSel.I.setup ();
 
         show_popup ("profile");
     }

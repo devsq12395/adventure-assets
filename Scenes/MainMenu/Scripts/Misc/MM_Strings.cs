@@ -11,7 +11,7 @@ public class MM_Strings : MonoBehaviour {
     public static MM_Strings I;
     public void Awake () {
         I = this;
-        jsonStringPath = $"{Application.dataPath}/strings.json";
+        jsonStringPath = $"{Application.dataPath}/json-db/strings.json";
 
         if (File.Exists(jsonStringPath)) {
             jsonString = File.ReadAllText(jsonStringPath);
