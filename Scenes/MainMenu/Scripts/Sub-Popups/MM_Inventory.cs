@@ -11,6 +11,9 @@ public class MM_Inventory : MonoBehaviour {
 
     public GameObject go, goItemObj, goCanvas;
 
+    [Header("List of Modes: inventory, equip")]
+    public string mode;
+
     public struct Item {
         public string name; public int stack;
 
@@ -30,11 +33,19 @@ public class MM_Inventory : MonoBehaviour {
     public List<ItemUI> itemUIs;
 
     public void setup (){
+        go.SetActive (true);
+
+        go.SetActive (false);
+    }
+
+    public void show (string _mode){
+        go.SetActive (true);
+        mode = _mode;
         setup_items ();
     }
 
-    public void show (){
-        go.SetActive (true);
+    public void hide (){
+        go.SetActive (false);
     }
 
     private void setup_items (){

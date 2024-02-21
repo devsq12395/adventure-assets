@@ -14,7 +14,7 @@ public class MM_Char : MonoBehaviour {
     public TextMeshProUGUI cName, cLvl, cStats;
 
     public string name;
-    public List<MM_Inventory.ItemUI> itemsUI;
+    public Dictionary<string, MM_Inventory.ItemUI> itemsUI;
     public bool isShow;
 
     private readonly string[] equipStrs = {"weapon", "armor", "boots", "accessory1", "accessory2"};
@@ -26,22 +26,22 @@ public class MM_Char : MonoBehaviour {
         go.SetActive (false);
     }
 
-    public void toggle_show (bool _isShow){
+    public void toggle_show (bool _isShow, string _name = ""){
         isShow = _isShow;
 
-        if (isShow) show (); else hide ();
+        if (isShow) show (_name); else hide ();
     }
 
-    private void show (){
+    private void show (string _name){
         go.SetActive (true);
-        create_equip_items ();
+        setup_char (_name);
     }
 
     private void hide (){
-        for (int _i = itemsUI.Count - 1; _i >= 0; _i--) {
-            Destroy (itemsUI [_i].go);
-            itemsUI.RemoveAt (_i);
+        for (int _i = equipStrs.Count - 1; _i >= 0; _i--) {
+            Destroy (itemsUI [equipStrs [_i]].go);
         }
+        itemsUI.Clear ();
         go.SetActive (false);
     }
 
@@ -61,7 +61,7 @@ public class MM_Char : MonoBehaviour {
     }
 
     public void create_equip_items (){
-        itemsUI = new List<MM_Inventory.ItemUI> ();
+        itemsUI = new Dictionary<string, MM_Inventory.ItemUI> ();
 
         foreach (string _equipStr in equipStrs) {
             string _item = MM_Save.I.load ($"chars.{name}.equip.{_equipStr}");
@@ -80,8 +80,12 @@ public class MM_Char : MonoBehaviour {
             MM_Inventory.ItemUI _newUI = new MM_Inventory.ItemUI(_newItemUI_go, _tName, _tStack);
             // _transform.anchoredPosition = new Vector2(-220 + _column * 440, -27 + _row * -58);
 
-            itemsUI.Add (_newUI);
+            itemsUI.Add (_equipStr, _newUI);
         }
+    }
+
+    public void open_change_equip (){
+        
     }
 
 }
