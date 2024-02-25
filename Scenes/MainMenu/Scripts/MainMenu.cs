@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour {
     void Start() {
         login = "tommy";
 
+        // Setup all scripts
         MM_Save.I.setup ();
 
         MM_Profile.I.setup ();
@@ -21,6 +22,11 @@ public class MainMenu : MonoBehaviour {
         MM_Inventory.I.setup ();
         MM_Char.I.setup ();
         MM_MissionSel.I.setup ();
+
+        MM_Map.I.setup ();
+
+        // Generate map
+        MM_Map.I.generate_map ();
 
         show_popup ("profile");
     }
