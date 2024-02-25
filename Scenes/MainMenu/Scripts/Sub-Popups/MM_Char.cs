@@ -38,7 +38,7 @@ public class MM_Char : MonoBehaviour {
     }
 
     private void hide (){
-        for (int _i = equipStrs.Count - 1; _i >= 0; _i--) {
+        for (int _i = equipStrs.Length - 1; _i >= 0; _i--) {
             Destroy (itemsUI [equipStrs [_i]].go);
         }
         itemsUI.Clear ();
