@@ -11,10 +11,11 @@ public class MM_Mission : MonoBehaviour {
 
     public GameObject go;
     public TextMeshProUGUI title, desc;
+    public Image port;
 
     public string missionID;
 
-    private string jsonStringPath;
+    private string jsonString, jsonStringPath;
 
     public void Awake () {
         I = this;
@@ -26,6 +27,10 @@ public class MM_Mission : MonoBehaviour {
         else {
             Debug.LogError("JSON file not found at: " + jsonStringPath);
         }
+    }
+
+    public void setup (){
+        
     }
 
     public void show (string _missionID){
@@ -42,6 +47,7 @@ public class MM_Mission : MonoBehaviour {
     private void setup_ui (){
         title.text = get_mission_val ("name");
         desc.text = get_mission_val ("desc");
+        port.sprite = MM_Sprites.I.get_sprite (get_mission_val ("sprite"));
     }
 
     public string get_mission_val (string key) {
@@ -55,5 +61,9 @@ public class MM_Mission : MonoBehaviour {
         }
 
         return null;
+    }
+
+    public void btn_accept (){
+        
     }
 }

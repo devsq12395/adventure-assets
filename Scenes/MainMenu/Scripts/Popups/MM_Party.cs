@@ -53,6 +53,15 @@ public class MM_Party : MonoBehaviour {
         setup_buttons ();
     }
 
+    public void toggle_show (bool _isShow){
+        isShow = _isShow;
+        go.SetActive (_isShow);
+
+        if (_isShow) {
+            refresh_list ();
+        }
+    }
+
     public void setup_buttons (){
         if (!isShow) return;
 
@@ -71,13 +80,8 @@ public class MM_Party : MonoBehaviour {
             }
         }
     }
-
-    public void toggle_show (bool _isShow){
-        isShow = _isShow;
-        go.SetActive (_isShow);
-
-        if (_isShow) {
-            setup_buttons ();
-        }
+    
+    public void btn_char (int _ind){
+        MM_Char.I.toggle_show (true, lineup [_ind]);
     }
 }

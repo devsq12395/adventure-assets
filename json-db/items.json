@@ -1,5 +1,6 @@
 {
     "items": {
+        /*5-10 letters only per item*/
         "sword": {
             "name-ui": "Sword",
             "stackable": false,

@@ -15,6 +15,9 @@ public class MM_Sprites : MonoBehaviour {
     public Sprite portEmpty;
     public Sprite portTommy, portAnastasia, portSeraphine, portMiguel, portAnthony;
 
+    [Header("------ MISSION PORTRAITS ------")]
+    public Sprite misCaleb01;
+
     public Sprite get_sprite (string _name){
         switch (_name) {
             case "tommy":           return portTommy; break;
@@ -22,6 +25,8 @@ public class MM_Sprites : MonoBehaviour {
             case "seraphine":           return portSeraphine; break;
             case "miguel":           return portMiguel; break;
             case "anthony":           return portAnthony; break;
+
+            case "caleb01":           return misCaleb01; break;
 
             case "empty":           return portEmpty; break;
             

@@ -17,7 +17,7 @@ public class MM_Save : MonoBehaviour {
     private bool OVERWRITE;
 
     public void setup(){
-        OVERWRITE = true;
+        OVERWRITE = false;
 
         // TEST
         PlayerPrefs.SetString("login", "tommy");
@@ -72,11 +72,29 @@ public class MM_Save : MonoBehaviour {
         }
 
         if (nestedData[keys[keys.Length - 1]].IsArray){
+            string[] arrayValues = _value.Split(',');
+            JSONArray jsonArray = new JSONArray();
+
+            foreach (string val in arrayValues) {
+                jsonArray.Add(val);
+            }
+            nestedData[keys[keys.Length - 1]] = jsonArray;
+        }else {
+            nestedData[keys[keys.Length - 1]] = _value;
+        }
+
+        save_json();
+    }
+
+    public void add_array_val (string _key, string _value){
+        // Assuming _key is in the format "status.chars.tommy.level"
+        string[] keys = _key.Split('.');
+        JSONObject nestedData = playData;
+
+        if (nestedData[keys[keys.Length - 1]].IsArray){
             JSONArray arrayData = nestedData[keys[keys.Length - 1]].AsArray;
             arrayData.Add(_value);
             nestedData[keys[keys.Length - 1]] = arrayData;
-        } else{
-            nestedData[keys[keys.Length - 1]] = _value;
         }
 
         save_json();

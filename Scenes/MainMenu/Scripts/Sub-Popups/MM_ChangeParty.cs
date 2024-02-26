@@ -152,7 +152,7 @@ public class MM_ChangeParty : MonoBehaviour {
     }
 
     public void btn_return (){
-        MM_Save.I.save ("lineup", string.Join(",", go_mainLineup));
+        MM_Save.I.save ("lineup", string.Join(",", strList_lineup)); 
         toggle_show (false);
     }
 }

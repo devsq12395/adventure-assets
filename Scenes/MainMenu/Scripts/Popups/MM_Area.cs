@@ -37,4 +37,8 @@ public class MM_Area : MonoBehaviour {
         title.text = _title;
         desc.text = _areaDesc;
     }
+
+    public void btn_show_map (){
+        MM_Map.I.show ();
+    }
 }
