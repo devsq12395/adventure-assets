@@ -15,7 +15,7 @@ public class MM_Area : MonoBehaviour {
     public TextMeshProUGUI title, desc;
 
     public void setup (){
-        curArea = MM_Save.I.load ("area");
+        curArea = JsonSaving.I.load ("area");
 
         go.SetActive (true);
 
@@ -31,7 +31,7 @@ public class MM_Area : MonoBehaviour {
     private void setup_texts (){
         string  _login                  = MainMenu.I.login,
                 _title                  = MM_Strings.I.get_str ($"{curArea}-welcome"),
-                _status                 = MM_Save.I.load ("status"),
+                _status                 = JsonSaving.I.load ("status"),
                 _areaDesc               = MM_Strings.I.get_str ($"{_login}-areadesc-{curArea}-{_status}");
 
         title.text = _title;

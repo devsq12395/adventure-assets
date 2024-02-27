@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System.IO;
 using SimpleJSON;
@@ -64,6 +65,9 @@ public class MM_Mission : MonoBehaviour {
     }
 
     public void btn_accept (){
-        
+        JsonSaving.I.save ("missionCur", missionID);
+        JsonSaving.I.save ("missionLvl", "1");
+        JsonSaving.I.save ("missionMap", "0");
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 }

@@ -49,11 +49,11 @@ public class MM_Char : MonoBehaviour {
         name = _name;
 
         cName.text = MM_Strings.I.get_str ($"{_name}-name");
-        cLvl.text = $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}";
+        cLvl.text = $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}";
 
         string _strAllStats = "";
         foreach (string _statStr in statStrs) {
-            _strAllStats += $"{MM_Strings.I.get_str (_statStr)}: {MM_Save.I.load ($"chars.{_name}.stats.{_statStr}")}\n";
+            _strAllStats += $"{MM_Strings.I.get_str (_statStr)}: {JsonSaving.I.load ($"chars.{_name}.stats.{_statStr}")}\n";
         }
         cStats.text = _strAllStats;
 
@@ -64,7 +64,7 @@ public class MM_Char : MonoBehaviour {
         itemsUI = new Dictionary<string, MM_Inventory.ItemUI> ();
 
         foreach (string _equipStr in equipStrs) {
-            string _item = MM_Save.I.load ($"chars.{name}.equip.{_equipStr}");
+            string _item = JsonSaving.I.load ($"chars.{name}.equip.{_equipStr}");
 
             MM_Inventory.Item _new = new MM_Inventory.Item (_item, 1);
 

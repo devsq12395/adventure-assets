@@ -15,7 +15,10 @@ public class ContMap : MonoBehaviour {
     public create_map create_map_objs {get; set;}
 
     public void setup_map (){
-        details = DB_Maps.I.get_map_details (PlayerPrefs.GetString ("map"));
+        string  _mission = JsonSaving.I.load ("missionCur"),
+                _curMap = JsonReading.I.read ("missions", $"missions.{_mission}.maps").Split (",")[0];
+
+        details = DB_Maps.I.get_map_details (_curMap);
 
         map = details.mapObj;
         pointList = details.pointList;

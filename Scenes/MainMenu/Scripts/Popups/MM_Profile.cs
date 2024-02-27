@@ -28,8 +28,8 @@ public class MM_Profile : MonoBehaviour {
     private void setup_desc (){
         string  _login          = MainMenu.I.login,
                 _name           = $"{MM_Strings.I.get_str ("name")}{MM_Strings.I.get_str ($"{_login}-name-full")}",
-                _date           = $"{MM_Strings.I.get_str ("date")}{MM_Strings.I.get_str (MM_Save.I.load ("date"))}",
-                _status         = MM_Save.I.load ("status"),
+                _date           = $"{MM_Strings.I.get_str ("date")}{MM_Strings.I.get_str (JsonSaving.I.load ("date"))}",
+                _status         = JsonSaving.I.load ("status"),
                 _title          = MM_Strings.I.get_str ($"{_login}-proftitle-{_status}"),
                 _desc           = MM_Strings.I.get_str ($"{_login}-prof-{_status}");
 

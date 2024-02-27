@@ -47,7 +47,7 @@ public class MM_Party : MonoBehaviour {
 
     public void refresh_list (){
         lineup.Clear ();
-        string[] _lineup = MM_Save.I.load ("lineup").Split (',');
+        string[] _lineup = JsonSaving.I.load ("lineup").Split (',');
         lineup.AddRange (_lineup);
 
         setup_buttons ();
@@ -72,7 +72,7 @@ public class MM_Party : MonoBehaviour {
             if (_name != "") {
                 partyBtns [i].port.sprite = MM_Sprites.I.get_sprite (_name);
                 partyBtns [i].name.text = MM_Strings.I.get_str ($"{_name}-name");
-                partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}";
+                partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}";
             } else {
                 partyBtns [i].port.sprite = MM_Sprites.I.get_sprite ("empty");
                 partyBtns [i].name.text = "";

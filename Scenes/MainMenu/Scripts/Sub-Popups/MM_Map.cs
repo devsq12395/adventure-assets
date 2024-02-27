@@ -18,7 +18,7 @@ public class MM_Map : MonoBehaviour {
     public string mapID;
 
     public void setup (){
-        mapID = MM_Save.I.load ("area");
+        mapID = JsonSaving.I.load ("area");
         
         maps = new Dictionary<string, GameObject>();
         for (int i = 0; i < mapNames.Count; i++) {

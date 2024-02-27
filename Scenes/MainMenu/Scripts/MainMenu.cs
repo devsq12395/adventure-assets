@@ -12,8 +12,6 @@ public class MainMenu : MonoBehaviour {
         login = "tommy";
 
         // Setup all scripts
-        MM_Save.I.setup ();
-
         MM_Profile.I.setup ();
         MM_Area.I.setup ();
         MM_Party.I.setup ();

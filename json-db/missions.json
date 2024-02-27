@@ -3,7 +3,20 @@
         "caleb01": {
             "name": "TestName",
             "desc": "TestDesc",
-            "sprite": "caleb01"
+            "sprite": "caleb01",
+            
+            "maps": ["newHaven_rand", "newHaven_rand", "newHaven_rand", "newHaven_rand", "newHaven_caleb01"],
+            "requires": [],
+            "unlocks": ["caleb02"]
+        },
+        "caleb02": {
+            "name": "TestName",
+            "desc": "TestDesc",
+            "sprite": "caleb02",
+            
+            "maps": ["newHaven_rand", "newHaven_rand", "newHaven_rand", "newHaven_rand", "newHaven_caleb02"],
+            "requires": [],
+            "unlocks": []
         }
     }
 }

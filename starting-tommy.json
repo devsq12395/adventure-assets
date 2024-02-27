@@ -1,5 +1,5 @@
 {
-    "version": "0.3",
+    "version": "0.4",
     "overwrite": "true",
 
     "date": "jan-2225",
@@ -16,9 +16,14 @@
 
     "items": "1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword",
 
-    "curMissionPool": [
+    "missionCur": "",
+    "missionCurPool": [
         "caleb01", "jackson01", "vincenzo01"
     ],
+
+    "missionMap": "",
+    "missionLvl": "",
+    
 
     "chars": {
         "tommy": {

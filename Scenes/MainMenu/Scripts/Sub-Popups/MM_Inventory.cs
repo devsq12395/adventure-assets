@@ -50,7 +50,7 @@ public class MM_Inventory : MonoBehaviour {
 
     private void setup_items (){
         items = new List<Item> ();
-        string[]    _itemsStr = MM_Save.I.load ("items").Split ('^'),
+        string[]    _itemsStr = JsonSaving.I.load ("items").Split ('^'),
                     _itemExtracted;
         Item _new;
 
@@ -69,7 +69,7 @@ public class MM_Inventory : MonoBehaviour {
         }
 
         string _joined = string.Join ("^", _itemsToJoin.ToArray ());
-        MM_Save.I.save ("items", _joined);
+        JsonSaving.I.save ("items", _joined);
     }
 
     private void create_item (string _item, string _stack){ 

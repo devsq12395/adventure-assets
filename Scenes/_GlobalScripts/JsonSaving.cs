@@ -5,9 +5,8 @@ using System.IO;
 using UnityEngine;
 using SimpleJSON;
 
-public class MM_Save : MonoBehaviour {
-    public static MM_Save I;
-    public void Awake(){ I = this; }
+public class JsonSaving : MonoBehaviour {
+    public static JsonSaving I;
 
     private string JSON_SAVE, JSON_START;
 
@@ -16,8 +15,11 @@ public class MM_Save : MonoBehaviour {
 
     private bool OVERWRITE;
 
-    public void setup(){
+    public void Awake(){
+        I = this;
+        
         OVERWRITE = false;
+        if (OVERWRITE) Debug.Log ("DEBUG WARNING: Overwrite is true at JsonSaving.cs");
 
         // TEST
         PlayerPrefs.SetString("login", "tommy");
@@ -53,6 +55,7 @@ public class MM_Save : MonoBehaviour {
     }
 
     private void first_load(){
+        Debug.Log ("First run or overwrite mode is on. Creating new JSON entry.");
         string _json = File.ReadAllText(JSON_START);
         playData = JSON.Parse(_json).AsObject;
 
@@ -124,7 +127,7 @@ public class MM_Save : MonoBehaviour {
 
             return string.Join(",", result);
         } else{
-            return nestedData[keys[keys.Length - 1]];
+            return nestedData[keys[keys.Length - 1]].Value;
         }
     }
 

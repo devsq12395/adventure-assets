@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 3286248197442608572}
   - component: {fileID: 8498451757738197231}
   - component: {fileID: 2730107322124966744}
+  - component: {fileID: 3884331896365610005}
   m_Layer: 5
   m_Name: TestNode
   m_TagString: Untagged
@@ -195,4 +196,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8498451757738197231}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3884331896365610005}
+        m_TargetAssemblyTypeName: MissionNode, Assembly-CSharp
+        m_MethodName: on_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3884331896365610005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7930407176044193450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf75cae6cceb7c4ccb08b600bc58dfa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionID: caleb01

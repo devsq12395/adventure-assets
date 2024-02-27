@@ -78,7 +78,7 @@ public class MM_ChangeParty : MonoBehaviour {
         string _name;
 
         strList_lineup.Clear ();
-        string[] _lineup = MM_Save.I.load ("lineup").Split (',');
+        string[] _lineup = JsonSaving.I.load ("lineup").Split (',');
         strList_lineup.AddRange (_lineup);
 
         for (int i = 0; i < mainLineup.Count; i++) {
@@ -89,7 +89,7 @@ public class MM_ChangeParty : MonoBehaviour {
                     mainLineup [i], 
                     MM_Sprites.I.get_sprite (_name),
                     MM_Strings.I.get_str ($"{_name}-name"),
-                    $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}"
+                    $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
                 );
             } else {
                 setup_button (
@@ -102,7 +102,7 @@ public class MM_ChangeParty : MonoBehaviour {
         }
 
         strList_heroPool.Clear ();
-        string[] _pool = MM_Save.I.load ("pool").Split (',');
+        string[] _pool = JsonSaving.I.load ("pool").Split (',');
         strList_heroPool.AddRange (_pool);
 
         for (int i = 0; i < heroPool.Count; i++) {
@@ -119,7 +119,7 @@ public class MM_ChangeParty : MonoBehaviour {
                     heroPool [i],
                     MM_Sprites.I.get_sprite (_name),
                     "",
-                    $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}"
+                    $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
                 );
             }
         }
@@ -147,12 +147,12 @@ public class MM_ChangeParty : MonoBehaviour {
             mainLineup [lineupSel],
             MM_Sprites.I.get_sprite (_name),
             MM_Strings.I.get_str ($"{_name}-name"),
-            $"{MM_Strings.I.get_str ("lvl")} {MM_Save.I.load ($"chars.{_name}.level")}"
+            $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
         );
     }
 
     public void btn_return (){
-        MM_Save.I.save ("lineup", string.Join(",", strList_lineup)); 
+        JsonSaving.I.save ("lineup", string.Join(",", strList_lineup)); 
         toggle_show (false);
     }
 }
