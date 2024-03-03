@@ -42,7 +42,7 @@ public class MM_Mission : MonoBehaviour {
     }
 
     public void hide (){
-        go.SetActive (true);
+        go.SetActive (false);
     }
 
     private void setup_ui (){

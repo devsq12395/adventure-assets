@@ -1,5 +1,5 @@
 {
-    "version": "0.4",
+    "version": "0.5",
     "overwrite": "true",
 
     "date": "jan-2225",
@@ -14,7 +14,7 @@
         "tommy", "anastasia", "seraphine", "miguel", "anthony"
     ],
 
-    "items": "1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword",
+    "items": "1%sword^1%sword^1%sword",
 
     "missionCur": "",
     "missionCurPool": [

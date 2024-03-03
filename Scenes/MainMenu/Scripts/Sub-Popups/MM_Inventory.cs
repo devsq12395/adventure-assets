@@ -109,4 +109,8 @@ public class MM_Inventory : MonoBehaviour {
         save_all_items_to_json ();
     }
 
+    public void check_item (int _index) {
+        MM_ItemCheck.I.show (items [_index]);
+    }
+
 }

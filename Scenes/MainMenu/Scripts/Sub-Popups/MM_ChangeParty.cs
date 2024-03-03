@@ -65,7 +65,11 @@ public class MM_ChangeParty : MonoBehaviour {
         go.SetActive (_isShow);
         isShow = _isShow;
 
-        setup_show ();
+        if (isShow) {
+            setup_show ();
+        } else {
+            MM_Party.I.refresh_list ();
+        }
     }
 
     public void setup_show (){

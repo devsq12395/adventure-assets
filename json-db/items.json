@@ -1,17 +1,27 @@
 {
     "items": {
-        /*5-10 letters only per item*/
         "sword": {
             "name-ui": "Sword",
+            "desc": "test desc",
+            ""
+
             "stackable": false,
             "stack-max": 1,
-            "tags": []
+            "tags": [],
+
+            "use":"",
+            "equip": "weapon"
         },
         "plank": {
             "name-ui": "Wooden Plank",
+            "desc": "test desc",
+
             "stackable": true,
             "stack-max": 9999,
-            "tags": []
+            "tags": [],
+            
+            "use":"",
+            "equip": "weapon"
         }
     }
 }

@@ -27,7 +27,7 @@ public class JsonSaving : MonoBehaviour {
         login = PlayerPrefs.GetString("login");
 
         JSON_SAVE = $"{Application.persistentDataPath}/playdata-{login}.json";
-        JSON_START = $"{Application.dataPath}/starting-{login}.json";
+        JSON_START = $"{Application.dataPath}/json-db/starting-{login}.json";
 
         load_json();
     }

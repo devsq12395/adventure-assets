@@ -21,7 +21,7 @@ public class JsonReading : MonoBehaviour {
         foreach (string _jsonName in _jsonNames) {
             _path = $"{Application.dataPath}/json-db/{_jsonName}.json";
             if (File.Exists(_path)) {
-                _jsonString = File.ReadAllText(_path);
+                _jsonString = File.ReadAllText(_path); Debug.Log (_jsonString);
                 jsonStrings.Add (_jsonName, _jsonString);
             } else {
                 Debug.LogError ($"JSON file not found at: {_path}");

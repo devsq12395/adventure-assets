@@ -84,7 +84,7 @@ public class MM_Char : MonoBehaviour {
         }
     }
 
-    public void open_change_equip (){
+    public void open_change_equip (string _equipSlot){
         
     }
 
