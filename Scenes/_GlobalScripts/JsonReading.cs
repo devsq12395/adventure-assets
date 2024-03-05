@@ -13,7 +13,7 @@ public class JsonReading : MonoBehaviour {
     public void Awake () {
         I = this;
         List<string> _jsonNames = new List<string>(){
-            "items", "missions"
+            "items", "missions", "dialogs"
         };
         jsonStrings = new Dictionary<string, string>();
 

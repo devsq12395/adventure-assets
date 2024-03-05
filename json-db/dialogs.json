@@ -1,0 +1,17 @@
+{
+    "dialogs": {
+        "shopTest": {
+            "name": "Test's shop",
+            "desc": "TestDesc",
+            "portImg": "tommy",
+            "posX": 100,
+            "posY": 100,
+            
+            "input1": {"id": "shopTest01", "text": "Response!"},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "", "text": ""},
+            "inputTxtBox": {"id": "", "text": ""},
+        }
+    }
+}

@@ -40,7 +40,10 @@ public class MM_Map : MonoBehaviour {
         go.SetActive (false);
     }
 
-    public void select_node (string _missionID){
-        MM_Mission.I.show (_missionID);
+    public void select_node (string _type, string _val){
+        switch (_type) {
+            case "mission": MM_Mission.I.show (_val); break;
+            case "dialog": MMCont_Dialog.I.create_dialog (_val); break;
+        }
     }
 }

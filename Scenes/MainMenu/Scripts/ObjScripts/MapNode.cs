@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissionNode : MonoBehaviour {
+public class MapNode : MonoBehaviour {
 
-	public string missionID;
+	public string type, val;
 
 	public void on_click (){
-		MM_Mission.I.show (missionID);
+		MM_Map.I.select_node (type, val);
 	}
 }
