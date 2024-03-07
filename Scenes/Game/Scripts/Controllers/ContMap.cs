@@ -28,6 +28,6 @@ public class ContMap : MonoBehaviour {
 
     public void change_map (string _map){
         PlayerPrefs.SetString ("map", _map);
-        Game.I.change_scene ("game");
+        Transition_Game.I.change_state ("toNextMap");
     }
 }

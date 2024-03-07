@@ -19,12 +19,17 @@ public class ContObj : MonoBehaviour {
     }
 
     // Create
+    private void on_create_set_obj_stats (InGameObject _comp){
+        if (_comp.tags.Contains ("hero")) _comp.mp = 0;
+    }
+
     public GameObject create_obj (string _name, Vector2 _pos, int _player) {
         GameObject _obj = DB_Objects.I.get_game_obj (_name);
         InGameObject _comp = _obj.GetComponent <InGameObject>();
 
         _obj.transform.position = _pos;
         _comp.owner = _player;
+        on_create_set_obj_stats (_comp);
         
         set_default_skills (_comp);
         setup_events (_comp);
@@ -45,6 +50,8 @@ public class ContObj : MonoBehaviour {
     
     // Update
     public void update_obj (InGameObject _obj){
+        if (Game.I.isPaused) return;
+
         _obj.curPos.x = _obj.gameObject.transform.position.x;
         _obj.curPos.y = _obj.gameObject.transform.position.y;
 
@@ -97,7 +104,7 @@ public class ContObj : MonoBehaviour {
     public void check_anim (InGameObject _obj) {
         if (!_obj.hasAnim) return;
         
-        // Running / Attack
+        // Running / At`ck
         if (_obj.anim.parameters.Any(param => param.name == "isRunning")) { // Check if "isRunning" animation exists in the object
             _obj.isRunning = (((_obj.isWalk || _obj.moveToPos_isOn) && _obj.propellType == "") ? true : false);
             
@@ -149,6 +156,7 @@ public class ContObj : MonoBehaviour {
         - stop_obj
     */
     public void input_move (InGameObject _obj, Vector2 _value){
+        if (!_obj) return;
         if (_obj.isAtk || !DB_Conditions.I.can_move (_obj)) {
             _obj.isWalk = false;
             return; 

@@ -36,8 +36,9 @@ public class ContPlayer : MonoBehaviour {
     // Chars
     public void create_players () {
         string _cN = "";
-        for (int _ch = 1; _ch <= GameConstants.MAX_NUM_OF_CHARS; _ch++){
-            _cN = PlayerPrefs.GetString ("player_charName" + _ch.ToString ());
+        string[] _lineup = JsonSaving.I.load ("lineup").Split (',');
+        for (int _ch = 0; _ch < _lineup.Length; _ch++){
+            _cN = _lineup [_ch];
             if (_cN == "") continue;
             
             GameObject _go = ContObj.I.create_obj (_cN, ContMap.I.pointList ["playerLounge"], 1);
@@ -47,7 +48,7 @@ public class ContPlayer : MonoBehaviour {
             _p.isInvul = true;
             players.Add (_p);
             
-            MUI_CharPane.I.create_char (_ch - 1);
+            MUI_CharPane.I.create_char (_ch);
         }
         pla_curSel = PlayerPrefs.GetInt ("player_charSel");
         player = players [pla_curSel];
@@ -99,7 +100,6 @@ public class ContPlayer : MonoBehaviour {
         items = new List<DB_Items.Item> ();
 
         for (var i = 0; i < GameConstants.INVENTORY_SLOTS; i++) {
-            Debug.Log (PlayerPrefs.GetString ("Item" + (i+1).ToString ()));
             items.Add (DB_Items.I.get_item (PlayerPrefs.GetString ("Item" + (i+1).ToString ())));
         }
     }

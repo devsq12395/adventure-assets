@@ -27,7 +27,7 @@
 
     "chars": {
         "tommy": {
-            "level": 40,
+            "level": 1,
             "equip": {
                 "weapon": "",
                 "armor": "",
@@ -44,7 +44,7 @@
             }
         },
         "anastasia": {
-            "level": 40,
+            "level": 1,
             "equip": {
                 "weapon": "",
                 "armor": "",
@@ -61,7 +61,7 @@
             }
         },
         "seraphine": {
-            "level": 40,
+            "level": 1,
             "equip": {
                 "weapon": "",
                 "armor": "",
@@ -78,7 +78,7 @@
             }
         },
         "miguel": {
-            "level": 40,
+            "level": 1,
             "equip": {
                 "weapon": "",
                 "armor": "",
@@ -95,7 +95,7 @@
             }
         },
         "anthony": {
-            "level": 40,
+            "level": 1,
             "equip": {
                 "weapon": "",
                 "armor": "",

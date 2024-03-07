@@ -13,7 +13,7 @@ public class JsonReading : MonoBehaviour {
     public void Awake () {
         I = this;
         List<string> _jsonNames = new List<string>(){
-            "items", "missions", "dialogs"
+            "items", "missions", "dialogs", "strings"
         };
         jsonStrings = new Dictionary<string, string>();
 
@@ -62,5 +62,9 @@ public class JsonReading : MonoBehaviour {
             Debug.LogError ($"JSON does not exist: {_jsonName}");
             return null;
         }
+    }
+
+    public string get_str (string _key){
+        return read ("strings", $"strings.{_key}");
     }
 }

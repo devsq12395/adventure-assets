@@ -3,56 +3,62 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class Transition_Game : MonoBehaviour {
     public static Transition_Game I;
-	public void Awake(){ I = this; }
+    void Awake(){I = this;}
 
     public GameObject curtainGo;
     public RectTransform curtainRect;
 
-    private string state;
-    private float speed = 1000f;
+    private string state; // gameStart, toMenu, toNextMap
+
+    public float targetX;
 
     void Start() {
-        curtainGo.SetActive (true);
-        state = "gameStart";
+        curtainGo.SetActive(true);
+        change_state("gameStart", 0, curtainRect.anchoredPosition.y);
     }
 
-    void Update() {
-        switch (state){
+    public void change_state(string _state, float _curtainPosX = 0, float _curtainPosY = 0) {
+        curtainGo.SetActive(true);
+
+        Vector2 _curtainPos;
+        switch (_state) {
             case "gameStart":
-                curtainRect.anchoredPosition += Vector2.right * speed * Time.deltaTime;
-
-                if (curtainRect.anchoredPosition.x - curtainRect.rect.width / 2 > Screen.width) {
-                    state = "";
-                }
+                _curtainPos = new Vector2(0, curtainRect.anchoredPosition.y);
+                targetX = Screen.width + curtainRect.rect.width / 2;
                 break;
-            case "gameEnd":
-                curtainRect.anchoredPosition += Vector2.right * speed * Time.deltaTime;
-
-                if (curtainRect.anchoredPosition.x - curtainRect.rect.width / 2 > 0) {
-                    change_scene ("game");
-                }
+            default:
+                _curtainPos = new Vector2(-Screen.width - curtainRect.rect.width / 2, curtainRect.anchoredPosition.y);
+                targetX = 0;
                 break;
         }
+
+        curtainRect.anchoredPosition = _curtainPos;
+        state = _state;
+        move_curtain ();
     }
 
-    // Transition to a new scene
-    public void start_transition_to_scene (string _scene){
-        switch (_scene) {
-            case "game":
-                state = "gameEnd";
+    private void move_curtain() {
+        float speed = 1f;
+
+        curtainRect.DOAnchorPosX(targetX, speed).OnComplete(() => curtain_move_end());
+    }
+
+    private void curtain_move_end() {
+        ContPlayer.I.save_items();
+
+        switch (state) {
+            case "gameStart":
+                curtainGo.SetActive(false);
                 break;
-        }
-    }
-
-    public void change_scene (string _scene){
-        ContPlayer.I.save_items ();
-
-        switch (_scene) {
-            case "game":
-
+            case "toMenu":
+                SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+                break;
+            case "toNextMap":
+                SceneManager.LoadScene("MainGame", LoadSceneMode.Single);
                 break;
         }
     }

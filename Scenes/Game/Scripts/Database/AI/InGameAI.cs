@@ -14,8 +14,6 @@ public class InGameAI : MonoBehaviour {
 
     public virtual void on_start (){
         inGameObj = gameObject.GetComponent <InGameObject> ();
-
-        Debug.Log ("asd");
     }
 
     public virtual void on_ready (){
@@ -23,6 +21,8 @@ public class InGameAI : MonoBehaviour {
     }
 
     void Update (){
+        if (Game.I.isPaused) return;
+
         if (!isStart) {
             on_start ();
             isStart = true;

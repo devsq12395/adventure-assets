@@ -19,7 +19,11 @@ public class ContDamage : MonoBehaviour {
         post_dam_events (_atk, _def, _dam);
 
         if (_def.hp <= 0) {
-            kill (_def);
+            bool _isKill = before_kill_events (_atk, _def);
+            if (_isKill) {
+                kill (_def);
+                after_kill_events ();
+            }
         }
     }
     
@@ -41,12 +45,29 @@ public class ContDamage : MonoBehaviour {
         if (_def.mp <= 0) _def.mp = 0;
     }
 
+    public void gain_hp (InGameObject _def, int _healOrig, List<string> _tags) {
+        if (!DB_Conditions.I.dam_condition (null, _def)) return;
+        
+        int _heal = _healOrig;
+
+        _def.hp += _heal;
+        if (_def.hp > _def.hpMax) _def.hp = _def.hpMax;
+    }
+
+    public void gain_mp (InGameObject _def, int _mc) {
+        _def.mp += _mc;
+        if (_def.mp > _def.mpMax) _def.mp = _def.mpMax;
+    }
+
     public void kill (InGameObject _def){
         ContBuffs.I.remove_all_buffs (_def);
         ContObj.I.evt_on_death (_def);
         Destroy (_def.gameObject);
     }
 
+    /*
+        EVENTS
+    */
     private void post_dam_events (InGameObject _atk, InGameObject _def, int _dam) {
         // Invul if player
         if (_def == ContPlayer.I.player) {
@@ -75,5 +96,54 @@ public class ContDamage : MonoBehaviour {
         }
         
         return _dam;
+    }
+
+    private bool before_kill_events (InGameObject _atk, InGameObject _def){
+        bool _isKill = true;
+        
+
+        // Codes that require an attacker goes here
+        if (_atk != null) {
+            
+        }
+
+        if (_def.tags.Contains ("hero") && _def.owner == 1) if (check_game_over ()) _isKill = false;
+
+        return _isKill;
+    }
+
+    private void after_kill_events (){
+        List<InGameObject> pList = ContPlayer.I.players;
+
+        // Change char
+        for (int i = 0; i < pList.Count; i++) {
+            if (pList [i].hp > 0) {
+                ContPlayer.I.change_char (i);
+            }
+        }
+    }
+
+    /*
+        Event functions
+    */
+    private bool check_game_over (){
+        List<InGameObject> pList = ContPlayer.I.players;
+
+        // Check game over
+        bool _isGameOver = true;
+        for (int i = 0; i < pList.Count; i++) {
+            if (pList [i].hp > 0) {
+                _isGameOver = false;
+                break;
+            }
+        }
+        if (_isGameOver) {
+            GameUI_GameOver.I.show (
+                JsonReading.I.get_str ("UI-in-game.mission-failed"),
+                JsonReading.I.get_str ("UI-in-game.all-chars-dead")
+            );
+        }
+
+        return _isGameOver;
     }
 }

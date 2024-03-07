@@ -7,22 +7,11 @@ public class Game : MonoBehaviour {
     public static Game I;
 	public void Awake(){ I = this; }
     
-    public bool gameReady = false;
+    public bool gameReady = false, isPaused = false;
 
     void Start() {
         // PlayerPrefs for testing
-        PlayerPrefs.SetString ("map", "testMap");
-        PlayerPrefs.SetString ("player_charName1", "seraphine");
-        PlayerPrefs.SetString ("player_charName2", "anastasia");
-        PlayerPrefs.SetString ("player_charName3", "");
-        PlayerPrefs.SetString ("player_charName4", "");
         PlayerPrefs.SetInt ("player_charSel", 0);
-        for (int h = 1; h <= 4; h++) {
-            PlayerPrefs.SetString ("player_charName" + h.ToString () + "_wpn", "test sword");
-            PlayerPrefs.SetString ("player_charName" + h.ToString () + "_armr", "");
-            PlayerPrefs.SetString ("player_charName" + h.ToString () + "_acc1", "");
-            PlayerPrefs.SetString ("player_charName" + h.ToString () + "_acc2", "");
-        }
 
         PlayerPrefs.SetString ("Item1", "sample1");
         PlayerPrefs.SetInt ("Item1_Stack", 5);
@@ -42,7 +31,7 @@ public class Game : MonoBehaviour {
     }
 
     void Update() {
-        if (!gameReady) return;
+        if (!gameReady || isPaused) return;
         
         ContPlayer.I.update ();
         
@@ -50,13 +39,16 @@ public class Game : MonoBehaviour {
         MUI_CharPane.I.update ();
     }
 
+    public void pause_game (){
+        isPaused = true;
+    }
+
+    public void resume_game (){
+        isPaused = false;
+    }
+
     // Accesibility
     public GameObject get_player_obj (){
         return ContPlayer.I.player.gameObject;
-    }
-
-    // Scenes
-    public void change_scene (string _scene){
-        Transition_Game.I.change_scene (_scene);
     }
 }

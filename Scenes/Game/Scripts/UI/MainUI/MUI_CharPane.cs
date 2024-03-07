@@ -43,7 +43,7 @@ public class MUI_CharPane : MonoBehaviour
         GameObject _newCharUI = Instantiate(goUI, goCanvas.transform);
         RectTransform _transform = _newCharUI.GetComponent<RectTransform>();
 
-        _transform.anchoredPosition = new Vector2(-110f - 100f * chars.Count, -118f);
+        _transform.anchoredPosition = new Vector2(-410f + 100f * chars.Count, -118f);
 
         Image portImage = _newCharUI.transform.Find("Port").GetComponent<Image>();
         Image hpBarImage = _newCharUI.transform.Find("HPBar").transform.Find("BarValue_HP").GetComponent<Image>();
