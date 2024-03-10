@@ -55,10 +55,10 @@ public class Transition_Game : MonoBehaviour {
                 curtainGo.SetActive(false);
                 break;
             case "toMenu":
-                SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+                MasterScene.I.change_main_scene ("MainMenu");
                 break;
             case "toNextMap":
-                SceneManager.LoadScene("MainGame", LoadSceneMode.Single);
+                MasterScene.I.change_main_scene ("Game");
                 break;
         }
     }

@@ -9,6 +9,8 @@ public class GameUI_InGameTxt: MonoBehaviour{
     
     public static GameUI_InGameTxt I;
 	public void Awake(){ I = this; }
+
+    public GameObject goCanvas;
     
     public struct InGameTxt {
         public GameObject go;
@@ -48,6 +50,7 @@ public class GameUI_InGameTxt: MonoBehaviour{
         
         GameObject _go = DB_Objects.I.get_game_obj ("damTxt");
         _go.transform.position = _pos;
+        _go.transform.SetParent (goCanvas.transform);
         
         Canvas _canvas = _go.transform.Find ("Canvas").GetComponent <Canvas> ();
         _canvas.worldCamera = Camera.main;
