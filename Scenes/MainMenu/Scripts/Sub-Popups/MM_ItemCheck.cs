@@ -11,7 +11,7 @@ public class MM_ItemCheck : MonoBehaviour {
     public GameObject go, goBtnsInter, goBtnsNonInter;
     public TextMeshProUGUI tName, tDesc;
 
-    private string isEquip;
+    private string isEquip, mode;
 
     MM_Inventory.Item item;
 
@@ -30,5 +30,18 @@ public class MM_ItemCheck : MonoBehaviour {
 
     public void hide (){
         go.SetActive (false);
+    }
+
+    public void action (){
+        MiniDialog _dialog;
+
+        switch (mode) {
+            case "buy": 
+                
+                break;
+            case "sell": 
+                
+                break;
+        }
     }
 }

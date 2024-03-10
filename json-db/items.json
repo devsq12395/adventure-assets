@@ -3,7 +3,7 @@
         "sword": {
             "name-ui": "Sword",
             "desc": "test desc",
-            ""
+            "cost": "100",
 
             "stackable": false,
             "stack-max": 1,
@@ -15,6 +15,7 @@
         "plank": {
             "name-ui": "Wooden Plank",
             "desc": "test desc",
+            "cost": "100",
 
             "stackable": true,
             "stack-max": 9999,

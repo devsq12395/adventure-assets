@@ -10,7 +10,23 @@ public class MMCont_Dialog : MonoBehaviour {
 
 	public GameObject goDialog, goCanvas;
 
-	public void create_dialog (string _dialogID){
+	/*
+		This is the database for when an input UI has been interacted
+		The functions will be at the bottom of this script
+	*/
+	public void input (MiniDialog _dialog, string _id){
+		switch (_id) {
+			case "input_plus1": btn_plus1 (); break;
+			default:
+				Destroy (_dialog.go);
+				break;
+		}
+	}
+
+	/*
+		BUTTONS will be set here:
+	*/
+	public MiniDialog create_dialog (string _dialogID){
 		GameObject _new = Instantiate (goDialog, goCanvas.transform);
 		MiniDialog _newDialog = _new.GetComponent<MiniDialog>();
 		string _json = $"dialogs.{_dialogID}";
@@ -27,28 +43,54 @@ public class MMCont_Dialog : MonoBehaviour {
 
 		foreach (GameObject _input in _newDialog.inputs) {
 			MiniDialog_Input _script = _input.GetComponent<MiniDialog_Input>();
-			string 	_jsonIn = $"{_json}.{_script.inputName}",
-					_id = JsonReading.I.read ("dialogs", $"{_jsonIn}.id");
 
-			if (_id == "") {
-				_input.SetActive (false);
-			} else {
-				_input.SetActive (true);
-
-				_script.ID = _id;
-				if (_script.inputName != "inputTxtBox") {
-					_script.txt.text = JsonReading.I.read ("dialogs", $"{_jsonIn}.text");
-				}
+			switch (_script.inputName) {
+				default:
+					setup_input_default (_input, _script, _json);
+					break;
+				case "input_plus1":case "input_plus10":case "input_minus1":case "input_minus10":
+					setup_input_scaler (_input, _script, _json);
+					break;
 			}
+		}
+
+		return _newDialog;
+	}
+
+	private void setup_input_default (GameObject _input, MiniDialog_Input _script, string _json){
+		string 	_jsonIn = $"{_json}.{_script.inputName}",
+				_id = JsonReading.I.read ("dialogs", $"{_jsonIn}.id");
+
+		_script.txt.text = JsonReading.I.read ("dialogs", $"{_jsonIn}.text");
+
+		if (_id == "") {
+			_input.SetActive (false);
+		} else {
+			_input.SetActive (true);
+			_script.ID = _id;
 		}
 	}
 
-	public void input (MiniDialog _dialog, string _id){
-		switch (_id) {
+	private void setup_input_scaler (GameObject _input, MiniDialog_Input _script, string _json){
+		string 	_jsonIn = $"{_json}.{_script.inputName}",
+				_isEnable = JsonReading.I.read ("dialogs", $"{_jsonIn}.inputScaler_enable");
 
-			default:
-				Destroy (_dialog.go);
-				break;
+		_input.SetActive (_isEnable == "1");
+	}
+
+	/*
+		Functions for the input UI goes here
+	*/
+	private void btn_plus1 (){
+
+	}
+
+	/*
+		Special Dialog texts
+	*/
+	public void set_special_texts (MiniDialog _dialog, string _dialogID){
+		switch (_dialogID) {
+			
 		}
 	}
 }

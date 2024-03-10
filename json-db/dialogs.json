@@ -12,6 +12,8 @@
             "input3": {"id": "", "text": ""},
             "input4": {"id": "", "text": ""},
             "inputTxtBox": {"id": "", "text": ""},
+
+            "inputScaler_enable": "0",
         }
     }
 }

@@ -12,7 +12,7 @@ public class MM_Inventory : MonoBehaviour {
     public GameObject go, goItemObj, goCanvas;
     public TextMeshProUGUI tPage;
 
-    [Header("List of Modes: inventory, equip")]
+    [Header("List of Modes: inventory, equip, sell, buy")]
     public string mode;
 
     public int MAX_ITEMS_IN_PAGE;
