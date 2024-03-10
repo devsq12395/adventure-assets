@@ -7,21 +7,12 @@ public class SoundHandler : MonoBehaviour {
     public static SoundHandler I;
     public void Awake(){ I = this; }
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     public AudioClip yesPing, noPing;
     public AudioClip bgmMenu, bgmGame;
 
-    public void change_audio_source (){
-        Camera mainCamera = Camera.main;
-        if (mainCamera != null) {
-            audioSource = mainCamera.GetComponent<AudioSource>();
-        } else {
-            Debug.LogError("No camera found with an AudioSource component!");
-        }
-    }
-
-    public void play_sound (string _sound) {
+    public void play_sfx (string _sound) {
         switch (_sound) {
             case "yes-ping": audioSource.PlayOneShot(yesPing); break;
             case "no-ping": audioSource.PlayOneShot(noPing); break;

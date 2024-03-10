@@ -10,9 +10,13 @@ public class MM_Inventory : MonoBehaviour {
 	public void Awake(){ I = this; }
 
     public GameObject go, goItemObj, goCanvas;
+    public TextMeshProUGUI tPage;
 
     [Header("List of Modes: inventory, equip")]
     public string mode;
+
+    public int MAX_ITEMS_IN_PAGE;
+    public int page, pageMax;
 
     public struct Item {
         public string name; public int stack;
@@ -33,6 +37,8 @@ public class MM_Inventory : MonoBehaviour {
     public List<ItemUI> itemUIs;
 
     public void setup (){
+        MAX_ITEMS_IN_PAGE = 12;
+
         go.SetActive (true);
 
         go.SetActive (false);
@@ -42,6 +48,7 @@ public class MM_Inventory : MonoBehaviour {
         go.SetActive (true);
         mode = _mode;
         setup_items ();
+        refresh_item_btns ();
     }
 
     public void hide (){
@@ -60,6 +67,48 @@ public class MM_Inventory : MonoBehaviour {
             _itemExtracted = _itemsStr [_i].Split ('%');
             create_item (_itemExtracted [1], _itemExtracted [0]);
         }
+
+        page = 0;
+        pageMax = (int)((_itemsStr.Length - 1) / 12);
+        tPage.text = $"{page + 1}/{pageMax + 1}";
+    }
+
+    private void refresh_item_btns (){
+        int _itemIndex = page * MAX_ITEMS_IN_PAGE;
+
+        foreach (ItemUI _item in itemUIs) {
+            Destroy (_item.go);
+        }
+        itemUIs.Clear ();
+
+        for (int i = 0; i < MAX_ITEMS_IN_PAGE; i++) {
+            if (_itemIndex + i > items.Count) return;
+
+            // Create the UI
+            GameObject _newItemUI = Instantiate(goItemObj, goCanvas.transform);
+            RectTransform _transform = _newItemUI.GetComponent<RectTransform>();
+
+            int _column = i % 2,
+                _row = i / 2;
+
+            _transform.anchoredPosition = new Vector2(-220 + _column * 440, -27 + _row * -58);
+
+            TextMeshProUGUI _tName = _newItemUI.transform.Find("Name").GetComponent<TextMeshProUGUI>(),
+                            _tStack = _newItemUI.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
+            _tName.text = items [_itemIndex].name;
+            _tStack.text = items [_itemIndex].stack.ToString ();
+
+            ItemUI _newUI = new ItemUI(_newItemUI, _tName, _tStack);
+            itemUIs.Add(_newUI);
+        }
+    }
+
+    public void btn_prev () {change_page (-1);}
+    public void btn_next () {change_page (1);}
+    private void change_page (int _inc){
+        page = Mathf.Clamp(page + _inc, 0, pageMax);
+        tPage.text = $"{page + 1}/{pageMax + 1}";
+        refresh_item_btns ();
     }
 
     public void save_all_items_to_json (){
@@ -76,24 +125,6 @@ public class MM_Inventory : MonoBehaviour {
         // Create "Item" object
         Item _new = new Item (_item, int.Parse (_stack));
         items.Add (_new);
-
-        // Create the UI
-        GameObject _newItemUI = Instantiate(goItemObj, goCanvas.transform);
-        RectTransform _transform = _newItemUI.GetComponent<RectTransform>();
-
-        int _index = items.Count - 1,
-            _column = _index % 2,
-            _row = _index / 2;
-
-        _transform.anchoredPosition = new Vector2(-220 + _column * 440, -27 + _row * -58);
-
-        TextMeshProUGUI _tName = _newItemUI.transform.Find("Name").GetComponent<TextMeshProUGUI>(),
-                        _tStack = _newItemUI.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
-        _tName.text = _new.name;
-        _tStack.text = _new.stack.ToString ();
-
-        ItemUI _newUI = new ItemUI(_newItemUI, _tName, _tStack);
-        itemUIs.Add(_newUI);
     }
 
     public void add_item (string _item, int _stack){
@@ -101,12 +132,14 @@ public class MM_Inventory : MonoBehaviour {
         items.Add (_new);
 
         save_all_items_to_json ();
+        refresh_item_btns ();
     }
 
     public void remove_item (int _index){
         items.RemoveAt (_index);
 
         save_all_items_to_json ();
+        refresh_item_btns ();
     }
 
     public void check_item (int _index) {

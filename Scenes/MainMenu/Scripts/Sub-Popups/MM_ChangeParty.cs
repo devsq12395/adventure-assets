@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class MM_ChangeParty : MonoBehaviour {
     public static MM_ChangeParty I;
@@ -30,6 +31,8 @@ public class MM_ChangeParty : MonoBehaviour {
 
     public List<string> strList_lineup, strList_heroPool;
 
+    private Sequence twn_btnLineup_color;
+
     public void setup (){
         mainLineup = new List<CharBtn> ();
         heroPool = new List<CharBtn> ();
@@ -47,6 +50,8 @@ public class MM_ChangeParty : MonoBehaviour {
         }
 
         go.SetActive (false); isShow = false;
+
+        lineupSel = -1;
     }
 
     private CharBtn get_char_btn (GameObject _go, bool _isLineup){
@@ -76,6 +81,8 @@ public class MM_ChangeParty : MonoBehaviour {
         if (!isShow) return;
 
         setup_buttons ();
+        change_hero_pool_btns_pool_color (true);
+        lineupSel = -1;
     }
 
     private void setup_buttons (){
@@ -136,11 +143,22 @@ public class MM_ChangeParty : MonoBehaviour {
     }
 
     public void btn_lineup (int _ind){
+        if (lineupSel != -1) {
+            stop_btn_color_tween (go_mainLineup [lineupSel].GetComponent<Button>(), twn_btnLineup_color);
+        }
         lineupSel = _ind;
+
+        change_all_btns_color (go_mainLineup, Color.gray);
+        go_mainLineup [lineupSel].GetComponent<Button>().image.color = Color.white;
+
+        twn_btnLineup_color = start_btn_color_tween (go_mainLineup [_ind].GetComponent<Button>());
+
+        change_hero_pool_btns_pool_color (false);
     }
 
     public void btn_pool (int _ind){
         if (strList_lineup.Contains (strList_heroPool [_ind])) {
+            SoundHandler.I.play_sfx ("no-ping");
             return;
         }
 
@@ -153,10 +171,48 @@ public class MM_ChangeParty : MonoBehaviour {
             MM_Strings.I.get_str ($"{_name}-name"),
             $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
         );
+
+        stop_btn_color_tween (go_mainLineup [lineupSel].GetComponent<Button>(), twn_btnLineup_color);
+
+        change_all_btns_color (go_mainLineup, Color.white);
+        change_hero_pool_btns_pool_color (true);
+        lineupSel = -1;
+
+        SoundHandler.I.play_sfx ("yes-ping");
     }
 
     public void btn_return (){
         JsonSaving.I.save ("lineup", string.Join(",", strList_lineup)); 
+        if (lineupSel != -1) {
+            stop_btn_color_tween (go_mainLineup [lineupSel].GetComponent<Button>(), twn_btnLineup_color);
+            lineupSel = -1;
+        }
         toggle_show (false);
+    }
+
+    private Sequence start_btn_color_tween (Button _btn) {
+        float _dur = 0.25f;
+        Sequence _tween = DOTween.Sequence ();
+        _tween.Append (_btn.image.DOColor (Color.white, _dur))
+            .Append (_btn.image.DOColor (new Color (1f, 1f, 0.4f), _dur));
+        _tween.SetLoops (-1, LoopType.Yoyo);
+        return _tween;
+    }
+
+    private void stop_btn_color_tween (Button _btn, Sequence _tween) {
+        _btn.image.color = Color.white;
+        _tween.Kill ();
+    }
+
+    private void change_all_btns_color (List<GameObject> _btns, Color _color){
+        foreach (GameObject _go in _btns) {
+            _go.GetComponent <Button> ().image.color = _color;
+        }
+    }
+
+    private void change_hero_pool_btns_pool_color (bool _grayAll){
+        for (int i = 0; i < strList_heroPool.Count; i++) {
+            go_heroPool[i].GetComponent<Button>().image.color = ((strList_lineup.Contains (strList_heroPool [i]) || _grayAll) ? Color.gray : Color.white);
+        }
     }
 }
