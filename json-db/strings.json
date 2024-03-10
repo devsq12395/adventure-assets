@@ -34,6 +34,11 @@
         "newhaven-name": "New Haven",
         "newhaven-welcome": "Welcome to New Haven!",
 
+        "UI-main-menu": {
+            "equip": "Equip",
+            "buy": "Buy",
+            "sell": "Sell",
+        },
         "UI-in-game": {
             "mission-failed": "MISSION FAILED!",
             "all-chars-dead": "Your team is wiped out!"

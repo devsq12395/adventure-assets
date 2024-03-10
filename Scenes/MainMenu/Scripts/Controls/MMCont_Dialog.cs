@@ -16,7 +16,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	*/
 	public void input (MiniDialog _dialog, string _id){
 		switch (_id) {
-			case "input_plus1": btn_plus1 (); break;
+			case "shopTest01": btn_shopTest01 (); break;
 			default:
 				Destroy (_dialog.go);
 				break;
@@ -81,8 +81,8 @@ public class MMCont_Dialog : MonoBehaviour {
 	/*
 		Functions for the input UI goes here
 	*/
-	private void btn_plus1 (){
-
+	private void btn_shopTest01 (){
+		
 	}
 
 	/*

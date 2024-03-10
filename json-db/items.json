@@ -1,4 +1,7 @@
 {
+    "shop-inventory": {
+        "test-shop": ["sword", "plank", "katna"]
+    },
     "items": {
         "sword": {
             "name-ui": "Sword",
@@ -22,7 +25,19 @@
             "tags": [],
             
             "use":"",
+            "equip": ""
+        },
+        "katna": {
+            "name-ui": "Katana",
+            "desc": "test desc",
+            "cost": "100",
+
+            "stackable": false,
+            "stack-max": 1,
+            "tags": [],
+
+            "use":"",
             "equip": "weapon"
-        }
+        },
     }
 }

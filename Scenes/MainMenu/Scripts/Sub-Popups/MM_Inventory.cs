@@ -44,21 +44,29 @@ public class MM_Inventory : MonoBehaviour {
         go.SetActive (false);
     }
 
-    public void show (string _mode){
+    public void btn_show (){show ("inventory", "");}
+    public void show (string _mode, string _itemList){
         go.SetActive (true);
         mode = _mode;
-        setup_items ();
+        setup_items (_itemList);
         refresh_item_btns ();
     }
 
     public void hide (){
+        foreach (ItemUI _item in itemUIs) {
+            Destroy (_item.go);
+        }
+        itemUIs.Clear ();
+
         go.SetActive (false);
     }
 
-    private void setup_items (){
+    private void setup_items (string _itemList){
         items = new List<Item> ();
-        string[]    _itemsStr = JsonSaving.I.load ("items").Split ('^'),
-                    _itemExtracted;
+        string[]    _itemsStr = (_itemList == "") ? 
+            JsonSaving.I.load ("items").Split ('^') : 
+            JsonReading.I.read ("items", $"shop-inventory.{_itemList}").Split (',');
+        string[] _itemExtracted;
         Item _new;
 
         itemUIs = new List<ItemUI> ();
@@ -74,7 +82,7 @@ public class MM_Inventory : MonoBehaviour {
     }
 
     private void refresh_item_btns (){
-        int _itemIndex = page * MAX_ITEMS_IN_PAGE;
+        int _itemPage = page * MAX_ITEMS_IN_PAGE;
 
         foreach (ItemUI _item in itemUIs) {
             Destroy (_item.go);
@@ -82,7 +90,7 @@ public class MM_Inventory : MonoBehaviour {
         itemUIs.Clear ();
 
         for (int i = 0; i < MAX_ITEMS_IN_PAGE; i++) {
-            if (_itemIndex + i > items.Count) return;
+            if (_itemPage + i >= items.Count) return;
 
             // Create the UI
             GameObject _newItemUI = Instantiate(goItemObj, goCanvas.transform);
@@ -95,8 +103,8 @@ public class MM_Inventory : MonoBehaviour {
 
             TextMeshProUGUI _tName = _newItemUI.transform.Find("Name").GetComponent<TextMeshProUGUI>(),
                             _tStack = _newItemUI.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
-            _tName.text = items [_itemIndex].name;
-            _tStack.text = items [_itemIndex].stack.ToString ();
+            _tName.text = JsonReading.I.read ("items", $"items.{items [_itemPage + i].name}.name-ui");
+            _tStack.text = items [_itemPage + i].stack.ToString ();
 
             ItemUI _newUI = new ItemUI(_newItemUI, _tName, _tStack);
             itemUIs.Add(_newUI);
@@ -142,8 +150,8 @@ public class MM_Inventory : MonoBehaviour {
         refresh_item_btns ();
     }
 
-    public void check_item (int _index) {
-        MM_ItemCheck.I.show (items [_index]);
+    public void check_item (int _btnIndex) {
+        MM_ItemCheck.I.show (items [page * MAX_ITEMS_IN_PAGE + _btnIndex], mode);
     }
 
 }

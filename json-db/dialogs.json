@@ -7,8 +7,8 @@
             "posX": 100,
             "posY": 100,
             
-            "input1": {"id": "shopTest01", "text": "Response!"},
-            "input2": {"id": "", "text": ""},
+            "input1": {"id": "shopTest01", "text": "What are you selling?"},
+            "input2": {"id": "shopCancel", "text": "Nevermind"},
             "input3": {"id": "", "text": ""},
             "input4": {"id": "", "text": ""},
             "inputTxtBox": {"id": "", "text": ""},

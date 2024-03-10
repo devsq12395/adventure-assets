@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour {
         MM_Area.I.setup ();
         MM_Party.I.setup ();
 
+        MM_ItemCheck.I.setup ();
         MM_ChangeParty.I.setup ();
         MM_Inventory.I.setup ();
         MM_Char.I.setup ();
