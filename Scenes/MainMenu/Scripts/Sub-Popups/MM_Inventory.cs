@@ -72,8 +72,14 @@ public class MM_Inventory : MonoBehaviour {
         itemUIs = new List<ItemUI> ();
 
         for (int _i = 0; _i < _itemsStr.Length; _i++) {
-            _itemExtracted = _itemsStr [_i].Split ('%');
-            create_item (_itemExtracted [1], _itemExtracted [0]);
+            if (_itemList == "") {
+                // Player's inventory
+                _itemExtracted = _itemsStr [_i].Split ('%');
+                create_item (_itemExtracted [1], _itemExtracted [0]);
+            } else {
+                // Other item lists
+                create_item (_itemsStr [_i], "0");
+            }
         }
 
         page = 0;
@@ -105,6 +111,10 @@ public class MM_Inventory : MonoBehaviour {
                             _tStack = _newItemUI.transform.Find("Stack").GetComponent<TextMeshProUGUI>();
             _tName.text = JsonReading.I.read ("items", $"items.{items [_itemPage + i].name}.name-ui");
             _tStack.text = items [_itemPage + i].stack.ToString ();
+            if (_tStack.text == "0") _tStack.text = "";
+
+            ItemCheck _comp = _newItemUI.GetComponent<ItemCheck> ();
+            _comp.itemIndex = i;
 
             ItemUI _newUI = new ItemUI(_newItemUI, _tName, _tStack);
             itemUIs.Add(_newUI);
@@ -131,6 +141,7 @@ public class MM_Inventory : MonoBehaviour {
 
     private void create_item (string _item, string _stack){ 
         // Create "Item" object
+        int _stackInt;
         Item _new = new Item (_item, int.Parse (_stack));
         items.Add (_new);
     }

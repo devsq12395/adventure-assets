@@ -16,7 +16,11 @@ public class MMCont_Dialog : MonoBehaviour {
 	*/
 	public void input (MiniDialog _dialog, string _id){
 		switch (_id) {
+			// Test Shop
 			case "shopTest01": btn_shopTest01 (); break;
+			case "shopTest02": btn_shopTest02 (); break;
+			
+			// Default
 			default:
 				Destroy (_dialog.go);
 				break;
@@ -43,46 +47,32 @@ public class MMCont_Dialog : MonoBehaviour {
 
 		foreach (GameObject _input in _newDialog.inputs) {
 			MiniDialog_Input _script = _input.GetComponent<MiniDialog_Input>();
+			
+			string 	_jsonIn = $"{_json}.{_script.inputName}",
+				_id = JsonReading.I.read ("dialogs", $"{_jsonIn}.id");
 
-			switch (_script.inputName) {
-				default:
-					setup_input_default (_input, _script, _json);
-					break;
-				case "input_plus1":case "input_plus10":case "input_minus1":case "input_minus10":
-					setup_input_scaler (_input, _script, _json);
-					break;
+			_script.txt.text = JsonReading.I.read ("dialogs", $"{_jsonIn}.text");
+
+			if (_id == "") {
+				_input.SetActive (false);
+			} else {
+				_input.SetActive (true);
+				_script.ID = _id;
 			}
 		}
 
 		return _newDialog;
 	}
 
-	private void setup_input_default (GameObject _input, MiniDialog_Input _script, string _json){
-		string 	_jsonIn = $"{_json}.{_script.inputName}",
-				_id = JsonReading.I.read ("dialogs", $"{_jsonIn}.id");
-
-		_script.txt.text = JsonReading.I.read ("dialogs", $"{_jsonIn}.text");
-
-		if (_id == "") {
-			_input.SetActive (false);
-		} else {
-			_input.SetActive (true);
-			_script.ID = _id;
-		}
-	}
-
-	private void setup_input_scaler (GameObject _input, MiniDialog_Input _script, string _json){
-		string 	_jsonIn = $"{_json}.{_script.inputName}",
-				_isEnable = JsonReading.I.read ("dialogs", $"{_jsonIn}.inputScaler_enable");
-
-		_input.SetActive (_isEnable == "1");
-	}
-
 	/*
 		Functions for the input UI goes here
 	*/
 	private void btn_shopTest01 (){
-		
+		MM_Inventory.I.show ("buy", "test-shop");
+	}
+
+	private void btn_shopTest02 (){
+		MM_Inventory.I.show ("sell", "");
 	}
 
 	/*

@@ -8,8 +8,8 @@
             "posY": 100,
             
             "input1": {"id": "shopTest01", "text": "What are you selling?"},
-            "input2": {"id": "shopCancel", "text": "Nevermind"},
-            "input3": {"id": "", "text": ""},
+            "input2": {"id": "shopTest02", "text": "I have some items to sell."},
+            "input3": {"id": "shopCancel", "text": "Nevermind"},
             "input4": {"id": "", "text": ""},
             "inputTxtBox": {"id": "", "text": ""},
 

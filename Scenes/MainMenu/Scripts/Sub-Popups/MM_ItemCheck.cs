@@ -15,7 +15,7 @@ public class MM_ItemCheck : MonoBehaviour {
 
     private string isEquip, mode;
 
-    MM_Inventory.Item item;
+    public MM_Inventory.Item item;
 
     public void setup (){
         go.SetActive (true);
@@ -62,11 +62,9 @@ public class MM_ItemCheck : MonoBehaviour {
         MiniDialog _dialog;
 
         switch (mode) {
-            case "buy": 
-                
-                break;
-            case "sell": 
-                
+            case "buy": case "sell": 
+                MM_BuyOrSell.I.show (mode, item);
+                hide ();
                 break;
         }
     }
