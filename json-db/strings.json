@@ -11,6 +11,21 @@
         "attack": "Attack",
         "skill": "Skill",
         "speed": "Speed",
+
+        "gold": "Gold",
+
+        "UI-main-menu": {
+            "equip": "Equip",
+            "buy": "Buy",
+            "sell": "Sell",
+
+            
+        },
+
+        "UI-in-game": {
+            "mission-failed": "MISSION FAILED!",
+            "all-chars-dead": "Your team is wiped out!"
+        },
         
         "tommy-name": "Tommy",
         "tommy-name-full": "Tommy Carter",
@@ -32,16 +47,6 @@
         "anthony-name-full": "Anthony",
 
         "newhaven-name": "New Haven",
-        "newhaven-welcome": "Welcome to New Haven!",
-
-        "UI-main-menu": {
-            "equip": "Equip",
-            "buy": "Buy",
-            "sell": "Sell",
-        },
-        "UI-in-game": {
-            "mission-failed": "MISSION FAILED!",
-            "all-chars-dead": "Your team is wiped out!"
-        }
+        "newhaven-welcome": "Welcome to New Haven!"
     }
 }

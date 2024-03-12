@@ -66,7 +66,7 @@ public class MM_Char : MonoBehaviour {
         foreach (string _equipStr in equipStrs) {
             string _item = JsonSaving.I.load ($"chars.{name}.equip.{_equipStr}");
 
-            MM_Inventory.Item _new = new MM_Inventory.Item (_item, 1);
+            MM_Inventory.Item _new = new MM_Inventory.Item (_item, 1, 0);
 
             GameObject _newItemUI_go = Instantiate(goItemObj, goCanvas.transform);
             RectTransform _transform = _newItemUI_go.GetComponent<RectTransform>();

@@ -8,7 +8,7 @@ public class MMCont_Dialog : MonoBehaviour {
     public static MMCont_Dialog I;
 	public void Awake(){ I = this; }
 
-	public GameObject goDialog, goCanvas;
+	public GameObject goDialog, goDialogMini, goCanvas;
 
 	/*
 		This is the database for when an input UI has been interacted
@@ -19,21 +19,27 @@ public class MMCont_Dialog : MonoBehaviour {
 			// Test Shop
 			case "shopTest01": btn_shopTest01 (); break;
 			case "shopTest02": btn_shopTest02 (); break;
+
+			case "back-to-inventory": btn_backToInventory (); break;
 			
 			// Default
 			default:
-				Destroy (_dialog.go);
+				
 				break;
 		}
+
+		Destroy (_dialog.go);
 	}
 
 	/*
 		BUTTONS will be set here:
 	*/
 	public MiniDialog create_dialog (string _dialogID){
-		GameObject _new = Instantiate (goDialog, goCanvas.transform);
-		MiniDialog _newDialog = _new.GetComponent<MiniDialog>();
 		string _json = $"dialogs.{_dialogID}";
+		bool _isMini = JsonReading.I.read ("dialogs", $"{_json}.isMini") == "1";
+
+		GameObject _new = Instantiate (_isMini ? goDialogMini : goDialog, goCanvas.transform);
+		MiniDialog _newDialog = _new.GetComponent<MiniDialog>();
 
 		_new.transform.localPosition = new Vector2 (
 			float.Parse (JsonReading.I.read ("dialogs", $"{_json}.posX")),
@@ -73,6 +79,10 @@ public class MMCont_Dialog : MonoBehaviour {
 
 	private void btn_shopTest02 (){
 		MM_Inventory.I.show ("sell", "");
+	}
+
+	private void btn_backToInventory (){
+		MM_BuyOrSell.I.hide ();
 	}
 
 	/*
