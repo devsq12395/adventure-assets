@@ -190,8 +190,10 @@ public class MM_Inventory : MonoBehaviour {
             _itemFromInv.stack += _stack;
             itemsMain [_itemFromInv.index] = _itemFromInv;
         } else {
-            Item _new = new Item (_item, _stack, itemsMain.Count);
-            itemsMain.Add (_new);
+            for (int i = 1; i <= _stack; i++) {
+                Item _new = new Item (_item, 1, itemsMain.Count);
+                itemsMain.Add (_new);
+            }
         }
 
         save_all_items_to_json ();

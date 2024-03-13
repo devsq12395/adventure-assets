@@ -11,7 +11,7 @@ public class MM_Char : MonoBehaviour {
 
     public GameObject go, goItemObj, goCanvas;
 
-    public TextMeshProUGUI cName, cLvl, cStats;
+    public TextMeshProUGUI cName, cDetails;
 
     public string name;
     public Dictionary<string, MM_Inventory.ItemUI> itemsUI;
@@ -48,14 +48,10 @@ public class MM_Char : MonoBehaviour {
     public void setup_char (string _name){
         name = _name;
 
-        cName.text = MM_Strings.I.get_str ($"{_name}-name");
-        cLvl.text = $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}";
-
-        string _strAllStats = "";
-        foreach (string _statStr in statStrs) {
-            _strAllStats += $"{MM_Strings.I.get_str (_statStr)}: {JsonSaving.I.load ($"chars.{_name}.stats.{_statStr}")}\n";
-        }
-        cStats.text = _strAllStats;
+        string  _cName = MM_Strings.I.get_str ($"{_name}-name"),
+                _cStats = string.Join("\n", statStrs.Select(_statStr => $"{MM_Strings.I.get_str(_statStr)}: {JsonSaving.I.load($"chars.{_name}.stats.{_statStr}")}"));
+        cName.text = _cName;
+        cDetails.text = _cStats;
 
         create_equip_items ();
     }
@@ -63,8 +59,9 @@ public class MM_Char : MonoBehaviour {
     public void create_equip_items (){
         itemsUI = new Dictionary<string, MM_Inventory.ItemUI> ();
 
-        foreach (string _equipStr in equipStrs) {
-            string _item = JsonSaving.I.load ($"chars.{name}.equip.{_equipStr}");
+        for (int i = 0; i < equipStrs.Length; i++) {
+            string  _equipStr = equipStrs [i],
+                    _item = JsonSaving.I.load ($"chars.{name}.equip.{_equipStr}");
 
             MM_Inventory.Item _new = new MM_Inventory.Item (_item, 1, 0);
 
@@ -78,7 +75,7 @@ public class MM_Char : MonoBehaviour {
             _tStack.text = "";
 
             MM_Inventory.ItemUI _newUI = new MM_Inventory.ItemUI(_newItemUI_go, _tName, _tStack);
-            // _transform.anchoredPosition = new Vector2(-220 + _column * 440, -27 + _row * -58);
+            _transform.anchoredPosition = new Vector2(66.2f, -33 - 42 * i);
 
             itemsUI.Add (_equipStr, _newUI);
         }
