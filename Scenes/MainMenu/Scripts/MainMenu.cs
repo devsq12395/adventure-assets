@@ -24,9 +24,6 @@ public class MainMenu : MonoBehaviour {
 
         MM_Map.I.setup ();
 
-        // Generate map
-        MM_Map.I.generate_map ();
-
         show_popup ("profile");
     }
 

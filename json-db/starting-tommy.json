@@ -1,10 +1,9 @@
 {
-    "version": "0.5",
-    "overwrite": "true",
+    "version": "0.6",
 
     "date": "jan-2225",
     "status": "newbie",
-    "area":"newhaven",
+    "area":"new-haven",
 
     "lineup": [
         "tommy", "", "", ""
@@ -15,7 +14,7 @@
     ],
 
     "gold": "200",
-    "items": "36%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword^1%sword",
+    "items": "1%crdRev^1%irnSwrd",
 
     "missionCur": "",
     "missionCurPool": [
@@ -25,10 +24,35 @@
     "missionMap": "",
     "missionLvl": "",
     
+    "areasUnlocked": [
+        "new-haven", "wooster-square", "rosas-diner"
+    ],
 
     "chars": {
         "tommy": {
             "level": 1,
+            "equipWeapon": "gun",
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            },
+            "stats": {
+                "hp": 8,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
+            }
+        },
+        "brad": {
+            "level": 1,
+            "equipWeapon": "sword",
             "equip": {
                 "weapon": "",
                 "armor": "",
@@ -39,9 +63,12 @@
             "stats": {
                 "hp": 10,
                 "mp": 10,
-                "attack": 1,
+                "attack": 3,
                 "skill": 1,
-                "speed": 1
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 15,
+                "crit-dam": 140,
             }
         },
         "anastasia": {
@@ -58,7 +85,10 @@
                 "mp": 10,
                 "attack": 1,
                 "skill": 1,
-                "speed": 1
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
             }
         },
         "seraphine": {
@@ -75,7 +105,10 @@
                 "mp": 10,
                 "attack": 1,
                 "skill": 1,
-                "speed": 1
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
             }
         },
         "miguel": {
@@ -92,7 +125,10 @@
                 "mp": 10,
                 "attack": 1,
                 "skill": 1,
-                "speed": 1
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
             }
         },
         "anthony": {
@@ -109,7 +145,10 @@
                 "mp": 10,
                 "attack": 1,
                 "skill": 1,
-                "speed": 1
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
             }
         }
     }

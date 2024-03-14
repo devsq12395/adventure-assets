@@ -1984,9 +1984,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 1107237542}
   mapNames:
-  - newhaven
+  - new-haven
+  - wooster-square
   mapObjs:
-  - {fileID: 1636403984618534305, guid: f26eaf33dad7e55079702a7f027a6775, type: 3}
+  - {fileID: 2637319581825162411, guid: 2fac45aec6c6c1db890f65c74a8381c7, type: 3}
+  - {fileID: 6902724973578469332, guid: b255e54e6bcf64b0fb5b02254089688b, type: 3}
   map: {fileID: 0}
   mapID: 
 --- !u!1 &409409464

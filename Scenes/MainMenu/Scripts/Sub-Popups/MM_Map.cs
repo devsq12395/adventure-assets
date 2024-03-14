@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,25 +19,32 @@ public class MM_Map : MonoBehaviour {
     public string mapID;
 
     public void setup (){
-        mapID = JsonSaving.I.load ("area");
-        
         maps = new Dictionary<string, GameObject>();
         for (int i = 0; i < mapNames.Count; i++) {
             maps.Add(mapNames[i], mapObjs[i]);
         }
     }
 
-    public void generate_map (){
-        GameObject _map = Instantiate (maps [mapID], go.transform);
+    public void generate_map (string _mapID){
+        GameObject _map = Instantiate (maps [_mapID], go.transform);
+        string[] _unlockedNodes = JsonSaving.I.load ("areasUnlocked").Split (',');
+        foreach (Transform child in _map.transform) {
+            MapNode _comp = child.gameObject.GetComponent<MapNode>();
+            if (_comp && _comp.type != "to-menu" ) {
+                child.gameObject.SetActive (_unlockedNodes.Contains (_comp.ID));
+            }
+        }
 
-        go.SetActive (false);
+        map = _map;
     }
 
     public void show (){
         go.SetActive (true);
+        generate_map (JsonSaving.I.load ("area"));
     }
 
     public void hide (){
+        Destroy (map);
         go.SetActive (false);
     }
 
@@ -44,6 +52,13 @@ public class MM_Map : MonoBehaviour {
         switch (_type) {
             case "mission": MM_Mission.I.show (_val); break;
             case "dialog": MMCont_Dialog.I.create_dialog (_val); break;
+            case "map": 
+                Destroy (map);
+                generate_map (_val);
+                break;
+            case "to-menu":
+                hide ();
+                break;
         }
     }
 }

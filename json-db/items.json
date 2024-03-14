@@ -3,14 +3,26 @@
         "test-shop": ["sword", "plank", "katna"]
     },
     "items": {
-        "sword": {
-            "name-ui": "Sword",
-            "desc": "test desc",
-            "cost": "100",
+        "crdRev": {
+            "name-ui": "Crude Revolver",
+            "desc": "+1 dam\nOld and rusty, but still reliable.",
+            "cost": "50",
 
             "stackable": "false",            
             "stack-max": 1,
-            "tags": [],
+            "tags": ["gun"],
+
+            "use":"",
+            "equip": "weapon"
+        },
+        "irnSwrd": {
+            "name-ui": "Iron Sword",
+            "desc": "+1 dam.\nBasic battle sword. Enough for self-defense.",
+            "cost": "50",
+
+            "stackable": "false",            
+            "stack-max": 1,
+            "tags": ["sword"],
 
             "use":"",
             "equip": "weapon"
