@@ -60,11 +60,11 @@ public class MM_Inventory : MonoBehaviour {
     }
 
     public void btn_show (){show ("inventory", "");}
-    public void show (string _mode, string _itemList){
+    public void show (string _mode, string _itemList, string[] _sortTag = null){
         go.SetActive (true);
         mode = _mode;
-        setup_items (_itemList);
-        refresh_item_btns ();
+        setup_items (_itemList, _sortTag);
+        refresh_item_btns (_sortTag);
     }
 
     public void hide (){
@@ -76,17 +76,19 @@ public class MM_Inventory : MonoBehaviour {
         go.SetActive (false);
     }
 
-    private void setup_items (string _itemList){
+    private void setup_items (string _itemList, string[] _sortTag = null){
         itemListName = _itemList;
         items.Clear ();
 
-        if (_itemList == "" ){
+        if (_itemList == ""){
             // Load main inventory
             foreach (Item _item in itemsMain) {
+                if (_sortTag != null) {
+                    string[] _tags = JsonReading.I.read ("items", $"items.{_item.name}.tags").Split (',');
+                    if (!_sortTag.All ((_tag) => _tags.Contains (_tag))) continue;
+                }
                 create_item (_item.name, _item.stack.ToString ());
             }
-
-            pageMax = (int)((itemsMain.Count - 1) / 12);
         } else {
             // Load other item list
             string[]    _itemsStr = JsonReading.I.read ("items", $"shop-inventory.{_itemList}").Split (','),
@@ -96,15 +98,14 @@ public class MM_Inventory : MonoBehaviour {
             for (int _i = 0; _i < _itemsStr.Length; _i++) {
                 create_item (_itemsStr [_i], "0");
             }
-
-            pageMax = (int)((_itemsStr.Length - 1) / 12);
         }
 
         page = 0;
+        pageMax = (int)((items.Count - 1) / 12);
         tPage.text = $"{page + 1}/{pageMax + 1}";
     }
 
-    private void refresh_item_btns (){
+    private void refresh_item_btns (string[] _sortTag = null){
         tGold.text = $"{JsonReading.I.get_str ("gold")}: {JsonSaving.I.load ("gold")}";
 
         int _itemPage = page * MAX_ITEMS_IN_PAGE;
@@ -115,7 +116,7 @@ public class MM_Inventory : MonoBehaviour {
         itemUIs.Clear ();
 
         List<Item> _items = new List<Item>();
-        _items.AddRange ((itemListName == "") ? itemsMain : items);
+        _items.AddRange (items);
         for (int i = 0; i < MAX_ITEMS_IN_PAGE; i++) {
             if (_itemPage + i >= _items.Count) return;
 

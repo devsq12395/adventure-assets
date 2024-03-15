@@ -66,6 +66,16 @@ public class MM_ItemCheck : MonoBehaviour {
                 MM_BuyOrSell.I.show (mode, item);
                 hide ();
                 break;
+            case "check-equipped":
+                MM_Char.I.open_change_equip ();
+                hide ();
+                break;
+            case "equip":
+                MM_Char.I.change_equip (item.name);
+                hide (); 
+                MM_Inventory.I.remove_item (item.index);
+                MM_Inventory.I.hide ();
+                break;
         }
     }
 }

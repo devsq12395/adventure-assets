@@ -10,7 +10,7 @@
 
             "stackable": "false",            
             "stack-max": 1,
-            "tags": ["gun"],
+            "tags": ["weapon", "gun"],
 
             "use":"",
             "equip": "weapon"
@@ -22,7 +22,7 @@
 
             "stackable": "false",            
             "stack-max": 1,
-            "tags": ["sword"],
+            "tags": ["weapon", "sword"],
 
             "use":"",
             "equip": "weapon"
