@@ -101,6 +101,13 @@ public class ContDamage : MonoBehaviour {
     private bool before_kill_events (InGameObject _atk, InGameObject _def){
         bool _isKill = true;
         
+        // Reduce enemy count
+        if (_def.owner == 2) {
+            ContEnemies.I.enemyCount--;
+            if (ContEnemies.I.enemyCount <= 0) {
+                ContEnemies.I.start_next_wave ();
+            }
+        }
 
         // Codes that require an attacker goes here
         if (_atk != null) {

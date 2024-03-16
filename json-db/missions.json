@@ -5,6 +5,7 @@
             "desc": "Hey man! Looking for work? You came to the right place. Prove yourself capable and I may hook you up boss Vincenzo for bigger jobs.\n\nYou see, bandit gangs are spotted on our territories here in Woodland Square. Deal with them, and you will be greatly rewarded by the boss.",
             "sprite": "vic",
             
+            "enemies": "1-zombies",
             "maps": ["newHaven_rand"],
             "unlocks-area": [],
             "missions-set": [
@@ -16,28 +17,12 @@
             "desc": "",
             "sprite": "vic",
             
+            "enemies": "1-zombies",
             "maps": ["newHaven_rand"],
             "unlocks-area": [],
             "missions-set": [
                 "vic->vic03"
             ]
-        },
-
-        "caleb01": {
-            "name": "TestName",
-            "desc": "TestDesc",
-            "sprite": "caleb01",
-            
-            "maps": ["newHaven_rand", "newHaven_rand", "newHaven_rand", "newHaven_rand", "newHaven_caleb01"],
-            "unlocks": ["caleb02"]
-        },
-        "caleb02": {
-            "name": "TestName",
-            "desc": "TestDesc",
-            "sprite": "caleb02",
-            
-            "maps": ["newHaven_rand", "newHaven_rand", "newHaven_rand", "newHaven_rand", "newHaven_caleb02"],
-            "unlocks": []
         }
     }
 }

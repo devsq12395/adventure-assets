@@ -23,6 +23,8 @@ public class ContMap : MonoBehaviour {
         map = details.mapObj;
         pointList = details.pointList;
 
+        ContEnemies.I.setup (JsonReading.I.read ("missions", $"missions.{_mission}.enemies"));
+
         create_map_objs ();
     }
 

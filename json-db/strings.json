@@ -24,7 +24,12 @@
 
         "UI-in-game": {
             "mission-failed": "MISSION FAILED!",
-            "all-chars-dead": "Your team is wiped out!"
+            "all-chars-dead": "Your team is wiped out!",
+
+            "mission-success": "MISSION SUCCESS!",
+            "all-enemies-dead": "All enemies are beaten!",
+
+            "rewards": "Rewards: "
         },
         
         "tommy-name": "Tommy",

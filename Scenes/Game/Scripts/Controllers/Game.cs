@@ -26,6 +26,8 @@ public class Game : MonoBehaviour {
         ContPlayer.I.setup_player ();
         GameUI_InGameTxt.I.setup ();
         ContItem.I.setup ();
+
+        ContEnemies.I.spawn_enemies ();
         
         gameReady = true;
     }

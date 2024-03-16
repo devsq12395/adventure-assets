@@ -1,6 +1,6 @@
 {
     "shop-inventory": {
-        "test-shop": ["sword", "plank", "katna"]
+        "test-shop": ["plank"]
     },
     "items": {
         "crdRev": {
@@ -53,7 +53,7 @@
         
         "plank": {
             "name-ui": "Wooden Plank",
-            "desc": "test desc",
+            "desc": "A plank of wood with different possible uses.",
             "cost": "100",
 
             "stackable": "true",
@@ -63,17 +63,53 @@
             "use":"",
             "equip": ""
         },
-        "katna": {
-            "name-ui": "Katana",
-            "desc": "test desc",
+        "zomflsh": {
+            "name-ui": "Zombie Flesh",
+            "desc": "A piece of corpse with black magic flowing through it.",
+            "cost": "25",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": ""
+        },
+        "scrap": {
+            "name-ui": "Scrap Metal",
+            "desc": "Salvaged from old machines.",
             "cost": "100",
 
-            "stackable": "false",
-            "stack-max": 1,
+            "stackable": "true",
+            "stack-max": 9999,
             "tags": [],
-
+            
             "use":"",
-            "equip": "weapon"
+            "equip": ""
+        },
+        "irnore": {
+            "name-ui": "Iron Ore",
+            "desc": "Used as material for basic tools and weapons.",
+            "cost": "250",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": ""
+        },
+        "bluvin": {
+            "name-ui": "Blue Glowvine",
+            "desc": "Produces a beautiful glow. It is priced for its magical properties.",
+            "cost": "400",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": ""
         },
     }
 }
