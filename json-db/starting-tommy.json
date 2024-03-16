@@ -17,16 +17,22 @@
     "items": "1%crdRev^1%irnSwrd",
 
     "missionCur": "",
-    "missionCurPool": [
-        "caleb01", "jackson01", "vincenzo01"
-    ],
+    "missionCurPool": {
+        "vic": "vic01"
+    },
 
     "missionMap": "",
     "missionLvl": "",
     
-    "areasUnlocked": [
-        "new-haven", "wooster-square", "rosas-diner"
-    ],
+    "areasUnlocked": {
+        "new-haven": "1", 
+        "wooster-square": "1", 
+        "downtown": "0",
+        "east-rock": "0",
+        "rosas-diner": "1",
+        "bella-vita": "0",
+        "strega": "0"
+    }
 
     "chars": {
         "tommy": {

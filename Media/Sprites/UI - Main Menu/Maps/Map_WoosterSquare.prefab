@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: rosas-diner
-  type: dialog
-  val: rosas-diner
+  type: mission
+  val: vic
 --- !u!1 &2865141283416477547
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: strega
   type: dialog
-  val: strega`
+  val: strega
 --- !u!1 &5013678571666345224
 GameObject:
   m_ObjectHideFlags: 0

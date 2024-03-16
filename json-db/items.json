@@ -13,7 +13,18 @@
             "tags": ["weapon", "gun"],
 
             "use":"",
-            "equip": "weapon"
+            "equip": "weapon",
+
+            "bonuses": {
+                "hp": 0,
+                "mp": 0,
+                "attack": 1,
+                "skill": 0,
+                "speed": 0,
+                "armor": 0,
+                "crit-rate": 0,
+                "crit-dam": 0,
+            }
         },
         "irnSwrd": {
             "name-ui": "Iron Sword",
@@ -25,8 +36,21 @@
             "tags": ["weapon", "sword"],
 
             "use":"",
-            "equip": "weapon"
+            "equip": "weapon",
+
+            "bonuses": {
+                "hp": 0,
+                "mp": 0,
+                "attack": 1,
+                "skill": 0,
+                "speed": 0,
+                "armor": 0,
+                "crit-rate": 0,
+                "crit-dam": 0,
+            }
         },
+
+        
         "plank": {
             "name-ui": "Wooden Plank",
             "desc": "test desc",

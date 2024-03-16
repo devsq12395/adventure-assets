@@ -48,7 +48,7 @@ public class MM_Mission : MonoBehaviour {
     private void setup_ui (){
         title.text = get_mission_val ("name");
         desc.text = get_mission_val ("desc");
-        port.sprite = MM_Sprites.I.get_sprite (get_mission_val ("sprite"));
+        port.sprite = Sprites.I.get_sprite (get_mission_val ("sprite"));
     }
 
     public string get_mission_val (string key) {

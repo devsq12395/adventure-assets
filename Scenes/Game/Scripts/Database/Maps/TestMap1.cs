@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TestMap1 : MonoBehaviour {
 
@@ -16,6 +17,7 @@ public class TestMap1 : MonoBehaviour {
         _new.pointList.Add ("playerLounge", new Vector2 (-500, -500));
 
         _new.mapObj = GameObject.Instantiate (goMap, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+        SceneManager.MoveGameObjectToScene(_new.mapObj, SceneManager.GetSceneByName("Game"));
 
         ContMap.I.create_map_objs = create_map_objs;
 

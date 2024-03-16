@@ -11,14 +11,15 @@ public class MM_Char : MonoBehaviour {
 
     public GameObject go, goItemObj, goCanvas;
 
-    public TextMeshProUGUI cName, cDetails;
+    public TextMeshProUGUI cName, cDetails, cDetails2, cBio;
 
     public string name;
     public Dictionary<string, MM_Inventory.ItemUI> itemsUI;
     public bool isShow;
 
-    private readonly string[] equipStrs = {"weapon", "armor", "boots", "accessory1", "accessory2"};
-    private readonly string[] statStrs = {"hp", "mp", "attack", "skill", "speed"};
+    private readonly string[]   equipStrs = {"weapon", "armor", "boots", "accessory1", "accessory2"},
+                                statStrs = {"hp", "mp", "attack", "skill", "speed"},
+                                bioStrs = {"info", "skill1", "skill2"};
 
     private string changeEquipSlot;
 
@@ -58,10 +59,24 @@ public class MM_Char : MonoBehaviour {
     public void setup_char (string _name){
         name = _name;
 
-        string  _cName = MM_Strings.I.get_str ($"{_name}-name"),
-                _cStats = string.Join("\n", statStrs.Select(_statStr => $"{MM_Strings.I.get_str(_statStr)}: {JsonSaving.I.load($"chars.{_name}.stats.{_statStr}")}"));
+        string  _cName = MM_Strings.I.get_str($"{_name}-name"),
+                _cStats1 = "", _cStats2 = "";
+        
+        for (int i = 0; i < statStrs.Length; i++) {
+            string _statToAdd = $"{statStrs [i]}: {StatCalc.I.get_stat(_name, statStrs [i]).ToString ()}\n";
+            if (i < 5) {
+                _cStats1 += _statToAdd;
+            } else {
+                _cStats2 += _statToAdd;
+            }
+        }
+
+        string _cBio = string.Join ("\n\n", bioStrs.Select ((bio) => JsonReading.I.read ("chars", $"chars.{name}.bio.{bio}")));
+
         cName.text = _cName;
-        cDetails.text = _cStats;
+        cDetails.text = _cStats1;
+        cDetails2.text = _cStats2;
+        cBio.text = _cBio;
 
         create_equip_items ();
     }

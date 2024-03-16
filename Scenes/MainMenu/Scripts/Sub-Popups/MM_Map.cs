@@ -27,11 +27,10 @@ public class MM_Map : MonoBehaviour {
 
     public void generate_map (string _mapID){
         GameObject _map = Instantiate (maps [_mapID], go.transform);
-        string[] _unlockedNodes = JsonSaving.I.load ("areasUnlocked").Split (',');
         foreach (Transform child in _map.transform) {
             MapNode _comp = child.gameObject.GetComponent<MapNode>();
             if (_comp && _comp.type != "to-menu" ) {
-                child.gameObject.SetActive (_unlockedNodes.Contains (_comp.ID));
+                child.gameObject.SetActive (JsonSaving.I.load ($"areasUnlocked.{_comp.ID}") == "1");
             }
         }
 
@@ -50,7 +49,7 @@ public class MM_Map : MonoBehaviour {
 
     public void select_node (string _type, string _val){
         switch (_type) {
-            case "mission": MM_Mission.I.show (_val); break;
+            case "mission": MM_Mission.I.show (JsonSaving.I.load ($"missionCurPool.{_val}")); break;
             case "dialog": MMCont_Dialog.I.create_dialog (_val); break;
             case "map": 
                 Destroy (map);

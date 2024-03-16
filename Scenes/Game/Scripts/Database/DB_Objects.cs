@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DB_Objects : MonoBehaviour {
 
@@ -96,6 +97,7 @@ public class DB_Objects : MonoBehaviour {
         }
 
         GameObject _retVal = GameObject.Instantiate(_refObj, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+        SceneManager.MoveGameObjectToScene(_retVal, SceneManager.GetSceneByName("Game"));
         return _retVal;
     }
 }
