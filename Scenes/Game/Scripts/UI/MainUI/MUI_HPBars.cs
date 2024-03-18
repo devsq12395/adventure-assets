@@ -9,30 +9,43 @@ public class MUI_HPBars : MonoBehaviour
     public static MUI_HPBars I;
     public void Awake() { I = this; }
 
-    public Image i_HPMain, i_MPMain;
-    public TextMeshProUGUI t_hp, t_mp;
+    public GameObject go_bossHP;
+    public Image i_HPMain, i_MPMain, iBossMain;
+    public TextMeshProUGUI t_hp, t_mp, t_bossName;
+
+    public InGameObject boss;
 
     public void update_bars() {
         InGameObject _pla = ContPlayer.I.player;
 
         if (!_pla) return;
 
-        float hpScale = (float)_pla.hp / (float)_pla.hpMax;
-        float mpScale = (float)_pla.mp / (float)_pla.mpMax;
+        float   hpScale = (float)_pla.hp / (float)_pla.hpMax,
+                mpScale = (float)_pla.mp / (float)_pla.mpMax;
 
-        i_HPMain.rectTransform.anchorMin = new Vector2(0f, 0.5f);
-        i_HPMain.rectTransform.anchorMax = new Vector2(0f, 0.5f);
-        i_HPMain.rectTransform.pivot = new Vector2(0f, 0.5f);
-
-        i_HPMain.rectTransform.localScale = new Vector3(hpScale, 1f, 1f);
-
-        i_MPMain.rectTransform.anchorMin = new Vector2(0f, 0.5f);
-        i_MPMain.rectTransform.anchorMax = new Vector2(0f, 0.5f);
-        i_MPMain.rectTransform.pivot = new Vector2(0f, 0.5f);
-        
-        i_MPMain.rectTransform.localScale = new Vector3(mpScale, 1f, 1f);
+        set_bar_scale (i_HPMain, hpScale);
+        set_bar_scale (i_MPMain, mpScale);
 
         t_hp.text = $"{_pla.hp} / {_pla.hpMax}";
         t_mp.text = $"{_pla.mp} / {_pla.mpMax}";
+
+        if (boss != null) {
+            float hpScaleBoss = (float)boss.hp / (float)boss.hpMax;
+            set_bar_scale (iBossMain, hpScaleBoss);
+        }
+    }
+
+    public void set_boss (InGameObject _boss){
+        go_bossHP.SetActive (true);
+        boss = _boss;
+        t_bossName.text = JsonReading.I.get_str ($"char-names.{_boss.name}");
+    }
+
+    private void set_bar_scale (Image _bar, float _xScale) {
+        _bar.rectTransform.anchorMin = new Vector2(0f, 0.5f);
+        _bar.rectTransform.anchorMax = new Vector2(0f, 0.5f);
+        _bar.rectTransform.pivot = new Vector2(0f, 0.5f);
+
+        _bar.rectTransform.localScale = new Vector3(_xScale, 1f, 1f);
     }
 }

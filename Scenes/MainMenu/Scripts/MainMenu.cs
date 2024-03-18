@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour {
         MM_Inventory.I.setup ();
         MM_Char.I.setup ();
         MM_Mission.I.setup ();
+        MM_Craft.I.setup ();
 
         MM_Map.I.setup ();
 

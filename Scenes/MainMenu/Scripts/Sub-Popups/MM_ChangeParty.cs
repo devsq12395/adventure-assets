@@ -119,7 +119,7 @@ public class MM_ChangeParty : MonoBehaviour {
         for (int i = 0; i < heroPool.Count; i++) {
             if (i >= _pool.Length){
                 go_heroPool [i].SetActive (false);
-                break;
+                continue;
             }
 
             _name = _pool [i];

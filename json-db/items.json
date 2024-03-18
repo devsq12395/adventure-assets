@@ -1,6 +1,6 @@
 {
     "shop-inventory": {
-        "test-shop": ["plank"]
+        "strega": ["irElRev"]
     },
     "items": {
         "crdRev": {
@@ -15,6 +15,8 @@
             "use":"",
             "equip": "weapon",
 
+            "requires": [],
+
             "bonuses": {
                 "hp": 0,
                 "mp": 0,
@@ -24,8 +26,34 @@
                 "armor": 0,
                 "crit-rate": 0,
                 "crit-dam": 0,
+            },
+        },
+        "irElRev": {
+            "name-ui": "WildArms Iron Electric Revolver",
+            "desc": "+5 dam\n+4 skill\n+2 speed\n\nStandard revolver infused with electric energy.",
+            "cost": "500",
+
+            "stackable": "false",            
+            "stack-max": 1,
+            "tags": ["weapon", "gun"],
+
+            "use":"",
+            "equip": "weapon",
+
+            "requires": ["2%irnore", "2%elcshd"],
+
+            "bonuses": {
+                "hp": 0,
+                "mp": 0,
+                "attack": 3,
+                "skill": 4,
+                "speed": 2,
+                "armor": 0,
+                "crit-rate": 0,
+                "crit-dam": 0,
             }
         },
+
         "irnSwrd": {
             "name-ui": "Iron Sword",
             "desc": "+1 dam.\nBasic battle sword. Enough for self-defense.",
@@ -37,6 +65,8 @@
 
             "use":"",
             "equip": "weapon",
+
+            "requires": [],
 
             "bonuses": {
                 "hp": 0,
@@ -54,14 +84,16 @@
         "plank": {
             "name-ui": "Wooden Plank",
             "desc": "A plank of wood with different possible uses.",
-            "cost": "100",
+            "cost": "50",
 
             "stackable": "true",
             "stack-max": 9999,
             "tags": [],
             
             "use":"",
-            "equip": ""
+            "equip": "",
+
+            "requires": [],
         },
         "zomflsh": {
             "name-ui": "Zombie Flesh",
@@ -73,11 +105,27 @@
             "tags": [],
             
             "use":"",
-            "equip": ""
+            "equip": "",
+
+            "requires": [],
         },
         "scrap": {
             "name-ui": "Scrap Metal",
             "desc": "Salvaged from old machines.",
+            "cost": "80",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "irnore": {
+            "name-ui": "Iron Ore",
+            "desc": "Used as material for basic tools and weapons.",
             "cost": "100",
 
             "stackable": "true",
@@ -85,11 +133,41 @@
             "tags": [],
             
             "use":"",
-            "equip": ""
+            "equip": "",
+
+            "requires": [],
         },
-        "irnore": {
-            "name-ui": "Iron Ore",
-            "desc": "Used as material for basic tools and weapons.",
+        "bluvin": {
+            "name-ui": "Blue Glowvine",
+            "desc": "Produces a beautiful glow. It is priced for its magical properties.",
+            "cost": "200",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "crcbrd": {
+            "name-ui": "Circuit Board",
+            "desc": "A component for crafting elecronic devices.",
+            "cost": "150",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "txtbok": {
+            "name-ui": "Research Papers",
+            "desc": "Contains study data from New Yale University, used as reference for other research.",
             "cost": "250",
 
             "stackable": "true",
@@ -97,19 +175,51 @@
             "tags": [],
             
             "use":"",
-            "equip": ""
+            "equip": "",
+
+            "requires": [],
         },
-        "bluvin": {
-            "name-ui": "Blue Glowvine",
-            "desc": "Produces a beautiful glow. It is priced for its magical properties.",
-            "cost": "400",
+        "demfng": {
+            "name-ui": "Demon Fang",
+            "desc": "An excellent source of black magic. Sought after by practitioners of dark arts.",
+            "cost": "500",
 
             "stackable": "true",
             "stack-max": 9999,
             "tags": [],
             
             "use":"",
-            "equip": ""
+            "equip": "",
+
+            "requires": [],
+        },
+        "elcshd": {
+            "name-ui": "Electric Shard",
+            "desc": "A crystalline fragment infused with electrical energy.",
+            "cost": "300",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "firshd": {
+            "name-ui": "Fire Shard",
+            "desc": "A crystalline fragment infused with fire energy.",
+            "cost": "300",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
         },
     }
 }

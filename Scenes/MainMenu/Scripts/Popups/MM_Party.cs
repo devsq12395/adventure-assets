@@ -69,14 +69,11 @@ public class MM_Party : MonoBehaviour {
         for (int i = 0; i < partyBtns.Count; i++) {
             _name = lineup [i];
 
+            partyBtns [i].port.gameObject.SetActive (_name != "");
             if (_name != "") {
                 partyBtns [i].port.sprite = MM_Sprites.I.get_sprite (_name);
                 partyBtns [i].name.text = MM_Strings.I.get_str ($"{_name}-name");
                 partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}";
-            } else {
-                partyBtns [i].port.sprite = MM_Sprites.I.get_sprite ("empty");
-                partyBtns [i].name.text = "";
-                partyBtns [i].lvl.text = "";
             }
         }
     }

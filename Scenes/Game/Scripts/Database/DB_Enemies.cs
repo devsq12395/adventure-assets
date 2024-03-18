@@ -46,31 +46,25 @@ public class DB_Enemies : MonoBehaviour {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("kitsune", 1);
-				_waves[0].Add ("orcShaman", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("kitsune", 1);
-				_waves[1].Add ("orcShaman", 3);
+				_waves[1].Add ("kitsune-boss", 1);
 
 				break;
 			case 1:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("kitsune", 1);
-				_waves[0].Add ("orcShaman", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("kitsune", 1);
-				_waves[1].Add ("orcShaman", 3);
+				_waves[1].Add ("kitsune-boss", 1);
 
 				break;
 			case 2:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("kitsune", 1);
-				_waves[0].Add ("orcShaman", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("kitsune", 1);
-				_waves[1].Add ("orcShaman", 3);
+				_waves[1].Add ("kitsune-boss", 1);
 
 				break;
 		}

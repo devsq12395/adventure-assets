@@ -161,7 +161,12 @@ public class MM_Inventory : MonoBehaviour {
     }
 
     public void check_item (int _btnIndex) {
-        MM_ItemCheck.I.show (items [page * MAX_ITEMS_IN_PAGE + _btnIndex], mode);
+        Item _item = items [page * MAX_ITEMS_IN_PAGE + _btnIndex];
+        if (mode == "buy" && JsonReading.I.read ("items", $"items.{_item.name}.requires").Length > 0) {
+            MM_Craft.I.show (_item.name, "item");
+        } else {
+            MM_ItemCheck.I.show (_item, mode);
+        }
     }
 
     // This is used by the loaded item list, not the main list
@@ -220,14 +225,14 @@ public class MM_Inventory : MonoBehaviour {
         refresh_item_btns ();
     }
 
-    private bool has_item_from_inv (string _itemName) {
+    public bool has_item_from_inv (string _itemName) {
         foreach (Item _item in itemsMain) {
             if (_item.name == _itemName) return true;
         }
         return false;
     }
 
-    private Item get_item_from_inv (string _itemName) {
+    public Item get_item_from_inv (string _itemName) {
         foreach (Item _item in itemsMain) {
             if (_item.name == _itemName) return _item;
         }

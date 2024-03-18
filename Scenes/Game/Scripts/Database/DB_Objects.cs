@@ -12,11 +12,11 @@ public class DB_Objects : MonoBehaviour {
 
     [Header("----- Characters for Player -----")]
     public GameObject tommy;
-    public GameObject anastasia, seraphine, miguel, anthony;
+    public GameObject brad, anastasia, seraphine, miguel, anthony;
 
     [Header("----- Units -----")]
     public GameObject hero;
-    public GameObject samurai, greenSlime, orcShaman, kitsune;
+    public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
@@ -50,7 +50,9 @@ public class DB_Objects : MonoBehaviour {
             // Player
             case "hero":                    _refObj = hero; break;
             case "samurai":                 _refObj = samurai; break;
+
             case "tommy":                   _refObj = tommy; break;
+            case "brad":                    _refObj = brad; break;
             case "seraphine":               _refObj = seraphine; break;
             case "anastasia":               _refObj = anastasia; break;
             case "miguel":                  _refObj = miguel; break;
@@ -60,6 +62,7 @@ public class DB_Objects : MonoBehaviour {
             case "greenSlime":              _refObj = greenSlime; break;
             case "orcShaman":               _refObj = orcShaman; break;
             case "kitsune":                 _refObj = kitsune; break;
+            case "kitsune-boss":            _refObj = kitsuneBoss; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;

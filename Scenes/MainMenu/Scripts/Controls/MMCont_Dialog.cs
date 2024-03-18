@@ -18,7 +18,10 @@ public class MMCont_Dialog : MonoBehaviour {
 		switch (_id) {
 			// Test Shop
 			case "shopTest01": btn_shopTest01 (); break;
-			case "shopTest02": btn_shopTest02 (); break;
+			case "shopSell": btn_shopSell (); break;
+
+			case "shopStregaBuy": btn_shopStregaBuy (); break;
+
 
 			case "back-to-inventory": btn_backToInventory (); break;
 			
@@ -77,7 +80,11 @@ public class MMCont_Dialog : MonoBehaviour {
 		MM_Inventory.I.show ("buy", "test-shop");
 	}
 
-	private void btn_shopTest02 (){
+	private void btn_shopStregaBuy (){
+		MM_Inventory.I.show ("buy", "strega");
+	}
+
+	private void btn_shopSell (){
 		MM_Inventory.I.show ("sell", "");
 	}
 

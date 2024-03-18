@@ -11,7 +11,24 @@
             
             "input1": {"id": "", "text": ""},
             "input2": {"id": "shopTest01", "text": "Buy"},
-            "input3": {"id": "shopTest02", "text": "Sell"},
+            "input3": {"id": "shopSell", "text": "Sell"},
+            "input4": {"id": "shopCancel", "text": "Nevermind"},
+            "inputTxtBox": {"id": "", "text": ""},
+
+            "inputScaler_enable": "0",
+        },
+        "strega": {
+            "name": "Giovanni",
+            "desc": "Buongiorno! Welcome to Strega. If you're in need of fine craftsmanship and formidable weaponry, you've come to the right place.",
+            "portImg": "tommy",
+            "posX": 0,
+            "posY": 0,
+
+            "isMini": "0",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "shopStregaBuy", "text": "Buy"},
+            "input3": {"id": "shopSell", "text": "Sell"},
             "input4": {"id": "shopCancel", "text": "Nevermind"},
             "inputTxtBox": {"id": "", "text": ""},
 
@@ -38,6 +55,40 @@
         "buy-not-enough-gold": {
             "name": "",
             "desc": "Not enough gold!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+
+            "inputScaler_enable": "0",
+        },
+        "buy-not-enough-reqs": {
+            "name": "",
+            "desc": "You lack the item requirements!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+
+            "inputScaler_enable": "0",
+        },
+        "buy-craft-success": {
+            "name": "",
+            "desc": "Crafting successful!",
             "portImg": "",
             "posX": 0,
             "posY": 0,

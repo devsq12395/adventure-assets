@@ -29,6 +29,10 @@ public class JsonReading : MonoBehaviour {
         }
     }
 
+    /*
+        When reading an array, values will be joined by ",".
+        This will not be able to read objects.
+    */
     public string read (string _jsonName, string _key) {
         if (jsonStrings.ContainsKey(_jsonName)) {
             // Assuming _key is in the format "status.chars.tommy.level"

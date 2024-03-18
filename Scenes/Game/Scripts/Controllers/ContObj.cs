@@ -33,6 +33,7 @@ public class ContObj : MonoBehaviour {
         
         set_default_skills (_comp);
         setup_events (_comp);
+        if (_comp.tags.Contains ("boss")) MUI_HPBars.I.set_boss (_comp);
 
         return _obj;
     }

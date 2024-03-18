@@ -14,6 +14,8 @@
 
         "gold": "Gold",
 
+        "requires": "Requires",
+
         "UI-main-menu": {
             "equip": "Equip",
             "buy": "Buy",
@@ -34,6 +36,9 @@
             "rewards-gold": "Gold Gained: "
         },
         
+        "char-names": {
+            "kitsune-boss": "Kitsune Boss"
+        },
         "tommy-name": "Tommy",
         "tommy-name-full": "Tommy Carter",
 

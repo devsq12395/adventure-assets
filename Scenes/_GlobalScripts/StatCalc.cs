@@ -16,7 +16,6 @@ public class StatCalc : MonoBehaviour {
             string _equipped = JsonSaving.I.load ($"chars.{_charName}.equip.{_equipSlot}");
             if (_equipped != "") {
                 int _itemBonus = int.Parse (JsonReading.I.read ("items", $"items.{_equipped}.bonuses.{_stat}"));
-                Debug.Log (_itemBonus);
                 _val += _itemBonus;
             }
         }
