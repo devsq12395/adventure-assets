@@ -37,9 +37,9 @@ public class MM_Map : MonoBehaviour {
         map = _map;
     }
 
-    public void show (){
+    public void show (string _mapID){
         go.SetActive (true);
-        generate_map (JsonSaving.I.load ("area"));
+        generate_map (_mapID);
     }
 
     public void hide (){

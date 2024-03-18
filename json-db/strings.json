@@ -18,8 +18,10 @@
             "equip": "Equip",
             "buy": "Buy",
             "sell": "Sell",
-            "check-equipped": "Change Equipped"
-            
+            "check-equipped": "Change Equipped",
+
+            "reputation": "Reputation",
+            "stranger": "Stranger"
         },
 
         "UI-in-game": {
@@ -29,15 +31,11 @@
             "mission-success": "MISSION SUCCESS!",
             "all-enemies-dead": "All enemies are beaten!",
 
-            "rewards": "Rewards: "
+            "rewards-gold": "Gold Gained: "
         },
         
         "tommy-name": "Tommy",
         "tommy-name-full": "Tommy Carter",
-
-        "tommy-proftitle-newbie": "New in Town",
-        "tommy-prof-newbie": "You are Tommy Carter, a skilled gunman who made too many enemies back in N.A.R.. To escape and make a fresh start, you arrived here in the west coast. Perhaps you will find success here.",
-        "tommy-areadesc-new-haven-newbie": "",
 
         "brad-name": "Brad",
         "brad-name-full": "Brad Rhodes",

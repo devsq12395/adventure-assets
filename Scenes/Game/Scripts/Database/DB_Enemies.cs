@@ -27,6 +27,16 @@ public class DB_Enemies : MonoBehaviour {
 		return _ret;
 	}
 
+	public List<int> get_possible_gold_rewards (string _enemiesType) {
+		List<int> _ret = new List<int>();
+
+		switch (_enemiesType) {
+			case "1-zombies": _ret.AddRange (new int[]{300, 500, 600}); break;
+		}
+
+		return _ret;
+	}
+
 	private List<Dictionary<string, int>> zombies_1_main_wave (List<Dictionary<string, int>> _ret){
 		int chance = Random.Range (0, 3);
 		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();

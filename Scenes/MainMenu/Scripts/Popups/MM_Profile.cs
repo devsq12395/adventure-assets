@@ -25,15 +25,21 @@ public class MM_Profile : MonoBehaviour {
         go.SetActive (_isShow);
     }
 
-    private void setup_desc (){
+    private void setup_desc (){ Debug.Log (JsonSaving.I.load ("reputation"));
         string  _login          = MainMenu.I.login,
                 _name           = $"{MM_Strings.I.get_str ("name")}{MM_Strings.I.get_str ($"{_login}-name-full")}",
                 _date           = $"{MM_Strings.I.get_str ("date")}{MM_Strings.I.get_str (JsonSaving.I.load ("date"))}",
-                _status         = JsonSaving.I.load ("status"),
-                _title          = MM_Strings.I.get_str ($"{_login}-proftitle-{_status}"),
-                _desc           = MM_Strings.I.get_str ($"{_login}-prof-{_status}");
+                _gold           = $"{JsonReading.I.get_str ("gold")}: {JsonSaving.I.load ("gold")}",
+                _rep            = JsonReading.I.get_str ("UI-main-menu.reputation") + ":\n" + string.Join (
+                    "\n", JsonSaving.I.load ("reputation").Split(',').Select (
+                        (_repKeyPair) => {
+                            Debug.Log (_repKeyPair);
+                            string[] _repSplit = _repKeyPair.Split ("->");
+                            return $"{JsonReading.I.get_str ($"{_repSplit[0]}-name")}: {JsonReading.I.get_str ($"UI-main-menu.{_repSplit[1]}")}";
+                        }
+                    )
+                );
 
-        title.text = _title;
-        desc.text = $"{_name}\n{_date}\n\n{_desc}";
+        desc.text = $"{_name}\n{_date}\n{_gold}\n\n{_rep}";
     }
 }

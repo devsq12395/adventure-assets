@@ -1,16 +1,14 @@
 {
-    "version": "0.6",
+    "version": "0.7",
 
     "date": "jan-2225",
-    "status": "newbie",
-    "area":"new-haven",
 
     "lineup": [
-        "tommy", "", "", ""
+        "tommy", "brad", "", ""
     ],
 
     "pool": [
-        "tommy", "anastasia", "seraphine", "miguel", "anthony"
+        "tommy", "brad"
     ],
 
     "gold": "200",
@@ -23,6 +21,8 @@
 
     "missionMap": "",
     "missionLvl": "",
+
+    "rewards": [],
     
     "areasUnlocked": {
         "new-haven": "1", 
@@ -32,7 +32,11 @@
         "rosas-diner": "1",
         "bella-vita": "0",
         "strega": "0"
-    }
+    },
+
+    "reputation": [
+        "new-haven->stranger"
+    ],
 
     "chars": {
         "tommy": {

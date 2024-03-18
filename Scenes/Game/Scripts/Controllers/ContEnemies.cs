@@ -14,7 +14,11 @@ public class ContEnemies : MonoBehaviour {
 	public List<Dictionary<string, int>> mainWaves;
 	public Dictionary<string, int> rewardChance;
 
+	public string enemiesType;
+
 	public void setup (string _enemiesType){
+		enemiesType = _enemiesType;
+
 		mainWaves = DB_Enemies.I.get_list_of_main_waves (_enemiesType);
 		rewardChance = DB_Enemies.I.get_reward_chance (_enemiesType);
 	}
@@ -36,17 +40,30 @@ public class ContEnemies : MonoBehaviour {
 	}
 
 	public string generate_and_give_rewards (){
+		string _ret = "";
+
+		// Gold Reward
+		List<int> _goldRewards = DB_Enemies.I.get_possible_gold_rewards (enemiesType);
+		int _goldReward = _goldRewards [Random.Range (0, _goldRewards.Count)];
+
+		_ret += $"{JsonReading.I.get_str ("UI-in-game.rewards-gold")}: {_goldReward}";
+
+		JsonSaving.I.gain_gold (_goldReward);
+
+		// Item Rewards
 		int _rewardsAmountToGive = Random.Range (5, 10);
-		string _ret = JsonReading.I.get_str ("UI-in-game.rewards");
-
+		//_ret += $"{JsonReading.I.get_str ("UI-in-game.rewards")}:";
 		for (int i = 0; i < _rewardsAmountToGive; i++) {
+			int _rewardToGive = Random.Range (0, 100);
+			foreach (var entry in rewardChance) {
 
+			}
 		}
 
-		return "";
+		return _ret;
 	}
 
-	public void start_next_wave (){ Debug.Log (mainWaves.Count);
+	public void start_next_wave (){
 		mainWaves.RemoveAt (0);
 
 		if (mainWaves.Count > 0) {

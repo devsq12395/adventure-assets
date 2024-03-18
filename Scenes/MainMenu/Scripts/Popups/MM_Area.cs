@@ -10,16 +10,8 @@ public class MM_Area : MonoBehaviour {
 
     public GameObject go;
 
-    public string curArea;
-
-    public TextMeshProUGUI title, desc;
-
     public void setup (){
-        curArea = JsonSaving.I.load ("area");
-
         go.SetActive (true);
-
-        setup_texts ();
 
         go.SetActive (false);
     }
@@ -28,17 +20,7 @@ public class MM_Area : MonoBehaviour {
         go.SetActive (_isShow);
     }
 
-    private void setup_texts (){
-        string  _login                  = MainMenu.I.login,
-                _title                  = MM_Strings.I.get_str ($"{curArea}-welcome"),
-                _status                 = JsonSaving.I.load ("status"),
-                _areaDesc               = MM_Strings.I.get_str ($"{_login}-areadesc-{curArea}-{_status}");
-
-        title.text = _title;
-        desc.text = _areaDesc;
-    }
-
-    public void btn_show_map (){
-        MM_Map.I.show ();
+    public void btn_show_map (string _mapID){
+        MM_Map.I.show (_mapID);
     }
 }

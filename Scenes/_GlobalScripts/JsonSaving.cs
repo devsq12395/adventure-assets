@@ -18,7 +18,7 @@ public class JsonSaving : MonoBehaviour {
     public void Awake(){
         I = this;
         
-        OVERWRITE = false;
+        OVERWRITE = true;
         if (OVERWRITE) Debug.Log ("DEBUG WARNING: Overwrite is true at JsonSaving.cs");
 
         // TEST
@@ -31,6 +31,18 @@ public class JsonSaving : MonoBehaviour {
 
         load_json();
     }
+
+    /*
+        SAVED VALUES JSON SCRIPTS
+    */
+
+    public void gain_gold (int _inc) {
+        save ("gold", (int.Parse (load ("gold")) + _inc).ToString ());
+    }
+
+    /*
+        JSON INTERACTION SCRIPTS
+    */
 
     private void load_json(){
         if (File.Exists(JSON_SAVE) && !OVERWRITE){
