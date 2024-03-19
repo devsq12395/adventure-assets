@@ -383,7 +383,12 @@ public class ContObj : MonoBehaviour {
     }
 
     public void set_default_skills (InGameObject _obj){
-        _obj.skills.AddRange (_obj.gameObject.GetComponents <SkillTrig> ());
+        foreach (SkillTrig _skill in _obj.gameObject.GetComponents <SkillTrig> ()) {
+            if (_skill.skillSlot == "Skill1") _obj.skill1 = _skill;
+            else if (_skill.skillSlot == "Skill2") _obj.skill2 = _skill;
+            
+            _obj.skills.Add (_skill);
+        }
     }
     
     // Events

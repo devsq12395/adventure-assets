@@ -18,7 +18,7 @@ public class MM_Char : MonoBehaviour {
     public bool isShow;
 
     private readonly string[]   equipStrs = {"weapon", "armor", "boots", "accessory1", "accessory2"},
-                                statStrs = {"hp", "mp", "attack", "skill", "speed"},
+                                statStrs = {"hp", "attack", "skill", "armor", "speed", "crit-rate", "crit-dam"},
                                 bioStrs = {"info", "skill1", "skill2"};
 
     private string changeEquipSlot;
@@ -63,7 +63,7 @@ public class MM_Char : MonoBehaviour {
                 _cStats1 = "", _cStats2 = "";
         
         for (int i = 0; i < statStrs.Length; i++) {
-            string _statToAdd = $"{statStrs [i]}: {StatCalc.I.get_stat(_name, statStrs [i]).ToString ()}\n";
+            string _statToAdd = $"{JsonReading.I.get_str (statStrs [i])}: {StatCalc.I.get_stat(_name, statStrs [i]).ToString ()}\n";
             if (i < 5) {
                 _cStats1 += _statToAdd;
             } else {

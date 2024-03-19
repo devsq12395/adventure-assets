@@ -11,6 +11,9 @@
         "attack": "Attack",
         "skill": "Skill",
         "speed": "Speed",
+        "armor": "Armor",
+        "crit-dam": "Crit Dam",
+        "crit-rate": "Crit Rate",
 
         "gold": "Gold",
 

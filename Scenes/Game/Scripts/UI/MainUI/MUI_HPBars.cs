@@ -11,7 +11,7 @@ public class MUI_HPBars : MonoBehaviour
 
     public GameObject go_bossHP;
     public Image i_HPMain, i_MPMain, iBossMain;
-    public TextMeshProUGUI t_hp, t_mp, t_bossName;
+    public TextMeshProUGUI t_hp, t_mp, t_bossName, t_cdSkill1, t_cdSkill2;
 
     public InGameObject boss;
 
@@ -24,10 +24,13 @@ public class MUI_HPBars : MonoBehaviour
                 mpScale = (float)_pla.mp / (float)_pla.mpMax;
 
         set_bar_scale (i_HPMain, hpScale);
-        set_bar_scale (i_MPMain, mpScale);
+        //set_bar_scale (i_MPMain, mpScale);
 
         t_hp.text = $"{_pla.hp} / {_pla.hpMax}";
         t_mp.text = $"{_pla.mp} / {_pla.mpMax}";
+
+        t_cdSkill1.text = $"Q - {((_pla.skill1.cd > 0) ? (int)_pla.skill1.cd : "READY")}";
+        t_cdSkill2.text = $"E - {((_pla.skill2.cd > 0) ? (int)_pla.skill2.cd : "READY")}";
 
         if (boss != null) {
             float hpScaleBoss = (float)boss.hp / (float)boss.hpMax;

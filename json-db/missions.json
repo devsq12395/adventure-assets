@@ -2,10 +2,10 @@
     "missions": {
         "vic01": {
             "name": "Vic",
-            "desc": "Hey man! Looking for work? You came to the right place. Prove yourself capable and I may hook you up boss Vincenzo for bigger jobs.\n\nYou see, bandit gangs are spotted on our territories here in Woodland Square. Deal with them, and you will be greatly rewarded by the boss.",
+            "desc": "Hey man! Looking for work? Boss Vincenzo is looking for tough fighters like you.\n\nI want to check out what you're capable first, bro. Some monsters are spotted close on our turf. Deal with them and I'll pay you nicely.",
             "sprite": "vic",
             
-            "enemies": "1-zombies",
+            "enemies": "1-monsters",
             "maps": ["newHaven_rand"],
             "unlocks-area": [],
             "missions-set": [
@@ -14,14 +14,26 @@
         },
         "vic02": {
             "name": "Vic",
-            "desc": "",
+            "desc": "Listen up, bro. People have been talking about how well you fought those monsters, but Boss Vincenzo still wants to know if you're the real deal.\n\nThere are some up to no good goblins sighted close to our turf ready to raid. Why don't you teach them a lesson to not mess with the Luppino family?",
             "sprite": "vic",
             
-            "enemies": "1-zombies",
+            "enemies": "3-goblins",
             "maps": ["newHaven_rand"],
             "unlocks-area": [],
             "missions-set": [
                 "vic->vic03"
+            ]
+        },
+        "vic03": {
+            "name": "Vic",
+            "desc": "My man! Boss Vincenzo is impressed with your fighting. He think it's time you get a taste of the turf war here in New Haven, bro.\n\nSome territories of The Embraced are poorly defended right now. We need you to strike hard and fast, take them by surprise, and show them who's boss. Are you up for the challenge?",
+            "sprite": "vic",
+            
+            "enemies": "1-embraced",
+            "maps": ["newHaven_rand"],
+            "unlocks-area": [],
+            "missions-set": [
+                "vic->finished"
             ]
         }
     }

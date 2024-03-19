@@ -11,7 +11,7 @@ public class SkillTrig : MonoBehaviour {
         // OFFICIAL LIST: "mouse1", "shift", "Skill1", "Skill2", "Skill3"
 
     public int mc;
-    public float cdDef = 0.5f, cd;
+    public float cdMax = 0.5f, cd;
 
     public virtual void use_active (){
         
@@ -28,7 +28,7 @@ public class SkillTrig : MonoBehaviour {
         if (_igo.mp < mc) return false;
 
         ContDamage.I.lose_mp (_igo, mc);
-        cd = cdDef;
+        cd = cdMax;
         return true;
     }
 }

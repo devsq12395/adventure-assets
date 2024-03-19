@@ -23,6 +23,7 @@ public class InGameObject : MonoBehaviour {
     
     [Header("------ NON-EDITABLE PARTS ------")]
     public float zPos;
+    public SkillTrig skill1, skill2;
 
     // Animation
     public Animator anim;

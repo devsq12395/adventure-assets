@@ -258,7 +258,10 @@ MonoBehaviour:
   tags:
   - hero
   speed: 6
+  attachScaleMultiplier: 1
   zPos: 0
+  skill1: {fileID: 0}
+  skill2: {fileID: 0}
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 0
@@ -321,7 +324,7 @@ MonoBehaviour:
   skillName: dash
   skillSlot: shift
   mc: 0
-  cdDef: 1
+  cdMax: 0.5
   cd: 0
   missileObj: 
 --- !u!114 &-2860898887327908908
@@ -340,7 +343,7 @@ MonoBehaviour:
   skillName: attack
   skillSlot: mouse1
   mc: 0
-  cdDef: 0.5
+  cdMax: 0.5
   cd: 0
   missileObj: beam1
 --- !u!114 &-5357515076586065808
@@ -358,8 +361,8 @@ MonoBehaviour:
   scriptTag: skill
   skillName: bindingchains
   skillSlot: Skill1
-  mc: 3
-  cdDef: 0.5
+  mc: 0
+  cdMax: 8
   cd: 0
 --- !u!114 &8499769652229208895
 MonoBehaviour:
@@ -376,7 +379,7 @@ MonoBehaviour:
   scriptTag: skill
   skillName: voidsphere
   skillSlot: Skill2
-  mc: 7
-  cdDef: 0.5
+  mc: 0
+  cdMax: 20
   cd: 0
   missileObj: voidSphere
