@@ -34,6 +34,23 @@
 
             "inputScaler_enable": "0",
         },
+        "marcos-tavern": {
+            "name": "Bartender Marco",
+            "desc": "Buonasera, ragazzi! Welcome to my Tavern, where every drink is a work of art. The tavern is so merry you may even find new friends here!",
+            "portImg": "tommy",
+            "posX": 0,
+            "posY": 0,
+
+            "isMini": "0",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "recruit-anastasia", "text": "Recruit Anastasia"},
+            "input4": {"id": "shopCancel", "text": "Nevermind"},
+            "inputTxtBox": {"id": "", "text": ""},
+
+            "inputScaler_enable": "0",
+        },
 
         "buy-success": {
             "name": "",
@@ -99,6 +116,23 @@
             "input2": {"id": "", "text": ""},
             "input3": {"id": "", "text": ""},
             "input4": {"id": "back", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+
+            "inputScaler_enable": "0",
+        },
+        "buy-recruit-success": {
+            "name": "",
+            "desc": "Character is recruited!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back-craft-success", "text": "Back"},
             "inputTxtBox": {"id": "", "text": ""},
 
             "inputScaler_enable": "0",

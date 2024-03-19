@@ -256,6 +256,7 @@ MonoBehaviour:
   tags:
   - boss
   speed: 5
+  attachScaleMultiplier: 3
   zPos: 0
   anim: {fileID: 0}
   hasAnim: 0

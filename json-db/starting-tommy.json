@@ -12,13 +12,11 @@
     ],
 
     "gold": "1000",
-    "items": "1%crdRev^1%irnSwrd^2%bluvin^1%demfng^2%irnore^2%elcshd",
     "items": [
         "1%crdRev%9382200",
         "1%irnSwrd%9382201",
         "2%bluvin%9382202",
-        "2%irnore%9382203",
-        "2%elcshd%9382204",
+        "1%demfng%9382203",
     ],
 
     "missionCur": "",
@@ -38,7 +36,8 @@
         "east-rock": "0",
         "rosas-diner": "1",
         "bella-vita": "1",
-        "strega": "1"
+        "strega": "1",
+        "marcos-tavern": "1"
     },
 
     "reputation": [

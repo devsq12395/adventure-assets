@@ -19,7 +19,7 @@ public class InGameObject : MonoBehaviour {
     public int hitDam;
     public string onHitSFX;
     public List<string> tags;
-    public float speed;
+    public float speed, attachScaleMultiplier = 1;
     
     [Header("------ NON-EDITABLE PARTS ------")]
     public float zPos;

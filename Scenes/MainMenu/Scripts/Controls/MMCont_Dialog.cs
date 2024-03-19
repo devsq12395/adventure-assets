@@ -22,8 +22,10 @@ public class MMCont_Dialog : MonoBehaviour {
 
 			case "shopStregaBuy": btn_shopStregaBuy (); break;
 
+			case "recruit-anastasia": btn_recruitAnastasia (); break;
 
 			case "back-to-inventory": btn_backToInventory (); break;
+			case "back-craft-success": btn_backCraftSuccess (); break;
 			
 			// Default
 			default:
@@ -84,12 +86,20 @@ public class MMCont_Dialog : MonoBehaviour {
 		MM_Inventory.I.show ("buy", "strega");
 	}
 
+	private void btn_recruitAnastasia (){
+		MM_Craft.I.show ("anastasia", "char");
+	}
+
 	private void btn_shopSell (){
 		MM_Inventory.I.show ("sell", "");
 	}
 
 	private void btn_backToInventory (){
 		MM_BuyOrSell.I.hide ();
+	}
+
+	private void btn_backCraftSuccess (){
+		MM_Craft.I.hide ();
 	}
 
 	/*

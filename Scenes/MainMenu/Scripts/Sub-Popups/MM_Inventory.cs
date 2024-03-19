@@ -179,7 +179,7 @@ public class MM_Inventory : MonoBehaviour {
     public void save_all_items_to_json (){
         List<string> _itemsToJoin = new List<string>();
         foreach (Item _item in itemsMain) {
-            _itemsToJoin.Add ($"{_item.stack}%{_item.name}");
+            _itemsToJoin.Add ($"{_item.stack}%{_item.name}%{_item.ID}");
         }
 
         string _joined = string.Join (",", _itemsToJoin.ToArray ());
@@ -197,7 +197,7 @@ public class MM_Inventory : MonoBehaviour {
             itemsMain [_itemFromInv.ID] = _itemFromInv;
         } else {
             for (int i = 1; i <= _stack; i++) {
-                Item _new = new Item (_item, 1, itemsMain.Count);
+                Item _new = new Item (_item, 1, Random.Range(1000000, 10000000));
                 itemsMain.Add (_new);
             }
         }

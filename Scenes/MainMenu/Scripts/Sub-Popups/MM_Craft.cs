@@ -15,7 +15,7 @@ public class MM_Craft : MonoBehaviour {
 	public TextMeshProUGUI tName, tDesc, tRequires;
 	public Image iPort;
 
-	public string item, type; // type: item, hero
+	public string item, type; // type: item, char
 
 	private int goldCost;
 	private Dictionary<string, int> itemReqs;
@@ -49,9 +49,9 @@ public class MM_Craft : MonoBehaviour {
 
 				goldCost = int.Parse (JsonReading.I.read ("items", $"items.{_name}.cost"));
 				break;
-			case "hero":
-				tName.text = JsonReading.I.get_str ($"{_name}.-name");
-				tDesc.text = JsonReading.I.read ("chars", $"chars.{_name}.bio");
+			case "char":
+				tName.text = JsonReading.I.get_str ($"{_name}-name");
+				tDesc.text = JsonReading.I.read ("chars", $"chars.{_name}.bio.info");
 
 				_goldReq = $"{JsonReading.I.get_str ("gold")}: 0";
 				_itemReq = string.Join ("\n", JsonReading.I.read ("chars", $"chars.{_name}.requires").Split(',').Select((_req) => {
@@ -99,11 +99,20 @@ public class MM_Craft : MonoBehaviour {
 
 		JsonSaving.I.gain_gold (-goldCost);
 		foreach (var _item in _items) {
-			Debug.Log (_item.Key + ", " + _item.Value);
 			MM_Inventory.I.remove_stack (_item.Key, _item.Value);
 		}
-		MM_Inventory.I.add_item (item, 1);
-		MMCont_Dialog.I.create_dialog ("buy-craft-success");
+		switch (type) {
+			case "item":
+				MM_Inventory.I.add_item (item, 1);
+				MMCont_Dialog.I.create_dialog ("buy-craft-success");
+				break;
+			case "char":
+				List<string> _chars = JsonSaving.I.load ("pool").Split (',').ToList ();
+				_chars.Add (item);
+				JsonSaving.I.save ("pool", string.Join (',', _chars.ToArray()));
+				MMCont_Dialog.I.create_dialog ("buy-recruit-success");
+				break;
+		}
 	}
 
 	public void hide (){
