@@ -19,10 +19,10 @@ public class MM_Inventory : MonoBehaviour {
     public int page, pageMax;
 
     public struct Item {
-        public string name; public int stack; public int index;
+        public string name; public int stack; public int ID;
 
-        public Item (string _name, int _stack, int _index) {
-            name = _name; stack = _stack; index = _index;
+        public Item (string _name, int _stack, int _id) {
+            name = _name; stack = _stack; ID = _id;
         }
     }
     public struct ItemUI {
@@ -47,12 +47,12 @@ public class MM_Inventory : MonoBehaviour {
 
         // Setup main item inventory
         itemsMain = new List<Item> ();
-        string[]    _itemsStr = JsonSaving.I.load ("items").Split ('^'), 
+        string[]    _itemsStr = JsonSaving.I.load ("items").Split (','), 
                     _itemExtracted;
 
         for (int _i = 0; _i < _itemsStr.Length; _i++) {
             _itemExtracted = _itemsStr [_i].Split ('%');
-            Item _new = new Item (_itemExtracted [1], int.Parse (_itemExtracted [0]), itemsMain.Count);
+            Item _new = new Item (_itemExtracted [1], int.Parse (_itemExtracted [0]), int.Parse (_itemExtracted [2]));
             itemsMain.Add (_new);
         }
 
@@ -182,7 +182,7 @@ public class MM_Inventory : MonoBehaviour {
             _itemsToJoin.Add ($"{_item.stack}%{_item.name}");
         }
 
-        string _joined = string.Join ("^", _itemsToJoin.ToArray ());
+        string _joined = string.Join (",", _itemsToJoin.ToArray ());
         JsonSaving.I.save ("items", _joined);
     }
 
@@ -194,7 +194,7 @@ public class MM_Inventory : MonoBehaviour {
             Item _itemFromInv = get_item_from_inv (_item);
 
             _itemFromInv.stack += _stack;
-            itemsMain [_itemFromInv.index] = _itemFromInv;
+            itemsMain [_itemFromInv.ID] = _itemFromInv;
         } else {
             for (int i = 1; i <= _stack; i++) {
                 Item _new = new Item (_item, 1, itemsMain.Count);
@@ -206,19 +206,29 @@ public class MM_Inventory : MonoBehaviour {
         refresh_item_btns ();
     }
 
-    public void remove_item (int _index){
-        itemsMain.RemoveAt (_index);
+    public void remove_item (int _ID){
+        for (int i = 0; i < itemsMain.Count; i++) {
+            if (itemsMain [i].ID == _ID) {
+                itemsMain.RemoveAt (i);
+                break;
+            }
+        }
 
         save_all_items_to_json ();
         refresh_item_btns ();
     }
 
-    public void remove_stack (MM_Inventory.Item _item, int _stack) {
+    public void remove_stack (Item _item, int _stack) {
         _item.stack -= _stack;
-        if (_item.stack <= 0) {
-            itemsMain.RemoveAt (_item.index);
-        } else {
-            itemsMain [_item.index] = _item;
+        for (int i = 0; i < itemsMain.Count; i++) {
+            if (itemsMain [i].ID == _item.ID) {
+                if (_item.stack <= 0) {
+                    itemsMain.RemoveAt (i);
+                } else {
+                    itemsMain [i] = _item;
+                }
+                break;
+            }
         }
 
         save_all_items_to_json ();

@@ -73,7 +73,7 @@ public class MM_ItemCheck : MonoBehaviour {
             case "equip":
                 MM_Char.I.change_equip (item.name);
                 hide (); 
-                MM_Inventory.I.remove_item (item.index);
+                MM_Inventory.I.remove_item (item.ID);
                 MM_Inventory.I.hide ();
                 break;
         }
