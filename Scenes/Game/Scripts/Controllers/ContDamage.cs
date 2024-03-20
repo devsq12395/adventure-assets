@@ -12,6 +12,7 @@ public class ContDamage : MonoBehaviour {
 
         int _dam = _damOrig;
         
+        _dam = check_other_effects (_atk, _def, _damOrig, _extraTags_atk);
         _dam = check_tag_effects (_atk, _def, _damOrig, _extraTags_atk);
 
         _def.hp -= _dam;
@@ -82,18 +83,40 @@ public class ContDamage : MonoBehaviour {
         // Dam Text UI
         GameUI_InGameTxt.I.create_ingame_txt (_dam.ToString (), _def.gameObject.transform.position, 2f);
     }
+
+    private int check_other_effects (InGameObject _atk, InGameObject _def, int _damOrig, List<string> _tags){
+        int _dam = _damOrig;
+
+        // Crit rate and dam
+        if (_atk.tags.Contains ("hero")) {
+            int _critRate = Random.Range (0, 100);
+            if (_critRate <= _atk.statCritRate) {
+                _dam += _dam * (statCritDam / 100);
+                GameUI_InGameTxt.I.create_ingame_txt (DB_Strings.I.get_str ("Critical!"), _def.gameObject.transform.position, 2f);
+            }
+        }
+
+        return _dam;
+    }
     
     private int check_tag_effects (InGameObject _atk, InGameObject _def, int _damOrig, List<string> _tags){
         int _dam = _damOrig;
 
         List<string> _atkTags = ((_atk) ? _atk.tags : new List<string>());
         
-        // Overload
+        /*// Overload
         if (DB_Conditions.I.is_overload_fire_to_electric (_atkTags, _def.tags, _def.buffs) ||
             DB_Conditions.I.is_overload_electric_to_fire (_atkTags, _def.tags, _def.buffs)) {
                 _dam += (int)((float)_dam * 0.2f);
                 GameUI_InGameTxt.I.create_ingame_txt (DB_Strings.I.get_str ("Overload!"), _def.gameObject.transform.position, 2f);
         }
+
+        // Overload
+        if (DB_Conditions.I.is_overload_fire_to_electric (_atkTags, _def.tags, _def.buffs) ||
+            DB_Conditions.I.is_overload_electric_to_fire (_atkTags, _def.tags, _def.buffs)) {
+                _dam += (int)((float)_dam * 0.2f);
+                GameUI_InGameTxt.I.create_ingame_txt (DB_Strings.I.get_str ("Overload!"), _def.gameObject.transform.position, 2f);
+        }*/
         
         return _dam;
     }

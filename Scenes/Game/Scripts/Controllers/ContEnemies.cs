@@ -6,6 +6,18 @@ using UnityEngine;
 
 public class ContEnemies : MonoBehaviour {
 
+
+
+	/*
+		CONTAINS:
+		1. Code to control enemy waves
+		2. Locate enemy with arrows
+	*/
+
+
+	/*
+		1. Code to control enemy waves
+	*/
     public static ContEnemies I;
 	public void Awake(){ I = this; }
 
@@ -76,4 +88,47 @@ public class ContEnemies : MonoBehaviour {
             GameUI_GameOver.I.on_victory ();
 		}
 	}
+
+	/*
+		2. Locate enemy with arrows
+	*/
+	public GameObject arrowPrefab;
+    public Camera mainCamera;
+    public float arrowOffset = 20f;
+
+    private List<GameObject> arrows = new List<GameObject>();
+
+    public void update_arrows() {
+        InGameObject[] _objects = FindObjectsOfType<InGameObject>();
+
+        foreach (InGameObject _object in _objects) {
+        	if (_object.owner != 2) continue;
+
+            Vector3 screenPoint = mainCamera.WorldToViewportPoint(enemy.transform.position);
+
+            if (screenPoint.x < 0 || screenPoint.x > 1 || screenPoint.y < 0 || screenPoint.y > 1) {
+                show_arrow (enemy.transform.position);
+            }
+            else  {
+                destroy_arrow (enemy);
+            }
+        }
+    }
+
+    private void show_arrow(Vector3 enemyPosition) {
+        Vector3 screenPoint = mainCamera.WorldToViewportPoint(enemyPosition);
+        Vector3 arrowPosition = new Vector3(Screen.width * screenPoint.x, Screen.height * screenPoint.y, 0);
+
+        GameObject arrow = Instantiate(arrowPrefab, arrowPosition, Quaternion.identity);
+        arrows.Add(arrow);
+    }
+
+    private void destroy_arrow(GameObject enemy) {
+        GameObject arrowToRemove = arrows.Find(a => a.transform.position == enemy.transform.position);
+        if (arrowToRemove != null)
+        {
+            arrows.Remove(arrowToRemove);
+            Destroy(arrowToRemove);
+        }
+    }
 }

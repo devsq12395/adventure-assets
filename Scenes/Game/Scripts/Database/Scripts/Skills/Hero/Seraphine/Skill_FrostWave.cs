@@ -12,7 +12,6 @@ public class Skill_FrostWave : SkillTrig {
         ContObj.I.change_velocity (_ownerComp, new Vector2 (0, 0));
         _ownerComp.isAtk = true;
         _ownerComp.toAnim = 1;
-        _ownerComp.isInvul = true;
         
         Vector2 _pos = gameObject.transform.position;
         float _ang = Calculator.I.get_ang_from_point_and_mouse (_pos);

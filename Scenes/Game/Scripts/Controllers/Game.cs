@@ -39,6 +39,7 @@ public class Game : MonoBehaviour {
         
         MUI_HPBars.I.update_bars ();
         MUI_CharPane.I.update ();
+        ContEnemies.I.update_arrows ();
     }
 
     public void pause_game (){
