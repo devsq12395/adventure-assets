@@ -4,6 +4,7 @@
     ],
     "chars": {
         "tommy": {
+            "img-port": "tommy",
             "equipWeapon": "gun",
             "stats": {
                 "hp": 8,
@@ -25,6 +26,7 @@
             "requires": []
         },
         "brad": {
+            "img-port": "brad",
             "equipWeapon": "sword",
             "stats": {
                 "hp": 10,
@@ -46,6 +48,7 @@
             "requires": []
         },
         "anastasia": {
+            "img-port": "anastasia",
             "equipWeapon": "sword",
             "stats": {
                 "hp": 10,
@@ -67,6 +70,7 @@
             "requires": ["2%bluvin", "1%demfng"],
         },
         "seraphine": {
+            "img-port": "seraphine",
             "equipWeapon": "sword",
             "stats": {
                 "hp": 10,
@@ -88,6 +92,7 @@
             "requires": []
         },
         "miguel": {
+            "img-port": "miguel",
             "equipWeapon": "sword",
             "stats": {
                 "hp": 10,
@@ -109,6 +114,7 @@
             "requires": []
         },
         "anthony": {
+            "img-port": "anthony",
             "equipWeapon": "sword",
             "stats": {
                 "hp": 10,

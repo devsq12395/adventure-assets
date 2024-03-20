@@ -35,6 +35,9 @@ public class InGameObject : MonoBehaviour {
     // Components
     public Rigidbody2D rb;
 
+    // Stats
+    public int statHP, statMP, statAttack, statSkill, statSpeed, statArmor, statCritRate, statCritDam;
+
     // Movement
     public Vector2 curPos = new Vector2 (0, 0);
     public Vector2 movInput = new Vector2 (0, 0);

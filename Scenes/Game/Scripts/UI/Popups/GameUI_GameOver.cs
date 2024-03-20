@@ -31,13 +31,14 @@ public class GameUI_GameOver : MonoBehaviour {
 		Transition_Game.I.change_state ("toMenu");
 	}
 
-	private void on_victory (){
+	public void on_victory (){
 		string _curMission = JsonSaving.I.load ("missionCur");
 
 		string[] 	_missionCurPool = JsonSaving.I.load ("missionCurPool").Split (','),
 					_missionsToUnlock = JsonReading.I.read ("missions", $"missions.{_curMission}.missions-set").Split (',');
 
 		// Unlocks all missions marked to be unlocked on missions.json
+		Debug.Log ($"{_curMission}, {_missionsToUnlock}");
 		for (int i = 0; i < _missionsToUnlock.Length; i++) {
 			string[] _unlockDetails = _missionsToUnlock [i].Split ("->");
 			JsonSaving.I.save ($"missionCurPool.{_unlockDetails [0]}", _unlockDetails[1]);

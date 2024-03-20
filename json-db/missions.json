@@ -5,7 +5,7 @@
             "desc": "Hey man! Looking for work? Boss Vincenzo is looking for tough fighters like you.\n\nI want to check out what you're capable first, bro. Some monsters are spotted close on our turf. Deal with them and I'll pay you nicely.",
             "sprite": "vic",
             
-            "enemies": "1-monsters",
+            "enemies": "1-zombies",
             "maps": ["newHaven_rand"],
             "unlocks-area": [],
             "missions-set": [

@@ -20,7 +20,24 @@ public class ContObj : MonoBehaviour {
 
     // Create
     private void on_create_set_obj_stats (InGameObject _comp){
-        if (_comp.tags.Contains ("hero")) _comp.mp = 0;
+        if (!_comp.tags.Contains ("hero")) return;
+
+        _comp.mp = 0;
+
+        _comp.statHP = StatCalc.I.get_stat (_comp.name, "hp");
+        _comp.statMP = StatCalc.I.get_stat (_comp.name, "mp");
+        _comp.statAttack = StatCalc.I.get_stat (_comp.name, "attack");
+        _comp.statSkill = StatCalc.I.get_stat (_comp.name, "skill");
+        _comp.statSpeed = StatCalc.I.get_stat (_comp.name, "speed");
+        _comp.statArmor = StatCalc.I.get_stat (_comp.name, "armor");
+        _comp.statCritRate = StatCalc.I.get_stat (_comp.name, "crit-rate");
+        _comp.statCritDam = StatCalc.I.get_stat (_comp.name, "crit-dam");
+    }
+
+    private void on_create_set_boss (InGameObject _comp){
+        if (!_comp.tags.Contains ("boss")) return;
+
+        MUI_HPBars.I.set_boss (_comp);
     }
 
     public GameObject create_obj (string _name, Vector2 _pos, int _player) {
@@ -33,7 +50,7 @@ public class ContObj : MonoBehaviour {
         
         set_default_skills (_comp);
         setup_events (_comp);
-        if (_comp.tags.Contains ("boss")) MUI_HPBars.I.set_boss (_comp);
+        on_create_set_boss (_comp);
 
         return _obj;
     }

@@ -73,6 +73,7 @@ public class ContEnemies : MonoBehaviour {
                 JsonReading.I.get_str ("UI-in-game.mission-success"),
                 $"{JsonReading.I.get_str ("UI-in-game.all-enemies-dead")}\n\n{generate_and_give_rewards ()}"
             );
+            GameUI_GameOver.I.on_victory ();
 		}
 	}
 }

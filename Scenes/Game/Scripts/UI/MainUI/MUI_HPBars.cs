@@ -10,10 +10,15 @@ public class MUI_HPBars : MonoBehaviour
     public void Awake() { I = this; }
 
     public GameObject go_bossHP;
-    public Image i_HPMain, i_MPMain, iBossMain;
-    public TextMeshProUGUI t_hp, t_mp, t_bossName, t_cdSkill1, t_cdSkill2;
+    public Image i_port, i_HPMain, i_MPMain, iBossMain, i_CDPanel1, i_CDPanel2;
+    public TextMeshProUGUI t_name, t_hp, t_mp, t_bossName, t_cdSkill1, t_cdSkill2;
 
     public InGameObject boss;
+
+    public void set_char (string _charName) {
+        t_name.text = JsonReading.I.get_str ($"{_charName}-name");
+        i_port.sprite = Sprites.I.get_sprite (JsonReading.I.read ("chars", $"chars.{_charName}.img-port"));
+    }
 
     public void update_bars() {
         InGameObject _pla = ContPlayer.I.player;
@@ -29,8 +34,10 @@ public class MUI_HPBars : MonoBehaviour
         t_hp.text = $"{_pla.hp} / {_pla.hpMax}";
         t_mp.text = $"{_pla.mp} / {_pla.mpMax}";
 
-        t_cdSkill1.text = $"Q - {((_pla.skill1.cd > 0) ? (int)_pla.skill1.cd : "READY")}";
-        t_cdSkill2.text = $"E - {((_pla.skill2.cd > 0) ? (int)_pla.skill2.cd : "READY")}";
+        t_cdSkill1.text = $"Q - {((_pla.skill1.cd > 0) ? $"{(int)(_pla.skill1.cd + 1)} sec." : "READY")}";
+        t_cdSkill2.text = $"E - {((_pla.skill2.cd > 0) ? $"{(int)(_pla.skill2.cd + 1)} sec." : "READY")}";
+        i_CDPanel1.color = (_pla.skill1.cd > 0) ? Color.red : Color.green;
+        i_CDPanel2.color = (_pla.skill2.cd > 0) ? Color.red : Color.green;
 
         if (boss != null) {
             float hpScaleBoss = (float)boss.hp / (float)boss.hpMax;
