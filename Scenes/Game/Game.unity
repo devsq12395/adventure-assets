@@ -1050,6 +1050,9 @@ MonoBehaviour:
   enemyCount: 0
   curWave: 0
   enemiesType: 
+  arrowPrefab: {fileID: 0}
+  mainCamera: {fileID: 0}
+  arrowOffset: 20
 --- !u!1 &297425485
 GameObject:
   m_ObjectHideFlags: 0

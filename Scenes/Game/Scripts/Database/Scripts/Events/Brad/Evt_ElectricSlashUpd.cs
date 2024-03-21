@@ -24,13 +24,13 @@ public class Evt_ElectricSlashUpd : EvtTrig {
         InGameObject _owner = GetComponent <InGameObject> ();
         dam_nearby_units (_owner);
 
-        if (_obj.propellType != "dash") {
+        if (_owner.propellType != "dash") {
             isUsingSkill = false;
         }
     }
 
     private void dam_nearby_units (InGameObject _owner){
-        List<InGameObject> _objs = ContObj.I.get_objs_in_area (_dummy.transform.position, RANGE);
+        List<InGameObject> _objs = ContObj.I.get_objs_in_area (_owner.transform.position, RANGE);
 
         foreach (InGameObject _o in _objs) {
             if (!DB_Conditions.I.dam_condition (_owner, _o) || hitIDs.Contains (_o.id)) continue;

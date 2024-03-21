@@ -91,7 +91,7 @@ public class ContDamage : MonoBehaviour {
         if (_atk.tags.Contains ("hero")) {
             int _critRate = Random.Range (0, 100);
             if (_critRate <= _atk.statCritRate) {
-                _dam += _dam * (statCritDam / 100);
+                _dam += _dam * (_atk.statCritDam / 100);
                 GameUI_InGameTxt.I.create_ingame_txt (DB_Strings.I.get_str ("Critical!"), _def.gameObject.transform.position, 2f);
             }
         }

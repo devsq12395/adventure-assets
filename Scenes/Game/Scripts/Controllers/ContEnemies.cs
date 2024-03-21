@@ -104,13 +104,13 @@ public class ContEnemies : MonoBehaviour {
         foreach (InGameObject _object in _objects) {
         	if (_object.owner != 2) continue;
 
-            Vector3 screenPoint = mainCamera.WorldToViewportPoint(enemy.transform.position);
+            Vector3 screenPoint = mainCamera.WorldToViewportPoint(_object.gameObject.transform.position);
 
             if (screenPoint.x < 0 || screenPoint.x > 1 || screenPoint.y < 0 || screenPoint.y > 1) {
-                show_arrow (enemy.transform.position);
+                show_arrow (_object.gameObject.transform.position);
             }
             else  {
-                destroy_arrow (enemy);
+                destroy_arrow (_object.gameObject);
             }
         }
     }
