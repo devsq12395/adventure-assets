@@ -50,6 +50,12 @@ public class MM_Craft : MonoBehaviour {
 				goldCost = int.Parse (JsonReading.I.read ("items", $"items.{_name}.cost"));
 				break;
 			case "char":
+				if (JsonSaving.I.load ("pool").Split (',').Contains (_name)) {
+					go.SetActive (false);					
+					MMCont_Dialog.I.create_dialog ("hero-recruited");
+					return;
+				}
+
 				tName.text = JsonReading.I.get_str ($"{_name}-name");
 				tDesc.text = JsonReading.I.read ("chars", $"chars.{_name}.bio.info");
 

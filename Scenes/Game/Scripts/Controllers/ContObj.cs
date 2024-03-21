@@ -19,19 +19,26 @@ public class ContObj : MonoBehaviour {
     }
 
     // Create
-    private void on_create_set_obj_stats (InGameObject _comp){
+    private void on_create_set_obj_stats (InGameObject _comp, string _name){
         if (!_comp.tags.Contains ("hero")) return;
 
         _comp.mp = 0;
 
-        _comp.statHP = StatCalc.I.get_stat (_comp.name, "hp");
-        _comp.statMP = StatCalc.I.get_stat (_comp.name, "mp");
-        _comp.statAttack = StatCalc.I.get_stat (_comp.name, "attack");
-        _comp.statSkill = StatCalc.I.get_stat (_comp.name, "skill");
-        _comp.statSpeed = StatCalc.I.get_stat (_comp.name, "speed");
-        _comp.statArmor = StatCalc.I.get_stat (_comp.name, "armor");
-        _comp.statCritRate = StatCalc.I.get_stat (_comp.name, "crit-rate");
-        _comp.statCritDam = StatCalc.I.get_stat (_comp.name, "crit-dam");
+        _comp.statHP                    = StatCalc.I.get_stat (_name, "hp");
+        _comp.statMP                    = StatCalc.I.get_stat (_name, "mp");
+        _comp.statAttack                = StatCalc.I.get_stat (_name, "attack");
+        _comp.statRange                 = StatCalc.I.get_stat (_name, "range");
+        _comp.statSkill                 = StatCalc.I.get_stat (_name, "skill");
+        _comp.statSpeed                 = StatCalc.I.get_stat (_name, "speed");
+        _comp.statArmor                 = StatCalc.I.get_stat (_name, "armor");
+        _comp.statCritRate              = StatCalc.I.get_stat (_name, "crit-rate");
+        _comp.statCritDam               = StatCalc.I.get_stat (_name, "crit-dam");
+
+        _comp.hpMax = _comp.statHP;
+        _comp.hp = _comp.statHP;
+        _comp.mpMax = _comp.statMP;
+        _comp.mp = _comp.statMP;
+        _comp.armor = _comp.statArmor;
     }
 
     private void on_create_set_boss (InGameObject _comp){
@@ -46,7 +53,7 @@ public class ContObj : MonoBehaviour {
 
         _obj.transform.position = _pos;
         _comp.owner = _player;
-        on_create_set_obj_stats (_comp);
+        on_create_set_obj_stats (_comp, _name);
         
         set_default_skills (_comp);
         setup_events (_comp);
@@ -283,7 +290,7 @@ public class ContObj : MonoBehaviour {
         if (!_obj.constMovAng_isOn || !DB_Conditions.I.can_move (_obj)) return;
 
         Vector3 _curPos = _obj.curPos;
-        float _yPos = _curPos.y + _obj.constMovAng_spd * Mathf.Sin(_obj.constMovAng_ang * Mathf.Deg2Rad);
+        float   _yPos = _curPos.y + _obj.constMovAng_spd * Mathf.Sin(_obj.constMovAng_ang * Mathf.Deg2Rad);
         Vector3 _newPos = new Vector3(
             _curPos.x + _obj.constMovAng_spd * Mathf.Cos(_obj.constMovAng_ang * Mathf.Deg2Rad), 
             _yPos,
@@ -292,6 +299,13 @@ public class ContObj : MonoBehaviour {
 
         if (_obj.isRotate) {
             _obj.gameObject.transform.rotation = Quaternion.Euler (0, 0, _obj.constMovAng_ang);
+        }
+
+        if (_obj.range > 0) {
+            _obj.range -= _obj.constMovAng_spd;
+            if (_obj.range <= 0) {
+                ContDamage.I.kill (_obj);
+            }
         }
 
         _obj.curPos = _newPos;

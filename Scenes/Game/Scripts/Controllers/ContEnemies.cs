@@ -99,7 +99,7 @@ public class ContEnemies : MonoBehaviour {
     private List<GameObject> arrows = new List<GameObject>();
 
     public void update_arrows() {
-        InGameObject[] _objects = FindObjectsOfType<InGameObject>();
+        /*InGameObject[] _objects = FindObjectsOfType<InGameObject>();
 
         foreach (InGameObject _object in _objects) {
         	if (_object.owner != 2) continue;
@@ -112,7 +112,7 @@ public class ContEnemies : MonoBehaviour {
             else  {
                 destroy_arrow (_object.gameObject);
             }
-        }
+        }*/
     }
 
     private void show_arrow(Vector3 enemyPosition) {

@@ -17,7 +17,7 @@
             "desc": "Listen up, bro. People have been talking about how well you fought those monsters, but Boss Vincenzo still wants to know if you're the real deal.\n\nThere are some up to no good goblins sighted close to our turf ready to raid. Why don't you teach them a lesson to not mess with the Luppino family?",
             "sprite": "vic",
             
-            "enemies": "3-goblins",
+            "enemies": "1-zombies",
             "maps": ["newHaven_rand"],
             "unlocks-area": [],
             "missions-set": [

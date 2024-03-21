@@ -15,7 +15,7 @@ public class InGameObject : MonoBehaviour {
     public int id;
 
     // Settable in Unity
-    public int hp, hpMax, mp, mpMax, mpRegen;
+    public int hp, hpMax, mp, mpMax, mpRegen, armor;
     public int hitDam;
     public string onHitSFX;
     public List<string> tags;
@@ -36,7 +36,7 @@ public class InGameObject : MonoBehaviour {
     public Rigidbody2D rb;
 
     // Stats
-    public int statHP, statMP, statAttack, statSkill, statSpeed, statArmor, statCritRate, statCritDam;
+    public int statHP, statMP, statAttack, statRange, statSkill, statSpeed, statArmor, statCritRate, statCritDam;
 
     // Movement
     public Vector2 curPos = new Vector2 (0, 0);
@@ -67,7 +67,7 @@ public class InGameObject : MonoBehaviour {
 
     // Misc
     public float knockDrag;
-    public float timedLife;
+    public float timedLife, range;
     public int controllerID;
     public List<int> hitUnitsID;
 

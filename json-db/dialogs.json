@@ -154,5 +154,22 @@
 
             "inputScaler_enable": "0",
         },
+        "hero-recruited": {
+            "name": "",
+            "desc": "This character is already recruited!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+
+            "inputScaler_enable": "0",
+        },
     }
 }

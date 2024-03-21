@@ -18,6 +18,12 @@ public class Skill_DefaultAtk : SkillTrig {
         
         GameObject _missile = ContObj.I.create_obj (missileObj, gameObject.transform.position, _ownerComp.owner);
         InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
+
+        if (_ownerComp.tags.Contains ("hero")) {
+            _missileComp.hitDam = _ownerComp.statAttack;
+            _missileComp.range = _ownerComp.statRange * 4;
+        }
+
         ContObj.I.const_move_ang_set (_missileComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position), _missileComp.speed);
 
         _missileComp.controllerID = _ownerComp.id;

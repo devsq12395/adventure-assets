@@ -12,9 +12,10 @@ public class ContDamage : MonoBehaviour {
 
         int _dam = _damOrig;
         
-        _dam = check_other_effects (_atk, _def, _damOrig, _extraTags_atk);
-        _dam = check_tag_effects (_atk, _def, _damOrig, _extraTags_atk);
+        _dam = check_other_effects (_atk, _def, _dam, _extraTags_atk); 
+        _dam = check_tag_effects (_atk, _def, _dam, _extraTags_atk);
 
+        if (_dam < 0) _dam = 0;
         _def.hp -= _dam;
 
         post_dam_events (_atk, _def, _dam);
@@ -88,14 +89,18 @@ public class ContDamage : MonoBehaviour {
         int _dam = _damOrig;
 
         // Crit rate and dam
-        if (_atk.tags.Contains ("hero")) {
+        if (_atk.tags.Contains ("hero")) { 
             int _critRate = Random.Range (0, 100);
-            if (_critRate <= _atk.statCritRate) {
-                _dam += _dam * (_atk.statCritDam / 100);
-                GameUI_InGameTxt.I.create_ingame_txt (DB_Strings.I.get_str ("Critical!"), _def.gameObject.transform.position, 2f);
+            if (_critRate <= _atk.statCritRate) { 
+                _dam += _dam * (_atk.statCritDam / 100) + 2;
+                GameUI_InGameTxt.I.create_ingame_txt ("Critical!", _def.gameObject.transform.position, 2f);
             }
         }
 
+        // Armor
+        _dam -= _def.armor;
+
+        Debug.Log ($"returning {_dam}");
         return _dam;
     }
     
