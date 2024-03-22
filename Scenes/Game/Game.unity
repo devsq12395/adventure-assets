@@ -2763,7 +2763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &697046909
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3475,7 +3475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dummy: {fileID: 8947407259833390799, guid: 605d8d65e40587542bfff4cf07f76de0, type: 3}
-  tommy: {fileID: 1734063162558475763, guid: ac04f97f259209947bef2eb86a31eb4b, type: 3}
+  tommy: {fileID: 1734063162558475763, guid: 76749578d0255a1de9df4d81f70a1d56, type: 3}
   brad: {fileID: 1734063162558475763, guid: ac04f97f259209947bef2eb86a31eb4b, type: 3}
   anastasia: {fileID: 1734063162558475763, guid: ac04f97f259209947bef2eb86a31eb4b, type: 3}
   seraphine: {fileID: 9180770538312301372, guid: 4e579bd253c461540bac4219c6f51dee, type: 3}
@@ -3493,6 +3493,7 @@ MonoBehaviour:
   molotovMsl: {fileID: 6030030144846642306, guid: 0131425acd9709c4d8f40c98ad04b21f, type: 3}
   voidSphere: {fileID: 6288765498937075357, guid: ac5d459cc232b074e994e934ce75853c, type: 3}
   iceMissile01: {fileID: 2793350704781907999, guid: 574cd0f6c38d15742ba7f573a44c1fd9, type: 3}
+  shotgun: {fileID: 6781197039557131184, guid: a31e4950d0a83121c8b15edca490f0d5, type: 3}
   explosion1: {fileID: 1401509844482372538, guid: 27184bd0ec3267a4ba95990debf08eba, type: 3}
   explosion2: {fileID: 7377904376478507447, guid: 6f6c76db710f16b4e9216024f4b55c21, type: 3}
   explosion3: {fileID: 8620740922000547619, guid: 651d929cf2acc7948b5751e38568c570, type: 3}
@@ -8998,7 +8999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.7999153, y: 9.200005}
+  m_AnchoredPosition: {x: -126, y: 9.1}
   m_SizeDelta: {x: 113.91, y: 28.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888334223

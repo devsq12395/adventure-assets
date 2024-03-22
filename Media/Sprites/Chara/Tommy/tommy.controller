@@ -77,7 +77,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cd34f4f23f23c4d43b298f9c230d5a52, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8c8547930ba4c6e50b7c4d4a94f5619f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -266,7 +266,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 28930b5459d48854ab4e07399d293e54, type: 2}
+  m_Motion: {fileID: 7400000, guid: ccbf551da7446a67d9ddafac75394426, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -320,7 +320,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 79ec9f7468a616e4a832d0f91203543d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4a2a45fd5d0a0046e91429d07ddffc7f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -400,7 +400,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 88ea841e5760e3042ae3e6a9dff5308b, type: 2}
+  m_Motion: {fileID: 7400000, guid: d4498527166a99b1ba92c397f90c4b44, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -412,7 +412,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Anastasia
+  m_Name: tommy
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Blend
@@ -620,7 +620,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 79ec9f7468a616e4a832d0f91203543d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4a2a45fd5d0a0046e91429d07ddffc7f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

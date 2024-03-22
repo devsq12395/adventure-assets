@@ -7,6 +7,8 @@ public class Skill_Shotgun : SkillTrig {
     public string missileObj;
     
     public override void use_active (){
+        if (!use_check()) return;
+        
         InGameObject _ownerComp = gameObject.GetComponent <InGameObject> ();
 
         ContObj.I.change_velocity (_ownerComp, new Vector2 (0, 0));

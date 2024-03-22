@@ -39,6 +39,7 @@ public class ContObj : MonoBehaviour {
         _comp.mpMax = _comp.statMP;
         _comp.mp = _comp.statMP;
         _comp.armor = _comp.statArmor;
+        _comp.speed = 6 + (_comp.statSpeed * 0.25f);
     }
 
     private void on_create_set_boss (InGameObject _comp){

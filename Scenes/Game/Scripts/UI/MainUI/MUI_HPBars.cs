@@ -35,9 +35,9 @@ public class MUI_HPBars : MonoBehaviour
         t_mp.text = $"{_pla.mp} / {_pla.mpMax}";
 
         t_cdSkill1.text = $"Q - {((_pla.skill1.cd > 0) ? $"{(int)(_pla.skill1.cd + 1)} sec." : "READY")}";
-        t_cdSkill2.text = $"E - {((_pla.skill2.cd > 0) ? $"{(int)(_pla.skill2.cd + 1)} sec." : "READY")}";
+        //t_cdSkill2.text = $"E - {((_pla.skill2.cd > 0) ? $"{(int)(_pla.skill2.cd + 1)} sec." : "READY")}";
         i_CDPanel1.color = (_pla.skill1.cd > 0) ? Color.red : Color.green;
-        i_CDPanel2.color = (_pla.skill2.cd > 0) ? Color.red : Color.green;
+        //i_CDPanel2.color = (_pla.skill2.cd > 0) ? Color.red : Color.green;
 
         if (boss != null) {
             float hpScaleBoss = (float)boss.hp / (float)boss.hpMax;

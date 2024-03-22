@@ -20,7 +20,7 @@ public class DB_Objects : MonoBehaviour {
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
-    public GameObject beam1, kitsuneMissile, molotovMsl, voidSphere, iceMissile01;
+    public GameObject beam1, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -72,6 +72,7 @@ public class DB_Objects : MonoBehaviour {
             case "molotovMsl":              _refObj = molotovMsl; break;
             case "voidSphere":              _refObj = voidSphere; break;
             case "iceMissile01":              _refObj = iceMissile01; break;
+            case "shotgun":                 _refObj = shotgun; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;
