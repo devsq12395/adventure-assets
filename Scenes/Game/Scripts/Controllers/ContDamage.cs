@@ -23,8 +23,8 @@ public class ContDamage : MonoBehaviour {
         if (_def.hp <= 0) {
             bool _isKill = before_kill_events (_atk, _def);
             if (_isKill) {
+                on_kill_events (_atk, _def);
                 kill (_def);
-                after_kill_events ();
             }
         }
     }
@@ -147,13 +147,15 @@ public class ContDamage : MonoBehaviour {
         return _isKill;
     }
 
-    private void after_kill_events (){
+    private void on_kill_events (InGameObject _atk, InGameObject _def){
         List<InGameObject> pList = ContPlayer.I.players;
 
         // Change char
-        for (int i = 0; i < pList.Count; i++) {
-            if (pList [i].hp > 0) {
-                ContPlayer.I.change_char (i);
+        if (_def.tags.Contains ("hero")) {
+            for (int i = 0; i < pList.Count; i++) {
+                if (pList [i].hp > 0) {
+                    ContPlayer.I.change_char (i);
+                }
             }
         }
     }

@@ -25,7 +25,7 @@ public class AI_OrcShaman : InGameAI {
                     stateTime >= 1f) {
                 
                 ContObj.I.move_walk_to_pos_stop (inGameObj);
-                //ContObj.I.use_skill_active (inGameObj, "attack");
+                ContObj.I.use_skill_active (inGameObj, "attack");
                 stateTime = 0;
                 state = 2;
             }

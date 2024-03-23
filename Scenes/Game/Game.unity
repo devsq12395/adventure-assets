@@ -3476,7 +3476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dummy: {fileID: 8947407259833390799, guid: 605d8d65e40587542bfff4cf07f76de0, type: 3}
   tommy: {fileID: 1734063162558475763, guid: 76749578d0255a1de9df4d81f70a1d56, type: 3}
-  brad: {fileID: 1734063162558475763, guid: ac04f97f259209947bef2eb86a31eb4b, type: 3}
+  brad: {fileID: 2570637198022245372, guid: b61fcfe71d79c5827977ecc46e899a2d, type: 3}
   anastasia: {fileID: 1734063162558475763, guid: ac04f97f259209947bef2eb86a31eb4b, type: 3}
   seraphine: {fileID: 9180770538312301372, guid: 4e579bd253c461540bac4219c6f51dee, type: 3}
   miguel: {fileID: 1734063162558475763, guid: ac04f97f259209947bef2eb86a31eb4b, type: 3}
@@ -3489,6 +3489,7 @@ MonoBehaviour:
   kitsuneBoss: {fileID: 5097030854448268402, guid: 39d448d14e3246c948db63e790335614, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
+  beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
   kitsuneMissile: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   molotovMsl: {fileID: 6030030144846642306, guid: 0131425acd9709c4d8f40c98ad04b21f, type: 3}
   voidSphere: {fileID: 6288765498937075357, guid: ac5d459cc232b074e994e934ce75853c, type: 3}

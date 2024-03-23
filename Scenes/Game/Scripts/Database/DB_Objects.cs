@@ -20,7 +20,7 @@ public class DB_Objects : MonoBehaviour {
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
-    public GameObject beam1, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun;
+    public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -60,7 +60,7 @@ public class DB_Objects : MonoBehaviour {
 
             // Enemies
             case "greenSlime":              _refObj = greenSlime; break;
-            case "orcShaman":               _refObj = orcShaman; break;
+            case "orc-shaman":               _refObj = orcShaman; break;
             case "kitsune":                 _refObj = kitsune; break;
             case "kitsune-boss":            _refObj = kitsuneBoss; break;
 
@@ -68,6 +68,7 @@ public class DB_Objects : MonoBehaviour {
             case "testMissile1":            _refObj = testMissile1; break;
             case "SampleAssist_Missile":    _refObj = testMissile1; break;
             case "beam1":                   _refObj = beam1; break;
+            case "beam-1-placeholder":        _refObj = beam1Placeholder; break;
             case "kitsuneMissile":          _refObj = kitsuneMissile; break;
             case "molotovMsl":              _refObj = molotovMsl; break;
             case "voidSphere":              _refObj = voidSphere; break;
