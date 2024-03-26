@@ -75,6 +75,9 @@ public class ContPlayer : MonoBehaviour {
         player.isInvul = false;
         
         InGameCamera.I.target = player.transform;
+
+        MUI_HPBars.I.set_char (player.name);
+        ContEffect.I.create_effect ("move-smoke", _posPl);
     }
 
     // Skills

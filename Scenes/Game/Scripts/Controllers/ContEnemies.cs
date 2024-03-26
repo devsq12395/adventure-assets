@@ -39,16 +39,33 @@ public class ContEnemies : MonoBehaviour {
 		Dictionary<string, int> _wave = mainWaves [0];
 
 		foreach (var _waveData in _wave){
-			for (int i = 0; i < _waveData.Value; i++) {
-				Vector2 _rand = new Vector2 (
-	                Random.Range (-ContMap.I.details.size.x, ContMap.I.details.size.x),
-	                Random.Range (-ContMap.I.details.size.y, ContMap.I.details.size.y)
-	            );
+			bool _isSwarm = DB_Enemies.I.is_enemy_swarm (_waveData.Key);
+			Vector2 _rand = get_spawn_point ();
 
+			for (int i = 0; i < _waveData.Value; i++) {
+				//if (!_isSwarm) {
+					_rand = get_spawn_point ();
+				//}
+
+				ContEffect.I.create_effect ("move-smoke", _rand);
 	            ContObj.I.create_obj (_waveData.Key, _rand, 2);
 	            enemyCount++;
 			}
         }
+	}
+
+	private Vector2 get_spawn_point() {
+	    Vector2 randomPoint;
+	    float maxDistance = 7f;
+
+	    do {
+	        randomPoint = new Vector2(
+	            Random.Range(-ContMap.I.details.size.x, ContMap.I.details.size.x),
+	            Random.Range(-ContMap.I.details.size.y, ContMap.I.details.size.y)
+	        );
+	    } while (Vector2.Distance(randomPoint, ContPlayer.I.player.gameObject.transform.position) <= maxDistance);
+
+	    return randomPoint;
 	}
 
 	public string generate_and_give_rewards (){

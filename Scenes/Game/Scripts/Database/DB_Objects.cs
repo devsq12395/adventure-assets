@@ -16,16 +16,16 @@ public class DB_Objects : MonoBehaviour {
 
     [Header("----- Units -----")]
     public GameObject hero;
-    public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss;
+    public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
-    public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun;
+    public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
     public GameObject explosion2, explosion3, damTxt, explosion1_mini, molotovEfct, bindChainExp1, bindChainExp2, voidSphereHit, voidSphereCast, frostWaveHit, 
-        frostWaveCast;
+        frostWaveCast, moveSmoke;
 
     [Header("----- Buffs -----")]
     public GameObject buf_burn;
@@ -63,6 +63,8 @@ public class DB_Objects : MonoBehaviour {
             case "orc-shaman":               _refObj = orcShaman; break;
             case "kitsune":                 _refObj = kitsune; break;
             case "kitsune-boss":            _refObj = kitsuneBoss; break;
+            case "slime-red":            _refObj = slimeRed; break;
+            case "slime-blue":            _refObj = slimeBlue; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -74,6 +76,7 @@ public class DB_Objects : MonoBehaviour {
             case "voidSphere":              _refObj = voidSphere; break;
             case "iceMissile01":              _refObj = iceMissile01; break;
             case "shotgun":                 _refObj = shotgun; break;
+            case "slime-blue-missile":                 _refObj = slimeBlueMissile; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;
@@ -87,6 +90,7 @@ public class DB_Objects : MonoBehaviour {
             case "voidSphereCast":             _refObj = voidSphereCast; break;
             case "frostWaveHit":             _refObj = frostWaveHit; break;
             case "frostWaveCast":             _refObj = frostWaveCast; break;
+            case "move-smoke":             _refObj = moveSmoke; break;
                 
             case "damTxt":                  _refObj = damTxt; break;
                 

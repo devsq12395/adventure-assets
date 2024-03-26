@@ -6,7 +6,7 @@
             "sprite": "vic",
             
             "enemies": "1-zombies",
-            "maps": ["newHaven_rand"],
+            "maps": ["woosterSquare_rand"],
             "unlocks-area": [],
             "missions-set": [
                 "vic->vic02"
@@ -18,7 +18,7 @@
             "sprite": "vic",
             
             "enemies": "1-zombies",
-            "maps": ["newHaven_rand"],
+            "maps": ["woosterSquare_rand"],
             "unlocks-area": [],
             "missions-set": [
                 "vic->vic03"
@@ -30,7 +30,7 @@
             "sprite": "vic",
             
             "enemies": "1-embraced",
-            "maps": ["newHaven_rand"],
+            "maps": ["woosterSquare_rand"],
             "unlocks-area": [],
             "missions-set": [
                 "vic->finished"

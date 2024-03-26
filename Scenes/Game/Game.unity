@@ -3487,6 +3487,8 @@ MonoBehaviour:
   orcShaman: {fileID: 2637923167325178476, guid: 218e0d36539203a43ad92f05dd7f9509, type: 3}
   kitsune: {fileID: 6880683148220506431, guid: 0c536299f24c4014b80cc7ee2c35b6c4, type: 3}
   kitsuneBoss: {fileID: 5097030854448268402, guid: 39d448d14e3246c948db63e790335614, type: 3}
+  slimeRed: {fileID: 4690657366656991979, guid: e6f82a6177a2b9d27b4ce290affa21a8, type: 3}
+  slimeBlue: {fileID: 4917938084647442157, guid: 69b2af1989ab73ee389714e43d054950, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
@@ -3495,6 +3497,7 @@ MonoBehaviour:
   voidSphere: {fileID: 6288765498937075357, guid: ac5d459cc232b074e994e934ce75853c, type: 3}
   iceMissile01: {fileID: 2793350704781907999, guid: 574cd0f6c38d15742ba7f573a44c1fd9, type: 3}
   shotgun: {fileID: 6781197039557131184, guid: a31e4950d0a83121c8b15edca490f0d5, type: 3}
+  slimeBlueMissile: {fileID: 571909625728764212, guid: f0d157cf55579aa2fac6b0fe94498dfc, type: 3}
   explosion1: {fileID: 1401509844482372538, guid: 27184bd0ec3267a4ba95990debf08eba, type: 3}
   explosion2: {fileID: 7377904376478507447, guid: 6f6c76db710f16b4e9216024f4b55c21, type: 3}
   explosion3: {fileID: 8620740922000547619, guid: 651d929cf2acc7948b5751e38568c570, type: 3}
@@ -3507,6 +3510,7 @@ MonoBehaviour:
   voidSphereCast: {fileID: 0}
   frostWaveHit: {fileID: 0}
   frostWaveCast: {fileID: 0}
+  moveSmoke: {fileID: 225586780582164684, guid: afb61644b91d92ab2a39ab568d133076, type: 3}
   buf_burn: {fileID: 8100014777820684788, guid: 932449129c027b348ba8b2719f25438d, type: 3}
   buf_bindingChains: {fileID: 4245185834599824400, guid: 2374b86ef40e8c14986599794e514d4d, type: 3}
   buf_voidSphereGrounded: {fileID: 0}
@@ -7919,6 +7923,7 @@ GameObject:
   - component: {fileID: 1727020069}
   - component: {fileID: 1727020070}
   - component: {fileID: 1727020071}
+  - component: {fileID: 1727020072}
   m_Layer: 0
   m_Name: MAPS
   m_TagString: Untagged
@@ -7966,6 +7971,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goMap: {fileID: 796115272899654260, guid: d1e487e8e918a4d74a8a66d42efe55a0, type: 3}
+--- !u!114 &1727020072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727020068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0eae2aa6b5c94d579cf2102be1dbad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goMap: {fileID: 2307320867305515300, guid: 5d6e2c3c6f771aae9bea03c528fe22d7, type: 3}
 --- !u!1 &1732877945
 GameObject:
   m_ObjectHideFlags: 0

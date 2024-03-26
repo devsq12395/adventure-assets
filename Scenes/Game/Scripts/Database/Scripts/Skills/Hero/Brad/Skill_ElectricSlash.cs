@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Skill_ElectricSlash : SkillTrig {
@@ -21,5 +22,11 @@ public class Skill_ElectricSlash : SkillTrig {
 
         Evt_ElectricSlashUpd _event = gameObject.GetComponent <Evt_ElectricSlashUpd>();
         _event.isUsingSkill = true;
+
+        gameObject.GetComponents<BoxCollider2D> ()
+            .Where(bc => !bc.isTrigger).ToList ()
+            .ForEach (bc => bc.enabled = false);
+
+        ContBuffs.I.add_buff (_ownerComp, "invulnerable"); //0.5f default dur
     }
 }

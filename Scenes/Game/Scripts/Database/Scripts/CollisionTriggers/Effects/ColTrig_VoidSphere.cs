@@ -7,7 +7,7 @@ public class ColTrig_VoidSphere : ColTrig {
     public int dam;
     public List<string> damTags;
     
-    public override void on_hit_enemy (InGameObject _hit){ Debug.Log ("coll");
+    public override void on_hit_enemy (InGameObject _hit){
         if (!DB_Conditions.I.coll_cond_missile (_hit))  return;
         if (ContBuffs.I.get_has_buff (_hit, "void-sphere"))   return;
 

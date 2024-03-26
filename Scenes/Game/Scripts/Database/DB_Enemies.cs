@@ -7,6 +7,14 @@ public class DB_Enemies : MonoBehaviour {
     public static DB_Enemies I;
 	public void Awake(){ I = this; }
 
+	public bool is_enemy_swarm (string _enemyType) {
+		switch (_enemyType) {
+			case "kitsune": return true; break;
+		}
+
+		return false;
+	}
+
 	public List<Dictionary<string, int>> get_list_of_main_waves (string _enemiesType){
 		List<Dictionary<string, int>> _ret = new List<Dictionary<string, int>> ();
 
@@ -45,29 +53,53 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("kitsune", 8);
-				_waves[0].Add ("orc-shaman", 3);
+				_waves[0].Add ("slime-red", 8);
+				_waves[0].Add ("slime-blue", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("kitsune-boss", 1);
+				_waves[1].Add ("slime-red", 8);
+				_waves[1].Add ("slime-blue", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("slime-red", 8);
+				_waves[2].Add ("slime-blue", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("kitsune-boss", 1);
 
 				break;
 			case 1:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("kitsune", 8);
-				_waves[0].Add ("orc-shaman", 3);
+				_waves[0].Add ("slime-red", 8);
+				_waves[0].Add ("slime-blue", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("kitsune-boss", 1);
+				_waves[1].Add ("slime-red", 8);
+				_waves[1].Add ("slime-blue", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("slime-red", 8);
+				_waves[2].Add ("slime-blue", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("kitsune-boss", 1);
 
 				break;
 			case 2:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("kitsune", 8);
-				_waves[0].Add ("orc-shaman", 3);
+				_waves[0].Add ("slime-red", 8);
+				_waves[0].Add ("slime-blue", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("kitsune-boss", 1);
+				_waves[1].Add ("slime-red", 8);
+				_waves[1].Add ("slime-blue", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("slime-red", 8);
+				_waves[2].Add ("slime-blue", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("kitsune-boss", 1);
 
 				break;
 		}

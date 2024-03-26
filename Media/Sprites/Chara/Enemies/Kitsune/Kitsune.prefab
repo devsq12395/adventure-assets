@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6880683148220506429}
   - component: {fileID: 6880683148220506428}
   - component: {fileID: -7506087046501941722}
-  - component: {fileID: 5286682310506819867}
+  - component: {fileID: 4072041406679748499}
   m_Layer: 0
   m_Name: Kitsune
   m_TagString: Untagged
@@ -33,13 +33,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6880683148220506431}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2054719, y: 0.012159258, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6880683148220506420
 SpriteRenderer:
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &6880683148220506423
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -112,7 +112,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &6880683148220506422
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,6 +124,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -149,6 +169,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -182,6 +221,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -207,17 +252,30 @@ MonoBehaviour:
   mp: 15
   mpMax: 15
   mpRegen: 0
+  armor: 0
   hitDam: 1
   onHitSFX: 
   tags: []
   speed: 5
+  attachScaleMultiplier: 1
   zPos: 0
+  skill1: {fileID: 0}
+  skill2: {fileID: 0}
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 0
   toAnim: 0
   renderer: {fileID: 0}
   rb: {fileID: 0}
+  statHP: 0
+  statMP: 0
+  statAttack: 0
+  statRange: 0
+  statSkill: 0
+  statSpeed: 0
+  statArmor: 0
+  statCritRate: 0
+  statCritDam: 0
   curPos: {x: 0, y: 0}
   movInput: {x: 0, y: 0}
   nxtPos: {x: 0, y: 0}
@@ -242,6 +300,7 @@ MonoBehaviour:
   isDash: 0
   knockDrag: 0
   timedLife: 0
+  range: 0
   controllerID: 0
   hitUnitsID: 
   skills: []
@@ -274,7 +333,7 @@ MonoBehaviour:
   skillName: kitsuneAtk
   skillSlot: mouse1
   mc: 0
-  cdDef: 0.5
+  cdMax: 0.5
   cd: 0
   missileObj: kitsuneMissile
 --- !u!114 &-7506087046501941722
@@ -290,11 +349,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGameObj: {fileID: 0}
+  isStart: 0
   isReady: 0
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}
---- !u!114 &5286682310506819867
+--- !u!114 &4072041406679748499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -307,6 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGameObj: {fileID: 0}
+  isStart: 0
   isReady: 0
   state: 0
   stateTime: 0

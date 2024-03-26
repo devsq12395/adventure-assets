@@ -100,7 +100,6 @@ public class ContDamage : MonoBehaviour {
         // Armor
         _dam -= _def.armor;
 
-        Debug.Log ($"returning {_dam}");
         return _dam;
     }
     
@@ -129,12 +128,9 @@ public class ContDamage : MonoBehaviour {
     private bool before_kill_events (InGameObject _atk, InGameObject _def){
         bool _isKill = true;
         
-        // Reduce enemy count
-        if (_def.owner == 2) {
-            ContEnemies.I.enemyCount--;
-            if (ContEnemies.I.enemyCount <= 0) {
-                ContEnemies.I.start_next_wave ();
-            }
+        // Check enemy count
+        if (_def.owner == 2 && _def.type == "unit") {
+            check_enemy_count ();
         }
 
         // Codes that require an attacker goes here
@@ -163,6 +159,20 @@ public class ContDamage : MonoBehaviour {
     /*
         Event functions
     */
+    private void check_enemy_count (){
+        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+        int enemyCount = 0;
+
+        foreach (GameObject obj in allObjects) {
+            InGameObject inGameObject = obj.GetComponent<InGameObject>();
+            if (inGameObject != null && inGameObject.owner == 2 && inGameObject.type == "unit") {
+                enemyCount++;
+            }
+        };
+        if (enemyCount <= 0) {
+            ContEnemies.I.start_next_wave ();
+        }
+    }
     private bool check_game_over (){
         List<InGameObject> pList = ContPlayer.I.players;
 

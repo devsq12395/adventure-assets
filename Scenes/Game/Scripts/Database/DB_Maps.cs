@@ -24,8 +24,8 @@ public class DB_Maps : MonoBehaviour {
     public string is_map_random_and_get_rand_map (string _name){
         List<string> _maps = new List<string>(){_name};
         switch (_name){
-            case "newHaven_rand": _maps = new List<string> (){
-                "newHaven_01","newHaven_02","newHaven_03",
+            case "woosterSquare_rand": _maps = new List<string> (){
+                "woosterSquare_01","woosterSquare_02","woosterSquare_03",
             }; break;
         }
 
@@ -38,12 +38,12 @@ public class DB_Maps : MonoBehaviour {
         mapDetails _new = new mapDetails (_name);
         
         switch (_name) {
-            case "newHaven_01": _new = TestMap1.I.get_map_details (_new); break;
-            case "newHaven_02": _new = TestMap1.I.get_map_details (_new); break;
-            case "newHaven_03": _new = TestMap1.I.get_map_details (_new); break;
+            case "woosterSquare_01": _new = WoosterSquare1.I.get_map_details (_new); break;
+            case "woosterSquare_02": _new = WoosterSquare1.I.get_map_details (_new); break;
+            case "woosterSquare_03": _new = WoosterSquare1.I.get_map_details (_new); break;
 
-            case "newHaven_caleb01": _new = TestMap1.I.get_map_details (_new); break;
-            case "newHaven_caleb02": _new = TestMap1.I.get_map_details (_new); break;
+            case "newHaven_caleb01": _new = WoosterSquare1.I.get_map_details (_new); break;
+            case "newHaven_caleb02": _new = WoosterSquare1.I.get_map_details (_new); break;
         }
 
         return _new;
