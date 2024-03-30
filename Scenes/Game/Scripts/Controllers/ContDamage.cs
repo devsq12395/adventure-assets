@@ -169,6 +169,7 @@ public class ContDamage : MonoBehaviour {
                 enemyCount++;
             }
         };
+        Debug.Log ($"Found enemies: {enemyCount}");
         if (enemyCount <= 0) {
             ContEnemies.I.start_next_wave ();
         }

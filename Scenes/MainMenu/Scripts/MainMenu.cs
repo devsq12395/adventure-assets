@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MainMenu : MonoBehaviour {
     public static MainMenu I;
 	public void Awake(){ I = this; }
 
     public string login;
+
+    public TextMeshProUGUI headerTxt_Gold;
 
     void Start() {
         login = "tommy";
@@ -25,7 +29,7 @@ public class MainMenu : MonoBehaviour {
 
         MM_Map.I.setup ();
 
-        show_popup ("profile");
+        update_header ();
     }
 
     void Update() {
@@ -42,5 +46,16 @@ public class MainMenu : MonoBehaviour {
             case "area":                MM_Area.I.toggle_show (true); break;
             case "party":               MM_Party.I.toggle_show (true); break;
         }
+    }
+
+    public void update_header (){
+        headerTxt_Gold.text = JsonSaving.I.load ("gold");
+    }
+
+    public void update_gold (int _inc){
+        int gold = int.Parse (JsonSaving.I.load ("gold"));
+        gold += _inc;
+        JsonSaving.I.save ("gold", gold.ToString ());
+        update_header ();
     }
 }

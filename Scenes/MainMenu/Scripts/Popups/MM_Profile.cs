@@ -25,7 +25,7 @@ public class MM_Profile : MonoBehaviour {
         go.SetActive (_isShow);
     }
 
-    private void setup_desc (){ Debug.Log (JsonSaving.I.load ("reputation"));
+    private void setup_desc (){
         string  _login          = MainMenu.I.login,
                 _name           = $"{MM_Strings.I.get_str ("name")}{MM_Strings.I.get_str ($"{_login}-name-full")}",
                 _date           = $"{MM_Strings.I.get_str ("date")}{MM_Strings.I.get_str (JsonSaving.I.load ("date"))}",
@@ -33,7 +33,6 @@ public class MM_Profile : MonoBehaviour {
                 _rep            = JsonReading.I.get_str ("UI-main-menu.reputation") + ":\n" + string.Join (
                     "\n", JsonSaving.I.load ("reputation").Split(',').Select (
                         (_repKeyPair) => {
-                            Debug.Log (_repKeyPair);
                             string[] _repSplit = _repKeyPair.Split ("->");
                             return $"{JsonReading.I.get_str ($"{_repSplit[0]}-name")}: {JsonReading.I.get_str ($"UI-main-menu.{_repSplit[1]}")}";
                         }

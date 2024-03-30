@@ -21,6 +21,7 @@
                 "hp": 0,
                 "mp": 0,
                 "attack": 1,
+                "range": 0,
                 "skill": 0,
                 "speed": 0,
                 "armor": 0,
@@ -46,6 +47,7 @@
                 "hp": 0,
                 "mp": 0,
                 "attack": 3,
+                "range": 0,
                 "skill": 4,
                 "speed": 2,
                 "armor": 0,
@@ -53,7 +55,6 @@
                 "crit-dam": 0,
             }
         },
-
         "irnSwrd": {
             "name-ui": "Iron Sword",
             "desc": "+1 dam.\nBasic battle sword. Enough for self-defense.",
@@ -72,6 +73,7 @@
                 "hp": 0,
                 "mp": 0,
                 "attack": 1,
+                "range": 0,
                 "skill": 0,
                 "speed": 0,
                 "armor": 0,

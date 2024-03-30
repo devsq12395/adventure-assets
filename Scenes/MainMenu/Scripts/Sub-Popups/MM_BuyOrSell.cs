@@ -67,8 +67,7 @@ public class MM_BuyOrSell : MonoBehaviour {
 		switch (mode) {
 			case "buy":
 				if (gold >= costTotal) {
-					gold -= costTotal;
-					JsonSaving.I.save ("gold", gold.ToString ());
+					MainMenu.I.update_gold (-costTotal);
 					MM_Inventory.I.add_item (item.name, amountCur);
 					MMCont_Dialog.I.create_dialog ("buy-success");
 				} else {
@@ -77,8 +76,7 @@ public class MM_BuyOrSell : MonoBehaviour {
 				hide ();
 				break;
 			case "sell":
-				gold += costTotal;
-				JsonSaving.I.save ("gold", gold.ToString ());
+				MainMenu.I.update_gold (costTotal);
 				MM_Inventory.I.remove_stack (item, amountCur);
 				hide ();
 				break;
