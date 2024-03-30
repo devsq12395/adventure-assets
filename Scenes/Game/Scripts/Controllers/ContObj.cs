@@ -48,6 +48,12 @@ public class ContObj : MonoBehaviour {
         MUI_HPBars.I.set_boss (_comp);
     }
 
+    private void on_create_set_missile (InGameObject _comp){
+        if (_comp.type != "missile") return;
+
+        if (_comp.timedLife <= 0)  _comp.timedLife = 10;
+    }
+
     public GameObject create_obj (string _name, Vector2 _pos, int _player) {
         GameObject _obj = DB_Objects.I.get_game_obj (_name);
         InGameObject _comp = _obj.GetComponent <InGameObject>();
@@ -59,6 +65,7 @@ public class ContObj : MonoBehaviour {
         set_default_skills (_comp);
         setup_events (_comp);
         on_create_set_boss (_comp);
+        on_create_set_missile (_comp);
 
         return _obj;
     }

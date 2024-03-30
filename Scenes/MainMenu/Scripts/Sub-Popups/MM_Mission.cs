@@ -11,7 +11,7 @@ public class MM_Mission : MonoBehaviour {
     public static MM_Mission I;
 
     public GameObject go;
-    public TextMeshProUGUI title, desc;
+    public TextMeshProUGUI title, desc, desc2;
     public Image port;
 
     public string missionID;
@@ -49,6 +49,12 @@ public class MM_Mission : MonoBehaviour {
         title.text = get_mission_val ("name");
         desc.text = get_mission_val ("desc");
         port.sprite = Sprites.I.get_sprite (get_mission_val ("sprite"));
+
+        string  _json = $"missions.{missionID}",
+                _faction = JsonReading.I.read ("missions", $"{_json}.faction"),
+                _difficulty = JsonReading.I.read ("missions", $"{_json}.difficulty"),
+                _rewards = JsonReading.I.read ("missions", $"{_json}.rewards");
+        desc2.text = $"Faction: {_faction}\nDifficulty: {_difficulty}\n\nRewards: {_rewards}";
     }
 
     public string get_mission_val (string key) {

@@ -4,6 +4,9 @@
             "name": "Vic",
             "desc": "Hey man! Looking for work? Boss Vincenzo is looking for tough fighters like you.\n\nI want to check out what you're capable first, bro. Some monsters are spotted close on our turf. Deal with them and I'll pay you nicely.",
             "sprite": "vic",
+            "faction": "Luppino Family",
+            "difficulty": "Level 1 (Easy)",
+            "rewards": "200 Gold",
             
             "enemies": "1-zombies",
             "maps": ["woosterSquare_rand"],
@@ -16,6 +19,9 @@
             "name": "Vic",
             "desc": "Listen up, bro. People have been talking about how well you fought those monsters, but Boss Vincenzo still wants to know if you're the real deal.\n\nThere are some up to no good goblins sighted close to our turf ready to raid. Why don't you teach them a lesson to not mess with the Luppino family?",
             "sprite": "vic",
+            "faction": "Luppino Family",
+            "difficulty": "Level 2 (Easy)",
+            "rewards": "200 Gold",
             
             "enemies": "1-zombies",
             "maps": ["woosterSquare_rand"],
@@ -28,6 +34,9 @@
             "name": "Vic",
             "desc": "My man! Boss Vincenzo is impressed with your fighting. He think it's time you get a taste of the turf war here in New Haven, bro.\n\nSome territories of The Embraced are poorly defended right now. We need you to strike hard and fast, take them by surprise, and show them who's boss. Are you up for the challenge?",
             "sprite": "vic",
+            "faction": "Luppino Family",
+            "difficulty": "Level 3 (Easy)",
+            "rewards": "200 Gold",
             
             "enemies": "1-embraced",
             "maps": ["woosterSquare_rand"],

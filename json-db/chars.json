@@ -20,8 +20,8 @@
 
             "bio": {
                 "info": "A skilled gunman seeking his fortunes on the East Coast.\nWeapon: Gun",
-                "skill1": "Skill 1: Lightning Bolt\nShoots an electric ball, deals AoE dam.\nCost: 3 MP / CD: 0 sec",
-                "skill2": "Skill 2: Overcharge\n+Deals AoE dam nearby and gains dam for each enemies hit.\nCost: 5 MP / CD: 35 sec",
+                "skill1": "Skill 1: Electro Shotgun\nShoots 3 electric bullets, damages all enemies on their path.\nCD: 5 sec",
+                "skill2": "",
             },
 
             "requires": []
@@ -43,8 +43,8 @@
 
             "bio": {
                 "info": "An adventurer who is very skilled with swords, and Tommy's best buddy.\nWeapon: Sword",
-                "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCost: 2 MP / CD: 0 sec",
-                "skill2": "Skill 2: Phoenix Slash\nSlashing wave, deals fire damage to enemies hit.\nCost: 4 MP / CD: 20 sec",
+                "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCD: 5 sec",
+                "skill2": "",
             },
 
             "requires": []
@@ -53,21 +53,21 @@
             "img-port": "anastasia",
             "equipWeapon": "sword",
             "stats": {
-                "hp": 10,
+                "hp": 8,
                 "mp": 10,
-                "attack": 1,
+                "attack": 2,
                 "range": 2,
-                "skill": 1,
+                "skill": 2,
                 "speed": 1,
                 "armor": 0,
-                "crit-rate": 10,
-                "crit-dam": 120,
+                "crit-rate": 15,
+                "crit-dam": 160,
             },
 
             "bio": {
-                "info": "An escapee from another dimension that was destroyed by a Demon Lord. She's travelling through realms, hunting down demons.\nWeapon: Sword",
-                "skill1": "Skill 1: Binding Chains\nBinds nearby enemies in chains, and deals electric damage.\nCost: 2 MP / CD: 0 sec",
-                "skill2": "Skill 2: Void Sphere\nSlashing wave, deals fire damage to enemies hit.\nCost: 0 MP / CD: 25 secs",
+                "info": "An mysterious warrior from another dimension. She's travelling through realms, hunting down demons.\nWeapon: Sword",
+                "skill1": "Skill 1: Binding Chains\nBinds nearby enemies in chains, and deals electric damage.\nCost: CD: 9 sec",
+                "skill2": "",
             },
 
             "requires": ["2%bluvin", "1%demfng"],
@@ -90,7 +90,7 @@
             "bio": {
                 "info": "An adventurer who is very skilled with swords, and Tommy's best buddy.\nWeapon: Sword",
                 "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCost: 2 MP / CD: 0 sec",
-                "skill2": "Skill 2: Phoenix Slash\nSlashing wave, deals fire damage to enemies hit.\nCost: 4 MP / CD: 20 sec",
+                "skill2": "",
             },
 
             "requires": []
@@ -113,7 +113,7 @@
             "bio": {
                 "info": "An adventurer who is very skilled with swords, and Tommy's best buddy.\nWeapon: Sword",
                 "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCost: 2 MP / CD: 0 sec",
-                "skill2": "Skill 2: Phoenix Slash\nSlashing wave, deals fire damage to enemies hit.\nCost: 4 MP / CD: 20 sec",
+                "skill2": "",
             },
 
             "requires": []
@@ -136,7 +136,7 @@
             "bio": {
                 "info": "An adventurer who is very skilled with swords, and Tommy's best buddy.\nWeapon: Sword",
                 "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCost: 2 MP / CD: 0 sec",
-                "skill2": "Skill 2: Phoenix Slash\nSlashing wave, deals fire damage to enemies hit.\nCost: 4 MP / CD: 20 sec",
+                "skill2": "",
             },
 
             "requires": []

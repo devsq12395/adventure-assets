@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ContDamage : MonoBehaviour {
 
@@ -166,11 +167,12 @@ public class ContDamage : MonoBehaviour {
         foreach (GameObject obj in allObjects) {
             InGameObject inGameObject = obj.GetComponent<InGameObject>();
             if (inGameObject != null && inGameObject.owner == 2 && inGameObject.type == "unit") {
+                Debug.Log (inGameObject.name);
                 enemyCount++;
             }
         };
         Debug.Log ($"Found enemies: {enemyCount}");
-        if (enemyCount <= 0) {
+        if (enemyCount <= 1) {
             ContEnemies.I.start_next_wave ();
         }
     }
