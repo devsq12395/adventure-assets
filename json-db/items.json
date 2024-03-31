@@ -1,6 +1,7 @@
 {
     "shop-inventory": {
-        "strega": ["irElRev"]
+        "strega": ["irElRev"],
+        "bella-vita": ["scrap", "irnore", "bluvin", "crcbrd", "txtbok", "demfng", "elcshd"],
     },
     "items": {
         "crdRev": {
