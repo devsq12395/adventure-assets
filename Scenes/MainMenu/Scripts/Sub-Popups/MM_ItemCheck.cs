@@ -29,13 +29,14 @@ public class MM_ItemCheck : MonoBehaviour {
 
     public void show (MM_Inventory.Item _item, string _mode) {
         go.SetActive (true);
+        string _itmStr = $"items.{_item.name}";
 
         item = _item;
         mode = _mode;
-        bool isEquip = JsonReading.I.read ("items", $"items.{_item.name}.equip") != "";
+        bool isEquip = JsonReading.I.read ("items", $"{_itmStr}.equip") != "";
 
-        tName.text = JsonReading.I.read ("items", $"items.{_item.name}.name-ui");
-        tDesc.text = JsonReading.I.read ("items", $"items.{_item.name}.desc");
+        tName.text = JsonReading.I.read ("items", $"{_itmStr}.name-ui");
+        tDesc.text = $"{JsonReading.I.read ("items", $"{_itmStr}.desc")}\n\nCost: {JsonReading.I.read ("items", $"{_itmStr}.cost")}";
 
         setup_action_btns ();
     }

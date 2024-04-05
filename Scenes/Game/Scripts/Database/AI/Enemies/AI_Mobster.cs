@@ -19,7 +19,9 @@ public class AI_Mobster : InGameAI {
                 state = 1;
             }
         } else if (state == 1) {
+            InGameObject _p = ContPlayer.I.player;
             Vector2 _pPos = _p.gameObject.transform.position;
+            
             if (Calculator.I.get_dist_from_2_points (gameObject.transform.position, _pPos) <= 7f || 
                     stateTime >= 1f) {
                 
