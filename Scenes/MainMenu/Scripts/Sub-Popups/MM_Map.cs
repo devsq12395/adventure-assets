@@ -4,12 +4,15 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class MM_Map : MonoBehaviour {
     public static MM_Map I;
 	public void Awake(){ I = this; }
 
     public GameObject go;
+    public Image imgWindow;
+
     public List<string> mapNames;
     public List<GameObject> mapObjs;
 
@@ -39,12 +42,12 @@ public class MM_Map : MonoBehaviour {
 
     public void show (string _mapID){
         go.SetActive (true);
+
         generate_map (_mapID);
     }
 
     public void hide (){
         Destroy (map);
-        go.SetActive (false);
     }
 
     public void select_node (string _type, string _val){

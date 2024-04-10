@@ -246,6 +246,7 @@ MonoBehaviour:
   go: {fileID: 1990376147}
   goBtnsInter: {fileID: 410764275}
   goBtnsNonInter: {fileID: 111144300}
+  imgWindow: {fileID: 811479860}
   tName: {fileID: 1987842647}
   tDesc: {fileID: 2083670398}
   tActionBtn: {fileID: 715552950}
@@ -2498,6 +2499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 1107237542}
+  imgWindow: {fileID: 0}
   mapNames:
   - new-haven
   - wooster-square
@@ -4852,6 +4854,7 @@ MonoBehaviour:
   - {fileID: 1610718833}
   - {fileID: 82027610}
   - {fileID: 1196812769}
+  imgWindow: {fileID: 1830309734}
   lineup: []
   isShow: 0
 --- !u!1 &624992765
@@ -9431,6 +9434,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 1038743499}
+  imgWindows:
+  - {fileID: 1640493901}
+  - {fileID: 1872567585}
   title: {fileID: 2122636289}
   desc: {fileID: 2145542462}
   desc2: {fileID: 1752057839}
@@ -14514,6 +14520,7 @@ MonoBehaviour:
   go: {fileID: 1252075387}
   goItemObj: {fileID: 2403494253898056596, guid: c7206170048ce1b4b83b8d00633cdbb9, type: 3}
   goCanvas: {fileID: 200787022}
+  imgWindow: {fileID: 63504267}
   tPage: {fileID: 694512102}
   tGold: {fileID: 1809335370}
   mode: 
@@ -15698,6 +15705,8 @@ MonoBehaviour:
   go: {fileID: 1333970445}
   goItemObj: {fileID: 2403494253898056596, guid: db5f9a8c6f11af6c9b12034ac94c7949, type: 3}
   goCanvas: {fileID: 139591962}
+  imgWindows:
+  - {fileID: 1463830320}
   cName: {fileID: 1844206233}
   cDetails: {fileID: 1201488925}
   cDetails2: {fileID: 543973513}
@@ -15883,6 +15892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 1249707211}
+  imgWindow: {fileID: 179245217}
   tName: {fileID: 387181237}
   tDesc: {fileID: 800342184}
   tRequires: {fileID: 897694774}
@@ -16334,6 +16344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 946140945}
+  imgWindow: {fileID: 1056579346}
   go_mainLineup:
   - {fileID: 851838239}
   - {fileID: 884722069}
@@ -19257,6 +19268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 741817239}
+  imgWindow: {fileID: 445791147}
   tName: {fileID: 2138144099}
   tDesc: {fileID: 1506441525}
   mode: 

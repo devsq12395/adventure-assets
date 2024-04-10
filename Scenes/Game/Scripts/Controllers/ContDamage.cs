@@ -131,7 +131,11 @@ public class ContDamage : MonoBehaviour {
         
         // Check enemy count
         if (_def.owner == 2 && _def.type == "unit") {
-            check_enemy_count ();
+            if (_def.tags.Contains ("boss")) {
+                ContEnemies.I.start_next_wave ();
+            } else {
+                check_enemy_count ();
+            }
         }
 
         // Codes that require an attacker goes here

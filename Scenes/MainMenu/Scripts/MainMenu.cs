@@ -37,10 +37,6 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void show_popup (string _popup){
-        MM_Profile.I.toggle_show (false);
-        MM_Area.I.toggle_show (false);
-        MM_Party.I.toggle_show (false);
-
         switch (_popup) {
             case "profile":             MM_Profile.I.toggle_show (true); break;
             case "area":                MM_Area.I.toggle_show (true); break;

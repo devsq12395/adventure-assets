@@ -11,6 +11,7 @@ public class MM_ChangeParty : MonoBehaviour {
 	public void Awake(){ I = this; }
 
     public GameObject go;
+    public Image imgWindow;
 
     public struct CharBtn {
         public Image port;
@@ -67,12 +68,16 @@ public class MM_ChangeParty : MonoBehaviour {
     }
 
     public void toggle_show (bool _isShow){
-        go.SetActive (_isShow);
         isShow = _isShow;
 
         if (isShow) {
             setup_show ();
+
+            go.SetActive (true);
+            imgWindow.transform.localScale = Vector3.zero;
+            imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
         } else {
+            imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
             MM_Party.I.refresh_list ();
         }
     }

@@ -3489,6 +3489,8 @@ MonoBehaviour:
   kitsuneBoss: {fileID: 5097030854448268402, guid: 39d448d14e3246c948db63e790335614, type: 3}
   slimeRed: {fileID: 4690657366656991979, guid: e6f82a6177a2b9d27b4ce290affa21a8, type: 3}
   slimeBlue: {fileID: 4917938084647442157, guid: 69b2af1989ab73ee389714e43d054950, type: 3}
+  mobster: {fileID: 4690657366656991979, guid: 267dbca69a2cdd07ca3f203d595a1119, type: 3}
+  slimeKing: {fileID: 4917938084647442157, guid: 1335056c4d2b71cc68d931890563790c, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}

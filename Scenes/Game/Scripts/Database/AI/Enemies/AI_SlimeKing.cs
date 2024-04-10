@@ -33,7 +33,7 @@ public class AI_SlimeKing : InGameAI {
             Vector2 _pPos = _p.gameObject.transform.position;
             
             if (Calculator.I.get_dist_from_2_points (gameObject.transform.position, _pPos) <= 4f || 
-                    stateTime >= 1f) {
+                    stateTime >= 5f) {
                 
                 ContObj.I.move_walk_to_pos_stop (inGameObj);
                 
@@ -53,6 +53,8 @@ public class AI_SlimeKing : InGameAI {
                     ContObj.I.use_skill_active (inGameObj, "slime-king-flame-wave");
                     break;
             }
+
+            state = 0;
         } 
     }
 }

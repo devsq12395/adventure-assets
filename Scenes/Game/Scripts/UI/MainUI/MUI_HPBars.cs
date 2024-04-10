@@ -48,7 +48,7 @@ public class MUI_HPBars : MonoBehaviour
     public void set_boss (InGameObject _boss){
         go_bossHP.SetActive (true);
         boss = _boss;
-        t_bossName.text = JsonReading.I.get_str ($"char-names.{_boss.name}");
+        t_bossName.text = _boss.nameUI;
     }
 
     private void set_bar_scale (Image _bar, float _xScale) {

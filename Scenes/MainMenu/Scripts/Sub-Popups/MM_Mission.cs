@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.IO;
 using SimpleJSON;
+using DG.Tweening;
 
 public class MM_Mission : MonoBehaviour {
     public static MM_Mission I;
 
     public GameObject go;
+    public List<Image> imgWindows;
     public TextMeshProUGUI title, desc, desc2;
     public Image port;
 
@@ -38,11 +40,18 @@ public class MM_Mission : MonoBehaviour {
         missionID = _missionID;
 
         go.SetActive (true);
+        imgWindows.ForEach ((_window) => {
+            _window.transform.localScale = Vector3.zero;
+            _window.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
+        });
+        
         setup_ui ();
     }
 
     public void hide (){
-        go.SetActive (false);
+        imgWindows.ForEach ((_window) => {
+            _window.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+        });
     }
 
     private void setup_ui (){

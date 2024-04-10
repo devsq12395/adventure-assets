@@ -4,12 +4,14 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class MM_Char : MonoBehaviour {
     public static MM_Char I;
 	public void Awake(){ I = this; }
 
     public GameObject go, goItemObj, goCanvas;
+    public List<Image> imgWindows;
 
     public TextMeshProUGUI cName, cDetails, cDetails2, cBio;
 
@@ -39,12 +41,19 @@ public class MM_Char : MonoBehaviour {
 
     private void show (string _name){
         go.SetActive (true);
+        imgWindows.ForEach ((_window) => {
+            _window.transform.localScale = Vector3.zero;
+            _window.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
+        });
+
         setup_char (_name);
     }
 
     public void hide (){
         clear_equip_items ();
-        go.SetActive (false);
+        imgWindows.ForEach ((_window) => {
+            _window.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+        });
     }
 
     private void clear_equip_items (){

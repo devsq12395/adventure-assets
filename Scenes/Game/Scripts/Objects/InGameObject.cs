@@ -7,7 +7,8 @@ public class InGameObject : MonoBehaviour {
     
     [Header("------ UNITY EDITOR EDITABLE PARTS ------")]
     public string name; 
-    public string type;
+    public string nameUI, type;
+    
     [Header("Types: unit, missile, collect. Put dummies as missile")]
         // TYPES: unit, missile, collect
         // To be set in Unity GameObject's component

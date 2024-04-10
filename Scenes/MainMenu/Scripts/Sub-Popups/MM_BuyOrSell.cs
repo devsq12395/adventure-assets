@@ -11,6 +11,8 @@ public class MM_BuyOrSell : MonoBehaviour {
 	public void Awake(){ I = this; }
 
 	public GameObject go;
+	public Image imgWindow;
+	
 	public TextMeshProUGUI tName, tDesc;
 
 	public string mode;
@@ -33,12 +35,14 @@ public class MM_BuyOrSell : MonoBehaviour {
 		costTotal = cost;
 		
 		go.SetActive (true);
+		imgWindow.transform.localScale = Vector3.zero;
+		imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
 
 		setup_texts ();
 	}
 
 	public void hide (){
-		go.SetActive (false);
+		imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
 	}
 
 	private void setup_texts (){

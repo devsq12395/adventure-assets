@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class MM_Party : MonoBehaviour {
     public static MM_Party I;
@@ -10,6 +11,8 @@ public class MM_Party : MonoBehaviour {
 
     public GameObject go;
     public List<GameObject> buttons;
+
+    public Image imgWindow;
 
     public struct PartyBtn {
         public Image port;
@@ -53,13 +56,17 @@ public class MM_Party : MonoBehaviour {
         setup_buttons ();
     }
 
-    public void toggle_show (bool _isShow){
+    public void toggle_show (bool _isShow){ Debug.Log (_isShow);
         isShow = _isShow;
-        go.SetActive (_isShow);
 
         if (_isShow) {
+            go.SetActive (true);
             refresh_list ();
-        }
+            imgWindow.transform.localScale = Vector3.zero;
+            imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
+        } else {
+            imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+        } 
     }
 
     public void setup_buttons (){

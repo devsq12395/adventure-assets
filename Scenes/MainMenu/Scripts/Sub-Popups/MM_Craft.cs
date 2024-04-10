@@ -11,6 +11,7 @@ public class MM_Craft : MonoBehaviour {
 	public void Awake(){ I = this; }
 
 	public GameObject go;
+	public Image imgWindow;
 
 	public TextMeshProUGUI tName, tDesc, tRequires;
 	public Image iPort;
@@ -26,7 +27,10 @@ public class MM_Craft : MonoBehaviour {
 
 	public void show (string _name, string _type){
 		itemReqs.Clear ();
+
 		go.SetActive (true);
+		imgWindow.transform.localScale = Vector3.zero;
+		imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);	
 
 		item = _name;
 		type = _type;
@@ -122,7 +126,7 @@ public class MM_Craft : MonoBehaviour {
 	}
 
 	public void hide (){
-		go.SetActive (false);
+		imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
 	}
 
 }

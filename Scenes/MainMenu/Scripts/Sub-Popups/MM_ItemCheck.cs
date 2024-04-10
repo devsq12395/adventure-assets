@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class MM_ItemCheck : MonoBehaviour {
     public static MM_ItemCheck I;
     public void Awake () {I = this;}
 
     public GameObject go, goBtnsInter, goBtnsNonInter;
+    public Image imgWindow;
     public TextMeshProUGUI tName, tDesc, tActionBtn;
 
     private List<GameObject> goBtns;
@@ -29,6 +31,9 @@ public class MM_ItemCheck : MonoBehaviour {
 
     public void show (MM_Inventory.Item _item, string _mode) {
         go.SetActive (true);
+        imgWindow.transform.localScale = Vector3.zero;
+        imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);   
+        
         string _itmStr = $"items.{_item.name}";
 
         item = _item;
@@ -42,7 +47,7 @@ public class MM_ItemCheck : MonoBehaviour {
     }
 
     public void hide (){
-        go.SetActive (false);
+        imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
     }
 
     private void setup_action_btns (){

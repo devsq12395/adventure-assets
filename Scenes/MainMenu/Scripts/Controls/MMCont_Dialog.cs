@@ -34,7 +34,7 @@ public class MMCont_Dialog : MonoBehaviour {
 				break;
 		}
 
-		Destroy (_dialog.go);
+		_dialog.tween_out ();
 	}
 
 	/*
@@ -72,6 +72,8 @@ public class MMCont_Dialog : MonoBehaviour {
 				_script.ID = _id;
 			}
 		}
+
+		_newDialog.tween_in ();
 
 		return _newDialog;
 	}

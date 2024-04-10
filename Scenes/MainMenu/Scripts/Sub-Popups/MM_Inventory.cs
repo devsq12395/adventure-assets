@@ -4,12 +4,14 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class MM_Inventory : MonoBehaviour {
     public static MM_Inventory I;
 	public void Awake(){ I = this; }
 
     public GameObject go, goItemObj, goCanvas;
+    public Image imgWindow;
     public TextMeshProUGUI tPage, tGold;
 
     [Header("List of Modes: inventory, equip, sell, buy")]
@@ -62,6 +64,9 @@ public class MM_Inventory : MonoBehaviour {
     public void btn_show (){show ("inventory", "");}
     public void show (string _mode, string _itemList, string[] _sortTag = null){
         go.SetActive (true);
+        imgWindow.transform.localScale = Vector3.zero;
+        imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);       
+        
         mode = _mode;
         setup_items (_itemList, _sortTag);
         refresh_item_btns (_sortTag);
@@ -73,7 +78,7 @@ public class MM_Inventory : MonoBehaviour {
         }
         itemUIs.Clear ();
 
-        go.SetActive (false);
+        imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
     }
 
     private void setup_items (string _itemList, string[] _sortTag = null){
@@ -196,9 +201,14 @@ public class MM_Inventory : MonoBehaviour {
             _itemFromInv.stack += _stack;
             itemsMain [_itemFromInv.ID] = _itemFromInv;
         } else {
-            for (int i = 1; i <= _stack; i++) {
-                Item _new = new Item (_item, 1, Random.Range(1000000, 10000000));
+            if (_stackable) {
+                Item _new = new Item (_item, _stack, Random.Range(1000000, 10000000));
                 itemsMain.Add (_new);
+            } else {
+                for (int i = 1; i <= _stack; i++) {
+                    Item _new = new Item (_item, 1, Random.Range(1000000, 10000000));
+                    itemsMain.Add (_new);
+                }
             }
         }
 

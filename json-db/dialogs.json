@@ -78,10 +78,10 @@
 
             "isMini": "1",
             
-            "input1": {"id": "back-to-inventory", "text": "Back"},
+            "input1": {"id": "", "text": ""},
             "input2": {"id": "", "text": ""},
             "input3": {"id": "", "text": ""},
-            "input4": {"id": "", "text": ""},
+            "input4": {"id": "back-to-inventory", "text": "Back"},
             "inputTxtBox": {"id": "", "text": ""},
 
             "inputScaler_enable": "0",
@@ -95,10 +95,10 @@
 
             "isMini": "1",
             
-            "input1": {"id": "back", "text": "Back"},
+            "input1": {"id": "", "text": ""},
             "input2": {"id": "", "text": ""},
             "input3": {"id": "", "text": ""},
-            "input4": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
             "inputTxtBox": {"id": "", "text": ""},
 
             "inputScaler_enable": "0",
@@ -112,10 +112,10 @@
 
             "isMini": "1",
             
-            "input1": {"id": "back", "text": "Back"},
+            "input1": {"id": "", "text": ""},
             "input2": {"id": "", "text": ""},
             "input3": {"id": "", "text": ""},
-            "input4": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
             "inputTxtBox": {"id": "", "text": ""},
 
             "inputScaler_enable": "0",
@@ -129,10 +129,10 @@
 
             "isMini": "1",
             
-            "input1": {"id": "back", "text": "Back"},
+            "input1": {"id": "", "text": ""},
             "input2": {"id": "", "text": ""},
             "input3": {"id": "", "text": ""},
-            "input4": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
             "inputTxtBox": {"id": "", "text": ""},
 
             "inputScaler_enable": "0",
@@ -146,10 +146,10 @@
 
             "isMini": "1",
             
-            "input1": {"id": "back-craft-success", "text": "Back"},
+            "input1": {"id": "", "text": ""},
             "input2": {"id": "", "text": ""},
             "input3": {"id": "", "text": ""},
-            "input4": {"id": "", "text": ""},
+            "input4": {"id": "back-craft-success", "text": "Back"},
             "inputTxtBox": {"id": "", "text": ""},
 
             "inputScaler_enable": "0",
@@ -163,10 +163,10 @@
 
             "isMini": "1",
             
-            "input1": {"id": "back-to-inventory", "text": "Back"},
+            "input1": {"id": "", "text": ""},
             "input2": {"id": "", "text": ""},
             "input3": {"id": "", "text": ""},
-            "input4": {"id": "", "text": ""},
+            "input4": {"id": "back-to-inventory", "text": "Back"},
             "inputTxtBox": {"id": "", "text": ""},
 
             "inputScaler_enable": "0",
@@ -180,10 +180,10 @@
 
             "isMini": "1",
             
-            "input1": {"id": "back", "text": "Back"},
+            "input1": {"id": "", "text": ""},
             "input2": {"id": "", "text": ""},
             "input3": {"id": "", "text": ""},
-            "input4": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
             "inputTxtBox": {"id": "", "text": ""},
 
             "inputScaler_enable": "0",
