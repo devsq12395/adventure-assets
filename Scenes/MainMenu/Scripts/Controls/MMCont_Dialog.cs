@@ -54,7 +54,7 @@ public class MMCont_Dialog : MonoBehaviour {
 
 		_newDialog.ID = _dialogID;
 		_newDialog.tName.text = JsonReading.I.read ("dialogs", $"{_json}.name");
-		_newDialog.tDesc.text = JsonReading.I.read ("dialogs", $"{_json}.desc");
+		_newDialog.textToShow = JsonReading.I.read ("dialogs", $"{_json}.desc");
 		_newDialog.port.sprite = MM_Sprites.I.get_sprite (JsonReading.I.read ("dialogs", $"{_json}.portImg"));
 
 		foreach (GameObject _input in _newDialog.inputs) {
@@ -72,6 +72,7 @@ public class MMCont_Dialog : MonoBehaviour {
 				_script.ID = _id;
 			}
 		}
+		_newDialog.onContinueCallbackID = JsonReading.I.read ("dialogs", $"{_json}.inputEmptyContinue");
 
 		_newDialog.tween_in ();
 
@@ -114,7 +115,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	*/
 	public void set_special_texts (MiniDialog _dialog, string _dialogID){
 		switch (_dialogID) {
-			
+			default: break;
 		}
 	}
 }

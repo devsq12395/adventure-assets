@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
+using DG.Tweening;
 
 public class MainMenu : MonoBehaviour {
     public static MainMenu I;
 	public void Awake(){ I = this; }
+
+    public GameObject curtainGo;
+    public RectTransform curtainRect;
+    private string curtainState;
+    public float targetX;
 
     public string login;
 
@@ -30,6 +37,8 @@ public class MainMenu : MonoBehaviour {
         MM_Map.I.setup ();
 
         update_header ();
+
+        move_curtain("menuStart", 0, curtainRect.anchoredPosition.y);
     }
 
     void Update() {
@@ -53,5 +62,39 @@ public class MainMenu : MonoBehaviour {
         gold += _inc;
         JsonSaving.I.save ("gold", gold.ToString ());
         update_header ();
+    }
+
+    public void move_curtain(string _state, float _curtainPosX = 0, float _curtainPosY = 0) {
+        curtainGo.SetActive(true);
+
+        Vector2 _curtainPos;
+        switch (_state){ 
+            case "menuStart":
+                _curtainPos = new Vector2(0, curtainRect.anchoredPosition.y);
+                targetX = Screen.width + curtainRect.rect.width / 2;
+                break;
+            default:
+                _curtainPos = new Vector2(-Screen.width - curtainRect.rect.width / 2, curtainRect.anchoredPosition.y);
+                targetX = 0;
+                break;
+        }
+
+        Debug.Log (_curtainPos);
+        float speed = 1f;
+        curtainState = _state;
+        curtainRect.anchoredPosition = _curtainPos;
+
+        curtainRect.DOAnchorPosX(targetX, speed).OnComplete(() => curtain_move_end());
+    }
+
+    private void curtain_move_end() {
+        switch (curtainState) {
+            case "menuStart":
+                curtainGo.SetActive(false);
+                break;
+            case "toGame":
+                MasterScene.I.change_main_scene ("Game");
+                break;
+        }
     }
 }

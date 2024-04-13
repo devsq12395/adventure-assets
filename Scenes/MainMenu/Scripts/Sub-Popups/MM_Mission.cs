@@ -83,6 +83,6 @@ public class MM_Mission : MonoBehaviour {
         JsonSaving.I.save ("missionCur", missionID);
         JsonSaving.I.save ("missionLvl", "1");
         JsonSaving.I.save ("missionMap", "0");
-        MasterScene.I.change_main_scene ("Game");
+        MainMenu.I.move_curtain ("toGame");
     }
 }

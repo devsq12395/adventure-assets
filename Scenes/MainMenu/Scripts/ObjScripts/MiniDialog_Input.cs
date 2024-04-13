@@ -15,6 +15,7 @@ public class MiniDialog_Input : MonoBehaviour {
 	public string inputName, ID;
 
 	public void input_send (){
-		MMCont_Dialog.I.input (dialogP, ID);
+		dialogP.tweenOutCallbackID = ID;
+		dialogP.tween_out ();
 	}
 }
