@@ -1,5 +1,67 @@
 {
     "dialogs": {
+        "intro-1": {
+            "name": "Brad",
+            "desc": "We're finally here in New Haven, Tommy!",
+            "portImg": "brad",
+
+            "inputEmptyContinue": "show-intro-2",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "intro-2": {
+            "name": "Brad",
+            "desc": "We should look for my friend Vic. He's well connected and will help us settle in.",
+            "portImg": "brad",
+
+            "input1": {"id": "back", "text": "Sounds Good"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "dialog-vic-1": {
+            "name": "Vic",
+            "desc": "Brad, my man, you're finally here! And you must be Tommy.",
+            "portImg": "vic",
+
+            "input1": {"id": "show-dialog-vic-2", "text": "Nice to meet you!"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-2": {
+            "name": "Vic",
+            "desc": "You two arrived in perfect timing. We're having some problems with neighboring gangs lately.",
+            "portImg": "vic",
+
+            "inputEmptyContinue": "show-dialog-vic-3",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-3": {
+            "name": "Vic",
+            "desc": "But you'll have to prove yourself first to us, The Luppino Family, and to our boss Don Vincenzo.",
+            "portImg": "vic",
+
+            "inputEmptyContinue": "show-dialog-vic-4",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-4": {
+            "name": "Vic",
+            "desc": "There are monsters spotted near our turf. Deal with them and show us how you two fight.",
+            "portImg": "vic",
+
+            "input1": {"id": "start-mission-vic-1", "text": "Let's go!"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
         "shopTest": {
             "name": "Test's shop",
             "desc": "TestDesc",

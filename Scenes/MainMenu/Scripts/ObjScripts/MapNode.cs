@@ -9,6 +9,8 @@ public class MapNode : MonoBehaviour {
 	public string ID;
 
 	[Header ("TYPE: dialog, mission, map, to-menu")]
+	[Header ("Custom types can also be made. i.e. dialog-vic")]
+	[Header ("Check the call stack from MapNode.cs to see how this works")]
 	public string type;
 
 	[Header ("VAL: dialog or mission ID")]

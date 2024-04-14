@@ -19,7 +19,7 @@ public class DB_Enemies : MonoBehaviour {
 		List<Dictionary<string, int>> _ret = new List<Dictionary<string, int>> ();
 
 		switch (_enemiesType) {
-			case "1-zombies": _ret = zombies_1_main_wave (_ret); break;
+			case "vic-1": _ret = vic_1_main_wave (_ret); break;
 		}
 
 		return _ret;
@@ -29,7 +29,7 @@ public class DB_Enemies : MonoBehaviour {
 		Dictionary<string, int> _ret = new Dictionary<string, int> ();
 
 		switch (_enemiesType) {
-			case "1-zombies": _ret = zombies_1_reward_chance (_ret); break;
+			case "vic-1": _ret = vic_1_reward_chance (_ret); break;
 		}
 
 		return _ret;
@@ -39,31 +39,30 @@ public class DB_Enemies : MonoBehaviour {
 		List<int> _ret = new List<int>();
 
 		switch (_enemiesType) {
-			case "1-zombies": _ret.AddRange (new int[]{300, 500, 600}); break;
+			case "vic-1": _ret.AddRange (new int[]{300}); break;
 		}
 
 		return _ret;
 	}
 
-	private List<Dictionary<string, int>> zombies_1_main_wave (List<Dictionary<string, int>> _ret){
-		int chance = Random.Range (0, 3);
+	private List<Dictionary<string, int>> vic_1_main_wave (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
 		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
-
 
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-king", 1);
+				_waves[0].Add ("slime-red", 4);
+				_waves[0].Add ("slime-blue", 1);
 
-				break;
-			case 1:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-king", 1);
+				_waves[1].Add ("slime-red", 7);
+				_waves[1].Add ("slime-blue", 3);
 
-				break;
-			case 2:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-king", 1);
+				_waves[2].Add ("slime-red", 8);
+				_waves[2].Add ("giant-slime", 1);
 
 				break;
 		}
@@ -71,13 +70,13 @@ public class DB_Enemies : MonoBehaviour {
 		return _waves;
 	}
 
-	private Dictionary<string, int> zombies_1_reward_chance (Dictionary<string, int> _ret){
-		_ret.Add ("zomflsh", 20);
+	private Dictionary<string, int> vic_1_reward_chance (Dictionary<string, int> _ret){
+		/*_ret.Add ("zomflsh", 20);
 		_ret.Add ("plank", 35);
 		_ret.Add ("scrap", 50);
 		_ret.Add ("irnore", 60);
 		_ret.Add ("bluvin", 70);
-		_ret.Add ("", 100);
+		_ret.Add ("", 100);*/
 
 		return _ret;
 	}

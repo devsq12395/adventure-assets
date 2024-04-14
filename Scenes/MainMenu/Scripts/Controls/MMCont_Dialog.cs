@@ -16,6 +16,14 @@ public class MMCont_Dialog : MonoBehaviour {
 	*/
 	public void input (MiniDialog _dialog, string _id){
 		switch (_id) {
+			// Dialogs
+			case "show-intro-2": show_intro_2 (); break;
+			case "show-dialog-vic-2": show_dialog_vic_2 (); break;
+			case "show-dialog-vic-3": show_dialog_vic_3 (); break;
+			case "show-dialog-vic-4": show_dialog_vic_4 (); break;
+
+			case "start-mission-vic-1": start_mission_vic_1 (); break;
+
 			// Test Shop
 			case "shopTest01": btn_shopTest01 (); break;
 			case "shopSell": btn_shopSell (); break;
@@ -82,6 +90,22 @@ public class MMCont_Dialog : MonoBehaviour {
 	/*
 		Functions for the input UI goes here
 	*/
+	public void show_intro_1 () => MMCont_Dialog.I.create_dialog ("intro-1");
+	public void show_intro_2 () {
+		MMCont_Dialog.I.create_dialog ("intro-2");
+		JsonSaving.I.save ("main-menu-start-callback", "");
+	}
+
+	public void show_dialog_vic_2 () => MMCont_Dialog.I.create_dialog ("dialog-vic-2");
+	public void show_dialog_vic_3 () => MMCont_Dialog.I.create_dialog ("dialog-vic-3");
+	public void show_dialog_vic_4 () {
+		MMCont_Dialog.I.create_dialog ("dialog-vic-4");
+		JsonSaving.I.save ("activity.dialog-with-vic", "1");
+	}
+	public void start_mission_vic_1 (){
+		MM_Mission.I.show ("vic-1");
+	}
+
 	private void btn_shopTest01 (){
 		MM_Inventory.I.show ("buy", "test-shop");
 	}

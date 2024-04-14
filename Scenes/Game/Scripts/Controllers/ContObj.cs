@@ -58,6 +58,7 @@ public class ContObj : MonoBehaviour {
         GameObject _obj = DB_Objects.I.get_game_obj (_name);
         InGameObject _comp = _obj.GetComponent <InGameObject>();
 
+        if (!_comp) Debug.Log ($"WARNING: InGameObject not found for spawned object {_name}");
         _obj.transform.position = _pos;
         _comp.owner = _player;
         on_create_set_obj_stats (_comp, _name);
@@ -66,6 +67,15 @@ public class ContObj : MonoBehaviour {
         setup_events (_comp);
         on_create_set_boss (_comp);
         on_create_set_missile (_comp);
+
+        return _obj;
+    }
+
+    public GameObject create_obj_spawner (string _name, Vector2 _pos, int _player){
+        GameObject _obj = create_obj ("move-smoke-spawner", _pos, _player);
+        _obj.GetComponent<Evt_SpawnerDth>().toSpawn = _name;
+        _obj.GetComponent<Evt_SpawnerDth>().owner = _player;
+        _obj.GetComponent<InGameObject>().timedLife = 1;
 
         return _obj;
     }
@@ -482,6 +492,7 @@ public class ContObj : MonoBehaviour {
         
         _obj.timedLife -= Time.deltaTime;
         if (_obj.timedLife <= 0) {
+            evt_on_death (_obj);
             ContDamage.I.kill (_obj);
         }
     }

@@ -47,8 +47,7 @@ public class ContEnemies : MonoBehaviour {
 					_rand = get_spawn_point ();
 				//}
 
-				ContEffect.I.create_effect ("move-smoke", _rand);
-	            ContObj.I.create_obj (_waveData.Key, _rand, 2);
+	            ContObj.I.create_obj_spawner (_waveData.Key, _rand, 2);
 	            enemyCount++;
 			}
         }
@@ -96,6 +95,7 @@ public class ContEnemies : MonoBehaviour {
 		mainWaves.RemoveAt (0);
 
 		if (mainWaves.Count > 0) {
+			MUI_Announcement.I.show ("More enemies are coming!");
 			spawn_enemies ();
 		} else {
 			GameUI_GameOver.I.show (

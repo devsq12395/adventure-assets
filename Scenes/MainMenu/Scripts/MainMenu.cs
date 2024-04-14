@@ -35,6 +35,7 @@ public class MainMenu : MonoBehaviour {
         MM_Craft.I.setup ();
 
         MM_Map.I.setup ();
+        MM_Map.I.show (JsonSaving.I.load ("main-menu-map"));
 
         update_header ();
 
@@ -54,7 +55,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void update_header (){
-        headerTxt_Gold.text = JsonSaving.I.load ("gold");
+        headerTxt_Gold.text = $"Gold: {JsonSaving.I.load ("gold")}";
     }
 
     public void update_gold (int _inc){
@@ -91,10 +92,24 @@ public class MainMenu : MonoBehaviour {
         switch (curtainState) {
             case "menuStart":
                 curtainGo.SetActive(false);
+                main_menu_start_callback ();
                 break;
             case "toGame":
                 MasterScene.I.change_main_scene ("Game");
                 break;
         }
+    }
+
+    public void main_menu_start_callback (){ 
+        string _callback = JsonSaving.I.load ("main-menu-start-callback");
+
+        switch (_callback) {
+            case "show-intro-1": MMCont_Dialog.I.show_intro_1 (); break;
+            case "finished-mission-vic-1":
+                JsonSaving.I.save ("areasUnlocked.bella-vita", "1");
+                JsonSaving.I.save ("areasUnlocked.strega", "1");
+                JsonSaving.I.save ("areasUnlocked.marcos-tavern", "1");
+                break;
+        } 
     }
 }

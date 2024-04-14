@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class GameUI_GameOver : MonoBehaviour {
     public static GameUI_GameOver I;
@@ -25,6 +26,9 @@ public class GameUI_GameOver : MonoBehaviour {
 
 		tTitle.text = _title;
 		tDesc.text = _desc;
+
+		go.transform.localScale = Vector3.zero;
+        go.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
 	}
 
 	public void btn_go_to_menu (){
@@ -48,6 +52,16 @@ public class GameUI_GameOver : MonoBehaviour {
 		string[] _areasToUnlock = JsonSaving.I.load ("missionCurPool").Split (',');
 		for (int i = 0; i < _areasToUnlock.Length; i++) {
 			JsonSaving.I.save ($"areasUnlocked.{_areasToUnlock [i]}", "1");
+		}
+
+		on_victory_callbacks (_curMission);
+	}
+
+	public void on_victory_callbacks (string _curMission){
+		switch (_curMission) {
+			case "vic-1": 
+				JsonSaving.I.save ("main-menu-start-callback", "finished-mission-vic-1");
+				break;
 		}
 	}
 }

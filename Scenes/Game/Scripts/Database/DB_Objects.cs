@@ -16,7 +16,7 @@ public class DB_Objects : MonoBehaviour {
 
     [Header("----- Units -----")]
     public GameObject hero;
-    public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, mobster, slimeKing;
+    public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, mobster, slimeKing, giantSlime;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
@@ -25,7 +25,7 @@ public class DB_Objects : MonoBehaviour {
     [Header("----- Effects -----")]
     public GameObject explosion1;
     public GameObject explosion2, explosion3, damTxt, explosion1_mini, molotovEfct, bindChainExp1, bindChainExp2, voidSphereHit, voidSphereCast, frostWaveHit, 
-        frostWaveCast, moveSmoke;
+        frostWaveCast, moveSmoke, moveSmokeSpawner;
 
     [Header("----- Buffs -----")]
     public GameObject buf_burn;
@@ -67,6 +67,7 @@ public class DB_Objects : MonoBehaviour {
             case "slime-blue":            _refObj = slimeBlue; break;
             case "mobster":            _refObj = mobster; break;
             case "slime-king":            _refObj = slimeKing; break;
+            case "giant-slime":            _refObj = giantSlime; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -93,6 +94,7 @@ public class DB_Objects : MonoBehaviour {
             case "frostWaveHit":             _refObj = frostWaveHit; break;
             case "frostWaveCast":             _refObj = frostWaveCast; break;
             case "move-smoke":             _refObj = moveSmoke; break;
+            case "move-smoke-spawner":             _refObj = moveSmokeSpawner; break;
                 
             case "damTxt":                  _refObj = damTxt; break;
                 

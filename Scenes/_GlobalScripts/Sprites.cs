@@ -9,12 +9,15 @@ public class Sprites : MonoBehaviour {
 
     public Sprite dummy;
 
-    [Header("----- Characters for Player -----")]
+    [Header("----- Portraits for Player -----")]
     public Sprite tommy;
     public Sprite brad, anastasia, seraphine, miguel, anthony;
 
-    [Header("----- Characters: NPC -----")]
+    [Header("----- Portraits: NPC -----")]
     public Sprite vic;
+
+    [Header("----- UI -----")]
+    public Sprite btnLocked;
 
     public Sprite get_sprite (string _name) {
         Sprite _ret = dummy;
@@ -28,6 +31,8 @@ public class Sprites : MonoBehaviour {
             case "anthony": return anthony; break;
 
             case "vic": return vic; break;
+
+            case "btn-locked": return btnLocked; break;
         }
 
         return _ret;

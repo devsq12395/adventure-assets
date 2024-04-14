@@ -1,5 +1,5 @@
 {
-    "version": "0.7",
+    "version": "0.8",
 
     "date": "jan-2225",
 
@@ -28,16 +28,26 @@
     "missionLvl": "",
 
     "rewards": [],
+    "main-menu-start-callback": "show-intro-1",
+    "main-menu-map": "wooster-square",
+
+    "activity": {
+        "dialog-with-vic": "0",
+    },
     
     "areasUnlocked": {
         "new-haven": "1", 
         "wooster-square": "1", 
-        "downtown": "0",
-        "east-rock": "0",
+        
         "rosas-diner": "1",
-        "bella-vita": "1",
-        "strega": "1",
-        "marcos-tavern": "1"
+        "bella-vita": "0",
+        "strega": "0",
+        "marcos-tavern": "0",
+        "i91-highway-ives": "0",
+        "east-st-ives": "0",
+        "mill-river-ives": "0",
+        "fair-haven-ives": "0",
+        "east-st-2-ives": "0",
     },
 
     "reputation": [
