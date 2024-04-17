@@ -37,6 +37,10 @@ public class Evt_ElectricSlashUpd : EvtTrig {
         if (curDistExpEffect <= 0){
             curDistExpEffect = DIST_PER_EXPLOSION_EFFECT;
             ContEffect.I.create_effect ("explosion1_mini", _pos);
+
+            gameObject.GetComponents<BoxCollider2D> ()
+                .Where(bc => !bc.isTrigger).ToList ()
+                .ForEach (bc => bc.enabled = true);
         }
 
         if (_owner.propellType != "dash") {

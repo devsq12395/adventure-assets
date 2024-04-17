@@ -18,7 +18,7 @@ public class JsonSaving : MonoBehaviour {
     public void Awake(){
         I = this;
         
-        OVERWRITE = true;
+        OVERWRITE = false;
         if (OVERWRITE) Debug.Log ("DEBUG WARNING: Overwrite is true at JsonSaving.cs");
 
         // TEST

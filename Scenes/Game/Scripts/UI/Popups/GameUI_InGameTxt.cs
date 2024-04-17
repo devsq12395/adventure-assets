@@ -16,12 +16,14 @@ public class GameUI_InGameTxt: MonoBehaviour{
         public GameObject go;
         public TextMeshProUGUI txtUI;
         public float dur;
+        public Vector2 origPos;
         
-        public InGameTxt (GameObject _go, TextMeshProUGUI _txtUI, string _txt, float _dur){
+        public InGameTxt (GameObject _go, TextMeshProUGUI _txtUI, string _txt, float _dur, Vector2 _origPos){
             go = _go;
             txtUI = _txtUI;
             txtUI.text = _txt;
             dur = _dur;
+            origPos = _origPos;
         }
     }
     
@@ -41,7 +43,7 @@ public class GameUI_InGameTxt: MonoBehaviour{
     void Update (){
         if (!isReady) return;
         
-        all_txt_dur ();
+        update_all_txts ();
         posUsed.Clear ();
     }
     
@@ -59,12 +61,9 @@ public class GameUI_InGameTxt: MonoBehaviour{
         TextMeshProUGUI _newTxtUI = _canvas.transform.Find ("DamTxt").GetComponent <TextMeshProUGUI> ();
         
         _newTxtUI.color = new Color(_newTxtUI.color.r, _newTxtUI.color.g, _newTxtUI.color.b, 1f);
-        _newTxtUI.rectTransform.anchoredPosition = new Vector2(_newTxtUI.rectTransform.anchoredPosition.x, _newTxtUI.rectTransform.anchoredPosition.y);
-
         _newTxtUI.DOFade(0f, _dur);
-        _newTxtUI.rectTransform.DOAnchorPosY(_newTxtUI.rectTransform.anchoredPosition.y + 2f, _dur);
         
-        InGameTxt _new = new InGameTxt (_go, _newTxtUI, _txt, _dur);
+        InGameTxt _new = new InGameTxt (_go, _newTxtUI, _txt, _dur, _pos);
         txtList.Add (_new);
         
         return _go;
@@ -81,12 +80,23 @@ public class GameUI_InGameTxt: MonoBehaviour{
         return _pos;
     }
     
-    public void all_txt_dur (){
+    public void update_all_txts (){
         InGameTxt _item;
         for (int i = txtList.Count - 1; i >= 0; i--) {
             _item = txtList [i];
             _item.dur -= Time.deltaTime;
-            
+
+            // Text Position
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(new Vector3(txtList [i].origPos.x, txtList [i].origPos.y, 0f));
+            Vector2 uiPos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                txtList [i].txtUI.rectTransform.parent as RectTransform, 
+                screenPos, 
+                Camera.main, 
+                out uiPos);
+            txtList [i].txtUI.rectTransform.anchoredPosition = uiPos;
+
+            // Duration
             if (_item.dur <= 0) {
                 Destroy (txtList [i].go);
                 txtList.RemoveAt (i);
