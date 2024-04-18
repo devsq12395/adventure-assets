@@ -17,10 +17,10 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void input (MiniDialog _dialog, string _id){
 		switch (_id) {
 			// Dialogs
-			case "show-intro-2": show_intro_2 (); break;
-			case "show-dialog-vic-2": show_dialog_vic_2 (); break;
-			case "show-dialog-vic-3": show_dialog_vic_3 (); break;
-			case "show-dialog-vic-4": show_dialog_vic_4 (); break;
+			case "show-intro-2": show_intro_2 (_dialog); break;
+			case "show-dialog-vic-2": show_dialog_vic_2 (_dialog); break;
+			case "show-dialog-vic-3": show_dialog_vic_3 (_dialog); break;
+			case "show-dialog-vic-4": show_dialog_vic_4 (_dialog); break;
 
 			case "start-mission-vic-1": start_mission_vic_1 (); break;
 
@@ -41,8 +41,6 @@ public class MMCont_Dialog : MonoBehaviour {
 				
 				break;
 		}
-
-		_dialog.tween_out ();
 	}
 
 	/*
@@ -54,18 +52,24 @@ public class MMCont_Dialog : MonoBehaviour {
 
 		GameObject _new = Instantiate (_isMini ? goDialogMini : goDialog, goCanvas.transform);
 		MiniDialog _newDialog = _new.GetComponent<MiniDialog>();
+		set_dialog (_newDialog, _dialogID);
 
-		_new.transform.localPosition = new Vector2 (
-			float.Parse (JsonReading.I.read ("dialogs", $"{_json}.posX")),
-			float.Parse (JsonReading.I.read ("dialogs", $"{_json}.posY"))
-		);
+		_newDialog.tween_in ();
+		return _newDialog;
+	}
 
-		_newDialog.ID = _dialogID;
-		_newDialog.tName.text = JsonReading.I.read ("dialogs", $"{_json}.name");
-		_newDialog.textToShow = JsonReading.I.read ("dialogs", $"{_json}.desc");
-		_newDialog.port.sprite = MM_Sprites.I.get_sprite (JsonReading.I.read ("dialogs", $"{_json}.portImg"));
+	public MiniDialog set_dialog (MiniDialog _dialog, string _dialogID){
+		string _json = $"dialogs.{_dialogID}";
 
-		foreach (GameObject _input in _newDialog.inputs) {
+		_dialog.ID = _dialogID;
+		_dialog.tName.text = JsonReading.I.read ("dialogs", $"{_json}.name");
+		_dialog.textShowing = "";
+		_dialog.textToShow = JsonReading.I.read ("dialogs", $"{_json}.desc");
+		_dialog.port.sprite = MM_Sprites.I.get_sprite (JsonReading.I.read ("dialogs", $"{_json}.portImg"));
+		_dialog.isTweenOut = JsonReading.I.read ("dialogs", $"{_json}.isTweenOut") == "1";
+		_dialog.tweeningOut = false;
+
+		foreach (GameObject _input in _dialog.inputs) {
 			MiniDialog_Input _script = _input.GetComponent<MiniDialog_Input>();
 			
 			string 	_jsonIn = $"{_json}.{_script.inputName}",
@@ -80,26 +84,27 @@ public class MMCont_Dialog : MonoBehaviour {
 				_script.ID = _id;
 			}
 		}
-		_newDialog.onContinueCallbackID = JsonReading.I.read ("dialogs", $"{_json}.inputEmptyContinue");
+		_dialog.windows_showOnTweenDone.ForEach ((_window) => _window.gameObject.SetActive (false));
+		_dialog.onContinueCallbackID = JsonReading.I.read ("dialogs", $"{_json}.inputEmptyContinue");
 
-		_newDialog.tween_in ();
+		_dialog.tweenInText = true;
 
-		return _newDialog;
+		return _dialog;
 	}
 
 	/*
 		Functions for the input UI goes here
 	*/
-	public void show_intro_1 () => MMCont_Dialog.I.create_dialog ("intro-1");
-	public void show_intro_2 () {
-		MMCont_Dialog.I.create_dialog ("intro-2");
+	public void show_intro_1 () => create_dialog ("intro-1");
+	public void show_intro_2 (MiniDialog _dialog) {
+		set_dialog (_dialog, "intro-2");
 		JsonSaving.I.save ("main-menu-start-callback", "");
 	}
 
-	public void show_dialog_vic_2 () => MMCont_Dialog.I.create_dialog ("dialog-vic-2");
-	public void show_dialog_vic_3 () => MMCont_Dialog.I.create_dialog ("dialog-vic-3");
-	public void show_dialog_vic_4 () {
-		MMCont_Dialog.I.create_dialog ("dialog-vic-4");
+	public void show_dialog_vic_2 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-2");
+	public void show_dialog_vic_3 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-3");
+	public void show_dialog_vic_4 (MiniDialog _dialog) {
+		set_dialog (_dialog, "dialog-vic-4");
 		JsonSaving.I.save ("activity.dialog-with-vic", "1");
 	}
 	public void start_mission_vic_1 (){

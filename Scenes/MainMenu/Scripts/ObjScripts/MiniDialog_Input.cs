@@ -16,6 +16,7 @@ public class MiniDialog_Input : MonoBehaviour {
 
 	public void input_send (){
 		dialogP.tweenOutCallbackID = ID;
-		dialogP.tween_out ();
+		if (dialogP.isTweenOut) dialogP.tween_out ();
+		else dialogP.on_tween_out_callback ();
 	}
 }

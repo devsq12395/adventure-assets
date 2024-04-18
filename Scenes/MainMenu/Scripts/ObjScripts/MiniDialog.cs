@@ -13,6 +13,7 @@ public class MiniDialog : MonoBehaviour {
 	public TextMeshProUGUI tName, tDesc;
 	public Image port;
 	public List<Image> windows, windows_showOnTweenDone;
+	public bool isTweenOut;
 
 	public List<GameObject> inputs;
 
@@ -20,7 +21,7 @@ public class MiniDialog : MonoBehaviour {
 	public string textToShow, textShowing, onContinueCallbackID, tweenOutCallbackID;
 
 	private float TEXT_DELAY, textDelayCur;
-	private bool tweenInText, onClickContinue, tweeningOut;
+	public bool tweenInText, onClickContinue, tweeningOut;
 
 	void Start (){
 		TEXT_DELAY = 0.01f;
@@ -49,7 +50,13 @@ public class MiniDialog : MonoBehaviour {
 
 		if (onClickContinue && Input.GetMouseButtonDown(0)) {
 			tweenOutCallbackID = onContinueCallbackID;
-			tween_out ();
+			if (this.isTweenOut) {
+				tween_out ();
+			} else {
+				tweeningOut = false;
+				onClickContinue = false;
+				on_tween_out_callback ();
+			}
 		}
 	}
 
@@ -66,7 +73,7 @@ public class MiniDialog : MonoBehaviour {
         });
 	}
 
-	private void tween_in_options (){
+	private void tween_in_options (bool _skipTween = false){
 		int _inputsOn = inputs.Aggregate (0, (acc, btn) => {
 			if (btn.activeSelf) acc++;
 			return acc;
@@ -77,6 +84,7 @@ public class MiniDialog : MonoBehaviour {
 
 		} else {
 			windows_showOnTweenDone.ForEach ((_window) => {
+				_window.gameObject.SetActive (true);
             	_window.transform.localScale = Vector3.zero;
 	            _window.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack).OnComplete(() => {
 	            	tweenInText = true;
@@ -96,7 +104,10 @@ public class MiniDialog : MonoBehaviour {
 		if (tweeningOut) return;
 
 		tweeningOut = true;
+		bool _destroyGo = this.isTweenOut;
+
 		MMCont_Dialog.I.input (this, tweenOutCallbackID);
-		if (go) Destroy (go);
+
+		if (_destroyGo) Destroy (go);
 	}
 }
