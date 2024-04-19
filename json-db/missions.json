@@ -10,14 +10,14 @@
             
             "enemies": "vic-1",
             "maps": ["woosterSquare_rand"],
-            "unlocks-area": [],
+            "unlocks-area": ["bella-vita", "strega", "marcos-tavern", "mill-river-ives"],
             "missions-set": [
                 "vic->vic02"
             ]
         },
         "vic-2": {
             "name": "Vic",
-            "desc": "Listen up, bro. People have been talking about how well you fought those monsters, but Boss Vincenzo still wants to know if you're the real deal.\n\nThere are some up to no good goblins sighted close to our turf ready to raid. Why don't you teach them a lesson to not mess with the Luppino family?",
+            "desc": "Rossi Family members are spotted selling narcotics on our turf. We need you to show that they are crossing the line and we control this part of Wooster Square.",
             "sprite": "vic",
             "faction": "Luppino Family",
             "difficulty": "Level 2 (Easy)",
@@ -25,14 +25,14 @@
             
             "enemies": "vic-2",
             "maps": ["woosterSquare_rand"],
-            "unlocks-area": [],
+            "unlocks-area": ["east-st-ives", "east-st-2-ives"],
             "missions-set": [
                 "vic->vic03"
             ]
         },
         "vic-3": {
             "name": "Vic",
-            "desc": "My man! Boss Vincenzo is impressed with your fighting. He think it's time you get a taste of the turf war here in New Haven, bro.\n\nSome territories of The Embraced are poorly defended right now. We need you to strike hard and fast, take them by surprise, and show them who's boss. Are you up for the challenge?",
+            "desc": "",
             "sprite": "vic",
             "faction": "Luppino Family",
             "difficulty": "Level 3 (Easy)",

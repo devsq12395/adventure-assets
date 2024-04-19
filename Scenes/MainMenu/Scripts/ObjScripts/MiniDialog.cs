@@ -48,14 +48,24 @@ public class MiniDialog : MonoBehaviour {
 
 		}
 
-		if (onClickContinue && Input.GetMouseButtonDown(0)) {
-			tweenOutCallbackID = onContinueCallbackID;
-			if (this.isTweenOut) {
-				tween_out ();
+		if (Input.GetMouseButtonDown(0)) {
+			if (onClickContinue) {
+				// Texts are finished tweening, go to next phase
+
+				tweenOutCallbackID = onContinueCallbackID;
+				if (this.isTweenOut) {
+					tween_out ();
+				} else {
+					tweeningOut = false;
+					onClickContinue = false;
+					on_tween_out_callback ();
+				}
 			} else {
-				tweeningOut = false;
-				onClickContinue = false;
-				on_tween_out_callback ();
+				// Texts are not finished tweening, force it to finish
+
+				textShowing = textToShow;
+				tweenInText = false;
+				tween_in_options ();
 			}
 		}
 	}

@@ -68,6 +68,59 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
 
+        "dialog-vic-5": {
+            "name": "Vic",
+            "desc": "Tommy, Brad, there you are!",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-6",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-6": {
+            "name": "Vic",
+            "desc": "People saw how you fought those monsters. They are impressed, including Boss Vincenzo.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-7",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-7": {
+            "name": "Brad",
+            "desc": "Finally some real action! Tell us what to do, Vic.",
+            "portImg": "brad",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-8",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-8": {
+            "name": "Vic",
+            "desc": "Some members of Rossi Family have been causing problems on our turf.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-9",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-9": {
+            "name": "Vic",
+            "desc": "Boss Vincenzo wants to see how you'll deal with this situation.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "input1": {"id": "start-mission-vic-2", "text": "Let's go!"},
+
+            "inputEmptyContinue": "show-dialog-vic-9",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
         "shopTest": {
             "name": "Test's shop",
             "desc": "TestDesc",
