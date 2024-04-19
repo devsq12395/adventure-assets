@@ -16,7 +16,7 @@ public class InGameEffect : MonoBehaviour
     [Header("timed - kill after time")]
     [Header("doodad - stays forever")]
 
-    public float timeLimit;
+    public float timeLimit, zPos;
 
     private Renderer renderer;
 
@@ -54,6 +54,14 @@ public class InGameEffect : MonoBehaviour
             renderer.enabled = false;
         } else {
             renderer.enabled = true;
+        }
+
+        // Calc Z-Pos
+        if (renderer.enabled) {
+            Vector3 _pos = gameObject.transform.position;
+            zPos = (_pos.y - 103) / 100;
+            _pos.z = _obj.zPos;
+            gameObject.transform.position = _pos;
         }
     }
 
