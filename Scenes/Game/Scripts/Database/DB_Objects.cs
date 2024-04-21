@@ -12,7 +12,7 @@ public class DB_Objects : MonoBehaviour {
 
     [Header("----- Characters for Player -----")]
     public GameObject tommy;
-    public GameObject brad, anastasia, seraphine, miguel, anthony;
+    public GameObject kazuma, anastasia, seraphine, miguel, anthony;
 
     [Header("----- Units -----")]
     public GameObject hero;
@@ -21,7 +21,8 @@ public class DB_Objects : MonoBehaviour {
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
-    public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile;
+    public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
+        bulletTommy, bulletMobster;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -53,7 +54,7 @@ public class DB_Objects : MonoBehaviour {
             case "samurai":                 _refObj = samurai; break;
 
             case "tommy":                   _refObj = tommy; break;
-            case "brad":                    _refObj = brad; break;
+            case "kazuma":                    _refObj = kazuma; break;
             case "seraphine":               _refObj = seraphine; break;
             case "anastasia":               _refObj = anastasia; break;
             case "miguel":                  _refObj = miguel; break;
@@ -82,6 +83,11 @@ public class DB_Objects : MonoBehaviour {
             case "iceMissile01":              _refObj = iceMissile01; break;
             case "shotgun":                 _refObj = shotgun; break;
             case "slime-blue-missile":                 _refObj = slimeBlueMissile; break;
+            case "slime-green-missile":                 _refObj = slimeGreenMissile; break;
+            case "slash-kazuma":                 _refObj = slashKazuma; break;
+            case "flame-wave":case "fire-wave":                 _refObj = flameWave; break;
+            case "bullet-tommy":                 _refObj = bulletTommy; break;
+            case "bullet-mobster":                 _refObj = bulletMobster; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;

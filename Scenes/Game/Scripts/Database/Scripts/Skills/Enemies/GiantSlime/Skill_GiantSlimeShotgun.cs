@@ -23,7 +23,9 @@ public class Skill_GiantSlimeShotgun : SkillTrig {
             case 0:
                 create_missile (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos));
                 create_missile (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos) + 25);
+                create_missile (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos) + 50);
                 create_missile (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos) - 25);
+                create_missile (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos) - 50);
                 break;
             case 1:
                 create_missile (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos));

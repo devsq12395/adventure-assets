@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 5298731509610596715}
   - component: {fileID: 4745171374470850773}
   m_Layer: 0
-  m_Name: brad
+  m_Name: kazuma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2570637198022245372}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -244,7 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1a6e5b6f7a0ef489fa41f463cfed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: brad
+  name: kazuma
+  nameUI: Kazuma
   type: unit
   owner: 0
   id: 0
@@ -356,7 +357,7 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: beam1
+  missileObj: slash-kazuma
 --- !u!114 &5298731509610596715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,9 +371,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evtTrigger: update
-  evtName: electric-dash
+  evtName: flame-dash
   RANGE: 7
-  RANGE_KNOCK: 5
+  AOE_KNOCK: 5
+  RANGE_KNOCK: 30
   DAM: 3
   DAM_PER_SKILL: 1
   hitIDs: 
@@ -390,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: skill
-  skillName: 
+  skillName: flame-dash
   skillSlot: Skill1
   mc: 0
   cdMax: 5

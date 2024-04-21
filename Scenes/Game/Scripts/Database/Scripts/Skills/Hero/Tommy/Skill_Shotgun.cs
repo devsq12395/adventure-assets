@@ -17,9 +17,7 @@ public class Skill_Shotgun : SkillTrig {
         
         create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position));
         create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position) + 25);
-        create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position) + 50);
         create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position) - 25);
-        create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position) - 50);
     }
 
     private void create_missile (InGameObject _ownerComp, float _ang){

@@ -2743,7 +2743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.45882353, g: 0.4745098, b: 0.45882353, a: 1}
+  m_Color: {r: 0.45882353, g: 0.4745098, b: 0.45882353, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2826,6 +2826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   login: 
+  OVERWRITE: 0
 --- !u!1 &697046908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,7 +3484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.052709416, g: 1, b: 0.015686274, a: 1}
+  m_Color: {r: 0.052709416, g: 1, b: 0.015686274, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3554,7 +3555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dummy: {fileID: 8947407259833390799, guid: 605d8d65e40587542bfff4cf07f76de0, type: 3}
   tommy: {fileID: 1734063162558475763, guid: 76749578d0255a1de9df4d81f70a1d56, type: 3}
-  brad: {fileID: 2570637198022245372, guid: b61fcfe71d79c5827977ecc46e899a2d, type: 3}
+  kazuma: {fileID: 2570637198022245372, guid: b61fcfe71d79c5827977ecc46e899a2d, type: 3}
   anastasia: {fileID: 1734063162558475763, guid: ac04f97f259209947bef2eb86a31eb4b, type: 3}
   seraphine: {fileID: 9180770538312301372, guid: 4e579bd253c461540bac4219c6f51dee, type: 3}
   miguel: {fileID: 1734063162558475763, guid: ac04f97f259209947bef2eb86a31eb4b, type: 3}
@@ -3570,6 +3571,7 @@ MonoBehaviour:
   mobster: {fileID: 4690657366656991979, guid: 267dbca69a2cdd07ca3f203d595a1119, type: 3}
   slimeKing: {fileID: 4917938084647442157, guid: 1335056c4d2b71cc68d931890563790c, type: 3}
   giantSlime: {fileID: 3241388244497219823, guid: 368d114ea69d0f4c4afc0eb872ec9ee3, type: 3}
+  lucaTheTerror: {fileID: 4690657366656991979, guid: bb257120549fbabea8892fbad94a33af, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
@@ -3578,7 +3580,12 @@ MonoBehaviour:
   voidSphere: {fileID: 6288765498937075357, guid: ac5d459cc232b074e994e934ce75853c, type: 3}
   iceMissile01: {fileID: 2793350704781907999, guid: 574cd0f6c38d15742ba7f573a44c1fd9, type: 3}
   shotgun: {fileID: 6781197039557131184, guid: a31e4950d0a83121c8b15edca490f0d5, type: 3}
-  slimeBlueMissile: {fileID: 571909625728764212, guid: f0d157cf55579aa2fac6b0fe94498dfc, type: 3}
+  slimeBlueMissile: {fileID: 6781197039557131184, guid: 511d2e9c177fb658abf033f5bf9326a3, type: 3}
+  slimeGreenMissile: {fileID: 6781197039557131184, guid: f34a7abfd6fa5da8481a574d8ab2a1a9, type: 3}
+  slashKazuma: {fileID: 6781197039557131184, guid: 07b0d670fce4242d6957547de79ff56d, type: 3}
+  flameWave: {fileID: 6781197039557131184, guid: 69830847a1082d598887aea1e58223b4, type: 3}
+  bulletTommy: {fileID: 6781197039557131184, guid: 066579544e30bf9069d845739f5cc0c2, type: 3}
+  bulletMobster: {fileID: 6781197039557131184, guid: a924afd87b9dc37aa8dfb2c4ee532ce2, type: 3}
   explosion1: {fileID: 1401509844482372538, guid: 27184bd0ec3267a4ba95990debf08eba, type: 3}
   explosion2: {fileID: 7377904376478507447, guid: 6f6c76db710f16b4e9216024f4b55c21, type: 3}
   explosion3: {fileID: 8620740922000547619, guid: 651d929cf2acc7948b5751e38568c570, type: 3}
@@ -8103,7 +8110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.45882353, g: 0.4745098, b: 0.45882353, a: 1}
+  m_Color: {r: 0.45882353, g: 0.4745098, b: 0.45882353, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9127,7 +9134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.20579243, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.20579243, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

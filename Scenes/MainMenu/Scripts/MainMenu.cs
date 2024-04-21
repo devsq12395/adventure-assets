@@ -106,9 +106,7 @@ public class MainMenu : MonoBehaviour {
         switch (_callback) {
             case "show-intro-1": MMCont_Dialog.I.show_intro_1 (); break;
             case "finished-mission-vic-1":
-                JsonSaving.I.save ("areasUnlocked.bella-vita", "1");
-                JsonSaving.I.save ("areasUnlocked.strega", "1");
-                JsonSaving.I.save ("areasUnlocked.marcos-tavern", "1");
+            
                 break;
         } 
     }

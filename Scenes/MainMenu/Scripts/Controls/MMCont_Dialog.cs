@@ -22,7 +22,14 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "show-dialog-vic-3": show_dialog_vic_3 (_dialog); break;
 			case "show-dialog-vic-4": show_dialog_vic_4 (_dialog); break;
 
+			case "show-dialog-vic-5": show_dialog_vic_5 (_dialog); break;
+			case "show-dialog-vic-6": show_dialog_vic_6 (_dialog); break;
+			case "show-dialog-vic-7": show_dialog_vic_7 (_dialog); break;
+			case "show-dialog-vic-8": show_dialog_vic_8 (_dialog); break;
+			case "show-dialog-vic-9": show_dialog_vic_9 (_dialog); break;
+
 			case "start-mission-vic-1": start_mission_vic_1 (); break;
+			case "start-mission-vic-2": start_mission_vic_2 (); break;
 
 			// Test Shop
 			case "shopTest01": btn_shopTest01 (); break;
@@ -31,10 +38,12 @@ public class MMCont_Dialog : MonoBehaviour {
 
 			case "shopStregaBuy": btn_shopStregaBuy (); break;
 
-			case "recruit-anastasia": btn_recruitAnastasia (); break;
+			case "recruit-anastasia": btn_recruitAnastasia (_dialog); break;
 
-			case "back-to-inventory": btn_backToInventory (); break;
-			case "back-craft-success": btn_backCraftSuccess (); break;
+			case "back-to-inventory": btn_backToInventory (_dialog); break;
+			case "back-craft-success": btn_backCraftSuccess (_dialog); break;
+
+			case "back": btn_back (_dialog); break;
 			
 			// Default
 			default:
@@ -87,8 +96,6 @@ public class MMCont_Dialog : MonoBehaviour {
 		_dialog.windows_showOnTweenDone.ForEach ((_window) => _window.gameObject.SetActive (false));
 		_dialog.onContinueCallbackID = JsonReading.I.read ("dialogs", $"{_json}.inputEmptyContinue");
 
-		_dialog.tweenInText = true;
-
 		return _dialog;
 	}
 
@@ -111,6 +118,18 @@ public class MMCont_Dialog : MonoBehaviour {
 		MM_Mission.I.show ("vic-1");
 	}
 
+	public void show_dialog_vic_5 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-5");
+	public void show_dialog_vic_6 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-6");
+	public void show_dialog_vic_7 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-7");
+	public void show_dialog_vic_8 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-8");
+	public void show_dialog_vic_9 (MiniDialog _dialog) {
+		set_dialog (_dialog, "dialog-vic-9");
+		JsonSaving.I.save ("activity.dialog-with-vic", "3");
+	}
+	public void start_mission_vic_2 (){
+		MM_Mission.I.show ("vic-2");
+	}
+
 	private void btn_shopTest01 (){
 		MM_Inventory.I.show ("buy", "test-shop");
 	}
@@ -123,20 +142,27 @@ public class MMCont_Dialog : MonoBehaviour {
 		MM_Inventory.I.show ("buy", _shopName);
 	}
 
-	private void btn_recruitAnastasia (){
+	private void btn_recruitAnastasia (MiniDialog _dialog){
 		MM_Craft.I.show ("anastasia", "char");
+		_dialog.tween_out ();
 	}
 
 	private void btn_shopSell (){
 		MM_Inventory.I.show ("sell", "");
 	}
 
-	private void btn_backToInventory (){
+	private void btn_backToInventory (MiniDialog _dialog){
 		MM_BuyOrSell.I.hide ();
+		_dialog.tween_out ();
 	}
 
-	private void btn_backCraftSuccess (){
+	private void btn_backCraftSuccess (MiniDialog _dialog){
 		MM_Craft.I.hide ();
+		_dialog.tween_out ();
+	}
+
+	private void btn_back (MiniDialog _dialog){ 
+		_dialog.tween_out ();
 	}
 
 	/*

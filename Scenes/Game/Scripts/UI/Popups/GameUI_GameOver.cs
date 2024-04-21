@@ -42,16 +42,22 @@ public class GameUI_GameOver : MonoBehaviour {
 					_missionsToUnlock = JsonReading.I.read ("missions", $"missions.{_curMission}.missions-set").Split (',');
 
 		// Unlocks all missions marked to be unlocked on missions.json
-		Debug.Log ($"{_curMission}, {_missionsToUnlock}");
 		for (int i = 0; i < _missionsToUnlock.Length; i++) {
 			string[] _unlockDetails = _missionsToUnlock [i].Split ("->");
 			JsonSaving.I.save ($"missionCurPool.{_unlockDetails [0]}", _unlockDetails[1]);
 		}
 
 		// Unlocks all areas marked to be unlocked on missions.json
-		string[] _areasToUnlock = JsonSaving.I.load ("missionCurPool").Split (',');
+		string[] _areasToUnlock = JsonReading.I.read ("missions", $"missions.{_curMission}.unlocks-area").Split (',');
 		for (int i = 0; i < _areasToUnlock.Length; i++) {
 			JsonSaving.I.save ($"areasUnlocked.{_areasToUnlock [i]}", "1");
+		}
+
+		// Sets activity
+		string[] _activity = JsonReading.I.read ("missions", $"missions.{_curMission}.activity-set").Split (',');
+		for (int i = 0; i < _activity.Length; i++) {
+			string[] _activityToSet = _activity [i].Split ("->");
+			JsonSaving.I.save ($"activity.{_activityToSet [0]}", _activityToSet [1]);
 		}
 
 		on_victory_callbacks (_curMission);

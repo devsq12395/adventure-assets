@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -1032046750, guid: a32f16e4a44a0f59c8d0e50e41d3812b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.5, y: 2.5}
@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: mobster
+  nameUI: 
   type: unit
   owner: 0
   id: 0
@@ -254,7 +255,8 @@ MonoBehaviour:
   armor: 0
   hitDam: 1
   onHitSFX: 
-  tags: []
+  tags:
+  - human
   speed: 4
   attachScaleMultiplier: 1
   zPos: 0
@@ -334,7 +336,7 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: beam-1-placeholder
+  missileObj: bullet-mobster
 --- !u!114 &5642029956574259330
 MonoBehaviour:
   m_ObjectHideFlags: 0

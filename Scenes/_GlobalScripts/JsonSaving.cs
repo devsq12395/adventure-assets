@@ -13,12 +13,12 @@ public class JsonSaving : MonoBehaviour {
     public string login;
     public JSONObject playData;
 
-    private bool OVERWRITE;
+    public bool OVERWRITE;
 
     public void Awake(){
         I = this;
         
-        OVERWRITE = true;
+        OVERWRITE = false;
         if (OVERWRITE) Debug.Log ("DEBUG WARNING: Overwrite is true at JsonSaving.cs");
 
         // TEST
@@ -44,7 +44,7 @@ public class JsonSaving : MonoBehaviour {
         JSON INTERACTION SCRIPTS
     */
 
-    private void load_json(){
+    public void load_json(){
         if (File.Exists(JSON_SAVE) && !OVERWRITE){
             string _json = File.ReadAllText(JSON_SAVE);
             playData = JSON.Parse(_json).AsObject;

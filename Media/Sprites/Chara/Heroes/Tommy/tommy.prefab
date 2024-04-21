@@ -122,7 +122,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734063162558475763}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: tommy
+  nameUI: Tommy
   type: unit
   owner: 0
   id: 0
@@ -355,7 +356,7 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: beam1
+  missileObj: bullet-tommy
 --- !u!114 &188102392388792281
 MonoBehaviour:
   m_ObjectHideFlags: 0

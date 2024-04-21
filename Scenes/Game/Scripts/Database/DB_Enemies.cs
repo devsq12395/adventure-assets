@@ -80,15 +80,14 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("mobster", 2);
-				_waves[0].Add ("slime-blue", 4);
+				_waves[0].Add ("mobster", 1);
+				_waves[0].Add ("slime-red", 4);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("mobster", 5);
-				_waves[1].Add ("slime-red", 8);
+				_waves[1].Add ("mobster", 4);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("mobster", 5);
+				_waves[2].Add ("mobster", 2);
 				_waves[2].Add ("luca-the-terror", 1);
 
 				break;
@@ -105,6 +104,9 @@ public class DB_Enemies : MonoBehaviour {
 		_ret.Add ("bluvin", 70);
 		_ret.Add ("", 100);*/
 
+		return _ret;
+	}
+	private Dictionary<string, int> vic_2_reward_chance (Dictionary<string, int> _ret){
 		return _ret;
 	}
 }

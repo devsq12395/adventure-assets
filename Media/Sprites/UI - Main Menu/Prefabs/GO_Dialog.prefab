@@ -1534,6 +1534,7 @@ MonoBehaviour:
   - {fileID: 5691569379909029622}
   windows_showOnTweenDone:
   - {fileID: 5095295492775234577}
+  isTweenOut: 0
   inputs:
   - {fileID: 12897853248095538}
   - {fileID: 1092769362139282157}
@@ -1549,6 +1550,9 @@ MonoBehaviour:
   textShowing: 
   onContinueCallbackID: 
   tweenOutCallbackID: 
+  tweenInText: 1
+  onClickContinue: 0
+  tweeningOut: 0
 --- !u!1 &7070825949866702648
 GameObject:
   m_ObjectHideFlags: 0

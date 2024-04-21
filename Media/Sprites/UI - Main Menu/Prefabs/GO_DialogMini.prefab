@@ -667,6 +667,10 @@ MonoBehaviour:
   tName: {fileID: 3264892606386273043}
   tDesc: {fileID: 717601134884724449}
   port: {fileID: 2092809232753915397}
+  windows:
+  - {fileID: 5816788145427599554}
+  windows_showOnTweenDone: []
+  isTweenOut: 0
   inputs:
   - {fileID: 12897853248095538}
   ID: 
@@ -675,6 +679,13 @@ MonoBehaviour:
   storage3: 
   storage4: 
   storage5: 
+  textToShow: 
+  textShowing: 
+  onContinueCallbackID: 
+  tweenOutCallbackID: 
+  tweenInText: 0
+  onClickContinue: 0
+  tweeningOut: 0
 --- !u!1 &8489924327383264859
 GameObject:
   m_ObjectHideFlags: 0

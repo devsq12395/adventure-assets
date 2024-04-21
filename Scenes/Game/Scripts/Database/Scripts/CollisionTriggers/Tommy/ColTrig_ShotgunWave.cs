@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ColTrig_ShotgunWave : ColTrig {
-    public int dam;
     public List<string> damTags;
     public List<int> hitIDs;
 

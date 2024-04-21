@@ -1,7 +1,7 @@
 {
     "shop-inventory": {
-        "strega": ["irElRev"],
-        "bella-vita": ["scrap", "irnore", "bluvin", "crcbrd", "txtbok", "demfng", "elcshd"],
+        "strega": ["irnSwrd", "hmdglck", "pltarm", "bscbts"],
+        "bella-vita": ["scrap", "irnore", "bsgpdr", "wdblk"], 
     },
     "items": {
         "crdRev": {
@@ -58,8 +58,8 @@
         },
         "irnSwrd": {
             "name-ui": "Iron Sword",
-            "desc": "+1 dam.\nBasic battle sword. Enough for self-defense.",
-            "cost": "50",
+            "desc": "+2 dam\n\nBasic battle sword. Enough for self-defense.",
+            "cost": "200",
 
             "stackable": "false",            
             "stack-max": 1,
@@ -68,15 +68,93 @@
             "use":"",
             "equip": "weapon",
 
-            "requires": [],
+            "requires": ["3%irnore", "1%wdblk"],
 
             "bonuses": {
                 "hp": 0,
                 "mp": 0,
-                "attack": 1,
+                "attack": 2,
                 "range": 0,
                 "skill": 0,
                 "speed": 0,
+                "armor": 0,
+                "crit-rate": 0,
+                "crit-dam": 0,
+            }
+        },
+        "hmdglck": {
+            "name-ui": "Homemade Glock",
+            "desc": "+2 dam\n\nA must have when travelling for your protection.",
+            "cost": "200",
+
+            "stackable": "false",            
+            "stack-max": 1,
+            "tags": ["weapon", "gun"],
+
+            "use":"",
+            "equip": "weapon",
+
+            "requires": ["3%scrap", "1%bsgpdr"],
+
+            "bonuses": {
+                "hp": 0,
+                "mp": 0,
+                "attack": 2,
+                "range": 0,
+                "skill": 0,
+                "speed": 0,
+                "armor": 0,
+                "crit-rate": 0,
+                "crit-dam": 0,
+            }
+        },
+        "pltarm": {
+            "name-ui": "Plate Armor",
+            "desc": "+2 HP\n\nA must have when travelling for your protection.",
+            "cost": "300",
+
+            "stackable": "false",            
+            "stack-max": 1,
+            "tags": ["armor", "metal"],
+
+            "use":"",
+            "equip": "armor",
+
+            "requires": ["5%irnore"],
+
+            "bonuses": {
+                "hp": 2,
+                "mp": 0,
+                "attack": 0,
+                "range": 0,
+                "skill": 0,
+                "speed": 0,
+                "armor": 0,
+                "crit-rate": 0,
+                "crit-dam": 0,
+            }
+        },
+        "bscbts": {
+            "name-ui": "Basic Boots",
+            "desc": "+2 Speed\n\nTypical working and travelling boots.",
+            "cost": "300",
+
+            "stackable": "false",            
+            "stack-max": 1,
+            "tags": ["boots", "leather"],
+
+            "use":"",
+            "equip": "boots",
+
+            "requires": ["5%chplthr"],
+
+            "bonuses": {
+                "hp": 0,
+                "mp": 0,
+                "attack": 0,
+                "range": 0,
+                "skill": 0,
+                "speed": 2,
                 "armor": 0,
                 "crit-rate": 0,
                 "crit-dam": 0,
@@ -115,7 +193,35 @@
         "scrap": {
             "name-ui": "Scrap Metal",
             "desc": "Salvaged from old machines.",
-            "cost": "80",
+            "cost": "100",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "bsgpdr": {
+            "name-ui": "Basic Gunpowder",
+            "desc": "The cheapest gunpowder available.",
+            "cost": "200",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "wdblk": {
+            "name-ui": "Wooden Block",
+            "desc": "Perfect for DIY projects.",
+            "cost": "200",
 
             "stackable": "true",
             "stack-max": 9999,

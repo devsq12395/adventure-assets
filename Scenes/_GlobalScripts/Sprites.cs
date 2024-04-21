@@ -19,12 +19,20 @@ public class Sprites : MonoBehaviour {
     [Header("----- UI -----")]
     public Sprite btnLocked;
 
+    [Header("----- Cursor -----")]
+    public Texture2D cursorTexture;
+
+    void Start (){
+        Vector2 hotspot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
+        Cursor.SetCursor(cursorTexture, hotspot, CursorMode.Auto);
+    }
+
     public Sprite get_sprite (string _name) {
         Sprite _ret = dummy;
 
         switch (_name) {
             case "tommy": return tommy; break;
-            case "brad": return brad; break;
+            case "brad":case "kazuma": return brad; break;
             case "anastasia": return anastasia; break;
             case "seraphine": return seraphine; break;
             case "miguel": return miguel; break;

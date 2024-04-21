@@ -1,9 +1,9 @@
 {
     "dialogs": {
         "intro-1": {
-            "name": "Brad",
+            "name": "Kazuma",
             "desc": "We're finally here in New Haven, Tommy!",
-            "portImg": "brad",
+            "portImg": "kazuma",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "show-intro-2",
@@ -11,9 +11,9 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "intro-2": {
-            "name": "Brad",
+            "name": "Kazuma",
             "desc": "We should look for my friend Vic. He's well connected and will help us settle in.",
-            "portImg": "brad",
+            "portImg": "kazuma",
             "isTweenOut": "1",
 
             "input1": {"id": "back", "text": "Sounds Good"},
@@ -25,7 +25,7 @@
 
         "dialog-vic-1": {
             "name": "Vic",
-            "desc": "Brad, my man, you're finally here! And you must be Tommy.",
+            "desc": "Kazuma, my man, you're finally here! And you must be Tommy.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -70,7 +70,7 @@
 
         "dialog-vic-5": {
             "name": "Vic",
-            "desc": "Tommy, Brad, there you are!",
+            "desc": "Tommy, Kazuma, there you are!",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -89,9 +89,9 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-7": {
-            "name": "Brad",
+            "name": "Kazuma",
             "desc": "Finally some real action! Tell us what to do, Vic.",
-            "portImg": "brad",
+            "portImg": "kazuma",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "show-dialog-vic-8",
@@ -100,7 +100,7 @@
         },
         "dialog-vic-8": {
             "name": "Vic",
-            "desc": "Some members of Rossi Family have been causing problems on our turf.",
+            "desc": "Luca the Terror, one of the muscles of the Rossi Family, is spotted on our turf with some of his men, selling narcotics.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -110,13 +110,13 @@
         },
         "dialog-vic-9": {
             "name": "Vic",
-            "desc": "Boss Vincenzo wants to see how you'll deal with this situation.",
+            "desc": "Boss Vincenzo wants you to show that this is our territory and no one crosses the Luppino family.",
             "portImg": "vic",
-            "isTweenOut": "0",
+            "isTweenOut": "1",
 
             "input1": {"id": "start-mission-vic-2", "text": "Let's go!"},
 
-            "inputEmptyContinue": "show-dialog-vic-9",
+            "inputEmptyContinue": "",
             "isMini": "0",
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
@@ -142,7 +142,7 @@
         },
         "strega": {
             "name": "Giovanni",
-            "desc": "Buongiorno! Welcome to Strega. If you're in need of fine craftsmanship and formidable weaponry, you've come to the right place.",
+            "desc": "Welcome to my crafting shop. How can I help?",
             "portImg": "tommy",
             "posX": 0,
             "posY": 0,
@@ -179,8 +179,8 @@
             "inputScaler_enable": "0",
         },
         "bella-vita": {
-            "name": "Old Lady Rossi",
-            "desc": "Welcome to Bella Vita! We sell all sort of things here. Feel free to look around.",
+            "name": "Ramone",
+            "desc": "We have some scraps and crafting essentials for sale here.",
             "portImg": "tommy",
             "posX": 0,
             "posY": 0,

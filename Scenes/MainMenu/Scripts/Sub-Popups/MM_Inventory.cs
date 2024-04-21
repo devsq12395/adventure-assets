@@ -52,7 +52,7 @@ public class MM_Inventory : MonoBehaviour {
         string[]    _itemsStr = JsonSaving.I.load ("items").Split (','), 
                     _itemExtracted;
 
-        for (int _i = 0; _i < _itemsStr.Length; _i++) {
+        for (int _i = 0; _itemsStr.Length > 1 && _i < _itemsStr.Length; _i++) {
             _itemExtracted = _itemsStr [_i].Split ('%');
             Item _new = new Item (_itemExtracted [1], int.Parse (_itemExtracted [0]), int.Parse (_itemExtracted [2]));
             itemsMain.Add (_new);

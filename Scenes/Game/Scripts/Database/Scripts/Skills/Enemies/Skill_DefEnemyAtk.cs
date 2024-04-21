@@ -20,12 +20,12 @@ public class Skill_DefEnemyAtk : SkillTrig {
         _ownerComp.isAtk = true;
         _ownerComp.toAnim = 1;
 
-        Vector2 _misPos = _missile.transform.position,
-                _mousePos = ContPlayer.I.player.gameObject.transform.position,
-                _dir = _mousePos - _misPos;
+        Vector2 _misPos = gameObject.transform.position,
+                _playerPos = ContPlayer.I.player.gameObject.transform.position,
+                _dir = _playerPos - _misPos;
         float _ang = Mathf.Atan2 (_dir.y, _dir.x) * Mathf.Rad2Deg;
 
-        ContObj.I.change_facing (_ownerComp, ((_dir.x < gameObject.transform.position.x) ? "left" : "right"));
+        ContObj.I.change_facing (_ownerComp, ((_playerPos.x < gameObject.transform.position.x) ? "left" : "right"));
 
         ContObj.I.const_move_ang_set (_missileComp, _ang, _missileComp.speed);
     }

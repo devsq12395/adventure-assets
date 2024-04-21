@@ -1,27 +1,23 @@
 {
-    "version": "0.8",
+    "version": "1.0",
 
     "date": "jan-2225",
 
     "lineup": [
-        "tommy", "brad", "", ""
+        "tommy", "kazuma", "", ""
     ],
 
     "pool": [
-        "tommy", "brad"
+        "tommy", "kazuma"
     ],
 
-    "gold": "1000",
+    "gold": "500",
     "items": [
-        "1%crdRev%9382200",
-        "1%irnSwrd%9382201",
-        "2%bluvin%9382202",
-        "1%demfng%9382203",
     ],
 
     "missionCur": "",
     "missionCurPool": {
-        "vic": "vic01"
+        "vic": "vic-1"
     },
 
     "missionMap": "",
@@ -76,7 +72,7 @@
                 "crit-dam": 120,
             }
         },
-        "brad": {
+        "kazuma": {
             "level": 1,
             "equipWeapon": "sword",
             "equip": {

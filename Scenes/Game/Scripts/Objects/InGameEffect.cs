@@ -60,7 +60,7 @@ public class InGameEffect : MonoBehaviour
         if (renderer.enabled) {
             Vector3 _pos = gameObject.transform.position;
             zPos = (_pos.y - 103) / 100;
-            _pos.z = _obj.zPos;
+            _pos.z = zPos;
             gameObject.transform.position = _pos;
         }
     }

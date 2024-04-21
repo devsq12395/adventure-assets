@@ -8,7 +8,7 @@ public class AI_LucaTheTerror : InGameAI {
         stateTime += Time.deltaTime;
 
         if (state == 0) {
-            if (stateTime >= 2f) {
+            if (stateTime >= 3.5f) {
                 InGameObject _p = ContPlayer.I.player;
                 Vector2 _pPos = _p.gameObject.transform.position;
 
@@ -52,6 +52,8 @@ public class AI_LucaTheTerror : InGameAI {
                     ContObj.I.use_skill_active (inGameObj, "luca-dash");
                     break;
             }
+
+            state = 9;
         } else if (state == 9) {
             ContObj.I.move_walk_to_pos_stop (inGameObj);
                 

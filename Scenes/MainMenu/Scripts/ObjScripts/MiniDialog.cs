@@ -28,6 +28,11 @@ public class MiniDialog : MonoBehaviour {
 
 		windows.ForEach ((_window) => _window.transform.localScale = Vector3.zero);
 		windows_showOnTweenDone.ForEach ((_window) => _window.transform.localScale = Vector3.zero);
+
+		if (!tweenInText) {
+			textShowing = textToShow;
+			tDesc.text = textShowing;
+		}
 	}
 
 	void Update (){
@@ -60,10 +65,11 @@ public class MiniDialog : MonoBehaviour {
 					onClickContinue = false;
 					on_tween_out_callback ();
 				}
-			} else {
+			} else if (textToShow.Length > textShowing.Length) {
 				// Texts are not finished tweening, force it to finish
 
 				textShowing = textToShow;
+				tDesc.text = textShowing;
 				tweenInText = false;
 				tween_in_options ();
 			}

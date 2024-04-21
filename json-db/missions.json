@@ -12,7 +12,10 @@
             "maps": ["woosterSquare_rand"],
             "unlocks-area": ["bella-vita", "strega", "marcos-tavern", "mill-river-ives"],
             "missions-set": [
-                "vic->vic02"
+                "vic->vic-2"
+            ],
+            "activity-set": [
+                "dialog-with-vic->2"
             ]
         },
         "vic-2": {
@@ -27,7 +30,10 @@
             "maps": ["woosterSquare_rand"],
             "unlocks-area": ["east-st-ives", "east-st-2-ives"],
             "missions-set": [
-                "vic->vic03"
+                "vic->vic-3"
+            ],
+            "activity-set": [
+                "dialog-with-vic->4"
             ]
         },
         "vic-3": {
@@ -38,11 +44,14 @@
             "difficulty": "Level 3 (Easy)",
             "rewards": "400 Gold",
             
-            "enemies": "vic-3",
+            "enemies": "vic-4",
             "maps": ["woosterSquare_rand"],
             "unlocks-area": [],
             "missions-set": [
-                "vic->finished"
+                
+            ],
+            "activity-set": [
+                
             ]
         }
     }

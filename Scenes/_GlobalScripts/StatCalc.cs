@@ -14,7 +14,7 @@ public class StatCalc : MonoBehaviour {
 
         foreach (string _equipSlot in equipStrs) {
             string _equipped = JsonSaving.I.load ($"chars.{_charName}.equip.{_equipSlot}");
-            if (_equipped != "") {
+            if (_equipped != "" && _equipped.Length > 1) {
                 int _itemBonus = int.Parse (JsonReading.I.read ("items", $"items.{_equipped}.bonuses.{_stat}"));
                 _val += _itemBonus;
             }

@@ -24,10 +24,11 @@
                 "skill2": "",
             },
 
-            "requires": []
+            "requires": [],
+            "gold-cost": "0",
         },
-        "brad": {
-            "img-port": "brad",
+        "kazuma": {
+            "img-port": "kazuma",
             "equipWeapon": "sword",
             "stats": {
                 "hp": 10,
@@ -47,7 +48,8 @@
                 "skill2": "",
             },
 
-            "requires": []
+            "requires": [],
+            "gold-cost": "0",
         },
         "anastasia": {
             "img-port": "anastasia",
@@ -70,7 +72,8 @@
                 "skill2": "",
             },
 
-            "requires": ["2%bluvin", "1%demfng"],
+            "requires": [],
+            "gold-cost": "300",
         },
         "seraphine": {
             "img-port": "seraphine",
@@ -93,7 +96,8 @@
                 "skill2": "",
             },
 
-            "requires": []
+            "requires": [],
+            "gold-cost": "0",
         },
         "miguel": {
             "img-port": "miguel",
@@ -116,7 +120,8 @@
                 "skill2": "",
             },
 
-            "requires": []
+            "requires": [],
+            "gold-cost": "0",
         },
         "anthony": {
             "img-port": "anthony",
@@ -139,7 +144,8 @@
                 "skill2": "",
             },
 
-            "requires": []
+            "requires": [],
+            "gold-cost": "0",
         }
     },
 }

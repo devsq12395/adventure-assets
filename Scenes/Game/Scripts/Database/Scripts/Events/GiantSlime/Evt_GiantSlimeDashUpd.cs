@@ -7,7 +7,7 @@ public class Evt_GiantSlimeDashUpd : EvtTrig {
 
     private float countTime_Fx = 0, countTime_Dam = 0;
 
-    public float RANGE, RANGE_KNOCK;
+    public float RANGE, AOE_KNOCK, RANGE_KNOCK;
     public int DAM, DAM_PER_SKILL;
     public List<int> hitIDs;
 
@@ -37,15 +37,19 @@ public class Evt_GiantSlimeDashUpd : EvtTrig {
         if (curDistExpEffect <= 0){
             curDistExpEffect = DIST_PER_EXPLOSION_EFFECT;
             ContEffect.I.create_effect ("explosion1_mini", _pos);
+
+            gameObject.GetComponents<BoxCollider2D> ()
+                .Where(bc => !bc.isTrigger).ToList ()
+                .ForEach (bc => bc.enabled = true);
         }
 
         if (_owner.propellType != "dash") {
             isUsingSkill = false;
-            List<InGameObject> _objs = ContObj.I.get_objs_in_area (_pos, RANGE_KNOCK);
+            List<InGameObject> _objs = ContObj.I.get_objs_in_area (_pos, AOE_KNOCK);
             foreach (InGameObject _o in _objs) {
                 if (!DB_Conditions.I.dam_condition (_owner, _o)) continue;
 
-                ContObj.I.propell_to_angle (_o, Calculator.I.get_ang_from_2_points_deg (_pos, _o.transform.position), 40f, 1f, 5f, "knocked");
+                ContObj.I.propell_to_angle (_o, Calculator.I.get_ang_from_2_points_deg (_pos, _o.transform.position), RANGE_KNOCK, 1f, 5f, "knocked");
             }
 
             hitIDs.Clear ();

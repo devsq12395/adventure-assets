@@ -356,7 +356,7 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: slime-blue-missile
+  missileObj: fire-wave
 --- !u!114 &5335845548262960805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,4 +375,4 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: slime-blue-missile
+  missileObj: slime-green-missile

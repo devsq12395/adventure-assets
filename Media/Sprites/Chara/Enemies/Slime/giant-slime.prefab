@@ -351,9 +351,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f702c3bba9377d34992d591bf8f905f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evtTrigger: death
+  evtTrigger: update
   evtName: 
   RANGE: 3
+  AOE_KNOCK: 3
   RANGE_KNOCK: 3
   DAM: 3
   DAM_PER_SKILL: 0
@@ -396,5 +397,5 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: slime-blue-missile
+  missileObj: slime-green-missile
   lastPattern: 0

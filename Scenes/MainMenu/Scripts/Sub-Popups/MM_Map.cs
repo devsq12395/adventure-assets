@@ -28,14 +28,13 @@ public class MM_Map : MonoBehaviour {
         }
     }
 
-    public void generate_map (string _mapID){ Debug.Log ($"Instantiating {_mapID}");
+    public void generate_map (string _mapID){ 
         GameObject _map = Instantiate (maps [_mapID], go.transform);
         foreach (Transform child in _map.transform) {
             MapNode _comp = child.gameObject.GetComponent<MapNode>();
 
             if (_comp && _comp.type != "to-menu" ) {
                 bool _isLocked = JsonSaving.I.load ($"areasUnlocked.{_comp.ID}") == "0";
-                Debug.Log ($"{_comp.ID} is {((_isLocked) ? "Locked" : "Unlocked")}");
 
                 if (_isLocked) {
                     Button _btn = child.gameObject.GetComponent<Button>();
@@ -76,12 +75,11 @@ public class MM_Map : MonoBehaviour {
                 string _statusVicDialog = JsonSaving.I.load ("activity.dialog-with-vic");
 
                 switch (_statusVicDialog) {
-                    case "0": 
-                        MMCont_Dialog.I.create_dialog ("dialog-vic-1");
-                        break;
-                    case "1": 
-                        MMCont_Dialog.I.create_dialog ("dialog-vic-4");
-                        break;
+                    case "0": MMCont_Dialog.I.create_dialog ("dialog-vic-1"); break;
+                    case "1": MMCont_Dialog.I.create_dialog ("dialog-vic-4"); break;
+
+                    case "2": MMCont_Dialog.I.create_dialog ("dialog-vic-5"); break;
+                    case "3": MMCont_Dialog.I.create_dialog ("dialog-vic-8"); break; 
                 }
                 break;
         }
