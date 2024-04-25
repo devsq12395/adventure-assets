@@ -21,7 +21,7 @@ public class MiniDialog : MonoBehaviour {
 	public string textToShow, textShowing, onContinueCallbackID, tweenOutCallbackID;
 
 	private float TEXT_DELAY, textDelayCur;
-	public bool tweenInText, onClickContinue, tweeningOut;
+	public bool tweenInText_default, tweenInText, onClickContinue, tweeningOut;
 
 	void Start (){
 		TEXT_DELAY = 0.01f;
@@ -29,7 +29,7 @@ public class MiniDialog : MonoBehaviour {
 		windows.ForEach ((_window) => _window.transform.localScale = Vector3.zero);
 		windows_showOnTweenDone.ForEach ((_window) => _window.transform.localScale = Vector3.zero);
 
-		if (!tweenInText) {
+		if (!tweenInText_default) {
 			textShowing = textToShow;
 			tDesc.text = textShowing;
 		}
@@ -116,14 +116,14 @@ public class MiniDialog : MonoBehaviour {
         windows_showOnTweenDone.ForEach ((_window) => _window.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack));
 	}
 
-	public void on_tween_out_callback (){
+	public void on_tween_out_callback (){ 
 		if (tweeningOut) return;
 
 		tweeningOut = true;
 		bool _destroyGo = this.isTweenOut;
-
+		
 		MMCont_Dialog.I.input (this, tweenOutCallbackID);
 
-		if (_destroyGo) Destroy (go);
+		if (_destroyGo && go != null) Destroy (go);
 	}
 }

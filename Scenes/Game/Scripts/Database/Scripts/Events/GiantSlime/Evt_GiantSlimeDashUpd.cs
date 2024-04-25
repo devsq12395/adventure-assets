@@ -36,7 +36,7 @@ public class Evt_GiantSlimeDashUpd : EvtTrig {
         curDistExpEffect -= rigidBody.velocity.magnitude;
         if (curDistExpEffect <= 0){
             curDistExpEffect = DIST_PER_EXPLOSION_EFFECT;
-            ContEffect.I.create_effect ("explosion1_mini", _pos);
+            ContEffect.I.create_effect ("moveSmoke", _pos);
 
             gameObject.GetComponents<BoxCollider2D> ()
                 .Where(bc => !bc.isTrigger).ToList ()

@@ -66,11 +66,15 @@ public class MM_Craft : MonoBehaviour {
 				goldCost = int.Parse (JsonReading.I.read ("chars", $"chars.{_name}.gold-cost"));
 
 				_goldReq = $"{JsonReading.I.get_str ("gold")}: {goldCost.ToString ()}";
-				_itemReq = string.Join ("\n", JsonReading.I.read ("chars", $"chars.{_name}.requires").Split(',').Select((_req) => {
-					string[] _values = _req.Split ('%');
-					itemReqs.Add (_values [1], int.Parse (_values [0]));
-					return $"{JsonReading.I.read ("items", $"items.{_values [1]}.name-ui")} x{_values [0]}";
-				}));
+				string _charReqs = JsonReading.I.read ("chars", $"chars.{_name}.requires");
+
+				_itemReq = (_charReqs.Length <= 1) ? "" : 
+					string.Join ("\n", _charReqs.Split(',').Select((_req) => {
+						string[] _values = _req.ToString ().Split ('%');
+
+						itemReqs.Add (_values [1], int.Parse (_values [0]));
+						return $"{JsonReading.I.read ("items", $"items.{_values [1]}.name-ui")} x{_values [0]}";
+					}));
 
 				tRequires.text = $"{JsonReading.I.get_str ("requires")}:\n{_goldReq}\n{_itemReq}";
 

@@ -49,7 +49,7 @@ public class AI_LucaTheTerror : InGameAI {
                     ContObj.I.use_skill_active (inGameObj, "luca-flame-wave");
                     break;
                 case 2:
-                    ContObj.I.use_skill_active (inGameObj, "luca-dash");
+                    ContObj.I.use_skill_active (inGameObj, "luca-teleport");
                     break;
             }
 

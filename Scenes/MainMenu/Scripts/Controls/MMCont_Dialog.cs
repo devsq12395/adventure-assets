@@ -76,7 +76,9 @@ public class MMCont_Dialog : MonoBehaviour {
 		_dialog.textToShow = JsonReading.I.read ("dialogs", $"{_json}.desc");
 		_dialog.port.sprite = MM_Sprites.I.get_sprite (JsonReading.I.read ("dialogs", $"{_json}.portImg"));
 		_dialog.isTweenOut = JsonReading.I.read ("dialogs", $"{_json}.isTweenOut") == "1";
+
 		_dialog.tweeningOut = false;
+		if (_dialog.tweenInText_default) _dialog.tweenInText = true;
 
 		foreach (GameObject _input in _dialog.inputs) {
 			MiniDialog_Input _script = _input.GetComponent<MiniDialog_Input>();

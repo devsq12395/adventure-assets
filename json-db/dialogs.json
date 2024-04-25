@@ -276,7 +276,7 @@
         },
         "buy-recruit-success": {
             "name": "",
-            "desc": "Character is recruited!",
+            "desc": "Character is recruited!\n\nSet your members on the Party window.",            
             "portImg": "",
             "posX": 0,
             "posY": 0,

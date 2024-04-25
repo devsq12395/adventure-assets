@@ -1550,6 +1550,7 @@ MonoBehaviour:
   textShowing: 
   onContinueCallbackID: 
   tweenOutCallbackID: 
+  tweenInText_default: 1
   tweenInText: 1
   onClickContinue: 0
   tweeningOut: 0
