@@ -10,7 +10,10 @@ public class GameUI_GameOver : MonoBehaviour {
     public static GameUI_GameOver I;
 	public void Awake(){ I = this; }
 
-	public GameObject go;
+	public GameObject go, goImg;
+	public Image imgTitle;
+
+	public Sprite imgWin, imgLose;
 
 	public TextMeshProUGUI tTitle, tDesc;
 
@@ -24,7 +27,7 @@ public class GameUI_GameOver : MonoBehaviour {
 		Game.I.pause_game ();
 		go.SetActive (true);
 
-		tTitle.text = _title;
+		imgTitle.sprite = (_title == "success") ? imgWin : imgLose;
 		tDesc.text = _desc;
 
 		go.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);

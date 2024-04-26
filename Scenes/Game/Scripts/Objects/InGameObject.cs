@@ -63,6 +63,11 @@ public class InGameObject : MonoBehaviour {
     public bool moveToPos_isOn = false;
     public Vector2 moveToPos_pos;
 
+    // Instant Move Update
+    public bool instMov_isOn = false;
+    public float instMov_ang, instMov_spd, instMov_dur, instMov_dist;
+    public string instMov_mode = "";
+
     // Booleans
     public bool isRunning, isAtk, isInvul, isDash;
 

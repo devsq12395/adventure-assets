@@ -104,6 +104,7 @@ public class ContObj : MonoBehaviour {
         const_move_ang_update (_obj);
         const_move_dir_update (_obj);
         move_walk_to_pos_update (_obj);
+        instant_move_upd_update (_obj);
         move_bounds (_obj);
 
         check_anim (_obj);
@@ -197,6 +198,9 @@ public class ContObj : MonoBehaviour {
         - move_instant
         - move_forward_instant
         - stop_obj
+        - instant_move_upd_start_dur (InGameObject _obj, float _ang, float _spd, float _dur)
+            - will be used for knockbacks, etc.
+        - instant_move_upd_update
     */
     public void input_move (InGameObject _obj, Vector2 _value){
         if (!_obj) return;
@@ -356,7 +360,7 @@ public class ContObj : MonoBehaviour {
     }
 
     public void move_instant (InGameObject _obj, Vector2 _pos) {
-        _obj.gameObject.transform.position = new Vector3 (_pos.x, _pos.y, _obj.zPos);
+        _obj.curPos = new Vector3 (_pos.x, _pos.y, _obj.zPos);
     }
 
     public void move_forward_instant (InGameObject _obj, float _ang, float _dis) {
@@ -377,6 +381,50 @@ public class ContObj : MonoBehaviour {
     public void stop_obj (InGameObject _obj){
         _obj.rb.velocity = Vector3.zero;
         _obj.walkTargPos = Vector3.zero;
+    }
+
+    public void instant_move_upd_start_dur (InGameObject _obj, float _ang, float _spd, float _dur, string _mode = ""){
+        _obj.instMov_dur = _dur;
+        _obj.instMov_dist = 0;
+
+        instant_move_upd_start (_obj, _ang, _spd, _mode);
+    }
+
+    public void instant_move_upd_start_dist (InGameObject _obj, float _ang, float _spd, float _dist, string _mode = ""){
+        _obj.instMov_dur = 0;
+        _obj.instMov_dist = _dist;
+
+        instant_move_upd_start (_obj, _ang, _spd, _mode);
+    }
+
+    public void instant_move_upd_start (InGameObject _obj, float _ang, float _spd, string _mode){
+        _obj.instMov_isOn = true;
+        _obj.instMov_ang = _ang;
+        _obj.instMov_spd = _spd;
+        _obj.instMov_mode = _mode;
+    }
+
+    public void instant_move_upd_update (InGameObject _obj){
+        if (!_obj.instMov_isOn) return;
+
+        move_forward_instant (_obj, _obj.instMov_ang, _obj.instMov_spd);
+
+        if (_obj.instMov_dur > 0) {
+            // Duration
+            _obj.instMov_dur -= Time.deltaTime;
+            if (_obj.instMov_dur <= 0) {
+                _obj.instMov_isOn = false;
+                _obj.instMov_mode = "";
+            }
+
+        } else if (_obj.instMov_dist > 0){
+            // Distance
+            _obj.instMov_dist -= _obj.instMov_spd;
+            if (_obj.instMov_dist <= 0) {
+                _obj.instMov_isOn = false;
+                _obj.instMov_mode = "";
+            }
+        }
     }
 
     // GETs

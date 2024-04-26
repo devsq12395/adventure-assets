@@ -16,7 +16,7 @@ public class GameUI_InGameTxt: MonoBehaviour{
         public GameObject go;
         public TextMeshProUGUI txtUI;
         public float dur;
-        public Vector2 origPos;
+        public Vector2 origPos, curPos;
         
         public InGameTxt (GameObject _go, TextMeshProUGUI _txtUI, string _txt, float _dur, Vector2 _origPos){
             go = _go;
@@ -24,6 +24,7 @@ public class GameUI_InGameTxt: MonoBehaviour{
             txtUI.text = _txt;
             dur = _dur;
             origPos = _origPos;
+            curPos = _origPos;
         }
     }
     
@@ -87,7 +88,8 @@ public class GameUI_InGameTxt: MonoBehaviour{
             _item.dur -= Time.deltaTime;
 
             // Text Position
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(new Vector3(txtList [i].origPos.x, txtList [i].origPos.y + 0.1f, 0f));
+            _item.curPos = new Vector2 (_item.curPos.x, _item.curPos.y + 0.03f);
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(new Vector3(txtList [i].curPos.x, txtList [i].curPos.y, 0f));
             Vector2 uiPos;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 txtList [i].txtUI.rectTransform.parent as RectTransform, 

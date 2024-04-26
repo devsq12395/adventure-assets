@@ -17,7 +17,7 @@ public class Skill_ElectricSlash : SkillTrig {
         Vector2 _pos = gameObject.transform.position;
 
         ContObj.I.change_facing (_ownerComp, (Calculator.I.is_mouse_left_of_object (_ownerComp) ? "left" : "right"));
-        ContObj.I.propell_to_angle (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (_pos), 50f, 1f, 5f, "dash");
+        ContObj.I.instant_move_upd_start_dist (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (_pos), 0.5f, 9f, "electric-slash");
         InGameCamera.I.point_to_target ();
 
         Evt_ElectricSlashUpd _event = gameObject.GetComponent <Evt_ElectricSlashUpd>();

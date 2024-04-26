@@ -192,7 +192,7 @@ public class ContDamage : MonoBehaviour {
         }
         if (_isGameOver) {
             GameUI_GameOver.I.show (
-                JsonReading.I.get_str ("UI-in-game.mission-failed"),
+                "fail",
                 JsonReading.I.get_str ("UI-in-game.all-chars-dead")
             );
         }

@@ -99,7 +99,7 @@ public class ContEnemies : MonoBehaviour {
 			spawn_enemies ();
 		} else {
 			GameUI_GameOver.I.show (
-                JsonReading.I.get_str ("UI-in-game.mission-success"),
+                "success",
                 $"{JsonReading.I.get_str ("UI-in-game.all-enemies-dead")}\n\n{generate_and_give_rewards ()}"
             );
             GameUI_GameOver.I.on_victory ();
