@@ -26,8 +26,8 @@ public class MiniDialog : MonoBehaviour {
 	void Start (){
 		TEXT_DELAY = 0.01f;
 
-		windows.ForEach ((_window) => _window.transform.localScale = Vector3.zero);
-		windows_showOnTweenDone.ForEach ((_window) => _window.transform.localScale = Vector3.zero);
+		windows.ForEach ((_window) => _window.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f));
+		windows_showOnTweenDone.ForEach ((_window) => _window.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f));
 
 		if (!tweenInText_default) {
 			textShowing = textToShow;
@@ -82,7 +82,7 @@ public class MiniDialog : MonoBehaviour {
 
 	public void tween_in (){
 		windows.ForEach ((_window) => {
-            _window.transform.localScale = Vector3.zero;
+            _window.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
             _window.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack).OnComplete(() => {
             	tweenInText = true;
             });
@@ -101,7 +101,7 @@ public class MiniDialog : MonoBehaviour {
 		} else {
 			windows_showOnTweenDone.ForEach ((_window) => {
 				_window.gameObject.SetActive (true);
-            	_window.transform.localScale = Vector3.zero;
+            	_window.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
 	            _window.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack).OnComplete(() => {
 	            	tweenInText = true;
 	            });
@@ -111,9 +111,9 @@ public class MiniDialog : MonoBehaviour {
 
 	public void tween_out (){
 		windows.ForEach ((_window) => {
-            _window.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => on_tween_out_callback ());
+            _window.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack).OnComplete(() => on_tween_out_callback ());
         });
-        windows_showOnTweenDone.ForEach ((_window) => _window.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack));
+        windows_showOnTweenDone.ForEach ((_window) => _window.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack));
 	}
 
 	public void on_tween_out_callback (){ 

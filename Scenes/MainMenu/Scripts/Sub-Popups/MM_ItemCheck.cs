@@ -31,7 +31,7 @@ public class MM_ItemCheck : MonoBehaviour {
 
     public void show (MM_Inventory.Item _item, string _mode) {
         go.SetActive (true);
-        imgWindow.transform.localScale = Vector3.zero;
+        imgWindow.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);   
         
         string _itmStr = $"items.{_item.name}";
@@ -47,7 +47,7 @@ public class MM_ItemCheck : MonoBehaviour {
     }
 
     public void hide (){
-        imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+        imgWindow.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
     }
 
     private void setup_action_btns (){

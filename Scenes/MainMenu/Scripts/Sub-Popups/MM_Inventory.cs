@@ -64,7 +64,7 @@ public class MM_Inventory : MonoBehaviour {
     public void btn_show (){show ("inventory", "");}
     public void show (string _mode, string _itemList, string[] _sortTag = null){
         go.SetActive (true);
-        imgWindow.transform.localScale = Vector3.zero;
+        imgWindow.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);       
         
         mode = _mode;
@@ -78,7 +78,7 @@ public class MM_Inventory : MonoBehaviour {
         }
         itemUIs.Clear ();
 
-        imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+        imgWindow.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
     }
 
     private void setup_items (string _itemList, string[] _sortTag = null){

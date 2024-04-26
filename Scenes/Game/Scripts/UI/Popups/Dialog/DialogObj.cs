@@ -30,11 +30,11 @@ public class DialogObj : MonoBehaviour {
     }
 
     private void PlayDialogAnimation() {
-        transform.localScale = Vector3.zero;
+        transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
     }
 
     private void CloseDialog() {
-        transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InBack).OnComplete(() => Destroy(gameObject));
+        transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.5f).SetEase(Ease.InBack).OnComplete(() => Destroy(gameObject));
     }
 }

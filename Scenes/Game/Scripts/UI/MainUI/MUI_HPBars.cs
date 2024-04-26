@@ -15,6 +15,10 @@ public class MUI_HPBars : MonoBehaviour
 
     public InGameObject boss;
 
+    public void setup (){
+        set_char (ContPlayer.I.players [0].name);
+    }
+
     public void set_char (string _charName) {
         t_name.text = JsonReading.I.get_str ($"{_charName}-name");
         i_port.sprite = Sprites.I.get_sprite (JsonReading.I.read ("chars", $"chars.{_charName}.img-port"));

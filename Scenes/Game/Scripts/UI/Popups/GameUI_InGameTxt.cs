@@ -87,7 +87,7 @@ public class GameUI_InGameTxt: MonoBehaviour{
             _item.dur -= Time.deltaTime;
 
             // Text Position
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(new Vector3(txtList [i].origPos.x, txtList [i].origPos.y, 0f));
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(new Vector3(txtList [i].origPos.x, txtList [i].origPos.y + 0.1f, 0f));
             Vector2 uiPos;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 txtList [i].txtUI.rectTransform.parent as RectTransform, 

@@ -144,7 +144,7 @@ MonoBehaviour:
   - bullet
   - physical
   - gun
-  speed: 0.2
+  speed: 0.4
   attachScaleMultiplier: 1
   zPos: 0
   skill1: {fileID: 0}

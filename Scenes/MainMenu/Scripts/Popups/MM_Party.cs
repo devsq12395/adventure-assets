@@ -62,10 +62,10 @@ public class MM_Party : MonoBehaviour {
         if (_isShow) {
             go.SetActive (true);
             refresh_list ();
-            imgWindow.transform.localScale = Vector3.zero;
+            imgWindow.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
             imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
         } else {
-            imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+            imgWindow.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
         } 
     }
 
@@ -78,7 +78,7 @@ public class MM_Party : MonoBehaviour {
 
             partyBtns [i].port.gameObject.SetActive (_name != "");
             if (_name != "") {
-                partyBtns [i].port.sprite = MM_Sprites.I.get_sprite (_name);
+                partyBtns [i].port.sprite = Sprites.I.get_sprite (_name);
                 partyBtns [i].name.text = MM_Strings.I.get_str ($"{_name}-name");
                 partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}";
             }

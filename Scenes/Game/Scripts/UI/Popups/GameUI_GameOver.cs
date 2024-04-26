@@ -27,7 +27,7 @@ public class GameUI_GameOver : MonoBehaviour {
 		tTitle.text = _title;
 		tDesc.text = _desc;
 
-		go.transform.localScale = Vector3.zero;
+		go.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         go.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
 	}
 

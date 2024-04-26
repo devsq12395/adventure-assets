@@ -74,10 +74,10 @@ public class MM_ChangeParty : MonoBehaviour {
             setup_show ();
 
             go.SetActive (true);
-            imgWindow.transform.localScale = Vector3.zero;
+            imgWindow.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
             imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
         } else {
-            imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+            imgWindow.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
             MM_Party.I.refresh_list ();
         }
     }
@@ -103,14 +103,14 @@ public class MM_ChangeParty : MonoBehaviour {
             if (_name != "") {
                 setup_button (
                     mainLineup [i], 
-                    MM_Sprites.I.get_sprite (_name),
+                    Sprites.I.get_sprite (_name),
                     MM_Strings.I.get_str ($"{_name}-name"),
                     $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
                 );
             } else {
                 setup_button (
                     mainLineup [i],
-                    MM_Sprites.I.get_sprite ("empty"),
+                    Sprites.I.get_sprite ("empty"),
                     "",
                     ""
                 );
@@ -133,7 +133,7 @@ public class MM_ChangeParty : MonoBehaviour {
             if (_name != "") {
                 setup_button (
                     heroPool [i],
-                    MM_Sprites.I.get_sprite (_name),
+                    Sprites.I.get_sprite (_name),
                     "",
                     $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
                 );
@@ -172,7 +172,7 @@ public class MM_ChangeParty : MonoBehaviour {
 
         setup_button (
             mainLineup [lineupSel],
-            MM_Sprites.I.get_sprite (_name),
+            Sprites.I.get_sprite (_name),
             MM_Strings.I.get_str ($"{_name}-name"),
             $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
         );

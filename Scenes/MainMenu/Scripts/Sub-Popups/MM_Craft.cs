@@ -29,7 +29,7 @@ public class MM_Craft : MonoBehaviour {
 		itemReqs.Clear ();
 
 		go.SetActive (true);
-		imgWindow.transform.localScale = Vector3.zero;
+		imgWindow.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
 		imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);	
 
 		item = _name;
@@ -130,7 +130,7 @@ public class MM_Craft : MonoBehaviour {
 	}
 
 	public void hide (){
-		imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+		imgWindow.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
 	}
 
 }

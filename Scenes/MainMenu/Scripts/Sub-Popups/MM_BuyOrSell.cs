@@ -35,14 +35,14 @@ public class MM_BuyOrSell : MonoBehaviour {
 		costTotal = cost;
 		
 		go.SetActive (true);
-		imgWindow.transform.localScale = Vector3.zero;
+		imgWindow.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
 		imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
 
 		setup_texts ();
 	}
 
 	public void hide (){
-		imgWindow.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+		imgWindow.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
 	}
 
 	private void setup_texts (){

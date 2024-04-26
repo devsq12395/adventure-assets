@@ -41,7 +41,7 @@ public class MM_Mission : MonoBehaviour {
 
         go.SetActive (true);
         imgWindows.ForEach ((_window) => {
-            _window.transform.localScale = Vector3.zero;
+            _window.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
             _window.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
         });
         
@@ -50,7 +50,7 @@ public class MM_Mission : MonoBehaviour {
 
     public void hide (){
         imgWindows.ForEach ((_window) => {
-            _window.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
+            _window.transform.DOScale(new Vector3 (0.8f, 0.8f, 0.8f), 0.2f).SetEase(Ease.InBack).OnComplete(() => go.SetActive(false));
         });
     }
 

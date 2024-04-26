@@ -13,6 +13,8 @@ public class MasterScene : MonoBehaviour {
     void Start(){
         add_scene ("GlobalScripts");
         change_main_scene ("MainMenu");
+
+        Application.targetFrameRate = 60;
     }
 
     void Update(){

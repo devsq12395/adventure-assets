@@ -9,7 +9,7 @@ public class Evt_SpawnerDth : EvtTrig {
 
     private bool hasSpawned;
     
-    public override void use (){ Debug.Log ($"on use ${toSpawn}");
+    public override void use (){
         if (hasSpawned) return;
 
         ContObj.I.create_obj (toSpawn, gameObject.transform.position, owner);

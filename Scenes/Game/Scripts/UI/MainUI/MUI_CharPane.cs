@@ -43,13 +43,17 @@ public class MUI_CharPane : MonoBehaviour
         GameObject _newCharUI = Instantiate(goUI, goCanvas.transform);
         RectTransform _transform = _newCharUI.GetComponent<RectTransform>();
 
-        _transform.anchoredPosition = new Vector2(-410f + 100f * chars.Count, -118f);
+        _transform.anchoredPosition = new Vector2(-110f, -118f - 75f * chars.Count);
 
         Image portImage = _newCharUI.transform.Find("Port").GetComponent<Image>();
         Image hpBarImage = _newCharUI.transform.Find("HPBar").transform.Find("BarValue_HP").GetComponent<Image>();
         Image mpBarImage = _newCharUI.transform.Find("MPBar").transform.Find("BarValue_MP").GetComponent<Image>();
 
         Char _newChar = new Char(_num, _newCharUI, portImage, hpBarImage, mpBarImage);
+
+        string _charName = JsonSaving.I.load ("lineup").Split (',')[_num];
+        portImage.sprite = Sprites.I.get_sprite (_charName);
+        
         chars.Add(_newChar);
     }
 
@@ -60,7 +64,7 @@ public class MUI_CharPane : MonoBehaviour
             float _normHP = Mathf.Clamp01(_cHP / _cHPMax);
             
             RectTransform _tranform = chars[_pi].hpBar.rectTransform;
-            float _width = 70f;
+            float _width = 46f;
             float _newWidth = _width * _normHP;
             _tranform.sizeDelta = new Vector2(_newWidth, _tranform.sizeDelta.y);
         }

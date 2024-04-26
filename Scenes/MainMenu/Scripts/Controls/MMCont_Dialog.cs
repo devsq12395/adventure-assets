@@ -74,7 +74,7 @@ public class MMCont_Dialog : MonoBehaviour {
 		_dialog.tName.text = JsonReading.I.read ("dialogs", $"{_json}.name");
 		_dialog.textShowing = "";
 		_dialog.textToShow = JsonReading.I.read ("dialogs", $"{_json}.desc");
-		_dialog.port.sprite = MM_Sprites.I.get_sprite (JsonReading.I.read ("dialogs", $"{_json}.portImg"));
+		_dialog.port.sprite = Sprites.I.get_sprite (JsonReading.I.read ("dialogs", $"{_json}.portImg"));
 		_dialog.isTweenOut = JsonReading.I.read ("dialogs", $"{_json}.isTweenOut") == "1";
 
 		_dialog.tweeningOut = false;
