@@ -21,11 +21,7 @@ public class Skill_ElectricSlash : SkillTrig {
         InGameCamera.I.point_to_target ();
 
         Evt_ElectricSlashUpd _event = gameObject.GetComponent <Evt_ElectricSlashUpd>();
-        _event.isUsingSkill = true;
-
-        gameObject.GetComponents<BoxCollider2D> ()
-            .Where(bc => !bc.isTrigger).ToList ()
-            .ForEach (bc => bc.enabled = false);
+        _event.isUsingSkill = true; 
 
         ContBuffs.I.add_buff (_ownerComp, "invulnerable"); //0.5f default dur
     }

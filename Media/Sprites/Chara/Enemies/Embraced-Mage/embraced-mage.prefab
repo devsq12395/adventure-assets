@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3241388244497219823
+--- !u!1 &4690657366656991979
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4889441228706283393}
-  - component: {fileID: 1328001458252373456}
-  - component: {fileID: 6439339698775268875}
-  - component: {fileID: 2849697337277766237}
-  - component: {fileID: 8193899987575357147}
-  - component: {fileID: 7101705790150868596}
-  - component: {fileID: 7822889342179635271}
-  - component: {fileID: 6146986018834062004}
-  - component: {fileID: -3905011315126112510}
-  - component: {fileID: -9000401471514440344}
-  - component: {fileID: 3873111945499514494}
-  - component: {fileID: 2344721810868922758}
+  - component: {fileID: 4392952849386310183}
+  - component: {fileID: 8334795445884952392}
+  - component: {fileID: 7549018344836450365}
+  - component: {fileID: 342696788227830118}
+  - component: {fileID: 3731913615080779341}
+  - component: {fileID: 512110213563582338}
+  - component: {fileID: 5024090433382915677}
+  - component: {fileID: 4427413014661215766}
+  - component: {fileID: -9206910436025346238}
+  - component: {fileID: 5642029956574259330}
   m_Layer: 0
-  m_Name: giant-slime
+  m_Name: embraced-mage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4889441228706283393
+--- !u!4 &4392952849386310183
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1328001458252373456
+--- !u!212 &8334795445884952392
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,9 +81,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 159474490, guid: 9091763755217d8ec9292cc81d41e156, type: 3}
+  m_Sprite: {fileID: -1353884030, guid: 3f7f3151588ca594a8fb4e4d896ea532, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.5, y: 2.5}
@@ -94,17 +92,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6439339698775268875
+--- !u!95 &7549018344836450365
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1383407b07f54fb729e5728ddecc9f71, type: 2}
+  m_Controller: {fileID: 9100000, guid: db7b748c909aabf1fb2a50f64ecf87ce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115,14 +113,14 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &2849697337277766237
+--- !u!50 &342696788227830118
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -142,13 +140,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8193899987575357147
+--- !u!61 &3731913615080779341
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -174,7 +172,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031332254, y: -0.040368676}
+  m_Offset: {x: 0.0050770044, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -185,15 +183,15 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.000824, y: 1.7364552}
+  m_Size: {x: 2.489846, y: 2.5}
   m_EdgeRadius: 0
---- !u!61 &7101705790150868596
+--- !u!61 &512110213563582338
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -219,7 +217,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.026110232, y: -0.033429384}
+  m_Offset: {x: -0.00010842085, y: 0.005755186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -230,27 +228,27 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.2298975, y: 1.9065542}
+  m_Size: {x: 2.8726954, y: 2.833528}
   m_EdgeRadius: 0
---- !u!114 &7822889342179635271
+--- !u!114 &5024090433382915677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1a6e5b6f7a0ef489fa41f463cfed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: giant-slime
-  nameUI: Giant Slime
+  name: mobster
+  nameUI: 
   type: unit
   owner: 0
   id: 0
-  hp: 100
-  hpMax: 100
+  hp: 15
+  hpMax: 15
   mp: 0
   mpMax: 0
   mpRegen: 0
@@ -258,8 +256,7 @@ MonoBehaviour:
   hitDam: 1
   onHitSFX: 
   tags:
-  - slime
-  - boss
+  - human
   speed: 4
   attachScaleMultiplier: 1
   zPos: 0
@@ -314,29 +311,48 @@ MonoBehaviour:
   controllerID: 0
   hitUnitsID: 
   skills: []
---- !u!114 &6146986018834062004
+--- !u!114 &4427413014661215766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 269ab66d93ca46a42851dbc7689b91a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
---- !u!114 &-3905011315126112510
+--- !u!114 &-9206910436025346238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e9a9a28f05b94229e24177d294fa59, type: 3}
+  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: attack
+  skillName: attack
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: bullet-mobster
+--- !u!114 &5642029956574259330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512d0b5b6391c4a94895b9acfe678d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inGameObj: {fileID: 0}
@@ -345,63 +361,3 @@ MonoBehaviour:
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}
---- !u!114 &-9000401471514440344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f702c3bba9377d34992d591bf8f905f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evtTrigger: update
-  evtName: 
-  RANGE: 3
-  SPEED_KNOCK: 3
-  DIST_KNOCK: 3
-  DAM: 3
-  DAM_PER_SKILL: 0
-  hitIDs: 
-  isUsingSkill: 0
---- !u!114 &3873111945499514494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c329fd244a690b3a0b41926403c98955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: giant-slime-dash
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: 
---- !u!114 &2344721810868922758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241388244497219823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcaa86be2b40a4ccf910cc2caec74235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: giant-slime-shotgun
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: slime-green-missile
-  lastPattern: 0

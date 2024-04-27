@@ -14,15 +14,12 @@ public class Evt_ElectricSlashUpd : EvtTrig {
     public bool isUsingSkill = false;
 
     private float DIST_PER_EXPLOSION_EFFECT, curDistExpEffect;
-    Rigidbody2D rigidBody;
 
     public override void setup (){
         hitIDs = new List<int> ();
 
         DIST_PER_EXPLOSION_EFFECT = 0.5f;
         curDistExpEffect = DIST_PER_EXPLOSION_EFFECT;
-
-        rigidBody = GetComponent<Rigidbody2D>();
     }
     
     public override void use (){

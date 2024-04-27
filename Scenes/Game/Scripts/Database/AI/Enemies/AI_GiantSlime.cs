@@ -38,10 +38,10 @@ public class AI_GiantSlime : InGameAI {
                 state++;
             }
         } else if (state == 8) {
-             ContObj.I.use_skill_active (inGameObj, "giant-slime-dash");
-                
-            stateTime = 0;
-            state = 0;
+             if (stateTime >= 2f) {
+                stateTime = 0;
+                state = 0;
+            }
         }
     }
 }
