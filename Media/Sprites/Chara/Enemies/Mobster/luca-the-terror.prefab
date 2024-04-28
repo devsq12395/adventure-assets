@@ -424,7 +424,7 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: beam-1-placeholder
+  missileObj: fire-wave
   lastPattern: 0
 --- !u!114 &1774175043235499436
 MonoBehaviour:
@@ -444,4 +444,4 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: beam-1-placeholder
+  missileObj: fire-wave

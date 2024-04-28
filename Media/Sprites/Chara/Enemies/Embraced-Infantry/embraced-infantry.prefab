@@ -17,7 +17,9 @@ GameObject:
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
   - component: {fileID: -9206910436025346238}
-  - component: {fileID: 5642029956574259330}
+  - component: {fileID: 3101860276897099985}
+  - component: {fileID: -2206174980420874963}
+  - component: {fileID: 4907061923429462237}
   m_Layer: 0
   m_Name: embraced-infantry
   m_TagString: Untagged
@@ -172,7 +174,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0050770044, y: 0}
+  m_Offset: {x: -0.20051974, y: 0.11513415}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -183,7 +185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.489846, y: 2.5}
+  m_Size: {x: 1.3439862, y: 2.0723586}
   m_EdgeRadius: 0
 --- !u!61 &512110213563582338
 BoxCollider2D:
@@ -217,7 +219,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00010842085, y: 0.005755186}
+  m_Offset: {x: 0.11228442, y: 0.0907352}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -228,7 +230,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8726954, y: 2.833528}
+  m_Size: {x: 2.4066758, y: 2.323648}
   m_EdgeRadius: 0
 --- !u!114 &5024090433382915677
 MonoBehaviour:
@@ -247,8 +249,8 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 15
-  hpMax: 15
+  hp: 25
+  hpMax: 25
   mp: 0
   mpMax: 0
   mpRegen: 0
@@ -343,7 +345,7 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: bullet-mobster
---- !u!114 &5642029956574259330
+--- !u!114 &3101860276897099985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,7 +354,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512d0b5b6391c4a94895b9acfe678d05, type: 3}
+  m_Script: {fileID: 11500000, guid: c329fd244a690b3a0b41926403c98955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: embraced-infantry-dash
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: 
+--- !u!114 &-2206174980420874963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f702c3bba9377d34992d591bf8f905f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evtTrigger: death
+  evtName: 
+  RANGE: 3
+  SPEED_KNOCK: 3
+  DIST_KNOCK: 3
+  DAM: 4
+  DAM_PER_SKILL: 0
+  hitIDs: 
+  isUsingSkill: 0
+--- !u!114 &4907061923429462237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e9e7e4604b3374a9c5301ca686731f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inGameObj: {fileID: 0}

@@ -121,6 +121,17 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
 
+        "dialog-vic-10": {
+            "name": "Vic",
+            "desc": "Kazuma, my man, you're finally here! And you must be Tommy.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
         "shopTest": {
             "name": "Test's shop",
             "desc": "TestDesc",

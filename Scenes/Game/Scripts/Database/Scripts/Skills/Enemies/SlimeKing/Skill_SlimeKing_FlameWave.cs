@@ -15,9 +15,9 @@ public class Skill_SlimeKing_FlameWave : SkillTrig {
         _ownerComp.isAtk = true;
         _ownerComp.toAnim = 1;
 
-        create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position));
-        create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position) + 25);
-        create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position) - 25);
+        for (int i = 0; i < 8; i++) {
+            create_missile (_ownerComp, 45 * i);
+        }
     }
 
     private void create_missile (InGameObject _ownerComp, float _ang){

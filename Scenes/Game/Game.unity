@@ -3725,6 +3725,9 @@ MonoBehaviour:
   slimeKing: {fileID: 4917938084647442157, guid: 1335056c4d2b71cc68d931890563790c, type: 3}
   giantSlime: {fileID: 3241388244497219823, guid: 368d114ea69d0f4c4afc0eb872ec9ee3, type: 3}
   lucaTheTerror: {fileID: 4690657366656991979, guid: bb257120549fbabea8892fbad94a33af, type: 3}
+  embracedInfantry: {fileID: 4690657366656991979, guid: 66cc8e75df3eb314f9631d8cae526627, type: 3}
+  embracedMage: {fileID: 4690657366656991979, guid: f1d75c23ce8892648a368d17a0d5ecc4, type: 3}
+  prismDrone: {fileID: 4690657366656991979, guid: 8b325c856a0d8d040aa4eb2ecd188288, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
@@ -3739,6 +3742,8 @@ MonoBehaviour:
   flameWave: {fileID: 6781197039557131184, guid: 69830847a1082d598887aea1e58223b4, type: 3}
   bulletTommy: {fileID: 6781197039557131184, guid: 066579544e30bf9069d845739f5cc0c2, type: 3}
   bulletMobster: {fileID: 6781197039557131184, guid: a924afd87b9dc37aa8dfb2c4ee532ce2, type: 3}
+  fireWave: {fileID: 6781197039557131184, guid: 69830847a1082d598887aea1e58223b4, type: 3}
+  blueWave: {fileID: 6781197039557131184, guid: 08bd286f1d055114db402d6905c236c5, type: 3}
   explosion1: {fileID: 1401509844482372538, guid: 27184bd0ec3267a4ba95990debf08eba, type: 3}
   explosion2: {fileID: 7377904376478507447, guid: 6f6c76db710f16b4e9216024f4b55c21, type: 3}
   explosion3: {fileID: 8620740922000547619, guid: 651d929cf2acc7948b5751e38568c570, type: 3}

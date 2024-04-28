@@ -28,6 +28,8 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "show-dialog-vic-8": show_dialog_vic_8 (_dialog); break;
 			case "show-dialog-vic-9": show_dialog_vic_9 (_dialog); break;
 
+			case "show-dialog-vic-10": show_dialog_vic_10 (_dialog); break;
+
 			case "start-mission-vic-1": start_mission_vic_1 (); break;
 			case "start-mission-vic-2": start_mission_vic_2 (); break;
 
@@ -131,6 +133,8 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void start_mission_vic_2 (){
 		MM_Mission.I.show ("vic-2");
 	}
+
+	public void show_dialog_vic_10 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-10");
 
 	private void btn_shopTest01 (){
 		MM_Inventory.I.show ("buy", "test-shop");

@@ -41,7 +41,6 @@ public class MM_Map : MonoBehaviour {
                     Image _img = child.gameObject.GetComponent<Image>();
 
                     _btn.interactable = false;
-                    _img.sprite = Sprites.I.get_sprite ("btn-locked");
                 }
             }
         }
@@ -80,6 +79,9 @@ public class MM_Map : MonoBehaviour {
 
                     case "2": MMCont_Dialog.I.create_dialog ("dialog-vic-5"); break;
                     case "3": MMCont_Dialog.I.create_dialog ("dialog-vic-8"); break; 
+
+                    case "4": MMCont_Dialog.I.create_dialog ("dialog-vic-10"); break;
+                    case "5": MMCont_Dialog.I.create_dialog ("dialog-vic-8"); break;
                 }
                 break;
         }
