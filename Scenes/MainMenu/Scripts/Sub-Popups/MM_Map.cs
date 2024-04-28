@@ -81,7 +81,7 @@ public class MM_Map : MonoBehaviour {
                     case "3": MMCont_Dialog.I.create_dialog ("dialog-vic-8"); break; 
 
                     case "4": MMCont_Dialog.I.create_dialog ("dialog-vic-10"); break;
-                    case "5": MMCont_Dialog.I.create_dialog ("dialog-vic-8"); break;
+                    case "5": MMCont_Dialog.I.create_dialog ("dialog-vic-17"); break;
                 }
                 break;
         }

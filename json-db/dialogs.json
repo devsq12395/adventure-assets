@@ -123,11 +123,146 @@
 
         "dialog-vic-10": {
             "name": "Vic",
-            "desc": "Kazuma, my man, you're finally here! And you must be Tommy.",
+            "desc": "Tommy, there you are! Meet Don Vincenzo, our boss at Luppino Family.",
             "portImg": "vic",
             "isTweenOut": "0",
 
+            "inputEmptyContinue": "show-dialog-vic-11",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-11": {
+            "name": "Boss Vincenzo",
+            "desc": "It's good to finally meet you Tommy. I heard your feats are the talk of the town.",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-12",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-12": {
+            "name": "Boss Vincenzo",
+            "desc": "Well Tommy, we have a problem and I need your help.",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-13",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-13": {
+            "name": "Boss Vincenzo",
+            "desc": "As you know, our rivals the Rossi Family have been trying to sell narcotics here at Wooster Square.",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-14",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-14": {
+            "name": "Boss Vincenzo",
+            "desc": "We here at Luppino Family hate narcotics. It destroys lives, families...",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-15",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-15": {
+            "name": "Boss Vincenzo",
+            "desc": "But the Rossi Family is starting to get in cahoots with the Legion of Odin, especially with Captain Charles.",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-16",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-16": {
+            "name": "Boss Vincenzo",
+            "desc": "They are trying to weaken our family so they can freely sell narcotics. We must stop them now before they get any stronger.",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-17",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-17": {
+            "name": "Boss Vincenzo",
+            "desc": "I want you to teach Captain Charles a lesson on what happens if you cross the Luppino Family.",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-18",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-18": {
+            "name": "Boss Vincenzo",
+            "desc": "You will have to be careful. The Legion of Odin have the strongest fighters in Schwarzreich.",
+            "portImg": "vincenzo",
+            "isTweenOut": "1",
+
+            "input1": {"id": "start-mission-vic-3", "text": "Understood, Boss."},
+
             "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "wooster-square-house-1": {
+            "name": "Old Man",
+            "desc": "What is the Legion doing here anyway?",
+            "portImg": "npm-man-1",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "wooster-square-house-2",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "wooster-square-house-2": {
+            "name": "Old Man",
+            "desc": "If the higher-ups of Schwarzreich put them on the front line, Rhode Island will have to think twice about attacking.",
+            "portImg": "npm-man-1",
+            "isTweenOut": "1",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "wooster-square-house-3": {
+            "name": "Man",
+            "desc": "The Rossi Family is spotted here on Wooster Square recently, acting like they own the place.",
+            "portImg": "npm-man-2",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "wooster-square-house-4",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "wooster-square-house-4": {
+            "name": "Man",
+            "desc": "I think a war between the families will erupt soon.",
+            "portImg": "npm-man-2",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "wooster-square-house-5": {
+            "name": "Woman",
+            "desc": "You don't look from around here. Oh, I know! You must be a student in New Yale University.",
+            "portImg": "npm-woman-1",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "wooster-square-house-4",
             "isMini": "0",
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },

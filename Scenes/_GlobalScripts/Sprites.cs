@@ -15,6 +15,7 @@ public class Sprites : MonoBehaviour {
 
     [Header("----- Portraits: NPC -----")]
     public Sprite vic;
+    public Sprite npcMan1, npcMan2, npcWoman1;
 
     [Header("----- UI -----")]
     public Sprite btnLocked;
@@ -37,6 +38,10 @@ public class Sprites : MonoBehaviour {
             case "seraphine": return seraphine; break;
             case "miguel": return miguel; break;
             case "anthony": return anthony; break;
+
+            case "npc-man-1": return npcMan1; break;
+            case "npc-man-2": return npcMan2; break;
+            case "npc-woman-1": return npcWoman1; break;
 
             case "vic": return vic; break;
 

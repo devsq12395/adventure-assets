@@ -29,6 +29,13 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "show-dialog-vic-9": show_dialog_vic_9 (_dialog); break;
 
 			case "show-dialog-vic-10": show_dialog_vic_10 (_dialog); break;
+			case "show-dialog-vic-11": show_dialog_vic_11 (_dialog); break;
+			case "show-dialog-vic-12": show_dialog_vic_12 (_dialog); break;
+			case "show-dialog-vic-13": show_dialog_vic_13 (_dialog); break;
+			case "show-dialog-vic-14": show_dialog_vic_14 (_dialog); break;
+			case "show-dialog-vic-15": show_dialog_vic_15 (_dialog); break;
+			case "show-dialog-vic-16": show_dialog_vic_16 (_dialog); break;
+			case "show-dialog-vic-17": show_dialog_vic_17 (_dialog); break;
 
 			case "start-mission-vic-1": start_mission_vic_1 (); break;
 			case "start-mission-vic-2": start_mission_vic_2 (); break;
@@ -135,6 +142,19 @@ public class MMCont_Dialog : MonoBehaviour {
 	}
 
 	public void show_dialog_vic_10 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-10");
+	public void show_dialog_vic_11 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-11");
+	public void show_dialog_vic_12 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-12");
+	public void show_dialog_vic_13 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-13");
+	public void show_dialog_vic_14 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-14");
+	public void show_dialog_vic_15 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-15");
+	public void show_dialog_vic_16 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-16");
+	public void show_dialog_vic_17 (MiniDialog _dialog) {
+		set_dialog (_dialog, "dialog-vic-17");
+		JsonSaving.I.save ("activity.dialog-with-vic", "5");
+	}
+	public void start_mission_vic_3 (){
+		MM_Mission.I.show ("vic-3");
+	}
 
 	private void btn_shopTest01 (){
 		MM_Inventory.I.show ("buy", "test-shop");

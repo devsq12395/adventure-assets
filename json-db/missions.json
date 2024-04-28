@@ -37,12 +37,12 @@
             ]
         },
         "vic-3": {
-            "name": "Vic",
-            "desc": "",
-            "sprite": "vic",
+            "name": "Boss Vincenzo",
+            "desc": "The Rossi Family has been colluding with Charles, Captain of the Legion of Odin here in Wooster Square.\n\nThey want the Legion to turn a blind eye on their illegal business. We have to stop this before they get any stronger, so show Charles what happens to anyone who cross the Luppino Family.",
+            "sprite": "vincenzo",
             "faction": "Luppino Family",
             "difficulty": "Level 3 (Easy)",
-            "rewards": "400 Gold",
+            "rewards": "500 Gold",
             
             "enemies": "vic-4",
             "maps": ["woosterSquare_rand"],
