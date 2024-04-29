@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AI_CaptainCharles : InGameAI {
 
-    private Vector2 randPoint;
+    private Vector2 randPoint = Vector2.zero;
     
     public override void on_update (){
         stateTime += Time.deltaTime;
@@ -13,7 +13,7 @@ public class AI_CaptainCharles : InGameAI {
         Vector2 _pPos = _p.gameObject.transform.position,
                 _gPos = gameObject.transform.position;
 
-        if (!randPoint) {
+        if (randPoint == Vector2.zero) {
             float _randAng = (gameObject.transform.position.x < _pPos.x) ? 
                 Random.Range (90, 270) :
                 Random.Range (270, 450);
@@ -22,7 +22,7 @@ public class AI_CaptainCharles : InGameAI {
             ContObj.I.change_facing (inGameObj, ((gameObject.transform.position.x > randPoint.x) ? "left" : "right"));
 
             if (Calculator.I.get_dist_from_2_points (gameObject.transform.position, randPoint) <= 0.5f) {
-                randPoint = null;
+                randPoint = Vector2.zero;
             }
         }
 
@@ -34,9 +34,6 @@ public class AI_CaptainCharles : InGameAI {
                 state++;
             }
         } else if (state == 7) {
-            InGameObject _p = ContPlayer.I.player;
-            Vector2 _pPos = _p.gameObject.transform.position;
-            
             if (stateTime >= 4f) {
                 stateTime = 0;
                 state++;

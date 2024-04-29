@@ -40,6 +40,8 @@ public class MainMenu : MonoBehaviour {
         update_header ();
 
         move_curtain("menuStart", 0, curtainRect.anchoredPosition.y);
+
+        SoundHandler.I.play_bgm ("menu");
     }
 
     void Update() {

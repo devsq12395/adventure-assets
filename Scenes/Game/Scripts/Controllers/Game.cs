@@ -33,6 +33,8 @@ public class Game : MonoBehaviour {
         GameUI_Tutorial.I.check_if_show ();
         
         gameReady = true;
+
+        SoundHandler.I.play_bgm ("game");
     }
 
     void Update() {

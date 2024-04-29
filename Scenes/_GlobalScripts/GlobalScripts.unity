@@ -361,8 +361,11 @@ MonoBehaviour:
   audioSource: {fileID: 332524906}
   yesPing: {fileID: 8300000, guid: f828617842b6637808943e2834f1ecc0, type: 3}
   noPing: {fileID: 8300000, guid: c18202970995ce260a2e3ca1ab53e0ff, type: 3}
-  bgmMenu: {fileID: 0}
-  bgmGame: {fileID: 0}
+  bgmMenu: {fileID: 8300000, guid: 182672e330cb539498637bf3711f4ec8, type: 3}
+  bgmGame:
+  - {fileID: 8300000, guid: 7ec94dfa61f7d8a4282b25370c40adae, type: 3}
+  - {fileID: 8300000, guid: 45b713993e40ac642b8f2e5880e08950, type: 3}
+  - {fileID: 8300000, guid: 8c12bd74adb62b04796a1d2e9b82f186, type: 3}
 --- !u!1 &1232967547
 GameObject:
   m_ObjectHideFlags: 0
