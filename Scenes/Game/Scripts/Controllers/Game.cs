@@ -29,6 +29,8 @@ public class Game : MonoBehaviour {
         MUI_HPBars.I.setup ();
 
         ContEnemies.I.spawn_enemies ();
+
+        GameUI_Tutorial.I.check_if_show ();
         
         gameReady = true;
     }

@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: dark-warden-of-east-hill
-  nameUI: Dark Warden of East Hill
+  nameUI: 'Captain Charles: Legionnaire of Odin'
   type: unit
   owner: 0
   id: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   - flying
   - boss
   speed: 6
-  attachScaleMultiplier: 1
+  attachScaleMultiplier: 2
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}

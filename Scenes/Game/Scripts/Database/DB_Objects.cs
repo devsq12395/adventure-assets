@@ -17,12 +17,12 @@ public class DB_Objects : MonoBehaviour {
     [Header("----- Units -----")]
     public GameObject hero;
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, mobster, slimeKing, giantSlime,
-        lucaTheTerror, embracedInfantry, embracedMage, prismDrone;
+        lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
-        bulletTommy, bulletMobster, fireWave, blueWave;
+        bulletTommy, bulletMobster, fireWave, blueWave, slashShredder;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -74,6 +74,8 @@ public class DB_Objects : MonoBehaviour {
             case "embraced-infantry":            _refObj = embracedInfantry; break;
             case "embraced-mage":            _refObj = embracedMage; break;
             case "prism-drone":            _refObj = prismDrone; break;
+            case "war-shredder":            _refObj = warShredder; break;
+            case "alpha-war-shredder":            _refObj = alphaWarShredder; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -92,6 +94,7 @@ public class DB_Objects : MonoBehaviour {
             case "bullet-tommy":                 _refObj = bulletTommy; break;
             case "bullet-mobster":                 _refObj = bulletMobster; break;
             case "blue-wave":                 _refObj = blueWave; break;
+            case "slash-shredder":                 _refObj = slashShredder; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;

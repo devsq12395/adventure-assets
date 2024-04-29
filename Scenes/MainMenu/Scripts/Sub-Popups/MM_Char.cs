@@ -14,6 +14,7 @@ public class MM_Char : MonoBehaviour {
     public List<Image> imgWindows;
 
     public TextMeshProUGUI cName, cDetails, cDetails2, cBio;
+    public Image iPort;
 
     public string name;
     public Dictionary<string, MM_Inventory.ItemUI> itemsUI;
@@ -67,6 +68,7 @@ public class MM_Char : MonoBehaviour {
 
     public void setup_char (string _name){
         name = _name;
+        iPort.sprite = Sprites.I.get_sprite (_name);
 
         string  _cName = MM_Strings.I.get_str($"{_name}-name"),
                 _cStats1 = "", _cStats2 = "";

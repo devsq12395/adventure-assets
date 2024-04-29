@@ -2,7 +2,7 @@
     "missions": {
         "vic-1": {
             "name": "Vic",
-            "desc": "Let me explain the situation before you go. Some slimes are spotted here in Wooster Square. Word is a giant slime is with them too.\n\nShould be easy for you to deal with. This is a perfect opportunity for you to gain respect around here.",
+            "desc": "Let me explain the situation before you go. Some slimes are spotted here in Wooster Square. Word is a Giant Slime is with them too.\n\nShould be easy for you to deal with. This is a perfect opportunity for you to gain respect around here.",
             "sprite": "vic",
             "faction": "Luppino Family",
             "difficulty": "Level 1 (Easy)",
@@ -20,7 +20,7 @@
         },
         "vic-2": {
             "name": "Vic",
-            "desc": "Rossi Family members are spotted selling narcotics on our turf. We need you to show that they are crossing the line and we control this part of Wooster Square.",
+            "desc": "Rossi Family members are spotted selling narcotics on our turf. We need you to show that they are crossing the line and Wooster Square is our territory.",
             "sprite": "vic",
             "faction": "Luppino Family",
             "difficulty": "Level 2 (Easy)",
@@ -74,10 +74,10 @@
             ]
         },
 
-        "mill-river": {
+        "mill-river-ives": {
             "name": "This part of the Mill River has been overtaken by monsters.\n\nTo aspiring adventurers, it's a perfect place to train and find treasures.",
             "desc": "",
-            "sprite": "vincenzo",
+            "sprite": "icn-highway",
             "faction": "???",
             "difficulty": "???",
             "rewards": "Change to get:\nWooden Block\nLeather\nBlue Glowvine\nElectric Shard\nDemon Fang",

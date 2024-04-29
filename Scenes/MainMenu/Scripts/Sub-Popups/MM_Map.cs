@@ -91,10 +91,10 @@ public class MM_Map : MonoBehaviour {
                 string _statusAnthonyDialog = JsonSaving.I.load ("activity.dialog-with-anthony");
 
                 switch (_statusAnthonyDialog) {
-                    case "0": MMCont_Dialog.I.create_dialog ("dialog-anthony-1"); break;
-                    case "1": MMCont_Dialog.I.create_dialog ("dialog-anthony-4"); break;
+                    case "0": MMCont_Dialog.I.create_dialog ("anthony-1"); break;
+                    case "1": MMCont_Dialog.I.create_dialog ("anthony-4"); break;
 
-                    case "2": MMCont_Dialog.I.create_dialog ("dialog-anthony-5"); break;
+                    case "2": MMCont_Dialog.I.create_dialog ("anthony-5"); break;
                 }
                 break;
         }

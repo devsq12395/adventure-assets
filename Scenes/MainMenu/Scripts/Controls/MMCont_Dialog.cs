@@ -55,6 +55,12 @@ public class MMCont_Dialog : MonoBehaviour {
 
 			case "start-mission-anthony-1": start_mission_anthony_1 (); break;
 
+			case "wooster-square-house-1": show_dialog_wooster_square_house_1 (_dialog); break;
+			case "wooster-square-house-2": show_dialog_wooster_square_house_2 (_dialog); break;
+			case "wooster-square-house-3": show_dialog_wooster_square_house_3 (_dialog); break;
+			case "wooster-square-house-4": show_dialog_wooster_square_house_4 (_dialog); break;
+			case "wooster-square-house-5": show_dialog_wooster_square_house_5 (_dialog); break;
+
 			// Test Shop
 			case "shopTest01": btn_shopTest01 (); break;
 			case "shopSell": btn_shopSell (); break;
@@ -175,19 +181,25 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void show_dialog_vic_19 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-19");
 	public void show_dialog_vic_20 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-20");
 
-	public void show_dialog_anthony_1 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-1");
-	public void show_dialog_anthony_2 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-2");
-	public void show_dialog_anthony_3 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-3");
+	public void show_dialog_anthony_1 (MiniDialog _dialog) => set_dialog (_dialog, "anthony-1");
+	public void show_dialog_anthony_2 (MiniDialog _dialog) => set_dialog (_dialog, "anthony-2");
+	public void show_dialog_anthony_3 (MiniDialog _dialog) => set_dialog (_dialog, "anthony-3");
 	public void show_dialog_anthony_4 (MiniDialog _dialog) {
-		set_dialog (_dialog, "dialog-anthony-4");
+		set_dialog (_dialog, "anthony-4");
 		JsonSaving.I.save ("activity.dialog-with-anthony", "1");
 	}
 	public void start_mission_anthony_1 (){
 		MM_Mission.I.show ("anthony-1");
 	}
 
-	public void show_dialog_anthony_5 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-5");
-	public void show_dialog_anthony_6 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-6");
+	public void show_dialog_anthony_5 (MiniDialog _dialog) => set_dialog (_dialog, "anthony-5");
+	public void show_dialog_anthony_6 (MiniDialog _dialog) => set_dialog (_dialog, "anthony-6");
+
+	public void show_dialog_wooster_square_house_1 (MiniDialog _dialog) => set_dialog (_dialog, "wooster-square-house-1");
+	public void show_dialog_wooster_square_house_2 (MiniDialog _dialog) => set_dialog (_dialog, "wooster-square-house-2");
+	public void show_dialog_wooster_square_house_3 (MiniDialog _dialog) => set_dialog (_dialog, "wooster-square-house-3");
+	public void show_dialog_wooster_square_house_4 (MiniDialog _dialog) => set_dialog (_dialog, "wooster-square-house-4");
+	public void show_dialog_wooster_square_house_5 (MiniDialog _dialog) => set_dialog (_dialog, "wooster-square-house-5");
 
 	private void btn_shopTest01 (){
 		MM_Inventory.I.show ("buy", "test-shop");

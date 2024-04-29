@@ -263,7 +263,7 @@ MonoBehaviour:
   - boss
   - human
   speed: 4
-  attachScaleMultiplier: 1
+  attachScaleMultiplier: 2
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}

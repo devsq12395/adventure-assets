@@ -173,8 +173,17 @@ MonoBehaviour:
   anastasia: {fileID: 21300000, guid: b8e98d7cd614b713797d91ae85e01b57, type: 3}
   seraphine: {fileID: 21300000, guid: c0f40f5cb96aca5768b019fe0547a487, type: 3}
   miguel: {fileID: 21300000, guid: a698631cb04d1d383a8fe9bc4d954a2f, type: 3}
-  anthony: {fileID: 21300000, guid: a698631cb04d1d383a8fe9bc4d954a2f, type: 3}
+  anthony: {fileID: 21300000, guid: 9f98c7e70ca09bf4d91c4c0b9b30073d, type: 3}
   vic: {fileID: 21300000, guid: 333eca7814e00da8896a5b6b3e32f066, type: 3}
+  npcMan1: {fileID: 21300000, guid: a698631cb04d1d383a8fe9bc4d954a2f, type: 3}
+  npcMan2: {fileID: 21300000, guid: 9f98c7e70ca09bf4d91c4c0b9b30073d, type: 3}
+  npcMan3: {fileID: 21300000, guid: 497415eafabc8ff4a9f63212354ef207, type: 3}
+  npcMan4: {fileID: 21300000, guid: 660a27688d5178047b582d1c08a49bcd, type: 3}
+  npcWoman1: {fileID: 21300000, guid: 4c990a4cb97dc1647bf0d5d17a1684ae, type: 3}
+  npcWoman2: {fileID: 21300000, guid: 70cc533984d84284e9b1d0b835f703b7, type: 3}
+  vincenzo: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
+  icnHighway: {fileID: 21300000, guid: e40407a46bdc8a541b8f95eb918dd58e, type: 3}
+  icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   btnLocked: {fileID: 21300000, guid: afd56857a2f956f4a9196939426055c0, type: 3}
   cursorTexture: {fileID: 2800000, guid: 245292c43fca86f3e84b8411054b49a8, type: 3}
 --- !u!1 &332524905

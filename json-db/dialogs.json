@@ -37,7 +37,7 @@
         },
         "dialog-vic-2": {
             "name": "Vic",
-            "desc": "You two arrived in perfect timing. We're having some problems with neighboring gangs lately.",
+            "desc": "You two arrived in perfect timing. Welcome to Madam Rosa's Diner, also the base of the Luppino Family.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -47,7 +47,7 @@
         },
         "dialog-vic-3": {
             "name": "Vic",
-            "desc": "But you'll have to prove yourself first to us, The Luppino Family, and to our boss Don Vincenzo.",
+            "desc": "I have a job for you two if you are interested.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -334,7 +334,7 @@
             "name": "Man",
             "desc": "I think a war between the families will erupt soon.",
             "portImg": "npm-man-2",
-            "isTweenOut": "0",
+            "isTweenOut": "1",
 
             "inputEmptyContinue": "",
             "isMini": "0",
@@ -344,8 +344,8 @@
         "wooster-square-house-5": {
             "name": "Woman",
             "desc": "You don't look from around here. Oh, I know! You must be a student in New Yale University.",
-            "portImg": "npm-woman-1",
-            "isTweenOut": "0",
+            "portImg": "npm-woman-2",
+            "isTweenOut": "1",
 
             "inputEmptyContinue": "wooster-square-house-4",
             "isMini": "0",
@@ -374,7 +374,7 @@
         "strega": {
             "name": "Giovanni",
             "desc": "Welcome to my crafting shop. How can I help?",
-            "portImg": "tommy",
+            "portImg": "npc-man-2",
             "posX": 0,
             "posY": 0,
             "isTweenOut": "1",
@@ -393,7 +393,7 @@
         "marcos-tavern": {
             "name": "Bartender Marco",
             "desc": "The tavern today is so merry! Which drink do you want, mister?",
-            "portImg": "tommy",
+            "portImg": "npc-man-4",
             "posX": 0,
             "posY": 0,
 
@@ -410,9 +410,9 @@
             "inputScaler_enable": "0",
         },
         "bella-vita": {
-            "name": "Ramone",
+            "name": "Ramona",
             "desc": "We have some scraps and crafting essentials for sale here.",
-            "portImg": "tommy",
+            "portImg": "npc-woman-1",
             "posX": 0,
             "posY": 0,
 

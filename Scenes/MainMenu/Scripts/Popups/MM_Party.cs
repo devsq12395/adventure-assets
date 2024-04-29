@@ -80,7 +80,8 @@ public class MM_Party : MonoBehaviour {
             if (_name != "") {
                 partyBtns [i].port.sprite = Sprites.I.get_sprite (_name);
                 partyBtns [i].name.text = MM_Strings.I.get_str ($"{_name}-name");
-                partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}";
+                //partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}";
+                partyBtns [i].lvl.text = "";
             }
         }
     }

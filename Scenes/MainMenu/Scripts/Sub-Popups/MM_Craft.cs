@@ -52,6 +52,8 @@ public class MM_Craft : MonoBehaviour {
 				tRequires.text = $"{JsonReading.I.get_str ("requires")}:\n{_goldReq}\n{_itemReq}";
 
 				goldCost = int.Parse (JsonReading.I.read ("items", $"items.{_name}.cost"));
+
+				iPort.sprite = Sprites.I.get_sprite ("icn-item");
 				break;
 			case "char":
 				if (JsonSaving.I.load ("pool").Split (',').Contains (_name)) {
@@ -60,7 +62,9 @@ public class MM_Craft : MonoBehaviour {
 					return;
 				}
 
-				tName.text = JsonReading.I.get_str ($"{_name}-name");
+				string _charName = JsonReading.I.get_str ($"{_name}-name");
+
+				tName.text = _charName;
 				tDesc.text = JsonReading.I.read ("chars", $"chars.{_name}.bio.info");
 
 				goldCost = int.Parse (JsonReading.I.read ("chars", $"chars.{_name}.gold-cost"));
@@ -77,6 +81,7 @@ public class MM_Craft : MonoBehaviour {
 					}));
 
 				tRequires.text = $"{JsonReading.I.get_str ("requires")}:\n{_goldReq}\n{_itemReq}";
+				iPort.sprite = Sprites.I.get_sprite (_charName);
 
 				break;
 		}

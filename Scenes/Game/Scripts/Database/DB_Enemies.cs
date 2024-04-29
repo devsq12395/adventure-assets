@@ -232,7 +232,7 @@ public class DB_Enemies : MonoBehaviour {
 		return _ret;
 	}
 
-	private Dictionary<string, int> mill_river_reward_chance (Dictionary<string, int> _ret){
+	private Dictionary<string, int> mill_river_1_reward_chance (Dictionary<string, int> _ret){
 		return _ret;
 	}
 }
