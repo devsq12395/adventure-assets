@@ -36,9 +36,24 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "show-dialog-vic-15": show_dialog_vic_15 (_dialog); break;
 			case "show-dialog-vic-16": show_dialog_vic_16 (_dialog); break;
 			case "show-dialog-vic-17": show_dialog_vic_17 (_dialog); break;
+			case "show-dialog-vic-18": show_dialog_vic_18 (_dialog); break;
+
+			case "show-dialog-vic-19": show_dialog_vic_19 (_dialog); break;
+			case "show-dialog-vic-20": show_dialog_vic_20 (_dialog); break;
 
 			case "start-mission-vic-1": start_mission_vic_1 (); break;
 			case "start-mission-vic-2": start_mission_vic_2 (); break;
+			case "start-mission-vic-3": start_mission_vic_3 (); break;
+
+			case "show-dialog-anthony-1": show_dialog_anthony_1 (_dialog); break;
+			case "show-dialog-anthony-2": show_dialog_anthony_2 (_dialog); break;
+			case "show-dialog-anthony-3": show_dialog_anthony_3 (_dialog); break;
+			case "show-dialog-anthony-4": show_dialog_anthony_4 (_dialog); break;
+
+			case "show-dialog-anthony-5": show_dialog_anthony_5 (_dialog); break;
+			case "show-dialog-anthony-6": show_dialog_anthony_6 (_dialog); break;
+
+			case "start-mission-anthony-1": start_mission_anthony_1 (); break;
 
 			// Test Shop
 			case "shopTest01": btn_shopTest01 (); break;
@@ -148,13 +163,31 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void show_dialog_vic_14 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-14");
 	public void show_dialog_vic_15 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-15");
 	public void show_dialog_vic_16 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-16");
-	public void show_dialog_vic_17 (MiniDialog _dialog) {
-		set_dialog (_dialog, "dialog-vic-17");
+	public void show_dialog_vic_17 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-17");
+	public void show_dialog_vic_18 (MiniDialog _dialog) {
+		set_dialog (_dialog, "dialog-vic-18");
 		JsonSaving.I.save ("activity.dialog-with-vic", "5");
 	}
 	public void start_mission_vic_3 (){
 		MM_Mission.I.show ("vic-3");
 	}
+
+	public void show_dialog_vic_19 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-19");
+	public void show_dialog_vic_20 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-20");
+
+	public void show_dialog_anthony_1 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-1");
+	public void show_dialog_anthony_2 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-2");
+	public void show_dialog_anthony_3 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-3");
+	public void show_dialog_anthony_4 (MiniDialog _dialog) {
+		set_dialog (_dialog, "dialog-anthony-4");
+		JsonSaving.I.save ("activity.dialog-with-anthony", "1");
+	}
+	public void start_mission_anthony_1 (){
+		MM_Mission.I.show ("anthony-1");
+	}
+
+	public void show_dialog_anthony_5 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-5");
+	public void show_dialog_anthony_6 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-anthony-6");
 
 	private void btn_shopTest01 (){
 		MM_Inventory.I.show ("buy", "test-shop");

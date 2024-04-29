@@ -82,6 +82,19 @@ public class MM_Map : MonoBehaviour {
 
                     case "4": MMCont_Dialog.I.create_dialog ("dialog-vic-10"); break;
                     case "5": MMCont_Dialog.I.create_dialog ("dialog-vic-17"); break;
+
+                    case "6": MMCont_Dialog.I.create_dialog ("dialog-vic-19"); break;
+                }
+                break;
+
+            case "dialog-anthony":
+                string _statusAnthonyDialog = JsonSaving.I.load ("activity.dialog-with-anthony");
+
+                switch (_statusAnthonyDialog) {
+                    case "0": MMCont_Dialog.I.create_dialog ("dialog-anthony-1"); break;
+                    case "1": MMCont_Dialog.I.create_dialog ("dialog-anthony-4"); break;
+
+                    case "2": MMCont_Dialog.I.create_dialog ("dialog-anthony-5"); break;
                 }
                 break;
         }

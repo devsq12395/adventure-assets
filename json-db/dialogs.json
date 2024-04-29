@@ -214,6 +214,91 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
 
+        "dialog-vic-19": {
+            "name": "Boss Vincenzo",
+            "desc": "Tommy, my boy! I hope you are faring well.",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-20",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-20": {
+            "name": "Boss Vincenzo",
+            "desc": "I just want to say, you are now a part of Luppino Family. So if you need anything, we are always here.",
+            "portImg": "vincenzo",
+            "isTweenOut": "1",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "anthony-1": {
+            "name": "Anthony",
+            "desc": "You must be Tommy, right? I heard a lot about you from Boss Vincenzo.",
+            "portImg": "anthony",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-anthony-2",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "anthony-2": {
+            "name": "Anthony",
+            "desc": "I'm Anthony, the best car mechanic in New Haven and also loyal to the Luppino Family.",
+            "portImg": "anthony",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-anthony-3",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "anthony-3": {
+            "name": "Anthony",
+            "desc": "We have some business that needs your help. The pay will be good, of course.",
+            "portImg": "anthony",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-anthony-4",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "anthony-4": {
+            "name": "Anthony",
+            "desc": "Just help me clear out some War Shredders. They've been encroaching nearby leately, and it's bad for business.",
+            "portImg": "anthony",
+            "isTweenOut": "1",
+
+            "input1": {"id": "start-mission-anthony-1", "text": "I'll handle it."},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "anthony-5": {
+            "name": "Anthony",
+            "desc": "Tommy! There you are, my friend!",
+            "portImg": "anthony",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-anthony-6",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "anthony-6": {
+            "name": "Anthony",
+            "desc": "Business is booming and it's all thanks to you. If you're having trouble with cars, come find me. Repairs are on the house, just for you!",
+            "portImg": "anthony",
+            "isTweenOut": "1",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
         "wooster-square-house-1": {
             "name": "Old Man",
             "desc": "What is the Legion doing here anyway?",

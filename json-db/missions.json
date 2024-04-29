@@ -28,7 +28,7 @@
             
             "enemies": "vic-2",
             "maps": ["woosterSquare_rand"],
-            "unlocks-area": ["east-st-ives", "east-st-2-ives"],
+            "unlocks-area": ["squaredrive-repairs"],
             "missions-set": [
                 "vic->vic-3"
             ],
@@ -44,7 +44,45 @@
             "difficulty": "Level 3 (Easy)",
             "rewards": "500 Gold",
             
-            "enemies": "vic-4",
+            "enemies": "vic-3",
+            "maps": ["woosterSquare_rand"],
+            "unlocks-area": [],
+            "missions-set": [
+                "vic->vic-4"
+            ],
+            "activity-set": [
+                "dialog-with-vic->6"
+            ]
+        },
+
+        "anthony-1": {
+            "name": "Anthony",
+            "desc": "War Shredders are spotted near my shop. They are very dangerous, so not only me, but the whole town would be grateful if you can drive them out.",
+            "sprite": "anthony",
+            "faction": "Luppino Family",
+            "difficulty": "Level 3 (Easy)",
+            "rewards": "500 Gold",
+            
+            "enemies": "vic-1",
+            "maps": ["woosterSquare_rand"],
+            "unlocks-area": [],
+            "missions-set": [
+                "anthony->anthony-2"
+            ],
+            "activity-set": [
+                "dialog-with-anthony->2"
+            ]
+        },
+
+        "mill-river": {
+            "name": "This part of the Mill River has been overtaken by monsters.\n\nTo aspiring adventurers, it's a perfect place to train and find treasures.",
+            "desc": "",
+            "sprite": "vincenzo",
+            "faction": "???",
+            "difficulty": "???",
+            "rewards": "Change to get:\nWooden Block\nLeather\nBlue Glowvine\nElectric Shard\nDemon Fang",
+            
+            "enemies": "mill-river-1",
             "maps": ["woosterSquare_rand"],
             "unlocks-area": [],
             "missions-set": [

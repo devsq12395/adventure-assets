@@ -17,7 +17,8 @@
 
     "missionCur": "",
     "missionCurPool": {
-        "vic": "vic-1"
+        "vic": "vic-1",
+        "anthony": "anthony-1"
     },
 
     "missionMap": "",
@@ -29,6 +30,7 @@
 
     "activity": {
         "dialog-with-vic": "0",
+        "dialog-with-anthony": "0",
     },
     
     "areasUnlocked": {
