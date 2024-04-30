@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 9180770538312301371}
   - component: {fileID: 9180770538312301350}
   - component: {fileID: 9180770538312301349}
-  - component: {fileID: 3095841459979696172}
   - component: {fileID: 2335255245064927584}
   m_Layer: 0
   m_Name: seraphine
@@ -37,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.3, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -244,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1a6e5b6f7a0ef489fa41f463cfed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: seraphine
-  nameUI: 
+  name: sylphine
+  nameUI: Sylphine
   type: unit
   owner: 0
   id: 0
@@ -365,25 +364,6 @@ MonoBehaviour:
   cd: 0
   missileObj: iceMissile01
   soundToPlay: ice
---- !u!114 &3095841459979696172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9180770538312301372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3806b35fd8ad60b41b1a648e93991ded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: frostwave
-  skillSlot: Skill1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: 
 --- !u!114 &2335255245064927584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptTag: skill
   skillName: blizzard
-  skillSlot: Skill2
+  skillSlot: Skill1
   mc: 0
-  cdMax: 0.5
-  cd: 0
+  cdMax: 12
+  cd: 0.5

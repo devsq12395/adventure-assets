@@ -105,7 +105,7 @@ Animator:
   m_GameObject: {fileID: 2519536944346486926}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 476000853ed541c419e3078f63258f55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4586bc6fe890ee14fac8f589efc716af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   tags:
   - beast
   - boss
-  speed: 6
+  speed: 4
   attachScaleMultiplier: 2.5
   zPos: 0
   skill1: {fileID: 0}
@@ -407,6 +407,7 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
+  DIST: 6
 --- !u!114 &2082186493323631560
 MonoBehaviour:
   m_ObjectHideFlags: 0

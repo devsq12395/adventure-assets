@@ -16,10 +16,7 @@ GameObject:
   - component: {fileID: 512110213563582338}
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
-  - component: {fileID: -9206910436025346238}
-  - component: {fileID: 3101860276897099985}
-  - component: {fileID: -2206174980420874963}
-  - component: {fileID: 4907061923429462237}
+  - component: {fileID: -8188661390010928703}
   m_Layer: 0
   m_Name: war-shredder
   m_TagString: Untagged
@@ -104,7 +101,7 @@ Animator:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 476000853ed541c419e3078f63258f55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4586bc6fe890ee14fac8f589efc716af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -259,7 +256,7 @@ MonoBehaviour:
   onHitSFX: 
   tags:
   - beast
-  speed: 6
+  speed: 4
   attachScaleMultiplier: 1
   zPos: 0
   skill1: {fileID: 0}
@@ -326,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
---- !u!114 &-9206910436025346238
+--- !u!114 &-8188661390010928703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,66 +332,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: attack
-  skillName: attack
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: bullet-mobster
---- !u!114 &3101860276897099985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690657366656991979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c329fd244a690b3a0b41926403c98955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: embraced-infantry-dash
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: 
---- !u!114 &-2206174980420874963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690657366656991979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f702c3bba9377d34992d591bf8f905f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evtTrigger: death
-  evtName: 
-  RANGE: 3
-  SPEED_KNOCK: 3
-  DIST_KNOCK: 3
-  DAM: 4
-  DAM_PER_SKILL: 0
-  hitIDs: 
-  isUsingSkill: 0
---- !u!114 &4907061923429462237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690657366656991979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e9e7e4604b3374a9c5301ca686731f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0818f69b7fc31454cb6ca8414e4313c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inGameObj: {fileID: 0}

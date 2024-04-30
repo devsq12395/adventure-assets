@@ -20,7 +20,7 @@ public class Title : MonoBehaviour {
     public TextMeshProUGUI headerTxt_Gold;
 
     void Start() {
-        
+        curtainRect.anchoredPosition = new Vector2(-Screen.width - curtainRect.rect.width / 2, curtainRect.anchoredPosition.y);
     }
 
     void Update() {

@@ -9,6 +9,8 @@ public class Game : MonoBehaviour {
     
     public bool gameReady = false, isPaused = false;
 
+    public float checkEnemyCounter = 1f;
+
     void Start() {
         // PlayerPrefs for testing
         PlayerPrefs.SetInt ("player_charSel", 0);
@@ -45,6 +47,12 @@ public class Game : MonoBehaviour {
         MUI_HPBars.I.update_bars ();
         MUI_CharPane.I.update ();
         ContEnemies.I.update_arrows ();
+
+        checkEnemyCounter -= Time.deltaTime;
+        if (checkEnemyCounter <= 0) {
+            checkEnemyCounter = 1;
+            ContDamage.I.check_enemy_count ();
+        }
     }
 
     public void pause_game (){

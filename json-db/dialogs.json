@@ -302,7 +302,7 @@
         "wooster-square-house-1": {
             "name": "Old Man",
             "desc": "What is the Legion doing here anyway?",
-            "portImg": "npm-man-1",
+            "portImg": "npc-man-1",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "wooster-square-house-2",
@@ -312,7 +312,7 @@
         "wooster-square-house-2": {
             "name": "Old Man",
             "desc": "If the higher-ups of Schwarzreich put them on the front line, Rhode Island will have to think twice about attacking.",
-            "portImg": "npm-man-1",
+            "portImg": "npc-man-1",
             "isTweenOut": "1",
 
             "inputEmptyContinue": "",
@@ -323,7 +323,7 @@
         "wooster-square-house-3": {
             "name": "Man",
             "desc": "The Rossi Family is spotted here on Wooster Square recently, acting like they own the place.",
-            "portImg": "npm-man-2",
+            "portImg": "npc-man-2",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "wooster-square-house-4",
@@ -333,7 +333,7 @@
         "wooster-square-house-4": {
             "name": "Man",
             "desc": "I think a war between the families will erupt soon.",
-            "portImg": "npm-man-2",
+            "portImg": "npc-man-2",
             "isTweenOut": "1",
 
             "inputEmptyContinue": "",
@@ -344,25 +344,12 @@
         "wooster-square-house-5": {
             "name": "Woman",
             "desc": "You don't look from around here. Oh, I know! You must be a student in New Yale University.",
-            "portImg": "npm-woman-2",
+            "portImg": "npc-woman-2",
             "isTweenOut": "1",
 
             "inputEmptyContinue": "wooster-square-house-4",
             "isMini": "0",
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
-        },
-
-        "recruit-anastasia-1": {
-            "name": "Anastasia",
-            "desc": "Kazuma, my man, you're finally here! And you must be Tommy.",
-            "portImg": "vic",
-            "isTweenOut": "0",
-
-            "input1": {"id": "show-dialog-vic-2", "text": "Nice to meet you!"},
-
-            "inputEmptyContinue": "",
-            "isMini": "0",
-            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
 
         "recruit-sylphine-1": {
@@ -371,7 +358,7 @@
             "portImg": "sylphine",
             "isTweenOut": "0",
 
-            "inputEmptyContinue": "",
+            "inputEmptyContinue": "recruit-sylphine-2",
             "isMini": "0",
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
@@ -381,7 +368,7 @@
             "portImg": "sylphine",
             "isTweenOut": "0",
 
-            "inputEmptyContinue": "",
+            "inputEmptyContinue": "recruit-sylphine-3",
             "isMini": "0",
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
@@ -404,7 +391,7 @@
             "portImg": "anastasia",
             "isTweenOut": "0",
 
-            "inputEmptyContinue": "",
+            "inputEmptyContinue": "recruit-anastasia-2",
             "isMini": "0",
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
@@ -414,7 +401,7 @@
             "portImg": "anastasia",
             "isTweenOut": "0",
 
-            "inputEmptyContinue": "",
+            "inputEmptyContinue": "recruit-anastasia-3",
             "isMini": "0",
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
@@ -422,7 +409,7 @@
             "name": "Anastasia",
             "desc": "If you're looking for strong companions, I'm available. For a price, of course.",
             "portImg": "anastasia",
-            "isTweenOut": "0",
+            "isTweenOut": "1",
 
             "input1": {"id": "recruit-anastasia", "text": "Let's see..."},
 
@@ -442,8 +429,8 @@
             "isMini": "0",
             
             "input1": {"id": "shopTest01", "text": "Buy"},
-            "input2": {"id": "shopSell", "text": "Sell"},
-            "input3": {"id": "shopCancel", "text": "Nevermind"},
+            "input2": {"id": "shopCancel", "text": "Nevermind"},
+            "input3": {"id": "", "text": ""},
             "input4": {"id": "", "text": ""},
             "inputTxtBox": {"id": "", "text": ""},
             "inputEmptyContinue": "",
@@ -461,8 +448,8 @@
             "isMini": "0",
             
             "input1": {"id": "shopStregaBuy", "text": "Buy"},
-            "input2": {"id": "shopSell", "text": "Sell"},
-            "input3": {"id": "shopCancel", "text": "Nevermind"},
+            "input2": {"id": "shopCancel", "text": "Nevermind"},
+            "input3": {"id": "", "text": ""},
             "input4": {"id": "", "text": ""},
             "inputTxtBox": {"id": "", "text": ""},
             "inputEmptyContinue": "",
@@ -479,8 +466,8 @@
             "isTweenOut": "1",
             "isMini": "0",
             
-            "input1": {"id": "dialog-recruit-anastasia-1", "text": "Recruit Anastasia"},
-            "input2": {"id": "dialog-recruit-sylphine-1", "text": "Recruit Sylphine"},
+            "input1": {"id": "recruit-anastasia-1", "text": "Recruit Anastasia"},
+            "input2": {"id": "recruit-sylphine-1", "text": "Recruit Sylphine"},
             "input3": {"id": "shopCancel", "text": "Nevermind"},
             "input4": {"id": "", "text": ""},
             "inputTxtBox": {"id": "", "text": ""},
@@ -499,8 +486,8 @@
             "isMini": "0",
             
             "input1": {"id": "shop-bella-vita", "text": "Buy"},
-            "input2": {"id": "shopSell", "text": "Sell"},
-            "input3": {"id": "shopCancel", "text": "Nevermind"},
+            "input2": {"id": "shopCancel", "text": "Nevermind"},
+            "input3": {"id": "", "text": ""},
             "input4": {"id": "", "text": ""},
             "inputTxtBox": {"id": "", "text": ""},
             "inputEmptyContinue": "",

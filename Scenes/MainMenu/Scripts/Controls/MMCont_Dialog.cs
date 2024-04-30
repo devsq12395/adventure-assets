@@ -61,14 +61,14 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "wooster-square-house-4": show_dialog_wooster_square_house_4 (_dialog); break;
 			case "wooster-square-house-5": show_dialog_wooster_square_house_5 (_dialog); break;
 
-			case "dialog-recruit-anastasia-1": show_dialog_recruit_anastasia_1 (_dialog); break;
-			case "dialog-recruit-anastasia-2": show_dialog_recruit_anastasia_2 (_dialog); break;
-			case "dialog-recruit-anastasia-3": show_dialog_recruit_anastasia_3 (_dialog); break;
+			case "recruit-anastasia-1": show_dialog_recruit_anastasia_1 (_dialog); break;
+			case "recruit-anastasia-2": show_dialog_recruit_anastasia_2 (_dialog); break;
+			case "recruit-anastasia-3": show_dialog_recruit_anastasia_3 (_dialog); break;
 			case "recruit-anastasia": recruit_anastasia (_dialog); break;
 
-			case "dialog-recruit-sylphine-1": show_dialog_recruit_sylphine_1 (_dialog); break;
-			case "dialog-recruit-sylphine-2": show_dialog_recruit_sylphine_2 (_dialog); break;
-			case "dialog-recruit-sylphine-3": show_dialog_recruit_sylphine_3 (_dialog); break;
+			case "recruit-sylphine-1": show_dialog_recruit_sylphine_1 (_dialog); break;
+			case "recruit-sylphine-2": show_dialog_recruit_sylphine_2 (_dialog); break;
+			case "recruit-sylphine-3": show_dialog_recruit_sylphine_3 (_dialog); break;
 			case "recruit-sylphine": recruit_sylphine (_dialog); break;
 
 			// Test Shop
@@ -120,7 +120,10 @@ public class MMCont_Dialog : MonoBehaviour {
 		_dialog.isTweenOut = JsonReading.I.read ("dialogs", $"{_json}.isTweenOut") == "1";
 
 		_dialog.tweeningOut = false;
-		if (_dialog.tweenInText_default) _dialog.tweenInText = true;
+		if (_dialog.tweenInText_default) {
+			_dialog.tweenInText = true;
+			SoundHandler.I.play_sfx ("chat");
+		}
 
 		foreach (GameObject _input in _dialog.inputs) {
 			MiniDialog_Input _script = _input.GetComponent<MiniDialog_Input>();
@@ -213,14 +216,26 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void show_dialog_wooster_square_house_4 (MiniDialog _dialog) => set_dialog (_dialog, "wooster-square-house-4");
 	public void show_dialog_wooster_square_house_5 (MiniDialog _dialog) => set_dialog (_dialog, "wooster-square-house-5");
 
-	public void show_dialog_recruit_anastasia_1 (MiniDialog _dialog) => set_dialog (_dialog, "recruit-anastasia-1");
+	public void show_dialog_recruit_anastasia_1 (MiniDialog _dialog) {
+		if (JsonSaving.I.load ("pool").Contains ("anastasia")) {
+			create_dialog ("hero-recruited");
+		} else {
+			create_dialog ("recruit-anastasia-1");
+		}
+	}
 	public void show_dialog_recruit_anastasia_2 (MiniDialog _dialog) => set_dialog (_dialog, "recruit-anastasia-2");
 	public void show_dialog_recruit_anastasia_3 (MiniDialog _dialog) => set_dialog (_dialog, "recruit-anastasia-3");
 	public void recruit_anastasia (MiniDialog _dialog) {
 		MM_Craft.I.show ("anastasia", "char");
 	}
 
-	public void show_dialog_recruit_sylphine_1 (MiniDialog _dialog) => set_dialog (_dialog, "recruit-sylphine-1");
+	public void show_dialog_recruit_sylphine_1 (MiniDialog _dialog) {
+		if (JsonSaving.I.load ("pool").Contains ("sylphine")) {
+			create_dialog ("hero-recruited");
+		} else {
+			create_dialog ("recruit-sylphine-1");
+		}
+	}
 	public void show_dialog_recruit_sylphine_2 (MiniDialog _dialog) => set_dialog (_dialog, "recruit-sylphine-2");
 	public void show_dialog_recruit_sylphine_3 (MiniDialog _dialog) => set_dialog (_dialog, "recruit-sylphine-3");
 	public void recruit_sylphine (MiniDialog _dialog) {

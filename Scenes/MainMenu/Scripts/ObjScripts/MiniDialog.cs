@@ -33,8 +33,6 @@ public class MiniDialog : MonoBehaviour {
 			textShowing = textToShow;
 			tDesc.text = textShowing;
 		}
-
-		SoundHandler.I.play_sfx ("chat");
 	}
 
 	void Update (){

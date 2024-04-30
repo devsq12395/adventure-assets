@@ -66,7 +66,7 @@ public class ContDamage : MonoBehaviour {
         ContBuffs.I.remove_all_buffs (_def);
         ContObj.I.evt_on_death (_def);
 
-        if (_def.type == "unit") {
+        if (_def.type == "unit" && !_def.tags.Contains ("dummy")) {
             SoundHandler.I.play_sfx ("explosion");
             ContEffect.I.create_effect ("explosion1_mini", _def.gameObject.transform.position);
         }
@@ -173,7 +173,7 @@ public class ContDamage : MonoBehaviour {
     /*
         Event functions
     */
-    private void check_enemy_count (){
+    public void check_enemy_count (){
         GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
         int enemyCount = 0;
 
@@ -184,7 +184,7 @@ public class ContDamage : MonoBehaviour {
             }
         };
         
-        if (enemyCount <= 1) {
+        if (enemyCount <= 0) {
             ContEnemies.I.start_next_wave ();
         }
     }

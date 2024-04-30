@@ -63,7 +63,7 @@
             "difficulty": "Level 3 (Easy)",
             "rewards": "500 Gold",
             
-            "enemies": "vic-1",
+            "enemies": "anthony-1",
             "maps": ["woosterSquare_rand"],
             "unlocks-area": [],
             "missions-set": [
@@ -75,8 +75,8 @@
         },
 
         "mill-river-ives": {
-            "name": "This part of the Mill River has been overtaken by monsters.\n\nTo aspiring adventurers, it's a perfect place to train and find treasures.",
-            "desc": "",
+            "name": "Mill River",
+            "desc": "This part of the Mill River has been overtaken by monsters.\n\nTo aspiring adventurers, it's a perfect place to train and find treasures.",
             "sprite": "icn-highway",
             "faction": "???",
             "difficulty": "???",

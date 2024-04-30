@@ -6,12 +6,10 @@ public class Evt_BlizzardUpd : EvtTrig {
 
     private float countTime_Fx = 0, countTime_Dam = 0;
 
-    private float RANGE;
-    public int DAM;
+    private float RANGE = 8;
 
     public override void setup (){
         RANGE = 8;
-        DAM = 3;
     }
     
     public override void use (){
@@ -24,23 +22,20 @@ public class Evt_BlizzardUpd : EvtTrig {
         if (countTime_Fx >= 0.4f) {
             countTime_Fx = 0;
             create_blast (_dummy.transform.position, _dummy);
-        }
-
-        if (countTime_Dam >= 0.5f) {
-            countTime_Dam = 0;
-            dam_nearby_units (_owner, _dummy);
             SoundHandler.I.play_sfx ("torrent");
+            dam_nearby_units (_owner, _dummy);
         }
     }
 
-    private void dam_nearby_units (InGameObject _owner, InGameObject _dummy){
+    private void dam_nearby_units (InGameObject _owner, InGameObject _dummy){ Debug.Log ($"range {RANGE}");
         List<InGameObject> _objs = ContObj.I.get_objs_in_area (_dummy.transform.position, RANGE);
 
         foreach (InGameObject _o in _objs) {
             if (!DB_Conditions.I.dam_condition (_owner, _o)) continue;
 
-            ContDamage.I.damage (_owner, _o, DAM, _dummy.tags);
+            ContDamage.I.damage (_owner, _o, 1 + StatCalc.I.get_stat (_owner.name, "skill"), _dummy.tags);
             ContEffect.I.create_effect ("explosion3", _o.transform.position);
+            Debug.Log ("dam");
         }
     }
     

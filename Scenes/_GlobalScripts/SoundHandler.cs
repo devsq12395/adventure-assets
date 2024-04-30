@@ -22,7 +22,6 @@ public class SoundHandler : MonoBehaviour {
 
     void Start (){
         audioSource.loop = false; 
-        play_bgm ("menu");
     }
 
     void Update (){
@@ -59,7 +58,8 @@ public class SoundHandler : MonoBehaviour {
     }
 
     public void play_bgm (string _music) {
-        if (isPlayingBGM && _music == bgmType) return;
+        //if (isPlayingBGM && _music == bgmType) return;
+        audioSource.Stop ();
 
         AudioClip bgmClip = null;
 

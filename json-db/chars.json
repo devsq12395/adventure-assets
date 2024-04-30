@@ -73,7 +73,7 @@
             },
 
             "requires": [],
-            "gold-cost": "300",
+            "gold-cost": "500",
         },
         "sylphine": {
             "img-port": "sylphine",
@@ -97,7 +97,7 @@
             },
 
             "requires": [],
-            "gold-cost": "0",
+            "gold-cost": "500",
         },
         "miguel": {
             "img-port": "miguel",

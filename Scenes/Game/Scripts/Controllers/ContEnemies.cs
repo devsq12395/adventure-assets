@@ -75,7 +75,7 @@ public class ContEnemies : MonoBehaviour {
 		List<int> _goldRewards = DB_Enemies.I.get_possible_gold_rewards (enemiesType);
 		int _goldReward = _goldRewards [Random.Range (0, _goldRewards.Count)];
 
-		_ret += $"{JsonReading.I.get_str ("UI-in-game.rewards-gold")}: {_goldReward}";
+		_ret += $"{JsonReading.I.get_str ("UI-in-game.rewards-gold")} {_goldReward}";
 
 		JsonSaving.I.gain_gold (_goldReward);
 
@@ -94,6 +94,11 @@ public class ContEnemies : MonoBehaviour {
 		}
 
 		JsonSaving.I.save ("rewards", string.Join (",", rewardItems));
+		List<string> rewardNames = new List<string>();
+		rewardItems.ForEach (
+			(__reward) => rewardNames.Add (JsonReading.I.read ("items", $"items.{__reward}.name"))
+		);
+		_ret += $"\n\nYou found these items: {string.Join ("\n", rewardNames)}";
 
 		return _ret;
 	}

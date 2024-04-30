@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2570637198022245372
+--- !u!1 &4690657366656991979
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 447493422781706588}
-  - component: {fileID: 7978015990659962871}
-  - component: {fileID: 519629330561595764}
-  - component: {fileID: 3188742354649373142}
-  - component: {fileID: 6223784516019729516}
-  - component: {fileID: 8828723054458100408}
-  - component: {fileID: 4984661912093889156}
-  - component: {fileID: 3922680902651258387}
-  - component: {fileID: 4945165037160708548}
-  - component: {fileID: 2605826196825012150}
-  - component: {fileID: 5298731509610596715}
-  - component: {fileID: 4745171374470850773}
+  - component: {fileID: 4392952849386310183}
+  - component: {fileID: 8334795445884952392}
+  - component: {fileID: 7549018344836450365}
+  - component: {fileID: 342696788227830118}
+  - component: {fileID: 512110213563582338}
+  - component: {fileID: 5024090433382915677}
+  - component: {fileID: 4427413014661215766}
+  - component: {fileID: -9206910436025346238}
+  - component: {fileID: 699855318392250986}
   m_Layer: 0
-  m_Name: kazuma
+  m_Name: captain-charles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &447493422781706588
+--- !u!4 &4392952849386310183
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
+  m_GameObject: {fileID: 4690657366656991979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.125749, y: -3.3460665, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7978015990659962871
+--- !u!212 &8334795445884952392
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,28 +80,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1081392815, guid: f0fe1af457094f9c29d9362789ca1926, type: 3}
+  m_Sprite: {fileID: -1353884030, guid: 3f7f3151588ca594a8fb4e4d896ea532, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &519629330561595764
+--- !u!95 &7549018344836450365
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5073dbc3448f7ad41ba48392a521223c, type: 2}
+  m_Controller: {fileID: 9100000, guid: d454ec4c4aa2726488521ada43606da5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115,19 +112,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &3188742354649373142
+--- !u!50 &342696788227830118
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
-  m_BodyType: 0
+  m_GameObject: {fileID: 4690657366656991979}
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 4
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -142,58 +139,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6223784516019729516
+--- !u!61 &512110213563582338
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.29915848, y: -0.043627203}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.5, y: 2.5}
-    newSize: {x: 2.56, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8149093, y: 1.0766724}
-  m_EdgeRadius: 0
---- !u!61 &8828723054458100408
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -219,48 +171,51 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.30539066, y: -0.03739488}
+  m_Offset: {x: 0.0130621195, y: 0.012340426}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.5, y: 2.5}
-    newSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.5, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0268133, y: 1.3135068}
+  m_Size: {x: 2.0561244, y: 2.2408555}
   m_EdgeRadius: 0
---- !u!114 &4984661912093889156
+--- !u!114 &5024090433382915677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1a6e5b6f7a0ef489fa41f463cfed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: kazuma
-  nameUI: Kazuma
+  name: captain-charles
+  nameUI: 'Captain Charles: Legionnaire of Odin'
   type: unit
   owner: 0
   id: 0
-  hp: 10
-  hpMax: 10
-  mp: 10
-  mpMax: 10
+  hp: 300
+  hpMax: 300
+  mp: 0
+  mpMax: 0
   mpRegen: 0
   armor: 0
-  hitDam: 0
+  hitDam: 1
   onHitSFX: 
   tags:
-  - hero
+  - human
+  - spellcaster
+  - flying
+  - boss
   speed: 6
-  attachScaleMultiplier: 1
+  attachScaleMultiplier: 2
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
@@ -313,97 +268,54 @@ MonoBehaviour:
   controllerID: 0
   hitUnitsID: 
   skills: []
---- !u!114 &3922680902651258387
+--- !u!114 &4427413014661215766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 470e9697977f37549bec466b13d5dbce, type: 3}
+  m_Script: {fileID: 11500000, guid: 269ab66d93ca46a42851dbc7689b91a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
---- !u!114 &4945165037160708548
+--- !u!114 &-9206910436025346238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd09d84313a1a24c84940507536e5f9, type: 3}
+  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: dash
-  skillSlot: shift
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: 
---- !u!114 &2605826196825012150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be37ca8792ebe664b8eff329d6679499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: skill
+  scriptTag: attack
   skillName: attack
   skillSlot: mouse1
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: slash-kazuma
-  soundToPlay: swish
---- !u!114 &5298731509610596715
+  missileObj: prism-drone-missile
+--- !u!114 &699855318392250986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
+  m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f10a9ce6b65fc9b47ab524ad8446aeec, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d43c5498c64fd744a0e4e9a86be6181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evtTrigger: update
-  evtName: flame-dash
-  RANGE: 7
-  RANGE_FINAL_KNOCK: 0
-  AOE_KNOCK: 2
-  SPEED_KNOCK: 0.25
-  DIST_KNOCK: 3
-  DAM: 3
-  DAM_PER_SKILL: 1
-  hitIDs: 
-  isUsingSkill: 0
---- !u!114 &4745171374470850773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b68771ef6da6b446995c0999d6f96c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: flame-dash
-  skillSlot: Skill1
-  mc: 0
-  cdMax: 5
-  cd: 0
-  missileObj: swish
+  inGameObj: {fileID: 0}
+  isStart: 0
+  isReady: 0
+  state: 0
+  stateTime: 0
+  goPos: {x: 0, y: 0}
+  moveInterval: 0

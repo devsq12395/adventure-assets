@@ -299,7 +299,7 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: bullet-mobster
+  missileObj: prism-drone-missile
 --- !u!114 &-2177420380531635378
 MonoBehaviour:
   m_ObjectHideFlags: 0

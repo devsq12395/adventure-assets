@@ -12,7 +12,7 @@ public class MasterScene : MonoBehaviour {
 
     void Start(){
         add_scene ("GlobalScripts");
-        change_main_scene ("MainMenu");
+        change_main_scene ("Title");
 
         Application.targetFrameRate = 60;
     }
