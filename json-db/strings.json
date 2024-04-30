@@ -36,7 +36,8 @@
             "mission-success": "MISSION SUCCESS!",
             "all-enemies-dead": "All enemies are beaten!",
 
-            "rewards-gold": "Gold Gained: "
+            "rewards-gold": "Gold Gained: ",
+            "rewards-item": "You Found: ",
         },
         
         "char-names": {

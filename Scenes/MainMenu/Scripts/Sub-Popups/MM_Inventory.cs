@@ -61,6 +61,20 @@ public class MM_Inventory : MonoBehaviour {
         go.SetActive (false);
     }
 
+    public void get_last_mission_item_rewards (){
+        List<string> _rewards = new List<string>();
+        string _rewardsStr = JsonSaving.I.load ("rewards");
+
+        if (_rewardsStr.Length > 1) {
+            _rewards.AddRange (JsonSaving.I.load ("rewards").Split (","));
+            _rewards.ForEach ((_item) => {
+                add_item (_item, 1);
+            });
+        }
+
+        JsonSaving.I.save ("rewards", "");
+    }
+
     public void btn_show (){show ("inventory", "");}
     public void show (string _mode, string _itemList, string[] _sortTag = null){
         go.SetActive (true);

@@ -12,8 +12,8 @@
     ],
 
     "gold": "500",
-    "items": [
-    ],
+    "items": [],
+    "rewards": [],
 
     "missionCur": "",
     "missionCurPool": {
@@ -24,7 +24,6 @@
     "missionMap": "",
     "missionLvl": "",
 
-    "rewards": [],
     "main-menu-start-callback": "show-intro-1",
     "main-menu-map": "wooster-square",
 

@@ -161,7 +161,62 @@
             }
         },
 
-        
+        "cprwr": {
+            "name-ui": "Copper Wire",
+            "desc": "Essential for electric repairs and makeshift devices.",
+            "cost": "50",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "plsbtl": {
+            "name-ui": "Plastic Bottle",
+            "desc": "Can be useful when recycled.",
+            "cost": "50",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "wldbry": {
+            "name-ui": "Wild Berry",
+            "desc": "Juicy and flavorful fruits that grow abundantly in the wilderness.",
+            "cost": "50",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
+        "coal": {
+            "name-ui": "Coal",
+            "desc": "A combustible black rock formed from ancient plant matter.",
+            "cost": "50",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
         "plank": {
             "name-ui": "Wooden Plank",
             "desc": "A plank of wood with different possible uses.",
@@ -232,6 +287,20 @@
 
             "requires": [],
         },
+        "lthr": {
+            "name-ui": "Leather",
+            "desc": "Ideal for crafting armor, clothing and various goods.",
+            "cost": "300",
+
+            "stackable": "true",
+            "stack-max": 9999,
+            "tags": [],
+            
+            "use":"",
+            "equip": "",
+
+            "requires": [],
+        },
         "irnore": {
             "name-ui": "Iron Ore",
             "desc": "Used as material for basic tools and weapons.",
@@ -249,7 +318,7 @@
         "bluvin": {
             "name-ui": "Blue Glowvine",
             "desc": "Produces a beautiful glow. It is priced for its magical properties.",
-            "cost": "200",
+            "cost": "400",
 
             "stackable": "true",
             "stack-max": 9999,

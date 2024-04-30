@@ -75,15 +75,15 @@
             "requires": [],
             "gold-cost": "300",
         },
-        "seraphine": {
-            "img-port": "seraphine",
-            "equipWeapon": "sword",
+        "sylphine": {
+            "img-port": "sylphine",
+            "equipWeapon": "wand",
             "stats": {
-                "hp": 10,
+                "hp": 6,
                 "mp": 10,
-                "attack": 2,
-                "range": 4,
-                "skill": 1,
+                "attack": 1,
+                "range": 6,
+                "skill": 2,
                 "speed": 1,
                 "armor": 0,
                 "crit-rate": 15,
@@ -91,8 +91,8 @@
             },
 
             "bio": {
-                "info": "An adventurer who is very skilled with swords, and Tommy's best buddy.\nWeapon: Sword",
-                "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCost: 2 MP / CD: 0 sec",
+                "info": "Hails from a long line of elite sorcerers. She is currently studying and conducting research in New Yale University.\nWeapon: Wand",
+                "skill1": "Skill 1: Torrent\nSummons several torrents of water nearby that will damage enemies hit.\nCost: CD: 18 sec",
                 "skill2": "",
             },
 

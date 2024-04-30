@@ -212,27 +212,50 @@ public class DB_Enemies : MonoBehaviour {
 	}
 
 	private Dictionary<string, int> vic_1_reward_chance (Dictionary<string, int> _ret){
-		/*_ret.Add ("zomflsh", 20);
-		_ret.Add ("plank", 35);
-		_ret.Add ("scrap", 50);
-		_ret.Add ("irnore", 60);
-		_ret.Add ("bluvin", 70);
-		_ret.Add ("", 100);*/
+		_ret.Add ("cprwr", 40);	// Copper Wire
+		_ret.Add ("plsbtl", 70); // Plastic Bottle
+		_ret.Add ("wldbry", 80); // Wild Berry
+		_ret.Add ("coal", 90); // Coal
+		_ret.Add ("scrap", 100); // Scrap Metal
 
 		return _ret;
 	}
 	private Dictionary<string, int> vic_2_reward_chance (Dictionary<string, int> _ret){
+		_ret.Add ("cprwr", 40);	// Copper Wire
+		_ret.Add ("plsbtl", 70); // Plastic Bottle
+		_ret.Add ("wldbry", 80); // Wild Berry
+		_ret.Add ("coal", 90); // Coal
+		_ret.Add ("scrap", 100); // Scrap Metal
+		
 		return _ret;
 	}
 	private Dictionary<string, int> vic_3_reward_chance (Dictionary<string, int> _ret){
+		_ret.Add ("cprwr", 40);	// Copper Wire
+		_ret.Add ("plsbtl", 70); // Plastic Bottle
+		_ret.Add ("wldbry", 80); // Wild Berry
+		_ret.Add ("coal", 90); // Coal
+		_ret.Add ("scrap", 100); // Scrap Metal
+
 		return _ret;
 	}
 
 	private Dictionary<string, int> anthony_1_reward_chance (Dictionary<string, int> _ret){
+		_ret.Add ("cprwr", 40);	// Copper Wire
+		_ret.Add ("plsbtl", 70); // Plastic Bottle
+		_ret.Add ("wldbry", 80); // Wild Berry
+		_ret.Add ("coal", 90); // Coal
+		_ret.Add ("scrap", 100); // Scrap Metal
+
 		return _ret;
 	}
 
 	private Dictionary<string, int> mill_river_1_reward_chance (Dictionary<string, int> _ret){
+		_ret.Add ("wdblk", 40);	// Wooden Block
+		_ret.Add ("lthr", 70); // Leather
+		_ret.Add ("bluvin", 80); // Blue Glowvine
+		_ret.Add ("elcshd", 90); // Electric Shard
+		_ret.Add ("demfng", 100); // Demon Fang
+
 		return _ret;
 	}
 }

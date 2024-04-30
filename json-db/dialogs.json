@@ -352,6 +352,85 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
 
+        "recruit-anastasia-1": {
+            "name": "Anastasia",
+            "desc": "Kazuma, my man, you're finally here! And you must be Tommy.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "input1": {"id": "show-dialog-vic-2", "text": "Nice to meet you!"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "recruit-sylphine-1": {
+            "name": "Sylphine",
+            "desc": "Hi, I'm Sylphine. Student at New Yale University.",
+            "portImg": "sylphine",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "recruit-sylphine-2": {
+            "name": "Sylphine",
+            "desc": "I'm here at Wooster Square to do some research work. As you know, this place can be dangerous at times.",
+            "portImg": "sylphine",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "recruit-sylphine-3": {
+            "name": "Sylphine",
+            "desc": "If you're looking for a companion, I'm one of the best spellcasters in New Yale.",
+            "portImg": "sylphine",
+            "isTweenOut": "1",
+
+            "input1": {"id": "recruit-sylphine", "text": "Let's see..."},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "recruit-anastasia-1": {
+            "name": "Anastasia",
+            "desc": "You must be the new travellers everyone in town is talking about.",
+            "portImg": "anastasia",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "recruit-anastasia-2": {
+            "name": "Anastasia",
+            "desc": "I'm Anastasia. Like you, I came from afar.",
+            "portImg": "anastasia",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "recruit-anastasia-3": {
+            "name": "Anastasia",
+            "desc": "If you're looking for strong companions, I'm available. For a price, of course.",
+            "portImg": "anastasia",
+            "isTweenOut": "0",
+
+            "input1": {"id": "recruit-anastasia", "text": "Let's see..."},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
         "shopTest": {
             "name": "Test's shop",
             "desc": "TestDesc",
@@ -400,9 +479,9 @@
             "isTweenOut": "1",
             "isMini": "0",
             
-            "input1": {"id": "recruit-anastasia", "text": "Recruit Anastasia"},
-            "input2": {"id": "shopCancel", "text": "Nevermind"},
-            "input3": {"id": "", "text": ""},
+            "input1": {"id": "dialog-recruit-anastasia-1", "text": "Recruit Anastasia"},
+            "input2": {"id": "dialog-recruit-sylphine-1", "text": "Recruit Sylphine"},
+            "input3": {"id": "shopCancel", "text": "Nevermind"},
             "input4": {"id": "", "text": ""},
             "inputTxtBox": {"id": "", "text": ""},
             "inputEmptyContinue": "",

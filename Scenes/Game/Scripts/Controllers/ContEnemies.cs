@@ -27,6 +27,7 @@ public class ContEnemies : MonoBehaviour {
 	public Dictionary<string, int> rewardChance;
 
 	public string enemiesType;
+	public List<string> rewardItems;
 
 	public void setup (string _enemiesType){
 		enemiesType = _enemiesType;
@@ -79,14 +80,20 @@ public class ContEnemies : MonoBehaviour {
 		JsonSaving.I.gain_gold (_goldReward);
 
 		// Item Rewards
-		int _rewardsAmountToGive = Random.Range (5, 10);
-		//_ret += $"{JsonReading.I.get_str ("UI-in-game.rewards")}:";
+		int _rewardsAmountToGive = Random.Range (1, 4);
 		for (int i = 0; i < _rewardsAmountToGive; i++) {
 			int _rewardToGive = Random.Range (0, 100);
+			string _toGive = "";
 			foreach (var entry in rewardChance) {
-
+				if (_rewardToGive < entry.Value) {
+					_toGive = entry.Key;
+					break;
+				}
 			}
+			rewardItems.Add (_toGive);
 		}
+
+		JsonSaving.I.save ("rewards", rewardItems.Join (","));
 
 		return _ret;
 	}
