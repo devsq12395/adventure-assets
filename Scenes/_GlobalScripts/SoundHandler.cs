@@ -13,6 +13,9 @@ public class SoundHandler : MonoBehaviour {
     public AudioClip bgmMenu;
     public AudioClip[] bgmGame;
 
+    public AudioClip bubble, buying, chat, click, explosion, gain, ice, laser, magic, plasmaShotgun, swish, swoosh, torrent, win, zap, 
+        bigHit, dash, dashSmoke;
+
     private int curBgm;
     private bool isPlayingBGM;
     private string bgmType;
@@ -33,6 +36,25 @@ public class SoundHandler : MonoBehaviour {
         switch (_sound) {
             case "yes-ping": audioSource.PlayOneShot(yesPing); break;
             case "no-ping": audioSource.PlayOneShot(noPing); break;
+
+            case "bubble": audioSource.PlayOneShot(bubble); break;
+            case "buying": audioSource.PlayOneShot(buying); break;
+            case "chat": audioSource.PlayOneShot(chat); break;
+            case "click": audioSource.PlayOneShot(click); break;
+            case "explosion": audioSource.PlayOneShot(explosion); break;
+            case "big-hit": audioSource.PlayOneShot(bigHit); break;
+            case "gain": audioSource.PlayOneShot(gain); break;
+            case "ice": audioSource.PlayOneShot(ice); break;
+            case "laser": audioSource.PlayOneShot(laser); break;
+            case "magic": audioSource.PlayOneShot(magic); break;
+            case "plasma-shotgun": audioSource.PlayOneShot(plasmaShotgun); break;
+            case "swish": audioSource.PlayOneShot(swish); break;
+            case "swoosh": audioSource.PlayOneShot(swoosh); break;
+            case "torrent": audioSource.PlayOneShot(torrent); break;
+            case "win": audioSource.PlayOneShot(win); break;
+            case "zap": audioSource.PlayOneShot(zap); break;
+            case "dash": audioSource.PlayOneShot(dash); break;
+            case "dash-smoke": audioSource.PlayOneShot(dashSmoke); break;
         }
     }
 

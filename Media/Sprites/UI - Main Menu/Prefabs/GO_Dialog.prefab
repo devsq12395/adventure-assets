@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7396174046781994307}
   - component: {fileID: 3645921922520337841}
   - component: {fileID: 4475427863983213704}
+  - component: {fileID: 6063109524550874134}
   m_Layer: 5
   m_Name: BTN_Input1
   m_TagString: Untagged
@@ -134,6 +135,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6063109524550874134}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4475427863983213704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +165,18 @@ MonoBehaviour:
   inputField: {fileID: 0}
   inputName: input1
   ID: 
+--- !u!114 &6063109524550874134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12897853248095538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &468956789706843068
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +458,7 @@ GameObject:
   - component: {fileID: 1009904093327887987}
   - component: {fileID: 1635175451019530380}
   - component: {fileID: 3374587587604419639}
+  - component: {fileID: 7564964365431244470}
   m_Layer: 5
   m_Name: BTN_Input2
   m_TagString: Untagged
@@ -554,6 +580,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6063109524550874134}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3374587587604419639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +610,18 @@ MonoBehaviour:
   inputField: {fileID: 0}
   inputName: input2
   ID: 
+--- !u!114 &7564964365431244470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092769362139282157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1628601070257622761
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +635,7 @@ GameObject:
   - component: {fileID: 2796666056692569495}
   - component: {fileID: 8867574634900224721}
   - component: {fileID: 4354240697619994095}
+  - component: {fileID: 1474760007836660583}
   m_Layer: 5
   m_Name: BTN_Input4
   m_TagString: Untagged
@@ -706,6 +757,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6063109524550874134}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4354240697619994095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,6 +787,18 @@ MonoBehaviour:
   inputField: {fileID: 0}
   inputName: input4
   ID: 
+--- !u!114 &1474760007836660583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628601070257622761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2225373317944042108
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +812,7 @@ GameObject:
   - component: {fileID: 5681924138122696815}
   - component: {fileID: 8014372609838376543}
   - component: {fileID: 2644540796402546958}
+  - component: {fileID: 1997581034932836091}
   m_Layer: 5
   m_Name: BTN_Input3
   m_TagString: Untagged
@@ -858,6 +934,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6063109524550874134}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2644540796402546958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +964,18 @@ MonoBehaviour:
   inputField: {fileID: 0}
   inputName: input3
   ID: 
+--- !u!114 &1997581034932836091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225373317944042108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3110784321959369872
 GameObject:
   m_ObjectHideFlags: 0

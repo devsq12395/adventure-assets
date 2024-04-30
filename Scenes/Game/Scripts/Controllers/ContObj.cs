@@ -544,4 +544,13 @@ public class ContObj : MonoBehaviour {
             ContDamage.I.kill (_obj);
         }
     }
+
+    // Other
+    public void face_player (InGameObject _obj){
+        InGameObject _p = ContPlayer.I.player;
+        Vector2 _pPos = _p.gameObject.transform.position,
+                _objPos = _obj.gameObject.transform.position;
+
+        change_facing (_obj, ((_objPos.x > _pPos.x) ? "left" : "right"));
+    }
 }

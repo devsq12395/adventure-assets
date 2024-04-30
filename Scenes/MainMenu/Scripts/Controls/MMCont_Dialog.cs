@@ -78,8 +78,6 @@ public class MMCont_Dialog : MonoBehaviour {
 
 			case "shopStregaBuy": btn_shopStregaBuy (); break;
 
-			case "recruit-anastasia": btn_recruitAnastasia (_dialog); break;
-
 			case "back-to-inventory": btn_backToInventory (_dialog); break;
 			case "back-craft-success": btn_backCraftSuccess (_dialog); break;
 
@@ -239,11 +237,6 @@ public class MMCont_Dialog : MonoBehaviour {
 
 	private void btn_shop (string _shopName){
 		MM_Inventory.I.show ("buy", _shopName);
-	}
-
-	private void btn_recruitAnastasia (MiniDialog _dialog){
-		MM_Craft.I.show ("anastasia", "char");
-		_dialog.tween_out ();
 	}
 
 	private void btn_shopSell (){

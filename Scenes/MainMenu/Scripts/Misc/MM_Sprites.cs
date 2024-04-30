@@ -22,7 +22,7 @@ public class MM_Sprites : MonoBehaviour {
         switch (_name) {
             case "tommy":           return portTommy; break;
             case "anastasia":           return portAnastasia; break;
-            case "seraphine":           return portSeraphine; break;
+            case "seraphine":case "sylphine":           return portSeraphine; break;
             case "miguel":           return portMiguel; break;
             case "anthony":           return portAnthony; break;
 

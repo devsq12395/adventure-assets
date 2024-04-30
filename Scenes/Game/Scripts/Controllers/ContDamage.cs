@@ -65,6 +65,12 @@ public class ContDamage : MonoBehaviour {
     public void kill (InGameObject _def){
         ContBuffs.I.remove_all_buffs (_def);
         ContObj.I.evt_on_death (_def);
+
+        if (_def.type == "unit") {
+            SoundHandler.I.play_sfx ("explosion");
+            ContEffect.I.create_effect ("explosion1_mini", _def.gameObject.transform.position);
+        }
+
         Destroy (_def.gameObject);
     }
 
@@ -84,6 +90,9 @@ public class ContDamage : MonoBehaviour {
         
         // Dam Text UI
         GameUI_InGameTxt.I.create_ingame_txt (_dam.ToString (), _def.gameObject.transform.position, 2f);
+
+        // Sound Effects
+        SoundHandler.I.play_sfx ("big-hit");
     }
 
     private int check_other_effects (InGameObject _atk, InGameObject _def, int _damOrig, List<string> _tags){

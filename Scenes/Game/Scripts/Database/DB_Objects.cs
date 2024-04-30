@@ -22,7 +22,7 @@ public class DB_Objects : MonoBehaviour {
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
-        bulletTommy, bulletMobster, fireWave, blueWave, slashShredder;
+        bulletTommy, bulletMobster, bulletEmbraced, fireWave, blueWave, slashShredder;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -55,7 +55,7 @@ public class DB_Objects : MonoBehaviour {
 
             case "tommy":                   _refObj = tommy; break;
             case "kazuma":                    _refObj = kazuma; break;
-            case "seraphine":               _refObj = seraphine; break;
+            case "seraphine":case "sylphine":               _refObj = seraphine; break;
             case "anastasia":               _refObj = anastasia; break;
             case "miguel":                  _refObj = miguel; break;
             case "anthony":                 _refObj = anthony; break;
@@ -93,6 +93,7 @@ public class DB_Objects : MonoBehaviour {
             case "flame-wave":case "fire-wave":                 _refObj = flameWave; break;
             case "bullet-tommy":                 _refObj = bulletTommy; break;
             case "bullet-mobster":                 _refObj = bulletMobster; break;
+            case "bullet-embraced":                 _refObj = bulletEmbraced; break;
             case "blue-wave":                 _refObj = blueWave; break;
             case "slash-shredder":                 _refObj = slashShredder; break;
 

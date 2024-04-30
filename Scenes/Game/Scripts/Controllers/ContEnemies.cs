@@ -93,7 +93,7 @@ public class ContEnemies : MonoBehaviour {
 			rewardItems.Add (_toGive);
 		}
 
-		JsonSaving.I.save ("rewards", rewardItems.Join (","));
+		JsonSaving.I.save ("rewards", string.Join (",", rewardItems));
 
 		return _ret;
 	}

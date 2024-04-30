@@ -122,7 +122,7 @@ public class DB_Enemies : MonoBehaviour {
 				_waves[0].Add ("embraced-infantry", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("embraced-infantry", 6);
+				_waves[1].Add ("embraced-infantry", 3);
 				_waves[1].Add ("embraced-mage", 2);
 
 				_waves.Add (new Dictionary<string, int>());

@@ -36,5 +36,7 @@ public class Skill_Dash : SkillTrig {
         InGameCamera.I.point_to_target ();
 
         ContEffect.I.create_effect ("move-smoke", _pos);
+
+        SoundHandler.I.play_sfx ("dash-smoke");
     }
 }

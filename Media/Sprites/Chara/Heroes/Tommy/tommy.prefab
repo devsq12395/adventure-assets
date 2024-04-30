@@ -363,6 +363,7 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: bullet-tommy
+  soundToPlay: laser
 --- !u!114 &188102392388792281
 MonoBehaviour:
   m_ObjectHideFlags: 0

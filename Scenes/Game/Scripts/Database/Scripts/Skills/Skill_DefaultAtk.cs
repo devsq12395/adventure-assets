@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skill_DefaultAtk : SkillTrig {
 
-    public string missileObj;
+    public string missileObj, soundToPlay;
     
     public override void use_active (){
         if (!use_check()) return;
@@ -27,5 +27,7 @@ public class Skill_DefaultAtk : SkillTrig {
         ContObj.I.const_move_ang_set (_missileComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position), _missileComp.speed);
 
         _missileComp.controllerID = _ownerComp.id;
+
+        SoundHandler.I.play_sfx (soundToPlay);
     }
 }

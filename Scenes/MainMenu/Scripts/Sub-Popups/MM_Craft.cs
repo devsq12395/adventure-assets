@@ -124,12 +124,14 @@ public class MM_Craft : MonoBehaviour {
 			case "item":
 				MM_Inventory.I.add_item (item, 1);
 				MMCont_Dialog.I.create_dialog ("buy-craft-success");
+				SoundHandler.I.play_sfx ("buying");
 				break;
 			case "char":
 				List<string> _chars = JsonSaving.I.load ("pool").Split (',').ToList ();
 				_chars.Add (item);
 				JsonSaving.I.save ("pool", string.Join (',', _chars.ToArray()));
 				MMCont_Dialog.I.create_dialog ("buy-recruit-success");
+				SoundHandler.I.play_sfx ("buying");
 				break;
 		}
 	}

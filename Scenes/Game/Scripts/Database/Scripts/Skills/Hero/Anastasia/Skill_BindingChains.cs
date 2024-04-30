@@ -25,6 +25,8 @@ public class Skill_BindingChains : SkillTrig {
             ContBuffs.I.add_buff (_o, "binding-chains");
             GameUI_InGameTxt.I.create_ingame_txt (DB_Strings.I.get_str ("Binded!"), _o.gameObject.transform.position, 2f);
             ContDamage.I.damage (_owner, _o, DAM, damTags);
+
+            SoundHandler.I.play_sfx ("magic");
         }
     }
 }

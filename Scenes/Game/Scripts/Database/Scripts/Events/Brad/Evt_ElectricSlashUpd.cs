@@ -7,7 +7,7 @@ public class Evt_ElectricSlashUpd : EvtTrig {
 
     private float countTime_Fx = 0, countTime_Dam = 0;
 
-    public float RANGE, AOE_KNOCK, SPEED_KNOCK, DIST_KNOCK;
+    public float RANGE, RANGE_FINAL_KNOCK, AOE_KNOCK, SPEED_KNOCK, DIST_KNOCK;
     public int DAM, DAM_PER_SKILL;
     public List<int> hitIDs;
 
@@ -39,6 +39,13 @@ public class Evt_ElectricSlashUpd : EvtTrig {
         if (_owner.instMov_mode != "electric-slash") {
             isUsingSkill = false;
             hitIDs.Clear ();
+
+            List<InGameObject> _objs = ContObj.I.get_objs_in_area (_pos, RANGE_FINAL_KNOCK);
+            foreach (InGameObject _o in _objs) {
+                if (!DB_Conditions.I.dam_condition (_owner, _o)) continue;
+
+                ContObj.I.instant_move_upd_start_dist (_o, Calculator.I.get_ang_from_2_points_deg (_pos, _o.transform.position), SPEED_KNOCK, DIST_KNOCK);
+            }
         }
     }
 

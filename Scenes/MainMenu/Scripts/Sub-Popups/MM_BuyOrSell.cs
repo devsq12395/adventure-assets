@@ -74,6 +74,7 @@ public class MM_BuyOrSell : MonoBehaviour {
 					MainMenu.I.update_gold (-costTotal);
 					MM_Inventory.I.add_item (item.name, amountCur);
 					MMCont_Dialog.I.create_dialog ("buy-success");
+					SoundHandler.I.play_sfx ("buying");
 				} else {
 					MMCont_Dialog.I.create_dialog ("buy-not-enough-gold");
 				}
@@ -82,6 +83,7 @@ public class MM_BuyOrSell : MonoBehaviour {
 			case "sell":
 				MainMenu.I.update_gold (costTotal);
 				MM_Inventory.I.remove_stack (item, amountCur);
+				SoundHandler.I.play_sfx ("buying");
 				hide ();
 				break;
 		}

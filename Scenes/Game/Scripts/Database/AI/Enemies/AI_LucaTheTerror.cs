@@ -5,6 +5,8 @@ using UnityEngine;
 public class AI_LucaTheTerror : InGameAI {
     
     public override void on_update (){
+        ContObj.I.face_player (inGameObj);
+        
         stateTime += Time.deltaTime;
 
         if (state == 0) {

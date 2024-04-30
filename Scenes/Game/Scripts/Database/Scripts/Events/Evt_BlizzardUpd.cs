@@ -29,6 +29,7 @@ public class Evt_BlizzardUpd : EvtTrig {
         if (countTime_Dam >= 0.5f) {
             countTime_Dam = 0;
             dam_nearby_units (_owner, _dummy);
+            SoundHandler.I.play_sfx ("torrent");
         }
     }
 

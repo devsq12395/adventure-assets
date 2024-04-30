@@ -18,6 +18,8 @@ public class AI_Zombie : InGameAI {
         } else {
             pathfinding (_p, _pPos, _goPos);
         }
+
+        ContObj.I.face_player (inGameObj);
     }
 
     private void pathfinding(InGameObject _p, Vector2 _pPos, Vector2 _goPos) {

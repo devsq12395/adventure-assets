@@ -35,6 +35,8 @@ public class Skill_GiantSlimeShotgun : SkillTrig {
         }
         lastPattern++;
         if (lastPattern > 1) lastPattern = 0;
+
+        SoundHandler.I.play_sfx ("explosion");
     }
 
     private void create_missile (InGameObject _ownerComp, float _ang){

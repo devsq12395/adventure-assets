@@ -24,5 +24,7 @@ public class Skill_ElectricSlash : SkillTrig {
         _event.isUsingSkill = true; 
 
         ContBuffs.I.add_buff (_ownerComp, "invulnerable"); //0.5f default dur
+
+        SoundHandler.I.play_sfx ("dash");
     }
 }

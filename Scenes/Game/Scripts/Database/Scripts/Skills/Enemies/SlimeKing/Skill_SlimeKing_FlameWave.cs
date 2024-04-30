@@ -18,6 +18,8 @@ public class Skill_SlimeKing_FlameWave : SkillTrig {
         for (int i = 0; i < 8; i++) {
             create_missile (_ownerComp, 45 * i);
         }
+
+        SoundHandler.I.play_sfx ("explosion");
     }
 
     private void create_missile (InGameObject _ownerComp, float _ang){

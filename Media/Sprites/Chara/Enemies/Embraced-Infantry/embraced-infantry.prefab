@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 4427413014661215766}
   - component: {fileID: -9206910436025346238}
   - component: {fileID: 3101860276897099985}
-  - component: {fileID: -2206174980420874963}
   - component: {fileID: 4907061923429462237}
+  - component: {fileID: -4552485444637480227}
   m_Layer: 0
   m_Name: embraced-infantry
   m_TagString: Untagged
@@ -344,7 +344,7 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: bullet-mobster
+  missileObj: bullet-embraced
 --- !u!114 &3101860276897099985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,27 +364,7 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
---- !u!114 &-2206174980420874963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690657366656991979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f702c3bba9377d34992d591bf8f905f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evtTrigger: death
-  evtName: 
-  RANGE: 3
-  SPEED_KNOCK: 3
-  DIST_KNOCK: 3
-  DAM: 4
-  DAM_PER_SKILL: 0
-  hitIDs: 
-  isUsingSkill: 0
+  DIST: 3
 --- !u!114 &4907061923429462237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,3 +383,24 @@ MonoBehaviour:
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}
+--- !u!114 &-4552485444637480227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8437ea73ea690934cacc3e9894c67e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: 
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: 
+  DIST: 6
+  SPEED: 0.25

@@ -25,11 +25,11 @@ public class Sprites : MonoBehaviour {
     public Sprite btnLocked;
 
     [Header("----- Cursor -----")]
-    public Texture2D cursorTexture;
+    public Sprite cursor;
 
     void Start (){
-        Vector2 hotspot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
-        Cursor.SetCursor(cursorTexture, hotspot, CursorMode.Auto);
+        Vector2 hotspot = new Vector2(cursor.texture.width / 2, cursor.texture.height / 2);
+        Cursor.SetCursor(cursor.texture, hotspot, CursorMode.ForceSoftware);
     }
 
     public Sprite get_sprite (string _name) {
@@ -39,7 +39,7 @@ public class Sprites : MonoBehaviour {
             case "tommy": return tommy; break;
             case "brad":case "kazuma": return brad; break;
             case "anastasia": return anastasia; break;
-            case "seraphine": return seraphine; break;
+            case "seraphine": case "sylphine": return seraphine; break;
             case "miguel": return miguel; break;
             case "anthony": return anthony; break;
 

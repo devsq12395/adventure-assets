@@ -16,5 +16,7 @@ public class Skill_Blizzard : SkillTrig {
         InGameObject _msl = ContObj.I.create_obj ("blizzardDummy", _pos, _owner.owner).GetComponent <InGameObject> ();
         _msl.timedLife = 10f;
         _msl.controllerID = _owner.id;
+
+        SoundHandler.I.play_sfx ("magic");
     }
 }

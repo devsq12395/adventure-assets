@@ -48,12 +48,41 @@ public class Calculator : MonoBehaviour {
         return Vector2.Distance (_p1, _p2);
     }
 
-    public Vector2 get_next_point_in_direction (Vector2 _pos, float _ang, float _dist){
-        float _angRad = _ang * Mathf.Deg2Rad;
-        Vector2 _ret = new Vector2 (_pos.x + Mathf.Cos (_angRad) * _dist, _pos.y + Mathf.Sin (_angRad) * _dist);
-        
-        return _ret;
+    public Vector2 get_next_point_in_direction (Vector2 position, float angle, float distance, bool checkMapBounds = true) {
+        float angleRad = angle * Mathf.Deg2Rad;
+        Vector2 nextPoint = new Vector2(position.x + Mathf.Cos(angleRad) * distance, position.y + Mathf.Sin(angleRad) * distance);
+
+        if (checkMapBounds)
+        {
+            Vector2 mapSize = ContMap.I.details.size;
+
+            if (nextPoint.x < 0 || nextPoint.y < 0 || nextPoint.x > mapSize.x || nextPoint.y > mapSize.y)
+            {
+                // Calculate the direction vector from the position to the next point
+                Vector2 direction = (nextPoint - position).normalized;
+
+                // Calculate the distance from the position to the closest boundary
+                float distanceToBoundaryX = Mathf.Abs(nextPoint.x < 0 ? position.x : mapSize.x - position.x);
+                float distanceToBoundaryY = Mathf.Abs(nextPoint.y < 0 ? position.y : mapSize.y - position.y);
+
+                // Calculate the maximum distance allowed to bring the point within bounds
+                float maxDistanceX = Mathf.Abs(distanceToBoundaryX / Mathf.Cos(angleRad));
+                float maxDistanceY = Mathf.Abs(distanceToBoundaryY / Mathf.Sin(angleRad));
+
+                // Calculate the maximum distance that can be used without going out of bounds
+                float maxDistance = Mathf.Min(maxDistanceX, maxDistanceY);
+
+                // Modify the distance parameter to ensure the next point is within bounds
+                distance = Mathf.Clamp(maxDistance - 0.5f, 0f, distance);
+
+                // Recalculate the next point with the modified distance
+                nextPoint = position + direction * distance;
+            }
+        }
+
+        return nextPoint;
     }
+
 
     public string generate_id (){
         string _cL = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

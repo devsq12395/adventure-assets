@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 1438066528103414883}
   - component: {fileID: 4481059077720071261}
   - component: {fileID: 7677227305111211032}
+  - component: {fileID: 7678861011196269946}
   m_Layer: 5
   m_Name: East St. 2
   m_TagString: Untagged
@@ -434,6 +435,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7677227305111211032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,6 +462,18 @@ MonoBehaviour:
   ID: east-st-2-ives
   type: mission
   val: vic
+--- !u!114 &7678861011196269946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468513631699558286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1608591591323140906
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +487,7 @@ GameObject:
   - component: {fileID: 4849427123805403089}
   - component: {fileID: 3601770980284026204}
   - component: {fileID: 309349583290762921}
+  - component: {fileID: 2276805965806579002}
   m_Layer: 5
   m_Name: House2
   m_TagString: Untagged
@@ -582,6 +608,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &309349583290762921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,6 +635,18 @@ MonoBehaviour:
   ID: wooster-square-house-3
   type: dialog
   val: wooster-square-house-3
+--- !u!114 &2276805965806579002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608591591323140906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1690354562364600687
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +838,7 @@ GameObject:
   - component: {fileID: 2363485078128195088}
   - component: {fileID: 1017270451872566936}
   - component: {fileID: 5953337261315065863}
+  - component: {fileID: 6994446664295814206}
   m_Layer: 5
   m_Name: House1
   m_TagString: Untagged
@@ -908,6 +959,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5953337261315065863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,6 +986,18 @@ MonoBehaviour:
   ID: wooster-square-house-1
   type: dialog
   val: wooster-square-house-1
+--- !u!114 &6994446664295814206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473696846995003131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2798502904590466015
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +1011,7 @@ GameObject:
   - component: {fileID: 2093137527619005078}
   - component: {fileID: 8655485010842221774}
   - component: {fileID: 5372729158603953897}
+  - component: {fileID: 3553746467581822840}
   m_Layer: 5
   m_Name: RosasDiner
   m_TagString: Untagged
@@ -1057,6 +1133,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5372729158603953897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,6 +1160,18 @@ MonoBehaviour:
   ID: rosas-diner
   type: dialog-vic
   val: 
+--- !u!114 &3553746467581822840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798502904590466015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2865141283416477547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1453,7 @@ GameObject:
   - component: {fileID: 3186171784532472469}
   - component: {fileID: 6861782647048648680}
   - component: {fileID: 4869286808740583152}
+  - component: {fileID: 2588332737446109824}
   m_Layer: 5
   m_Name: East St.
   m_TagString: Untagged
@@ -1474,6 +1575,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4869286808740583152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,6 +1602,18 @@ MonoBehaviour:
   ID: east-st-ives
   type: mission
   val: vic
+--- !u!114 &2588332737446109824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244183264817377064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3265790601861055614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +2029,7 @@ GameObject:
   - component: {fileID: 8571235726866697790}
   - component: {fileID: 2124959080553969928}
   - component: {fileID: 1810396864003741816}
+  - component: {fileID: 1113033094100789635}
   m_Layer: 5
   m_Name: Strega
   m_TagString: Untagged
@@ -2025,6 +2151,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1810396864003741816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2040,6 +2178,18 @@ MonoBehaviour:
   ID: strega
   type: dialog
   val: strega
+--- !u!114 &1113033094100789635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359726412422841428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4429120792558281925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2203,7 @@ GameObject:
   - component: {fileID: 1392576263415523839}
   - component: {fileID: 7284995906968191636}
   - component: {fileID: 125258267607157346}
+  - component: {fileID: 7009030854353126311}
   m_Layer: 5
   m_Name: Fair Haven
   m_TagString: Untagged
@@ -2174,6 +2325,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &125258267607157346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2189,6 +2352,18 @@ MonoBehaviour:
   ID: fair-haven-ives
   type: mission
   val: vic
+--- !u!114 &7009030854353126311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429120792558281925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4535313464986895144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,6 +2722,7 @@ GameObject:
   - component: {fileID: 2229664747045542795}
   - component: {fileID: 6757959507311836033}
   - component: {fileID: 5425957196611573171}
+  - component: {fileID: 1567013992149759233}
   m_Layer: 5
   m_Name: House3
   m_TagString: Untagged
@@ -2667,6 +2843,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5425957196611573171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,6 +2870,18 @@ MonoBehaviour:
   ID: wooster-square-house-5
   type: dialog
   val: wooster-square-house-5
+--- !u!114 &1567013992149759233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816507405873233337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4916654690062448384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,6 +2970,7 @@ GameObject:
   - component: {fileID: 8606176572729836511}
   - component: {fileID: 1367066007367272396}
   - component: {fileID: 7277445025630543306}
+  - component: {fileID: 7031693364240024032}
   m_Layer: 5
   m_Name: BellaVita
   m_TagString: Untagged
@@ -2891,6 +3092,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7277445025630543306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2906,6 +3119,18 @@ MonoBehaviour:
   ID: bella-vita
   type: dialog
   val: bella-vita
+--- !u!114 &7031693364240024032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5013678571666345224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5799693991154221506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,6 +3144,7 @@ GameObject:
   - component: {fileID: 5262257800436224643}
   - component: {fileID: 1024254477953607659}
   - component: {fileID: 3255975290819514602}
+  - component: {fileID: 2413869022132500870}
   m_Layer: 5
   m_Name: Mill River
   m_TagString: Untagged
@@ -3040,6 +3266,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3255975290819514602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3055,6 +3293,18 @@ MonoBehaviour:
   ID: mill-river-ives
   type: mission
   val: mill-river-ives
+--- !u!114 &2413869022132500870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799693991154221506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5970957674140899475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,6 +3318,7 @@ GameObject:
   - component: {fileID: 307097386160339955}
   - component: {fileID: 1287937084372020486}
   - component: {fileID: 5435572080267588799}
+  - component: {fileID: 7592779085530831437}
   m_Layer: 5
   m_Name: I-91 Highway
   m_TagString: Untagged
@@ -3189,6 +3440,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5435572080267588799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3204,6 +3467,18 @@ MonoBehaviour:
   ID: i91-highway-ives
   type: mission
   val: vic
+--- !u!114 &7592779085530831437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970957674140899475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6723461228520750823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3515,6 +3790,7 @@ GameObject:
   - component: {fileID: 4359491223177276026}
   - component: {fileID: 1736178185706705072}
   - component: {fileID: 5033178303013268420}
+  - component: {fileID: 8703166368846161354}
   m_Layer: 5
   m_Name: MarcosTavern
   m_TagString: Untagged
@@ -3636,6 +3912,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5033178303013268420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3651,6 +3939,18 @@ MonoBehaviour:
   ID: marcos-tavern
   type: dialog
   val: marcos-tavern
+--- !u!114 &8703166368846161354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760985032468646084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8350380971703286026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3948,6 +4248,7 @@ GameObject:
   - component: {fileID: 6895603052938311924}
   - component: {fileID: 1402821146451572578}
   - component: {fileID: 4217632277773201032}
+  - component: {fileID: 209210753192425074}
   m_Layer: 5
   m_Name: SquareDrive Repairs
   m_TagString: Untagged
@@ -4069,6 +4370,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7678861011196269946}
+        m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
+        m_MethodName: play_click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4217632277773201032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4084,3 +4397,15 @@ MonoBehaviour:
   ID: squaredrive-repairs
   type: dialog-anthony
   val: 
+--- !u!114 &209210753192425074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158273892283159489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -32,6 +32,10 @@ public class GameUI_GameOver : MonoBehaviour {
 
 		go.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         go.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
+
+        if (_title == "success") {
+        	SoundHandler.I.play_sfx ("win");
+        }
 	}
 
 	public void btn_go_to_menu (){

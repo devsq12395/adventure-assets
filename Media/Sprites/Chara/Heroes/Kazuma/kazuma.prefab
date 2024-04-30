@@ -364,6 +364,7 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: slash-kazuma
+  soundToPlay: swish
 --- !u!114 &5298731509610596715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,4 +405,4 @@ MonoBehaviour:
   mc: 0
   cdMax: 5
   cd: 0
-  missileObj: 
+  missileObj: swish

@@ -11,5 +11,7 @@ public class AI_Generic : InGameAI {
         float _ang = Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _player.transform.position);
         
         inGameObj.constMovAng_ang = _ang;
+
+        ContObj.I.face_player (inGameObj);
     }
 }

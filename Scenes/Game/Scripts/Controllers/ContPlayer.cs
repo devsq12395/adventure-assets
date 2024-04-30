@@ -78,6 +78,8 @@ public class ContPlayer : MonoBehaviour {
 
         MUI_HPBars.I.set_char (player.name);
         ContEffect.I.create_effect ("move-smoke", _posPl);
+
+        SoundHandler.I.play_sfx ("dash-smoke");
     }
 
     // Skills
