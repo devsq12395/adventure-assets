@@ -1,30 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.IO;
 using UnityEngine;
 using SimpleJSON;
 
-public class JsonReading : MonoBehaviour {
+public class JsonReading : MonoBehaviour
+{
     public static JsonReading I;
 
     private Dictionary<string, string> jsonStrings;
 
-    public void Awake () {
+    public void Awake()
+    {
         I = this;
         List<string> _jsonNames = new List<string>(){
             "items", "missions", "dialogs", "strings", "chars"
         };
         jsonStrings = new Dictionary<string, string>();
 
-        string _path, _jsonString;
-        foreach (string _jsonName in _jsonNames) {
-            _path = $"{Application.dataPath}/json-db/{_jsonName}.json";
-            if (File.Exists(_path)) {
-                _jsonString = File.ReadAllText(_path);
-                jsonStrings.Add (_jsonName, _jsonString);
-            } else {
-                Debug.LogError ($"JSON file not found at: {_path}");
+        string _jsonString;
+        foreach (string _jsonName in _jsonNames)
+        {
+            string _path = $"{Application.streamingAssetsPath}/{_jsonName}.json";
+            StartCoroutine(LoadJsonFile(_path, _jsonName));
+        }
+    }
+
+    IEnumerator LoadJsonFile(string path, string jsonName)
+    {
+        using (WWW www = new WWW(path))
+        {
+            yield return www;
+
+            if (string.IsNullOrEmpty(www.error))
+            {
+                jsonStrings.Add(jsonName, www.text);
+            }
+            else
+            {
+                Debug.LogError($"Failed to load JSON file '{jsonName}' from path: {path}");
             }
         }
     }
@@ -33,8 +46,10 @@ public class JsonReading : MonoBehaviour {
         When reading an array, values will be joined by ",".
         This will not be able to read objects.
     */
-    public string read (string _jsonName, string _key) {
-        if (jsonStrings.ContainsKey(_jsonName)) {
+    public string read(string _jsonName, string _key)
+    {
+        if (jsonStrings.ContainsKey(_jsonName))
+        {
             // Assuming _key is in the format "status.chars.tommy.level"
             string _jsonString = jsonStrings[_jsonName];
             JSONNode _node = JSON.Parse(_jsonString);
@@ -42,33 +57,42 @@ public class JsonReading : MonoBehaviour {
             string[] _keys = _key.Split('.');
 
             JSONNode _currentNode = _node;
-            foreach (string _subKey in _keys) {
-                if (_currentNode[_subKey] == null) {
+            foreach (string _subKey in _keys)
+            {
+                if (_currentNode[_subKey] == null)
+                {
                     Debug.LogError($"Key '{_key}' not found in JSON '{_jsonName}'.");
                     return null;
                 }
                 _currentNode = _currentNode[_subKey];
             }
 
-            if (_currentNode.IsArray) {
+            if (_currentNode.IsArray)
+            {
                 JSONArray _dataArray = _currentNode.AsArray;
                 List<string> _resultList = new List<string>();
 
-                foreach (JSONNode _value in _dataArray) {
+                foreach (JSONNode _value in _dataArray)
+                {
                     _resultList.Add(_value.Value);
                 }
 
                 return string.Join(",", _resultList);
-            } else {
+            }
+            else
+            {
                 return _currentNode.Value;
             }
-        } else {
-            Debug.LogError ($"JSON does not exist: {_jsonName}");
+        }
+        else
+        {
+            Debug.LogError($"JSON does not exist: {_jsonName}");
             return null;
         }
     }
 
-    public string get_str (string _key){
-        return read ("strings", $"strings.{_key}");
+    public string get_str(string _key)
+    {
+        return read("strings", $"strings.{_key}");
     }
 }

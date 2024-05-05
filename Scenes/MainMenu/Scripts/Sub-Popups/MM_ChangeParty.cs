@@ -110,7 +110,7 @@ public class MM_ChangeParty : MonoBehaviour {
             } else {
                 setup_button (
                     mainLineup [i],
-                    Sprites.I.get_sprite ("empty"),
+                    Sprites.I.get_sprite ("empty-icon"),
                     "",
                     ""
                 );
