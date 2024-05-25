@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -17,19 +18,10 @@ public class MM_Mission : MonoBehaviour {
     public Image port;
 
     public string missionID;
-
-    private string jsonString, jsonStringPath;
+    public Missions missionsData;
 
     public void Awake () {
         I = this;
-        jsonStringPath = $"{Application.dataPath}/json-db/missions.json";
-
-        if (File.Exists(jsonStringPath)) {
-            jsonString = File.ReadAllText(jsonStringPath);
-        }
-        else {
-            Debug.LogError("JSON file not found at: " + jsonStringPath);
-        }
     }
 
     public void setup (){
@@ -67,16 +59,40 @@ public class MM_Mission : MonoBehaviour {
     }
 
     public string get_mission_val (string key) {
-        JSONNode jsonObject = JSON.Parse(jsonString);
-        JSONNode valsObj = jsonObject["missions"][missionID];
-
-        if (valsObj != null) {
-            if (valsObj[key] != null) {
-                return valsObj[key];
+        Mission foundMission = missionsData.missionList.FirstOrDefault(mission => mission.missionId == missionID);
+        if (foundMission != null) {
+            switch (key)
+            {
+                case "name":
+                    return foundMission.name;
+                case "desc":
+                    return foundMission.desc;
+                case "sprite":
+                    return foundMission.sprite;
+                case "faction":
+                    return foundMission.faction;
+                case "difficulty":
+                    return foundMission.difficulty;
+                case "rewards":
+                    return foundMission.rewards;
+                case "enemies":
+                    return foundMission.enemies;
+                case "maps":
+                    return string.Join(", ", foundMission.maps);
+                case "unlocksArea":
+                    return string.Join(", ", foundMission.unlocksArea);
+                case "missionsSet":
+                    return string.Join(", ", foundMission.missionsSet);
+                case "activitySet":
+                    return string.Join(", ", foundMission.activitySet);
+                default:
+                    Debug.LogWarning($"Key not found: {key}");
+                    return "";
             }
+        } else {
+            Debug.Log ($"Mission not found: {missionID}");
+            return "";
         }
-
-        return null;
     }
 
     public void btn_accept (){

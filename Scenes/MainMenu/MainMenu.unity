@@ -9868,6 +9868,7 @@ MonoBehaviour:
   desc2: {fileID: 1752057839}
   port: {fileID: 1537272388}
   missionID: 
+  missionsData: {fileID: 11400000, guid: 9819000f33f7f9f41bc23525fad64c76, type: 2}
 --- !u!1 &1025770839
 GameObject:
   m_ObjectHideFlags: 0

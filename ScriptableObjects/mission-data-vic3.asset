@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: mission-data-vic3
+  m_EditorClassIdentifier: Assembly-CSharp::Mission
+  missionId: vic-3
+  name: Boss Vincenzo
+  desc: The Rossi Family has been colluding with Charles, Captain of the Legion of
+    Odin here in Wooster Square.\n\nThey want the Legion to turn a blind eye on their
+    illegal business. We have to stop this before they get any stronger, so show
+    Charles what happens to anyone who cross the Luppino Family.
+  sprite: vincenzo
+  faction: Luppino Family
+  difficulty: Level 3 (Easy)
+  rewards: 500 Gold
+  enemies: vic-3
+  maps:
+  - woosterSquare_rand
+  unlocksArea: []
+  missionsSet:
+  - vic->vic-4
+  activitySet:
+  - dialog-with-vic->6
