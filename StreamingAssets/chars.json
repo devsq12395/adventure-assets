@@ -1,7 +1,4 @@
 {
-    "tavern-unlockables": [
-        "anastasia", "sylphine", "anthony", "miguel"
-    ],
     "chars": {
         "tommy": {
             "img-port": "tommy",
@@ -77,7 +74,7 @@
         },
         "sylphine": {
             "img-port": "sylphine",
-            "equipWeapon": "wand",
+            "equipWeapon": "staff",
             "stats": {
                 "hp": 6,
                 "mp": 10,
@@ -91,7 +88,7 @@
             },
 
             "bio": {
-                "info": "Hails from a long line of elite sorcerers. She is currently studying and conducting research in New Yale University.\nWeapon: Wand",
+                "info": "Hails from a long line of elite sorcerers. She is currently studying and conducting research in New Yale University.\nWeapon: Staff",
                 "skill1": "Skill 1: Torrent\nSummons several torrents of water nearby that will damage enemies hit.\nCost: CD: 18 sec",
                 "skill2": "",
             },

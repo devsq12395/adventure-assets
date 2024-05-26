@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: sylphine
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterId: sylphine
+  imgPort: sylphine
+  equipWeapon: staff
+  stats:
+    hp: 6
+    mp: 10
+    attack: 1
+    range: 6
+    skill: 2
+    speed: 1
+    armor: 0
+    critRate: 15
+    critDam: 140
+  bio:
+    info: 'Hails from a long line of elite sorcerers. She is currently studying and
+      conducting research in New Yale University.\nWeapon: Staff'
+    skill1: 'Skill 1: Torrent\nSummons several torrents of water nearby that will
+      damage enemies hit.\nCost: CD: 18 sec'
+    skill2: 
+  requires: []
+  goldCost: 500

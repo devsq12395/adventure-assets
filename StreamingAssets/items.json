@@ -30,32 +30,6 @@
                 "crit-dam": 0,
             },
         },
-        "irElRev": {
-            "name-ui": "WildArms Iron Electric Revolver",
-            "desc": "+5 dam\n+4 skill\n+2 speed\n\nStandard revolver infused with electric energy.",
-            "cost": "500",
-
-            "stackable": "false",            
-            "stack-max": 1,
-            "tags": ["weapon", "gun"],
-
-            "use":"",
-            "equip": "weapon",
-
-            "requires": ["2%irnore", "2%elcshd"],
-
-            "bonuses": {
-                "hp": 0,
-                "mp": 0,
-                "attack": 3,
-                "range": 0,
-                "skill": 4,
-                "speed": 2,
-                "armor": 0,
-                "crit-rate": 0,
-                "crit-dam": 0,
-            }
-        },
         "irnSwrd": {
             "name-ui": "Iron Sword",
             "desc": "+2 dam\n\nBasic battle sword. Enough for self-defense.",
@@ -231,20 +205,6 @@
 
             "requires": [],
         },
-        "zomflsh": {
-            "name-ui": "Zombie Flesh",
-            "desc": "A piece of corpse with black magic flowing through it.",
-            "cost": "25",
-
-            "stackable": "true",
-            "stack-max": 9999,
-            "tags": [],
-            
-            "use":"",
-            "equip": "",
-
-            "requires": [],
-        },
         "scrap": {
             "name-ui": "Scrap Metal",
             "desc": "Salvaged from old machines.",
@@ -343,20 +303,6 @@
 
             "requires": [],
         },
-        "txtbok": {
-            "name-ui": "Research Papers",
-            "desc": "Contains study data from New Yale University, used as reference for other research.",
-            "cost": "250",
-
-            "stackable": "true",
-            "stack-max": 9999,
-            "tags": [],
-            
-            "use":"",
-            "equip": "",
-
-            "requires": [],
-        },
         "demfng": {
             "name-ui": "Demon Fang",
             "desc": "An excellent source of black magic. Sought after by practitioners of dark arts.",
@@ -384,20 +330,6 @@
             "equip": "",
 
             "requires": [],
-        },
-        "firshd": {
-            "name-ui": "Fire Shard",
-            "desc": "A crystalline fragment infused with fire energy.",
-            "cost": "300",
-
-            "stackable": "true",
-            "stack-max": 9999,
-            "tags": [],
-            
-            "use":"",
-            "equip": "",
-
-            "requires": [],
-        },
+        }
     }
 }
