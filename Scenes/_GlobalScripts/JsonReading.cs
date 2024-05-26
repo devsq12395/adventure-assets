@@ -157,8 +157,8 @@ public class JsonReading : MonoBehaviour
             // Character names
             case "char-names.kitsune-boss":
                 return "Kitsune Boss";
-                
-            case "tommy-name": return "Tommy"
+
+            case "tommy-name": return "Tommy";
             case "tommy-name-full": return "Tommy Carter";
 
             case "kazuma-name": return "Kazuma";
