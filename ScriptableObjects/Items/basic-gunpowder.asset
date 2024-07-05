@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: basic-gunpowder
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
-  stackable: 0
-  stackMax: 0
+  itemId: bsgpdr
+  nameUI: Basic Gunpowder
+  desc: The cheapest gunpowder available.
+  cost: 200
+  stackable: 1
+  stackMax: 9999
   tags: []
   use: 
   equip: 

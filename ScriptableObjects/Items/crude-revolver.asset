@@ -12,20 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: crude-revolver
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
+  itemId: crdRev
+  nameUI: Crude Revolver
+  desc: +1 dam\nOld and rusty, but still reliable.
+  cost: 50
   stackable: 0
-  stackMax: 0
-  tags: []
+  stackMax: 1
+  tags:
+  - weapon
+  - gun
   use: 
-  equip: 
+  equip: weapon
   requires: []
   bonuses:
     hp: 0
     mp: 0
-    attack: 0
+    attack: 1
     range: 0
     skill: 0
     speed: 0

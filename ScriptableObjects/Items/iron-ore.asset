@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: iron-ore
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
-  stackable: 0
-  stackMax: 0
+  itemId: irnore
+  nameUI: Iron Ore
+  desc: Used as material for basic tools and weapons.
+  cost: 100
+  stackable: 1
+  stackMax: 9999
   tags: []
   use: 
   equip: 

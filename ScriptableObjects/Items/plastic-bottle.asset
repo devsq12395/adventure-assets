@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: plastic-bottle
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
-  stackable: 0
-  stackMax: 0
+  itemId: plsbtl
+  nameUI: Plastic Bottle
+  desc: Can be useful when recycled.
+  cost: 50
+  stackable: 1
+  stackMax: 9999
   tags: []
   use: 
   equip: 

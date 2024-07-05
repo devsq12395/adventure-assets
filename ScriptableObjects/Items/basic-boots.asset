@@ -12,23 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: basic-boots
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
+  itemId: bscbts
+  nameUI: Basic Boots
+  desc: +2 Speed\n\nTypical working and travelling boots.
+  cost: 300
   stackable: 0
-  stackMax: 0
-  tags: []
+  stackMax: 1
+  tags:
+  - boots
+  - leather
   use: 
-  equip: 
-  requires: []
+  equip: boots
+  requires:
+  - 5%chplthr
   bonuses:
     hp: 0
     mp: 0
     attack: 0
     range: 0
     skill: 0
-    speed: 0
+    speed: 2
     armor: 0
     critRate: 0
     critDam: 0

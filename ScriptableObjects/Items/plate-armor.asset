@@ -12,18 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: plate-armor
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
+  itemId: pltarm
+  nameUI: Plate Armor
+  desc: +2 HP\n\nA must have when travelling for your protection.
+  cost: 300
   stackable: 0
-  stackMax: 0
-  tags: []
+  stackMax: 1
+  tags:
+  - armor
+  - metal
   use: 
-  equip: 
-  requires: []
+  equip: armor
+  requires:
+  - 5%irnore
   bonuses:
-    hp: 0
+    hp: 2
     mp: 0
     attack: 0
     range: 0

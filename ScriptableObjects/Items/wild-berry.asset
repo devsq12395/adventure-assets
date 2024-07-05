@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: wild-berry
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
-  stackable: 0
-  stackMax: 0
+  itemId: wldbry
+  nameUI: Wild Berry
+  desc: Juicy and flavorful fruits that grow abundantly in the wilderness.
+  cost: 50
+  stackable: 1
+  stackMax: 9999
   tags: []
   use: 
   equip: 

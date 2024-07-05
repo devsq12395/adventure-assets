@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: demon-fang
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
-  stackable: 0
-  stackMax: 0
+  itemId: demfng
+  nameUI: Demon Fang
+  desc: An excellent source of black magic. Sought after by practitioners of dark
+    arts.
+  cost: 500
+  stackable: 1
+  stackMax: 9999
   tags: []
   use: 
   equip: 

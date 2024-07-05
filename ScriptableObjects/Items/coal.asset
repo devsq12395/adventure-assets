@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: coal
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
-  stackable: 0
-  stackMax: 0
+  itemId: coal
+  nameUI: Coal
+  desc: A combustible black rock formed from ancient plant matter.
+  cost: 50
+  stackable: 1
+  stackMax: 9999
   tags: []
   use: 
   equip: 

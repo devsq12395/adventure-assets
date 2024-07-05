@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: wooden-plank
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
-  stackable: 0
-  stackMax: 0
+  itemId: plank
+  nameUI: Wooden Plank
+  desc: A plank of wood with different possible uses.
+  cost: 50
+  stackable: 1
+  stackMax: 9999
   tags: []
   use: 
   equip: 

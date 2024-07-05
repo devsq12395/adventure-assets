@@ -12,20 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: homemade-glock
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
+  itemId: hmdglck
+  nameUI: Homemade Glock
+  desc: +2 dam\n\nA must have when travelling for your protection.
+  cost: 200
   stackable: 0
-  stackMax: 0
-  tags: []
+  stackMax: 1
+  tags:
+  - weapon
+  - gun
   use: 
-  equip: 
-  requires: []
+  equip: weapon
+  requires:
+  - 3%scrap
+  - 1%bsgpdr
   bonuses:
     hp: 0
     mp: 0
-    attack: 0
+    attack: 2
     range: 0
     skill: 0
     speed: 0

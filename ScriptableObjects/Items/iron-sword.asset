@@ -12,20 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: iron-sword
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemId: 
-  nameUI: 
-  desc: 
-  cost: 0
+  itemId: irnSwrd
+  nameUI: Iron Sword
+  desc: +2 dam\n\nBasic battle sword. Enough for self-defense.
+  cost: 200
   stackable: 0
-  stackMax: 0
-  tags: []
+  stackMax: 1
+  tags:
+  - weapon
+  - sword
   use: 
-  equip: 
-  requires: []
+  equip: weapon
+  requires:
+  - 3%irnore
+  - 1%wdblk
   bonuses:
     hp: 0
     mp: 0
-    attack: 0
+    attack: 2
     range: 0
     skill: 0
     speed: 0
