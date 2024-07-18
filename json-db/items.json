@@ -146,7 +146,7 @@
             "use":"",
             "equip": "boots",
 
-            "requires": ["5%chplthr"],
+            "requires": ["5%lthr"],
 
             "bonuses": {
                 "hp": 0,
