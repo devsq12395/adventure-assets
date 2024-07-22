@@ -168,20 +168,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dummy: {fileID: 21300000, guid: e53a2937ba834c6489eef469cdc6fce1, type: 3}
-  tommy: {fileID: 21300000, guid: cedf5365a9d597b0a9d88eb3cb0ad953, type: 3}
-  brad: {fileID: 21300000, guid: 3aaee96743db50d9ca46489bace7ab44, type: 3}
-  anastasia: {fileID: 21300000, guid: b8e98d7cd614b713797d91ae85e01b57, type: 3}
-  seraphine: {fileID: 21300000, guid: c0f40f5cb96aca5768b019fe0547a487, type: 3}
-  miguel: {fileID: 21300000, guid: a698631cb04d1d383a8fe9bc4d954a2f, type: 3}
-  anthony: {fileID: 21300000, guid: 9f98c7e70ca09bf4d91c4c0b9b30073d, type: 3}
-  vic: {fileID: 21300000, guid: 333eca7814e00da8896a5b6b3e32f066, type: 3}
-  npcMan1: {fileID: 21300000, guid: a698631cb04d1d383a8fe9bc4d954a2f, type: 3}
-  npcMan2: {fileID: 21300000, guid: 9f98c7e70ca09bf4d91c4c0b9b30073d, type: 3}
-  npcMan3: {fileID: 21300000, guid: 497415eafabc8ff4a9f63212354ef207, type: 3}
-  npcMan4: {fileID: 21300000, guid: 660a27688d5178047b582d1c08a49bcd, type: 3}
-  npcWoman1: {fileID: 21300000, guid: 4c990a4cb97dc1647bf0d5d17a1684ae, type: 3}
-  npcWoman2: {fileID: 21300000, guid: 70cc533984d84284e9b1d0b835f703b7, type: 3}
-  vincenzo: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
+  tommy: {fileID: 21300000, guid: 1a5ddc494b562b5439cac11215e2fcb6, type: 3}
+  brad: {fileID: 21300000, guid: fb0770c13c14a914b92b65c3343e664c, type: 3}
+  anastasia: {fileID: 21300000, guid: 530ac4f7db00f584b82af6fd64675b99, type: 3}
+  seraphine: {fileID: 21300000, guid: a121bc4d2f1aa0942a0e9ba4c9810823, type: 3}
+  miguel: {fileID: 21300000, guid: bee8b5bfa1bb8b44baadec63ecfc8ded, type: 3}
+  anthony: {fileID: 21300000, guid: bee8b5bfa1bb8b44baadec63ecfc8ded, type: 3}
+  beatrice: {fileID: 21300000, guid: f9af9f981286ea24b9cd0691a5097bff, type: 3}
+  vic: {fileID: 21300000, guid: 6fcf94d6632dcbd43b1ddfb558054702, type: 3}
+  npcMan1: {fileID: 21300000, guid: bee8b5bfa1bb8b44baadec63ecfc8ded, type: 3}
+  npcMan2: {fileID: 21300000, guid: 4218fab458917ee4fb8eceedece3a143, type: 3}
+  npcMan3: {fileID: 21300000, guid: bee8b5bfa1bb8b44baadec63ecfc8ded, type: 3}
+  npcMan4: {fileID: 21300000, guid: 4218fab458917ee4fb8eceedece3a143, type: 3}
+  npcWoman1: {fileID: 21300000, guid: a9159c10d2e1cf04c85f1f1c1970d527, type: 3}
+  npcWoman2: {fileID: 21300000, guid: 4fc7b109d3fd38540a4c8a8198009be0, type: 3}
+  npcWoman3: {fileID: 21300000, guid: 73ec52664a19cdb499f8170b7ca21050, type: 3}
+  vincenzo: {fileID: 21300000, guid: 86ed830d56d8ec543af76ea540787537, type: 3}
   icnHighway: {fileID: 21300000, guid: e40407a46bdc8a541b8f95eb918dd58e, type: 3}
   icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   btnLocked: {fileID: 21300000, guid: afd56857a2f956f4a9196939426055c0, type: 3}

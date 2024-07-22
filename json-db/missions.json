@@ -2,7 +2,7 @@
     "missions": {
         "vic-1": {
             "name": "Vic",
-            "desc": "Let me explain the situation before you go. Some slimes are spotted here in Wooster Square. Word is a Giant Slime is with them too.\n\nShould be easy for you to deal with. This is a perfect opportunity for you to gain respect around here.",
+            "desc": "Some slimes are spotted here in Wooster Square. Word is a Giant Slime is with them too.\n\nShould be easy for you to deal with. This is a chance for you to gain respect around here.",
             "sprite": "vic",
             "faction": "Luppino Family",
             "difficulty": "Level 1 (Easy)",
@@ -10,7 +10,7 @@
             
             "enemies": "vic-1",
             "maps": ["woosterSquare_rand"],
-            "unlocks-area": ["bella-vita", "strega", "marcos-tavern", "mill-river-ives"],
+            "unlocks-area": ["bella-vita", "strega", "marcos-tavern", "mill-river-ives", "wooster-square-house-1", "wooster-square-house-2", "wooster-square-house-3L"],
             "missions-set": [
                 "vic->vic-2"
             ],
@@ -20,7 +20,7 @@
         },
         "vic-2": {
             "name": "Vic",
-            "desc": "Rossi Family members are spotted selling narcotics on our turf. We need you to show that they are crossing the line and Wooster Square is our territory.",
+            "desc": "Rossi Family members are spotted selling narcotics on our turf. Knock out their leader, Luca the Terror, and they will run back to where they came from!",
             "sprite": "vic",
             "faction": "Luppino Family",
             "difficulty": "Level 2 (Easy)",
@@ -37,9 +37,9 @@
             ]
         },
         "vic-3": {
-            "name": "Boss Vincenzo",
-            "desc": "The Rossi Family has been colluding with Charles, Captain of the Legion of Odin here in Wooster Square.\n\nThey want the Legion to turn a blind eye on their illegal business. We have to stop this before they get any stronger, so show Charles what happens to anyone who cross the Luppino Family.",
-            "sprite": "vincenzo",
+            "name": "Captain Beatrice",
+            "desc": "Let's spar and see if you have what it takes to survive the war of the families here in New Haven.",
+            "sprite": "beatrice",
             "faction": "Luppino Family",
             "difficulty": "Level 3 (Easy)",
             "rewards": "500 Gold",

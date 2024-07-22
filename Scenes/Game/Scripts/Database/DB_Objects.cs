@@ -17,7 +17,8 @@ public class DB_Objects : MonoBehaviour {
     [Header("----- Units -----")]
     public GameObject hero;
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, mobster, slimeKing, giantSlime,
-        lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles;
+        lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
+        centurion, victorianSoldier;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
@@ -77,6 +78,9 @@ public class DB_Objects : MonoBehaviour {
             case "war-shredder":            _refObj = warShredder; break;
             case "alpha-war-shredder":            _refObj = alphaWarShredder; break;
             case "captain-charles":            _refObj = captainCharles; break;
+            case "cap-beatrice":            _refObj = captainBeatrice; break;
+            case "victorian-soldier":            _refObj = victorianSoldier; break;
+            case "centurion":            _refObj = centurion; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;

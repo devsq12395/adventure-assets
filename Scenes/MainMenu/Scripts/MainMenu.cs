@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour {
     public static MainMenu I;
 	public void Awake(){ I = this; }
 
-    public GameObject curtainGo;
+    public GameObject curtainGo, headerGo;
     public RectTransform curtainRect;
     private string curtainState;
     public float targetX;
@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     void Update() {
-        
+        update_show_header ();
     }
 
     public void show_popup (string _popup){
@@ -56,6 +56,17 @@ public class MainMenu : MonoBehaviour {
             case "area":                MM_Area.I.toggle_show (true); break;
             case "party":               MM_Party.I.toggle_show (true); break;
         }
+    }
+
+    public void update_show_header (){
+        bool _isShow = 
+            !FindObjectOfType<MiniDialog>() &&
+            !MM_Party.I.isShow &&
+            !MM_BuyOrSell.I.go.activeSelf &&
+            !MM_Inventory.I.go.activeSelf &&
+            !MM_Mission.I.go.activeSelf
+        ;
+        headerGo.SetActive (_isShow);
     }
 
     public void update_header (){

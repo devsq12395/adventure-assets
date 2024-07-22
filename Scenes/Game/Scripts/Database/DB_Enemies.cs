@@ -118,18 +118,15 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("prism-drone", 1);
-				_waves[0].Add ("embraced-infantry", 3);
+				_waves[0].Add ("centurion", 1);
+				_waves[0].Add ("victorian-soldier", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("embraced-infantry", 4);
-				_waves[1].Add ("embraced-mage", 2);
+				_waves[1].Add ("victorian-soldier", 4);
+				_waves[1].Add ("centurion", 2);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("prism-drone", 6);
-
-				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("captain-charles", 1);
+				_waves[2].Add ("captain-beatrice", 1);
 
 				break;
 		}

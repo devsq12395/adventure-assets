@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 3601770980284026204}
   - component: {fileID: 309349583290762921}
   - component: {fileID: 2276805965806579002}
+  - component: {fileID: 4605087493061253217}
   m_Layer: 5
   m_Name: House2
   m_TagString: Untagged
@@ -333,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: wooster-square-house-3
   type: dialog
-  val: wooster-square-house-3
+  val: wooster-square-house-2
 --- !u!114 &2276805965806579002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +347,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4605087493061253217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608591591323140906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5
 --- !u!1 &2473696846995003131
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +375,7 @@ GameObject:
   - component: {fileID: 1017270451872566936}
   - component: {fileID: 5953337261315065863}
   - component: {fileID: 6994446664295814206}
+  - component: {fileID: 8130070583598579469}
   m_Layer: 5
   m_Name: House1
   m_TagString: Untagged
@@ -519,6 +535,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8130070583598579469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473696846995003131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5
 --- !u!1 &2798502904590466015
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +563,7 @@ GameObject:
   - component: {fileID: 8655485010842221774}
   - component: {fileID: 5372729158603953897}
   - component: {fileID: 3553746467581822840}
+  - component: {fileID: 1947455294024188628}
   m_Layer: 5
   m_Name: RosasDiner
   m_TagString: Untagged
@@ -692,6 +723,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1947455294024188628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2798502904590466015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5
 --- !u!1 &3244183264817377064
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +924,7 @@ GameObject:
   - component: {fileID: 2124959080553969928}
   - component: {fileID: 1810396864003741816}
   - component: {fileID: 1113033094100789635}
+  - component: {fileID: 1406309526346767051}
   m_Layer: 5
   m_Name: Strega
   m_TagString: Untagged
@@ -1038,6 +1084,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1406309526346767051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359726412422841428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5
 --- !u!1 &4429120792558281925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1285,7 @@ GameObject:
   - component: {fileID: 6757959507311836033}
   - component: {fileID: 5425957196611573171}
   - component: {fileID: 1567013992149759233}
+  - component: {fileID: 8772987538586515202}
   m_Layer: 5
   m_Name: House3
   m_TagString: Untagged
@@ -1371,7 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: wooster-square-house-5
   type: dialog
-  val: wooster-square-house-5
+  val: wooster-square-house-3
 --- !u!114 &1567013992149759233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,6 +1445,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8772987538586515202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816507405873233337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5
 --- !u!1 &5013678571666345224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1473,7 @@ GameObject:
   - component: {fileID: 1367066007367272396}
   - component: {fileID: 7277445025630543306}
   - component: {fileID: 7031693364240024032}
+  - component: {fileID: 2356506673520814149}
   m_Layer: 5
   m_Name: BellaVita
   m_TagString: Untagged
@@ -1557,6 +1633,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2356506673520814149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5013678571666345224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5
 --- !u!1 &5799693991154221506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1661,7 @@ GameObject:
   - component: {fileID: 1024254477953607659}
   - component: {fileID: 3255975290819514602}
   - component: {fileID: 2413869022132500870}
+  - component: {fileID: 6207347171970123759}
   m_Layer: 5
   m_Name: Mill River
   m_TagString: Untagged
@@ -1730,6 +1821,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6207347171970123759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799693991154221506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5
 --- !u!1 &5970957674140899475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,6 +2186,7 @@ GameObject:
   - component: {fileID: 1736178185706705072}
   - component: {fileID: 5033178303013268420}
   - component: {fileID: 8703166368846161354}
+  - component: {fileID: 998545176917791730}
   m_Layer: 5
   m_Name: MarcosTavern
   m_TagString: Untagged
@@ -2240,6 +2346,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &998545176917791730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760985032468646084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5
 --- !u!1 &9158273892283159489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2374,7 @@ GameObject:
   - component: {fileID: 1402821146451572578}
   - component: {fileID: 4217632277773201032}
   - component: {fileID: 209210753192425074}
+  - component: {fileID: 2175364937080966785}
   m_Layer: 5
   m_Name: SquareDrive Repairs
   m_TagString: Untagged
@@ -2413,3 +2534,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c810c6ed5f3f854fa2ed0c2b246c430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2175364937080966785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158273892283159489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1481fbc58a1df438312ca1227c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceDuration: 1
+  bounceHeight: 5

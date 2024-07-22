@@ -11,11 +11,11 @@ public class Sprites : MonoBehaviour {
 
     [Header("----- Portraits for Player -----")]
     public Sprite tommy;
-    public Sprite brad, anastasia, seraphine, miguel, anthony;
+    public Sprite brad, anastasia, seraphine, miguel, anthony, beatrice;
 
     [Header("----- Portraits: NPC -----")]
     public Sprite vic;
-    public Sprite npcMan1, npcMan2, npcMan3, npcMan4, npcWoman1, npcWoman2, vincenzo;
+    public Sprite npcMan1, npcMan2, npcMan3, npcMan4, npcWoman1, npcWoman2, npcWoman3, vincenzo;
 
     [Header("----- Icons: Other -----")]
     public Sprite icnHighway;
@@ -49,8 +49,10 @@ public class Sprites : MonoBehaviour {
             case "npc-man-4": return npcMan4; break;
             case "npc-woman-1": return npcWoman1; break;
             case "npc-woman-2": return npcWoman1; break;
+            case "npc-woman-3": return npcWoman3; break;
 
             case "vincenzo": return vincenzo; break;
+            case "beatrice": return beatrice; break;
 
             case "vic": return vic; break;
 

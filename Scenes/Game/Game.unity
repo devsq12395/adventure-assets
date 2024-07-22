@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 99408117}
   - component: {fileID: 99408116}
   m_Layer: 5
-  m_Name: GOP_Image
+  m_Name: GOP_Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,8 +571,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000023825, y: 94}
-  m_SizeDelta: {x: 1025.04, y: 708.76}
+  m_AnchoredPosition: {x: -0.0000038146973, y: 0}
+  m_SizeDelta: {x: 856.06, y: 591.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &99408116
 MonoBehaviour:
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a61ea5686e552fc8687ac67933e93688, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 025b506e51ebf4c49a3778b8736009a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -776,9 +776,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 99408115}
   - {fileID: 717232665}
   - {fileID: 891043748}
-  - {fileID: 99408115}
   m_Father: {fileID: 1356171847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3497,8 +3497,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -68}
-  m_SizeDelta: {x: 443.2, y: 120.94}
+  m_AnchoredPosition: {x: 209, y: -39}
+  m_SizeDelta: {x: 360.84, y: 120.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717232666
 MonoBehaviour:
@@ -3534,8 +3534,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3588,7 +3588,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -238.6738, y: 0, z: -237.53728, w: -54.176052}
+  m_margin: {x: -2.6873465, y: 0, z: 0.033020206, w: -54.176052}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4184,6 +4184,9 @@ MonoBehaviour:
   warShredder: {fileID: 4690657366656991979, guid: a737bc4f93589cb4d9efe6113a0deece, type: 3}
   alphaWarShredder: {fileID: 2519536944346486926, guid: 83158b28cadca724fbff56f8522abe5f, type: 3}
   captainCharles: {fileID: 4690657366656991979, guid: d60c1d0d45fc6e74c99af9f328373eaf, type: 3}
+  captainBeatrice: {fileID: 4690657366656991979, guid: 4aae6708e32742b49833f66ff086348e, type: 3}
+  centurion: {fileID: 4690657366656991979, guid: 594bf133023c2d543af5b21f79db7d38, type: 3}
+  victorianSoldier: {fileID: 4690657366656991979, guid: bf0b3f19f546c864bb4c4a9f9d897428, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
@@ -5328,7 +5331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -286.93}
+  m_AnchoredPosition: {x: 209, y: -224}
   m_SizeDelta: {x: 209.78, y: 46.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891043749
@@ -5419,7 +5422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f529f506998ce208288b726b069829cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c1dfb0c4102c9245abffb6735128d92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8033,8 +8036,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10567,8 +10570,8 @@ MonoBehaviour:
   go: {fileID: 1356171846}
   goImg: {fileID: 145510498}
   imgTitle: {fileID: 99408116}
-  imgWin: {fileID: 21300000, guid: a61ea5686e552fc8687ac67933e93688, type: 3}
-  imgLose: {fileID: 21300000, guid: 4ef6369db4c4027ceb796853bb50081a, type: 3}
+  imgWin: {fileID: 21300000, guid: 025b506e51ebf4c49a3778b8736009a9, type: 3}
+  imgLose: {fileID: 21300000, guid: a063d3738ad3d8543809abad63e756ca, type: 3}
   tTitle: {fileID: 0}
   tDesc: {fileID: 717232666}
 --- !u!1 &1888334221

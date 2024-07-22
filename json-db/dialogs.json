@@ -1,7 +1,7 @@
 {
     "dialogs": {
         "intro-1": {
-            "name": "Kazuma",
+            "name": "Alfred",
             "desc": "We're finally here in New Haven, Tommy!",
             "portImg": "kazuma",
             "isTweenOut": "0",
@@ -11,7 +11,7 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "intro-2": {
-            "name": "Kazuma",
+            "name": "Alfred",
             "desc": "We should look for my friend Vic. He's well connected and will help us settle in.",
             "portImg": "kazuma",
             "isTweenOut": "1",
@@ -25,7 +25,7 @@
 
         "dialog-vic-1": {
             "name": "Vic",
-            "desc": "Kazuma, my man, you're finally here! And you must be Tommy.",
+            "desc": "Alfred, my man, you're finally here! And you must be Tommy.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -37,7 +37,7 @@
         },
         "dialog-vic-2": {
             "name": "Vic",
-            "desc": "You two arrived in perfect timing. Welcome to Madam Rosa's Diner, also the base of the Luppino Family.",
+            "desc": "Welcome to Luppino House, the base of operations for the Luppino Family.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -70,7 +70,7 @@
 
         "dialog-vic-5": {
             "name": "Vic",
-            "desc": "Tommy, Kazuma, there you are!",
+            "desc": "Tommy, Alfred, there you are! I have an urgent job for you.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -80,7 +80,7 @@
         },
         "dialog-vic-6": {
             "name": "Vic",
-            "desc": "People saw how you fought those monsters. They are impressed, including Boss Vincenzo.",
+            "desc": "Luca the Terror, one of the muscles of the Rossi Family, is spotted on our turf with some of his men, selling narcotics.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -89,8 +89,8 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-7": {
-            "name": "Kazuma",
-            "desc": "Finally some real action! Tell us what to do, Vic.",
+            "name": "Alfred",
+            "desc": "Finally some action! Tell us what to do, Vic.",
             "portImg": "kazuma",
             "isTweenOut": "0",
 
@@ -100,7 +100,7 @@
         },
         "dialog-vic-8": {
             "name": "Vic",
-            "desc": "Luca the Terror, one of the muscles of the Rossi Family, is spotted on our turf with some of his men, selling narcotics.",
+            "desc": "Your goal is to beat down Luca and his boys and make sure they never come back.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -123,7 +123,7 @@
 
         "dialog-vic-10": {
             "name": "Vic",
-            "desc": "Tommy, there you are! Meet Don Vincenzo, our boss at Luppino Family.",
+            "desc": "Tommy, welcome back! Our associate from the Victorian Guards, Captain Beatrice, wants to see you.",
             "portImg": "vic",
             "isTweenOut": "0",
 
@@ -132,9 +132,9 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-11": {
-            "name": "Boss Vincenzo",
-            "desc": "It's good to finally meet you Tommy. I heard your feats are the talk of the town.",
-            "portImg": "vincenzo",
+            "name": "Captain Beatrice",
+            "desc": "You must be Vincenzo's new boys. I'm Captain Beatrice, commander of the Victorian Guards here in New Haven.",
+            "portImg": "beatrice",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "show-dialog-vic-12",
@@ -142,9 +142,9 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-12": {
-            "name": "Boss Vincenzo",
-            "desc": "Well Tommy, we have a problem and I need your help.",
-            "portImg": "vincenzo",
+            "name": "Captain Beatrice",
+            "desc": "Me and Vincenzo shares the same interest in fighting the spread of narcotics.",
+            "portImg": "beatrice",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "show-dialog-vic-13",
@@ -152,9 +152,9 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-13": {
-            "name": "Boss Vincenzo",
-            "desc": "As you know, our rivals the Rossi Family have been trying to sell narcotics here at Wooster Square.",
-            "portImg": "vincenzo",
+            "name": "Captain Beatrice",
+            "desc": "There are five powerful families here in New Haven, Luppino Family being one of them.",
+            "portImg": "beatrice",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "show-dialog-vic-14",
@@ -162,18 +162,18 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-14": {
-            "name": "Boss Vincenzo",
-            "desc": "We here at Luppino Family hate narcotics. It destroys lives, families...",
-            "portImg": "vincenzo",
+            "name": "Captain Beatrice",
+            "desc": "The other four families are allied in their interests in the narcotics business. If they are left unchecked, they will dominate the city.",
+            "portImg": "beatrice",
             "isTweenOut": "0",
 
-            "inputEmptyContinue": "show-dialog-vic-15",
+            "inputEmptyContinue": "show-dialog-vic-17",
             "isMini": "0",
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-15": {
             "name": "Boss Vincenzo",
-            "desc": "But the Rossi Family is starting to get in cahoots with the Legion of Odin, especially with Captain Charles.",
+            "desc": "UNUSED",
             "portImg": "vincenzo",
             "isTweenOut": "0",
 
@@ -183,7 +183,7 @@
         },
         "dialog-vic-16": {
             "name": "Boss Vincenzo",
-            "desc": "They are trying to weaken our family so they can freely sell narcotics. We must stop them now before they get any stronger.",
+            "desc": "UNUSED",
             "portImg": "vincenzo",
             "isTweenOut": "0",
 
@@ -192,9 +192,9 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-17": {
-            "name": "Boss Vincenzo",
-            "desc": "I want you to teach Captain Charles a lesson on what happens if you cross the Luppino Family.",
-            "portImg": "vincenzo",
+            "name": "Captain Beatrice",
+            "desc": "So if you are to fight with us, I will have to see what you are capable of.",
+            "portImg": "beatrice",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "show-dialog-vic-18",
@@ -202,9 +202,9 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "dialog-vic-18": {
-            "name": "Boss Vincenzo",
-            "desc": "You will have to be careful. The Legion of Odin have the strongest fighters in Schwarzreich.",
-            "portImg": "vincenzo",
+            "name": "Captain Beatrice",
+            "desc": "Are you up to spar with me?",
+            "portImg": "beatrice",
             "isTweenOut": "1",
 
             "input1": {"id": "start-mission-vic-3", "text": "Understood, Boss."},
@@ -301,8 +301,8 @@
 
         "wooster-square-house-1": {
             "name": "Old Man",
-            "desc": "What is the Legion doing here anyway?",
-            "portImg": "npc-man-1",
+            "desc": "Our nation of Victoria was founded by the great heroes who defeated the Demon Lord 150 years ago.",
+            "portImg": "npc-man-2",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "wooster-square-house-2",
@@ -311,8 +311,8 @@
         },
         "wooster-square-house-2": {
             "name": "Old Man",
-            "desc": "If the higher-ups of Schwarzreich put them on the front line, Rhode Island will have to think twice about attacking.",
-            "portImg": "npc-man-1",
+            "desc": "We honor their legacy every day.",
+            "portImg": "npc-man-2",
             "isTweenOut": "1",
 
             "inputEmptyContinue": "",
@@ -321,9 +321,9 @@
         },
 
         "wooster-square-house-3": {
-            "name": "Man",
+            "name": "Woman",
             "desc": "The Rossi Family is spotted here on Wooster Square recently, acting like they own the place.",
-            "portImg": "npc-man-2",
+            "portImg": "npc-man-1",
             "isTweenOut": "0",
 
             "inputEmptyContinue": "wooster-square-house-4",
@@ -331,9 +331,9 @@
             "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
         },
         "wooster-square-house-4": {
-            "name": "Man",
+            "name": "Woman",
             "desc": "I think a war between the families will erupt soon.",
-            "portImg": "npc-man-2",
+            "portImg": "npc-man-1",
             "isTweenOut": "1",
 
             "inputEmptyContinue": "",
@@ -344,7 +344,7 @@
         "wooster-square-house-5": {
             "name": "Woman",
             "desc": "You don't look from around here. Oh, I know! You must be a student in New Yale University.",
-            "portImg": "npc-woman-2",
+            "portImg": "npc-woman-3",
             "isTweenOut": "1",
 
             "inputEmptyContinue": "wooster-square-house-4",
@@ -439,8 +439,8 @@
         },
         "strega": {
             "name": "Giovanni",
-            "desc": "Welcome to my crafting shop. How can I help?",
-            "portImg": "npc-man-2",
+            "desc": "Welcome to Giovanni's crafting shop. How can I help?",
+            "portImg": "npc-woman-1",
             "posX": 0,
             "posY": 0,
             "isTweenOut": "1",
@@ -457,9 +457,9 @@
             "inputScaler_enable": "0",
         },
         "marcos-tavern": {
-            "name": "Bartender Marco",
+            "name": "Bartender",
             "desc": "The tavern today is so merry! Which drink do you want, mister?",
-            "portImg": "npc-man-4",
+            "portImg": "npc-woman-2",
             "posX": 0,
             "posY": 0,
 
@@ -476,9 +476,9 @@
             "inputScaler_enable": "0",
         },
         "bella-vita": {
-            "name": "Ramona",
+            "name": "Old Woman",
             "desc": "We have some scraps and crafting essentials for sale here.",
-            "portImg": "npc-woman-1",
+            "portImg": "npc-woman-3",
             "posX": 0,
             "posY": 0,
 

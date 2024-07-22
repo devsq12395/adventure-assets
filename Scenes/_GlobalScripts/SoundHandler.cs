@@ -20,7 +20,11 @@ public class SoundHandler : MonoBehaviour {
     private bool isPlayingBGM;
     private string bgmType;
 
+    private Dictionary<string, float> lastPlayedTime = new Dictionary<string, float>();
+    private float soundCooldown;
+
     void Start (){
+        soundCooldown = 0.25f;
         audioSource.loop = false; 
     }
 
@@ -32,28 +36,38 @@ public class SoundHandler : MonoBehaviour {
     }
 
     public void play_sfx (string _sound) {
-        switch (_sound) {
-            case "yes-ping": audioSource.PlayOneShot(yesPing); break;
-            case "no-ping": audioSource.PlayOneShot(noPing); break;
+        if (lastPlayedTime.ContainsKey(_sound) && Time.time - lastPlayedTime[_sound] < soundCooldown) {
+            return;
+        }
 
-            case "bubble": audioSource.PlayOneShot(bubble); break;
-            case "buying": audioSource.PlayOneShot(buying); break;
-            case "chat": audioSource.PlayOneShot(chat); break;
-            case "click": audioSource.PlayOneShot(click); break;
-            case "explosion": audioSource.PlayOneShot(explosion); break;
-            case "big-hit": audioSource.PlayOneShot(bigHit); break;
-            case "gain": audioSource.PlayOneShot(gain); break;
-            case "ice": audioSource.PlayOneShot(ice); break;
-            case "laser": audioSource.PlayOneShot(laser); break;
-            case "magic": audioSource.PlayOneShot(magic); break;
-            case "plasma-shotgun": audioSource.PlayOneShot(plasmaShotgun); break;
-            case "swish": audioSource.PlayOneShot(swish); break;
-            case "swoosh": audioSource.PlayOneShot(swoosh); break;
-            case "torrent": audioSource.PlayOneShot(torrent); break;
-            case "win": audioSource.PlayOneShot(win); break;
-            case "zap": audioSource.PlayOneShot(zap); break;
-            case "dash": audioSource.PlayOneShot(dash); break;
-            case "dash-smoke": audioSource.PlayOneShot(dashSmoke); break;
+        AudioClip clipToPlay = null;
+        switch (_sound) {
+            case "yes-ping": clipToPlay = yesPing; break;
+            case "no-ping": clipToPlay = noPing; break;
+
+            case "bubble": clipToPlay = bubble; break;
+            case "buying": clipToPlay = buying; break;
+            case "chat": clipToPlay = chat; break;
+            case "click": clipToPlay = click; break;
+            case "explosion": clipToPlay = explosion; break;
+            case "big-hit": clipToPlay = bigHit; break;
+            case "gain": clipToPlay = gain; break;
+            case "ice": clipToPlay = ice; break;
+            case "laser": clipToPlay = laser; break;
+            case "magic": clipToPlay = magic; break;
+            case "plasma-shotgun": clipToPlay = plasmaShotgun; break;
+            case "swish": clipToPlay = swish; break;
+            case "swoosh": clipToPlay = swoosh; break;
+            case "torrent": clipToPlay = torrent; break;
+            case "win": clipToPlay = win; break;
+            case "zap": clipToPlay = zap; break;
+            case "dash": clipToPlay = dash; break;
+            case "dash-smoke": clipToPlay = dashSmoke; break;
+        }
+
+        if (clipToPlay != null) {
+            audioSource.PlayOneShot(clipToPlay);
+            lastPlayedTime[_sound] = Time.time;
         }
     }
 
