@@ -207,7 +207,7 @@
             "portImg": "beatrice",
             "isTweenOut": "1",
 
-            "input1": {"id": "start-mission-vic-3", "text": "Understood, Boss."},
+            "input1": {"id": "start-mission-vic-3", "text": "Sure!"},
 
             "inputEmptyContinue": "",
             "isMini": "0",

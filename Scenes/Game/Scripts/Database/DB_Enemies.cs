@@ -122,11 +122,7 @@ public class DB_Enemies : MonoBehaviour {
 				_waves[0].Add ("victorian-soldier", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("victorian-soldier", 4);
-				_waves[1].Add ("centurion", 2);
-
-				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("captain-beatrice", 1);
+				_waves[1].Add ("cap-beatrice", 1);
 
 				break;
 		}
@@ -143,11 +139,7 @@ public class DB_Enemies : MonoBehaviour {
 				_waves[0].Add ("war-shredder", 7);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("prism-drone", 5);
-				_waves[1].Add ("war-shredder", 10);
-
-				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("alpha-war-shredder", 1);
+				_waves[1].Add ("alpha-war-shredder", 1);
 
 				break;
 		}
@@ -195,10 +187,7 @@ public class DB_Enemies : MonoBehaviour {
 				_waves[1].Add ("embraced-mage", 4);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("prism-drone", 6);
-
-				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("captain-charles", 1);
+				_waves[2].Add ("luca-the-terror", 1);
 
 				break;
 		}

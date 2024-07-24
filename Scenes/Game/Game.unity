@@ -4198,10 +4198,14 @@ MonoBehaviour:
   bulletTommy: {fileID: 6781197039557131184, guid: 066579544e30bf9069d845739f5cc0c2, type: 3}
   bulletMobster: {fileID: 6781197039557131184, guid: a924afd87b9dc37aa8dfb2c4ee532ce2, type: 3}
   bulletEmbraced: {fileID: 6781197039557131184, guid: 586d6bf5a65bd904fa1666e99591ee42, type: 3}
+  bulletVictorianSoldier: {fileID: 7906735623356944888, guid: 478cb3dcb06d41647b449b95e646aef8, type: 3}
   fireWave: {fileID: 6781197039557131184, guid: 69830847a1082d598887aea1e58223b4, type: 3}
   blueWave: {fileID: 6781197039557131184, guid: 08bd286f1d055114db402d6905c236c5, type: 3}
   slashShredder: {fileID: 6781197039557131184, guid: 4023546afbcd6774fa2fa24d1e00b6d2, type: 3}
   prismDroneMissile: {fileID: 571909625728764212, guid: 0deeecfcb57b8564997205d0ede471a4, type: 3}
+  centurionMissile: {fileID: 3259533741007603725, guid: 704636fb81cd0e44ca2b8966c7d15c2a, type: 3}
+  beatriceMissile: {fileID: 154191492299509459, guid: ac09d6a00a4699647a88ecd4990d4648, type: 3}
+  lucaTyphoon: {fileID: 5442230042508564199, guid: afd636edb7e723941a9d1cae58a9128f, type: 3}
   explosion1: {fileID: 1401509844482372538, guid: 27184bd0ec3267a4ba95990debf08eba, type: 3}
   explosion2: {fileID: 7377904376478507447, guid: 6f6c76db710f16b4e9216024f4b55c21, type: 3}
   explosion3: {fileID: 8620740922000547619, guid: 651d929cf2acc7948b5751e38568c570, type: 3}
@@ -4216,6 +4220,8 @@ MonoBehaviour:
   frostWaveCast: {fileID: 0}
   moveSmoke: {fileID: 225586780582164684, guid: afb61644b91d92ab2a39ab568d133076, type: 3}
   moveSmokeSpawner: {fileID: 225586780582164684, guid: af7b4394dc00e392db50ada143066393, type: 3}
+  muzzle1: {fileID: 5823125542244121484, guid: b3e3dc0d225ee8f40bc5734a7738852e, type: 3}
+  muzzle2: {fileID: 877287394921455450, guid: 5bf72379f19097b42a62a6d3017bc36a, type: 3}
   buf_burn: {fileID: 8100014777820684788, guid: 932449129c027b348ba8b2719f25438d, type: 3}
   buf_bindingChains: {fileID: 4245185834599824400, guid: 2374b86ef40e8c14986599794e514d4d, type: 3}
   buf_voidSphereGrounded: {fileID: 0}

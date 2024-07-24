@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill_Teleport : SkillTrig {
+public class Skill_TeleportBeatrice : SkillTrig {
 
     public float alphaFadeDuration = 1f; // Duration for alpha tweening
     public float afterimageDistance = 1f; // Distance for afterimages to move left/right
+
+    public Vector2 targetPoint; // Set before calling use_active to teleport
 
     private GameObject CreateAfterimagePrefab() {
         // Create a temporary GameObject to hold the afterimage
@@ -31,12 +33,6 @@ public class Skill_Teleport : SkillTrig {
         Vector2 mapSize = ContMap.I.details.size;
         Vector2 _pos = gameObject.transform.position;
 
-        // Generate a random point within the map boundaries
-        Vector2 randomPoint = new Vector2(
-            Random.Range(0, mapSize.x),
-            Random.Range(0, mapSize.y)
-        );
-
         // Create afterimages
         GameObject afterimagePrefab = CreateAfterimagePrefab();
         if (afterimagePrefab != null) {
@@ -52,8 +48,8 @@ public class Skill_Teleport : SkillTrig {
 
         // Teleport the owner to the new random position
         ContEffect.I.create_effect("move-smoke", gameObject.transform.position);
-        gameObject.transform.position = randomPoint;
-        ContEffect.I.create_effect("move-smoke", randomPoint);
+        gameObject.transform.position = targetPoint;
+        ContEffect.I.create_effect("move-smoke", targetPoint);
     }
 
     private void CreateAfterimage(Vector3 startPosition, Vector3 targetPosition, GameObject prefab) {

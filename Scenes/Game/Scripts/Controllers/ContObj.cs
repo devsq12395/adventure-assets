@@ -319,7 +319,7 @@ public class ContObj : MonoBehaviour {
             _obj.zPos
         );
 
-        if (_obj.isRotate) {
+        if (_obj.isRotate && _obj.gameObject.GetComponent<SpinObject>() == null) {
             _obj.gameObject.transform.rotation = Quaternion.Euler (0, 0, _obj.constMovAng_ang);
         }
 

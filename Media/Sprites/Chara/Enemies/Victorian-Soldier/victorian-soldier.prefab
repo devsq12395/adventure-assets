@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 512110213563582338}
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
-  - component: {fileID: -9206910436025346238}
-  - component: {fileID: 5642029956574259330}
+  - component: {fileID: -8811218604502938419}
+  - component: {fileID: -4143678528451681390}
   m_Layer: 0
   m_Name: victorian-soldier
   m_TagString: Untagged
@@ -102,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 704e1ed23001192448e75f6b47ffccd7, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc50b9dcc2f5f524a8f4fb663e834c39, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
---- !u!114 &-9206910436025346238
+--- !u!114 &-8811218604502938419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
+  m_Script: {fileID: 11500000, guid: bb7df5c782099b545bb6c8acc5641371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: attack
@@ -342,8 +342,10 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: bullet-mobster
---- !u!114 &5642029956574259330
+  missileObj: bullet-victorian-soldier
+  muzzleObj1: muzzle-1
+  muzzleObj2: muzzle-2
+--- !u!114 &-4143678528451681390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,7 +354,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512d0b5b6391c4a94895b9acfe678d05, type: 3}
+  m_Script: {fileID: 11500000, guid: 9abcafade4a0ca34b860e21d8e82dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inGameObj: {fileID: 0}

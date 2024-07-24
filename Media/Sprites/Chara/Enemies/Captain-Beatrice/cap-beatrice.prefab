@@ -17,7 +17,9 @@ GameObject:
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
   - component: {fileID: -9206910436025346238}
-  - component: {fileID: 5642029956574259330}
+  - component: {fileID: -3611834937263440281}
+  - component: {fileID: -1474471524346442391}
+  - component: {fileID: 248429235267935873}
   m_Layer: 0
   m_Name: cap-beatrice
   m_TagString: Untagged
@@ -102,7 +104,7 @@ Animator:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c8dab1b54bb767846bdf433ffd983535, type: 2}
+  m_Controller: {fileID: 9100000, guid: 960f0dd656f635c41bb44b59289cec10, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -343,8 +345,8 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: bullet-mobster
---- !u!114 &5642029956574259330
+  missileObj: beatrice-missile
+--- !u!114 &-3611834937263440281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,7 +355,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512d0b5b6391c4a94895b9acfe678d05, type: 3}
+  m_Script: {fileID: 11500000, guid: 71c384e6baa012849baf8c5f60786b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: captain-beatrice-teleport
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  alphaFadeDuration: 1
+  afterimageDistance: 1
+  targetPoint: {x: 0, y: 0}
+--- !u!114 &-1474471524346442391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef85fb62d4bb7e840a8cf64ec768441e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: captain-beatrice-slash
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: beatrice-missile
+--- !u!114 &248429235267935873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c782355ccf8c84b875848205e83c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inGameObj: {fileID: 0}

@@ -28,6 +28,7 @@ public class DB_Buffs : MonoBehaviour {
             case "binding-chains": return 3f; break;
             case "void-sphere": return 0.5f; break;
             case "frost-wave": return 4f; break;
+            case "wave-slash": return 0.5f; break;
             default: return 1f; break;
         }
     }

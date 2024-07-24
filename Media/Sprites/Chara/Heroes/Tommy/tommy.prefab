@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 1734063162558475761}
   - component: {fileID: 1734063162558475760}
   - component: {fileID: 970973860029378288}
-  - component: {fileID: -2860898887327908908}
   - component: {fileID: 188102392388792281}
+  - component: {fileID: -5106326729033209083}
   m_Layer: 0
   m_Name: tommy
   m_TagString: Untagged
@@ -344,26 +344,6 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
---- !u!114 &-2860898887327908908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734063162558475763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be37ca8792ebe664b8eff329d6679499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: attack
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: bullet-tommy
-  soundToPlay: laser
 --- !u!114 &188102392388792281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,3 +363,25 @@ MonoBehaviour:
   cdMax: 6
   cd: 0
   missileObj: blue-wave
+--- !u!114 &-5106326729033209083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734063162558475763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2273dd0727e8543ae0b5020e66908e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: attack
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: bullet-tommy
+  muzzleObj1: muzzle-1
+  muzzleObj2: muzzle-2
+  soundToPlay: laser

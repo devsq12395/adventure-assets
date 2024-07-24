@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
   - component: {fileID: -9206910436025346238}
-  - component: {fileID: 5642029956574259330}
+  - component: {fileID: 7411796778743734371}
   m_Layer: 0
   m_Name: centurion
   m_TagString: Untagged
@@ -247,8 +247,8 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 50
-  hpMax: 50
+  hp: 25
+  hpMax: 25
   mp: 0
   mpMax: 0
   mpRegen: 0
@@ -257,6 +257,9 @@ MonoBehaviour:
   onHitSFX: 
   tags:
   - human
+  - machine
+  - armor
+  - mek
   speed: 3.5
   attachScaleMultiplier: 1
   zPos: 0
@@ -342,8 +345,8 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: bullet-mobster
---- !u!114 &5642029956574259330
+  missileObj: centurion-missile
+--- !u!114 &7411796778743734371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,7 +355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512d0b5b6391c4a94895b9acfe678d05, type: 3}
+  m_Script: {fileID: 11500000, guid: 25ccc89bf7f7f1944bd5c25c47fe766b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inGameObj: {fileID: 0}
@@ -361,3 +364,5 @@ MonoBehaviour:
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}
+  attackRange: 5
+  attackRate: 0.7

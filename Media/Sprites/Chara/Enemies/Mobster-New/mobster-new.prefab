@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 512110213563582338}
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
-  - component: {fileID: -9206910436025346238}
   - component: {fileID: 5642029956574259330}
+  - component: {fileID: 2340386187028174078}
   m_Layer: 0
   m_Name: mobster-new
   m_TagString: Untagged
@@ -324,25 +324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
---- !u!114 &-9206910436025346238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690657366656991979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: attack
-  skillName: attack
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: bullet-mobster
 --- !u!114 &5642029956574259330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,3 +342,24 @@ MonoBehaviour:
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}
+--- !u!114 &2340386187028174078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7df5c782099b545bb6c8acc5641371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: attack
+  skillName: attack
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: bullet-mobster
+  muzzleObj1: muzzle-1
+  muzzleObj2: muzzle-2
