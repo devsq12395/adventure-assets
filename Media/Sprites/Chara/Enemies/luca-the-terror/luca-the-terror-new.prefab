@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 2303976454598103485}
   - component: {fileID: 3205892683975897221}
   - component: {fileID: 1774175043235499436}
+  - component: {fileID: 1965158417671538280}
   m_Layer: 0
   m_Name: luca-the-terror-new
   m_TagString: Untagged
@@ -446,3 +447,23 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: fire-wave
+--- !u!114 &1965158417671538280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651f04fb3ba32004c92b6fa5ddf8299a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: luca-teleport
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  alphaFadeDuration: 1
+  afterimageDistance: 1

@@ -85,8 +85,10 @@ public class ContEnemies : MonoBehaviour {
 			int _rewardToGive = Random.Range (0, 100);
 			string _toGive = "";
 			foreach (var entry in rewardChance) {
+				Debug.Log ($"entry: {entry.Key} perc {entry.Value}");
 				if (_rewardToGive < entry.Value) {
 					_toGive = entry.Key;
+					Debug.Log ($"to give: {_toGive}");
 					break;
 				}
 			}
@@ -96,9 +98,9 @@ public class ContEnemies : MonoBehaviour {
 		JsonSaving.I.save ("rewards", string.Join (",", rewardItems));
 		List<string> rewardNames = new List<string>();
 		rewardItems.ForEach (
-			(__reward) => rewardNames.Add (JsonReading.I.read ("items", $"items.{__reward}.name"))
+			(__reward) => rewardNames.Add (JsonReading.I.read ("items", $"items.{__reward}.name-ui"))
 		);
-		_ret += $"\n\nYou found these items: {string.Join ("\n", rewardNames)}";
+		_ret += $"\n\nYou found these items:\n {string.Join ("\n", rewardNames)}";
 
 		return _ret;
 	}

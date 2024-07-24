@@ -213,6 +213,7 @@ public class MM_Inventory : MonoBehaviour {
             Item _itemFromInv = get_item_from_inv (_item);
 
             _itemFromInv.stack += _stack;
+            Debug.Log (_itemFromInv.ID);
             itemsMain [_itemFromInv.ID] = _itemFromInv;
         } else {
             if (_stackable) {

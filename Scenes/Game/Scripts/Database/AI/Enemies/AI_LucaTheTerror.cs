@@ -45,10 +45,10 @@ public class AI_LucaTheTerror : InGameAI {
             ContObj.I.move_walk_to_pos_stop (inGameObj);
             switch (_randMove) {
                 case 0:
-                    ContObj.I.use_skill_active (inGameObj, "luca-spread");
+                    ContObj.I.use_skill_active (inGameObj, "luca-teleport");
                     break;
                 case 1:
-                    ContObj.I.use_skill_active (inGameObj, "luca-flame-wave");
+                    ContObj.I.use_skill_active (inGameObj, "luca-teleport");
                     break;
                 case 2:
                     ContObj.I.use_skill_active (inGameObj, "luca-teleport");

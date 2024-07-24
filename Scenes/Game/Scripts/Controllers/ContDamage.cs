@@ -89,7 +89,7 @@ public class ContDamage : MonoBehaviour {
         }
         
         // Dam Text UI
-        GameUI_InGameTxt.I.create_ingame_txt (_dam.ToString (), _def.gameObject.transform.position, 2f);
+        GameUI_InGameTxt.I.create_ingame_txt ($"{_dam.ToString ()}!", _def.gameObject.transform.position, 2f);
 
         // Sound Effects
         SoundHandler.I.play_sfx ("big-hit");

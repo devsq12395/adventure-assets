@@ -3497,7 +3497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 209, y: -39}
+  m_AnchoredPosition: {x: 209, y: -26.9}
   m_SizeDelta: {x: 360.84, y: 120.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717232666
@@ -3520,12 +3520,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Gold Gained: 200
-
-
-    You found these items:
-
-    Coal'
+  m_text: "All enemies are beaten!\n\nGold Gained:  200\n\nYou found these items:
+    \nScrap Metal\nScrap Metal\nScrap Metal\nScrap Metal\nScrap Metal"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3552,8 +3548,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4174,10 +4170,10 @@ MonoBehaviour:
   kitsuneBoss: {fileID: 5097030854448268402, guid: 39d448d14e3246c948db63e790335614, type: 3}
   slimeRed: {fileID: 4690657366656991979, guid: e6f82a6177a2b9d27b4ce290affa21a8, type: 3}
   slimeBlue: {fileID: 4917938084647442157, guid: 69b2af1989ab73ee389714e43d054950, type: 3}
-  mobster: {fileID: 4690657366656991979, guid: 267dbca69a2cdd07ca3f203d595a1119, type: 3}
+  mobster: {fileID: 4690657366656991979, guid: a1a41106f0f1d4645b3a9fb335eabe2a, type: 3}
   slimeKing: {fileID: 4917938084647442157, guid: 1335056c4d2b71cc68d931890563790c, type: 3}
   giantSlime: {fileID: 3241388244497219823, guid: 368d114ea69d0f4c4afc0eb872ec9ee3, type: 3}
-  lucaTheTerror: {fileID: 4690657366656991979, guid: bb257120549fbabea8892fbad94a33af, type: 3}
+  lucaTheTerror: {fileID: 4690657366656991979, guid: c83e9ff0593332740a104e6b833a531d, type: 3}
   embracedInfantry: {fileID: 4690657366656991979, guid: 66cc8e75df3eb314f9631d8cae526627, type: 3}
   embracedMage: {fileID: 4690657366656991979, guid: f1d75c23ce8892648a368d17a0d5ecc4, type: 3}
   prismDrone: {fileID: 4690657366656991979, guid: 8b325c856a0d8d040aa4eb2ecd188288, type: 3}
