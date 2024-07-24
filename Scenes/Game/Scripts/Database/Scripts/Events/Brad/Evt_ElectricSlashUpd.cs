@@ -7,7 +7,7 @@ public class Evt_ElectricSlashUpd : EvtTrig {
 
     private float countTime_Fx = 0, countTime_Dam = 0;
 
-    public float RANGE, RANGE_FINAL_KNOCK, AOE_KNOCK, SPEED_KNOCK, DIST_KNOCK;
+    public float RANGE_AOE, RANGE_FINAL_KNOCK, AOE_KNOCK, SPEED_KNOCK, DIST_KNOCK;
     public int DAM, DAM_PER_SKILL;
     public List<int> hitIDs;
 
@@ -18,7 +18,7 @@ public class Evt_ElectricSlashUpd : EvtTrig {
     public override void setup (){
         hitIDs = new List<int> ();
 
-        DIST_PER_EXPLOSION_EFFECT = 0.5f;
+        DIST_PER_EXPLOSION_EFFECT = 1f;
         curDistExpEffect = DIST_PER_EXPLOSION_EFFECT;
     }
     
@@ -51,7 +51,7 @@ public class Evt_ElectricSlashUpd : EvtTrig {
 
     private void dam_nearby_units (InGameObject _owner){
         Vector2 _pos = _owner.transform.position;
-        List<InGameObject> _objs = ContObj.I.get_objs_in_area (_pos, RANGE);
+        List<InGameObject> _objs = ContObj.I.get_objs_in_area (_pos, RANGE_AOE);
 
         foreach (InGameObject _o in _objs) {
             if (!DB_Conditions.I.dam_condition (_owner, _o) || hitIDs.Contains (_o.id)) continue;

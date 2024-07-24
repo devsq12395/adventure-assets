@@ -17016,6 +17016,8 @@ MonoBehaviour:
   tName: {fileID: 387181237}
   tDesc: {fileID: 800342184}
   tRequires: {fileID: 897694774}
+  tWindowTitle: {fileID: 858601331}
+  tBtnText: {fileID: 2105013774}
   iPort: {fileID: 1030050612}
   item: 
   type: 

@@ -334,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: wooster-square-house-3
   type: dialog
-  val: wooster-square-house-2
+  val: wooster-square-house-3
 --- !u!114 &2276805965806579002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: wooster-square-house-5
   type: dialog
-  val: wooster-square-house-3
+  val: wooster-square-house-5
 --- !u!114 &1567013992149759233
 MonoBehaviour:
   m_ObjectHideFlags: 0

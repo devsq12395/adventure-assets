@@ -10,7 +10,7 @@ public class Sprites : MonoBehaviour {
     public Sprite dummy;
 
     [Header("----- Portraits for Player -----")]
-    public Sprite tommy;
+    public Sprite empty, tommy;
     public Sprite brad, anastasia, seraphine, miguel, anthony, beatrice;
 
     [Header("----- Portraits: NPC -----")]
@@ -36,6 +36,7 @@ public class Sprites : MonoBehaviour {
         Sprite _ret = dummy;
 
         switch (_name) {
+            case "empty": return empty; break;
             case "tommy": return tommy; break;
             case "brad":case "kazuma": return brad; break;
             case "anastasia": return anastasia; break;
@@ -48,7 +49,7 @@ public class Sprites : MonoBehaviour {
             case "npc-man-3": return npcMan3; break;
             case "npc-man-4": return npcMan4; break;
             case "npc-woman-1": return npcWoman1; break;
-            case "npc-woman-2": return npcWoman1; break;
+            case "npc-woman-2": return npcWoman2; break;
             case "npc-woman-3": return npcWoman3; break;
 
             case "vincenzo": return vincenzo; break;

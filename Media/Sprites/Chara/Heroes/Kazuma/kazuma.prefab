@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   evtTrigger: update
   evtName: flame-dash
-  RANGE: 7
+  RANGE_AOE: 1.5
   RANGE_FINAL_KNOCK: 0
   AOE_KNOCK: 2
   SPEED_KNOCK: 0.25

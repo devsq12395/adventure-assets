@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 512110213563582338}
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
-  - component: {fileID: -9206910436025346238}
   - component: {fileID: -4889561695885233054}
   - component: {fileID: -6495577247532642833}
   - component: {fileID: 2303976454598103485}
@@ -24,6 +23,7 @@ GameObject:
   - component: {fileID: 1774175043235499436}
   - component: {fileID: 1965158417671538280}
   - component: {fileID: 4072382378056382313}
+  - component: {fileID: -2353655394758298456}
   m_Layer: 0
   m_Name: luca-the-terror-new
   m_TagString: Untagged
@@ -331,25 +331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
---- !u!114 &-9206910436025346238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690657366656991979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: attack
-  skillName: attack
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: bullet-mobster
 --- !u!114 &-4889561695885233054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +349,8 @@ MonoBehaviour:
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}
+  channelingTime: 2
+  effectInterval: 0.5
 --- !u!114 &-6495577247532642833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,3 +472,21 @@ MonoBehaviour:
   missileObj: bullet-mobster
   muzzleObj1: muzzle-1
   muzzleObj2: muzzle-2
+--- !u!114 &-2353655394758298456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b71ebe42fa0e24aa8d5f98e7b89225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorHex: 0000FF
+  spawnAmount: 5
+  circleDiameter: 1
+  tweenDur: 1
+  targetDist: 3
+  spawnIntervalTarg: 0.25

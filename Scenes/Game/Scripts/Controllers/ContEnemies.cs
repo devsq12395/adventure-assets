@@ -80,7 +80,7 @@ public class ContEnemies : MonoBehaviour {
 		JsonSaving.I.gain_gold (_goldReward);
 
 		// Item Rewards
-		int _rewardsAmountToGive = Random.Range (1, 4);
+		int _rewardsAmountToGive = Random.Range (2, 6);
 		for (int i = 0; i < _rewardsAmountToGive; i++) {
 			int _rewardToGive = Random.Range (0, 100);
 			string _toGive = "";

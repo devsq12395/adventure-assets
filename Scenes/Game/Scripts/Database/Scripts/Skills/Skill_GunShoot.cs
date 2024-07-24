@@ -31,7 +31,7 @@ public class Skill_GunShoot : SkillTrig
             _missileComp.range = _ownerComp.statRange * 4;
         }
 
-        ContObj.I.const_move_ang_set(_missileComp, Calculator.I.get_ang_from_point_and_mouse(gameObject.transform.position), _missileComp.speed);
+        ContObj.I.const_move_ang_set(_missileComp, Calculator.I.get_ang_from_point_and_mouse(missilePosition), _missileComp.speed);
 
         _missileComp.controllerID = _ownerComp.id;
 
