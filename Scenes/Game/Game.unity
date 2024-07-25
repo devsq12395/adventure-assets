@@ -4222,6 +4222,9 @@ MonoBehaviour:
   moveSmokeSpawner: {fileID: 225586780582164684, guid: af7b4394dc00e392db50ada143066393, type: 3}
   muzzle1: {fileID: 5823125542244121484, guid: b3e3dc0d225ee8f40bc5734a7738852e, type: 3}
   muzzle2: {fileID: 877287394921455450, guid: 5bf72379f19097b42a62a6d3017bc36a, type: 3}
+  gooGreen: {fileID: 7046848548638446943, guid: 69541152d3944684cbdab765504466bc, type: 3}
+  gooBlue: {fileID: 46395772836881525, guid: 2e37c44350de44048be8599508eed339, type: 3}
+  magicSparkSeraphine: {fileID: 5387428618249927088, guid: 7b47fc56680058a48b44863f8dee2f8e, type: 3}
   buf_burn: {fileID: 8100014777820684788, guid: 932449129c027b348ba8b2719f25438d, type: 3}
   buf_bindingChains: {fileID: 4245185834599824400, guid: 2374b86ef40e8c14986599794e514d4d, type: 3}
   buf_voidSphereGrounded: {fileID: 0}

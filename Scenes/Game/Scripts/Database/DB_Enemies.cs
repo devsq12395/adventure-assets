@@ -57,7 +57,7 @@ public class DB_Enemies : MonoBehaviour {
 
 			case "anthony-1": _ret.AddRange (new int[]{500}); break;
 
-			case "mill-river-1":_ret.AddRange (new int[]{0}); break;
+			case "mill-river-1":_ret.AddRange (new int[]{200,300,400,500}); break;
 		}
 
 		return _ret;
@@ -199,7 +199,6 @@ public class DB_Enemies : MonoBehaviour {
 		_ret.Add ("cprwr", 40);	// Copper Wire
 		_ret.Add ("plsbtl", 70); // Plastic Bottle
 		_ret.Add ("wldbry", 80); // Wild Berry
-		_ret.Add ("coal", 90); // Coal
 		_ret.Add ("scrap", 100); // Scrap Metal
 
 		return _ret;
@@ -208,7 +207,6 @@ public class DB_Enemies : MonoBehaviour {
 		_ret.Add ("cprwr", 40);	// Copper Wire
 		_ret.Add ("plsbtl", 70); // Plastic Bottle
 		_ret.Add ("wldbry", 80); // Wild Berry
-		_ret.Add ("coal", 90); // Coal
 		_ret.Add ("scrap", 100); // Scrap Metal
 		
 		return _ret;
@@ -217,7 +215,6 @@ public class DB_Enemies : MonoBehaviour {
 		_ret.Add ("cprwr", 40);	// Copper Wire
 		_ret.Add ("plsbtl", 70); // Plastic Bottle
 		_ret.Add ("wldbry", 80); // Wild Berry
-		_ret.Add ("coal", 90); // Coal
 		_ret.Add ("scrap", 100); // Scrap Metal
 
 		return _ret;
@@ -227,7 +224,6 @@ public class DB_Enemies : MonoBehaviour {
 		_ret.Add ("cprwr", 40);	// Copper Wire
 		_ret.Add ("plsbtl", 70); // Plastic Bottle
 		_ret.Add ("wldbry", 80); // Wild Berry
-		_ret.Add ("coal", 90); // Coal
 		_ret.Add ("scrap", 100); // Scrap Metal
 
 		return _ret;

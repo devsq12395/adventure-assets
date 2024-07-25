@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8548364125010308196}
   - component: {fileID: -5926279159144469251}
   - component: {fileID: 3772351261373471889}
+  - component: {fileID: 6961924367580656906}
   m_Layer: 0
   m_Name: blue-wave
   m_TagString: Untagged
@@ -259,3 +260,21 @@ MonoBehaviour:
   hitIDs: 
   DAM: 1
   DAM_PER_SKILL: 1
+--- !u!114 &6961924367580656906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781197039557131184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b71ebe42fa0e24aa8d5f98e7b89225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorHex: 00b5e9
+  spawnAmount: 4
+  circleDiameter: 0.75
+  tweenDur: 1
+  targetDist: 3
+  spawnIntervalTarg: 0.3

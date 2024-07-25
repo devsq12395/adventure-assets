@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6858568958919476636}
   - component: {fileID: 7636161483989161988}
   - component: {fileID: 6481063611472789613}
+  - component: {fileID: 3101134460269600412}
   m_Layer: 0
   m_Name: slash-beatrice
   m_TagString: Untagged
@@ -262,3 +263,21 @@ MonoBehaviour:
   hitIDs: 
   DAM: 3
   DAM_PER_SKILL: 0
+--- !u!114 &3101134460269600412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154191492299509459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b71ebe42fa0e24aa8d5f98e7b89225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorHex: FF0000
+  spawnAmount: 5
+  circleDiameter: 1
+  tweenDur: 1
+  targetDist: 3
+  spawnIntervalTarg: 0.25

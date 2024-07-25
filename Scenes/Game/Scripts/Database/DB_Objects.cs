@@ -29,7 +29,7 @@ public class DB_Objects : MonoBehaviour {
     [Header("----- Effects -----")]
     public GameObject explosion1;
     public GameObject explosion2, explosion3, damTxt, explosion1_mini, molotovEfct, bindChainExp1, bindChainExp2, voidSphereHit, voidSphereCast, frostWaveHit, 
-        frostWaveCast, moveSmoke, moveSmokeSpawner, muzzle1, muzzle2;
+        frostWaveCast, moveSmoke, moveSmokeSpawner, muzzle1, muzzle2, gooGreen, gooBlue, magicSparkSeraphine;
 
     [Header("----- Buffs -----")]
     public GameObject buf_burn;
@@ -124,6 +124,9 @@ public class DB_Objects : MonoBehaviour {
             case "move-smoke-spawner":             _refObj = moveSmokeSpawner; break;
             case "muzzle-1":             _refObj = muzzle1; break;
             case "muzzle-2":             _refObj = muzzle2; break;
+            case "goo-green":             _refObj = gooGreen; break;
+            case "goo-blue":             _refObj = gooBlue; break;
+            case "magic-spark-seraphine":             _refObj = magicSparkSeraphine; break;
                 
             case "damTxt":                  _refObj = damTxt; break;
                 

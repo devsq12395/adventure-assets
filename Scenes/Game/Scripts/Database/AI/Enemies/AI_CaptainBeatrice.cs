@@ -132,7 +132,9 @@ public class AI_CaptainBeatrice : InGameAI {
                 if (newPosition.x < minX || newPosition.x > maxX) {
                     break; // Stop if 3 units before the edge is reached
                 }
-                gameObject.transform.position = newPosition;
+                if (DB_Conditions.I.can_move (_ownerComp)) {
+                    gameObject.transform.position = newPosition;
+                }
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }

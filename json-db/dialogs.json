@@ -237,7 +237,7 @@
 
         "anthony-1": {
             "name": "Anthony",
-            "desc": "You must be Tommy, right? I heard a lot about you from Boss Vincenzo.",
+            "desc": "You must be Tommy, right? I heard a lot about you from Vic.",
             "portImg": "anthony",
             "isTweenOut": "0",
 
@@ -333,7 +333,7 @@
         "wooster-square-house-4": {
             "name": "Woman",
             "desc": "I think a war between the families will erupt soon.",
-            "portImg": "npc-man-1",
+            "portImg": "npc-woman-2",
             "isTweenOut": "1",
 
             "inputEmptyContinue": "",
@@ -438,7 +438,7 @@
             "inputScaler_enable": "0",
         },
         "strega": {
-            "name": "Giovanni",
+            "name": "Woman",
             "desc": "Welcome to Giovanni's crafting shop. How can I help?",
             "portImg": "npc-woman-1",
             "posX": 0,
@@ -573,7 +573,7 @@
         },
         "buy-recruit-success": {
             "name": "",
-            "desc": "Character is recruited!\n\nSet your members on the Party window.",            
+            "desc": "Character is recruited!\n\nSet your members on the Character window.",            
             "portImg": "",
             "posX": 0,
             "posY": 0,
