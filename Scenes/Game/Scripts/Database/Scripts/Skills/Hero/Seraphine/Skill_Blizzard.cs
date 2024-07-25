@@ -21,5 +21,6 @@ public class Skill_Blizzard : SkillTrig {
         _msl.controllerID = _owner.id;
 
         SoundHandler.I.play_sfx ("magic");
+        MUI_Overlay.I.show_overlay ("zoom");
     }
 }

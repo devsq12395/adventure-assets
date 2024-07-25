@@ -387,6 +387,9 @@ MonoBehaviour:
   bigHit: {fileID: 8300000, guid: c38a441949558fc469a78c61f1458390, type: 3}
   dash: {fileID: 8300000, guid: ec1339d170756d444a82d4c9c5b5eaee, type: 3}
   dashSmoke: {fileID: 8300000, guid: edaa62f050ba660479154dc4c19064cb, type: 3}
+  pistol: {fileID: 8300000, guid: abe855939a9153f44a15c01e501a0048, type: 3}
+  soundOn: 0
+  musicOn: 0
 --- !u!1 &1232967547
 GameObject:
   m_ObjectHideFlags: 0

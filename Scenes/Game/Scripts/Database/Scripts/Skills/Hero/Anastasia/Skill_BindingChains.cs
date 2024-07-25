@@ -28,5 +28,7 @@ public class Skill_BindingChains : SkillTrig {
 
             SoundHandler.I.play_sfx ("magic");
         }
+
+        MUI_Overlay.I.show_overlay ("zoom");
     }
 }

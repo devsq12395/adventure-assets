@@ -20,6 +20,8 @@ public class Skill_Shotgun : SkillTrig {
         create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position) - 25);
 
         SoundHandler.I.play_sfx ("plasma-shotgun");
+
+        MUI_Overlay.I.show_overlay ("zoom");
     }
 
     private void create_missile (InGameObject _ownerComp, float _ang){

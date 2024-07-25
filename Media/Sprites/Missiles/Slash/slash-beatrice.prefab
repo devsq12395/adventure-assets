@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b71ebe42fa0e24aa8d5f98e7b89225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorHex: FF0000
+  colorHex: ff2a04
   spawnAmount: 5
   circleDiameter: 1
   tweenDur: 1

@@ -384,4 +384,4 @@ MonoBehaviour:
   missileObj: bullet-tommy
   muzzleObj1: muzzle-1
   muzzleObj2: muzzle-2
-  soundToPlay: laser
+  soundToPlay: pistol
