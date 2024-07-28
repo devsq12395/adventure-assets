@@ -9481,8 +9481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goMap1: {fileID: 2307320867305515300, guid: 5d6e2c3c6f771aae9bea03c528fe22d7, type: 3}
-  goMap2: {fileID: 7123560994823808095, guid: 8b927a2ef118cd04abd210005c5722e3, type: 3}
-  goMap3: {fileID: 8545390973869330476, guid: ae312c37e862e2443a5f4fa6dc54c616, type: 3}
+  goMap2: {fileID: 2307320867305515300, guid: 5d6e2c3c6f771aae9bea03c528fe22d7, type: 3}
+  goMap3: {fileID: 2307320867305515300, guid: 5d6e2c3c6f771aae9bea03c528fe22d7, type: 3}
 --- !u!1 &1732874655
 GameObject:
   m_ObjectHideFlags: 0

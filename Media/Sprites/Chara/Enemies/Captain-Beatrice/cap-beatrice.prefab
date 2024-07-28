@@ -149,7 +149,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4690657366656991979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -249,8 +249,8 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 400
-  hpMax: 400
+  hp: 250
+  hpMax: 250
   mp: 0
   mpMax: 0
   mpRegen: 0

@@ -379,7 +379,7 @@ MonoBehaviour:
   skillName: attack
   skillSlot: mouse1
   mc: 0
-  cdMax: 0.5
+  cdMax: 0.35
   cd: 0
   missileObj: bullet-tommy
   muzzleObj1: muzzle-1

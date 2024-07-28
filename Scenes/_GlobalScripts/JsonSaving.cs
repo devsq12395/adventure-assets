@@ -66,7 +66,7 @@ public class JsonSaving : MonoBehaviour {
         File.WriteAllText(JSON_SAVE, json);
     }
 
-    private void first_load(){
+    public void first_load(){
         Debug.Log ("First run or overwrite mode is on. Creating new JSON entry.");
         string _json = File.ReadAllText(JSON_START);
         playData = JSON.Parse(_json).AsObject;

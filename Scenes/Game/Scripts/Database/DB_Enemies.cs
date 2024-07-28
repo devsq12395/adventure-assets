@@ -71,16 +71,16 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-red", 4);
 				_waves[0].Add ("slime-blue", 1);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("slime-red", 7);
 				_waves[1].Add ("slime-blue", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("slime-red", 8);
-				_waves[2].Add ("giant-slime", 1);
+				_waves[1].Add ("slime-red", 4);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("giant-slime", 1);
 
 				break;
 		}
@@ -96,14 +96,16 @@ public class DB_Enemies : MonoBehaviour {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("mobster", 1);
-				_waves[0].Add ("slime-red", 4);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("mobster", 4);
+				_waves[1].Add ("mobster", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("mobster", 2);
-				_waves[2].Add ("luca-the-terror", 1);
+				_waves[2].Add ("slime-blue", 2);
+				_waves[2].Add ("mobster", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("luca-the-terror", 1);
 
 				break;
 		}
@@ -118,11 +120,18 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("centurion", 1);
-				_waves[0].Add ("victorian-soldier", 3);
+				_waves[0].Add ("victorian-soldier", 2);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("cap-beatrice", 1);
+				_waves[1].Add ("mobster", 2);
+				_waves[1].Add ("victorian-soldier", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("mobster", 2);
+				_waves[2].Add ("victorian-soldier", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("cap-beatrice", 1);
 
 				break;
 		}
@@ -136,7 +145,7 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("war-shredder", 7);
+				_waves[0].Add ("war-shredder", 4);
 
 				_waves.Add (new Dictionary<string, int>());
 				_waves[1].Add ("alpha-war-shredder", 1);
@@ -153,12 +162,11 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-red", 4);
-				_waves[0].Add ("slime-blue", 1);
+				_waves[0].Add ("slime-blue", 3);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("slime-red", 7);
-				_waves[1].Add ("slime-blue", 3);
+				_waves[1].Add ("slime-red", 2);
+				_waves[1].Add ("slime-blue", 4);
 
 				_waves.Add (new Dictionary<string, int>());
 				_waves[2].Add ("alpha-war-shredder", 1);

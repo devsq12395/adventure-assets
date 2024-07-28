@@ -60,6 +60,7 @@ public class AI_CaptainBeatrice : InGameAI {
             if (stateTime >= 1f) {
                 StartCoroutine(DashAndSlash("right", 4, topLeft.x, bottomRight.x));
                 moveCount++;
+                stateTime = 0; // Reset stateTime after starting coroutine
             }
         } else if (moveCount == 2) {
             if (stateTime >= 2f) {
@@ -72,6 +73,7 @@ public class AI_CaptainBeatrice : InGameAI {
             if (stateTime >= 1f) {
                 StartCoroutine(DashAndSlash("left", 4, bottomRight.x, topLeft.x));
                 moveCount++;
+                stateTime = 0; // Reset stateTime after starting coroutine
             }
         } else if (moveCount == 4) {
             if (stateTime >= 2f) {
@@ -83,6 +85,7 @@ public class AI_CaptainBeatrice : InGameAI {
                 ContObj.I.use_skill_active(inGameObj, "captain-beatrice-teleport");
                 state = 0;
                 moveCount = 0;
+                stateTime = 0; // Reset stateTime after finishing move
             }
         }
     }
@@ -106,6 +109,7 @@ public class AI_CaptainBeatrice : InGameAI {
         } else {
             state = 0;
             moveCount = 0;
+            stateTime = 0; // Reset stateTime after finishing move
         }
     }
 

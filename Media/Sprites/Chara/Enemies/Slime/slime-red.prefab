@@ -246,8 +246,8 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 10
-  hpMax: 10
+  hp: 4
+  hpMax: 4
   mp: 0
   mpMax: 0
   mpRegen: 0

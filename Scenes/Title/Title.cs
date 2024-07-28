@@ -42,4 +42,8 @@ public class Title : MonoBehaviour {
     private void curtain_move_end() {
         MasterScene.I.change_main_scene ("MainMenu");
     }
+
+    public void btn_reset (){
+        JsonSaving.I.first_load ();
+    }
 }

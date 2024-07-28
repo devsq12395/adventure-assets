@@ -109,7 +109,7 @@ public class ContEnemies : MonoBehaviour {
 		mainWaves.RemoveAt (0);
 
 		if (mainWaves.Count > 0) {
-			MUI_Announcement.I.show ("More enemies are coming!");
+			// MUI_Announcement.I.show ("More enemies are coming!");
 			spawn_enemies ();
 		} else {
 			GameUI_GameOver.I.show (
