@@ -16,6 +16,7 @@ public class Inv2_DB : MonoBehaviour {
         public int cost, stackMax;
         public bool stackable;
         public List<string> tags;
+        public Sprite sprite;
 
         public int bonusHP, bonusATK, bonusRange, bonusSkill, bonusSpeed, bonusArmor, bonusCritRate, bonusCritDam;
 
@@ -26,8 +27,11 @@ public class Inv2_DB : MonoBehaviour {
             tags=new List<string>();
 
             bonusHP=0;bonusATK=0;bonusRange=0;bonusSkill=0;bonusSpeed=0;bonusArmor=0;bonusCritRate=0;bonusCritDam=0;
+            sprite = Inv2_DB.I.i_none;
         }
     }
+
+    public Sprite i_none, i_basicSword;
 
     public ItemData get_item_data (string _name){
         ItemData _new = new ItemData (_name);
@@ -37,6 +41,7 @@ public class Inv2_DB : MonoBehaviour {
                 _new.desc="Made of basic iron. Enough for self defense.";
                 _new.equipTo="weapon";
                 _new.tags.AddRange(new List<string> { "weapon", "sword" });
+                _new.sprite = i_basicSword;
 
                 _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                 break;

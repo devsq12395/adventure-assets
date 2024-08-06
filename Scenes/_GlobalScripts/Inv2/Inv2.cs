@@ -31,27 +31,56 @@ public class Inv2 : MonoBehaviour {
         }
     }
 
-    public void add_item(Item item) {
-        // This needs to be able to handle stacking
-        items.Add(item);
+    public void add_item(string _itemName, int _stack = 1) {
+        Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_itemName);
+
+        if (get_has_item (_itemName) && _data.stackable){
+            Item _item = get_item_from_name (_itemName);
+            _item.stack += _stack;
+        } else {
+            Item newItem = new Item (_itemName, _stack, Random.Range (1000, 10000000));
+            items.Add (newItem);
+        }
+
         save_items();
     }
 
-    public Item? get_item(int id) {
+    public Item get_item_from_id (int id) {
         return items.FirstOrDefault(item => item.ID == id);
+    }
+    public Item get_item_from_name (string name) {
+        return items.FirstOrDefault(item => item.name == name);
+    }
+    public bool get_has_item (string name){
+        return items.Any(item => item.name == name);
+    }
+
+    public List<Item> get_items_in_page (int _page, int _itemsPerPage){
+        return items.Skip((_page - 1) * _itemsPerPage).Take(_itemsPerPage).ToList();
+    }
+    public int get_max_pages(int _itemsPerPage) {
+        return Mathf.CeilToInt((float)items.Count / _itemsPerPage);
     }
 
     public void remove_item(int id) {
-        Item? item = get_item(id);
+        Item? item = get_item_from_id(id);
         if (item.HasValue) {
             items.Remove(item.Value);
             save_items();
         }
     }
 
-    public List<Item> get_items_with_tag(string tag) {
+    public List<Item> get_items_with_tag(string _tag) {
         // This needs to change
-        return items.Where(item => item.name.Contains(tag)).ToList();
+        List<Item> _ret = new List<Item>();
+        items.ForEach ((_item) => {
+            Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
+            if (_data.tags.Contains (_tag)) {
+                _ret.Add (_item);
+            }
+        });
+
+        return _ret;
     }
 
     private void save_items() {
