@@ -327,6 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579079246}
   - component: {fileID: 579079247}
+  - component: {fileID: 579079248}
   m_Layer: 0
   m_Name: INV2
   m_TagString: Untagged
@@ -361,6 +362,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761be8ce1327cbb45aad98156de28e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &579079248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579079245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ec83a8d9d5acc4f92ae5d436ce245c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i_none: {fileID: 21300000, guid: 1076bf14464fb944e9538f1b857ad457, type: 3}
+  i_basicSword: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
 --- !u!1 &768615291
 GameObject:
   m_ObjectHideFlags: 0
