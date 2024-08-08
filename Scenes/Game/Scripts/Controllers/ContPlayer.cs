@@ -29,8 +29,6 @@ public class ContPlayer : MonoBehaviour {
         NUMBER_OF_ITEM_SLOTS = 5;
         
         create_players ();
-
-        setup_items ();
     }
     
     // Chars
@@ -98,58 +96,5 @@ public class ContPlayer : MonoBehaviour {
         } else {
             Debug.Log ("Skill not found...");
         }
-    }
-
-    // Items
-    public void setup_items (){
-        items = new List<DB_Items.Item> ();
-
-        for (var i = 0; i < GameConstants.INVENTORY_SLOTS; i++) {
-            items.Add (DB_Items.I.get_item (PlayerPrefs.GetString ("Item" + (i+1).ToString ())));
-        }
-    }
-    
-    public void add_item (string _name) {
-        DB_Items.Item _new = DB_Items.I.get_item (_name);
-        items.Add (_new);
-        save_item (items.Count - 1, _name);
-    }
-    
-    public void remove_item (string _id) {
-        items.RemoveAt (get_item_index (_id));
-        save_items ();
-    }
-
-    public void save_item (int _slot, string _name){
-        PlayerPrefs.SetString (PlayerPrefs.GetString ("Item" + (_slot+1).ToString ()), _name);
-    }
-
-    public void save_items (){
-        for (var i = 0; i < GameConstants.INVENTORY_SLOTS; i++) {
-            save_item (i, items [i].name);
-        }
-    }
-
-    public void use_item (int _slot){
-        
-    }
-    
-    public int get_item_index (string _id){
-        for (int i = 0; i < items.Count; i++) {
-            if (items [i].id == _id) {
-                return i;
-            }
-        }
-        
-        return 0;
-    }
-
-    // Gold
-    public void get_gold (int _inc){
-        gold += _inc;
-    }
-
-    public void lose_gold (int _dec){
-        gold -= _dec;
     }
 }

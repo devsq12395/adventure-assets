@@ -41,14 +41,7 @@ public class GameUI_Equip: MonoBehaviour
     
     // Equipment Manipulation
     public void change_equip (string _name, string _equipType) {
-        int _ind = ContPlayer.I.get_item_index (_name);
-        string _oldItem = ContPlayer.I.items [_ind].name;
-        
-        ContPlayer.I.remove_item (_name);
-        ContPlayer.I.add_item (_oldItem);
-        
-        GameUI_Inv.I.hide ();
-        refresh_ui_list ();
+        // Unused
     }
     
     // UI Manipulation

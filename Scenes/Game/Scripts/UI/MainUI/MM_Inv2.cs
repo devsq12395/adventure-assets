@@ -15,7 +15,7 @@ public class MM_Inv2 : MonoBehaviour {
 	public RectTransform imgWindow; // Add this for controlling the y position
 
 	public Image i_item;
-	public TextMeshProUGUI t_itemName, t_itemDesc;
+	public TextMeshProUGUI t_itemName, t_itemDesc, t_gold;
 
 	public List<Button> itemsBTN;
 	public List<Inv2.Item> items;
@@ -49,13 +49,12 @@ public class MM_Inv2 : MonoBehaviour {
     }
 
 	public void setup_page (){
-		pageMax = Inv2.I.get_max_pages (ITEMS_PER_PAGE); Debug.Log (page + ", " + ITEMS_PER_PAGE);
+		pageMax = Inv2.I.get_max_pages (ITEMS_PER_PAGE);
 		items = Inv2.I.get_items_in_page (page, ITEMS_PER_PAGE);
 
 		int _curInd = 0;
 		items.ForEach ((_item) => {
 			Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
-			Debug.Log (_item.name);
 			itemsBTN [_curInd].image.sprite = _data.sprite;
 		});
 
@@ -82,6 +81,12 @@ public class MM_Inv2 : MonoBehaviour {
 			t_itemName.text = _data.nameUI;
 			t_itemDesc.text = _data.desc;
 			i_item.sprite = _data.sprite;
+		}
+	}
+
+	public void update_gold (int _newGold){
+		if (go.activeSelf) {
+			t_gold.text = $"Gold: {_newGold}";
 		}
 	}
 }

@@ -58,17 +58,9 @@ public class Inv2 : MonoBehaviour {
         return items.Any(item => item.name == name);
     }
 
-    public List<Item> get_items_in_page(int _page, int _itemsPerPage) { Debug.Log ($"{_page}, {_itemsPerPage}");
+    public List<Item> get_items_in_page(int _page, int _itemsPerPage) {
         load_items();
         List<Item> itemsInPage = items.Skip((_page - 1) * _itemsPerPage).Take(_itemsPerPage).ToList();
-
-        // Debug log the items in the list
-        Debug.Log (items.Count);
-        Debug.Log (itemsInPage.Count);
-        foreach (Item item in itemsInPage) {
-            Debug.Log($"Item: {item.name}"); // Assuming 'name' is a property of Item class
-        }
-
         return itemsInPage;
     }
 

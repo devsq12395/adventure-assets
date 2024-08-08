@@ -95,7 +95,6 @@ public class DB_Items : MonoBehaviour {
             case "testUsable":
                 Debug.Log ("Use success");
                 
-                ContPlayer.I.remove_item (itemSel.id);
                 GameUI_ChkItm.I.hide ();
                 break;
         }

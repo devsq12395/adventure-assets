@@ -72,14 +72,14 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void update_header (){
-        headerTxt_Gold.text = $"Gold: {JsonSaving.I.load ("gold")}";
+        headerTxt_Gold.text = $"Gold: {ZPlayerPrefs.GetInt("Gold")}";
     }
 
     public void update_gold (int _inc){
-        int gold = int.Parse (JsonSaving.I.load ("gold"));
-        gold += _inc;
-        JsonSaving.I.save ("gold", gold.ToString ());
+        int gold = SaveHandler.I.gain_gold (_inc);
+
         update_header ();
+        MM_Inv2.I.update_gold (gold);
     }
 
     public void move_curtain(string _state, float _curtainPosX = 0, float _curtainPosY = 0) {

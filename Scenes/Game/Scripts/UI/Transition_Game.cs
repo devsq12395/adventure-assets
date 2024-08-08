@@ -48,8 +48,6 @@ public class Transition_Game : MonoBehaviour {
     }
 
     private void curtain_move_end() {
-        ContPlayer.I.save_items();
-
         switch (state) {
             case "gameStart":
                 curtainGo.SetActive(false);

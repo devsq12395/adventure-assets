@@ -77,7 +77,7 @@ public class ContEnemies : MonoBehaviour {
 
 		_ret += $"{JsonReading.I.get_str ("UI-in-game.rewards-gold")} {_goldReward}";
 
-		JsonSaving.I.gain_gold (_goldReward);
+		SaveHandler.I.gain_gold (_goldReward);
 
 		// Item Rewards
 		int _rewardsAmountToGive = Random.Range (2, 6);
