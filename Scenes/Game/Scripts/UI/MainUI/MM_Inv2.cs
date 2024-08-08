@@ -26,7 +26,7 @@ public class MM_Inv2 : MonoBehaviour {
 
 	public void setup (){
 		page = 1;
-		ITEMS_PER_PAGE = 8;
+		ITEMS_PER_PAGE = 8; Debug.Log ("setup");
 	}
 
 	public void show (){
@@ -38,30 +38,50 @@ public class MM_Inv2 : MonoBehaviour {
         imgWindow.DOAnchorPosY(0f, 0.2f).SetEase(Ease.OutBack);
         canvasGroup.DOFade(1f, 0.2f);
 
-        itemSel = null;
+        itemSel = new Inv2.Item ("empty", 0, 0);
         setup_page ();
+        change_item_sel (itemSel);
     }
 
     public void hide (){
     	imgWindow.DOAnchorPosY(-300f, 0.2f).SetEase(Ease.InBack);
-        canvasGroup.DOFade(0f, 0.2f).OnComplete(() => go.SetActive(false));;
+        canvasGroup.DOFade(0f, 0.2f).OnComplete(() => go.SetActive(false));
     }
 
 	public void setup_page (){
-		pageMax = Inv2.I.get_max_pages (ITEMS_PER_PAGE);
+		pageMax = Inv2.I.get_max_pages (ITEMS_PER_PAGE); Debug.Log (page + ", " + ITEMS_PER_PAGE);
 		items = Inv2.I.get_items_in_page (page, ITEMS_PER_PAGE);
 
+		int _curInd = 0;
 		items.ForEach ((_item) => {
 			Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
+			Debug.Log (_item.name);
+			itemsBTN [_curInd].image.sprite = _data.sprite;
 		});
 
 		// Disable buttons with no items
 		for (int _ind = items.Count; _ind < itemsBTN.Count; _ind++) {
-			itemsBTN [_ind].image.sprite = Inv2_DB.I.i_none;
+			itemsBTN [_ind].image.sprite = Sprites.I.get_sprite ("empty");
 		}
 	}
 
 	public void btn_item (int _index){
+		if (_index < items.Count) {
+			change_item_sel (items [_index]);
+		}
+	}
 
+	public void change_item_sel (Inv2.Item _item){
+		if (_item.name == "empty") {
+			t_itemName.text = "";
+			t_itemDesc.text = "";
+			i_item.sprite = Sprites.I.get_sprite ("empty");
+		} else {
+			Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
+
+			t_itemName.text = _data.nameUI;
+			t_itemDesc.text = _data.desc;
+			i_item.sprite = _data.sprite;
+		}
 	}
 }

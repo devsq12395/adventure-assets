@@ -37,6 +37,8 @@ public class MainMenu : MonoBehaviour {
         MM_Map.I.setup ();
         MM_Map.I.show (JsonSaving.I.load ("main-menu-map"));
 
+        MM_Inv2.I.setup ();
+
         update_header ();
 
         move_curtain("menuStart", 0, curtainRect.anchoredPosition.y);

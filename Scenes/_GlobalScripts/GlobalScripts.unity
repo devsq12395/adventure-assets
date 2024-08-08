@@ -187,6 +187,7 @@ MonoBehaviour:
   vincenzo: {fileID: 21300000, guid: 86ed830d56d8ec543af76ea540787537, type: 3}
   icnHighway: {fileID: 21300000, guid: e40407a46bdc8a541b8f95eb918dd58e, type: 3}
   icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
+  itmBasicSword: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   btnLocked: {fileID: 21300000, guid: afd56857a2f956f4a9196939426055c0, type: 3}
   cursor: {fileID: 21300000, guid: c0ed0029d51c7c243818baab9884398c, type: 3}
 --- !u!1 &332524905
@@ -374,8 +375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ec83a8d9d5acc4f92ae5d436ce245c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i_none: {fileID: 21300000, guid: 1076bf14464fb944e9538f1b857ad457, type: 3}
-  i_basicSword: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
 --- !u!1 &768615291
 GameObject:
   m_ObjectHideFlags: 0

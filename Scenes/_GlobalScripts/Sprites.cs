@@ -21,6 +21,9 @@ public class Sprites : MonoBehaviour {
     public Sprite icnHighway;
     public Sprite icnItem;
 
+    [Header("----- Items -----")]
+    public Sprite itmBasicSword;
+
     [Header("----- UI -----")]
     public Sprite btnLocked;
 
@@ -61,6 +64,8 @@ public class Sprites : MonoBehaviour {
             case "icn-item": return icnItem; break;
 
             case "btn-locked": return btnLocked; break;
+
+            case "itm-basic-sword": return itmBasicSword; break;
         }
 
         return _ret;

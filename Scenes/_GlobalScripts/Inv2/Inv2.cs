@@ -46,19 +46,34 @@ public class Inv2 : MonoBehaviour {
     }
 
     public Item get_item_from_id (int id) {
+        load_items ();
         return items.FirstOrDefault(item => item.ID == id);
     }
     public Item get_item_from_name (string name) {
+        load_items ();
         return items.FirstOrDefault(item => item.name == name);
     }
     public bool get_has_item (string name){
+        load_items ();
         return items.Any(item => item.name == name);
     }
 
-    public List<Item> get_items_in_page (int _page, int _itemsPerPage){
-        return items.Skip((_page - 1) * _itemsPerPage).Take(_itemsPerPage).ToList();
+    public List<Item> get_items_in_page(int _page, int _itemsPerPage) { Debug.Log ($"{_page}, {_itemsPerPage}");
+        load_items();
+        List<Item> itemsInPage = items.Skip((_page - 1) * _itemsPerPage).Take(_itemsPerPage).ToList();
+
+        // Debug log the items in the list
+        Debug.Log (items.Count);
+        Debug.Log (itemsInPage.Count);
+        foreach (Item item in itemsInPage) {
+            Debug.Log($"Item: {item.name}"); // Assuming 'name' is a property of Item class
+        }
+
+        return itemsInPage;
     }
+
     public int get_max_pages(int _itemsPerPage) {
+        load_items ();
         return Mathf.CeilToInt((float)items.Count / _itemsPerPage);
     }
 
@@ -97,7 +112,7 @@ public class Inv2 : MonoBehaviour {
         items.Clear();
         int itemCount = ZPlayerPrefs.GetInt("ItemCount", 0);
         for (int i = 0; i < itemCount; i++) {
-            string name = ZPlayerPrefs.GetString($"Item_{i}_name");
+            string name = ZPlayerPrefs.GetString($"Item_{i}_name"); Debug.Log (name);
             int stack = ZPlayerPrefs.GetInt($"Item_{i}_stack");
             int id = ZPlayerPrefs.GetInt($"Item_{i}_ID");
             items.Add(new Item(name, stack, id));
