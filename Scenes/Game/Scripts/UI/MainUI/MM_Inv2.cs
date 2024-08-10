@@ -15,7 +15,7 @@ public class MM_Inv2 : MonoBehaviour {
 	public RectTransform imgWindow; // Add this for controlling the y position
 
 	public Image i_item;
-	public TextMeshProUGUI t_itemName, t_itemDesc, t_gold;
+	public TextMeshProUGUI t_itemName, t_itemDesc, t_gold, t_page;
 
 	public List<Button> itemsBTN;
 	public List<Inv2.Item> items;
@@ -26,7 +26,7 @@ public class MM_Inv2 : MonoBehaviour {
 
 	public void setup (){
 		page = 1;
-		ITEMS_PER_PAGE = 8; Debug.Log ("setup");
+		ITEMS_PER_PAGE = 8;
 	}
 
 	public void show (){
@@ -41,6 +41,8 @@ public class MM_Inv2 : MonoBehaviour {
         itemSel = new Inv2.Item ("empty", 0, 0);
         setup_page ();
         change_item_sel (itemSel);
+
+        pageMax = Inv2.I.get_max_pages (ITEMS_PER_PAGE);
     }
 
     public void hide (){
@@ -49,7 +51,7 @@ public class MM_Inv2 : MonoBehaviour {
     }
 
 	public void setup_page (){
-		pageMax = Inv2.I.get_max_pages (ITEMS_PER_PAGE);
+		t_page.text = $"{page}/{pageMax}";
 		items = Inv2.I.get_items_in_page (page, ITEMS_PER_PAGE);
 
 		int _curInd = 0;
@@ -62,6 +64,11 @@ public class MM_Inv2 : MonoBehaviour {
 		for (int _ind = items.Count; _ind < itemsBTN.Count; _ind++) {
 			itemsBTN [_ind].image.sprite = Sprites.I.get_sprite ("empty");
 		}
+	}
+
+	public void btn_change_page (int _inc){
+		page = Math.Clamp (page + _inc, 1, pageMax);
+		setup_page ();
 	}
 
 	public void btn_item (int _index){

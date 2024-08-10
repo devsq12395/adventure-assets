@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: mission-data-vic2
+  m_EditorClassIdentifier: Assembly-CSharp::Mission
+  missionId: vic-2
+  name: Vic
+  desc: Rossi Family members are spotted selling narcotics on our turf. We need you
+    to show that they are crossing the line and Wooster Square is our territory.
+  sprite: vic
+  faction: Luppino Family
+  difficulty: Level 2 (Easy)
+  rewards: 300 Gold
+  enemies: vic-2
+  maps:
+  - woosterSquare_rand
+  unlocksArea:
+  - squaredrive-repairs
+  missionsSet:
+  - vic->vic-3
+  activitySet:
+  - dialog-with-vic->4

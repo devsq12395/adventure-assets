@@ -13,8 +13,8 @@ public class ContItem : MonoBehaviour {
     private string FILEPATH;
 
     public void setup (){
-        FILEPATH = Application.persistentDataPath + "/items.json";
-        load_json ();
+        /*FILEPATH = Application.persistentDataPath + "/items.json";
+        load_json ();*/
     }
 
     private void load_json (){

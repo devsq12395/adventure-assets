@@ -189,6 +189,7 @@ MonoBehaviour:
   icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   itmBasicSword: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   btnLocked: {fileID: 21300000, guid: afd56857a2f956f4a9196939426055c0, type: 3}
+  emptyIcon: {fileID: 21300000, guid: 71958f8d7a8d06449a37a9b9ff34c1bd, type: 3}
   cursor: {fileID: 21300000, guid: c0ed0029d51c7c243818baab9884398c, type: 3}
 --- !u!1 &332524905
 GameObject:
@@ -516,8 +517,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1500150793}
-  - component: {fileID: 1500150792}
-  - component: {fileID: 1500150791}
   m_Layer: 0
   m_Name: SCRIPTS
   m_TagString: Untagged
@@ -525,32 +524,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1500150791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500150790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de9ce3524adca8a2db78856bd9d6040f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  login: 
-  OVERWRITE: 0
---- !u!114 &1500150792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500150790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c12a25455311270989460ea90aee013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1500150793
 Transform:
   m_ObjectHideFlags: 0

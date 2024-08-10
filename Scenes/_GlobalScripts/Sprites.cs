@@ -25,7 +25,7 @@ public class Sprites : MonoBehaviour {
     public Sprite itmBasicSword;
 
     [Header("----- UI -----")]
-    public Sprite btnLocked;
+    public Sprite btnLocked, emptyIcon;
 
     [Header("----- Cursor -----")]
     public Sprite cursor;
@@ -64,8 +64,9 @@ public class Sprites : MonoBehaviour {
             case "icn-item": return icnItem; break;
 
             case "btn-locked": return btnLocked; break;
-
+            
             case "itm-basic-sword": return itmBasicSword; break;
+            case "empty-icon": return emptyIcon; break;
         }
 
         return _ret;

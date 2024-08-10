@@ -75,7 +75,7 @@ public class ContEnemies : MonoBehaviour {
 		List<int> _goldRewards = DB_Enemies.I.get_possible_gold_rewards (enemiesType);
 		int _goldReward = _goldRewards [Random.Range (0, _goldRewards.Count)];
 
-		_ret += $"{JsonReading.I.get_str ("UI-in-game.rewards-gold")} {_goldReward}";
+		_ret += $"Gold Gained: {_goldReward}";
 
 		SaveHandler.I.gain_gold (_goldReward);
 
@@ -114,7 +114,7 @@ public class ContEnemies : MonoBehaviour {
 		} else {
 			GameUI_GameOver.I.show (
                 "success",
-                $"{JsonReading.I.get_str ("UI-in-game.all-enemies-dead")}\n\n{generate_and_give_rewards ()}"
+                $"All enemies are beaten!\n\n{generate_and_give_rewards ()}"
             );
             GameUI_GameOver.I.on_victory ();
 		}

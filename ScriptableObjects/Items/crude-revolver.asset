@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: crude-revolver
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemId: crdRev
+  nameUI: Crude Revolver
+  desc: +1 dam\nOld and rusty, but still reliable.
+  cost: 50
+  stackable: 0
+  stackMax: 1
+  tags:
+  - weapon
+  - gun
+  use: 
+  equip: weapon
+  requires: []
+  bonuses:
+    hp: 0
+    mp: 0
+    attack: 1
+    range: 0
+    skill: 0
+    speed: 0
+    armor: 0
+    critRate: 0
+    critDam: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: mission-data-mill-river-ives
+  m_EditorClassIdentifier: Assembly-CSharp::Mission
+  missionId: mill-river-ives
+  name: Mill River
+  desc: This part of the Mill River has been overtaken by monsters.\n\nTo aspiring
+    adventurers, it's a perfect place to train and find treasures.
+  sprite: icn-highway
+  faction: ???
+  difficulty: ???
+  rewards: Change to get:\nWooden Block\nLeather\nBlue Glowvine\nElectric Shard\nDemon
+    Fang
+  enemies: mill-river-1
+  maps:
+  - woosterSquare_rand
+  unlocksArea: []
+  missionsSet: []
+  activitySet: []
