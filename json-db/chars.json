@@ -1,0 +1,148 @@
+{
+    "chars": {
+        "tommy": {
+            "img-port": "tommy",
+            "equipWeapon": "gun",
+            "stats": {
+                "hp": 8,
+                "mp": 10,
+                "attack": 1,
+                "range": 4,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
+            },
+
+            "bio": {
+                "info": "A skilled gunman seeking his fortunes on the East Coast.\nWeapon: Gun",
+                "skill1": "Skill 1: Electro Shotgun\nShoots 3 electric bullets, damages all enemies on their path.\nCD: 5 sec",
+                "skill2": "",
+            },
+
+            "requires": [],
+            "gold-cost": "0",
+        },
+        "kazuma": {
+            "img-port": "kazuma",
+            "equipWeapon": "sword",
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 3,
+                "range": 4,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 15,
+                "crit-dam": 140,
+            },
+
+            "bio": {
+                "info": "An adventurer who is very skilled with swords, and Tommy's best buddy.\nWeapon: Sword",
+                "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCD: 5 sec",
+                "skill2": "",
+            },
+
+            "requires": [],
+            "gold-cost": "0",
+        },
+        "anastasia": {
+            "img-port": "anastasia",
+            "equipWeapon": "sword",
+            "stats": {
+                "hp": 8,
+                "mp": 10,
+                "attack": 2,
+                "range": 4,
+                "skill": 2,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 15,
+                "crit-dam": 160,
+            },
+
+            "bio": {
+                "info": "She travels the realms for a reason that only she knows. Her specialty is fighting demons.\nWeapon: Sword",
+                "skill1": "Skill 1: Binding Chains\nBinds nearby enemies in chains, and deals electric damage.\nCost: CD: 9 sec",
+                "skill2": "",
+            },
+
+            "requires": [],
+            "gold-cost": "500",
+        },
+        "sylphine": {
+            "img-port": "sylphine",
+            "equipWeapon": "staff",
+            "stats": {
+                "hp": 6,
+                "mp": 10,
+                "attack": 1,
+                "range": 6,
+                "skill": 2,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 15,
+                "crit-dam": 140,
+            },
+
+            "bio": {
+                "info": "Hails from a long line of elite sorcerers. She is currently studying and conducting research in New Yale University.\nWeapon: Staff",
+                "skill1": "Skill 1: Torrent\nSummons several torrents of water nearby that will damage enemies hit.\nCost: CD: 18 sec",
+                "skill2": "",
+            },
+
+            "requires": [],
+            "gold-cost": "500",
+        },
+        "miguel": {
+            "img-port": "miguel",
+            "equipWeapon": "sword",
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 2,
+                "range": 4,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 15,
+                "crit-dam": 140,
+            },
+
+            "bio": {
+                "info": "An adventurer who is very skilled with swords, and Tommy's best buddy.\nWeapon: Sword",
+                "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCost: 2 MP / CD: 0 sec",
+                "skill2": "",
+            },
+
+            "requires": [],
+            "gold-cost": "0",
+        },
+        "anthony": {
+            "img-port": "anthony",
+            "equipWeapon": "sword",
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 2,
+                "range": 4,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 15,
+                "crit-dam": 140,
+            },
+
+            "bio": {
+                "info": "An adventurer who is very skilled with swords, and Tommy's best buddy.\nWeapon: Sword",
+                "skill1": "Skill 1: Burning Charge\nDashes in short range to mouse position. Dealing fire damage to enemies hit.\nCost: 2 MP / CD: 0 sec",
+                "skill2": "",
+            },
+
+            "requires": [],
+            "gold-cost": "0",
+        }
+    },
+}

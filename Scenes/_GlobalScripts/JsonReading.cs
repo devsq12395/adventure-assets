@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
+using UnityEngine.Networking;
 
 public class JsonReading : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class JsonReading : MonoBehaviour
         };
         jsonStrings = new Dictionary<string, string>();
 
-        string _jsonString;
         foreach (string _jsonName in _jsonNames)
         {
             string _path = $"{Application.streamingAssetsPath}/{_jsonName}.json";
@@ -27,30 +27,27 @@ public class JsonReading : MonoBehaviour
 
     IEnumerator LoadJsonFile(string path, string jsonName)
     {
-        using (WWW www = new WWW(path))
+        string localPath = "file://" + path; // Prefix the path with file://
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(localPath))
         {
-            yield return www;
+            yield return webRequest.SendWebRequest();
 
-            if (string.IsNullOrEmpty(www.error))
+            if (webRequest.result == UnityWebRequest.Result.ConnectionError || 
+                webRequest.result == UnityWebRequest.Result.ProtocolError)
             {
-                jsonStrings.Add(jsonName, www.text);
+                Debug.LogError($"Failed to load JSON file '{jsonName}' from path: {localPath}. Error: {webRequest.error}");
             }
             else
             {
-                Debug.LogError($"Failed to load JSON file '{jsonName}' from path: {path}");
+                jsonStrings.Add(jsonName, webRequest.downloadHandler.text);
             }
         }
     }
 
-    /*
-        When reading an array, values will be joined by ",".
-        This will not be able to read objects.
-    */
     public string read(string _jsonName, string _key)
     {
         if (jsonStrings.ContainsKey(_jsonName))
         {
-            // Assuming _key is in the format "status.chars.tommy.level"
             string _jsonString = jsonStrings[_jsonName];
             JSONNode _node = JSON.Parse(_jsonString);
 
@@ -91,91 +88,55 @@ public class JsonReading : MonoBehaviour
         }
     }
 
-    public string get_str(string _key) {
-        switch (_key) {
-            case "date":
-                return "Date: ";
-            case "jan-2225":
-                return "Jan 2225";
-
-            case "name":
-                return "Name: ";
-            case "lvl":
-                return "Lvl";
-
-            case "hp":
-                return "HP";
-            case "mp":
-                return "MP";
-            case "attack":
-                return "Attack";
-            case "skill":
-                return "Skill";
-            case "speed":
-                return "Speed";
-            case "armor":
-                return "Armor";
-            case "crit-dam":
-                return "Crit Dam";
-            case "crit-rate":
-                return "Crit Rate";
-
-            case "gold":
-                return "Gold";
-
-            case "requires":
-                return "Requires";
+    public string get_str(string _key)
+    {
+        switch (_key)
+        {
+            case "date": return "Date: ";
+            case "jan-2225": return "Jan 2225";
+            case "name": return "Name: ";
+            case "lvl": return "Lvl";
+            case "hp": return "HP";
+            case "mp": return "MP";
+            case "attack": return "Attack";
+            case "skill": return "Skill";
+            case "speed": return "Speed";
+            case "armor": return "Armor";
+            case "crit-dam": return "Crit Dam";
+            case "crit-rate": return "Crit Rate";
+            case "gold": return "Gold";
+            case "requires": return "Requires";
 
             // UI-main-menu strings
-            case "UI-main-menu.equip":
-                return "Equip";
-            case "UI-main-menu.buy":
-                return "Buy";
-            case "UI-main-menu.sell":
-                return "Sell";
-            case "UI-main-menu.check-equipped":
-                return "Change Equipped";
-            case "UI-main-menu.reputation":
-                return "Reputation";
-            case "UI-main-menu.stranger":
-                return "Stranger";
+            case "UI-main-menu.equip": return "Equip";
+            case "UI-main-menu.buy": return "Buy";
+            case "UI-main-menu.sell": return "Sell";
+            case "UI-main-menu.check-equipped": return "Change Equipped";
+            case "UI-main-menu.reputation": return "Reputation";
+            case "UI-main-menu.stranger": return "Stranger";
 
             // UI-in-game strings
-            case "UI-in-game.mission-failed":
-                return "MISSION FAILED!";
-            case "UI-in-game.all-chars-dead":
-                return "Your team is wiped out!";
-            case "UI-in-game.mission-success":
-                return "MISSION SUCCESS!";
-            case "UI-in-game.all-enemies-dead":
-                return "All enemies are beaten!";
-            case "UI-in-game.rewards-gold":
-                return "Gold Gained: ";
-            case "UI-in-game.rewards-item":
-                return "You Found: ";
+            case "UI-in-game.mission-failed": return "MISSION FAILED!";
+            case "UI-in-game.all-chars-dead": return "Your team is wiped out!";
+            case "UI-in-game.mission-success": return "MISSION SUCCESS!";
+            case "UI-in-game.all-enemies-dead": return "All enemies are beaten!";
+            case "UI-in-game.rewards-gold": return "Gold Gained: ";
+            case "UI-in-game.rewards-item": return "You Found: ";
 
             // Character names
-            case "char-names.kitsune-boss":
-                return "Kitsune Boss";
-
+            case "char-names.kitsune-boss": return "Kitsune Boss";
             case "tommy-name": return "Tommy";
             case "tommy-name-full": return "Tommy Carter";
-
             case "kazuma-name": return "Kazuma";
             case "kazuma-name-full": return "Kazuma";
-
             case "anastasia-name": return "Anastasia";
             case "anastasia-name-full": return "Anastasia";
-
             case "sylphine-name": return "Sylphine";
             case "sylphine-name-full": return "Sylphine";
-
             case "miguel-name": return "Miguel";
             case "miguel-name-full": return "Miguel";
-
             case "anthony-name": return "Anthony";
             case "anthony-name-full": return "Anthony";
-
             case "new-haven-name": return "New Haven";
             case "new-haven-welcome": return "Welcome to New Haven!";
 

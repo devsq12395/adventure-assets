@@ -1,0 +1,67 @@
+{
+    "strings": {
+        "date": "Date: ",
+        "jan-2225": "Jan 2225",
+
+        "name": "Name: ",
+        "lvl": "Lvl",
+
+        "hp": "HP",
+        "mp": "MP",
+        "attack": "Attack",
+        "skill": "Skill",
+        "speed": "Speed",
+        "armor": "Armor",
+        "crit-dam": "Crit Dam",
+        "crit-rate": "Crit Rate",
+
+        "gold": "Gold",
+
+        "requires": "Requires",
+
+        "UI-main-menu": {
+            "equip": "Equip",
+            "buy": "Buy",
+            "sell": "Sell",
+            "check-equipped": "Change Equipped",
+
+            "reputation": "Reputation",
+            "stranger": "Stranger"
+        },
+
+        "UI-in-game": {
+            "mission-failed": "MISSION FAILED!",
+            "all-chars-dead": "Your team is wiped out!",
+
+            "mission-success": "MISSION SUCCESS!",
+            "all-enemies-dead": "All enemies are beaten!",
+
+            "rewards-gold": "Gold Gained: ",
+            "rewards-item": "You Found: ",
+        },
+        
+        "char-names": {
+            "kitsune-boss": "Kitsune Boss"
+        },
+        "tommy-name": "Tommy",
+        "tommy-name-full": "Tommy Carter",
+
+        "kazuma-name": "Alfred",
+        "kazuma-name-full": "Alfred",
+
+        "anastasia-name": "Anastasia",
+        "anastasia-name-full": "Anastasia",
+
+        "sylphine-name": "Sylphine",
+        "sylphine-name-full": "Sylphine",
+
+        "miguel-name": "Miguel",
+        "miguel-name-full": "Miguel",
+
+        "anthony-name": "Anthony",
+        "anthony-name-full": "Anthony",
+
+        "new-haven-name": "New Haven",
+        "new-haven-welcome": "Welcome to New Haven!"
+    }
+}

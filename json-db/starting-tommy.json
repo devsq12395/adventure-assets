@@ -1,0 +1,181 @@
+
+{
+    "version": "1.0",
+
+    "date": "jan-2225",
+
+    "lineup": [
+        "tommy", "kazuma", "", ""
+    ],
+
+    "pool": [
+        "tommy", "kazuma"
+    ],
+
+    "gold": "500",
+    "items": [],
+    "rewards": [],
+
+    "missionCur": "",
+    "missionCurPool": {
+        "vic": "vic-1",
+        "anthony": "anthony-1",
+        "mill-river-ives": "mill-river-ives"
+    },
+
+    "missionMap": "",
+    "missionLvl": "",
+
+    "main-menu-start-callback": "show-intro-1",
+    "main-menu-map": "wooster-square",
+
+    "activity": {
+        "dialog-with-vic": "0",
+        "dialog-with-anthony": "0",
+    },
+    
+    "areasUnlocked": {
+        "new-haven": "1", 
+        "wooster-square": "1", 
+        
+        "rosas-diner": "1",
+        "squaredrive-repairs": "0",
+        "bella-vita": "0",
+        "strega": "0",
+        "marcos-tavern": "0",
+        "i91-highway-ives": "0",
+        "east-st-ives": "0",
+        "mill-river-ives": "0",
+        "fair-haven-ives": "0",
+        "east-st-2-ives": "0",
+    },
+
+    "reputation": [
+        "new-haven->stranger"
+    ],
+
+    "chars": {
+        "tommy": {
+            "level": 1,
+            "equipWeapon": "gun",
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            },
+            "stats": {
+                "hp": 8,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
+            }
+        },
+        "kazuma": {
+            "level": 1,
+            "equipWeapon": "sword",
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 3,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 15,
+                "crit-dam": 140,
+            }
+        },
+        "anastasia": {
+            "level": 1,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
+            }
+        },
+        "sylphine": {
+            "level": 1,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
+            }
+        },
+        "miguel": {
+            "level": 1,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
+            }
+        },
+        "anthony": {
+            "level": 1,
+            "equip": {
+                "weapon": "",
+                "armor": "",
+                "boots": "",
+                "accessory1": "",
+                "accessory2": ""
+            },
+            "stats": {
+                "hp": 10,
+                "mp": 10,
+                "attack": 1,
+                "skill": 1,
+                "speed": 1,
+                "armor": 0,
+                "crit-rate": 10,
+                "crit-dam": 120,
+            }
+        }
+    }
+}

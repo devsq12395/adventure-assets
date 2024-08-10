@@ -49,7 +49,7 @@ public class MM_Party : MonoBehaviour {
     }
 
     public void refresh_list (){
-        lineup.Clear ();
+        lineup.Clear (); Debug.Log (JsonSaving.I.load ("lineup"));
         string[] _lineup = JsonSaving.I.load ("lineup").Split (',');
         lineup.AddRange (_lineup);
 

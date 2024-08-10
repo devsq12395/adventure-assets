@@ -28,17 +28,9 @@ public class MM_Profile : MonoBehaviour {
     private void setup_desc (){
         string  _login          = MainMenu.I.login,
                 _name           = $"{MM_Strings.I.get_str ("name")}{MM_Strings.I.get_str ($"{_login}-name-full")}",
-                _date           = $"{MM_Strings.I.get_str ("date")}{MM_Strings.I.get_str (JsonSaving.I.load ("date"))}",
-                _gold           = $"{JsonReading.I.get_str ("gold")}: {JsonSaving.I.load ("gold")}",
-                _rep            = JsonReading.I.get_str ("UI-main-menu.reputation") + ":\n" + string.Join (
-                    "\n", JsonSaving.I.load ("reputation").Split(',').Select (
-                        (_repKeyPair) => {
-                            string[] _repSplit = _repKeyPair.Split ("->");
-                            return $"{JsonReading.I.get_str ($"{_repSplit[0]}-name")}: {JsonReading.I.get_str ($"UI-main-menu.{_repSplit[1]}")}";
-                        }
-                    )
-                );
+                _date           = $"{MM_Strings.I.get_str ("date")}{MM_Strings.I.get_str (ZPlayerPrefs.GetString ("date"))}",
+                _gold           = $"{JsonReading.I.get_str ("gold")}: {ZPlayerPrefs.GetInt("gold")}";
 
-        desc.text = $"{_name}\n{_date}\n{_gold}\n\n{_rep}";
+        desc.text = $"{_name}\n{_date}\n{_gold}";
     }
 }

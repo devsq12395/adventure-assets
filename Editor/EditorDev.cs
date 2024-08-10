@@ -30,13 +30,17 @@ public class EditorDev : EditorWindow {
             });
         }
 
-        if (GUILayout.Button("Reset Data")) {
+        if (GUILayout.Button("Reset Data (Press in Title Screen)")) {
             JsonSaving.I.OVERWRITE = true;
             JsonSaving.I.load_json();
 
             JsonSaving.I.OVERWRITE = false;
 
             Debug.Log("Json Override done! Please restart the game.");
+
+            SaveHandler.I.reset_all_saves ();
+            SaveHandler.I.check_save ();
+            Debug.Log("Z-Player-Prefs reset! Please restart the game.");
         }
 
         // Give Item Section

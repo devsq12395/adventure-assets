@@ -1,0 +1,96 @@
+{
+    "missions": {
+        "vic-1": {
+            "name": "Vic",
+            "desc": "Some slimes are spotted here in Wooster Square. Word is a Giant Slime is with them too.\n\nShould be easy for you to deal with. This is a chance for you to gain respect around here.",
+            "sprite": "vic",
+            "faction": "Luppino Family",
+            "difficulty": "Level 1 (Easy)",
+            "rewards": "200 Gold",
+            
+            "enemies": "vic-1",
+            "maps": ["woosterSquare_rand"],
+            "unlocks-area": ["bella-vita", "strega", "marcos-tavern", "mill-river-ives", "wooster-square-house-1", "wooster-square-house-3", "wooster-square-house-5"],
+            "missions-set": [
+                "vic->vic-2"
+            ],
+            "activity-set": [
+                "dialog-with-vic->2"
+            ]
+        },
+        "vic-2": {
+            "name": "Vic",
+            "desc": "Rossi Family members are spotted selling narcotics on our turf. Knock out their leader, Luca the Terror, and they will run back to where they came from!",
+            "sprite": "vic",
+            "faction": "Luppino Family",
+            "difficulty": "Level 2 (Easy)",
+            "rewards": "300 Gold",
+            
+            "enemies": "vic-2",
+            "maps": ["woosterSquare_rand"],
+            "unlocks-area": ["squaredrive-repairs"],
+            "missions-set": [
+                "vic->vic-3"
+            ],
+            "activity-set": [
+                "dialog-with-vic->4"
+            ]
+        },
+        "vic-3": {
+            "name": "Captain Beatrice",
+            "desc": "Let's spar and see if you have what it takes to survive the war of the families here in New Haven.",
+            "sprite": "beatrice",
+            "faction": "Luppino Family",
+            "difficulty": "Level 3 (Easy)",
+            "rewards": "500 Gold",
+            
+            "enemies": "vic-3",
+            "maps": ["woosterSquare_rand"],
+            "unlocks-area": [],
+            "missions-set": [
+                "vic->vic-4"
+            ],
+            "activity-set": [
+                "dialog-with-vic->6"
+            ]
+        },
+
+        "anthony-1": {
+            "name": "Anthony",
+            "desc": "War Shredders are spotted near my shop. They are very dangerous, so not only me, but the whole town would be grateful if you can drive them out.",
+            "sprite": "anthony",
+            "faction": "Luppino Family",
+            "difficulty": "Level 3 (Easy)",
+            "rewards": "500 Gold",
+            
+            "enemies": "anthony-1",
+            "maps": ["woosterSquare_rand"],
+            "unlocks-area": [],
+            "missions-set": [
+                "anthony->anthony-2"
+            ],
+            "activity-set": [
+                "dialog-with-anthony->2"
+            ]
+        },
+
+        "mill-river-ives": {
+            "name": "Mill River",
+            "desc": "This part of the Mill River has been overtaken by monsters.\n\nTo aspiring adventurers, it's a perfect place to train and find treasures.",
+            "sprite": "icn-highway",
+            "faction": "???",
+            "difficulty": "???",
+            "rewards": "200-500 Gold\n\nChange to get:\nWooden Block, Leather, Blue Glowvine, Electric Shard, Demon Fang",
+            
+            "enemies": "mill-river-1",
+            "maps": ["woosterSquare_rand"],
+            "unlocks-area": [],
+            "missions-set": [
+                
+            ],
+            "activity-set": [
+                
+            ]
+        }
+    }
+}

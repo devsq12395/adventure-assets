@@ -9,12 +9,8 @@ using DG.Tweening;
 
 public class Inv2 : MonoBehaviour {
     public static Inv2 I;
-    private List<Item> items = new List<Item>();
-
-    public void Awake() { 
-        I = this; 
-        load_items();
-    }
+    public List<Item> items = new List<Item>();
+    public void Awake() { I = this; }
 
     public struct Item {
         public string name; public int stack; public int ID;
@@ -90,7 +86,7 @@ public class Inv2 : MonoBehaviour {
         return _ret;
     }
 
-    private void save_items() {
+    public void save_items() {
         ZPlayerPrefs.SetInt("ItemCount", items.Count);
         for (int i = 0; i < items.Count; i++) {
             ZPlayerPrefs.SetString($"Item_{i}_name", items[i].name);
@@ -100,7 +96,8 @@ public class Inv2 : MonoBehaviour {
         ZPlayerPrefs.Save();
     }
 
-    private void load_items() {
+    public void load_items() {
+        // Called from SaveHandler.Awake
         items.Clear();
         int itemCount = ZPlayerPrefs.GetInt("ItemCount", 0);
         for (int i = 0; i < itemCount; i++) {
@@ -109,5 +106,17 @@ public class Inv2 : MonoBehaviour {
             int id = ZPlayerPrefs.GetInt($"Item_{i}_ID");
             items.Add(new Item(name, stack, id));
         }
+    }
+
+    /*
+        FOR SHOPS
+    */
+    public List<Item> generate_item_set (List<string> _itemNames) {
+        List<Item> _ret = new List<Item> ();
+        _itemNames.ForEach ((_itemName) => {
+            _ret.Add (new Item (_itemName, 1, Random.Range (1000, 10000000)));
+        });
+
+        return _ret;
     }
 }

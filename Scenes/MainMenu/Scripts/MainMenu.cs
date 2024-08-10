@@ -72,7 +72,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void update_header (){
-        headerTxt_Gold.text = $"Gold: {ZPlayerPrefs.GetInt("Gold")}";
+        headerTxt_Gold.text = $"Gold: {ZPlayerPrefs.GetInt("gold")}";
     }
 
     public void update_gold (int _inc){

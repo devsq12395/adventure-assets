@@ -51,6 +51,12 @@ public class Inv2_DB : MonoBehaviour {
     public List<string> get_shop_items_sold (string _shopName){
         List<string> _new = new List<string>();
 
+        switch (_shopName) {
+            case "strega": 
+                _new.AddRange (new string[] { "basic-sword" });
+                break;
+        }
+
         return _new;
     }
 }

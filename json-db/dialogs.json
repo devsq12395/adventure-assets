@@ -1,0 +1,632 @@
+{
+    "dialogs": {
+        "intro-1": {
+            "name": "Alfred",
+            "desc": "We're finally here in New Haven, Tommy!",
+            "portImg": "kazuma",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-intro-2",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "intro-2": {
+            "name": "Alfred",
+            "desc": "We should look for my friend Vic. He's well connected and will help us settle in.",
+            "portImg": "kazuma",
+            "isTweenOut": "1",
+
+            "input1": {"id": "back", "text": "Sounds Good"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "dialog-vic-1": {
+            "name": "Vic",
+            "desc": "Alfred, my man, you're finally here! And you must be Tommy.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "input1": {"id": "show-dialog-vic-2", "text": "Nice to meet you!"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-2": {
+            "name": "Vic",
+            "desc": "Welcome to Luppino House, the base of operations for the Luppino Family.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-3",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-3": {
+            "name": "Vic",
+            "desc": "I have a job for you two if you are interested.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-4",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-4": {
+            "name": "Vic",
+            "desc": "There are monsters spotted near our turf. Deal with them and show us how you two fight.",
+            "portImg": "vic",
+            "isTweenOut": "1",
+
+            "input1": {"id": "start-mission-vic-1", "text": "Let's go!"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "dialog-vic-5": {
+            "name": "Vic",
+            "desc": "Tommy, Alfred, there you are! I have an urgent job for you.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-6",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-6": {
+            "name": "Vic",
+            "desc": "Luca the Terror, one of the muscles of the Rossi Family, is spotted on our turf with some of his men, selling narcotics.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-7",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-7": {
+            "name": "Alfred",
+            "desc": "Finally some action! Tell us what to do, Vic.",
+            "portImg": "kazuma",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-8",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-8": {
+            "name": "Vic",
+            "desc": "Your goal is to beat down Luca and his boys and make sure they never come back.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-9",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-9": {
+            "name": "Vic",
+            "desc": "Boss Vincenzo wants you to show that this is our territory and no one crosses the Luppino family.",
+            "portImg": "vic",
+            "isTweenOut": "1",
+
+            "input1": {"id": "start-mission-vic-2", "text": "Let's go!"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "dialog-vic-10": {
+            "name": "Vic",
+            "desc": "Tommy, welcome back! Our associate from the Victorian Guards, Captain Beatrice, wants to see you.",
+            "portImg": "vic",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-11",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-11": {
+            "name": "Captain Beatrice",
+            "desc": "You must be Vincenzo's new boys. I'm Captain Beatrice, commander of the Victorian Guards here in New Haven.",
+            "portImg": "beatrice",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-12",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-12": {
+            "name": "Captain Beatrice",
+            "desc": "Me and Vincenzo shares the same interest in fighting the spread of narcotics.",
+            "portImg": "beatrice",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-13",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-13": {
+            "name": "Captain Beatrice",
+            "desc": "There are five powerful families here in New Haven, Luppino Family being one of them.",
+            "portImg": "beatrice",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-14",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-14": {
+            "name": "Captain Beatrice",
+            "desc": "The other four families are allied in their interests in the narcotics business. If they are left unchecked, they will dominate the city.",
+            "portImg": "beatrice",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-17",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-15": {
+            "name": "Boss Vincenzo",
+            "desc": "UNUSED",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-16",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-16": {
+            "name": "Boss Vincenzo",
+            "desc": "UNUSED",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-17",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-17": {
+            "name": "Captain Beatrice",
+            "desc": "So if you are to fight with us, I will have to see what you are capable of.",
+            "portImg": "beatrice",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-18",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-18": {
+            "name": "Captain Beatrice",
+            "desc": "Are you up to spar with me?",
+            "portImg": "beatrice",
+            "isTweenOut": "1",
+
+            "input1": {"id": "start-mission-vic-3", "text": "Sure!"},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "dialog-vic-19": {
+            "name": "Boss Vincenzo",
+            "desc": "Tommy, my boy! I hope you are faring well.",
+            "portImg": "vincenzo",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-vic-20",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "dialog-vic-20": {
+            "name": "Boss Vincenzo",
+            "desc": "I just want to say, you are now a part of Luppino Family. So if you need anything, we are always here.",
+            "portImg": "vincenzo",
+            "isTweenOut": "1",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "anthony-1": {
+            "name": "Anthony",
+            "desc": "You must be Tommy, right? I heard a lot about you from Vic.",
+            "portImg": "anthony",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-anthony-2",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "anthony-2": {
+            "name": "Anthony",
+            "desc": "I'm Anthony, the best car mechanic in New Haven and also loyal to the Luppino Family.",
+            "portImg": "anthony",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-anthony-3",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "anthony-3": {
+            "name": "Anthony",
+            "desc": "We have some business that needs your help. The pay will be good, of course.",
+            "portImg": "anthony",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-anthony-4",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "anthony-4": {
+            "name": "Anthony",
+            "desc": "Just help me clear out some War Shredders. They've been encroaching nearby leately, and it's bad for business.",
+            "portImg": "anthony",
+            "isTweenOut": "1",
+
+            "input1": {"id": "start-mission-anthony-1", "text": "I'll handle it."},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "anthony-5": {
+            "name": "Anthony",
+            "desc": "Tommy! There you are, my friend!",
+            "portImg": "anthony",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "show-dialog-anthony-6",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "anthony-6": {
+            "name": "Anthony",
+            "desc": "Business is booming and it's all thanks to you. If you're having trouble with cars, come find me. Repairs are on the house, just for you!",
+            "portImg": "anthony",
+            "isTweenOut": "1",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "wooster-square-house-1": {
+            "name": "Old Man",
+            "desc": "Our nation of Victoria was founded by the great heroes who defeated the Demon Lord 150 years ago.",
+            "portImg": "npc-man-2",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "wooster-square-house-2",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "wooster-square-house-2": {
+            "name": "Old Man",
+            "desc": "We honor their legacy every day.",
+            "portImg": "npc-man-2",
+            "isTweenOut": "1",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "wooster-square-house-3": {
+            "name": "Woman",
+            "desc": "The Rossi Family is spotted here on Wooster Square recently, acting like they own the place.",
+            "portImg": "npc-man-1",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "wooster-square-house-4",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "wooster-square-house-4": {
+            "name": "Woman",
+            "desc": "I think a war between the families will erupt soon.",
+            "portImg": "npc-woman-2",
+            "isTweenOut": "1",
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "wooster-square-house-5": {
+            "name": "Woman",
+            "desc": "You don't look from around here. Oh, I know! You must be a student in New Yale University.",
+            "portImg": "npc-woman-3",
+            "isTweenOut": "1",
+
+            "inputEmptyContinue": "wooster-square-house-4",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "recruit-sylphine-1": {
+            "name": "Sylphine",
+            "desc": "Hi, I'm Sylphine. Student at New Yale University.",
+            "portImg": "sylphine",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "recruit-sylphine-2",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "recruit-sylphine-2": {
+            "name": "Sylphine",
+            "desc": "I'm here at Wooster Square to do some research work. As you know, this place can be dangerous at times.",
+            "portImg": "sylphine",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "recruit-sylphine-3",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "recruit-sylphine-3": {
+            "name": "Sylphine",
+            "desc": "If you're looking for a companion, I'm one of the best spellcasters in New Yale.",
+            "portImg": "sylphine",
+            "isTweenOut": "1",
+
+            "input1": {"id": "recruit-sylphine", "text": "Let's see..."},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "recruit-anastasia-1": {
+            "name": "Anastasia",
+            "desc": "You must be the new travellers everyone in town is talking about.",
+            "portImg": "anastasia",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "recruit-anastasia-2",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "recruit-anastasia-2": {
+            "name": "Anastasia",
+            "desc": "I'm Anastasia. Like you, I came from afar.",
+            "portImg": "anastasia",
+            "isTweenOut": "0",
+
+            "inputEmptyContinue": "recruit-anastasia-3",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input1": {"id": "", "text": ""},"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+        "recruit-anastasia-3": {
+            "name": "Anastasia",
+            "desc": "If you're looking for strong companions, I'm available. For a price, of course.",
+            "portImg": "anastasia",
+            "isTweenOut": "1",
+
+            "input1": {"id": "recruit-anastasia", "text": "Let's see..."},
+
+            "inputEmptyContinue": "",
+            "isMini": "0",
+            "inputScaler_enable": "0","posX": 0,"posY": 0,"input2": {"id": "", "text": ""},"input3": {"id": "", "text": ""},"input4": {"id": "", "text": ""},"inputTxtBox": {"id": "", "text": ""},
+        },
+
+        "shopTest": {
+            "name": "Test's shop",
+            "desc": "TestDesc",
+            "portImg": "tommy",
+            "posX": 0,
+            "posY": 0,
+            "isTweenOut": "1",
+
+            "isMini": "0",
+            
+            "input1": {"id": "shopTest01", "text": "Buy"},
+            "input2": {"id": "shopCancel", "text": "Nevermind"},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "", "text": ""},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "strega": {
+            "name": "Woman",
+            "desc": "Welcome to Giovanni's crafting shop. How can I help?",
+            "portImg": "npc-woman-1",
+            "posX": 0,
+            "posY": 0,
+            "isTweenOut": "1",
+
+            "isMini": "0",
+            
+            "input1": {"id": "shopStregaBuy", "text": "Buy"},
+            "input2": {"id": "shopCancel", "text": "Nevermind"},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "", "text": ""},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "marcos-tavern": {
+            "name": "Bartender",
+            "desc": "The tavern today is so merry! Which drink do you want, mister?",
+            "portImg": "npc-woman-2",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "0",
+            
+            "input1": {"id": "recruit-anastasia-1", "text": "Recruit Anastasia"},
+            "input2": {"id": "recruit-sylphine-1", "text": "Recruit Sylphine"},
+            "input3": {"id": "shopCancel", "text": "Nevermind"},
+            "input4": {"id": "", "text": ""},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "bella-vita": {
+            "name": "Old Woman",
+            "desc": "We have some scraps and crafting essentials for sale here.",
+            "portImg": "npc-woman-3",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "0",
+            
+            "input1": {"id": "shop-bella-vita", "text": "Buy"},
+            "input2": {"id": "shopCancel", "text": "Nevermind"},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "", "text": ""},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+
+        "buy-success": {
+            "name": "",
+            "desc": "Purchase complete!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back-to-inventory", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "buy-not-enough-gold": {
+            "name": "",
+            "desc": "Not enough gold!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "buy-not-enough-reqs": {
+            "name": "",
+            "desc": "You lack the item requirements!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "buy-craft-success": {
+            "name": "",
+            "desc": "Crafting successful!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "buy-recruit-success": {
+            "name": "",
+            "desc": "Character is recruited!\n\nSet your members on the Character window.",            
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back-craft-success", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "sell-success": {
+            "name": "",
+            "desc": "Items sold!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back-to-inventory", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+        "hero-recruited": {
+            "name": "",
+            "desc": "This character is already recruited!",
+            "portImg": "",
+            "posX": 0,
+            "posY": 0,
+
+            "isTweenOut": "1",
+            "isMini": "1",
+            
+            "input1": {"id": "", "text": ""},
+            "input2": {"id": "", "text": ""},
+            "input3": {"id": "", "text": ""},
+            "input4": {"id": "back", "text": "Back"},
+            "inputTxtBox": {"id": "", "text": ""},
+            "inputEmptyContinue": "",
+
+            "inputScaler_enable": "0",
+        },
+    }
+}

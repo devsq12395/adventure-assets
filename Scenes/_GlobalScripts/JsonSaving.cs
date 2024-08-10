@@ -30,8 +30,7 @@ public class JsonSaving : MonoBehaviour {
     */
 
     public void gain_gold(int _inc) {
-        int currentGold = int.Parse(load("gold"));
-        save("gold", (currentGold + _inc).ToString());
+        
     }
 
     /*
@@ -40,7 +39,7 @@ public class JsonSaving : MonoBehaviour {
 
     public void load_json() {
         if (PlayerPrefs.GetString("v.1") == "" || OVERWRITE) {
-            first_load_v1();
+            first_load();
         } else {
             // Load existing data
             string jsonString = PlayerPrefs.GetString("v.1");
@@ -48,12 +47,8 @@ public class JsonSaving : MonoBehaviour {
         }
     }
 
-    private void first_load_v1() {
-        Debug.Log("First run or overwrite mode is on. Creating new JSON entry.");
-
-        playData = new JSONObject();
-        playData["gold"] = "0";
-        PlayerPrefs.SetString("v.1", playData.ToString());
+    public void first_load() {
+        
     }
     
     public void save(string _key, string _value) {
