@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
+using UnityEngine.Networking;
+using System.IO;
 
 public class JsonSaving : MonoBehaviour {
     public static JsonSaving I;
@@ -10,6 +12,8 @@ public class JsonSaving : MonoBehaviour {
     public JSONObject playData;
 
     public bool OVERWRITE;
+
+    private string saveFilePath;
 
     public void Awake(){
         I = this;
@@ -22,7 +26,11 @@ public class JsonSaving : MonoBehaviour {
 
         login = PlayerPrefs.GetString("login");
 
-        load_json();
+        // Define path for the saved data file
+        saveFilePath = $"{Application.persistentDataPath}/playerData.json";
+
+        first_load ();
+        StartCoroutine(load_json());
     }
 
     /*
@@ -30,25 +38,44 @@ public class JsonSaving : MonoBehaviour {
     */
 
     public void gain_gold(int _inc) {
-        
+        // Your implementation
     }
 
     /*
         JSON INTERACTION SCRIPTS
     */
 
-    public void load_json() {
-        if (PlayerPrefs.GetString("v.1") == "" || OVERWRITE) {
+    public IEnumerator load_json() {
+        if (!File.Exists(saveFilePath) || OVERWRITE) {
             first_load();
         } else {
-            // Load existing data
-            string jsonString = PlayerPrefs.GetString("v.1");
-            playData = JSON.Parse(jsonString).AsObject;
+            using (UnityWebRequest webRequest = UnityWebRequest.Get("file://" + saveFilePath))
+            {
+                yield return webRequest.SendWebRequest();
+
+                if (webRequest.result == UnityWebRequest.Result.ConnectionError || 
+                    webRequest.result == UnityWebRequest.Result.ProtocolError)
+                {
+                    Debug.LogError($"Failed to load JSON file from path: {saveFilePath}. Error: {webRequest.error}");
+                }
+                else
+                {
+                    playData = JSON.Parse(webRequest.downloadHandler.text).AsObject;
+                }
+            }
         }
     }
 
     public void first_load() {
-        
+        // Initialize playData with default values
+        Debug.Log ("first load...");
+        playData = new JSONObject();
+        playData["gold"] = 0;
+        playData["items"] = new JSONArray();
+        // Add more default initializations if needed
+
+        // Save the initial data
+        save_json();
     }
     
     public void save(string _key, string _value) {
@@ -57,7 +84,7 @@ public class JsonSaving : MonoBehaviour {
         }
 
         playData[_key] = _value;
-        PlayerPrefs.SetString("v.1", playData.ToString());
+        save_json();
     }
 
     public void add_array_val(string _key, string _value) {
@@ -70,17 +97,12 @@ public class JsonSaving : MonoBehaviour {
         }
 
         playData[_key].AsArray.Add(_value);
-        PlayerPrefs.SetString("v.1", playData.ToString());
+        save_json();
     }
 
     public string load(string _key) {
         if (playData == null) {
-            string jsonString = PlayerPrefs.GetString("v.1");
-            if (!string.IsNullOrEmpty(jsonString)) {
-                playData = JSON.Parse(jsonString).AsObject;
-            } else {
-                playData = new JSONObject();
-            }
+            StartCoroutine(load_json());
         }
 
         if (playData.HasKey(_key)) {
@@ -88,5 +110,10 @@ public class JsonSaving : MonoBehaviour {
         } else {
             return "0";
         }
+    }
+
+    private void save_json() {
+        File.WriteAllText(saveFilePath, playData.ToString());
+        Debug.Log ("Json saving...");
     }
 }

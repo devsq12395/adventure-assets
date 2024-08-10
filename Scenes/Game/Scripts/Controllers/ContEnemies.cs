@@ -27,7 +27,6 @@ public class ContEnemies : MonoBehaviour {
 	public Dictionary<string, int> rewardChance;
 
 	public string enemiesType;
-	public List<string> rewardItems;
 
 	public void setup (string _enemiesType){
 		enemiesType = _enemiesType;
@@ -76,30 +75,25 @@ public class ContEnemies : MonoBehaviour {
 		int _goldReward = _goldRewards [Random.Range (0, _goldRewards.Count)];
 
 		_ret += $"Gold Gained: {_goldReward}";
-
 		SaveHandler.I.gain_gold (_goldReward);
 
 		// Item Rewards
+		List<string> rewardNames = new List<string>();
 		int _rewardsAmountToGive = Random.Range (2, 6);
+
 		for (int i = 0; i < _rewardsAmountToGive; i++) {
 			int _rewardToGive = Random.Range (0, 100);
 			string _toGive = "";
 			foreach (var entry in rewardChance) {
-				Debug.Log ($"entry: {entry.Key} perc {entry.Value}");
 				if (_rewardToGive < entry.Value) {
-					_toGive = entry.Key;
-					Debug.Log ($"to give: {_toGive}");
-					break;
+					Inv2.I.add_item (entry.Key);
+
+					Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (entry.Key);
+					rewardNames.Add (_data.nameUI);
 				}
 			}
-			rewardItems.Add (_toGive);
 		}
 
-		JsonSaving.I.save ("rewards", string.Join (",", rewardItems));
-		List<string> rewardNames = new List<string>();
-		rewardItems.ForEach (
-			(__reward) => rewardNames.Add (JsonReading.I.read ("items", $"items.{__reward}.name-ui"))
-		);
 		_ret += $"\n\nYou found these items:\n {string.Join ("\n", rewardNames)}";
 
 		return _ret;
