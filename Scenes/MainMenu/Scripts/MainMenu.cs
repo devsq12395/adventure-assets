@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour {
     public static MainMenu I;
 	public void Awake(){ I = this; }
 
-    public GameObject curtainGo;
+    public GameObject curtainGo, headerGo;
     public RectTransform curtainRect;
     private string curtainState;
     public float targetX;
@@ -37,6 +37,8 @@ public class MainMenu : MonoBehaviour {
         MM_Map.I.setup ();
         MM_Map.I.show (JsonSaving.I.load ("main-menu-map"));
 
+        MM_Inv2.I.setup ();
+
         update_header ();
 
         move_curtain("menuStart", 0, curtainRect.anchoredPosition.y);
@@ -47,7 +49,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     void Update() {
-        
+        update_show_header ();
     }
 
     public void show_popup (string _popup){
@@ -58,15 +60,26 @@ public class MainMenu : MonoBehaviour {
         }
     }
 
+    public void update_show_header (){
+        bool _isShow = 
+            !FindObjectOfType<MiniDialog>() &&
+            !MM_Party.I.isShow &&
+            !MM_BuyOrSell.I.go.activeSelf &&
+            !MM_Inventory.I.go.activeSelf &&
+            !MM_Mission.I.go.activeSelf
+        ;
+        headerGo.SetActive (_isShow);
+    }
+
     public void update_header (){
-        headerTxt_Gold.text = $"Gold: {JsonSaving.I.load ("gold")}";
+        headerTxt_Gold.text = $"Gold: {ZPlayerPrefs.GetInt("Gold")}";
     }
 
     public void update_gold (int _inc){
-        int gold = int.Parse (JsonSaving.I.load ("gold"));
-        gold += _inc;
-        JsonSaving.I.save ("gold", gold.ToString ());
+        int gold = SaveHandler.I.gain_gold (_inc);
+
         update_header ();
+        MM_Inv2.I.update_gold (gold);
     }
 
     public void move_curtain(string _state, float _curtainPosX = 0, float _curtainPosY = 0) {

@@ -16,9 +16,8 @@ public class Skill_GiantSlimeDash : SkillTrig {
         Vector2 _pos = gameObject.transform.position,
             _pPos = ContPlayer.I.player.gameObject.transform.position;
 
-        ContObj.I.change_facing (_ownerComp, (Calculator.I.is_mouse_left_of_object (_ownerComp) ? "left" : "right"));
+        ContObj.I.change_facing (_ownerComp, ((_pos.x > _pPos.x) ? "left" : "right"));
         ContObj.I.instant_move_upd_start_dist (_ownerComp, Calculator.I.get_ang_from_2_points_deg (_pos, _pPos), 0.5f, DIST, "enemy-dash");
-        InGameCamera.I.point_to_target ();
 
         Evt_GiantSlimeDashUpd _event = gameObject.GetComponent <Evt_GiantSlimeDashUpd>();
         _event.isUsingSkill = true; 

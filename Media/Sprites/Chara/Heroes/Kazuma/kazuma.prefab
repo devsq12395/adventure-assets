@@ -361,7 +361,7 @@ MonoBehaviour:
   skillName: attack
   skillSlot: mouse1
   mc: 0
-  cdMax: 0.5
+  cdMax: 0.35
   cd: 0
   missileObj: slash-kazuma
   soundToPlay: swish
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   evtTrigger: update
   evtName: flame-dash
-  RANGE: 7
+  RANGE_AOE: 1.5
   RANGE_FINAL_KNOCK: 0
   AOE_KNOCK: 2
   SPEED_KNOCK: 0.25

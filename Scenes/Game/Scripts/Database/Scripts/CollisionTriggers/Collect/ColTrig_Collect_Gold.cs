@@ -8,7 +8,6 @@ public class ColTrig_Collect_Gold : ColTrig {
     public override void on_hit_enemy (InGameObject _hit){
         if (_hit != ContPlayer.I.player) return;
 
-        ContPlayer.I.get_gold (amount);
         Destroy (gameObject);
     }
 

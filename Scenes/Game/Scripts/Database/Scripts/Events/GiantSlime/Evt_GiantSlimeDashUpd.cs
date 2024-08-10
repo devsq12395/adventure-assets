@@ -36,7 +36,7 @@ public class Evt_GiantSlimeDashUpd : EvtTrig {
         curDistExpEffect -= _owner.instMov_spd;
         if (curDistExpEffect <= 0){
             curDistExpEffect = DIST_PER_EXPLOSION_EFFECT;
-            ContEffect.I.create_effect ("explosion1_mini", _pos);
+            //ContEffect.I.create_effect ("explosion1_mini", _pos);
         }
 
         if (_owner.instMov_mode != "enemy-dash") {

@@ -17,17 +17,19 @@ public class DB_Objects : MonoBehaviour {
     [Header("----- Units -----")]
     public GameObject hero;
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, mobster, slimeKing, giantSlime,
-        lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles;
+        lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
+        centurion, victorianSoldier;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
-        bulletTommy, bulletMobster, bulletEmbraced, fireWave, blueWave, slashShredder, prismDroneMissile;
+        bulletTommy, bulletMobster, bulletEmbraced, bulletVictorianSoldier, fireWave, blueWave, slashShredder, prismDroneMissile,
+        centurionMissile, beatriceMissile, lucaTyphoon;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
     public GameObject explosion2, explosion3, damTxt, explosion1_mini, molotovEfct, bindChainExp1, bindChainExp2, voidSphereHit, voidSphereCast, frostWaveHit, 
-        frostWaveCast, moveSmoke, moveSmokeSpawner;
+        frostWaveCast, moveSmoke, moveSmokeSpawner, muzzle1, muzzle2, gooGreen, gooBlue, magicSparkSeraphine;
 
     [Header("----- Buffs -----")]
     public GameObject buf_burn;
@@ -77,6 +79,9 @@ public class DB_Objects : MonoBehaviour {
             case "war-shredder":            _refObj = warShredder; break;
             case "alpha-war-shredder":            _refObj = alphaWarShredder; break;
             case "captain-charles":            _refObj = captainCharles; break;
+            case "cap-beatrice":            _refObj = captainBeatrice; break;
+            case "victorian-soldier":            _refObj = victorianSoldier; break;
+            case "centurion":            _refObj = centurion; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -95,9 +100,13 @@ public class DB_Objects : MonoBehaviour {
             case "bullet-tommy":                 _refObj = bulletTommy; break;
             case "bullet-mobster":                 _refObj = bulletMobster; break;
             case "bullet-embraced":                 _refObj = bulletEmbraced; break;
+            case "bullet-victorian-soldier":                 _refObj = bulletVictorianSoldier; break;
             case "blue-wave":                 _refObj = blueWave; break;
             case "slash-shredder":                 _refObj = slashShredder; break;
             case "prism-drone-missile":             _refObj = prismDroneMissile; break;
+            case "centurion-missile":             _refObj = centurionMissile; break;
+            case "beatrice-missile":             _refObj = beatriceMissile; break;
+            case "luca-typhoon":             _refObj = lucaTyphoon; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;
@@ -113,6 +122,11 @@ public class DB_Objects : MonoBehaviour {
             case "frostWaveCast":             _refObj = frostWaveCast; break;
             case "move-smoke":             _refObj = moveSmoke; break;
             case "move-smoke-spawner":             _refObj = moveSmokeSpawner; break;
+            case "muzzle-1":             _refObj = muzzle1; break;
+            case "muzzle-2":             _refObj = muzzle2; break;
+            case "goo-green":             _refObj = gooGreen; break;
+            case "goo-blue":             _refObj = gooBlue; break;
+            case "magic-spark-seraphine":             _refObj = magicSparkSeraphine; break;
                 
             case "damTxt":                  _refObj = damTxt; break;
                 

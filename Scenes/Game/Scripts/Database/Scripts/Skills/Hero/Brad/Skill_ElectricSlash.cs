@@ -26,5 +26,6 @@ public class Skill_ElectricSlash : SkillTrig {
         ContBuffs.I.add_buff (_ownerComp, "invulnerable"); //0.5f default dur
 
         SoundHandler.I.play_sfx ("dash");
+        MUI_Overlay.I.show_overlay ("zoom");
     }
 }

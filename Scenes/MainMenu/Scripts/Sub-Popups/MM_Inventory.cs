@@ -47,6 +47,12 @@ public class MM_Inventory : MonoBehaviour {
 
         go.SetActive (true);
 
+        refresh_main_items_list ();
+
+        go.SetActive (false);
+    }
+
+    public void refresh_main_items_list (){
         // Setup main item inventory
         itemsMain = new List<Item> ();
         string[]    _itemsStr = JsonSaving.I.load ("items").Split (','), 
@@ -57,8 +63,6 @@ public class MM_Inventory : MonoBehaviour {
             Item _new = new Item (_itemExtracted [1], int.Parse (_itemExtracted [0]), int.Parse (_itemExtracted [2]));
             itemsMain.Add (_new);
         }
-
-        go.SetActive (false);
     }
 
     public void get_last_mission_item_rewards (){
@@ -78,6 +82,8 @@ public class MM_Inventory : MonoBehaviour {
     public void btn_show (){show ("inventory", "");}
     public void show (string _mode, string _itemList, string[] _sortTag = null){
         go.SetActive (true);
+        refresh_main_items_list ();
+
         imgWindow.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);       
         
@@ -96,26 +102,25 @@ public class MM_Inventory : MonoBehaviour {
     }
 
     private void setup_items (string _itemList, string[] _sortTag = null){
-        itemListName = _itemList;
         items.Clear ();
 
         if (_itemList == ""){
-            // Load main inventory
+            // Load main inventory - Including sorted list
             foreach (Item _item in itemsMain) {
                 if (_sortTag != null) {
                     string[] _tags = JsonReading.I.read ("items", $"items.{_item.name}.tags").Split (',');
                     if (!_sortTag.All ((_tag) => _tags.Contains (_tag))) continue;
                 }
-                create_item (_item.name, _item.stack.ToString ());
+                create_item_sorted_inventory (_item.name, _item.stack.ToString ());
             }
         } else {
-            // Load other item list
+            // Load other item list - Shop
             string[]    _itemsStr = JsonReading.I.read ("items", $"shop-inventory.{_itemList}").Split (','),
                         _itemExtracted;
             Item _new;
 
             for (int _i = 0; _i < _itemsStr.Length; _i++) {
-                create_item (_itemsStr [_i], "0");
+                create_item_shop (_itemsStr [_i], "0");
             }
         }
 
@@ -189,8 +194,13 @@ public class MM_Inventory : MonoBehaviour {
     }
 
     // This is used by the loaded item list, not the main list
-    private void create_item (string _item, string _stack){ 
+    private void create_item_shop (string _item, string _stack){ 
         Item _new = new Item (_item, int.Parse (_stack), items.Count);
+        items.Add (_new);
+    }
+    private void create_item_sorted_inventory (string _item, string _stack){ 
+        Item _itemActual = get_item_from_inv (_item);
+        Item _new = new Item (_item, int.Parse (_stack), _itemActual.ID);
         items.Add (_new);
     }
 
@@ -211,9 +221,10 @@ public class MM_Inventory : MonoBehaviour {
 
         if (_stackable && has_item_from_inv (_item)) {
             Item _itemFromInv = get_item_from_inv (_item);
-
             _itemFromInv.stack += _stack;
-            itemsMain [_itemFromInv.ID] = _itemFromInv;
+
+            remove_item (_itemFromInv.ID);
+            add_item (_itemFromInv.name, _itemFromInv.stack);
         } else {
             if (_stackable) {
                 Item _new = new Item (_item, _stack, Random.Range(1000000, 10000000));
@@ -232,7 +243,7 @@ public class MM_Inventory : MonoBehaviour {
 
     public void remove_item (int _ID){
         for (int i = 0; i < itemsMain.Count; i++) {
-            if (itemsMain [i].ID == _ID) {
+            if (itemsMain [i].ID == _ID) { Debug.Log ("removing");
                 itemsMain.RemoveAt (i);
                 break;
             }

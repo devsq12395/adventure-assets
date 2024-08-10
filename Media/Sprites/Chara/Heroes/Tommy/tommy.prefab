@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 1734063162558475761}
   - component: {fileID: 1734063162558475760}
   - component: {fileID: 970973860029378288}
-  - component: {fileID: -2860898887327908908}
   - component: {fileID: 188102392388792281}
+  - component: {fileID: -5106326729033209083}
   m_Layer: 0
   m_Name: tommy
   m_TagString: Untagged
@@ -173,7 +173,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.29915848, y: -0.043627203}
+  m_Offset: {x: 0.005897939, y: -0.008715242}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -184,7 +184,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8149093, y: 1.0766724}
+  m_Size: {x: 0.85680425, y: 1.3699331}
   m_EdgeRadius: 0
 --- !u!61 &1734063162558475758
 BoxCollider2D:
@@ -218,7 +218,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.30539066, y: -0.03739488}
+  m_Offset: {x: -0.029764414, y: -0.033903718}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -229,7 +229,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0268133, y: 1.3135068}
+  m_Size: {x: 1.1943905, y: 1.8092573}
   m_EdgeRadius: 0
 --- !u!114 &1734063162558475761
 MonoBehaviour:
@@ -344,26 +344,6 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
---- !u!114 &-2860898887327908908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734063162558475763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be37ca8792ebe664b8eff329d6679499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: attack
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: bullet-tommy
-  soundToPlay: laser
 --- !u!114 &188102392388792281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,3 +363,25 @@ MonoBehaviour:
   cdMax: 6
   cd: 0
   missileObj: blue-wave
+--- !u!114 &-5106326729033209083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734063162558475763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2273dd0727e8543ae0b5020e66908e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: attack
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.35
+  cd: 0
+  missileObj: bullet-tommy
+  muzzleObj1: muzzle-1
+  muzzleObj2: muzzle-2
+  soundToPlay: pistol

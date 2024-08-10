@@ -11,7 +11,7 @@ public class WoosterSquare1 : MonoBehaviour {
     public GameObject goMap1, goMap2, goMap3;
 
     public DB_Maps.mapDetails get_map_details (DB_Maps.mapDetails _new){
-        _new.size = new Vector2 (20, 20);
+        _new.size = new Vector2 (18, 18);
 
         _new.pointList.Add ("playerSpawn", new Vector2 (0, 0));
         _new.pointList.Add ("playerLounge", new Vector2 (-500, -500));

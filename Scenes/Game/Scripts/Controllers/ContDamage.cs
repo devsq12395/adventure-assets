@@ -78,9 +78,13 @@ public class ContDamage : MonoBehaviour {
         EVENTS
     */
     private void post_dam_events (InGameObject _atk, InGameObject _def, int _dam) {
-        // Invul if player
+        // If player is hit
         if (_def == ContPlayer.I.player) {
+            // Invul
             ContBuffs.I.add_buff (_def, "invulnerable");
+            
+            // Blood overlay
+            MUI_Overlay.I.show_overlay ("blood");
         }
         
         // Codes that require an attacker goes here
@@ -89,7 +93,7 @@ public class ContDamage : MonoBehaviour {
         }
         
         // Dam Text UI
-        GameUI_InGameTxt.I.create_ingame_txt (_dam.ToString (), _def.gameObject.transform.position, 2f);
+        GameUI_InGameTxt.I.create_ingame_txt ($"{_dam.ToString ()}!", _def.gameObject.transform.position, 2f);
 
         // Sound Effects
         SoundHandler.I.play_sfx ("big-hit");

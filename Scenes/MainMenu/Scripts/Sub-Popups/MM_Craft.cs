@@ -13,7 +13,7 @@ public class MM_Craft : MonoBehaviour {
 	public GameObject go;
 	public Image imgWindow;
 
-	public TextMeshProUGUI tName, tDesc, tRequires;
+	public TextMeshProUGUI tName, tDesc, tRequires, tWindowTitle, tBtnText;
 	public Image iPort;
 
 	public string item, type; // type: item, char
@@ -41,6 +41,8 @@ public class MM_Craft : MonoBehaviour {
 			case "item":
 				tName.text = JsonReading.I.read ("items", $"items.{_name}.name-ui");
 				tDesc.text = JsonReading.I.read ("items", $"items.{_name}.desc");
+				tWindowTitle.text = "Crafting";
+				tBtnText.text = "Craft";
 
 				_goldReq = $"{JsonReading.I.get_str ("gold")}: {JsonReading.I.read ("items", $"items.{_name}.cost")}";
 				_itemReq = string.Join ("\n", JsonReading.I.read ("items", $"items.{_name}.requires").Split(',').Select((_req) => {
@@ -56,6 +58,9 @@ public class MM_Craft : MonoBehaviour {
 				iPort.sprite = Sprites.I.get_sprite ("icn-item");
 				break;
 			case "char":
+				tWindowTitle.text = "Recruit Character";
+				tBtnText.text = "Recruit";
+
 				if (JsonSaving.I.load ("pool").Split (',').Contains (_name)) {
 					go.SetActive (false);					
 					MMCont_Dialog.I.create_dialog ("hero-recruited");
@@ -81,7 +86,7 @@ public class MM_Craft : MonoBehaviour {
 					}));
 
 				tRequires.text = $"{JsonReading.I.get_str ("requires")}:\n{_goldReq}\n{_itemReq}";
-				iPort.sprite = Sprites.I.get_sprite (_charName);
+				iPort.sprite = Sprites.I.get_sprite (_name);
 
 				break;
 		}
@@ -116,7 +121,7 @@ public class MM_Craft : MonoBehaviour {
 			return;
 		}
 
-		JsonSaving.I.gain_gold (-goldCost);
+		MainMenu.I.update_gold (-goldCost);
 		foreach (var _item in _items) {
 			MM_Inventory.I.remove_stack (_item.Key, _item.Value);
 		}

@@ -55,7 +55,7 @@ public class JsonSaving : MonoBehaviour {
         playData["gold"] = "0";
         PlayerPrefs.SetString("v.1", playData.ToString());
     }
-
+    
     public void save(string _key, string _value) {
         if (playData == null) {
             playData = new JSONObject();

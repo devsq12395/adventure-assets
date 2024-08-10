@@ -6,6 +6,8 @@ using System.Linq;
 
 public class EditorDev : EditorWindow {
 
+    private string itemName = ""; // Declare the itemName variable
+
     [MenuItem("Window/Dev Tools")]
     public static void ShowWindow() {
         GetWindow<EditorDev>("EditorDev");
@@ -13,10 +15,11 @@ public class EditorDev : EditorWindow {
 
     void OnGUI() {
         EditorGUILayout.LabelField("Cheats - In Game", EditorStyles.boldLabel);
+        
         if (GUILayout.Button("God Mode")) {
-            List<InGameObject> inGameObjects = GameObject.FindObjectsOfType<InGameObject>().ToList ();
+            List<InGameObject> inGameObjects = GameObject.FindObjectsOfType<InGameObject>().ToList();
 
-            inGameObjects.ForEach ((obj) => {
+            inGameObjects.ForEach((obj) => {
                 if (obj.owner != 1) return;
 
                 obj.hp = 1000;
@@ -25,17 +28,27 @@ public class EditorDev : EditorWindow {
                 obj.statAttack = 1000;
                 obj.statSkill = 1000;
             });
-
         }
 
-         if (GUILayout.Button("Reset Data")) {
+        if (GUILayout.Button("Reset Data")) {
             JsonSaving.I.OVERWRITE = true;
-            JsonSaving.I.load_json ();
+            JsonSaving.I.load_json();
 
             JsonSaving.I.OVERWRITE = false;
 
-            Debug.Log ("Json Override done! Please restart the game.");
+            Debug.Log("Json Override done! Please restart the game.");
+        }
 
+        // Give Item Section
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Give Item (Format: like-this)", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("- Run while the game is running (main menu)");
+        
+        itemName = EditorGUILayout.TextField("Item Name", itemName);
+        
+        if (GUILayout.Button("Give")) {
+            Inv2.I.add_item(itemName);
+            Debug.Log($"Item {itemName} is added.");
         }
     }
 }

@@ -77,16 +77,18 @@ public class ContEnemies : MonoBehaviour {
 
 		_ret += $"Gold Gained: {_goldReward}";
 
-		JsonSaving.I.gain_gold (_goldReward);
+		SaveHandler.I.gain_gold (_goldReward);
 
 		// Item Rewards
-		int _rewardsAmountToGive = Random.Range (1, 4);
+		int _rewardsAmountToGive = Random.Range (2, 6);
 		for (int i = 0; i < _rewardsAmountToGive; i++) {
 			int _rewardToGive = Random.Range (0, 100);
 			string _toGive = "";
 			foreach (var entry in rewardChance) {
+				Debug.Log ($"entry: {entry.Key} perc {entry.Value}");
 				if (_rewardToGive < entry.Value) {
 					_toGive = entry.Key;
+					Debug.Log ($"to give: {_toGive}");
 					break;
 				}
 			}
@@ -96,9 +98,9 @@ public class ContEnemies : MonoBehaviour {
 		JsonSaving.I.save ("rewards", string.Join (",", rewardItems));
 		List<string> rewardNames = new List<string>();
 		rewardItems.ForEach (
-			(__reward) => rewardNames.Add (JsonReading.I.read ("items", $"items.{__reward}.name"))
+			(__reward) => rewardNames.Add (JsonReading.I.read ("items", $"items.{__reward}.name-ui"))
 		);
-		_ret += $"\n\nYou found these items: {string.Join ("\n", rewardNames)}";
+		_ret += $"\n\nYou found these items:\n {string.Join ("\n", rewardNames)}";
 
 		return _ret;
 	}
@@ -107,7 +109,7 @@ public class ContEnemies : MonoBehaviour {
 		mainWaves.RemoveAt (0);
 
 		if (mainWaves.Count > 0) {
-			MUI_Announcement.I.show ("More enemies are coming!");
+			// MUI_Announcement.I.show ("More enemies are coming!");
 			spawn_enemies ();
 		} else {
 			GameUI_GameOver.I.show (

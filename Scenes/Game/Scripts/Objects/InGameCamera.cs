@@ -34,12 +34,21 @@ public class InGameCamera : MonoBehaviour {
         DB_Maps.mapDetails _details = ContMap.I.details;
         float _targX, _targY;
         float CAMERA_SIZE_X = 18, CAMERA_SIZE_Y = 9.5f;
+        float CAMERA_EXTENSION_X = 10, CAMERA_EXTENSION_Y = 8;
 
         _targX = target.position.x;
-        _targX = Mathf.Clamp(_targX, -_details.size.x + CAMERA_SIZE_X, _details.size.x - CAMERA_SIZE_X);
+        _targX = Mathf.Clamp(
+            _targX, 
+            -_details.size.x + CAMERA_SIZE_X - CAMERA_EXTENSION_X, 
+            _details.size.x - CAMERA_SIZE_X + CAMERA_EXTENSION_X
+        );
 
         _targY = target.position.y;
-        _targY = Mathf.Clamp(_targY, -_details.size.y + CAMERA_SIZE_Y, _details.size.y - CAMERA_SIZE_Y);
+        _targY = Mathf.Clamp(
+            _targY, 
+            -_details.size.y + CAMERA_SIZE_Y - CAMERA_EXTENSION_Y, 
+            _details.size.y - CAMERA_SIZE_Y + CAMERA_EXTENSION_Y
+        );
 
         pos.x = _targX;
         pos.y = _targY;

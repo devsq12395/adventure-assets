@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -9000401471514440344}
   - component: {fileID: 3873111945499514494}
   - component: {fileID: 2344721810868922758}
+  - component: {fileID: 5040821796667527426}
   m_Layer: 0
   m_Name: giant-slime
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -249,8 +250,8 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 100
-  hpMax: 100
+  hp: 175
+  hpMax: 175
   mp: 0
   mpMax: 0
   mpRegen: 0
@@ -385,6 +386,7 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
+  DIST: 3
 --- !u!114 &2344721810868922758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,3 +407,22 @@ MonoBehaviour:
   cd: 0
   missileObj: slime-green-missile
   lastPattern: 0
+--- !u!114 &5040821796667527426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241388244497219823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbefe90ed1131c558bc67d1b22e7f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: giant-slime-flame-wave
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: slime-green-missile
