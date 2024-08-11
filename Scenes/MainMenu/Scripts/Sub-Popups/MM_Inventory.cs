@@ -7,6 +7,13 @@ using TMPro;
 using DG.Tweening;
 
 public class MM_Inventory : MonoBehaviour {
+
+
+    /*
+        2024/08/11 - As of New Horizons v.0.3, this script is unused
+    */
+
+    
     public static MM_Inventory I;
 	public void Awake(){ I = this; }
 

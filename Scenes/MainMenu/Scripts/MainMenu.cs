@@ -118,7 +118,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void main_menu_start_callback (){ 
-        string _callback = JsonSaving.I.load ("main-menu-start-callback");
+        string _callback = ZPlayerPrefs.SetString("main-menu-start-callback");
 
         switch (_callback) {
             case "show-intro-1": MMCont_Dialog.I.show_intro_1 (); break;

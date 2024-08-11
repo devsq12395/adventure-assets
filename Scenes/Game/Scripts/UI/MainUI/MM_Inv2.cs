@@ -48,7 +48,7 @@ public class MM_Inv2 : MonoBehaviour {
         		break;
         }
 
-        itemSel = new Inv2.Item ("empty", 0, 0);
+        itemSel = new Inv2.Item ("empty", 0, 0, "");
         setup_page ();
         change_item_sel (itemSel);
 

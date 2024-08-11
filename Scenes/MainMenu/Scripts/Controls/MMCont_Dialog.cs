@@ -152,14 +152,14 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void show_intro_1 () => create_dialog ("intro-1");
 	public void show_intro_2 (MiniDialog _dialog) {
 		set_dialog (_dialog, "intro-2");
-		JsonSaving.I.save ("main-menu-start-callback", "");
+		ZPlayerPrefs.SetString("main-menu-start-callback", "");
 	}
 
 	public void show_dialog_vic_2 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-2");
 	public void show_dialog_vic_3 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-3");
 	public void show_dialog_vic_4 (MiniDialog _dialog) {
 		set_dialog (_dialog, "dialog-vic-4");
-		JsonSaving.I.save ("activity.dialog-with-vic", "1");
+		ZPlayerPrefs.SetInt("activity.dialog-with-vic", 1);
 	}
 	public void start_mission_vic_1 (){
 		MM_Mission.I.show ("vic-1");
@@ -171,7 +171,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void show_dialog_vic_8 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-8");
 	public void show_dialog_vic_9 (MiniDialog _dialog) {
 		set_dialog (_dialog, "dialog-vic-9");
-		JsonSaving.I.save ("activity.dialog-with-vic", "3");
+		ZPlayerPrefs.SetInt("activity.dialog-with-vic", 3);
 	}
 	public void start_mission_vic_2 (){
 		MM_Mission.I.show ("vic-2");
@@ -187,7 +187,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void show_dialog_vic_17 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-17");
 	public void show_dialog_vic_18 (MiniDialog _dialog) {
 		set_dialog (_dialog, "dialog-vic-18");
-		JsonSaving.I.save ("activity.dialog-with-vic", "5");
+		ZPlayerPrefs.SetInt("activity.dialog-with-vic", 5);
 	}
 	public void start_mission_vic_3 (){
 		MM_Mission.I.show ("vic-3");
@@ -201,7 +201,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void show_dialog_anthony_3 (MiniDialog _dialog) => set_dialog (_dialog, "anthony-3");
 	public void show_dialog_anthony_4 (MiniDialog _dialog) {
 		set_dialog (_dialog, "anthony-4");
-		JsonSaving.I.save ("activity.dialog-with-anthony", "1");
+		ZPlayerPrefs.SetInt("activity.dialog-with-anthony", 1);
 	}
 	public void start_mission_anthony_1 (){
 		MM_Mission.I.show ("anthony-1");

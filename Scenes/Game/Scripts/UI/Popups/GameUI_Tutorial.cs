@@ -13,7 +13,7 @@ public class GameUI_Tutorial : MonoBehaviour {
 	public GameObject go, goImg;
 
 	public void check_if_show (){
-		if (JsonSaving.I.load ("missionCur") != "vic-1") {
+		if (ZPlayerPrefs.GetString("missionCur") != "vic-1") {
 			go.SetActive (false);
 			return;
 		}

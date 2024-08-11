@@ -7,19 +7,25 @@ public class StatCalc : MonoBehaviour {
     public static StatCalc I;
     public void Awake(){ I = this; }
 
-    private readonly string[] equipStrs = {"weapon", "armor", "boots", "accessory1", "accessory2"};
-
     public int get_stat (string _charName, string _stat) {
-        int _val = int.Parse (JsonReading.I.read ("chars", $"chars.{_charName}.stats.{_stat}"));
+        List<Inv2.Item> itemsEquipped = Inv2.I.get_equipped_items (_charName);
+        int _ret = 0;
 
-        foreach (string _equipSlot in equipStrs) {
-            string _equipped = JsonSaving.I.load ($"chars.{_charName}.equip.{_equipSlot}");
-            if (_equipped != "" && _equipped.Length > 1) {
-                int _itemBonus = int.Parse (JsonReading.I.read ("items", $"items.{_equipped}.bonuses.{_stat}"));
-                _val += _itemBonus;
+        itemsEquipped.ForEach ((_item) => {
+            Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
+
+            switch (_stat) {
+                case "hp": _ret += _data.bonusHP; break;
+                case "atk": _ret += _data.bonusATK; break;
+                case "range": _ret += _data.bonusRange; break;
+                case "skill": _ret += _data.bonusSkill; break;
+                case "speed": _ret += _data.bonusSpeed; break;
+                case "armor": _ret += _data.bonusArmor; break;
+                case "crit-rate": _ret += _data.bonusCritRate; break;
+                case "crit-dam": _ret += _data.bonusCritDam; break;
             }
-        }
+        });
 
-        return _val;
+        return _ret;
     }
 }

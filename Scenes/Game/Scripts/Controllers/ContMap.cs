@@ -16,15 +16,17 @@ public class ContMap : MonoBehaviour
 
     public void setup_map()
     {
-        string _mission = JsonSaving.I.load("missionCur"),
-               _curMap = JsonReading.I.read("missions", $"missions.{_mission}.maps").Split(",")[0];
+        string _mission = ZPlayerPrefs.GetString("missionCur");
+        DB_Missions.MissionData _data = DB_Missions.I.get_mission_data (_mission);
+        List<string> _maps = _data.maps;
+        string _curMap = _maps[Random.Range (0, _maps.Count)];
 
         details = DB_Maps.I.get_map_details(_curMap);
 
         map = details.mapObj;
         pointList = details.pointList;
 
-        ContEnemies.I.setup(JsonReading.I.read("missions", $"missions.{_mission}.enemies"));
+        ContEnemies.I.setup(_data.enemies);
 
         create_map_objs();
 

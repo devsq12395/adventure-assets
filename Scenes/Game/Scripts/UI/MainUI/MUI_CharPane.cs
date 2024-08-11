@@ -51,7 +51,8 @@ public class MUI_CharPane : MonoBehaviour
 
         Char _newChar = new Char(_num, _newCharUI, portImage, hpBarImage, mpBarImage);
 
-        string _charName = JsonSaving.I.load ("lineup").Split (',')[_num];
+        _lineup = Enumerable.Range(1, 4).Select(i => ZPlayerPrefs.GetString($"lineup-{i}")).ToList();
+        string _charName = _lineup [_num];
         portImage.sprite = Sprites.I.get_sprite (_charName);
         
         chars.Add(_newChar);

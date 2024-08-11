@@ -43,28 +43,28 @@ public class GameUI_GameOver : MonoBehaviour {
 	}
 
 	public void on_victory (){
-		string _curMission = JsonSaving.I.load ("missionCur");
+		string _curMission = ZPlayerPrefs.GetString("missionCur");
+		DB_Missions.MissionData _data = DB_Missions.I.get_mission_data (_curMission);
 
-		string[] 	_missionCurPool = JsonSaving.I.load ("missionCurPool").Split (','),
-					_missionsToUnlock = JsonReading.I.read ("missions", $"missions.{_curMission}.missions-set").Split (',');
+		List<string> _missionsToUnlock = _data.missionsSet;
 
 		// Unlocks all missions marked to be unlocked on missions.json
-		for (int i = 0; i < _missionsToUnlock.Length; i++) {
+		for (int i = 0; i < _missionsToUnlock.Count; i++) {
 			string[] _unlockDetails = _missionsToUnlock [i].Split ("->");
-			JsonSaving.I.save ($"missionCurPool.{_unlockDetails [0]}", _unlockDetails[1]);
+			ZPlayerPrefs.SetString ($"missionCurPool.{_unlockDetails [0]}", _unlockDetails[1]);
 		}
 
 		// Unlocks all areas marked to be unlocked on missions.json
-		string[] _areasToUnlock = JsonReading.I.read ("missions", $"missions.{_curMission}.unlocks-area").Split (',');
-		for (int i = 0; i < _areasToUnlock.Length; i++) {
-			JsonSaving.I.save ($"areasUnlocked.{_areasToUnlock [i]}", "1");
+		List<string> _areasToUnlock = _data.unlocksArea;
+		for (int i = 0; i < _areasToUnlock.Count; i++) {
+			ZPlayerPrefs.SetString ($"areasUnlocked.{_areasToUnlock [i]}", int.Parse (_unlockDetails[1]));
 		}
 
 		// Sets activity
-		string[] _activity = JsonReading.I.read ("missions", $"missions.{_curMission}.activity-set").Split (',');
-		for (int i = 0; i < _activity.Length; i++) {
+		List<string> _activity = _data.activitySet;
+		for (int i = 0; i < _activity.Count; i++) {
 			string[] _activityToSet = _activity [i].Split ("->");
-			JsonSaving.I.save ($"activity.{_activityToSet [0]}", _activityToSet [1]);
+			ZPlayerPrefs.SetString ($"activity.{_activityToSet [i]}", int.Parse (_activityToSet[1]));
 		}
 
 		on_victory_callbacks (_curMission);
@@ -73,7 +73,7 @@ public class GameUI_GameOver : MonoBehaviour {
 	public void on_victory_callbacks (string _curMission){
 		switch (_curMission) {
 			case "vic-1": 
-				JsonSaving.I.save ("main-menu-start-callback", "finished-mission-vic-1");
+				ZPlayerPrefs.SetString("main-menu-start-callback", "finished-mission-vic-1");
 				break;
 		}
 	}

@@ -13,10 +13,10 @@ public class Inv2 : MonoBehaviour {
     public void Awake() { I = this; }
 
     public struct Item {
-        public string name; public int stack; public int ID;
+        public string name; public int stack; public int ID; public string equippedBy;
 
-        public Item(string _name, int _stack, int _id) {
-            name = _name; stack = _stack; ID = _id;
+        public Item(string _name, int _stack, int _id, string _equippedBy) {
+            name = _name; stack = _stack; ID = _id; equippedBy = _equippedBy;
         }
     }
     public struct ItemUI {
@@ -34,7 +34,7 @@ public class Inv2 : MonoBehaviour {
             Item _item = get_item_from_name (_itemName);
             _item.stack += _stack;
         } else {
-            Item newItem = new Item (_itemName, _stack, Random.Range (1000, 10000000));
+            Item newItem = new Item (_itemName, _stack, Random.Range (1000, 10000000), "");
             items.Add (newItem);
         }
 
@@ -92,6 +92,7 @@ public class Inv2 : MonoBehaviour {
             ZPlayerPrefs.SetString($"Item_{i}_name", items[i].name);
             ZPlayerPrefs.SetInt($"Item_{i}_stack", items[i].stack);
             ZPlayerPrefs.SetInt($"Item_{i}_ID", items[i].ID);
+            ZPlayerPrefs.SetString($"Item_{i}_equippedBy", items[i].equippedBy);
         }
         ZPlayerPrefs.Save();
     }
@@ -101,10 +102,12 @@ public class Inv2 : MonoBehaviour {
         items.Clear();
         int itemCount = ZPlayerPrefs.GetInt("ItemCount", 0);
         for (int i = 0; i < itemCount; i++) {
-            string name = ZPlayerPrefs.GetString($"Item_{i}_name"); Debug.Log (name);
+            string name = ZPlayerPrefs.GetString($"Item_{i}_name");
             int stack = ZPlayerPrefs.GetInt($"Item_{i}_stack");
             int id = ZPlayerPrefs.GetInt($"Item_{i}_ID");
-            items.Add(new Item(name, stack, id));
+            string equippedBy = ZPlayerPrefs.GetString($"Item_{i}_equippedBy");
+
+            items.Add(new Item(name, stack, id, equippedBy));
         }
     }
 
@@ -114,9 +117,17 @@ public class Inv2 : MonoBehaviour {
     public List<Item> generate_item_set (List<string> _itemNames) {
         List<Item> _ret = new List<Item> ();
         _itemNames.ForEach ((_itemName) => {
-            _ret.Add (new Item (_itemName, 1, Random.Range (1000, 10000000)));
+            _ret.Add (new Item (_itemName, 1, Random.Range (1000, 10000000), ""));
         });
 
         return _ret;
+    }
+
+    /*
+        FOR EQUIP
+    */
+    public List<Item> get_equipped_items (string _charName){
+        load_items();
+        return items.Where(item => item.equippedBy == _charName).ToList();
     }
 }

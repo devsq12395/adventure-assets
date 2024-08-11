@@ -47,52 +47,14 @@ public class MM_Mission : MonoBehaviour {
     }
 
     private void setup_ui (){
-        title.text = get_mission_val ("name");
-        desc.text = get_mission_val ("desc");
-        port.sprite = Sprites.I.get_sprite (get_mission_val ("sprite"));
+        DB_Missions.MissionData _data = DB_Missions.I.get_mission_data (missionID);
 
-        string  _json = $"missions.{missionID}",
-                _faction = JsonReading.I.read ("missions", $"{_json}.faction"),
-                _difficulty = JsonReading.I.read ("missions", $"{_json}.difficulty"),
-                _rewards = JsonReading.I.read ("missions", $"{_json}.rewards");
-        desc2.text = $"Faction: {_faction}\nDifficulty: {_difficulty}\n\nRewards: {_rewards}";
-    }
+        title.text = _data.speaker;
+        desc.text = _data.desc;
+        port.sprite = Sprites.I.get_sprite (_data.sprite);
 
-    public string get_mission_val (string key) {
-        Mission foundMission = missionsData.missionList.FirstOrDefault(mission => mission.missionId == missionID);
-        if (foundMission != null) {
-            switch (key)
-            {
-                case "name":
-                    return foundMission.name;
-                case "desc":
-                    return foundMission.desc;
-                case "sprite":
-                    return foundMission.sprite;
-                case "faction":
-                    return foundMission.faction;
-                case "difficulty":
-                    return foundMission.difficulty;
-                case "rewards":
-                    return foundMission.rewards;
-                case "enemies":
-                    return foundMission.enemies;
-                case "maps":
-                    return string.Join(", ", foundMission.maps);
-                case "unlocksArea":
-                    return string.Join(", ", foundMission.unlocksArea);
-                case "missionsSet":
-                    return string.Join(", ", foundMission.missionsSet);
-                case "activitySet":
-                    return string.Join(", ", foundMission.activitySet);
-                default:
-                    Debug.LogWarning($"Key not found: {key}");
-                    return "";
-            }
-        } else {
-            Debug.Log ($"Mission not found: {missionID}");
-            return "";
-        }
+        string _rewards = _data.rewards;
+        desc2.text = $"Rewards: {_rewards}";
     }
 
     public void btn_accept (){

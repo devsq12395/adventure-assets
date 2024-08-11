@@ -20,8 +20,9 @@ public class MUI_HPBars : MonoBehaviour
     }
 
     public void set_char (string _charName) {
-        t_name.text = JsonReading.I.get_str ($"{_charName}-name");
-        i_port.sprite = Sprites.I.get_sprite (JsonReading.I.read ("chars", $"chars.{_charName}.img-port"));
+        DB_Chars.CharData _data = DB_Chars.I.get_char_data (_charName);
+        t_name.text = _data.nameUI;
+        i_port.sprite = Sprites.I.get_sprite (_data.imgPort);
     }
 
     public void update_bars() {

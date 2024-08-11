@@ -30,6 +30,36 @@ public class SaveHandler : MonoBehaviour {
             ZPlayerPrefs.SetInt("gold", 0);
             ZPlayerPrefs.SetString("date", "jan-2225");
 
+            ZPlayerPrefs.SetString("missionCur", "");
+            ZPlayerPrefs.SetString("missionCurPool", "");
+
+            ZPlayerPrefs.SetString("missionCurPool.vic", "vic-1");
+            ZPlayerPrefs.SetString("missionCurPool.anthony", "anthony-1");
+            ZPlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
+
+            ZPlayerPrefs.SetInt("areasUnlocked.new-haven", 1);
+            ZPlayerPrefs.SetInt("areasUnlocked.wooster-square", 1);
+            ZPlayerPrefs.SetInt("areasUnlocked.squaredrive-repairs", 1);
+            ZPlayerPrefs.SetInt("areasUnlocked.bella-vita", 0);
+            ZPlayerPrefs.SetInt("areasUnlocked.strega", 0);
+            ZPlayerPrefs.SetInt("areasUnlocked.marcos-tavern", 0);
+            ZPlayerPrefs.SetInt("areasUnlocked.i91-highway-ives", 0);
+            ZPlayerPrefs.SetInt("areasUnlocked.east-st-ives", 0);
+            ZPlayerPrefs.SetInt("areasUnlocked.mill-river-ives", 0);
+            ZPlayerPrefs.SetInt("areasUnlocked.fair-haven-ives", 0);
+            ZPlayerPrefs.SetInt("areasUnlocked.east-st-2-ives", 0);
+
+            ZPlayerPrefs.SetInt("activity.dialog-with-vic", 0);
+            ZPlayerPrefs.SetInt("activity.dialog-with-anthony", 0);
+
+            ZPlayerPrefs.SetString("main-menu-start-callback", "");
+
+            ZPlayerPrefs.SetString("lineup-1", "tommy");
+            ZPlayerPrefs.SetString("lineup-2", "kazuma");
+            ZPlayerPrefs.SetString("lineup-3", "");
+            ZPlayerPrefs.SetString("lineup-4", "");
+
+
             int itemCount = ZPlayerPrefs.GetInt("ItemCount", 0);
             if (itemCount > 0) {
                 for (int i = 0; i < itemCount; i++) {
