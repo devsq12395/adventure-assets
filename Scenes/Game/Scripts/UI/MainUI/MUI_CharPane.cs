@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -51,7 +52,7 @@ public class MUI_CharPane : MonoBehaviour
 
         Char _newChar = new Char(_num, _newCharUI, portImage, hpBarImage, mpBarImage);
 
-        _lineup = Enumerable.Range(1, 4).Select(i => ZPlayerPrefs.GetString($"lineup-{i}")).ToList();
+        List<string> _lineup = Enumerable.Range(1, 4).Select(i => ZPlayerPrefs.GetString($"lineup-{i}")).ToList();
         string _charName = _lineup [_num];
         portImage.sprite = Sprites.I.get_sprite (_charName);
         

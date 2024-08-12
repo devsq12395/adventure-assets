@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ContPlayer : MonoBehaviour {
@@ -34,7 +35,6 @@ public class ContPlayer : MonoBehaviour {
     // Chars
     public void create_players () {
         string _cN = "";
-        string[] _lineup = JsonSaving.I.load ("lineup").Split (',');
         List<string> _lineup = new List<string>();
         _lineup = Enumerable.Range(1, 4).Select(i => ZPlayerPrefs.GetString($"lineup-{i}")).ToList();
         for (int _ch = 0; _ch < _lineup.Count; _ch++){

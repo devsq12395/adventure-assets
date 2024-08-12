@@ -29,7 +29,9 @@ public class MM_ItemCheck : MonoBehaviour {
         go.SetActive (false);
     }
 
-    public void show (MM_Inventory.Item _item, string _mode) {
+    public void show (Inv2.Item _item, string _mode) {
+        Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
+
         go.SetActive (true);
         imgWindow.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         imgWindow.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);   

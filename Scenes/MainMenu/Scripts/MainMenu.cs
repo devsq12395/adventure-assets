@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour {
         MM_Craft.I.setup ();
 
         MM_Map.I.setup ();
-        MM_Map.I.show (JsonSaving.I.load ("main-menu-map"));
+        MM_Map.I.show (ZPlayerPrefs.GetString("main-menu-map"));
 
         MM_Inv2.I.setup ();
 

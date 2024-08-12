@@ -94,8 +94,9 @@ public class MMCont_Dialog : MonoBehaviour {
 		BUTTONS will be set here:
 	*/
 	public MiniDialog create_dialog (string _dialogID){
+		DB_Dialog.DialogData _data = DB_Dialog.I.get_dialog_data (_dialogID);
 		string _json = $"dialogs.{_dialogID}";
-		bool _isMini = JsonReading.I.read ("dialogs", $"{_json}.isMini") == "1";
+		bool _isMini = _data.isMini == "1";
 
 		GameObject _new = Instantiate (_isMini ? goDialogMini : goDialog, goCanvas.transform);
 		MiniDialog _newDialog = _new.GetComponent<MiniDialog>();
@@ -106,18 +107,18 @@ public class MMCont_Dialog : MonoBehaviour {
 	}
 
 	public MiniDialog set_dialog (MiniDialog _dialog, string _dialogID){
-		string _json = $"dialogs.{_dialogID}";
+		DB_Dialog.DialogData _data = DB_Dialog.I.get_dialog_data (_dialogID);
 
 		if (!_dialog) {
 			create_dialog (_dialogID);
 		}
 
 		_dialog.ID = _dialogID;
-		_dialog.tName.text = JsonReading.I.read ("dialogs", $"{_json}.name");
+		_dialog.tName.text = _data.name;
 		_dialog.textShowing = "";
-		_dialog.textToShow = JsonReading.I.read ("dialogs", $"{_json}.desc");
-		_dialog.port.sprite = Sprites.I.get_sprite (JsonReading.I.read ("dialogs", $"{_json}.portImg"));
-		_dialog.isTweenOut = JsonReading.I.read ("dialogs", $"{_json}.isTweenOut") == "1";
+		_dialog.textToShow = _data.desc;
+		_dialog.port.sprite = Sprites.I.get_sprite (_data.portImg);
+		_dialog.isTweenOut = _data.isTweenOut == "1";
 
 		_dialog.tweeningOut = false;
 		if (_dialog.tweenInText_default) {
@@ -125,13 +126,19 @@ public class MMCont_Dialog : MonoBehaviour {
 			SoundHandler.I.play_sfx ("chat");
 		}
 
-		foreach (GameObject _input in _dialog.inputs) {
+		for (int i = 0; i < _dialog.inputs.Count; i++){
+			DB_Dialog.InputData _inputData = new DB_Dialog.InputData ("", "");
+			switch (i){
+				case 0: _inputData = _dialog.input1; break;
+				case 1: _inputData = _dialog.input2; break;
+				case 2: _inputData = _dialog.input3; break;
+				case 3: _inputData = _dialog.input4; break;
+			}
+
 			MiniDialog_Input _script = _input.GetComponent<MiniDialog_Input>();
 			
-			string 	_jsonIn = $"{_json}.{_script.inputName}",
-				_id = JsonReading.I.read ("dialogs", $"{_jsonIn}.id");
-
-			_script.txt.text = JsonReading.I.read ("dialogs", $"{_jsonIn}.text");
+			string _id = _inputData.id;
+			_script.txt.text = _inputData.text;
 
 			if (_id == "") {
 				_input.SetActive (false);
@@ -140,8 +147,9 @@ public class MMCont_Dialog : MonoBehaviour {
 				_script.ID = _id;
 			}
 		}
+
 		_dialog.windows_showOnTweenDone.ForEach ((_window) => _window.gameObject.SetActive (false));
-		_dialog.onContinueCallbackID = JsonReading.I.read ("dialogs", $"{_json}.inputEmptyContinue");
+		_dialog.onContinueCallbackID = _dialog.inputEmptyContinue;
 
 		return _dialog;
 	}
@@ -217,7 +225,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	public void show_dialog_wooster_square_house_5 (MiniDialog _dialog) => set_dialog (_dialog, "wooster-square-house-5");
 
 	public void show_dialog_recruit_anastasia_1 (MiniDialog _dialog) {
-		if (JsonSaving.I.load ("pool").Contains ("anastasia")) {
+		if (ZPlayerPrefs.GetInt("charUnlocked.anastasia") == 1) {
 			create_dialog ("hero-recruited");
 		} else {
 			create_dialog ("recruit-anastasia-1");
@@ -230,7 +238,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	}
 
 	public void show_dialog_recruit_sylphine_1 (MiniDialog _dialog) {
-		if (JsonSaving.I.load ("pool").Contains ("sylphine")) {
+		if (ZPlayerPrefs.GetInt("charUnlocked.sylphine") == 1) {
 			create_dialog ("hero-recruited");
 		} else {
 			create_dialog ("recruit-sylphine-1");

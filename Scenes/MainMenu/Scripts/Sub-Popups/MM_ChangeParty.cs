@@ -94,7 +94,7 @@ public class MM_ChangeParty : MonoBehaviour {
         string _name;
 
         strList_lineup.Clear ();
-        string[] _lineup = JsonSaving.I.load ("lineup").Split (',');
+        string[] _lineup = Enumerable.Range(1, 4).Select(i => ZPlayerPrefs.GetString($"lineup-{i}")).ToArray();
         strList_lineup.AddRange (_lineup);
 
         for (int i = 0; i < mainLineup.Count; i++) {
@@ -105,7 +105,7 @@ public class MM_ChangeParty : MonoBehaviour {
                     mainLineup [i], 
                     Sprites.I.get_sprite (_name),
                     MM_Strings.I.get_str ($"{_name}-name"),
-                    $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
+                    ""
                 );
             } else {
                 setup_button (
@@ -118,10 +118,13 @@ public class MM_ChangeParty : MonoBehaviour {
         }
 
         strList_heroPool.Clear ();
-        string[] _pool = JsonSaving.I.load ("pool").Split (',');
-        strList_heroPool.AddRange (_pool);
+        for (int i = 0; i < DB_Chars.I.heroPool.Count; i++) {
+            if (ZPlayerPrefs.GetInt ($"charUnlocked.{DB_Chars.I.heroPool [i]}") == 1) {
+                strList_heroPool.Add (DB_Chars.I.heroPool [i]);
+            }
+        }
 
-        for (int i = 0; i < heroPool.Count; i++) {
+        for (int i = 0; i < strList_heroPool.Count; i++) {
             if (i >= _pool.Length){
                 go_heroPool [i].SetActive (false);
                 continue;
@@ -132,10 +135,10 @@ public class MM_ChangeParty : MonoBehaviour {
 
             if (_name != "") {
                 setup_button (
-                    heroPool [i],
+                    strList_heroPool [i],
                     Sprites.I.get_sprite (_name),
                     "",
-                    $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
+                    ""
                 );
             }
         }
@@ -174,7 +177,7 @@ public class MM_ChangeParty : MonoBehaviour {
             mainLineup [lineupSel],
             Sprites.I.get_sprite (_name),
             MM_Strings.I.get_str ($"{_name}-name"),
-            $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}"
+            ""
         );
 
         stop_btn_color_tween (go_mainLineup [lineupSel].GetComponent<Button>(), twn_btnLineup_color);
@@ -187,7 +190,10 @@ public class MM_ChangeParty : MonoBehaviour {
     }
 
     public void btn_return (){
-        JsonSaving.I.save ("lineup", string.Join(",", strList_lineup)); 
+        for (int i = 0; i < strList_lineup.Count; i++) {
+            ZPlayerPrefs.SetString($"lineup-{i+1}", strList_lineup [i]);
+        }
+
         if (lineupSel != -1) {
             stop_btn_color_tween (go_mainLineup [lineupSel].GetComponent<Button>(), twn_btnLineup_color);
             lineupSel = -1;

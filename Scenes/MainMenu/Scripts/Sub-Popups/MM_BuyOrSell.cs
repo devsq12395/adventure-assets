@@ -28,9 +28,10 @@ public class MM_BuyOrSell : MonoBehaviour {
 		amountCur = 1;
 		amountMax = (mode == "sell") ? _item.stack : 9999;
 
-		nameUI = JsonReading.I.read ("items", $"items.{item.name}.name-ui");
-		costStr = JsonReading.I.read ("items", $"items.{item.name}.cost");
-		cost = int.Parse (costStr);
+		Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (item.name);
+		nameUI = _data.nameUI;
+		costStr = $"${_data.cost}";
+		cost = _data.cost;
 		cost /= (mode == "buy") ? 1 : 2;
 		costTotal = cost;
 		
@@ -66,7 +67,7 @@ public class MM_BuyOrSell : MonoBehaviour {
 	}
 
 	public void btn_action (){
-		int gold = int.Parse (JsonSaving.I.load ("gold"));
+		int gold = ZPlayerPrefs.GetInt("gold");
 
 		switch (mode) {
 			case "buy":

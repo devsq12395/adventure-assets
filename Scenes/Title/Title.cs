@@ -44,6 +44,6 @@ public class Title : MonoBehaviour {
     }
 
     public void btn_reset (){
-        JsonSaving.I.first_load ();
+        SaveHandler.I.reset_all_saves ();
     }
 }

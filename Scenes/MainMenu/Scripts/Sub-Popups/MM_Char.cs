@@ -70,11 +70,13 @@ public class MM_Char : MonoBehaviour {
         name = _name;
         iPort.sprite = Sprites.I.get_sprite (_name);
 
+        DB_Chars.CharData _data = DB_Chars.I.get_char_data (_name);
+
         string  _cName = MM_Strings.I.get_str($"{_name}-name"),
                 _cStats1 = "", _cStats2 = "";
         
         for (int i = 0; i < statStrs.Length; i++) {
-            string _statToAdd = $"{JsonReading.I.get_str (statStrs [i])}: {StatCalc.I.get_stat(_name, statStrs [i]).ToString ()}\n";
+            string _statToAdd = $"{DB_Strings.I.get_string (statStrs [i])}: {StatCalc.I.get_stat(_name, statStrs [i]).ToString ()}\n";
             if (i < 5) {
                 _cStats1 += _statToAdd;
             } else {
@@ -82,7 +84,7 @@ public class MM_Char : MonoBehaviour {
             }
         }
 
-        string _cBio = string.Join ("\n\n", bioStrs.Select ((bio) => JsonReading.I.read ("chars", $"chars.{name}.bio.{bio}")));
+        string _cBio = $"{_data.bioInfo}\n\n{_data.bioSkill1}\n\n{_data.bioSkill2}";
 
         cName.text = _cName;
         cDetails.text = _cStats1;

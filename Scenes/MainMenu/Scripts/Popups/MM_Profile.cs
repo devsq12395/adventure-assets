@@ -27,9 +27,9 @@ public class MM_Profile : MonoBehaviour {
 
     private void setup_desc (){
         string  _login          = MainMenu.I.login,
-                _name           = $"{MM_Strings.I.get_str ("name")}{MM_Strings.I.get_str ($"{_login}-name-full")}",
-                _date           = $"{MM_Strings.I.get_str ("date")}{MM_Strings.I.get_str (ZPlayerPrefs.GetString ("date"))}",
-                _gold           = $"{JsonReading.I.get_str ("gold")}: {ZPlayerPrefs.GetInt("gold")}";
+                _name           = $"{DB_Strings.I.get_string ("name")}{DB_Strings.I.get_string ($"{_login}-name-full")}",
+                _date           = $"{DB_Strings.I.get_string ("date")}{DB_Strings.I.get_string (ZPlayerPrefs.GetString ("date"))}",
+                _gold           = $"{DB_Strings.I.get_string ("gold")}: {ZPlayerPrefs.GetInt("gold")}";
 
         desc.text = $"{_name}\n{_date}\n{_gold}";
     }

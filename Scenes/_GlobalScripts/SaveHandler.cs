@@ -53,11 +53,17 @@ public class SaveHandler : MonoBehaviour {
             ZPlayerPrefs.SetInt("activity.dialog-with-anthony", 0);
 
             ZPlayerPrefs.SetString("main-menu-start-callback", "");
+            ZPlayerPrefs.SetString("main-menu-map", "wooster-square");
 
             ZPlayerPrefs.SetString("lineup-1", "tommy");
             ZPlayerPrefs.SetString("lineup-2", "kazuma");
             ZPlayerPrefs.SetString("lineup-3", "");
             ZPlayerPrefs.SetString("lineup-4", "");
+
+            ZPlayerPrefs.SetInt("charUnlocked.tommy", 1);
+            ZPlayerPrefs.SetInt("charUnlocked.kazuma", 1);
+            ZPlayerPrefs.SetInt("charUnlocked.anastasia", 0);
+            ZPlayerPrefs.SetInt("charUnlocked.sylphine", 0);
 
 
             int itemCount = ZPlayerPrefs.GetInt("ItemCount", 0);

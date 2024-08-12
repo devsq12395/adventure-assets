@@ -49,9 +49,8 @@ public class MM_Party : MonoBehaviour {
     }
 
     public void refresh_list (){
-        lineup.Clear (); Debug.Log (JsonSaving.I.load ("lineup"));
-        string[] _lineup = JsonSaving.I.load ("lineup").Split (',');
-        lineup.AddRange (_lineup);
+        lineup.Clear ();
+        lineup = Enumerable.Range(1, 4).Select(i => ZPlayerPrefs.GetString($"lineup-{i}")).ToList();
 
         setup_buttons ();
     }
@@ -80,7 +79,6 @@ public class MM_Party : MonoBehaviour {
             if (_name != "") {
                 partyBtns [i].port.sprite = Sprites.I.get_sprite (_name);
                 partyBtns [i].name.text = MM_Strings.I.get_str ($"{_name}-name");
-                //partyBtns [i].lvl.text = $"{MM_Strings.I.get_str ("lvl")} {JsonSaving.I.load ($"chars.{_name}.level")}";
                 partyBtns [i].lvl.text = "";
             }
         }
