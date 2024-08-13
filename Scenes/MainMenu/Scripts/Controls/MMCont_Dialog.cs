@@ -129,27 +129,27 @@ public class MMCont_Dialog : MonoBehaviour {
 		for (int i = 0; i < _dialog.inputs.Count; i++){
 			DB_Dialogs.InputData _inputData = new DB_Dialogs.InputData ("", "");
 			switch (i){
-				case 0: _inputData = _dialog.input1; break;
-				case 1: _inputData = _dialog.input2; break;
-				case 2: _inputData = _dialog.input3; break;
-				case 3: _inputData = _dialog.input4; break;
+				case 0: _inputData = _data.input1; break;
+				case 1: _inputData = _data.input2; break;
+				case 2: _inputData = _data.input3; break;
+				case 3: _inputData = _data.input4; break;
 			}
 
-			MiniDialog_Input _script = _input.GetComponent<MiniDialog_Input>();
+			MiniDialog_Input _script = _dialog.inputs [i].GetComponent<MiniDialog_Input>();
 			
 			string _id = _inputData.id;
 			_script.txt.text = _inputData.text;
 
 			if (_id == "") {
-				_input.SetActive (false);
+				_dialog.inputs [i].SetActive (false);
 			} else {
-				_input.SetActive (true);
+				_dialog.inputs [i].SetActive (true);
 				_script.ID = _id;
 			}
 		}
 
 		_dialog.windows_showOnTweenDone.ForEach ((_window) => _window.gameObject.SetActive (false));
-		_dialog.onContinueCallbackID = _dialog.inputEmptyContinue;
+		_dialog.onContinueCallbackID = _data.inputEmptyContinue;
 
 		return _dialog;
 	}

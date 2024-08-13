@@ -16,12 +16,12 @@ public class MM_BuyOrSell : MonoBehaviour {
 	public TextMeshProUGUI tName, tDesc;
 
 	public string mode;
-	public MM_Inventory.Item item;
+	public Inv2.Item item;
 
 	private int amountCur, amountMax, cost, costTotal;
 	private string nameUI, costStr;
 
-	public void show (string _mode, MM_Inventory.Item _item){
+	public void show (string _mode, Inv2.Item _item){
 		mode = _mode;
 		item = _item;
 
@@ -83,7 +83,7 @@ public class MM_BuyOrSell : MonoBehaviour {
 				break;
 			case "sell":
 				MainMenu.I.update_gold (costTotal);
-				MM_Inventory.I.remove_stack (item, amountCur);
+				// MM_Inventory.I.remove_stack (item, amountCur); - MM_Inventory is now unused as of 2024/08/13
 				SoundHandler.I.play_sfx ("buying");
 				hide ();
 				break;

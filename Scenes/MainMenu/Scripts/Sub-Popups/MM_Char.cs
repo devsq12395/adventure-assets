@@ -126,7 +126,7 @@ public class MM_Char : MonoBehaviour {
         if (_oldEquipped == "") {
             open_change_equip ();
         } else {
-            MM_Inventory.Item _equipped = new MM_Inventory.Item (_oldEquipped, 1, 0);
+            Inv2.Item _equipped = new Inv2.Item (_oldEquipped, 1, 0);
             MM_ItemCheck.I.show (_equipped, "check-equipped");
         }
     }

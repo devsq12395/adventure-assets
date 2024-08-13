@@ -118,26 +118,26 @@ public class MM_ChangeParty : MonoBehaviour {
         }
 
         strList_heroPool.Clear ();
-        for (int i = 0; i < DB_Chars.I.heroPool.Count; i++) {
-            if (ZPlayerPrefs.GetInt ($"charUnlocked.{DB_Chars.I.heroPool [i]}") == 1) {
-                strList_heroPool.Add (DB_Chars.I.heroPool [i]);
+        for (int i = 0; i < DB_Chars.I.charPool.Count; i++) {
+            if (ZPlayerPrefs.GetInt ($"charUnlocked.{DB_Chars.I.charPool [i]}") == 1) {
+                strList_heroPool.Add (DB_Chars.I.charPool [i]);
             }
         }
 
-        for (int i = 0; i < strList_heroPool.Count; i++) {
-            if (i >= _pool.Length){
+        for (int i = 0; i < go_heroPool.Count; i++) {
+            if (i >= strList_heroPool.Count){
                 go_heroPool [i].SetActive (false);
                 continue;
             }
 
-            _name = _pool [i];
+            _name = strList_heroPool [i];
             go_heroPool [i].SetActive (true);
 
             if (_name != "") {
                 setup_button (
-                    strList_heroPool [i],
+                    heroPool [i],
                     Sprites.I.get_sprite (_name),
-                    "",
+                    _name,
                     ""
                 );
             }

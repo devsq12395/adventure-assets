@@ -249,23 +249,6 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "intro-1":
-				    _new.name = "Alfred";
-				    _new.desc = "We're finally here in New Haven, Tommy!";
-				    _new.portImg = "kazuma";
-				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-intro-2";
-				    _new.isMini = "0";
-				    _new.inputScaler_enable = "0";
-				    _new.posX = 0;
-				    _new.posY = 0;
-				    _new.input1 = new InputData("", "");
-				    _new.input2 = new InputData("", "");
-				    _new.input3 = new InputData("", "");
-				    _new.input4 = new InputData("", "");
-				    _new.inputTxtBox = new InputData("", "");
-				    break;
-
 				case "strega":
 				    _new.name = "Woman";
 				    _new.desc = "Welcome to Giovanni's crafting shop. How can I help?";

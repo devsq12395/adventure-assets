@@ -196,7 +196,7 @@ public class MM_Inventory : MonoBehaviour {
         if (mode == "buy" && JsonReading.I.read ("items", $"items.{_item.name}.requires").Length > 0) {
             MM_Craft.I.show (_item.name, "item");
         } else {
-            MM_ItemCheck.I.show (_item, mode);
+            // MM_ItemCheck.I.show (_item, mode);
         }
     }
 

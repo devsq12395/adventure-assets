@@ -15,7 +15,7 @@ public class Inv2 : MonoBehaviour {
     public struct Item {
         public string name; public int stack; public int ID; public string equippedBy;
 
-        public Item(string _name, int _stack, int _id, string _equippedBy) {
+        public Item(string _name, int _stack, int _id, string _equippedBy = "") {
             name = _name; stack = _stack; ID = _id; equippedBy = _equippedBy;
         }
     }
