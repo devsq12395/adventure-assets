@@ -94,7 +94,7 @@ public class MMCont_Dialog : MonoBehaviour {
 		BUTTONS will be set here:
 	*/
 	public MiniDialog create_dialog (string _dialogID){
-		DB_Dialog.DialogData _data = DB_Dialog.I.get_dialog_data (_dialogID);
+		DB_Dialogs.DialogData _data = DB_Dialogs.I.get_dialog_data (_dialogID);
 		string _json = $"dialogs.{_dialogID}";
 		bool _isMini = _data.isMini == "1";
 
@@ -107,7 +107,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	}
 
 	public MiniDialog set_dialog (MiniDialog _dialog, string _dialogID){
-		DB_Dialog.DialogData _data = DB_Dialog.I.get_dialog_data (_dialogID);
+		DB_Dialogs.DialogData _data = DB_Dialogs.I.get_dialog_data (_dialogID);
 
 		if (!_dialog) {
 			create_dialog (_dialogID);
@@ -127,7 +127,7 @@ public class MMCont_Dialog : MonoBehaviour {
 		}
 
 		for (int i = 0; i < _dialog.inputs.Count; i++){
-			DB_Dialog.InputData _inputData = new DB_Dialog.InputData ("", "");
+			DB_Dialogs.InputData _inputData = new DB_Dialogs.InputData ("", "");
 			switch (i){
 				case 0: _inputData = _dialog.input1; break;
 				case 1: _inputData = _dialog.input2; break;

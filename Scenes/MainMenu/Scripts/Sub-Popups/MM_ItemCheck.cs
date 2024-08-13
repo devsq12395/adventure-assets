@@ -17,7 +17,7 @@ public class MM_ItemCheck : MonoBehaviour {
 
     private string isEquip, mode;
 
-    public MM_Inventory.Item item;
+    public Inv2.Item item;
 
     public void setup (){
         go.SetActive (true);
