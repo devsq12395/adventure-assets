@@ -40,6 +40,7 @@ public class SaveHandler : MonoBehaviour {
             ZPlayerPrefs.SetInt("areasUnlocked.new-haven", 1);
             ZPlayerPrefs.SetInt("areasUnlocked.wooster-square", 1);
             ZPlayerPrefs.SetInt("areasUnlocked.squaredrive-repairs", 1);
+            ZPlayerPrefs.SetInt("areasUnlocked.rosas-diner", 1);
             ZPlayerPrefs.SetInt("areasUnlocked.bella-vita", 0);
             ZPlayerPrefs.SetInt("areasUnlocked.strega", 0);
             ZPlayerPrefs.SetInt("areasUnlocked.marcos-tavern", 0);

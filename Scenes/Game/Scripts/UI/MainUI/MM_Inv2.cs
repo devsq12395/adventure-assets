@@ -23,6 +23,7 @@ public class MM_Inv2 : MonoBehaviour {
 	public int page, pageMax, ITEMS_PER_PAGE;
 
 	public Inv2.Item itemSel;
+	public string itemSet;
 
 	public void setup (){
 		page = 1;
@@ -31,7 +32,7 @@ public class MM_Inv2 : MonoBehaviour {
 		itemsSet = new List<Inv2.Item>();
 	}
 
-	public void show (string _itemSetMode = "inventory", string _itemSet = "inventory"){
+	public void show (string _itemSetMode){
         go.SetActive (true);
 
         canvasGroup.alpha = 0f;
@@ -44,7 +45,7 @@ public class MM_Inv2 : MonoBehaviour {
         switch (_itemSetMode) {
         	case "inventory": itemsSet = Inv2.I.items; break;
         	case "shop": 
-        		itemsSet = Inv2.I.generate_item_set ( Inv2_DB.I.get_shop_items_sold (_itemSet) );
+        		itemsSet = Inv2.I.generate_item_set ( Inv2_DB.I.get_shop_items_sold (itemSet) );
         		break;
         }
 
@@ -53,6 +54,7 @@ public class MM_Inv2 : MonoBehaviour {
         change_item_sel (itemSel);
 
         pageMax = Inv2.I.get_max_pages (ITEMS_PER_PAGE);
+        t_page.text = $"{page}/{pageMax}";
     }
 
     public void hide (){
@@ -61,23 +63,26 @@ public class MM_Inv2 : MonoBehaviour {
     }
 
 	public void setup_page (){
-		t_page.text = $"{page}/{pageMax}";
 		itemsShow = Inv2.I.get_items_in_page (page, ITEMS_PER_PAGE);
 
 		int _curInd = 0;
 		itemsShow.ForEach ((_item) => {
 			Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
 			itemsBTN [_curInd].image.sprite = _data.sprite;
+			_curInd++;
 		});
 
 		// Disable buttons with no items
 		for (int _ind = itemsShow.Count; _ind < itemsBTN.Count; _ind++) {
 			itemsBTN [_ind].image.sprite = Sprites.I.get_sprite ("empty");
 		}
+
+		t_page.text = $"{page}/{pageMax}";
 	}
 
 	public void btn_change_page (int _inc){
-		page = Mathf.Clamp (page + _inc, 1, pageMax);
+		page = (page + _inc + pageMax) % pageMax;
+    	if (page == 0) page = pageMax;
 		setup_page ();
 	}
 

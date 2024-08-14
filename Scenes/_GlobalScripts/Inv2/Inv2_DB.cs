@@ -40,6 +40,17 @@ public class Inv2_DB : MonoBehaviour {
                 _new.equipTo="weapon";
                 _new.tags.AddRange(new List<string> { "weapon", "sword" });
                 _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                _new.stackable = false;
+
+                _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                break;
+            case "basic-gun":
+                _new.nameUI="Basic Gun";
+                _new.desc="Crudely made pistol. Recommended for travelers with no money.";
+                _new.equipTo="gun";
+                _new.tags.AddRange(new List<string> { "weapon", "gun" });
+                _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                _new.stackable = false;
 
                 _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                 break;

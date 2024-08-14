@@ -12,9 +12,6 @@ public class ColTrig_GenericMissile : ColTrig {
         ContEffect.I.create_effect (_this.onHitSFX, _this.gameObject.transform.position);
         ContDamage.I.damage (_owner, _hit, _this.hitDam, _this.tags);
 
-        // Gain mana if attacker is hero
-        ContDamage.I.gain_mp (_owner, 1);
-
         Destroy (gameObject);
     }
 

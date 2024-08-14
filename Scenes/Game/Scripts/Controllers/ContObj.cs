@@ -25,8 +25,7 @@ public class ContObj : MonoBehaviour {
         _comp.mp = 0;
 
         _comp.statHP                    = StatCalc.I.get_stat (_name, "hp");
-        _comp.statMP                    = StatCalc.I.get_stat (_name, "mp");
-        _comp.statAttack                = StatCalc.I.get_stat (_name, "attack");
+        _comp.statAttack                = StatCalc.I.get_stat (_name, "attack"); Debug.Log ($"{_name}, {_comp.statAttack}");
         _comp.statRange                 = StatCalc.I.get_stat (_name, "range");
         _comp.statSkill                 = StatCalc.I.get_stat (_name, "skill");
         _comp.statSpeed                 = StatCalc.I.get_stat (_name, "speed");
@@ -36,8 +35,6 @@ public class ContObj : MonoBehaviour {
 
         _comp.hpMax = _comp.statHP;
         _comp.hp = _comp.statHP;
-        _comp.mpMax = _comp.statMP;
-        _comp.mp = _comp.statMP;
         _comp.armor = _comp.statArmor;
         _comp.speed = 6 + (_comp.statSpeed * 0.25f);
     }
@@ -125,7 +122,7 @@ public class ContObj : MonoBehaviour {
     }
     
     public void update_every_10th_ms (InGameObject _obj){
-        mp_regen (_obj);
+        // mp_regen (_obj);
     }
 
     // Animation
@@ -450,10 +447,10 @@ public class ContObj : MonoBehaviour {
     
     // Stats
     private void mp_regen (InGameObject _obj){
-        if (!DB_Conditions.I.can_mp_regen (_obj)) return;
+        // if (!DB_Conditions.I.can_mp_regen (_obj)) return;
         
-        _obj.mp += _obj.mpRegen;
-        if (_obj.mp > _obj.mpMax) _obj.mp = _obj.mpMax;
+        // _obj.mp += _obj.mpRegen;
+        // if (_obj.mp > _obj.mpMax) _obj.mp = _obj.mpMax;
     }
 
     // Skill / Attack

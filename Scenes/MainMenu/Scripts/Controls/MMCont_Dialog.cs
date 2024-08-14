@@ -255,7 +255,8 @@ public class MMCont_Dialog : MonoBehaviour {
 	}
 
 	private void btn_shopStregaBuy (){
-		MM_Inv2.I.show ("shop", "strega");
+		MM_Inv2.I.itemSet = "strega";
+		MM_Inv2.I.show ("shop");
 	}
 
 	private void btn_shop (string _shopName){
