@@ -38,7 +38,7 @@ public class DB_Missions : MonoBehaviour {
 
     			_new.enemies = "vic-1";
     			_new.maps.AddRange (new string[]{"woosterSquare_rand"});
-    			_new.unlocksArea.AddRange (new string[]{"bella-vita", "strega", "marcos-tavern", "mill-river-ives", "wooster-square-house-1", "wooster-square-house-3", "wooster-square-house-5"});
+    			_new.unlocksArea.AddRange (new string[]{"bella-vita", "strega", "marcos-tavern", "wooster-square-house-1", "wooster-square-house-3", "wooster-square-house-5"});
     			_new.missionsSet.AddRange (new string[]{"vic->vic-2"});
     			_new.activitySet.AddRange (new string[]{"dialog-with-vic->2"});
 
@@ -52,7 +52,7 @@ public class DB_Missions : MonoBehaviour {
 
     			_new.enemies = "vic-1";
     			_new.maps.AddRange (new string[]{"woosterSquare_rand"});
-    			_new.unlocksArea.AddRange (new string[]{"squaredrive-repairs"});
+    			_new.unlocksArea.AddRange (new string[]{"squaredrive-repairs", "mill-river-ives"});
     			_new.missionsSet.AddRange (new string[]{"vic->vic-3"});
     			_new.activitySet.AddRange (new string[]{"dialog-with-vic->4"});
 

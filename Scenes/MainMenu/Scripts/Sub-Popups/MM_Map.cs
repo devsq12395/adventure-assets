@@ -34,7 +34,7 @@ public class MM_Map : MonoBehaviour {
             MapNode _comp = child.gameObject.GetComponent<MapNode>();
 
             if (_comp && _comp.type != "to-menu" ) {
-                bool _isLocked = ZPlayerPrefs.GetInt ($"areasUnlocked.{_comp.ID}") == 0;
+                bool _isLocked = PlayerPrefs.GetInt ($"areasUnlocked.{_comp.ID}") == 0;
 
                 if (_isLocked) {
                     Button _btn = child.gameObject.GetComponent<Button>();
@@ -60,7 +60,7 @@ public class MM_Map : MonoBehaviour {
 
     public void select_node (string _type, string _val){
         switch (_type) {
-            case "mission": MM_Mission.I.show (ZPlayerPrefs.GetString ($"missionCurPool.{_val}")); break;
+            case "mission": MM_Mission.I.show (PlayerPrefs.GetString ($"missionCurPool.{_val}")); break;
             case "dialog": MMCont_Dialog.I.create_dialog (_val); break;
             case "map": 
                 Destroy (map);
@@ -71,7 +71,7 @@ public class MM_Map : MonoBehaviour {
                 break;
 
             case "dialog-vic":
-                int _statusVicDialog = ZPlayerPrefs.GetInt ("activity.dialog-with-vic");
+                int _statusVicDialog = PlayerPrefs.GetInt ("activity.dialog-with-vic");
 
                 switch (_statusVicDialog) {
                     case 0: MMCont_Dialog.I.create_dialog ("dialog-vic-1"); break;
@@ -88,7 +88,7 @@ public class MM_Map : MonoBehaviour {
                 break;
 
             case "dialog-anthony":
-                int _statusAnthonyDialog = ZPlayerPrefs.GetInt ("activity.dialog-with-anthony");
+                int _statusAnthonyDialog = PlayerPrefs.GetInt ("activity.dialog-with-anthony");
 
                 switch (_statusAnthonyDialog) {
                     case 0: MMCont_Dialog.I.create_dialog ("anthony-1"); break;

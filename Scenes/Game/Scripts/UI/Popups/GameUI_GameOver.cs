@@ -51,20 +51,20 @@ public class GameUI_GameOver : MonoBehaviour {
 		// Unlocks all missions marked to be unlocked on missions.json
 		for (int i = 0; i < _missionsToUnlock.Count; i++) {
 			string[] _unlockDetails = _missionsToUnlock [i].Split ("->");
-			ZPlayerPrefs.SetString ($"missionCurPool.{_unlockDetails [0]}", _unlockDetails[1]);
+			PlayerPrefs.SetString ($"missionCurPool.{_unlockDetails [0]}", _unlockDetails[1]);
 		}
 
 		// Unlocks all areas marked to be unlocked on missions.json
 		List<string> _areasToUnlock = _data.unlocksArea;
 		for (int i = 0; i < _areasToUnlock.Count; i++) {
-			ZPlayerPrefs.SetInt ($"areasUnlocked.{_areasToUnlock [i]}", int.Parse (_areasToUnlock[1]));
+			PlayerPrefs.SetInt ($"areasUnlocked.{_areasToUnlock [i]}", 1);
 		}
 
 		// Sets activity
 		List<string> _activity = _data.activitySet;
 		for (int i = 0; i < _activity.Count; i++) {
 			string[] _activityToSet = _activity [i].Split ("->");
-			ZPlayerPrefs.SetInt ($"activity.{_activityToSet [i]}", int.Parse (_activityToSet[1]));
+			PlayerPrefs.SetInt ($"activity.{_activityToSet [i]}", int.Parse (_activityToSet[1]));
 		}
 
 		on_victory_callbacks (_curMission);

@@ -130,4 +130,8 @@ public class Inv2 : MonoBehaviour {
         load_items();
         return items.Where(item => item.equippedBy == _charName).ToList();
     }
+
+    /*
+        EXTRAS
+    */
 }

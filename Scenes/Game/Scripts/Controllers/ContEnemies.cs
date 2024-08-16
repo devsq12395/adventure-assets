@@ -79,7 +79,7 @@ public class ContEnemies : MonoBehaviour {
 
 		// Item Rewards
 		List<string> rewardNames = new List<string>();
-		int _rewardsAmountToGive = Random.Range (2, 6);
+		int _rewardsAmountToGive = 1;
 
 		for (int i = 0; i < _rewardsAmountToGive; i++) {
 			int _rewardToGive = Random.Range (0, 100);

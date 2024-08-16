@@ -205,7 +205,7 @@ public class MM_ChangeParty : MonoBehaviour {
         float _dur = 0.25f;
         Sequence _tween = DOTween.Sequence ();
         _tween.Append (_btn.image.DOColor (Color.white, _dur))
-            .Append (_btn.image.DOColor (new Color (1f, 1f, 0.4f), _dur));
+            .Append (_btn.image.DOColor (Color.blue, _dur));
         _tween.SetLoops (-1, LoopType.Yoyo);
         return _tween;
     }

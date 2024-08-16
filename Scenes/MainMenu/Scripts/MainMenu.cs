@@ -43,8 +43,6 @@ public class MainMenu : MonoBehaviour {
 
         move_curtain("menuStart", 0, curtainRect.anchoredPosition.y);
 
-        MM_Inventory.I.get_last_mission_item_rewards ();
-
         SoundHandler.I.play_bgm ("menu");
     }
 

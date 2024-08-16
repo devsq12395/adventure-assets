@@ -33,27 +33,27 @@ public class SaveHandler : MonoBehaviour {
             ZPlayerPrefs.SetString("missionCur", "");
             ZPlayerPrefs.SetString("missionCurPool", "");
 
-            ZPlayerPrefs.SetString("missionCurPool.vic", "vic-1");
-            ZPlayerPrefs.SetString("missionCurPool.anthony", "anthony-1");
-            ZPlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
+            PlayerPrefs.SetString("missionCurPool.vic", "vic-1");
+            PlayerPrefs.SetString("missionCurPool.anthony", "anthony-1");
+            PlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
 
-            ZPlayerPrefs.SetInt("areasUnlocked.new-haven", 1);
-            ZPlayerPrefs.SetInt("areasUnlocked.wooster-square", 1);
-            ZPlayerPrefs.SetInt("areasUnlocked.squaredrive-repairs", 1);
-            ZPlayerPrefs.SetInt("areasUnlocked.rosas-diner", 1);
-            ZPlayerPrefs.SetInt("areasUnlocked.bella-vita", 0);
-            ZPlayerPrefs.SetInt("areasUnlocked.strega", 0);
-            ZPlayerPrefs.SetInt("areasUnlocked.marcos-tavern", 0);
-            ZPlayerPrefs.SetInt("areasUnlocked.i91-highway-ives", 0);
-            ZPlayerPrefs.SetInt("areasUnlocked.east-st-ives", 0);
-            ZPlayerPrefs.SetInt("areasUnlocked.mill-river-ives", 0);
-            ZPlayerPrefs.SetInt("areasUnlocked.fair-haven-ives", 0);
-            ZPlayerPrefs.SetInt("areasUnlocked.east-st-2-ives", 0);
+            PlayerPrefs.SetInt("areasUnlocked.new-haven", 1);
+            PlayerPrefs.SetInt("areasUnlocked.wooster-square", 1);
+            PlayerPrefs.SetInt("areasUnlocked.squaredrive-repairs", 0);
+            PlayerPrefs.SetInt("areasUnlocked.rosas-diner", 1);
+            PlayerPrefs.SetInt("areasUnlocked.bella-vita", 0);
+            PlayerPrefs.SetInt("areasUnlocked.strega", 0);
+            PlayerPrefs.SetInt("areasUnlocked.marcos-tavern", 0);
+            PlayerPrefs.SetInt("areasUnlocked.i91-highway-ives", 0);
+            PlayerPrefs.SetInt("areasUnlocked.east-st-ives", 0);
+            PlayerPrefs.SetInt("areasUnlocked.mill-river-ives", 0);
+            PlayerPrefs.SetInt("areasUnlocked.fair-haven-ives", 0);
+            PlayerPrefs.SetInt("areasUnlocked.east-st-2-ives", 0);
 
-            ZPlayerPrefs.SetInt("activity.dialog-with-vic", 0);
-            ZPlayerPrefs.SetInt("activity.dialog-with-anthony", 0);
+            PlayerPrefs.SetInt("activity.dialog-with-vic", 0);
+            PlayerPrefs.SetInt("activity.dialog-with-anthony", 0);
 
-            ZPlayerPrefs.SetString("main-menu-start-callback", "");
+            ZPlayerPrefs.SetString("main-menu-start-callback", "show-intro-1");
             ZPlayerPrefs.SetString("main-menu-map", "wooster-square");
 
             ZPlayerPrefs.SetString("lineup-1", "tommy");

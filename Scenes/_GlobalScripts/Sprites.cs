@@ -5,7 +5,6 @@ using UnityEngine;
 public class Sprites : MonoBehaviour {
 
     public static Sprites I;
-	public void Awake(){ I = this; }
 
     public Sprite dummy;
 
@@ -30,45 +29,44 @@ public class Sprites : MonoBehaviour {
     [Header("----- Cursor -----")]
     public Sprite cursor;
 
+    private Dictionary<string, Sprite> spriteMap;
+
+    public void Awake(){ 
+        I = this; 
+        spriteMap = new Dictionary<string, Sprite> {
+            { "empty", empty },
+            { "tommy", tommy },
+            { "brad", brad },
+            { "kazuma", brad }, // Shared sprite
+            { "anastasia", anastasia },
+            { "seraphine", seraphine },
+            { "sylphine", seraphine }, // Shared sprite
+            { "miguel", miguel },
+            { "anthony", anthony },
+            { "npc-man-1", npcMan1 },
+            { "npc-man-2", npcMan2 },
+            { "npc-man-3", npcMan3 },
+            { "npc-man-4", npcMan4 },
+            { "npc-woman-1", npcWoman1 },
+            { "npc-woman-2", npcWoman2 },
+            { "npc-woman-3", npcWoman3 },
+            { "vincenzo", vincenzo },
+            { "beatrice", beatrice },
+            { "vic", vic },
+            { "icn-highway", icnHighway },
+            { "icn-item", icnItem },
+            { "btn-locked", btnLocked },
+            { "itm-basic-sword", itmBasicSword },
+            { "empty-icon", emptyIcon }
+        };
+    }
+
     void Start (){
         Vector2 hotspot = new Vector2(cursor.texture.width / 2, cursor.texture.height / 2);
         Cursor.SetCursor(cursor.texture, hotspot, CursorMode.ForceSoftware);
     }
 
     public Sprite get_sprite (string _name) {
-        Sprite _ret = dummy;
-
-        switch (_name) {
-            case "empty": return empty; break;
-            case "tommy": return tommy; break;
-            case "brad":case "kazuma": return brad; break;
-            case "anastasia": return anastasia; break;
-            case "seraphine": case "sylphine": return seraphine; break;
-            case "miguel": return miguel; break;
-            case "anthony": return anthony; break;
-
-            case "npc-man-1": return npcMan1; break;
-            case "npc-man-2": return npcMan2; break;
-            case "npc-man-3": return npcMan3; break;
-            case "npc-man-4": return npcMan4; break;
-            case "npc-woman-1": return npcWoman1; break;
-            case "npc-woman-2": return npcWoman2; break;
-            case "npc-woman-3": return npcWoman3; break;
-
-            case "vincenzo": return vincenzo; break;
-            case "beatrice": return beatrice; break;
-
-            case "vic": return vic; break;
-
-            case "icn-highway": return icnHighway; break;
-            case "icn-item": return icnItem; break;
-
-            case "btn-locked": return btnLocked; break;
-            
-            case "itm-basic-sword": return itmBasicSword; break;
-            case "empty-icon": return emptyIcon; break;
-        }
-
-        return _ret;
+        return spriteMap.TryGetValue(_name, out var sprite) ? sprite : dummy;
     }
 }

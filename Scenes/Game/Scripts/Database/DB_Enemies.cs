@@ -204,10 +204,8 @@ public class DB_Enemies : MonoBehaviour {
 	}
 
 	private Dictionary<string, int> vic_1_reward_chance (Dictionary<string, int> _ret){
-		_ret.Add ("cprwr", 40);	// Copper Wire
-		_ret.Add ("plsbtl", 70); // Plastic Bottle
-		_ret.Add ("wldbry", 80); // Wild Berry
-		_ret.Add ("scrap", 100); // Scrap Metal
+		_ret.Add ("basic-sword", 50);	// Copper Wire
+		_ret.Add ("basic-gun", 50); // Plastic Bottle
 
 		return _ret;
 	}

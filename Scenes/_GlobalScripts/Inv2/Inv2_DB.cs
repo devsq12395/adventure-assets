@@ -9,7 +9,11 @@ using DG.Tweening;
 
 public class Inv2_DB : MonoBehaviour {
     public static Inv2_DB I;
-    public void Awake() { I = this;}
+    public void Awake() { 
+        I = this;
+    }
+
+    private Dictionary<string, ItemData> itemDataCache = new Dictionary<string, ItemData>();
 
     public struct ItemData {
         public string nameUI, desc, equipTo;
@@ -32,31 +36,34 @@ public class Inv2_DB : MonoBehaviour {
     }
 
     public ItemData get_item_data (string _name){
-        ItemData _new = new ItemData (_name);
-        switch (_name) {
-            case "basic-sword":
-                _new.nameUI="Basic Sword";
-                _new.desc="Made of basic iron. Enough for self defense.";
-                _new.equipTo="weapon";
-                _new.tags.AddRange(new List<string> { "weapon", "sword" });
-                _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
-                _new.stackable = false;
+        if (!itemDataCache.TryGetValue(_name, out var _existingItemData)) {
+            ItemData _new = new ItemData (_name);
+            switch (_name) {
+                case "basic-sword":
+                    _new.nameUI="Basic Sword";
+                    _new.desc="Made of basic iron. Enough for self defense.";
+                    _new.equipTo="weapon";
+                    _new.tags.AddRange(new List<string> { "weapon", "sword" });
+                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.stackable = false;
 
-                _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
-                break;
-            case "basic-gun":
-                _new.nameUI="Basic Gun";
-                _new.desc="Crudely made pistol. Recommended for travelers with no money.";
-                _new.equipTo="gun";
-                _new.tags.AddRange(new List<string> { "weapon", "gun" });
-                _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
-                _new.stackable = false;
+                    _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    break;
+                case "basic-gun":
+                    _new.nameUI="Basic Gun";
+                    _new.desc="Crudely made pistol. Recommended for travelers with no money.";
+                    _new.equipTo="gun";
+                    _new.tags.AddRange(new List<string> { "weapon", "gun" });
+                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.stackable = false;
 
-                _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
-                break;
+                    _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    break;
+            }
+            itemDataCache[_name] = _new;
         }
 
-        return _new;
+        return _existingItemData;
     }
 
     public List<string> get_shop_items_sold (string _shopName){

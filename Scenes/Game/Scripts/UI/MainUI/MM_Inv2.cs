@@ -62,23 +62,32 @@ public class MM_Inv2 : MonoBehaviour {
         canvasGroup.DOFade(0f, 0.2f).OnComplete(() => go.SetActive(false));
     }
 
-	public void setup_page (){
-		itemsShow = Inv2.I.get_items_in_page (page, ITEMS_PER_PAGE);
+	public void setup_page() {
+	    stop_blink_animations ();
 
-		int _curInd = 0;
-		itemsShow.ForEach ((_item) => {
-			Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
-			itemsBTN [_curInd].image.sprite = _data.sprite;
-			_curInd++;
-		});
+	    itemsShow = Inv2.I.get_items_in_page(page, ITEMS_PER_PAGE);
 
-		// Disable buttons with no items
-		for (int _ind = itemsShow.Count; _ind < itemsBTN.Count; _ind++) {
-			itemsBTN [_ind].image.sprite = Sprites.I.get_sprite ("empty");
-		}
+	    int _curInd = 0;
+	    itemsShow.ForEach((_item) => {
+	        Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(_item.name);
+	        itemsBTN[_curInd].image.sprite = _data.sprite;
+	        _curInd++;
+	    });
 
-		t_page.text = $"{page}/{pageMax}";
+	    // Disable buttons with no items
+	    for (int _ind = itemsShow.Count; _ind < itemsBTN.Count; _ind++) {
+	        itemsBTN[_ind].image.sprite = Sprites.I.get_sprite("empty");
+	    }
+
+	    t_page.text = $"{page}/{pageMax}";
+
+	    // Re-apply the blink effect to the selected item, if it is on the current page
+	    if (!itemSel.Equals(default(Inv2.Item)) && itemsShow.Contains(itemSel)) {
+	        int index = itemsShow.IndexOf(itemSel);
+	        itemsBTN[index].image.DOColor(Color.blue, 0.5f).SetLoops(-1, LoopType.Yoyo);
+	    }
 	}
+
 
 	public void btn_change_page (int _inc){
 		page = (page + _inc + pageMax) % pageMax;
@@ -92,23 +101,40 @@ public class MM_Inv2 : MonoBehaviour {
 		}
 	}
 
-	public void change_item_sel (Inv2.Item _item){
-		if (_item.name == "empty") {
-			t_itemName.text = "";
-			t_itemDesc.text = "";
-			i_item.sprite = Sprites.I.get_sprite ("empty");
-		} else {
-			Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
+	public void change_item_sel(Inv2.Item _item) {
+	    if (_item.name == "empty") {
+	        t_itemName.text = "";
+	        t_itemDesc.text = "";
+	        i_item.sprite = Sprites.I.get_sprite("empty");
 
-			t_itemName.text = _data.nameUI;
-			t_itemDesc.text = _data.desc;
-			i_item.sprite = _data.sprite;
-		}
+	        stop_blink_animations ();
+	    } else {
+	        Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(_item.name);
+
+	        t_itemName.text = _data.nameUI;
+	        t_itemDesc.text = _data.desc;
+	        i_item.sprite = _data.sprite;
+
+	        stop_blink_animations ();
+
+	        // Start the blink animation for the selected item
+	        int index = itemsShow.IndexOf(_item);
+	        if (index >= 0 && index < itemsBTN.Count) {
+	            itemsBTN[index].image.DOColor(Color.blue, 0.5f).SetLoops(-1, LoopType.Yoyo);
+	        }
+	    }
 	}
 
 	public void update_gold (int _newGold){
 		if (go.activeSelf) {
 			t_gold.text = $"Gold: {_newGold}";
 		}
+	}
+
+	private void stop_blink_animations (){
+        itemsBTN.ForEach(btn => {
+        	btn.image.color = Color.white;
+        	btn.image.DOKill();
+        });
 	}
 }
