@@ -12,7 +12,7 @@ public class MM_Inv2 : MonoBehaviour {
 
 	public GameObject go;
 	public CanvasGroup canvasGroup; // Add this for controlling alpha
-	public RectTransform imgWindow; // Add this for controlling the y position
+	public RectTransform imgWindow, imgWindow_itemInfo; // Add this for controlling the y position
 
 	public Image i_item;
 	public TextMeshProUGUI t_title, t_itemName, t_itemDesc, t_gold, t_page;
@@ -25,6 +25,8 @@ public class MM_Inv2 : MonoBehaviour {
 	public Inv2.Item itemSel;
 	public string itemSet;
 
+	private bool isItemInfoShow;
+
 	public void setup (){
 		page = 1;
 		ITEMS_PER_PAGE = 8;
@@ -36,10 +38,13 @@ public class MM_Inv2 : MonoBehaviour {
         go.SetActive (true);
 
         canvasGroup.alpha = 0f;
-        imgWindow.anchoredPosition = new Vector2(imgWindow.anchoredPosition.x, -300f);
+        imgWindow.anchoredPosition = new Vector2(-300f, 0);
 
-        imgWindow.DOAnchorPosY(0f, 0.2f).SetEase(Ease.OutBack);
+        imgWindow.DOAnchorPosX(263.7f, 0.2f).SetEase(Ease.OutSine);
         canvasGroup.DOFade(1f, 0.2f);
+
+        imgWindow_itemInfo.anchoredPosition = new Vector2(230f, 0);
+        isItemInfoShow = false;
 
         itemsSet.Clear ();
         switch (_itemSetMode) {
@@ -58,7 +63,8 @@ public class MM_Inv2 : MonoBehaviour {
     }
 
     public void hide (){
-    	imgWindow.DOAnchorPosY(-300f, 0.2f).SetEase(Ease.InBack);
+    	imgWindow.DOAnchorPosX(-300f, 0.2f).SetEase(Ease.OutSine);
+    	imgWindow_itemInfo.DOAnchorPosX(230f, 0.2f).SetEase(Ease.OutSine);
         canvasGroup.DOFade(0f, 0.2f).OnComplete(() => go.SetActive(false));
     }
 
@@ -103,12 +109,18 @@ public class MM_Inv2 : MonoBehaviour {
 
 	public void change_item_sel(Inv2.Item _item) {
 	    if (_item.name == "empty") {
+	    	// Clear out UI on first open - This section will be used on first open only
 	        t_itemName.text = "";
 	        t_itemDesc.text = "";
 	        i_item.sprite = Sprites.I.get_sprite("empty");
 
 	        stop_blink_animations ();
 	    } else {
+	    	if (!isItemInfoShow){
+	    		isItemInfoShow = true;
+	    		imgWindow_itemInfo.DOAnchorPosX(-184.5f, 0.2f).SetEase(Ease.OutSine);
+	    	}
+
 	        Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(_item.name);
 
 	        t_itemName.text = _data.nameUI;

@@ -62,7 +62,9 @@ public class Inv2 : MonoBehaviour {
 
     public int get_max_pages(int _itemsPerPage) {
         load_items ();
-        return Mathf.CeilToInt((float)items.Count / _itemsPerPage);
+        int _ret = Mathf.CeilToInt((float)items.Count / _itemsPerPage);
+        if (_ret < 1) _ret = 1;
+        return _ret;
     }
 
     public void remove_item(int id) {
