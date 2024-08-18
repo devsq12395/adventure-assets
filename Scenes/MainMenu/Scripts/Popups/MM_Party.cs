@@ -86,6 +86,6 @@ public class MM_Party : MonoBehaviour {
     }
     
     public void btn_char (int _ind){
-        MM_Char.I.toggle_show (true, lineup [_ind]);
+        MM_Char.I.set_show (true, lineup [_ind]);
     }
 }

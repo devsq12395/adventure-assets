@@ -8,9 +8,14 @@ public class Sprites : MonoBehaviour {
 
     public Sprite dummy;
 
-    [Header("----- Portraits for Player -----")]
+    [Header("----- Portraits for Player Chars -----")]
     public Sprite empty, tommy;
     public Sprite brad, anastasia, seraphine, miguel, anthony, beatrice;
+
+    [Header("----- Sprites for Player Chars -----")]
+    public Sprite tommySprite;
+    public Sprite bradSprite, anastasiaSprite, seraphineSprite;
+
 
     [Header("----- Portraits: NPC -----")]
     public Sprite vic;
@@ -43,6 +48,10 @@ public class Sprites : MonoBehaviour {
             { "sylphine", seraphine }, // Shared sprite
             { "miguel", miguel },
             { "anthony", anthony },
+            { "tommy-sprite", tommySprite },
+            { "kazuma-sprite", bradSprite },
+            { "anastasia-sprite", anastasiaSprite },
+            { "sylphine-sprite", seraphineSprite },
             { "npc-man-1", npcMan1 },
             { "npc-man-2", npcMan2 },
             { "npc-man-3", npcMan3 },

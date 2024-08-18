@@ -176,6 +176,10 @@ MonoBehaviour:
   miguel: {fileID: 21300000, guid: bee8b5bfa1bb8b44baadec63ecfc8ded, type: 3}
   anthony: {fileID: 21300000, guid: bee8b5bfa1bb8b44baadec63ecfc8ded, type: 3}
   beatrice: {fileID: 21300000, guid: f9af9f981286ea24b9cd0691a5097bff, type: 3}
+  tommySprite: {fileID: 595184734, guid: e71eebccef0eaed048e37127af8e75aa, type: 3}
+  bradSprite: {fileID: -259239290, guid: f0fe1af457094f9c29d9362789ca1926, type: 3}
+  anastasiaSprite: {fileID: -1453745779, guid: 52189ba42aa126f4e82591e3a54063a4, type: 3}
+  seraphineSprite: {fileID: -437228383, guid: 0e5527fbec3b29b40b40cb48c7558682, type: 3}
   vic: {fileID: 21300000, guid: 6fcf94d6632dcbd43b1ddfb558054702, type: 3}
   npcMan1: {fileID: 21300000, guid: bee8b5bfa1bb8b44baadec63ecfc8ded, type: 3}
   npcMan2: {fileID: 21300000, guid: 4218fab458917ee4fb8eceedece3a143, type: 3}

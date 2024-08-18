@@ -8,6 +8,6 @@ public class ItemEquip : MonoBehaviour {
 	public string equipSlot;
 
 	public void on_click (){
-		MM_Char.I.examine_equipped (equipSlot);
+		// MM_Char.I.examine_equipped (equipSlot);
 	}
 }
