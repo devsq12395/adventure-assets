@@ -39,7 +39,7 @@ public class Sprites : MonoBehaviour {
     public void Awake(){ 
         I = this; 
         spriteMap = new Dictionary<string, Sprite> {
-            { "empty", empty },
+            { "empty", emptyIcon },
             { "tommy", tommy },
             { "brad", brad },
             { "kazuma", brad }, // Shared sprite

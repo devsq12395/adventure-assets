@@ -10,7 +10,6 @@ using DG.Tweening;
 public class Inv2 : MonoBehaviour {
     public static Inv2 I;
     public List<Item> items = new List<Item>();
-    public void Awake() { I = this; }
 
     public struct Item {
         public string name; public int stack; public int ID; public string equippedBy;
@@ -25,6 +24,13 @@ public class Inv2 : MonoBehaviour {
         public ItemUI(GameObject _go, TextMeshProUGUI _name, TextMeshProUGUI _stack) {
             go = _go; name = _name; stack = _stack;
         }
+    }
+
+    private List<string> equipStrList;
+
+    public void Awake (){
+        I = this;
+        equipList = new List<string>(){"weapon", "armor", "boots", "accessory1", "accessory2"};
     }
 
     public void add_item(string _itemName, int _stack = 1) {

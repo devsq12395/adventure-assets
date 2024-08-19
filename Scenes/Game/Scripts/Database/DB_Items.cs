@@ -58,7 +58,7 @@ public class DB_Items : MonoBehaviour {
             case "test sword":
                 _new.nameUI = "Test Sword";
                 _new.desc = "";
-                _new.equipType = "weap";
+                _new.equipType = "weapon";
                 _new.sprite = testSword;
 
                 _new.options.AddRange (new string[] { "equip" });

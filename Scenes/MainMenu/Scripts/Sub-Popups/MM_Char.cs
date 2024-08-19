@@ -16,6 +16,8 @@ public class MM_Char : MonoBehaviour {
 
     public Image i_port, i_sprite;
     public TextMeshProUGUI t_name, t_desc, t_bio, t_skill1, t_skill2;
+    public List<TextMeshProUGUI> t_equips;
+    public List<Image> i_equips;
 
     public Sprite i_tabSelected, i_tabUnselected;
 
@@ -53,7 +55,22 @@ public class MM_Char : MonoBehaviour {
         btnTabs [_ind].image.sprite = i_tabSelected;
     }
 
-    public void set_equips (){
-        
+    public void set_equips() {
+        t_equips.ForEach((txt) => txt.text = "Empty");
+        i_equips.ForEach((img) => img.sprite = Sprites.I.get_sprite("empty"));
+
+        List<string> equipStrList = Inv2.I.equipStrList;
+        List<Inv2.Item> equippedItems = Inv2.I.get_equipped_items(curChar);
+
+        equippedItems.ForEach((item) => {
+            Inv2.ItemData _itemData = Inv2.I.get_item_data(item.name);
+            int _index = equipStrList.FindIndex(equipType => equipType == _itemData.equipType);
+
+            if (_index != -1) {
+                t_equips[_index].text = _itemData.nameUI; 
+                i_equips[_index].sprite = _itemData.sprite;
+            }
+        });
     }
+
 }
