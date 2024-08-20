@@ -63,7 +63,7 @@ public class MM_Char : MonoBehaviour {
         List<Inv2.Item> equippedItems = Inv2.I.get_equipped_items(curChar);
 
         equippedItems.ForEach((item) => {
-            Inv2.ItemData _itemData = Inv2.I.get_item_data(item.name);
+            DB_Items.Item _itemData = DB_Items.I.get_item(item.name);
             int _index = equipStrList.FindIndex(equipType => equipType == _itemData.equipType);
 
             if (_index != -1) {
@@ -73,4 +73,13 @@ public class MM_Char : MonoBehaviour {
         });
     }
 
+    public void btn_equip (int _ind){
+
+        MM_Inv2.I.itemSet = Inv2.I.equipStrList [_ind];
+        if (MM_Inv2.I.itemSet == "weapon") {
+            DB_Chars.CharData _charData = DB_Chars.I.get_char_data (curChar);
+            MM_Inv2.I.itemSet = _charData.equipWeapon;
+        }
+        MM_Inv2.I.show ("equip");
+    }
 }

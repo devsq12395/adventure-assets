@@ -23,7 +23,7 @@ public class MM_Inv2 : MonoBehaviour {
 	public int page, pageMax, ITEMS_PER_PAGE;
 
 	public Inv2.Item itemSel;
-	public string itemSet;
+	public string itemSet, mode;
 
 	private bool isItemInfoShow;
 
@@ -46,9 +46,13 @@ public class MM_Inv2 : MonoBehaviour {
         imgWindow_itemInfo.anchoredPosition = new Vector2(230f, 0);
         isItemInfoShow = false;
 
+        mode = _itemSetMode;
         itemsSet.Clear ();
         switch (_itemSetMode) {
         	case "inventory": itemsSet = Inv2.I.items; break;
+        	case "equip": 
+        		itemsSet = Inv2.I.get_items_with_tag ( itemSet );
+        		break;
         	case "shop": 
         		itemsSet = Inv2.I.generate_item_set ( Inv2_DB.I.get_shop_items_sold (itemSet) );
         		break;

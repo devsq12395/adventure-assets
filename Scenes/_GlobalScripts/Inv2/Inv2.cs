@@ -26,11 +26,11 @@ public class Inv2 : MonoBehaviour {
         }
     }
 
-    private List<string> equipStrList;
+    public List<string> equipStrList;
 
     public void Awake (){
         I = this;
-        equipList = new List<string>(){"weapon", "armor", "boots", "accessory1", "accessory2"};
+        equipStrList = new List<string>(){"weapon", "armor", "boots", "accessory1", "accessory2"};
     }
 
     public void add_item(string _itemName, int _stack = 1) {
