@@ -29,7 +29,7 @@ public class Sprites : MonoBehaviour {
     public Sprite itmBasicSword;
 
     [Header("----- UI -----")]
-    public Sprite btnLocked, emptyIcon;
+    public Sprite btnLocked;
 
     [Header("----- Cursor -----")]
     public Sprite cursor;
@@ -39,7 +39,7 @@ public class Sprites : MonoBehaviour {
     public void Awake(){ 
         I = this; 
         spriteMap = new Dictionary<string, Sprite> {
-            { "empty", emptyIcon },
+            { "empty", empty },
             { "tommy", tommy },
             { "brad", brad },
             { "kazuma", brad }, // Shared sprite
@@ -66,7 +66,7 @@ public class Sprites : MonoBehaviour {
             { "icn-item", icnItem },
             { "btn-locked", btnLocked },
             { "itm-basic-sword", itmBasicSword },
-            { "empty-icon", emptyIcon }
+            { "empty-icon", empty }
         };
     }
 

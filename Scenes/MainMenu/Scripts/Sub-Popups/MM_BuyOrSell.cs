@@ -73,7 +73,7 @@ public class MM_BuyOrSell : MonoBehaviour {
 			case "buy":
 				if (gold >= costTotal) {
 					MainMenu.I.update_gold (-costTotal);
-					MM_Inventory.I.add_item (item.name, amountCur);
+					Inv2.I.add_item (item.name);
 					MMCont_Dialog.I.create_dialog ("buy-success");
 					SoundHandler.I.play_sfx ("buying");
 				} else {

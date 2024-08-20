@@ -6,6 +6,10 @@ using TMPro;
 using DG.Tweening;
 
 public class MM_ItemCheck : MonoBehaviour {
+
+    /*
+        UNUSED as of 2024/08/20
+    */
     public static MM_ItemCheck I;
     public void Awake () {I = this;}
 

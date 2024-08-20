@@ -47,5 +47,11 @@ public class EditorDev : EditorWindow {
             Inv2.I.add_item(itemName);
             Debug.Log($"Item {itemName} is added.");
         }
+
+        // Log Checkers
+        EditorGUILayout.LabelField("Log Checkers");
+        if (GUILayout.Button("Log all items")) {
+            Inv2.I.log_all_items ();
+        }
     }
 }

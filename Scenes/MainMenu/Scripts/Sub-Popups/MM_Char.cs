@@ -42,6 +42,8 @@ public class MM_Char : MonoBehaviour {
         t_bio.text = _charData.bioInfo;
         t_skill1.text = _charData.bioSkill1;
         t_skill2.text = _charData.bioSkill2;
+
+        set_equips ();
     }
 
     public void hide (){set_show (false, "");}
@@ -63,10 +65,16 @@ public class MM_Char : MonoBehaviour {
         List<Inv2.Item> equippedItems = Inv2.I.get_equipped_items(curChar);
 
         equippedItems.ForEach((item) => {
-            DB_Items.Item _itemData = DB_Items.I.get_item(item.name);
-            int _index = equipStrList.FindIndex(equipType => equipType == _itemData.equipType);
+            Inv2_DB.ItemData _itemData = Inv2_DB.I.get_item_data(item.name);
+            
+            int _index = equipStrList.FindIndex(equipType => {
+                Debug.Log ($"{equipType}, {_itemData.equipTo}");
+                return equipType == _itemData.equipTo;
+            });
 
+            Debug.Log (_index); 
             if (_index != -1) {
+                Debug.Log ($"{_itemData.nameUI}");
                 t_equips[_index].text = _itemData.nameUI; 
                 i_equips[_index].sprite = _itemData.sprite;
             }

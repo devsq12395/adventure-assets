@@ -10,12 +10,12 @@ public class MM_Inv2 : MonoBehaviour {
     public static MM_Inv2 I;
 	public void Awake(){ I = this; }
 
-	public GameObject go;
+	public GameObject go, goBtnAction;
 	public CanvasGroup canvasGroup; // Add this for controlling alpha
 	public RectTransform imgWindow, imgWindow_itemInfo; // Add this for controlling the y position
 
 	public Image i_item;
-	public TextMeshProUGUI t_title, t_itemName, t_itemDesc, t_gold, t_page;
+	public TextMeshProUGUI t_title, t_itemName, t_itemDesc, t_gold, t_page, t_action;
 
 	public List<Button> itemsBTN;
 	public List<Inv2.Item> itemsShow, itemsSet;
@@ -49,12 +49,22 @@ public class MM_Inv2 : MonoBehaviour {
         mode = _itemSetMode;
         itemsSet.Clear ();
         switch (_itemSetMode) {
-        	case "inventory": itemsSet = Inv2.I.items; break;
+        	case "inventory": 
+        		itemsSet = Inv2.I.items; 
+
+        		goBtnAction.SetActive (false);
+        		break;
         	case "equip": 
         		itemsSet = Inv2.I.get_items_with_tag ( itemSet );
+
+        		goBtnAction.SetActive (true);
+        		t_action.text = "Equip";
         		break;
         	case "shop": 
         		itemsSet = Inv2.I.generate_item_set ( Inv2_DB.I.get_shop_items_sold (itemSet) );
+
+        		goBtnAction.SetActive (false);
+        		t_action.text = "Buy";
         		break;
         }
 
@@ -75,7 +85,7 @@ public class MM_Inv2 : MonoBehaviour {
 	public void setup_page() {
 	    stop_blink_animations ();
 
-	    itemsShow = Inv2.I.get_items_in_page(page, ITEMS_PER_PAGE);
+	    itemsShow = Inv2.I.get_items_in_page(page, ITEMS_PER_PAGE, itemsSet);
 
 	    int _curInd = 0;
 	    itemsShow.ForEach((_item) => {
@@ -112,6 +122,8 @@ public class MM_Inv2 : MonoBehaviour {
 	}
 
 	public void change_item_sel(Inv2.Item _item) {
+		itemSel = _item;
+
 	    if (_item.name == "empty") {
 	    	// Clear out UI on first open - This section will be used on first open only
 	        t_itemName.text = "";
@@ -152,5 +164,16 @@ public class MM_Inv2 : MonoBehaviour {
         	btn.image.color = Color.white;
         	btn.image.DOKill();
         });
+	}
+
+	public void btn_action (){
+		if (itemSel.name == "empty") return;
+
+		switch (mode){
+			case "equip":
+				Inv2.I.set_item_equip (itemSel, MM_Char.I.curChar);
+				MMCont_Dialog.I.create_dialog ("change-equip-success");
+				break;
+		}
 	}
 }

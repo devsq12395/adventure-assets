@@ -640,6 +640,23 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
+				case "change-equip-success":
+				    _new.name = "";
+				    _new.desc = "Item Equipped!";
+				    _new.portImg = "";
+				    _new.isTweenOut = "1";
+				    _new.inputEmptyContinue = "";
+				    _new.isMini = "1";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("close-inventory-after-equip", "Back");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("close-inventory-after-equip", "Back");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
 				case "buy-recruit-success":
 				    _new.name = "";
 				    _new.desc = "Character is recruited! Set your members on the Character window.";

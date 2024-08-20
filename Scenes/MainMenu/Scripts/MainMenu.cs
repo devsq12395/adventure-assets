@@ -29,7 +29,6 @@ public class MainMenu : MonoBehaviour {
 
         MM_ItemCheck.I.setup ();
         MM_ChangeParty.I.setup ();
-        MM_Inventory.I.setup ();
         MM_Char.I.setup ();
         MM_Mission.I.setup ();
         MM_Craft.I.setup ();
@@ -63,7 +62,6 @@ public class MainMenu : MonoBehaviour {
             !FindObjectOfType<MiniDialog>() &&
             !MM_Party.I.isShow &&
             !MM_BuyOrSell.I.go.activeSelf &&
-            !MM_Inventory.I.go.activeSelf &&
             !MM_Mission.I.go.activeSelf
         ;
         headerGo.SetActive (_isShow);

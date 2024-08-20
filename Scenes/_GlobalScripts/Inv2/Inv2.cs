@@ -60,9 +60,9 @@ public class Inv2 : MonoBehaviour {
         return items.Any(item => item.name == name);
     }
 
-    public List<Item> get_items_in_page(int _page, int _itemsPerPage) {
+    public List<Item> get_items_in_page(int _page, int _itemsPerPage, List<Item> _itemSet) {
         load_items();
-        List<Item> itemsInPage = items.Skip((_page - 1) * _itemsPerPage).Take(_itemsPerPage).ToList();
+        List<Item> itemsInPage = _itemSet.Skip((_page - 1) * _itemsPerPage).Take(_itemsPerPage).ToList();
         return itemsInPage;
     }
 
@@ -139,7 +139,54 @@ public class Inv2 : MonoBehaviour {
         return items.Where(item => item.equippedBy == _charName).ToList();
     }
 
+    public void set_item_equip(Item _item, string _charName) {
+        List<Item> equippedItems = get_equipped_items(_charName);
+
+        // Find the item to change based on the equip slot (e.g., weapon, armor)
+        bool hasOldEquip = false;
+        Item _toChange = equippedItems.FirstOrDefault((item) => {
+            Inv2_DB.ItemData _dataToSet = Inv2_DB.I.get_item_data(_item.name);
+            Inv2_DB.ItemData _dataToChange = Inv2_DB.I.get_item_data(item.name);
+            hasOldEquip = _dataToSet.equipTo == _dataToChange.equipTo;
+            return hasOldEquip;
+        });
+
+        if (hasOldEquip) {
+            // Clear the equipped status of the current item
+            _toChange.equippedBy = "";
+
+            // Find the index of the current equipped item in the inventory and update it
+            int toChangeIndex = Inv2.I.items.FindIndex(item => item.name == _toChange.name && item.equippedBy == _charName);
+            if (toChangeIndex != -1) {
+                Inv2.I.items[toChangeIndex] = _toChange;
+            }
+        }
+
+        // Equip the new item
+        _item.equippedBy = _charName;
+        Debug.Log($"{_item.name} equipped by {_item.equippedBy}");
+
+        // Find the index of the new item in the inventory and update it
+        int itemIndex = Inv2.I.items.FindIndex(item => item.name == _item.name && item.equippedBy == "");
+        if (itemIndex != -1) {
+            Inv2.I.items[itemIndex] = _item;
+        }
+
+        // Save the updated inventory
+        save_items();
+    }
+
     /*
         EXTRAS
     */
+    public void log_all_items (){
+        Debug.Log ("///////////////// LOGGING ALL ITEMS ////////////////////////");
+
+        items.ForEach ((item) => {
+            Inv2_DB.ItemData _itemData = Inv2_DB.I.get_item_data (item.name);
+            Debug.Log ($"{item.name}, {_itemData.equipTo}, {item.equippedBy}");
+        });
+
+        Debug.Log ("///////////////// ALL ITEMS LOGGED ////////////////////////");
+    }
 }

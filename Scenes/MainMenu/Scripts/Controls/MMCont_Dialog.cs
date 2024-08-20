@@ -11,7 +11,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	public GameObject goDialog, goDialogMini, goCanvas;
 
 	/*
-		This is the database for when an input UI has been interacted
+		This is the callback database for when an input UI has been interacted
 		The functions will be at the bottom of this script
 	*/
 	public void input (MiniDialog _dialog, string _id){
@@ -80,6 +80,7 @@ public class MMCont_Dialog : MonoBehaviour {
 
 			case "back-to-inventory": btn_backToInventory (_dialog); break;
 			case "back-craft-success": btn_backCraftSuccess (_dialog); break;
+			case "close-inventory-after-equip": callback_close_inventory_after_equip (_dialog); break;
 
 			case "back": btn_back (_dialog); break;
 			
@@ -251,7 +252,7 @@ public class MMCont_Dialog : MonoBehaviour {
 	}
 
 	private void btn_shopTest01 (){
-		MM_Inventory.I.show ("buy", "test-shop");
+		
 	}
 
 	private void btn_shopStregaBuy (){
@@ -260,15 +261,22 @@ public class MMCont_Dialog : MonoBehaviour {
 	}
 
 	private void btn_shop (string _shopName){
-		MM_Inventory.I.show ("buy", _shopName);
+		MM_Inv2.I.itemSet = _shopName;
+		MM_Inv2.I.show ("shop");
 	}
 
 	private void btn_shopSell (){
-		MM_Inventory.I.show ("sell", "");
+		
 	}
 
 	private void btn_backToInventory (MiniDialog _dialog){
 		MM_BuyOrSell.I.hide ();
+		_dialog.tween_out ();
+	}
+
+	private void callback_close_inventory_after_equip (MiniDialog _dialog){
+		MM_Inv2.I.hide ();
+		MM_Char.I.set_equips ();
 		_dialog.tween_out ();
 	}
 
