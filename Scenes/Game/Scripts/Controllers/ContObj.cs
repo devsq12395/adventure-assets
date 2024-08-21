@@ -65,6 +65,8 @@ public class ContObj : MonoBehaviour {
         on_create_set_boss (_comp);
         on_create_set_missile (_comp);
 
+        _obj.AddComponent<HealthBarScript>();
+
         return _obj;
     }
 

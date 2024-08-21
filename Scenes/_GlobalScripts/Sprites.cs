@@ -30,6 +30,7 @@ public class Sprites : MonoBehaviour {
 
     [Header("----- UI -----")]
     public Sprite btnLocked;
+    public Sprite hpBar, hpBarBase;
 
     [Header("----- Cursor -----")]
     public Sprite cursor;
@@ -66,7 +67,10 @@ public class Sprites : MonoBehaviour {
             { "icn-item", icnItem },
             { "btn-locked", btnLocked },
             { "itm-basic-sword", itmBasicSword },
-            { "empty-icon", empty }
+            { "empty-icon", empty },
+
+            { "hp-bar", hpBar },
+            { "hp-bar-base", hpBarBase }
         };
     }
 
