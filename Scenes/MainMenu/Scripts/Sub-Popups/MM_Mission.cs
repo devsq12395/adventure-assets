@@ -59,6 +59,7 @@ public class MM_Mission : MonoBehaviour {
 
     public void btn_accept (){
         ZPlayerPrefs.SetString ("missionCur", missionID);
+        PlayerPrefs.SetInt ("cur-map-lvl", 0);
         MainMenu.I.move_curtain ("toGame");
     }
 }

@@ -19,14 +19,16 @@ public class ContMap : MonoBehaviour
         string _mission = ZPlayerPrefs.GetString("missionCur");
         DB_Missions.MissionData _data = DB_Missions.I.get_mission_data (_mission);
         List<string> _maps = _data.maps;
-        string _curMap = _maps[Random.Range (0, _maps.Count)];
+
+        int curMapLvl = PlayerPrefs.GetInt ("cur-map-lvl");
+        string _curMap = _maps[curMapLvl];
 
         details = DB_Maps.I.get_map_details(_curMap);
 
         map = details.mapObj;
         pointList = details.pointList;
 
-        ContEnemies.I.setup(_data.enemies);
+        ContEnemies.I.setup(_data.enemies[curMapLvl]);
 
         create_map_objs();
 

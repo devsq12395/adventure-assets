@@ -36,6 +36,8 @@ public class GameUI_GameOver : MonoBehaviour {
         if (_title == "success") {
         	SoundHandler.I.play_sfx ("win");
         }
+
+        PlayerPrefs.SetInt("cur-map-lvl", 0);
 	}
 
 	public void btn_go_to_menu (){

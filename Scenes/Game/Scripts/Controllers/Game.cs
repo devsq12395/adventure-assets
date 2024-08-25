@@ -12,16 +12,6 @@ public class Game : MonoBehaviour {
     public float checkEnemyCounter = 1f;
 
     void Start() {
-        // PlayerPrefs for testing
-        PlayerPrefs.SetInt ("player_charSel", 0);
-
-        PlayerPrefs.SetString ("Item1", "sample1");
-        PlayerPrefs.SetInt ("Item1_Stack", 5);
-        for (int i = 2; i <= 20; i++) {
-            PlayerPrefs.SetString ("Item" + i.ToString (), "");
-            PlayerPrefs.SetInt ("Item" + i.ToString () + "_Stack", 0);
-        }
-        
         // Setups
         MUI_CharPane.I.setup ();
         ContMap.I.setup_map ();
@@ -29,10 +19,11 @@ public class Game : MonoBehaviour {
         GameUI_InGameTxt.I.setup ();
         ContItem.I.setup ();
         MUI_HPBars.I.setup ();
+        FightCountdown.I.setup ();
 
-        ContEnemies.I.spawn_enemies ();
-
-        GameUI_Tutorial.I.check_if_show ();
+        if (!GameUI_Tutorial.I.check_if_show ()){
+            FightCountdown.I.start_count ();
+        }
         
         gameReady = true;
 

@@ -19,9 +19,9 @@ public class DB_Enemies : MonoBehaviour {
 		List<Dictionary<string, int>> _ret = new List<Dictionary<string, int>> ();
 
 		switch (_enemiesType) {
-			case "vic-1": _ret = vic_1_main_wave (_ret); break;
-			case "vic-2": _ret = vic_2_main_wave (_ret); break;
-			case "vic-3": _ret = vic_3_main_wave (_ret); break;
+			case "enem-vic-1": _ret = vic_1_main_wave (_ret); break;
+			case "enem-vic-2": _ret = vic_2_main_wave (_ret); break;
+			case "enem-vic-3": _ret = vic_3_main_wave (_ret); break;
 
 			case "anthony-1": _ret = anthony_1_main_wave (_ret); break;
 
@@ -35,9 +35,9 @@ public class DB_Enemies : MonoBehaviour {
 		Dictionary<string, int> _ret = new Dictionary<string, int> ();
 
 		switch (_enemiesType) {
-			case "vic-1": _ret = vic_1_reward_chance (_ret); break;
-			case "vic-2": _ret = vic_2_reward_chance (_ret); break;
-			case "vic-3": _ret = vic_3_reward_chance (_ret); break;
+			case "enem-vic-1": _ret = vic_1_reward_chance (_ret); break;
+			case "enem-vic-2": _ret = vic_2_reward_chance (_ret); break;
+			case "enem-vic-3": _ret = vic_3_reward_chance (_ret); break;
 
 			case "anthony-1": _ret = anthony_1_reward_chance (_ret); break;
 
@@ -51,9 +51,9 @@ public class DB_Enemies : MonoBehaviour {
 		List<int> _ret = new List<int>();
 
 		switch (_enemiesType) {
-			case "vic-1": _ret.AddRange (new int[]{200}); break;
-			case "vic-2": _ret.AddRange (new int[]{300}); break;
-			case "vic-3": _ret.AddRange (new int[]{500}); break;
+			case "enem-vic-1": _ret.AddRange (new int[]{200}); break;
+			case "enem-vic-2": _ret.AddRange (new int[]{300}); break;
+			case "enem-vic-3": _ret.AddRange (new int[]{500}); break;
 
 			case "anthony-1": _ret.AddRange (new int[]{500}); break;
 

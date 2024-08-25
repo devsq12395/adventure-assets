@@ -12,10 +12,12 @@ public class GameUI_Tutorial : MonoBehaviour {
 
 	public GameObject go, goImg;
 
-	public void check_if_show (){
+	public bool check_if_show (){
+		bool _isShow = false;
+
 		if (ZPlayerPrefs.GetString("missionCur") != "vic-1") {
 			go.SetActive (false);
-			return;
+			return false;
 		}
 
 		Game.I.pause_game ();
@@ -23,12 +25,15 @@ public class GameUI_Tutorial : MonoBehaviour {
 
 		go.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         go.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
+
+        return true;
 	}
 
 	public void btn_start (){
 		go.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.OutBack)
 			.OnComplete(() => {
 				Game.I.resume_game ();
+				FightCountdown.I.start_count ();
 			});
 	}
 }

@@ -61,6 +61,12 @@ public class SaveHandler : MonoBehaviour {
             ZPlayerPrefs.SetString("lineup-3", "");
             ZPlayerPrefs.SetString("lineup-4", "");
 
+            PlayerPrefs.SetInt("cur-map-lvl", 0);
+            PlayerPrefs.SetInt("char-1-hp-perc", 100);
+            PlayerPrefs.SetInt("char-2-hp-perc", 100);
+            PlayerPrefs.SetInt("char-3-hp-perc", 100);
+            PlayerPrefs.SetInt("char-4-hp-perc", 100);
+
             ZPlayerPrefs.SetInt("charUnlocked.tommy", 1);
             ZPlayerPrefs.SetInt("charUnlocked.kazuma", 1);
             ZPlayerPrefs.SetInt("charUnlocked.anastasia", 0);

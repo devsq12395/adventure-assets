@@ -188,7 +188,7 @@ public class ContDamage : MonoBehaviour {
             }
         };
         
-        if (enemyCount <= 0) {
+        if (enemyCount <= 0 && FightCountdown.I.countdownComplete) {
             ContEnemies.I.start_next_wave ();
         }
     }

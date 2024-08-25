@@ -103,14 +103,26 @@ public class ContEnemies : MonoBehaviour {
 		mainWaves.RemoveAt (0);
 
 		if (mainWaves.Count > 0) {
-			// MUI_Announcement.I.show ("More enemies are coming!");
+			MUI_Announcement.I.show ("More enemies are coming!");
 			spawn_enemies ();
 		} else {
-			GameUI_GameOver.I.show (
-                "success",
-                $"All enemies are beaten!\n\n{generate_and_give_rewards ()}"
-            );
-            GameUI_GameOver.I.on_victory ();
+			// Check if there are more maps for this mission
+			int curMapLvl = PlayerPrefs.GetInt ("cur-map-lvl");
+			string _curMission = ZPlayerPrefs.GetString("missionCur");
+			DB_Missions.MissionData _misData = DB_Missions.I.get_mission_data (_curMission);
+
+			curMapLvl++;
+
+			if (curMapLvl >= _misData.enemies.Count) {
+				GameUI_GameOver.I.show (
+	                "success",
+	                $"All enemies are beaten!\n\n{generate_and_give_rewards ()}"
+	            );
+	            GameUI_GameOver.I.on_victory ();
+			} else {
+				PlayerPrefs.SetInt ("cur-map-lvl", curMapLvl);
+				Transition_Game.I.change_state ("toNextMap");
+			}
 		}
 	}
 

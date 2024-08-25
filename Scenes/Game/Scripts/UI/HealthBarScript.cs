@@ -12,11 +12,8 @@ public class HealthBarScript : MonoBehaviour
     {
         unitStats = GetComponentInParent<InGameObject>();
 
-        if (unitStats == null)
-        {
-            Debug.LogError("InGameObject script not found on the parent object!");
-            return;
-        }
+        if (unitStats == null) return;
+        if (unitStats.type != "unit") return;
 
         // Ensure the health bar has a canvas
         CreateCanvasIfNeeded();
@@ -67,7 +64,7 @@ public class HealthBarScript : MonoBehaviour
         rectTransform.sizeDelta = size;
         hpBarImage.type = Image.Type.Filled;
         hpBarImage.fillMethod = Image.FillMethod.Horizontal;
-        hpBarImage.fillOrigin = (int)Image.OriginHorizontal.Left;
+        hpBarImage.fillOrigin = (int)Image.OriginHorizontal.Right;
 
         return hpBarImage;
     }

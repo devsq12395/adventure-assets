@@ -38,6 +38,10 @@ public class DB_Maps : MonoBehaviour {
         mapDetails _new = new mapDetails (_name);
         
         switch (_name) {
+            case "map-vic-1": _new = WoosterSquare1.I.get_map_details (_new); break;
+            case "map-vic-2": _new = WoosterSquare1.I.get_map_details (_new); break;
+            case "map-vic-3": _new = WoosterSquare1.I.get_map_details (_new); break;
+
             case "woosterSquare_01": _new = WoosterSquare1.I.get_map_details (_new); break;
             case "woosterSquare_02": _new = WoosterSquare1.I.get_map_details (_new); break;
             case "woosterSquare_03": _new = WoosterSquare1.I.get_map_details (_new); break;
