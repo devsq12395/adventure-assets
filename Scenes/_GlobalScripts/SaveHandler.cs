@@ -38,7 +38,7 @@ public class SaveHandler : MonoBehaviour {
             PlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
 
             PlayerPrefs.SetInt("areasState.new-haven", 1);
-            PlayerPrefs.SetInt("areasState.wooster-square", 1);
+            PlayerPrefs.SetInt("areasState.wooster-square-2", 1);
             PlayerPrefs.SetInt("areasState.squaredrive-repairs", 0);
             PlayerPrefs.SetInt("areasState.rosas-diner", 1);
             PlayerPrefs.SetInt("areasState.bella-vita", 0);

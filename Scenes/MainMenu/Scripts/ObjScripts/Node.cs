@@ -9,9 +9,11 @@ public class Node : MonoBehaviour {
 	public string name;
 
 	[Header ("The area name when entering this node with the ENTER key")]
+	[Header ("Will be used by MM_Map.I.select_node, as main value")]
 	public string areaName;
 
 	[Header ("VAL is for special codes. i.e. dialog")]
+	[Header ("Will be used by MM_Map.I.select_node, as side value")]
 	public string val;
 
 	[Header ("NOTE that neighboring nodes x or y position should be equal to this node")]

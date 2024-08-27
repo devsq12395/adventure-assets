@@ -32,6 +32,7 @@ public class MainMenu : MonoBehaviour {
         MM_Char.I.setup ();
         MM_Mission.I.setup ();
         MM_Craft.I.setup ();
+        MM_TutKey.I.setup ();
 
         MM_Map.I.setup ();
         MM_Map.I.show (ZPlayerPrefs.GetString("main-menu-map"));
@@ -65,6 +66,7 @@ public class MainMenu : MonoBehaviour {
             !MM_Mission.I.go.activeSelf
         ;
         headerGo.SetActive (_isShow);
+        MM_TutKey.I.show_all (_isShow);
     }
 
     public void update_header (){
@@ -109,6 +111,9 @@ public class MainMenu : MonoBehaviour {
                 break;
             case "toGame":
                 MasterScene.I.change_main_scene ("Game");
+                break;
+            case "changeMap":
+                MasterScene.I.change_main_scene ("MainMenu");
                 break;
         }
     }

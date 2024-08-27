@@ -54,9 +54,11 @@ public class MM_Map : MonoBehaviour {
 
     public void select_node (string _type, string _val){
         switch (_type) {
+            //////////// GENERICS
             case "mission": MM_Mission.I.show (PlayerPrefs.GetString ($"missionCurPool.{_val}")); break;
             case "dialog": MMCont_Dialog.I.create_dialog (_val); break;
             case "map": 
+                // Unused
                 Destroy (map);
                 generate_map (_val);
                 break;
@@ -64,6 +66,21 @@ public class MM_Map : MonoBehaviour {
                 hide ();
                 break;
 
+            //////////// CHANGE MAP
+            case "change-map-wooster-square-2":
+                if (PlayerPrefs.GetInt("areasState.wooster-square-2") == 1) {
+                    ZPlayerPrefs.SetString("main-menu-map", "wooster-square-2");
+
+                    // Set start node
+                    switch (_val) {
+                        case "entry-1": PlayerPrefs.SetString("start-node", "1"); break;
+                    }
+
+                    MainMenu.I.move_curtain ("changeMap");
+                }
+                break;
+
+            //////////// DIALOG
             case "dialog-vic":
                 int _statusVicDialog = PlayerPrefs.GetInt ("activity.dialog-with-vic");
 

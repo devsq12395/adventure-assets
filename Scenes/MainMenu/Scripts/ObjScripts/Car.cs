@@ -48,7 +48,10 @@ public class Car : MonoBehaviour
 
     private void HandleInput()
     {
-        if (isMoving) return; // Prevent input if already moving
+        if (isMoving) {
+            MM_TutKey.I.show_one ("enter", false);
+            return; 
+        }
 
         // Check for input and move to the corresponding node
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
@@ -57,7 +60,7 @@ public class Car : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.DownArrow)) {
             TryMoveToNextNode(Vector2.down);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)) { Debug.Log ("asd");
             TryMoveToNextNode(Vector2.left);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow)) {
@@ -69,6 +72,7 @@ public class Car : MonoBehaviour
     }
 
     public void enter_area (){
+        PlayerPrefs.SetString("start-node", curNode.name);
     	MM_Map.I.select_node (curNode.areaName, curNode.val);
     }
 
@@ -81,6 +85,7 @@ public class Car : MonoBehaviour
         Node nextNode = FindNextNode(direction);
         if (nextNode != null)
         {
+            Debug.Log ("moving to node");
             StartCoroutine(MoveToNode(nextNode));
         }
     }
@@ -96,7 +101,8 @@ public class Car : MonoBehaviour
             if (node != null)
             {
                 Vector2 toNode = (Vector2)node.transform.position - (Vector2)curNode.transform.position;
-                if (Vector2.Dot(toNode.normalized, direction) > 0.9f) // Check if node is in the same direction
+                Debug.Log (Vector2.Dot(toNode.normalized, direction));
+                if (Vector2.Dot(toNode.normalized, direction) > 0.4f) // Check if node is in the same direction
                 {
                     float distance = toNode.magnitude;
                     if (distance < closestDistance)
@@ -130,5 +136,9 @@ public class Car : MonoBehaviour
         transform.position = targetPosition;
         curNode = nextNode;
         isMoving = false;
+
+        if (curNode.areaName != ""){
+            MM_TutKey.I.show_one ("enter", true);
+        }
     }
 }

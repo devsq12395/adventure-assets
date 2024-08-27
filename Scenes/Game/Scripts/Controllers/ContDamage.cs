@@ -41,7 +41,7 @@ public class ContDamage : MonoBehaviour {
         if (spriteRenderer != null)
         {
             Color originalColor = spriteRenderer.color;  // Store the original color
-            spriteRenderer.color = Color.white;          // Change to white
+            spriteRenderer.color = Color.red;          // Change to white
 
             yield return new WaitForSeconds(0.1f);       // Wait for a short duration (0.1 seconds)
 
