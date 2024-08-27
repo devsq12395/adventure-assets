@@ -8,11 +8,11 @@ public class Node : MonoBehaviour {
 	[Header ("Name of the node. Should be unique")]
 	public string name;
 
-	[Header ("TYPE: dialog, mission, map, to-menu")]
-	[Header ("Custom types can also be made. i.e. dialog-vic")]
-	[Header ("Check the call stack from MapNode.cs to see how this works")]
-	[Header ("Empty Types are just intersections")]
-	public string type;
+	[Header ("The area name when entering this node with the ENTER key")]
+	public string areaName;
+
+	[Header ("VAL is for special codes. i.e. dialog")]
+	public string val;
 
 	[Header ("NOTE that neighboring nodes x or y position should be equal to this node")]
 	public List<GameObject> nextNodes;

@@ -3832,10 +3832,13 @@ MonoBehaviour:
   imgWindow: {fileID: 0}
   mapNames:
   - new-haven
-  - wooster-square
+  - wooster-square-1
+  - wooster-square-2
   mapObjs:
   - {fileID: 2637319581825162411, guid: 2fac45aec6c6c1db890f65c74a8381c7, type: 3}
   - {fileID: 6902724973578469332, guid: b255e54e6bcf64b0fb5b02254089688b, type: 3}
+  - {fileID: 6902724973578469332, guid: b255e54e6bcf64b0fb5b02254089688b, type: 3}
+  nodes: []
   map: {fileID: 0}
   mapID: 
 --- !u!1 &387181235

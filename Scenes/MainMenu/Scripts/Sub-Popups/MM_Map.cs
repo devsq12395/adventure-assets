@@ -31,21 +31,6 @@ public class MM_Map : MonoBehaviour {
 
     public void generate_map (string _mapID){ 
         GameObject _map = Instantiate (maps [_mapID], go.transform);
-        foreach (Transform child in _map.transform) {
-            MapNode _comp = child.gameObject.GetComponent<MapNode>();
-
-            if (_comp && _comp.type != "to-menu" ) {
-                bool _isLocked = PlayerPrefs.GetInt ($"areasUnlocked.{_comp.ID}") == 0;
-
-                if (_isLocked) {
-                    Button _btn = child.gameObject.GetComponent<Button>();
-                    Image _img = child.gameObject.GetComponent<Image>();
-
-                    _btn.interactable = false;
-                }
-            }
-        }
-
         map = _map;
 
         get_nodes ();

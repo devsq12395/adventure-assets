@@ -37,25 +37,25 @@ public class SaveHandler : MonoBehaviour {
             PlayerPrefs.SetString("missionCurPool.anthony", "anthony-1");
             PlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
 
-            PlayerPrefs.SetInt("areasUnlocked.new-haven", 1);
-            PlayerPrefs.SetInt("areasUnlocked.wooster-square", 1);
-            PlayerPrefs.SetInt("areasUnlocked.squaredrive-repairs", 0);
-            PlayerPrefs.SetInt("areasUnlocked.rosas-diner", 1);
-            PlayerPrefs.SetInt("areasUnlocked.bella-vita", 0);
-            PlayerPrefs.SetInt("areasUnlocked.strega", 0);
-            PlayerPrefs.SetInt("areasUnlocked.marcos-tavern", 0);
-            PlayerPrefs.SetInt("areasUnlocked.i91-highway-ives", 0);
-            PlayerPrefs.SetInt("areasUnlocked.east-st-ives", 0);
-            PlayerPrefs.SetInt("areasUnlocked.mill-river-ives", 0);
-            PlayerPrefs.SetInt("areasUnlocked.fair-haven-ives", 0);
-            PlayerPrefs.SetInt("areasUnlocked.east-st-2-ives", 0);
+            PlayerPrefs.SetInt("areasState.new-haven", 1);
+            PlayerPrefs.SetInt("areasState.wooster-square", 1);
+            PlayerPrefs.SetInt("areasState.squaredrive-repairs", 0);
+            PlayerPrefs.SetInt("areasState.rosas-diner", 1);
+            PlayerPrefs.SetInt("areasState.bella-vita", 0);
+            PlayerPrefs.SetInt("areasState.strega", 0);
+            PlayerPrefs.SetInt("areasState.marcos-tavern", 0);
+            PlayerPrefs.SetInt("areasState.i91-highway-ives", 0);
+            PlayerPrefs.SetInt("areasState.east-st-ives", 0);
+            PlayerPrefs.SetInt("areasState.mill-river-ives", 0);
+            PlayerPrefs.SetInt("areasState.fair-haven-ives", 0);
+            PlayerPrefs.SetInt("areasState.east-st-2-ives", 0);
 
             PlayerPrefs.SetInt("activity.dialog-with-vic", 0);
             PlayerPrefs.SetInt("activity.dialog-with-anthony", 0);
             PlayerPrefs.SetString("start-node", "1");
 
             ZPlayerPrefs.SetString("main-menu-start-callback", "show-intro-1");
-            ZPlayerPrefs.SetString("main-menu-map", "wooster-square");
+            ZPlayerPrefs.SetString("main-menu-map", "wooster-square-1");
 
             ZPlayerPrefs.SetString("lineup-1", "tommy");
             ZPlayerPrefs.SetString("lineup-2", "kazuma");

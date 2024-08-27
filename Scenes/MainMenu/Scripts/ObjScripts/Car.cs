@@ -51,22 +51,25 @@ public class Car : MonoBehaviour
         if (isMoving) return; // Prevent input if already moving
 
         // Check for input and move to the corresponding node
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
             TryMoveToNextNode(Vector2.up);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
+        else if (Input.GetKeyDown(KeyCode.DownArrow)) {
             TryMoveToNextNode(Vector2.down);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             TryMoveToNextNode(Vector2.left);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
+        else if (Input.GetKeyDown(KeyCode.RightArrow)) {
             TryMoveToNextNode(Vector2.right);
         }
+        else if (Input.GetKeyDown(KeyCode.Return)) {
+        	enter_area ();
+        }
+    }
+
+    public void enter_area (){
+    	MM_Map.I.select_node (curNode.areaName, curNode.val);
     }
 
     private void TryMoveToNextNode(Vector2 direction)

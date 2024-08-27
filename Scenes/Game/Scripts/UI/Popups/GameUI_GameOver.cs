@@ -59,7 +59,7 @@ public class GameUI_GameOver : MonoBehaviour {
 		// Unlocks all areas marked to be unlocked on missions.json
 		List<string> _areasToUnlock = _data.unlocksArea;
 		for (int i = 0; i < _areasToUnlock.Count; i++) {
-			PlayerPrefs.SetInt ($"areasUnlocked.{_areasToUnlock [i]}", 1);
+			PlayerPrefs.SetInt ($"areasState.{_areasToUnlock [i]}", 1);
 		}
 
 		// Sets activity
