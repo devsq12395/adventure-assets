@@ -52,6 +52,7 @@ public class SaveHandler : MonoBehaviour {
 
             PlayerPrefs.SetInt("activity.dialog-with-vic", 0);
             PlayerPrefs.SetInt("activity.dialog-with-anthony", 0);
+            PlayerPrefs.SetString("start-node", "1");
 
             ZPlayerPrefs.SetString("main-menu-start-callback", "show-intro-1");
             ZPlayerPrefs.SetString("main-menu-map", "wooster-square");

@@ -15,6 +15,7 @@ public class MM_Map : MonoBehaviour {
 
     public List<string> mapNames;
     public List<GameObject> mapObjs;
+    public List<Node> nodes;
 
     public Dictionary<string, GameObject> maps;
 
@@ -46,6 +47,14 @@ public class MM_Map : MonoBehaviour {
         }
 
         map = _map;
+
+        get_nodes ();
+        Car.I.setup ();
+    }
+
+    private void get_nodes (){
+        nodes = new List<Node>();
+        nodes.AddRange(FindObjectsOfType<Node>());
     }
 
     public void show (string _mapID){

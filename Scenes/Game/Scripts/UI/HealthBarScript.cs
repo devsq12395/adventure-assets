@@ -74,6 +74,9 @@ public class HealthBarScript : MonoBehaviour
         if (unitStats != null && healthBarImage != null)
         {
             healthBarImage.fillAmount = (float)unitStats.hp / unitStats.hpMax;
+            Vector3 parentScale = transform.localScale;
+            healthBarCanvas.transform.localScale = new Vector3(parentScale.x, parentScale.y, parentScale.z);
+
         }
     }
 }

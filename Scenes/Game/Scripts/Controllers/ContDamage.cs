@@ -8,25 +8,44 @@ public class ContDamage : MonoBehaviour {
     public static ContDamage I;
 	public void Awake(){ I = this; }
 
-    public void damage (InGameObject _atk, InGameObject _def, int _damOrig, List<string> _extraTags_atk) {
-        if (!DB_Conditions.I.dam_condition (_atk, _def)) return;
+    public void damage(InGameObject _atk, InGameObject _def, int _damOrig, List<string> _extraTags_atk) {
+        if (!DB_Conditions.I.dam_condition(_atk, _def)) return;
 
         int _dam = _damOrig;
-        
-        _dam = check_other_effects (_atk, _def, _dam, _extraTags_atk); 
-        _dam = check_tag_effects (_atk, _def, _dam, _extraTags_atk);
+
+        _dam = check_other_effects(_atk, _def, _dam, _extraTags_atk);
+        _dam = check_tag_effects(_atk, _def, _dam, _extraTags_atk);
 
         if (_dam < 0) _dam = 0;
         _def.hp -= _dam;
 
-        post_dam_events (_atk, _def, _dam);
+        // Call the coroutine to change color when taking damage
+        StartCoroutine(ChangeColorOnDamage(_def.gameObject));
 
-        if (_def.hp <= 0) {
-            bool _isKill = before_kill_events (_atk, _def);
-            if (_isKill) {
-                on_kill_events (_atk, _def);
-                kill (_def);
+        post_dam_events(_atk, _def, _dam);
+
+        if (_def.hp <= 0)
+        {
+            bool _isKill = before_kill_events(_atk, _def);
+            if (_isKill)
+            {
+                on_kill_events(_atk, _def);
+                kill(_def);
             }
+        }
+    }
+
+    private IEnumerator ChangeColorOnDamage(GameObject targetObject) {
+        SpriteRenderer spriteRenderer = targetObject.GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+        {
+            Color originalColor = spriteRenderer.color;  // Store the original color
+            spriteRenderer.color = Color.white;          // Change to white
+
+            yield return new WaitForSeconds(0.1f);       // Wait for a short duration (0.1 seconds)
+
+            spriteRenderer.color = originalColor;        // Revert to original color
         }
     }
     
