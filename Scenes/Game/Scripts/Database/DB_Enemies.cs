@@ -74,10 +74,11 @@ public class DB_Enemies : MonoBehaviour {
 				_waves[0].Add ("slime-blue", 1);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("slime-blue", 3);
+				_waves[1].Add ("slime-blue", 2);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("slime-red", 4);
+				_waves[2].Add ("slime-blue", 2);
+				_waves[2].Add ("slime-red", 4);
 
 				_waves.Add (new Dictionary<string, int>());
 				_waves[3].Add ("giant-slime", 1);

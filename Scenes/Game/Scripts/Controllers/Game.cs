@@ -19,11 +19,10 @@ public class Game : MonoBehaviour {
         GameUI_InGameTxt.I.setup ();
         ContItem.I.setup ();
         MUI_HPBars.I.setup ();
-        FightCountdown.I.setup ();
+        MUI_Tutorial.I.setup ();
 
-        if (!GameUI_Tutorial.I.check_if_show ()){
-            FightCountdown.I.start_count ();
-        }
+        FightCountdown.I.setup ();
+        FightCountdown.I.start_count ();
         
         gameReady = true;
 

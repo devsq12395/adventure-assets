@@ -6,8 +6,8 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
-public class GameUI_Tutorial : MonoBehaviour {
-    public static GameUI_Tutorial I;
+public class GameUI_Popup : MonoBehaviour {
+    public static GameUI_Popup I;
 	public void Awake(){ I = this; }
 
 	public GameObject go, goImg;

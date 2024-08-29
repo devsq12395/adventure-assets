@@ -69,5 +69,9 @@ public class FightCountdown : MonoBehaviour {
     {
         go.SetActive (false);
         countdownComplete = true;
+
+        if (PlayerPrefs.GetInt("combat-tut-state") == 0) {
+            MUI_Tutorial.I.show ("move");
+        }
     }
 }
