@@ -8,6 +8,9 @@ public class ContDamage : MonoBehaviour {
     public static ContDamage I;
 	public void Awake(){ I = this; }
 
+    private Dictionary<GameObject, Coroutine> damageColorCoroutines = new Dictionary<GameObject, Coroutine>();
+    private Dictionary<GameObject, Color> originalColors = new Dictionary<GameObject, Color>();
+
     public void damage(InGameObject _atk, InGameObject _def, int _damOrig, List<string> _extraTags_atk) {
         if (!DB_Conditions.I.dam_condition(_atk, _def)) return;
 
@@ -19,9 +22,6 @@ public class ContDamage : MonoBehaviour {
         if (_dam < 0) _dam = 0;
         _def.hp -= _dam;
 
-        // Call the coroutine to change color when taking damage
-        StartCoroutine(ChangeColorOnDamage(_def.gameObject));
-
         post_dam_events(_atk, _def, _dam);
 
         if (_def.hp <= 0)
@@ -32,20 +32,6 @@ public class ContDamage : MonoBehaviour {
                 on_kill_events(_atk, _def);
                 kill(_def);
             }
-        }
-    }
-
-    private IEnumerator ChangeColorOnDamage(GameObject targetObject) {
-        SpriteRenderer spriteRenderer = targetObject.GetComponent<SpriteRenderer>();
-
-        if (spriteRenderer != null)
-        {
-            Color originalColor = spriteRenderer.color;  // Store the original color
-            spriteRenderer.color = Color.red;          // Change to white
-
-            yield return new WaitForSeconds(0.1f);       // Wait for a short duration (0.1 seconds)
-
-            spriteRenderer.color = originalColor;        // Revert to original color
         }
     }
     
@@ -113,6 +99,9 @@ public class ContDamage : MonoBehaviour {
         
         // Dam Text UI
         GameUI_InGameTxt.I.create_ingame_txt ($"{_dam.ToString ()}!", _def.gameObject.transform.position, 2f);
+
+        // Color change
+        ContObj.I.change_color (_def, Color.red, 0.1f);
 
         // Sound Effects
         SoundHandler.I.play_sfx ("big-hit");

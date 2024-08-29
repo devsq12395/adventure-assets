@@ -107,6 +107,7 @@ public class ContObj : MonoBehaviour {
         move_bounds (_obj);
 
         check_anim (_obj);
+        color_obj_dur (_obj);
         
         propell_update (_obj);
 
@@ -182,6 +183,20 @@ public class ContObj : MonoBehaviour {
             _obj.gameObject.GetComponent<Renderer>().enabled = false;
         } else {
             _obj.gameObject.GetComponent<Renderer>().enabled = true;
+        }
+    }
+
+    public void change_color (InGameObject _obj, Color _color, float _dur) {
+        _obj.gameObject.GetComponent<SpriteRenderer>().color = _color;
+        _obj.colorChangeDur = _dur;
+    }
+
+    public void color_obj_dur (InGameObject _obj) {
+        if (_obj.colorChangeDur <= 0) return;
+
+        _obj.colorChangeDur -= Time.deltaTime;
+        if (_obj.colorChangeDur <= 0) {
+            _obj.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
 

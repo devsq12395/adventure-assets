@@ -76,6 +76,7 @@ public class InGameObject : MonoBehaviour {
     public float timedLife, range;
     public int controllerID;
     public List<int> hitUnitsID;
+    public float colorChangeDur;
 
     // Buffs
     public List <ContBuffs.buff> buffs;
