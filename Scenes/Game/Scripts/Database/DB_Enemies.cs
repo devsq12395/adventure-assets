@@ -63,6 +63,25 @@ public class DB_Enemies : MonoBehaviour {
 		return _ret;
 	}
 
+	public bool check_special_spawn (string _waveName){
+		bool _isSpecialSpawn = false;
+		switch (_waveName) {
+			case "slime-orange":
+	            int[] offsets = { -6, 6 };
+
+	            foreach (int x in offsets) {
+	                ContObj.I.create_obj_spawner(_waveName, new Vector2(x, 0), 2);
+	                ContObj.I.create_obj_spawner(_waveName, new Vector2(0, x), 2);
+	            }
+	            ContEnemies.I.enemyCount += 4;
+	            
+	            _isSpecialSpawn = true;
+	            break;
+		}
+
+		return _isSpecialSpawn;
+	}
+
 	private List<Dictionary<string, int>> vic_1_main_wave (List<Dictionary<string, int>> _ret){
 		//int chance = Random.Range (0, 3);
 		int chance = 0;
@@ -71,7 +90,7 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-blue", 1);
+				_waves[0].Add ("slime-orange", 1);
 
 				_waves.Add (new Dictionary<string, int>());
 				_waves[1].Add ("slime-blue", 2);

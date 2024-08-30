@@ -15,14 +15,14 @@ public class MUI_HPBars : MonoBehaviour
 
     public InGameObject boss;
 
-    public void setup (){
-        set_char (ContPlayer.I.players [0].name);
+    public void setup() {
+        set_char(ContPlayer.I.players[0].name);
     }
 
-    public void set_char (string _charName) {
-        DB_Chars.CharData _data = DB_Chars.I.get_char_data (_charName);
+    public void set_char(string _charName) {
+        DB_Chars.CharData _data = DB_Chars.I.get_char_data(_charName);
         t_name.text = _data.nameUI;
-        i_port.sprite = Sprites.I.get_sprite (_data.imgPort);
+        i_port.sprite = Sprites.I.get_sprite(_data.imgPort);
     }
 
     public void update_bars() {
@@ -30,37 +30,33 @@ public class MUI_HPBars : MonoBehaviour
 
         if (!_pla) return;
 
-        float   hpScale = (float)_pla.hp / (float)_pla.hpMax,
-                mpScale = (float)_pla.mp / (float)_pla.mpMax;
+        float hpScale = (float)_pla.hp / (float)_pla.hpMax;
 
-        set_bar_scale (i_HPMain, hpScale);
-        //set_bar_scale (i_MPMain, mpScale);
+        // Update the HP and MP bars using fillAmount
+        set_bar_fill(i_HPMain, hpScale);
 
         t_hp.text = $"{_pla.hp} / {_pla.hpMax}";
-        t_mp.text = $"{_pla.mp} / {_pla.mpMax}";
 
         t_cdSkill1.text = $"Q - {((_pla.skill1.cd > 0) ? $"{(int)(_pla.skill1.cd + 1)} sec." : "READY")}";
-        //t_cdSkill2.text = $"E - {((_pla.skill2.cd > 0) ? $"{(int)(_pla.skill2.cd + 1)} sec." : "READY")}";
+        // t_cdSkill2.text = $"E - {((_pla.skill2.cd > 0) ? $"{(int)(_pla.skill2.cd + 1)} sec." : "READY")}";
+
         i_CDPanel1.color = (_pla.skill1.cd > 0) ? Color.red : Color.green;
-        //i_CDPanel2.color = (_pla.skill2.cd > 0) ? Color.red : Color.green;
+        // i_CDPanel2.color = (_pla.skill2.cd > 0) ? Color.red : Color.green;
 
         if (boss != null) {
             float hpScaleBoss = (float)boss.hp / (float)boss.hpMax;
-            set_bar_scale (iBossMain, hpScaleBoss);
+            set_bar_fill(iBossMain, hpScaleBoss);
         }
     }
 
-    public void set_boss (InGameObject _boss){
-        go_bossHP.SetActive (true);
+    public void set_boss(InGameObject _boss) {
+        go_bossHP.SetActive(true);
         boss = _boss;
         t_bossName.text = _boss.nameUI;
     }
 
-    private void set_bar_scale (Image _bar, float _xScale) {
-        _bar.rectTransform.anchorMin = new Vector2(0f, 0.5f);
-        _bar.rectTransform.anchorMax = new Vector2(0f, 0.5f);
-        _bar.rectTransform.pivot = new Vector2(0f, 0.5f);
-
-        _bar.rectTransform.localScale = new Vector3(_xScale, 1f, 1f);
+    // Helper function to set the fill amount of an Image
+    private void set_bar_fill(Image _bar, float _fillAmount) {
+        _bar.fillAmount = _fillAmount;
     }
 }

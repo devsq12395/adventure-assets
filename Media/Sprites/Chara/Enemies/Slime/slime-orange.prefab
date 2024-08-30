@@ -15,9 +15,7 @@ GameObject:
   - component: {fileID: 5923966335340455034}
   - component: {fileID: 5088230177923938553}
   - component: {fileID: 107781289186458147}
-  - component: {fileID: 2960505936991436493}
-  - component: {fileID: 2456858750381858922}
-  - component: {fileID: 640713736768237283}
+  - component: {fileID: 1264154644165700884}
   m_Layer: 0
   m_Name: slime-orange
   m_TagString: Untagged
@@ -242,13 +240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1a6e5b6f7a0ef489fa41f463cfed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: slime-blue
+  name: slime-orange
   nameUI: 
   type: unit
   owner: 0
   id: 0
-  hp: 7
-  hpMax: 7
+  hp: 3
+  hpMax: 3
   mp: 0
   mpMax: 0
   mpRegen: 0
@@ -311,7 +309,7 @@ MonoBehaviour:
   hitUnitsID: 
   colorChangeDur: 0
   skills: []
---- !u!114 &2960505936991436493
+--- !u!114 &1264154644165700884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,40 +322,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
---- !u!114 &2456858750381858922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4917938084647442157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9abcafade4a0ca34b860e21d8e82dc8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inGameObj: {fileID: 0}
-  isStart: 0
-  isReady: 0
-  state: 0
-  stateTime: 0
-  goPos: {x: 0, y: 0}
---- !u!114 &640713736768237283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4917938084647442157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptTag: attack
-  skillName: attack
-  skillSlot: mouse1
-  mc: 0
-  cdMax: 0.5
-  cd: 0
-  missileObj: slime-blue-missile

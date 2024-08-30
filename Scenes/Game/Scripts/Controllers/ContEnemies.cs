@@ -40,15 +40,16 @@ public class ContEnemies : MonoBehaviour {
 
 		foreach (var _waveData in _wave){
 			bool _isSwarm = DB_Enemies.I.is_enemy_swarm (_waveData.Key);
-			Vector2 _rand = get_spawn_point ();
 
-			for (int i = 0; i < _waveData.Value; i++) {
-				//if (!_isSwarm) {
+			if (!DB_Enemies.I.check_special_spawn (_waveData.Key)) {
+				Vector2 _rand = get_spawn_point ();
+
+				for (int i = 0; i < _waveData.Value; i++) {
 					_rand = get_spawn_point ();
-				//}
 
-	            ContObj.I.create_obj_spawner (_waveData.Key, _rand, 2);
-	            enemyCount++;
+		            ContObj.I.create_obj_spawner (_waveData.Key, _rand, 2);
+		            enemyCount++;
+				}
 			}
         }
 	}

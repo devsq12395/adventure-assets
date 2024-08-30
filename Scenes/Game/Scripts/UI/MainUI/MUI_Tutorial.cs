@@ -64,7 +64,7 @@ public class MUI_Tutorial : MonoBehaviour
                 imgKey.sprite = imgWASD;
                 break;
             case "shift":
-                uiTxt.text = "Press Shift to dash and dodge attacks.";
+                uiTxt.text = "Press Shift to dash and dodge missiles.";
                 imgKey.sprite = imgShift;
                 break;
             case "click":
@@ -130,7 +130,7 @@ public class MUI_Tutorial : MonoBehaviour
                 break;
             case "end":
                 endDur += Time.deltaTime;
-                if (endDur <= 5f) hide ();
+                if (endDur >= 5f) hide ();
                 break;
         }
     }

@@ -4744,6 +4744,7 @@ MonoBehaviour:
   kitsuneBoss: {fileID: 5097030854448268402, guid: 39d448d14e3246c948db63e790335614, type: 3}
   slimeRed: {fileID: 4690657366656991979, guid: e6f82a6177a2b9d27b4ce290affa21a8, type: 3}
   slimeBlue: {fileID: 4917938084647442157, guid: 69b2af1989ab73ee389714e43d054950, type: 3}
+  slimeOrange: {fileID: 4917938084647442157, guid: b608c737f2b0583b49f4773ff60116de, type: 3}
   mobster: {fileID: 4690657366656991979, guid: a1a41106f0f1d4645b3a9fb335eabe2a, type: 3}
   slimeKing: {fileID: 4917938084647442157, guid: 1335056c4d2b71cc68d931890563790c, type: 3}
   giantSlime: {fileID: 3241388244497219823, guid: 368d114ea69d0f4c4afc0eb872ec9ee3, type: 3}
@@ -9356,7 +9357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1490937568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9364,16 +9365,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490937567}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.24484523, w: 0.96956223}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1710013476}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 28.345}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26.3, y: -6.9}
+  m_AnchoredPosition: {x: -8.2, y: 0.5}
   m_SizeDelta: {x: 186.82, y: 29.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490937569
@@ -9398,15 +9399,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1/1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 33c4e16fc5c7a8f47941301e6dfd5b2f, type: 2}
-  m_sharedMaterial: {fileID: 80816669781140935, guid: 33c4e16fc5c7a8f47941301e6dfd5b2f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 21f2c21eda7addb1e924cdff9de7da79, type: 2}
+  m_sharedMaterial: {fileID: -4716130073983569254, guid: 21f2c21eda7addb1e924cdff9de7da79, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294769916
+  m_fontColor: {r: 0.9877135, g: 0.9877135, b: 0.9877135, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9423,14 +9424,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

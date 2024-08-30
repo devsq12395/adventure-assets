@@ -275,6 +275,10 @@ public class ContObj : MonoBehaviour {
         }
     }
 
+    public void const_mov_ang_with_dur (InGameObject _obj, float _ang, float _dur){
+
+    }
+
     public void propell_to_angle (InGameObject _obj, float _ang, float _spd, float _drag, float _distLim, string _propellType, bool _changeAng = false) {
         /*
             KNOWN PROPELL TYPES:
@@ -322,6 +326,16 @@ public class ContObj : MonoBehaviour {
         _obj.constMovAng_ang = _ang;
     }
 
+    public void const_move_ang_with_dur (InGameObject _obj, float _ang, float _dur, float _spd = 0f){
+        const_move_ang_set (_obj, _ang, _spd);
+        _obj.constMovAng_dur = _dur;
+    }
+
+    public void const_move_ang_with_dist (InGameObject _obj, float _ang, float _dist, float _spd = 0f){
+        const_move_ang_set (_obj, _ang, _spd);
+        _obj.constMovAng_dist = _dist;
+    }
+
     public void const_move_ang_update (InGameObject _obj){
         if (!_obj.constMovAng_isOn || !DB_Conditions.I.can_move (_obj)) return;
 
@@ -341,6 +355,22 @@ public class ContObj : MonoBehaviour {
             _obj.range -= _obj.constMovAng_spd;
             if (_obj.range <= 0) {
                 ContDamage.I.kill (_obj);
+            }
+        }
+
+        if (_obj.constMovAng_dur > 0) {
+            _obj.constMovAng_dur -= Time.deltaTime;
+
+            if (_obj.constMovAng_dur <= 0) {
+                _obj.constMovAng_isOn = false;
+            }
+        }
+
+        if (_obj.constMovAng_dist > 0) {
+            _obj.constMovAng_dist -= _obj.constMovAng_spd;
+
+            if (_obj.constMovAng_dist <= 0) {
+                _obj.constMovAng_isOn = false;
             }
         }
 

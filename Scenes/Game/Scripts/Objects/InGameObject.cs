@@ -50,7 +50,7 @@ public class InGameObject : MonoBehaviour {
 
     // Move to ang
     public bool constMovAng_isOn = false;
-    public float constMovAng_spd, constMovAng_ang, propellDist;
+    public float constMovAng_spd, constMovAng_ang, constMovAng_dur, constMovAng_dist, propellDist;
     public string propellType = "";
     public Vector2 propellFirstPos = new Vector2 (0, 0);
     

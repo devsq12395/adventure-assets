@@ -16,7 +16,7 @@ public class DB_Objects : MonoBehaviour {
 
     [Header("----- Units -----")]
     public GameObject hero;
-    public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, mobster, slimeKing, giantSlime,
+    public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, slimeOrange, mobster, slimeKing, giantSlime,
         lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
         centurion, victorianSoldier;
 
@@ -69,6 +69,7 @@ public class DB_Objects : MonoBehaviour {
             case "kitsune-boss":            _refObj = kitsuneBoss; break;
             case "slime-red":            _refObj = slimeRed; break;
             case "slime-blue":            _refObj = slimeBlue; break;
+            case "slime-orange":            _refObj = slimeOrange; break;
             case "mobster":            _refObj = mobster; break;
             case "slime-king":            _refObj = slimeKing; break;
             case "giant-slime":            _refObj = giantSlime; break;
