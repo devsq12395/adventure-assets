@@ -14,6 +14,43 @@ public class Calculator : MonoBehaviour {
         return new Vector2(_x, _y);
     }
 
+    public float get_ang_from_wasd() {
+        float angle = -1; // Initialize with a default value for no input
+
+        // Check which keys are pressed and set the corresponding angle
+        if (Input.GetKey(KeyCode.W)) {
+            if (Input.GetKey(KeyCode.A)) {
+                angle = 135f; // WA - up-left
+            }
+            else if (Input.GetKey(KeyCode.D)) {
+                angle = 45f; // WD - up-right
+            }
+            else {
+                angle = 90f; // W - up
+            }
+        }
+        else if (Input.GetKey(KeyCode.S)) {
+            if (Input.GetKey(KeyCode.A)) {
+                angle = 225f; // SA - down-left
+            }
+            else if (Input.GetKey(KeyCode.D)) {
+                angle = 315f; // SD - down-right
+            }
+            else {
+                angle = 270f; // S - down
+            }
+        }
+        else if (Input.GetKey(KeyCode.A)) {
+            angle = 180f; // A - left
+        }
+        else if (Input.GetKey(KeyCode.D)) {
+            angle = 0f; // D - right
+        }
+
+        return angle;
+    }
+
+
     public float get_ang_from_2_points_deg (Vector2 _p1, Vector2 _p2){
         Vector2 _dir = _p2 - _p1;
         return Mathf.Atan2 (_dir.y, _dir.x) * Mathf.Rad2Deg;

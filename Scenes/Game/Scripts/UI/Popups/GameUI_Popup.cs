@@ -33,7 +33,7 @@ public class GameUI_Popup : MonoBehaviour {
 		go.transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.OutBack)
 			.OnComplete(() => {
 				Game.I.resume_game ();
-				FightCountdown.I.start_count ();
+				FightCountdown.I.start_count ("start");
 			});
 	}
 }

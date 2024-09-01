@@ -16,14 +16,20 @@ public class ContPlayer : MonoBehaviour {
     public List<DB_Items.Item> items;
 
     public int gold, pla_curSel;
+    public float sta, staMax, staReturnCount, staReturnAmount;
 
     void Start (){
         items = new List<DB_Items.Item> ();
         players = new List<InGameObject> ();
+
+        sta = 10;
+        staMax = 10;
+        staReturnCount = 0.75f;
+        staReturnAmount = 0.05f;
     }
     
     public void update (){
-        
+        stamina_update ();
     }
 
     public void setup_player (){
@@ -80,6 +86,28 @@ public class ContPlayer : MonoBehaviour {
         ContEffect.I.create_effect ("move-smoke", _posPl);
 
         SoundHandler.I.play_sfx ("dash-smoke");
+    }
+
+    // Stamina
+    public bool check_and_use_stamina (int _staReq){
+        if (_staReq > sta) {
+            return false;
+        } else {
+            sta -= _staReq;
+            staReturnCount = 2;
+            return true;
+        }
+    }
+
+    public void stamina_update (){
+        if (staReturnCount > 0) {
+            staReturnCount -= Time.deltaTime;
+        } else {
+            if (sta < staMax) {
+                sta += staReturnAmount;
+                if (sta > staMax) sta = staMax;
+            }
+        }
     }
 
     // Skills

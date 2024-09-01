@@ -13,9 +13,9 @@ public class GameUI_GameOver : MonoBehaviour {
 	public GameObject go, goImg;
 	public Image imgTitle;
 
-	public Sprite imgWin, imgLose;
+	public Sprite imgWin, imgLose, imgSpkPort;
 
-	public TextMeshProUGUI tTitle, tDesc;
+	public TextMeshProUGUI tTitle, tDesc, tSpkName, tSpkTxt;
 
 	public void setup (){
 		go.SetActive (true);

@@ -72,6 +72,8 @@ public class Car : MonoBehaviour
     }
 
     public void enter_area (){
+        if (MainMenu.I.check_if_a_popup_is_showing ()) return;
+
         PlayerPrefs.SetString("start-node", curNode.name);
     	MM_Map.I.select_node (curNode.areaName, curNode.val);
     }

@@ -13,9 +13,11 @@ public class DB_Missions : MonoBehaviour {
     public struct MissionData {
     	public string name, speaker, desc, sprite, rewards;
     	public List<string> maps, unlocksArea, missionsSet, activitySet, enemies;
+        public string gameOverSpk_name, gameOverSpk_text, gameOverSpk_img;
 
     	public MissionData (string _name){
     		name = _name; speaker = ""; desc = ""; sprite = ""; rewards = "";
+            gameOverSpk_name = ""; gameOverSpk_text = ""; gameOverSpk_img = "";
     		
             enemies = new List<string> ();
     		maps = new List<string> ();
@@ -34,6 +36,10 @@ public class DB_Missions : MonoBehaviour {
     			_new.desc = "Some slimes are spotted here in Wooster Square. Word is a Giant Slime is with them too.\n\nShould be easy for you to deal with. This is a chance for you to gain respect around here.";
     			_new.sprite = "vic";
     			_new.rewards = "200 Gold";
+
+                _new.gameOverSpk_name = "Vic";
+                _new.gameOverSpk_text = "Well done! Boss Vincenzo will be pleased. You should meet with him at Luppino Family Cafe.";
+                _new.gameOverSpk_img = "vic";
 
     			_new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
     			_new.maps.AddRange (new string[]{"map-vic-1", "map-vic-2", "map-vic-3"});

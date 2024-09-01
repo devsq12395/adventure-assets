@@ -10,7 +10,7 @@ public class MUI_HPBars : MonoBehaviour
     public void Awake() { I = this; }
 
     public GameObject go_bossHP;
-    public Image i_port, i_HPMain, i_MPMain, iBossMain, i_CDPanel1, i_CDPanel2;
+    public Image i_port, i_HPMain, i_StaMain, iBossMain, i_CDPanel1, i_CDPanel2;
     public TextMeshProUGUI t_name, t_hp, t_mp, t_bossName, t_cdSkill1, t_cdSkill2;
 
     public InGameObject boss;
@@ -30,10 +30,12 @@ public class MUI_HPBars : MonoBehaviour
 
         if (!_pla) return;
 
-        float hpScale = (float)_pla.hp / (float)_pla.hpMax;
+        float   hpScale = (float)_pla.hp / (float)_pla.hpMax,
+                staScale = (float)ContPlayer.I.sta / (float)ContPlayer.I.staMax;
 
         // Update the HP and MP bars using fillAmount
         set_bar_fill(i_HPMain, hpScale);
+        set_bar_fill(i_StaMain, staScale);
 
         t_hp.text = $"{_pla.hp} / {_pla.hpMax}";
 

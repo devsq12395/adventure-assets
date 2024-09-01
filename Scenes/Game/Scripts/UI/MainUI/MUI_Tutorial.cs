@@ -64,7 +64,7 @@ public class MUI_Tutorial : MonoBehaviour
                 imgKey.sprite = imgWASD;
                 break;
             case "shift":
-                uiTxt.text = "Press Shift to dash and dodge missiles.";
+                uiTxt.text = "Press Shift to dash and dodge missiles. This consumes stamina.";
                 imgKey.sprite = imgShift;
                 break;
             case "click":

@@ -19,8 +19,8 @@ public class HealthBarScript : MonoBehaviour
         CreateCanvasIfNeeded();
 
         // Create the health bar and its base
-        healthBarBaseImage = CreateHpBar("hp-bar-base", new Vector2(1.25f, 1), new Vector2(0, 1f));
-        healthBarImage = CreateHpBar("hp-bar", new Vector2(1.25f, 1), new Vector2(0, 1f));
+        healthBarBaseImage = CreateHpBar("hp-bar-base", new Vector2(1.5f, 1.75f), new Vector2(0, 1f));
+        healthBarImage = CreateHpBar("hp-bar", new Vector2(1.5f, 1.75f), new Vector2(0, 1f));
     }
 
     private void CreateCanvasIfNeeded()
@@ -53,8 +53,8 @@ public class HealthBarScript : MonoBehaviour
         healthBarObj.transform.SetParent(healthBarCanvas.transform);
 
         RectTransform rectTransform = healthBarObj.AddComponent<RectTransform>();
-        rectTransform.anchorMin = new Vector2(0.5f, 1);
-        rectTransform.anchorMax = new Vector2(0.5f, 1);
+        rectTransform.anchorMin = new Vector2(0.5f, 1.5f);
+        rectTransform.anchorMax = new Vector2(0.5f, 1.5f);
         rectTransform.pivot = new Vector2(0.5f, 1);
         rectTransform.anchoredPosition = anchorPos;
 
@@ -74,7 +74,7 @@ public class HealthBarScript : MonoBehaviour
         if (unitStats != null && healthBarImage != null)
         {
             healthBarImage.fillAmount = (float)unitStats.hp / unitStats.hpMax;
-            float scaleX = ((unitStats.facing == "left") ? 1.25f : -1.25f);
+            float scaleX = ((unitStats.facing == "left") ? 1.5f : -1.75f);
             healthBarCanvas.transform.localScale = new Vector3(scaleX, 1.25f, 1);
 
         }

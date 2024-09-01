@@ -48,8 +48,16 @@ public class EditorDev : EditorWindow {
             Debug.Log($"Item {itemName} is added.");
         }
 
+        EditorGUILayout.LabelField("Shortcuts", EditorStyles.boldLabel);
+        if (GUILayout.Button("To Game")) {
+            MasterScene.I.change_main_scene ("Game");
+        }
+        if (GUILayout.Button("To Menu")) {
+            MasterScene.I.change_main_scene ("MainMenu");
+        }
+
         // Log Checkers
-        EditorGUILayout.LabelField("Log Checkers");
+        EditorGUILayout.LabelField("Log Checkers", EditorStyles.boldLabel);
         if (GUILayout.Button("Log all items")) {
             Inv2.I.log_all_items ();
         }

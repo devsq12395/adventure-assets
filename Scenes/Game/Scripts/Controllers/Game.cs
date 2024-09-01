@@ -22,7 +22,7 @@ public class Game : MonoBehaviour {
         MUI_Tutorial.I.setup ();
 
         FightCountdown.I.setup ();
-        FightCountdown.I.start_count ();
+        FightCountdown.I.start_count ("start");
         
         gameReady = true;
 

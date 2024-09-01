@@ -122,7 +122,7 @@ public class ContEnemies : MonoBehaviour {
 	            GameUI_GameOver.I.on_victory ();
 			} else {
 				PlayerPrefs.SetInt ("cur-map-lvl", curMapLvl);
-				Transition_Game.I.change_state ("toNextMap");
+				FightCountdown.I.start_count ("end");
 			}
 		}
 	}
