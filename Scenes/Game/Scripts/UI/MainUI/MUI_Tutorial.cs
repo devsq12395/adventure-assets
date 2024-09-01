@@ -64,7 +64,7 @@ public class MUI_Tutorial : MonoBehaviour
                 imgKey.sprite = imgWASD;
                 break;
             case "shift":
-                uiTxt.text = "Press Shift to dash and dodge missiles. This consumes stamina.";
+                uiTxt.text = "Press Shift to dodge. This consumes stamina.";
                 imgKey.sprite = imgShift;
                 break;
             case "click":
@@ -72,11 +72,11 @@ public class MUI_Tutorial : MonoBehaviour
                 imgKey.sprite = imgClick;
                 break;
             case "skill":
-                uiTxt.text = "Press E to use your skill. Your skill has a cooldown of a few seconds.";
+                uiTxt.text = "Press E to use your skill.";
                 imgKey.sprite = imgSkill;
                 break;
             case "switch-char":
-                uiTxt.text = "Switch character with keys 1,2,3,4. ";
+                uiTxt.text = "Switch character with number keys (1, 2, 3 or 4). ";
                 imgKey.sprite = imgNumKey;
                 break;
             case "end":
