@@ -59,17 +59,15 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void update_show_header (){
-        bool _isShow = 
-            !FindObjectOfType<MiniDialog>() &&
-            !check_if_a_popup_is_showing ()
-        ;
+        bool _isShow = !check_if_a_popup_is_showing ();
         headerGo.SetActive (_isShow);
         MM_TutKey.I.show_all (_isShow);
     }
 
     public bool check_if_a_popup_is_showing (){
-        return  MM_Party.I.isShow &&
-                MM_BuyOrSell.I.go.activeSelf &&
+        return  FindObjectOfType<MiniDialog>() ||
+                MM_Party.I.isShow ||
+                MM_BuyOrSell.I.go.activeSelf ||
                 MM_Mission.I.go.activeSelf;
     }
 

@@ -8,23 +8,38 @@ public class HealthBarScript : MonoBehaviour
     private Image healthBarBaseImage;
     private Canvas healthBarCanvas;
 
-    private void Awake()
-    {
-        unitStats = GetComponentInParent<InGameObject>();
+    public string mode;
+    public bool isReady;
 
+    private void Awake() {
+        unitStats = GetComponentInParent<InGameObject>();
+    }
+
+    public void Setup (string _mode){
         if (unitStats == null) return;
         if (unitStats.type != "unit") return;
 
         // Ensure the health bar has a canvas
         CreateCanvasIfNeeded();
+        mode = _mode;
 
         // Create the health bar and its base
-        healthBarBaseImage = CreateHpBar("hp-bar-base", new Vector2(1.5f, 1.75f), new Vector2(0, 1f));
-        healthBarImage = CreateHpBar("hp-bar", new Vector2(1.5f, 1.75f), new Vector2(0, 1f));
+        switch (mode) {
+            case "health":
+                healthBarBaseImage = CreateHpBar("hp-bar-base", new Vector2(1.5f, 1.75f), new Vector2(0, 1f));
+                healthBarImage = CreateHpBar("hp-bar", new Vector2(1.5f, 1.75f), new Vector2(0, 1f));
+                break;
+
+            case "stamina":
+                healthBarBaseImage = CreateHpBar("sta-bar-base", new Vector2(1.5f, 1.25f), new Vector2(0, 0.9f));
+                healthBarImage = CreateHpBar("sta-bar", new Vector2(1.5f, 1.25f), new Vector2(0, 0.9f));
+                break;
+        }
+
+        isReady = true;
     }
 
-    private void CreateCanvasIfNeeded()
-    {
+    private void CreateCanvasIfNeeded() {
         // Check if there's already a Canvas in the parent hierarchy
         healthBarCanvas = GetComponentInParent<Canvas>();
 
@@ -47,8 +62,7 @@ public class HealthBarScript : MonoBehaviour
         }
     }
 
-    private Image CreateHpBar(string spriteName, Vector2 size, Vector2 anchorPos)
-    {
+    private Image CreateHpBar(string spriteName, Vector2 size, Vector2 anchorPos) {
         GameObject healthBarObj = new GameObject(spriteName);
         healthBarObj.transform.SetParent(healthBarCanvas.transform);
 
@@ -69,13 +83,24 @@ public class HealthBarScript : MonoBehaviour
         return hpBarImage;
     }
 
-    private void Update()
-    {
-        if (unitStats != null && healthBarImage != null)
-        {
-            healthBarImage.fillAmount = (float)unitStats.hp / unitStats.hpMax;
-            float scaleX = ((unitStats.facing == "left") ? 1.5f : -1.75f);
-            healthBarCanvas.transform.localScale = new Vector3(scaleX, 1.25f, 1);
+    private void Update() {
+        if (!isReady) return;
+
+        float scaleX;
+        if (unitStats != null && healthBarImage != null) {
+            switch (mode) {
+                case "health":
+                    healthBarImage.fillAmount = (float)unitStats.hp / unitStats.hpMax;
+                    scaleX = ((unitStats.facing == "left") ? 1.5f : -1.5f);
+                    healthBarCanvas.transform.localScale = new Vector3(scaleX, 1.75f, 1);
+                    break;
+
+                case "stamina":
+                    healthBarImage.fillAmount = (float)ContPlayer.I.sta / ContPlayer.I.staMax;
+                    scaleX = ((unitStats.facing == "left") ? 1.5f : -1.5f);
+                    healthBarCanvas.transform.localScale = new Vector3(scaleX, 1.25f, 1);
+                    break;
+            }
 
         }
     }

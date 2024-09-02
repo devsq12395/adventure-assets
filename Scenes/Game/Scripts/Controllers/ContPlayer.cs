@@ -55,6 +55,9 @@ public class ContPlayer : MonoBehaviour {
             players.Add (_p);
             
             MUI_CharPane.I.create_char (_ch);
+
+            _p.barSta = _go.AddComponent<HealthBarScript>();
+            _p.barSta.Setup ("stamina");
         }
         pla_curSel = PlayerPrefs.GetInt ("player_charSel");
         player = players [pla_curSel];

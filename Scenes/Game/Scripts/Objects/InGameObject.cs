@@ -84,6 +84,9 @@ public class InGameObject : MonoBehaviour {
     // Skills
     public List <SkillTrig> skills;
 
+    // UI
+    public HealthBarScript barHP, barSta;
+
     void Start() {
         renderer = GetComponent <Renderer> ();
 

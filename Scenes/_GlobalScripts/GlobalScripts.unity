@@ -195,6 +195,8 @@ MonoBehaviour:
   btnLocked: {fileID: 21300000, guid: afd56857a2f956f4a9196939426055c0, type: 3}
   hpBar: {fileID: 21300000, guid: fe7851e2ef3d00b458f3c60d34face47, type: 3}
   hpBarBase: {fileID: 21300000, guid: 7010e518b27d4ca4b86a9234f7f97ff9, type: 3}
+  staBar: {fileID: 21300000, guid: 2f9bf814c78e33a41a40469da5702a0d, type: 3}
+  staBarBase: {fileID: 21300000, guid: 7010e518b27d4ca4b86a9234f7f97ff9, type: 3}
   cursor: {fileID: 21300000, guid: c0ed0029d51c7c243818baab9884398c, type: 3}
 --- !u!1 &332524905
 GameObject:

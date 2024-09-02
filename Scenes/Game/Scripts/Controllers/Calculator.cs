@@ -46,6 +46,9 @@ public class Calculator : MonoBehaviour {
         else if (Input.GetKey(KeyCode.D)) {
             angle = 0f; // D - right
         }
+        else {
+            angle = (ContPlayer.I.player.facing == "left") ? 180 : 0;
+        }
 
         return angle;
     }
