@@ -238,29 +238,19 @@ public class DB_Enemies : MonoBehaviour {
 		return _ret;
 	}
 	private Dictionary<string, int> vic_3_reward_chance (Dictionary<string, int> _ret){
-		_ret.Add ("cprwr", 40);	// Copper Wire
-		_ret.Add ("plsbtl", 70); // Plastic Bottle
-		_ret.Add ("wldbry", 80); // Wild Berry
-		_ret.Add ("scrap", 100); // Scrap Metal
+		_ret.Add ("", 100);	
 
 		return _ret;
 	}
 
 	private Dictionary<string, int> anthony_1_reward_chance (Dictionary<string, int> _ret){
-		_ret.Add ("cprwr", 40);	// Copper Wire
-		_ret.Add ("plsbtl", 70); // Plastic Bottle
-		_ret.Add ("wldbry", 80); // Wild Berry
-		_ret.Add ("scrap", 100); // Scrap Metal
+		_ret.Add ("", 100);	
 
 		return _ret;
 	}
 
 	private Dictionary<string, int> mill_river_1_reward_chance (Dictionary<string, int> _ret){
-		_ret.Add ("wdblk", 40);	// Wooden Block
-		_ret.Add ("lthr", 70); // Leather
-		_ret.Add ("bluvin", 80); // Blue Glowvine
-		_ret.Add ("elcshd", 90); // Electric Shard
-		_ret.Add ("demfng", 100); // Demon Fang
+		_ret.Add ("", 100);	
 
 		return _ret;
 	}

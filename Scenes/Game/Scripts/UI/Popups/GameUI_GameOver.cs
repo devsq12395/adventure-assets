@@ -10,12 +10,16 @@ public class GameUI_GameOver : MonoBehaviour {
     public static GameUI_GameOver I;
 	public void Awake(){ I = this; }
 
-	public GameObject go, goImg;
-	public Image imgTitle;
+	public GameObject go, goImg, goReward;
+	public Image imgWindow, imgSpkPort;
 
-	public Sprite imgWin, imgLose, imgSpkPort;
+	public Sprite imgWin, imgLose;
 
-	public TextMeshProUGUI tTitle, tDesc, tSpkName, tSpkTxt;
+	public TextMeshProUGUI tSpkName, tSpkTxt;
+
+	public List<GameObject> goRewards;
+	public List<Image> imgRewards;
+	public List<TextMeshProUGUI> txtRewards;
 
 	public void setup (){
 		go.SetActive (true);
@@ -23,19 +27,51 @@ public class GameUI_GameOver : MonoBehaviour {
 		go.SetActive (false);
 	}
 
-	public void show (string _title, string _desc){
+	public void show (string _title, Dictionary<string, int> _rewards){
 		Game.I.pause_game ();
 		go.SetActive (true);
 
-		imgTitle.sprite = (_title == "success") ? imgWin : imgLose;
-		tDesc.text = _desc;
+		bool _isSuccess = _title == "success";
+
+		imgWindow.sprite = _isSuccess ? imgWin : imgLose;
 
 		go.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
         go.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
 
-        if (_title == "success") {
+        string _missionCur = ZPlayerPrefs.GetString("missionCur");
+        DB_Missions.MissionData _missionData = DB_Missions.I.get_mission_data (_missionCur);
+
+        goReward.SetActive (_isSuccess);
+        if (_isSuccess) {
         	SoundHandler.I.play_sfx ("win");
+
+        	goRewards.ForEach ((_go)=>_go.SetActive(false));
+
+        	int _curItemIndex = 0;
+        	foreach (KeyValuePair<string, int> reward in _rewards) {
+        		Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(reward.Key);
+
+        		goRewards [_curItemIndex].SetActive (true);
+        		imgRewards [_curItemIndex].sprite = _data.sprite; Debug.Log (_data.nameUI);
+        		txtRewards [_curItemIndex].text = $"{_data.nameUI}{(reward.Value > 1 ? $" x{reward.Value}" : "")}";
+
+        		Inv2_DB.ItemData _data2 = Inv2_DB.I.get_item_data("basic-sword");
+        		Debug.Log (_data2.nameUI);
+
+        		_curItemIndex++;
+        	}
+
+        	imgSpkPort.sprite = Sprites.I.get_sprite (_missionData.gameOverSpk_img);
+	        tSpkName.text = _missionData.gameOverSpk_name;
+	        tSpkTxt.text = _missionData.gameOverSpk_text;
+        } else {
+        	imgSpkPort.sprite = Sprites.I.get_sprite (_missionData.gameOverSpk_imgFail);
+	        tSpkName.text = _missionData.gameOverSpk_nameFail;
+	        tSpkTxt.text = _missionData.gameOverSpk_textFail;
         }
+
+        
+        
 
         PlayerPrefs.SetInt("cur-map-lvl", 0);
 	}

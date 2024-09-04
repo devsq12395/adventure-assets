@@ -69,8 +69,20 @@ public class Inv2_DB : MonoBehaviour {
 
                     _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                     break;
+
+                case "gold":
+                    _new.nameUI="Gold";
+                    _new.desc="";
+                    _new.equipTo="";
+                    _new.tags.AddRange(new List<string> { "weapon", "gun" });
+                    _new.sprite = Sprites.I.get_sprite ("itm-gold");
+                    _new.stackable = false;
+
+                    _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    break;
             }
             itemDataCache[_name] = _new;
+            return _new;
         }
 
         return _existingItemData;

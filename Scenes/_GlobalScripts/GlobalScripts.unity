@@ -192,6 +192,7 @@ MonoBehaviour:
   icnHighway: {fileID: 21300000, guid: e40407a46bdc8a541b8f95eb918dd58e, type: 3}
   icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   itmBasicSword: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
+  itmGold: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   btnLocked: {fileID: 21300000, guid: afd56857a2f956f4a9196939426055c0, type: 3}
   hpBar: {fileID: 21300000, guid: fe7851e2ef3d00b458f3c60d34face47, type: 3}
   hpBarBase: {fileID: 21300000, guid: 7010e518b27d4ca4b86a9234f7f97ff9, type: 3}

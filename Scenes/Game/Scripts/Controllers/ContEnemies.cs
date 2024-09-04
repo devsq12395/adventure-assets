@@ -68,37 +68,31 @@ public class ContEnemies : MonoBehaviour {
 	    return randomPoint;
 	}
 
-	public string generate_and_give_rewards (){
-		string _ret = "";
+	public Dictionary<string, int> generate_and_give_rewards() {
+	    Dictionary<string, int> rewards = new Dictionary<string, int>();
 
-		// Gold Reward
-		List<int> _goldRewards = DB_Enemies.I.get_possible_gold_rewards (enemiesType);
-		int _goldReward = _goldRewards [Random.Range (0, _goldRewards.Count)];
+	    List<int> _goldRewards = DB_Enemies.I.get_possible_gold_rewards(enemiesType);
+	    int _goldReward = _goldRewards[Random.Range(0, _goldRewards.Count)];
 
-		_ret += $"Gold Gained: {_goldReward}";
-		SaveHandler.I.gain_gold (_goldReward);
+	    rewards.Add("gold", _goldReward);
+	    SaveHandler.I.gain_gold(_goldReward);
 
-		// Item Rewards
-		List<string> rewardNames = new List<string>();
-		int _rewardsAmountToGive = 1;
+	    // Item Rewards
+	    int _rewardsAmountToGive = 1;
+	    for (int i = 0; i < _rewardsAmountToGive; i++) {
+	        int _rewardToGive = Random.Range(0, 100);
+	        foreach (var entry in rewardChance) {
+	            if (_rewardToGive < entry.Value && entry.Key != "") {
+	                Inv2.I.add_item(entry.Key);
+	                rewards.Add(entry.Key, 1);
+	                break;
+	            }
+	        }
+	    }
 
-		for (int i = 0; i < _rewardsAmountToGive; i++) {
-			int _rewardToGive = Random.Range (0, 100);
-			string _toGive = "";
-			foreach (var entry in rewardChance) {
-				if (_rewardToGive < entry.Value) {
-					Inv2.I.add_item (entry.Key);
-
-					Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (entry.Key);
-					rewardNames.Add (_data.nameUI);
-				}
-			}
-		}
-
-		_ret += $"\n\nYou found these items:\n {string.Join ("\n", rewardNames)}";
-
-		return _ret;
+	    return rewards;
 	}
+
 
 	public void start_next_wave (){
 		mainWaves.RemoveAt (0);
@@ -117,7 +111,7 @@ public class ContEnemies : MonoBehaviour {
 			if (curMapLvl >= _misData.enemies.Count) {
 				GameUI_GameOver.I.show (
 	                "success",
-	                $"All enemies are beaten!\n\n{generate_and_give_rewards ()}"
+	                generate_and_give_rewards ()
 	            );
 	            GameUI_GameOver.I.on_victory ();
 			} else {

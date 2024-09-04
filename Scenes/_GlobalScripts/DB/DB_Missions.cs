@@ -14,6 +14,7 @@ public class DB_Missions : MonoBehaviour {
     	public string name, speaker, desc, sprite, rewards;
     	public List<string> maps, unlocksArea, missionsSet, activitySet, enemies;
         public string gameOverSpk_name, gameOverSpk_text, gameOverSpk_img;
+        public string gameOverSpk_nameFail, gameOverSpk_textFail, gameOverSpk_imgFail;
 
     	public MissionData (string _name){
     		name = _name; speaker = ""; desc = ""; sprite = ""; rewards = "";
@@ -40,6 +41,10 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_name = "Vic";
                 _new.gameOverSpk_text = "Well done! Boss Vincenzo will be pleased. You should meet with him at Luppino Family Cafe.";
                 _new.gameOverSpk_img = "vic";
+
+                _new.gameOverSpk_nameFail = "Alfred";
+                _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
+                _new.gameOverSpk_imgFail = "kazuya";
 
     			_new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
     			_new.maps.AddRange (new string[]{"map-vic-1", "map-vic-2", "map-vic-3"});

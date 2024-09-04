@@ -214,7 +214,7 @@ public class ContDamage : MonoBehaviour {
         if (_isGameOver) {
             GameUI_GameOver.I.show (
                 "fail",
-                "Your team is wiped out!"
+                new Dictionary<string, int>()
             );
         }
 

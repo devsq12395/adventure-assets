@@ -26,7 +26,7 @@ public class Sprites : MonoBehaviour {
     public Sprite icnItem;
 
     [Header("----- Items -----")]
-    public Sprite itmBasicSword;
+    public Sprite itmBasicSword, itmGold;
 
     [Header("----- UI -----")]
     public Sprite btnLocked;
@@ -66,13 +66,15 @@ public class Sprites : MonoBehaviour {
             { "icn-highway", icnHighway },
             { "icn-item", icnItem },
             { "btn-locked", btnLocked },
-            { "itm-basic-sword", itmBasicSword },
             { "empty-icon", empty },
 
             { "hp-bar", hpBar },
             { "hp-bar-base", hpBarBase },
             { "sta-bar", staBar },
-            { "sta-bar-base", staBarBase }
+            { "sta-bar-base", staBarBase },
+
+            { "itm-basic-sword", itmBasicSword },
+            { "itm-gold", itmGold },
         };
     }
 
