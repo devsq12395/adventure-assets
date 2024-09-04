@@ -19,6 +19,7 @@ public class DB_Missions : MonoBehaviour {
     	public MissionData (string _name){
     		name = _name; speaker = ""; desc = ""; sprite = ""; rewards = "";
             gameOverSpk_name = ""; gameOverSpk_text = ""; gameOverSpk_img = "";
+            gameOverSpk_nameFail = ""; gameOverSpk_textFail = ""; gameOverSpk_imgFail = "";
     		
             enemies = new List<string> ();
     		maps = new List<string> ();
