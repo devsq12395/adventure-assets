@@ -50,6 +50,8 @@ public class HealthBarScript : MonoBehaviour
             canvasObj.transform.SetParent(transform);
             healthBarCanvas = canvasObj.AddComponent<Canvas>();
             healthBarCanvas.renderMode = RenderMode.WorldSpace; // Set to World Space if you want it to stay with the unit
+            healthBarCanvas.sortingLayerName = "hp-bars";
+            healthBarCanvas.sortingOrder = 2; 
 
             // Add a CanvasScaler and a GraphicRaycaster (optional)
             canvasObj.AddComponent<CanvasScaler>();

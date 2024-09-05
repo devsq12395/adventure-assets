@@ -67,13 +67,15 @@ public class DB_Enemies : MonoBehaviour {
 		bool _isSpecialSpawn = false;
 		switch (_waveName) {
 			case "slime-orange":
-	            int[] offsets = { -6, 6 };
+	            // int[] offsets = { -6, 6 };
 
-	            foreach (int x in offsets) {
-	                ContObj.I.create_obj_spawner(_waveName, new Vector2(x, 0 + 3), 2);
-	                ContObj.I.create_obj_spawner(_waveName, new Vector2(0, x + 3), 2);
-	            }
-	            ContEnemies.I.enemyCount += 4;
+	            // foreach (int x in offsets) {
+	            //     ContObj.I.create_obj_spawner(_waveName, new Vector2(x, 0 + 3), 2);
+	            //     ContObj.I.create_obj_spawner(_waveName, new Vector2(0, x + 3), 2);
+	            // }
+	            // ContEnemies.I.enemyCount += 4;
+				ContObj.I.create_obj_spawner(_waveName, new Vector2(0, 0), 2);
+				ContEnemies.I.enemyCount = 1;
 	            
 	            _isSpecialSpawn = true;
 	            break;
@@ -96,8 +98,7 @@ public class DB_Enemies : MonoBehaviour {
 				_waves[1].Add ("slime-blue", 2);
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[2].Add ("slime-blue", 2);
-				_waves[2].Add ("slime-red", 4);
+				_waves[2].Add ("slime-blue", 4);
 
 				_waves.Add (new Dictionary<string, int>());
 				_waves[3].Add ("giant-slime", 1);

@@ -257,24 +257,51 @@ public class ContObj : MonoBehaviour {
         InGameCamera.I.point_to_target ();
     }
 
-    public void move_walk_to_pos (InGameObject _obj, Vector2 _dir){
+    public void move_walk_to_pos(InGameObject _obj, Vector2 _dir) {
         _obj.moveToPos_isOn = true;
         _obj.moveToPos_pos = _dir;
     }
 
-    public void move_walk_to_pos_stop (InGameObject _obj){
+    public void move_walk_to_pos_stop(InGameObject _obj) {
         _obj.moveToPos_isOn = false;
     }
 
-    public void move_walk_to_pos_update (InGameObject _obj){
-        if (!_obj.moveToPos_isOn || !DB_Conditions.I.can_move (_obj)) return;
+    public void move_walk_to_pos_update(InGameObject _obj) {
+        if (!_obj.moveToPos_isOn || !DB_Conditions.I.can_move(_obj)) return;
 
-        _obj.curPos = Vector2.MoveTowards (_obj.curPos, _obj.moveToPos_pos, _obj.speed * Time.deltaTime);
+        Vector2 currentPos = _obj.curPos;
+        Vector2 targetPos = _obj.moveToPos_pos;
+        Vector2 direction = (targetPos - currentPos).normalized;
 
-        if (Calculator.I.get_dist_from_2_points (_obj.moveToPos_pos, _obj.curPos) <= 0.1f) {
+        float rayDistance = 0.5f; // Adjust this value based on the desired ray length
+        Debug.DrawRay(currentPos, direction * rayDistance, Color.red);
+        Debug.DrawLine(currentPos, targetPos, Color.green);
+
+        RaycastHit2D hit = Physics2D.Raycast(currentPos, direction, rayDistance);
+
+        if (hit.collider != null && !hit.collider.isTrigger && hit.collider.gameObject != _obj.gameObject)
+        {
+            Debug.Log("Obstacle detected: " + hit.collider.gameObject.name);
+
+            Vector2 avoidanceDir = new Vector2(-direction.y, direction.x); // Perpendicular direction
+            float newAngle = Mathf.Atan2(avoidanceDir.y, avoidanceDir.x) * Mathf.Rad2Deg;
+
+            newAngle += 45.0f;
+
+            direction = new Vector2(Mathf.Cos(newAngle * Mathf.Deg2Rad), Mathf.Sin(newAngle * Mathf.Deg2Rad));
+        }
+
+        _obj.curPos = Vector2.MoveTowards(currentPos, currentPos + direction, _obj.speed * Time.deltaTime);
+
+        if (Calculator.I.get_dist_from_2_points(_obj.moveToPos_pos, _obj.curPos) <= 0.1f)
+        {
             _obj.moveToPos_isOn = false;
         }
     }
+
+
+
+
 
     public void const_mov_ang_with_dur (InGameObject _obj, float _ang, float _dur){
 

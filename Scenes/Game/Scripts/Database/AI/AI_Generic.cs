@@ -8,9 +8,8 @@ public class AI_Generic : InGameAI {
     }
     public override void on_update (){
         GameObject _player = Game.I.get_player_obj ();
-        float _ang = Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _player.transform.position);
         
-        inGameObj.constMovAng_ang = _ang;
+        ContObj.I.move_walk_to_pos (inGameObj, _player.transform.position);
 
         ContObj.I.face_player (inGameObj);
     }
