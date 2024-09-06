@@ -78,9 +78,9 @@ public class MUI_Tutorial : MonoBehaviour
             case "switch-char":
                 uiTxt.text = "Switch character with number keys (1, 2, 3 or 4). ";
                 imgKey.sprite = imgNumKey;
+                PlayerPrefs.SetInt("combat-tut-state", 1);
                 break;
             case "end":
-                PlayerPrefs.SetInt("combat-tut-state", 1);
                 uiTxt.text = "You are now ready to fight! Good luck and have fun!";
                 imgKey.sprite = none;
                 break;
@@ -125,7 +125,7 @@ public class MUI_Tutorial : MonoBehaviour
             case "switch-char":
                 if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) ||
                     Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4)) {
-                    show("end");
+                    hide ();
                 }
                 break;
             case "end":

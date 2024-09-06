@@ -62,7 +62,7 @@ public class ContMap : MonoBehaviour
         lineRenderer.endColor = Color.red;
 
         // Optionally, set the sorting order so it appears above the map
-        lineRenderer.sortingOrder = 0;
+        lineRenderer.sortingOrder = 1;
     }
 
     public void change_map(string _map)
