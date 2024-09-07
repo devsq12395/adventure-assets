@@ -5,8 +5,10 @@ using UnityEngine;
 public class ColTrig : MonoBehaviour {
 
     public string scriptTag = "collider";
+    public List<int> hitIDs;
     
-    void Setup (){
+    void Start (){
+        hitIDs = new List<int>();
         on_setup ();
     }
 

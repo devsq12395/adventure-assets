@@ -18,13 +18,13 @@ public class DB_Objects : MonoBehaviour {
     public GameObject hero;
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, slimeOrange, mobster, slimeKing, giantSlime,
         lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
-        centurion, victorianSoldier;
+        centurion, victorianSoldier, mafiaBoss;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
         bulletTommy, bulletMobster, bulletEmbraced, bulletVictorianSoldier, fireWave, blueWave, slashShredder, prismDroneMissile,
-        centurionMissile, beatriceMissile, lucaTyphoon;
+        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -83,6 +83,7 @@ public class DB_Objects : MonoBehaviour {
             case "cap-beatrice":            _refObj = captainBeatrice; break;
             case "victorian-soldier":            _refObj = victorianSoldier; break;
             case "centurion":            _refObj = centurion; break;
+            case "mafia-boss":            _refObj = mafiaBoss; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -108,6 +109,8 @@ public class DB_Objects : MonoBehaviour {
             case "centurion-missile":             _refObj = centurionMissile; break;
             case "beatrice-missile":             _refObj = beatriceMissile; break;
             case "luca-typhoon":             _refObj = lucaTyphoon; break;
+            case "mafia-punch":             _refObj = mafiaPunch; break;
+            case "mafia-gun-shot":             _refObj = mafiaGunShot; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;

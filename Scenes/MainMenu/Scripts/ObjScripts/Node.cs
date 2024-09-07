@@ -16,6 +16,9 @@ public class Node : MonoBehaviour {
 	[Header ("Will be used by MM_Map.I.select_node, as side value")]
 	public string val;
 
+	[Header ("The Node Bubble for this node")]
+	public NodeBubble nodeBubble;
+
 	[Header ("NOTE that neighboring nodes x or y position should be equal to this node")]
 	public List<GameObject> nextNodes;
 }
