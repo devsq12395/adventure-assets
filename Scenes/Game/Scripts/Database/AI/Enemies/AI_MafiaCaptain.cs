@@ -94,7 +94,7 @@ public class AI_MafiaCaptain : InGameAI {
         yield return new WaitForSeconds(summonDelay);
 
         for (int i = 0; i < maxMinions; i++) {
-            ContObj.I.create_enemy("mobster", gameObject.transform.position + new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0));
+            ContObj.I.create_obj("mobster", gameObject.transform.position + new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0), 2);
             currentMinions++;
         }
 

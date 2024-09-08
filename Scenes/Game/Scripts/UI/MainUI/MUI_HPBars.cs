@@ -9,7 +9,7 @@ public class MUI_HPBars : MonoBehaviour
     public static MUI_HPBars I;
     public void Awake() { I = this; }
 
-    public GameObject go_bossHP;
+    public GameObject go_bossHP, go_arrowSkill;
     public Image i_port, i_HPMain, i_StaMain, iBossMain, i_CDPanel1, i_CDPanel2;
     public TextMeshProUGUI t_name, t_hp, t_mp, t_bossName, t_cdSkill1, t_cdSkill2;
     public Sprite i_skillNotReady, i_skillReady;
@@ -43,7 +43,10 @@ public class MUI_HPBars : MonoBehaviour
         t_cdSkill1.text = $"SKILL - {((_pla.skill1.cd > 0) ? $"{(int)(_pla.skill1.cd + 1)} SEC." : "READY")}";
         // t_cdSkill2.text = $"ULTIMATE - {((_pla.skill2.cd > 0) ? $"{(int)(_pla.skill2.cd + 1)} sec." : "READY")}";
 
-        i_CDPanel1.color = (_pla.skill1.cd > 0) ? Color.red : Color.green;
+        bool skillReady = _pla.skill1.cd > 0;
+        i_CDPanel1.color = (skillReady) ? Color.red : Color.green;
+        go_arrowSkill.SetActive (!skillReady);
+
         // i_CDPanel2.color = (_pla.skill2.cd > 0) ? Color.red : Color.green;
 
         if (boss != null) {

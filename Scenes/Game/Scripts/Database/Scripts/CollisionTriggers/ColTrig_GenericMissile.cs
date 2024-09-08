@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ColTrig_GenericMissile : ColTrig {
 
-    public bool destroyOnHit;
+    public bool destroyOnHit = true;
 
     public override void on_hit_enemy (InGameObject _hit){
         if (!DB_Conditions.I.coll_cond_missile (_hit) && !hitIDs.Contains (_hit.id)) return;

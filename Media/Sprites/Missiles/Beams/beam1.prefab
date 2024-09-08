@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6781197039557131184}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8942, y: -0.1626, z: 0}
   m_LocalScale: {x: 6.3356, y: 6.3356, z: 6.3356}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4905340119812014544
 SpriteRenderer:
@@ -105,6 +105,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -122,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  nameUI: 
   type: missile
   owner: 0
   id: 0
@@ -130,18 +137,31 @@ MonoBehaviour:
   mp: 0
   mpMax: 0
   mpRegen: 0
+  armor: 0
   hitDam: 1
   onHitSFX: explosion1_mini
   tags:
   - electric
   speed: 0.2
+  attachScaleMultiplier: 1
   zPos: 0
+  skill1: {fileID: 0}
+  skill2: {fileID: 0}
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 1
   toAnim: 0
   renderer: {fileID: 0}
   rb: {fileID: 0}
+  statHP: 0
+  statMP: 0
+  statAttack: 0
+  statRange: 0
+  statSkill: 0
+  statSpeed: 0
+  statArmor: 0
+  statCritRate: 0
+  statCritDam: 0
   curPos: {x: 0, y: 0}
   movInput: {x: 0, y: 0}
   nxtPos: {x: 0, y: 0}
@@ -152,7 +172,10 @@ MonoBehaviour:
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
+  constMovAng_dur: 0
+  constMovAng_dist: 0
   propellDist: 0
+  constMovAng_movTarget: {x: 0, y: 0}
   propellType: 
   propellFirstPos: {x: 0, y: 0}
   constMovDir_isOn: 0
@@ -160,15 +183,25 @@ MonoBehaviour:
   constMovDir_dir: {x: 0, y: 0}
   moveToPos_isOn: 0
   moveToPos_pos: {x: 0, y: 0}
+  instMov_isOn: 0
+  instMov_ang: 0
+  instMov_spd: 0
+  instMov_dur: 0
+  instMov_dist: 0
+  instMov_mode: 
   isRunning: 0
   isAtk: 0
   isInvul: 0
   isDash: 0
   knockDrag: 0
   timedLife: 0
+  range: 0
   controllerID: 0
   hitUnitsID: 
+  colorChangeDur: 0
   skills: []
+  barHP: {fileID: 0}
+  barSta: {fileID: 0}
 --- !u!114 &5736728126714641071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
+  hitIDs: 
+  destroyOnHit: 1
 --- !u!61 &-5926279159144469251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -192,6 +227,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0

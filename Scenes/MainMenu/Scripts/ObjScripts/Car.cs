@@ -121,7 +121,9 @@ public class Car : MonoBehaviour
 
     private IEnumerator MoveToNode(Node nextNode)
     {
-        isMoving = true;
+        if (curNode.nodeBubble){
+            curNode.nodeBubble.hide ();
+        }
 
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = nextNode.transform.position;
@@ -141,6 +143,9 @@ public class Car : MonoBehaviour
 
         if (curNode.areaName != ""){
             MM_TutKey.I.show_one ("enter", true);
+        }
+        if (curNode.nodeBubble){
+            curNode.nodeBubble.show ();
         }
     }
 }
