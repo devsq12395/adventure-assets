@@ -54,16 +54,16 @@ public class Car : MonoBehaviour
         }
 
         // Check for input and move to the corresponding node
-        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+        if (Input.GetKeyDown(KeyCode.W)) {
             TryMoveToNextNode(Vector2.up);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow)) {
+        else if (Input.GetKeyDown(KeyCode.S)) {
             TryMoveToNextNode(Vector2.down);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow)) { Debug.Log ("asd");
+        else if (Input.GetKeyDown(KeyCode.A)) {
             TryMoveToNextNode(Vector2.left);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        else if (Input.GetKeyDown(KeyCode.D)) {
             TryMoveToNextNode(Vector2.right);
         }
         else if (Input.GetKeyDown(KeyCode.Return)) {

@@ -28,7 +28,7 @@ public class NodeBubble : MonoBehaviour {
     public void show() {
         go.SetActive(true);
         
-        go.transform.DOScale(new Vector3(1.75f, 1.75f, 1), animationDuration).SetEase(Ease.OutBack); // Grow from scale 0 to 1
+        go.transform.DOScale(new Vector3(1f, 1f, 1), animationDuration).SetEase(Ease.OutBack); // Grow from scale 0 to 1
     }
 
     public void hide() {
