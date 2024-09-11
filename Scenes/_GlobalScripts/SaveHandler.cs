@@ -33,9 +33,11 @@ public class SaveHandler : MonoBehaviour {
             ZPlayerPrefs.SetString("missionCur", "");
             ZPlayerPrefs.SetString("missionCurPool", "");
 
-            PlayerPrefs.SetString("missionCurPool.vic", "vic-1");
-            PlayerPrefs.SetString("missionCurPool.anthony", "anthony-1");
-            PlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
+            ZPlayerPrefs.SetString("missionCurPool.vic", "vic-1");
+            ZPlayerPrefs.SetString("missionCurPool.vincenzo", "vincenzo-1");
+            ZPlayerPrefs.SetString("missionCurPool.anthony", "anthony-1");
+            ZPlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
+            ZPlayerPrefs.SetString("missionCurPool.field-1", "field-1-1");
 
             PlayerPrefs.SetInt("combat-tut-state", 0);
 
@@ -51,8 +53,11 @@ public class SaveHandler : MonoBehaviour {
             PlayerPrefs.SetInt("areasState.mill-river-ives", 0);
             PlayerPrefs.SetInt("areasState.fair-haven-ives", 0);
             PlayerPrefs.SetInt("areasState.east-st-2-ives", 0);
+            PlayerPrefs.SetInt("areasState.to-wooster-square-2", 0);
+            PlayerPrefs.SetInt("areasState.to-wooster-square-3", 0);
 
             PlayerPrefs.SetInt("activity.dialog-with-vic", 0);
+            PlayerPrefs.SetInt("activity.dialog-with-vincenzo", 0);
             PlayerPrefs.SetInt("activity.dialog-with-anthony", 0);
             PlayerPrefs.SetString("start-node", "1");
 

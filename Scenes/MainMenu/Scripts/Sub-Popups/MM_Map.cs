@@ -55,7 +55,7 @@ public class MM_Map : MonoBehaviour {
     public void select_node (string _type, string _val){
         switch (_type) {
             //////////// GENERICS
-            case "mission": MM_Mission.I.show (PlayerPrefs.GetString ($"missionCurPool.{_val}")); break;
+            case "mission": MM_Mission.I.show (ZPlayerPrefs.GetString ($"missionCurPool.{_val}")); break;
             case "dialog": MMCont_Dialog.I.create_dialog (_val); break;
             case "map": 
                 // Unused
@@ -67,7 +67,7 @@ public class MM_Map : MonoBehaviour {
                 break;
 
             //////////// CHANGE MAP
-            case "change-map-wooster-square-2":
+            case "to-wooster-square-2":
                 if (PlayerPrefs.GetInt("areasState.wooster-square-2") == 1) {
                     ZPlayerPrefs.SetString("main-menu-map", "wooster-square-2");
 
@@ -89,12 +89,28 @@ public class MM_Map : MonoBehaviour {
                     case 1: MMCont_Dialog.I.create_dialog ("dialog-vic-4"); break;
 
                     case 2: MMCont_Dialog.I.create_dialog ("dialog-vic-5"); break;
-                    case 3: MMCont_Dialog.I.create_dialog ("dialog-vic-8"); break; 
+                }
+                break;
 
-                    case 4: MMCont_Dialog.I.create_dialog ("dialog-vic-10"); break;
-                    case 5: MMCont_Dialog.I.create_dialog ("dialog-vic-17"); break;
+            case "dialog-vincenzo":
+                int _statusVincenzoDialog = PlayerPrefs.GetInt ("activity.dialog-with-vincenzo");
 
-                    case 6: MMCont_Dialog.I.create_dialog ("dialog-vic-19"); break;
+                switch (_statusVincenzoDialog) {
+                    case 0: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-1"); break;
+                    case 5: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-5"); break;
+
+                    case 6: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-6"); break;
+                }
+                break;
+
+            case "field-1":
+                int _house1_unlockedAnastasia = PlayerPrefs.GetInt ("charUnlocked.anastasia");
+                string _statusField1 = ZPlayerPrefs.GetString("missionCurPool.field-1");
+
+                if (_statusField1 == "field-1-1"){
+                    MMCont_Dialog.I.create_dialog ((_house1_unlockedAnastasia == 0) ? "dialog-field-1" : "dialog-field-3");
+                } else {
+                    MMCont_Dialog.I.create_dialog ("dialog-field-6");
                 }
                 break;
 

@@ -49,11 +49,39 @@ public class DB_Missions : MonoBehaviour {
 
     			_new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
     			_new.maps.AddRange (new string[]{"map-vic-1", "map-vic-2", "map-vic-3"});
-    			_new.unlocksArea.AddRange (new string[]{"bella-vita", "strega", "marcos-tavern", "wooster-square-house-1", "wooster-square-house-3", "wooster-square-house-5"});
+    			_new.unlocksArea.AddRange (new string[]{"to-wooster-square-2"});
     			_new.missionsSet.AddRange (new string[]{"vic->vic-2"});
     			_new.activitySet.AddRange (new string[]{"dialog-with-vic->2"});
 
     			break;
+
+            case "vincenzo-1": 
+                _new.speaker = "Boss Vincenzo";
+                _new.desc = "Rossi Family members are spotted selling narcotics on our turf. Knock out their leader, Luca the Terror, and they will run back to where they came from!";
+                _new.sprite = "vincenzo";
+                _new.rewards = "300 Gold";
+
+                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
+                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.unlocksArea.AddRange (new string[]{"to-wooster-square-3"});
+                _new.missionsSet.AddRange (new string[]{"vincenzo->vincenzo-2"});
+                _new.activitySet.AddRange (new string[]{"dialog-with-vincenzo->2"});
+
+                break;
+
+            case "field-1": 
+                _new.speaker = "Anastasia";
+                _new.desc = "We're up against Axe-Arm Azar, leader of the BloodAxe Gang. I suspect he is behind a terrorist attack here in New Haven. Let's knock him our and get some answers.l";
+                _new.sprite = "anastasia";
+                _new.rewards = "500 Gold";
+
+                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
+                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.unlocksArea.AddRange (new string[]{});
+                _new.missionsSet.AddRange (new string[]{"field-1->field-1-2"});
+                _new.activitySet.AddRange (new string[]{});
+
+                break;
 
     		// case "vic-2": 
     		// 	_new.speaker = "Vic";

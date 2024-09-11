@@ -892,7 +892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: areaName
-      value: change-map-wooster-square-2
+      value: to-wooster-square-2
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nodeBubble

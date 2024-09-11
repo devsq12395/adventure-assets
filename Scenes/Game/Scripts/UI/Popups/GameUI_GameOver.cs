@@ -89,7 +89,7 @@ public class GameUI_GameOver : MonoBehaviour {
 		// Unlocks all missions marked to be unlocked on missions.json
 		for (int i = 0; i < _missionsToUnlock.Count; i++) {
 			string[] _unlockDetails = _missionsToUnlock [i].Split ("->");
-			PlayerPrefs.SetString ($"missionCurPool.{_unlockDetails [0]}", _unlockDetails[1]);
+			ZPlayerPrefs.SetString ($"missionCurPool.{_unlockDetails [0]}", _unlockDetails[1]);
 		}
 
 		// Unlocks all areas marked to be unlocked on missions.json

@@ -41,6 +41,22 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "show-dialog-vic-19": show_dialog_vic_19 (_dialog); break;
 			case "show-dialog-vic-20": show_dialog_vic_20 (_dialog); break;
 
+			case "show-dialog-vincenzo-1": show_dialog_vincenzo_1 (_dialog); break;
+			case "show-dialog-vincenzo-2": show_dialog_vincenzo_2 (_dialog); break;
+			case "show-dialog-vincenzo-3": show_dialog_vincenzo_3 (_dialog); break;
+			case "show-dialog-vincenzo-4": show_dialog_vincenzo_4 (_dialog); break;
+			case "show-dialog-vincenzo-5": show_dialog_vincenzo_5 (_dialog); break;
+			case "show-dialog-vincenzo-6": show_dialog_vincenzo_6 (_dialog); break;
+			case "start-mission-vincenzo-1": start_mission_vincenzo_1 (); break;
+
+			case "show-dialog-field-1": set_dialog (_dialog, "dialog-field-1"); break;
+			case "show-dialog-field-2": set_dialog (_dialog, "dialog-field-2"); break;
+			case "show-dialog-field-3": set_dialog (_dialog, "dialog-field-3"); break;
+			case "show-dialog-field-4": set_dialog (_dialog, "dialog-field-4"); break;
+			case "show-dialog-field-5": set_dialog (_dialog, "dialog-field-5"); break;
+			case "show-dialog-field-6": set_dialog (_dialog, "dialog-field-6"); break;
+			case "start-mission-field-1": MM_Mission.I.show ("field-1"); break;
+
 			case "start-mission-vic-1": start_mission_vic_1 (); break;
 			case "start-mission-vic-2": start_mission_vic_2 (); break;
 			case "start-mission-vic-3": start_mission_vic_3 (); break;
@@ -74,7 +90,9 @@ public class MMCont_Dialog : MonoBehaviour {
 			// Test Shop
 			case "shopTest01": btn_shopTest01 (); break;
 			case "shopSell": btn_shopSell (); break;
+
 			case "shop-bella-vita": btn_shop ("bella-vita"); break;
+			case "shop-bryans-armory": btn_shop ("bryans-armory"); break;
 
 			case "shopStregaBuy": btn_shopStregaBuy (); break;
 
@@ -204,6 +222,20 @@ public class MMCont_Dialog : MonoBehaviour {
 
 	public void show_dialog_vic_19 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-19");
 	public void show_dialog_vic_20 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vic-20");
+
+	public void show_dialog_vincenzo_1 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vincenzo-1");
+	public void show_dialog_vincenzo_2 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vincenzo-2");
+	public void show_dialog_vincenzo_3 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vincenzo-3");
+	public void show_dialog_vincenzo_4 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vincenzo-4");
+	public void show_dialog_vincenzo_5 (MiniDialog _dialog) {
+		set_dialog (_dialog, "dialog-vincenzo-5");
+		PlayerPrefs.SetInt("activity.dialog-with-vincenzo", 5);
+	}
+	public void start_mission_vincenzo_1 (){
+		MM_Mission.I.show ("vincenzo-1");
+	}
+
+	public void show_dialog_vincenzo_6 (MiniDialog _dialog) => set_dialog (_dialog, "dialog-vincenzo-6");
 
 	public void show_dialog_anthony_1 (MiniDialog _dialog) => set_dialog (_dialog, "anthony-1");
 	public void show_dialog_anthony_2 (MiniDialog _dialog) => set_dialog (_dialog, "anthony-2");

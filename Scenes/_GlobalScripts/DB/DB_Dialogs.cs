@@ -96,7 +96,7 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "marcos-tavern":
+				case "the-old-tavern":
 				    _new.name = "Bartender";
 				    _new.desc = "The tavern today is so merry! Which drink do you want, mister?";
 				    _new.portImg = "npc-woman-2";
@@ -268,7 +268,7 @@ public class DB_Dialogs : MonoBehaviour {
 
 				case "dialog-vic-2":
 				    _new.name = "Vic";
-				    _new.desc = "Welcome to Luppino House, the base of operations for the Luppino Family.";
+				    _new.desc = "I recommended you guys to my boss, Mr. Vincenzo. But we'll have to see first if you have what it takes.";
 				    _new.portImg = "vic";
 				    _new.isTweenOut = "0";
 				    _new.inputEmptyContinue = "show-dialog-vic-3";
@@ -284,9 +284,9 @@ public class DB_Dialogs : MonoBehaviour {
 				    break;
 
 				case "dialog-vic-3":
-				    _new.name = "Vic";
-				    _new.desc = "I have a job for you two if you are interested.";
-				    _new.portImg = "vic";
+				    _new.name = "Alfred";
+				    _new.desc = "Tell us what we need to do and we'll do it, Vic.";
+				    _new.portImg = "kazuma";
 				    _new.isTweenOut = "0";
 				    _new.inputEmptyContinue = "show-dialog-vic-4";
 				    _new.isMini = "0";
@@ -302,7 +302,7 @@ public class DB_Dialogs : MonoBehaviour {
 
 				case "dialog-vic-1":
 				    _new.name = "Vic";
-				    _new.desc = "Alfred, my man, you're finally here! And you must be Tommy.";
+				    _new.desc = "Alfred, my man, you're finally here! And you must be Tommy. Welcome to New Haven!";
 				    _new.portImg = "vic";
 				    _new.isTweenOut = "0";
 				    _new.inputEmptyContinue = "";
@@ -317,43 +317,9 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-6":
-				    _new.name = "Vic";
-				    _new.desc = "Luca the Terror, one of the muscles of the Rossi Family, is spotted on our turf with some of his men, selling narcotics.";
-				    _new.portImg = "vic";
-				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-7";
-				    _new.isMini = "0";
-				    _new.inputScaler_enable = "0";
-				    _new.posX = 0;
-				    _new.posY = 0;
-				    _new.input1 = new InputData("", "");
-				    _new.input2 = new InputData("", "");
-				    _new.input3 = new InputData("", "");
-				    _new.input4 = new InputData("", "");
-				    _new.inputTxtBox = new InputData("", "");
-				    break;
-
-				case "dialog-vic-7":
-				    _new.name = "Alfred";
-				    _new.desc = "Finally some action! Tell us what to do, Vic.";
-				    _new.portImg = "kazuma";
-				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-8";
-				    _new.isMini = "0";
-				    _new.inputScaler_enable = "0";
-				    _new.posX = 0;
-				    _new.posY = 0;
-				    _new.input1 = new InputData("", "");
-				    _new.input2 = new InputData("", "");
-				    _new.input3 = new InputData("", "");
-				    _new.input4 = new InputData("", "");
-				    _new.inputTxtBox = new InputData("", "");
-				    break;
-
 				case "dialog-vic-4":
 				    _new.name = "Vic";
-				    _new.desc = "There are monsters spotted near our turf. Deal with them and show us how you two fight.";
+				    _new.desc = "There are reports of monsters spotted near our turf. Deal with them and show us how you two fight.";
 				    _new.portImg = "vic";
 				    _new.isTweenOut = "1";
 				    _new.inputEmptyContinue = "";
@@ -370,7 +336,7 @@ public class DB_Dialogs : MonoBehaviour {
 
 				case "dialog-vic-5":
 				    _new.name = "Vic";
-				    _new.desc = "Tommy, Alfred, there you are! I have an urgent job for you.";
+				    _new.desc = "Tommy, Alfred, there you are! Well done with beating the monster.";
 				    _new.portImg = "vic";
 				    _new.isTweenOut = "0";
 				    _new.inputEmptyContinue = "show-dialog-vic-6";
@@ -385,12 +351,12 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-8":
+			   case "dialog-vic-6":
 				    _new.name = "Vic";
-				    _new.desc = "Your goal is to beat down Luca and his boys and make sure they never come back.";
+				    _new.desc = "You two should meet Boss Vincenzo at our base, the Luppino Diner. It's just a few meters north from here.";
 				    _new.portImg = "vic";
-				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-9";
+				    _new.isTweenOut = "1";
+				    _new.inputEmptyContinue = "";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
@@ -402,17 +368,204 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-9":
-				    _new.name = "Vic";
-				    _new.desc = "Boss Vincenzo wants you to show that this is our territory and no one crosses the Luppino family.";
-				    _new.portImg = "vic";
+			   case "dialog-vincenzo-1":
+				    _new.name = "Boss Vincenzo";
+				    _new.desc = "You must be Tommy and Alfred. I heard amazing things about you from Vic.";
+				    _new.portImg = "vincenzo";
+				    _new.isTweenOut = "0";
+				    _new.inputEmptyContinue = "show-dialog-vincenzo-2";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-vincenzo-2":
+				    _new.name = "Boss Vincenzo";
+				    _new.desc = "I have a job for you if you are interested.";
+				    _new.portImg = "vincenzo";
+				    _new.isTweenOut = "0";
+				    _new.inputEmptyContinue = "show-dialog-vincenzo-3";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-vincenzo-3":
+				    _new.name = "Boss Vincenzo";
+				    _new.desc = "Some boys from the Rossi Family has been spotted trying to sell narcotics on our turf.";
+				    _new.portImg = "vincenzo";
+				    _new.isTweenOut = "0";
+				    _new.inputEmptyContinue = "show-dialog-vincenzo-4";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-vincenzo-4":
+				    _new.name = "Boss Vincenzo";
+				    _new.desc = "You see, we the Luppino Family want nothing to do with narcotics. And most of the other families do not like it.";
+				    _new.portImg = "vincenzo";
+				    _new.isTweenOut = "0";
+				    _new.inputEmptyContinue = "show-dialog-vincenzo-5";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-vincenzo-5":
+				    _new.name = "Boss Vincenzo";
+				    _new.desc = "If this tension between the families keeps up, there will be war soon. For now, let's show these intruders from the Rossi Family that this is our turf.";
+				    _new.portImg = "vincenzo";
 				    _new.isTweenOut = "1";
 				    _new.inputEmptyContinue = "";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
 				    _new.posY = 0;
-				    _new.input1 = new InputData("start-mission-vic-2", "Let's go!");
+				    _new.input1 = new InputData("start-mission-vincenzo-1", "Sure, Boss Vincenzo.");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-vincenzo-6":
+				    _new.name = "Boss Vincenzo";
+				    _new.desc = "Well done dealing with Rossi's boys. I will have a job for you soon. Feel free to explore around for now.";
+				    _new.portImg = "vincenzo";
+				    _new.isTweenOut = "1";
+				    _new.inputEmptyContinue = "";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-field-1":
+				    _new.name = "Axe-Arm Azar";
+				    _new.desc = "I heard the vampire lady who cut my arm is spotted here. Once I see her, she's dead!";
+				    _new.portImg = "azar";
+				    _new.isTweenOut = "0";
+				    _new.inputEmptyContinue = "show-dialog-field-2";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-field-2":
+				    _new.name = "Orc Henchman";
+				    _new.desc = "We're with you, warchief! She will pay!";
+				    _new.portImg = "orc-1";
+				    _new.isTweenOut = "1";
+				    _new.inputEmptyContinue = "";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-field-3":
+				    _new.name = "Anastasia";
+				    _new.desc = "There you are, Azar. I knew you were involved at the raid on New Yale last week.";
+				    _new.portImg = "anastasia";
+				    _new.isTweenOut = "0";
+				    _new.inputEmptyContinue = "show-dialog-field-4";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-field-4":
+				    _new.name = "Anastasia";
+				    _new.desc = "What is it you're after? And who are you working for this time?";
+				    _new.portImg = "anastasia";
+				    _new.isTweenOut = "0";
+				    _new.inputEmptyContinue = "show-dialog-field-5";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-field-5":
+				    _new.name = "Axe-Arm Azar";
+				    _new.desc = "Anastasia, the vampire lady. Today, you will pay for what you did to my arm! Get her boys!";
+				    _new.portImg = "orc-1";
+				    _new.isTweenOut = "1";
+				    _new.inputEmptyContinue = "show-dialog-field-4";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("start-mission-field-1", "Prepare to fight");
+				    _new.input2 = new InputData("back", "Let's retreat");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-field-6":
+				    _new.name = "Anastasia";
+				    _new.desc = "Azar and the BloodAxe gang got away. No matter, they won't get that far.";
+				    _new.portImg = "anastasia";
+				    _new.isTweenOut = "1";
+				    _new.inputEmptyContinue = "";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
 				    _new.input2 = new InputData("", "");
 				    _new.input3 = new InputData("", "");
 				    _new.input4 = new InputData("", "");
@@ -606,17 +759,17 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "bella-vita":
-				    _new.name = "Old Woman";
-				    _new.desc = "We have some scraps and crafting essentials for sale here.";
-				    _new.portImg = "npc-woman-3";
+				case "bryans-armory":
+				    _new.name = "Bryan";
+				    _new.desc = "We sell affordable weapons here.";
+				    _new.portImg = "npc-man-1";
 				    _new.isTweenOut = "1";
 				    _new.inputEmptyContinue = "";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
 				    _new.posY = 0;
-				    _new.input1 = new InputData("shop-bella-vita", "Buy");
+				    _new.input1 = new InputData("shop-bryans-armory", "Buy");
 				    _new.input2 = new InputData("shopCancel", "Nevermind");
 				    _new.input3 = new InputData("", "");
 				    _new.input4 = new InputData("", "");

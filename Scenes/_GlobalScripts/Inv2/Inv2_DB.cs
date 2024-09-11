@@ -92,7 +92,7 @@ public class Inv2_DB : MonoBehaviour {
         List<string> _new = new List<string>();
 
         switch (_shopName) {
-            case "strega": 
+            case "bryans-armory": 
                 _new.AddRange (new string[] { "basic-sword" });
                 break;
         }
