@@ -337,16 +337,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: name
-      value: field-1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: areaName
       value: field-1
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
+      value: dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nodeBubble
       value: 
       objectReference: {fileID: 3692426348239970070}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: subFunction
+      value: dialog-field-1
+      objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nextNodes.Array.size
       value: 2
@@ -479,16 +487,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: name
-      value: dialog
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: areaName
       value: bryans-armory
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
+      value: shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nodeBubble
       value: 
       objectReference: {fileID: 1831864231980100822}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: subFunction
+      value: shop-bryans-armory
+      objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nextNodes.Array.size
       value: 2
@@ -909,10 +925,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: name
-      value: dialog
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: areaName
+      value: wooster-square-house-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
+      value: dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: subFunction
       value: wooster-square-house-1
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
@@ -1294,6 +1318,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: areaName
+      value: dialog-vincenzo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
       value: dialog-vincenzo
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
@@ -1781,9 +1809,17 @@ PrefabInstance:
       value: to-wooster-square-1
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
+      value: to-wooster-square-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nodeBubble
       value: 
       objectReference: {fileID: 2060507486756378673}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: subFunction
+      value: entry-1
+      objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
@@ -1923,9 +1959,17 @@ PrefabInstance:
       value: to-wooster-square-3
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
+      value: to-wooster-square-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nodeBubble
       value: 
       objectReference: {fileID: 8194910532924244874}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: subFunction
+      value: entry-1
+      objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
@@ -2692,16 +2736,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: name
-      value: the-old-tavern
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: areaName
       value: dialog
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
+      value: dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nodeBubble
       value: 
       objectReference: {fileID: 8754884970843680244}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: subFunction
+      value: the-old-tavern
+      objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nextNodes.Array.size
       value: 2
@@ -2834,10 +2886,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: name
-      value: dialog
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: areaName
+      value: wooster-square-house-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
+      value: dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: subFunction
       value: wooster-square-house-3
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}

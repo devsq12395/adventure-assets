@@ -75,7 +75,7 @@ public class Car : MonoBehaviour
         if (MainMenu.I.check_if_a_popup_is_showing ()) return;
 
         PlayerPrefs.SetString("start-node", curNode.name);
-    	MM_Map.I.select_node (curNode.areaName, curNode.val);
+    	MM_Map.I.select_node (curNode.function, curNode.subFunction);
     }
 
     private void TryMoveToNextNode(Vector2 direction)
@@ -141,7 +141,7 @@ public class Car : MonoBehaviour
         curNode = nextNode;
         isMoving = false;
 
-        if (curNode.areaName != ""){
+        if (curNode.function != ""){
             MM_TutKey.I.show_one ("enter", true);
         }
         if (curNode.nodeBubble){

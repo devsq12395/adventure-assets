@@ -57,6 +57,15 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "show-dialog-field-6": set_dialog (_dialog, "dialog-field-6"); break;
 			case "start-mission-field-1": MM_Mission.I.show ("field-1"); break;
 
+			case "show-dialog-beatrice-1": set_dialog (_dialog, "dialog-beatrice-1"); break;
+			case "show-dialog-beatrice-2": set_dialog (_dialog, "dialog-beatrice-2"); break;
+			case "show-dialog-beatrice-3": set_dialog (_dialog, "dialog-beatrice-3"); break;
+			case "show-dialog-beatrice-4": set_dialog (_dialog, "dialog-beatrice-4"); break;
+			case "show-dialog-beatrice-5": set_dialog (_dialog, "dialog-beatrice-5"); break;
+			case "show-dialog-beatrice-6": set_dialog (_dialog, "dialog-beatrice-6"); break;
+			case "show-dialog-beatrice-7": set_dialog (_dialog, "dialog-beatrice-7"); break;
+			case "start-mission-beatrice-1": MM_Mission.I.show ("beatrice-1"); break;
+
 			case "start-mission-vic-1": start_mission_vic_1 (); break;
 			case "start-mission-vic-2": start_mission_vic_2 (); break;
 			case "start-mission-vic-3": start_mission_vic_3 (); break;

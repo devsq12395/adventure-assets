@@ -52,11 +52,12 @@ public class MM_Map : MonoBehaviour {
         Destroy (map);
     }
 
-    public void select_node (string _type, string _val){
+    public void select_node (string _type, string _val){ Debug.Log ($"{_type}, {_val}");
         switch (_type) {
             //////////// GENERICS
             case "mission": MM_Mission.I.show (ZPlayerPrefs.GetString ($"missionCurPool.{_val}")); break;
             case "dialog": MMCont_Dialog.I.create_dialog (_val); break;
+            case "shop": MMCont_Dialog.I.input (null, _val); break;
             case "map": 
                 // Unused
                 Destroy (map);
@@ -74,6 +75,7 @@ public class MM_Map : MonoBehaviour {
                     // Set start node
                     switch (_val) {
                         case "entry-1": PlayerPrefs.SetString("start-node", "1"); break;
+                        case "entry-2": PlayerPrefs.SetString("start-node", "2"); break;
                     }
 
                     MainMenu.I.move_curtain ("changeMap");

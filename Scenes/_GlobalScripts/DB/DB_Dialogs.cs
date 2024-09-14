@@ -165,7 +165,7 @@ public class DB_Dialogs : MonoBehaviour {
 				    break;
 
 				case "wooster-square-house-3":
-				    _new.name = "Woman";
+				    _new.name = "Man";
 				    _new.desc = "The Rossi Family is spotted here on Wooster Square recently, acting like they own the place.";
 				    _new.portImg = "npc-man-1";
 				    _new.isTweenOut = "0";
@@ -216,9 +216,9 @@ public class DB_Dialogs : MonoBehaviour {
 				    break;
 
 				case "wooster-square-house-4":
-				    _new.name = "Woman";
+				    _new.name = "Man";
 				    _new.desc = "I think a war between the families will erupt soon.";
-				    _new.portImg = "npc-woman-2";
+				    _new.portImg = "npc-man-2";
 				    _new.isTweenOut = "1";
 				    _new.inputEmptyContinue = "";
 				    _new.isMini = "0";
@@ -845,9 +845,9 @@ public class DB_Dialogs : MonoBehaviour {
 				    break;
 
 				case "dialog-beatrice-1":
-				    _new.name = "Vic";
+				    _new.name = "Captain Beatrice";
 				    _new.desc = "You must be Tommy, I presume? Vincenzo told me that you will come.";
-				    _new.portImg = "vic";
+				    _new.portImg = "beatrice";
 				    _new.isTweenOut = "0";
 				    _new.inputEmptyContinue = "show-dialog-beatrice-2";
 				    _new.isMini = "0";

@@ -659,7 +659,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 6c4870e0bbc647a4089308e14e9ef594, type: 3}
     - target: {fileID: 829857363470809650, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: m_Name
-      value: Node_RosasDiner
+      value: Node_VicHouse
       objectReference: {fileID: 0}
     - target: {fileID: 2430752238618126258, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: m_Pivot.x
@@ -743,10 +743,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: name
-      value: rosas-diner
+      value: vic-house
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: areaName
+      value: dialog-vic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
       value: dialog-vic
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
@@ -897,9 +901,17 @@ PrefabInstance:
       value: to-wooster-square-2
       objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: function
+      value: to-wooster-square-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nodeBubble
       value: 
       objectReference: {fileID: 1380875145157550325}
+    - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
+      propertyPath: subFunction
+      value: entry-1
+      objectReference: {fileID: 0}
     - target: {fileID: 5898195377732865337, guid: 4b07aa369c524005c80404e8d7f1fe37, type: 3}
       propertyPath: nextNodes.Array.size
       value: 1
