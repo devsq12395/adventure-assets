@@ -36,6 +36,7 @@ public class SaveHandler : MonoBehaviour {
             ZPlayerPrefs.SetString("missionCurPool.vic", "vic-1");
             ZPlayerPrefs.SetString("missionCurPool.vincenzo", "vincenzo-1");
             ZPlayerPrefs.SetString("missionCurPool.anthony", "anthony-1");
+            ZPlayerPrefs.SetString("missionCurPool.beatrice", "beatrice-1");
             ZPlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
             ZPlayerPrefs.SetString("missionCurPool.field-1", "field-1-1");
 
@@ -59,6 +60,7 @@ public class SaveHandler : MonoBehaviour {
             PlayerPrefs.SetInt("activity.dialog-with-vic", 0);
             PlayerPrefs.SetInt("activity.dialog-with-vincenzo", 0);
             PlayerPrefs.SetInt("activity.dialog-with-anthony", 0);
+            PlayerPrefs.SetInt("activity.dialog-with-beatrice", 0);
             PlayerPrefs.SetString("start-node", "1");
 
             ZPlayerPrefs.SetString("main-menu-start-callback", "show-intro-1");

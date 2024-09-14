@@ -61,6 +61,14 @@ public class DB_Missions : MonoBehaviour {
                 _new.sprite = "vincenzo";
                 _new.rewards = "300 Gold";
 
+                _new.gameOverSpk_name = "Boss Vincenzo";
+                _new.gameOverSpk_text = "Well done! Boss Vincenzo will be pleased. You should meet with him at Luppino Family Cafe.";
+                _new.gameOverSpk_img = "vic";
+
+                _new.gameOverSpk_nameFail = "Alfred";
+                _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
+                _new.gameOverSpk_imgFail = "kazuya";
+
                 _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{"to-wooster-square-3"});
@@ -79,6 +87,34 @@ public class DB_Missions : MonoBehaviour {
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"field-1->field-1-2"});
+                _new.activitySet.AddRange (new string[]{});
+
+                break;
+
+            case "beatrice-1": 
+                _new.speaker = "Captain Beatrice";
+                _new.desc = "Let's spar and see if you have what it takes to survive the upcoming war of the families here in New Haven.";
+                _new.sprite = "anastasia";
+                _new.rewards = "700 Gold";
+
+                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
+                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.unlocksArea.AddRange (new string[]{});
+                _new.missionsSet.AddRange (new string[]{"beatrice->beatrice-2"});
+                _new.activitySet.AddRange (new string[]{"dialog-with-beatrice->8"});
+
+                break;
+
+            case "cursed-forest": 
+                _new.speaker = "Tommy";
+                _new.desc = "I heard there are a lot of monsters in this forest. Sounds like a good place to train.";
+                _new.sprite = "tommy";
+                _new.rewards = "700 Gold";
+
+                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
+                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.unlocksArea.AddRange (new string[]{});
+                _new.missionsSet.AddRange (new string[]{"beatrice->beatrice-2"});
                 _new.activitySet.AddRange (new string[]{});
 
                 break;

@@ -3968,7 +3968,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1768930875}
+  m_Father: {fileID: 495661855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &382149089
 MonoBehaviour:
@@ -3988,10 +3988,12 @@ MonoBehaviour:
   - new-haven
   - wooster-square-1
   - wooster-square-2
+  - wooster-square-3
   mapObjs:
   - {fileID: 2637319581825162411, guid: 2fac45aec6c6c1db890f65c74a8381c7, type: 3}
   - {fileID: 6902724973578469332, guid: b255e54e6bcf64b0fb5b02254089688b, type: 3}
   - {fileID: 8666580738519297513, guid: cae8bc47f9c968baeb94f68a2e949e01, type: 3}
+  - {fileID: 879585513933974322, guid: 6e9869640fc0172ebb50bcfbf2a9dfaf, type: 3}
   nodes: []
   map: {fileID: 0}
   mapID: 
@@ -5670,6 +5672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 382149088}
   - {fileID: 1074818604}
   m_Father: {fileID: 511172465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25209,7 +25212,6 @@ Transform:
   - {fileID: 621194690}
   - {fileID: 1743792792}
   - {fileID: 1696038086}
-  - {fileID: 382149088}
   - {fileID: 994345760}
   - {fileID: 9929266}
   - {fileID: 1980290217}

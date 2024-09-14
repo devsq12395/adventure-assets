@@ -95,6 +95,9 @@ public class Inv2_DB : MonoBehaviour {
             case "bryans-armory": 
                 _new.AddRange (new string[] { "basic-sword" });
                 break;
+            case "michelle-shop": 
+                _new.AddRange (new string[] { "basic-sword" });
+                break;
         }
 
         return _new;

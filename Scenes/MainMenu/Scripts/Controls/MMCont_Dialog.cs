@@ -93,6 +93,7 @@ public class MMCont_Dialog : MonoBehaviour {
 
 			case "shop-bella-vita": btn_shop ("bella-vita"); break;
 			case "shop-bryans-armory": btn_shop ("bryans-armory"); break;
+			case "shop-michelle-shop": btn_shop ("michelle-shop"); break;
 
 			case "shopStregaBuy": btn_shopStregaBuy (); break;
 

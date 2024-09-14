@@ -844,12 +844,12 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-10":
+				case "dialog-beatrice-1":
 				    _new.name = "Vic";
-				    _new.desc = "Tommy, welcome back! Our associate from the Victorian Guards, Captain Beatrice, wants to see you.";
+				    _new.desc = "You must be Tommy, I presume? Vincenzo told me that you will come.";
 				    _new.portImg = "vic";
 				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-11";
+				    _new.inputEmptyContinue = "show-dialog-beatrice-2";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
@@ -861,12 +861,12 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-11":
+				case "dialog-beatrice-2":
 				    _new.name = "Captain Beatrice";
-				    _new.desc = "You must be Vincenzo's new boys. I'm Captain Beatrice, commander of the Victorian Guards here in New Haven.";
+				    _new.desc = "I'm Captain Beatrice, commander of the Victorian Guards here in New Haven.";
 				    _new.portImg = "beatrice";
 				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-12";
+				    _new.inputEmptyContinue = "show-dialog-beatrice-3";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
@@ -878,12 +878,12 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-12":
+				case "dialog-beatrice-3":
 				    _new.name = "Captain Beatrice";
-				    _new.desc = "Me and Vincenzo shares the same interest in fighting the spread of narcotics.";
+				    _new.desc = "Me and Vincenzo share the same interest in fighting the spread of narcotics. That's why currently, we're on an uneasy alliance.";
 				    _new.portImg = "beatrice";
 				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-13";
+				    _new.inputEmptyContinue = "show-dialog-beatrice-4";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
@@ -895,12 +895,12 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-13":
+				case "dialog-beatrice-4":
 				    _new.name = "Captain Beatrice";
-				    _new.desc = "There are five powerful families here in New Haven, Luppino Family being one of them.";
+				    _new.desc = "There are five powerful families here in New Haven, Vincenzo's Luppino Family being one of them.";
 				    _new.portImg = "beatrice";
 				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-14";
+				    _new.inputEmptyContinue = "show-dialog-beatrice-5";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
@@ -912,12 +912,12 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-14":
+				case "dialog-beatrice-5":
 				    _new.name = "Captain Beatrice";
 				    _new.desc = "The other four families are allied in their interests in the narcotics business. If they are left unchecked, they will dominate the city.";
 				    _new.portImg = "beatrice";
 				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-17";
+				    _new.inputEmptyContinue = "show-dialog-beatrice-6";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
@@ -929,46 +929,12 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-15":
-				    _new.name = "Boss Vincenzo";
-				    _new.desc = "UNUSED";
-				    _new.portImg = "vincenzo";
-				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-16";
-				    _new.isMini = "0";
-				    _new.inputScaler_enable = "0";
-				    _new.posX = 0;
-				    _new.posY = 0;
-				    _new.input1 = new InputData("", "");
-				    _new.input2 = new InputData("", "");
-				    _new.input3 = new InputData("", "");
-				    _new.input4 = new InputData("", "");
-				    _new.inputTxtBox = new InputData("", "");
-				    break;
-
-				case "dialog-vic-16":
-				    _new.name = "Boss Vincenzo";
-				    _new.desc = "UNUSED";
-				    _new.portImg = "vincenzo";
-				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-17";
-				    _new.isMini = "0";
-				    _new.inputScaler_enable = "0";
-				    _new.posX = 0;
-				    _new.posY = 0;
-				    _new.input1 = new InputData("", "");
-				    _new.input2 = new InputData("", "");
-				    _new.input3 = new InputData("", "");
-				    _new.input4 = new InputData("", "");
-				    _new.inputTxtBox = new InputData("", "");
-				    break;
-
-				case "dialog-vic-17":
+				case "dialog-beatrice-6":
 				    _new.name = "Captain Beatrice";
 				    _new.desc = "So if you are to fight with us, I will have to see what you are capable of.";
 				    _new.portImg = "beatrice";
 				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-vic-18";
+				    _new.inputEmptyContinue = "show-dialog-beatrice-7";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
@@ -980,7 +946,7 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "dialog-vic-18":
+				case "dialog-beatrice-7":
 				    _new.name = "Captain Beatrice";
 				    _new.desc = "Are you up to spar with me?";
 				    _new.portImg = "beatrice";
@@ -990,7 +956,24 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
 				    _new.posY = 0;
-				    _new.input1 = new InputData("start-mission-vic-3", "Sure!");
+				    _new.input1 = new InputData("start-mission-beatrice-1", "Sure!");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "dialog-beatrice-8":
+				    _new.name = "Captain Beatrice";
+				    _new.desc = "I see that you are a capable fighter. The people of New Haven will be grateful if you will support us in the fight against narcotics.";
+				    _new.portImg = "beatrice";
+				    _new.isTweenOut = "1";
+				    _new.inputEmptyContinue = "";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
 				    _new.input2 = new InputData("", "");
 				    _new.input3 = new InputData("", "");
 				    _new.input4 = new InputData("", "");

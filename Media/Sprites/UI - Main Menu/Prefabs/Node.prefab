@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 1
-  areaName: 
+  areaName: field-1
   val: 
   nodeBubble: {fileID: 0}
   nextNodes:

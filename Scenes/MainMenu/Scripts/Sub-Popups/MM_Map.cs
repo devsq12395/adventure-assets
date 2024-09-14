@@ -68,7 +68,7 @@ public class MM_Map : MonoBehaviour {
 
             //////////// CHANGE MAP
             case "to-wooster-square-2":
-                if (PlayerPrefs.GetInt("areasState.wooster-square-2") == 1) {
+                //if (PlayerPrefs.GetInt("areasState.to-wooster-square-2") == 1) {
                     ZPlayerPrefs.SetString("main-menu-map", "wooster-square-2");
 
                     // Set start node
@@ -77,7 +77,19 @@ public class MM_Map : MonoBehaviour {
                     }
 
                     MainMenu.I.move_curtain ("changeMap");
-                }
+                //}
+                break;
+            case "to-wooster-square-3":
+                //if (PlayerPrefs.GetInt("areasState.to-wooster-square-3") == 1) {
+                    ZPlayerPrefs.SetString("main-menu-map", "wooster-square-3");
+
+                    // Set start node
+                    switch (_val) {
+                        case "entry-1": PlayerPrefs.SetString("start-node", "1"); break;
+                    }
+
+                    MainMenu.I.move_curtain ("changeMap");
+                //}
                 break;
 
             //////////// DIALOG
@@ -100,6 +112,17 @@ public class MM_Map : MonoBehaviour {
                     case 5: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-5"); break;
 
                     case 6: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-6"); break;
+                }
+                break;
+
+            case "dialog-beatrice":
+                int _statusBeatriceDialog = PlayerPrefs.GetInt ("activity.dialog-with-beatrice");
+
+                switch (_statusBeatriceDialog) {
+                    case 0: MMCont_Dialog.I.create_dialog ("dialog-beatrice-1"); break;
+                    case 5: MMCont_Dialog.I.create_dialog ("dialog-beatrice-5"); break;
+
+                    case 8: MMCont_Dialog.I.create_dialog ("dialog-beatrice-8"); break;
                 }
                 break;
 
