@@ -55,7 +55,7 @@ public class MM_Map : MonoBehaviour {
     public void select_node (string _type, string _val){ Debug.Log ($"{_type}, {_val}");
         switch (_type) {
             //////////// GENERICS
-            case "mission": MM_Mission.I.show (ZPlayerPrefs.GetString ($"missionCurPool.{_val}")); break;
+            case "mission": MM_Mission.I.show (_val); break;
             case "dialog": MMCont_Dialog.I.create_dialog (_val); break;
             case "shop": MMCont_Dialog.I.input (null, _val); break;
             case "map": 

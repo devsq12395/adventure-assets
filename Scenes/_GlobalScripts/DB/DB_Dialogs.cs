@@ -674,23 +674,6 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "anthony-3":
-				    _new.name = "Anthony";
-				    _new.desc = "We have some business that needs your help. The pay will be good, of course.";
-				    _new.portImg = "anthony";
-				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-anthony-4";
-				    _new.isMini = "0";
-				    _new.inputScaler_enable = "0";
-				    _new.posX = 0;
-				    _new.posY = 0;
-				    _new.input1 = new InputData("", "");
-				    _new.input2 = new InputData("", "");
-				    _new.input3 = new InputData("", "");
-				    _new.input4 = new InputData("", "");
-				    _new.inputTxtBox = new InputData("", "");
-				    break;
-
 				case "anthony-2":
 				    _new.name = "Anthony";
 				    _new.desc = "I'm Anthony, the best car mechanic in New Haven and also loyal to the Luppino Family.";
@@ -708,12 +691,12 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.inputTxtBox = new InputData("", "");
 				    break;
 
-				case "anthony-5":
+				case "anthony-3":
 				    _new.name = "Anthony";
-				    _new.desc = "Tommy! There you are, my friend!";
+				    _new.desc = "We have some business that needs your help. The pay will be good, of course.";
 				    _new.portImg = "anthony";
 				    _new.isTweenOut = "0";
-				    _new.inputEmptyContinue = "show-dialog-anthony-6";
+				    _new.inputEmptyContinue = "show-dialog-anthony-4";
 				    _new.isMini = "0";
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
@@ -736,6 +719,23 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.posX = 0;
 				    _new.posY = 0;
 				    _new.input1 = new InputData("start-mission-anthony-1", "I'll handle it.");
+				    _new.input2 = new InputData("", "");
+				    _new.input3 = new InputData("", "");
+				    _new.input4 = new InputData("", "");
+				    _new.inputTxtBox = new InputData("", "");
+				    break;
+
+				case "anthony-5":
+				    _new.name = "Anthony";
+				    _new.desc = "Tommy! There you are, my friend!";
+				    _new.portImg = "anthony";
+				    _new.isTweenOut = "0";
+				    _new.inputEmptyContinue = "show-dialog-anthony-6";
+				    _new.isMini = "0";
+				    _new.inputScaler_enable = "0";
+				    _new.posX = 0;
+				    _new.posY = 0;
+				    _new.input1 = new InputData("", "");
 				    _new.input2 = new InputData("", "");
 				    _new.input3 = new InputData("", "");
 				    _new.input4 = new InputData("", "");

@@ -119,6 +119,20 @@ public class DB_Missions : MonoBehaviour {
 
                 break;
 
+            case "anthony-1": 
+                _new.speaker = "Anthony";
+                _new.desc = "Let's spar and see if you have what it takes to survive the war of the families here in New Haven.";
+                _new.sprite = "beatrice";
+                _new.rewards = "500 Gold";
+
+                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
+                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.unlocksArea.AddRange (new string[]{});
+                _new.missionsSet.AddRange (new string[]{"anthony->anthony-2"});
+                _new.activitySet.AddRange (new string[]{});
+
+                break;
+
     		// case "vic-2": 
     		// 	_new.speaker = "Vic";
     		// 	_new.desc = "Rossi Family members are spotted selling narcotics on our turf. Knock out their leader, Luca the Terror, and they will run back to where they came from!";
@@ -146,18 +160,6 @@ public class DB_Missions : MonoBehaviour {
     		// 	_new.activitySet.AddRange (new string[]{"dialog-with-vic->6"});
 
     		// 	break;
-
-    		// case "anthony-1": 
-    		// 	_new.speaker = "Anthony";
-    		// 	_new.desc = "Let's spar and see if you have what it takes to survive the war of the families here in New Haven.";
-    		// 	_new.sprite = "beatrice";
-    		// 	_new.rewards = "500 Gold";
-
-    		// 	_new.enemies = "vic-1";
-    		// 	_new.maps.AddRange (new string[]{"woosterSquare_rand"});
-    		// 	_new.unlocksArea.AddRange (new string[]{});
-    		// 	_new.missionsSet.AddRange (new string[]{"anthony->anthony-2"});
-    		// 	_new.activitySet.AddRange (new string[]{"dialog-with-vic->2"});
 
     		// 	break;
 

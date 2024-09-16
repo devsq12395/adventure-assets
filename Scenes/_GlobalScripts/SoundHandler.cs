@@ -119,6 +119,8 @@ public class SoundHandler : MonoBehaviour
         {
             lastBgm = _music;
             return;
+        } else if (_music == lastBgm) {
+            return;
         }
         audioSource.Stop();
 
