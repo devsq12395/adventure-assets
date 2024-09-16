@@ -6,7 +6,7 @@ using System.Linq;
 
 public class EditorDev : EditorWindow {
 
-    private string itemName = ""; // Declare the itemName variable
+    private string itemName = "", toMission = "", toMenuMap = "";
 
     [MenuItem("Window/Dev Tools")]
     public static void ShowWindow() {
@@ -49,10 +49,15 @@ public class EditorDev : EditorWindow {
         }
 
         EditorGUILayout.LabelField("Shortcuts", EditorStyles.boldLabel);
-        if (GUILayout.Button("To Game")) {
+        toMission = EditorGUILayout.TextField("To Mission:", toMission);
+        if (GUILayout.Button("To Mission")) {
+            ZPlayerPrefs.SetString ("missionCur", toMission);
+            PlayerPrefs.SetInt ("cur-map-lvl", 0);
             MasterScene.I.change_main_scene ("Game");
         }
+        toMenuMap = EditorGUILayout.TextField("To Menu Map:", toMenuMap);
         if (GUILayout.Button("To Menu")) {
+            ZPlayerPrefs.SetString("main-menu-map", toMenuMap);
             MasterScene.I.change_main_scene ("MainMenu");
         }
 
