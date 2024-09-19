@@ -18,13 +18,13 @@ public class DB_Objects : MonoBehaviour {
     public GameObject hero;
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, slimeOrange, mobster, slimeKing, giantSlime,
         lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
-        centurion, victorianSoldier, mafiaBoss;
+        centurion, victorianSoldier, mafiaBoss, assassin, assassinMaster;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
         bulletTommy, bulletMobster, bulletEmbraced, bulletVictorianSoldier, fireWave, blueWave, slashShredder, prismDroneMissile,
-        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot;
+        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
