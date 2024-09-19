@@ -33,6 +33,28 @@ public class DB_Missions : MonoBehaviour {
     	MissionData _new = new MissionData (_name);
 
     	switch (_name) {
+            case "training-grounds": 
+                _new.speaker = "";
+                _new.desc = "";
+                _new.sprite = "";
+                _new.rewards = "";
+
+                _new.gameOverSpk_name = "";
+                _new.gameOverSpk_text = "";
+                _new.gameOverSpk_img = "";
+
+                _new.gameOverSpk_nameFail = "Alfred";
+                _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
+                _new.gameOverSpk_imgFail = "kazuya";
+
+                _new.enemies.AddRange (new string[]{"training-grounds"});
+                _new.maps.AddRange (new string[]{"training-grounds"});
+                _new.unlocksArea.AddRange (new string[]{});
+                _new.missionsSet.AddRange (new string[]{});
+                _new.activitySet.AddRange (new string[]{});
+
+                break;
+
     		case "vic-1": 
     			_new.speaker = "Vic";
     			_new.desc = "Some slimes are spotted here in Wooster Square. Word is a Giant Slime is with them too.\n\nShould be easy for you to deal with. This is a chance for you to gain respect around here.";

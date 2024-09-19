@@ -18,7 +18,7 @@ public class DB_Objects : MonoBehaviour {
     public GameObject hero;
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, slimeOrange, mobster, slimeKing, giantSlime,
         lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
-        centurion, victorianSoldier, mafiaBoss, assassin, assassinMaster;
+        centurion, victorianSoldier, mafiaBoss, assassin, assassinCaptain, goblin, goblinMage, hobgoblin;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
@@ -84,6 +84,11 @@ public class DB_Objects : MonoBehaviour {
             case "victorian-soldier":            _refObj = victorianSoldier; break;
             case "centurion":            _refObj = centurion; break;
             case "mafia-boss":            _refObj = mafiaBoss; break;
+            case "assassin":            _refObj = assassin; break;
+            case "assassin-captain":            _refObj = assassinCaptain; break;
+            case "goblin":            _refObj = goblin; break;
+            case "goblin-mage":            _refObj = goblinMage; break;
+            case "hobgoblin":            _refObj = hobgoblin; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -111,6 +116,7 @@ public class DB_Objects : MonoBehaviour {
             case "luca-typhoon":             _refObj = lucaTyphoon; break;
             case "mafia-punch":             _refObj = mafiaPunch; break;
             case "mafia-gun-shot":             _refObj = mafiaGunShot; break;
+            case "shuriken":             _refObj = shuriken; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;

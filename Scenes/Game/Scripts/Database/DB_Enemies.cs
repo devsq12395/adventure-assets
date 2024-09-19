@@ -19,6 +19,8 @@ public class DB_Enemies : MonoBehaviour {
 		List<Dictionary<string, int>> _ret = new List<Dictionary<string, int>> ();
 
 		switch (_enemiesType) {
+			case "training-grounds": _ret = training_grounds (_ret); break;
+
 			case "enem-vic-1": _ret = vic_1_main_wave (_ret); break;
 			case "enem-vic-2": _ret = vic_2_main_wave (_ret); break;
 			case "enem-vic-3": _ret = vic_3_main_wave (_ret); break;
@@ -84,6 +86,24 @@ public class DB_Enemies : MonoBehaviour {
 		return _isSpecialSpawn;
 	}
 
+	private List<Dictionary<string, int>> training_grounds (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("assassin", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("assassin-captain", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
 	private List<Dictionary<string, int>> vic_1_main_wave (List<Dictionary<string, int>> _ret){
 		//int chance = Random.Range (0, 3);
 		int chance = 0;

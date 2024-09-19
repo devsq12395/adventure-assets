@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DB_Maps : MonoBehaviour {
 
     public static DB_Maps I;
 	public void Awake(){ I = this; }
+
+    public GameObject goMap_woosterSquare1, goMap_woosterSquare2, goMap_woosterSquare3, goMap_woosterSquare4, goMap_trainingGrounds;
 
     public struct mapDetails {
         public string name;
@@ -21,35 +24,58 @@ public class DB_Maps : MonoBehaviour {
         }
     }
 
-    public string is_map_random_and_get_rand_map (string _name){
-        List<string> _maps = new List<string>(){_name};
-        switch (_name){
-            case "woosterSquare_rand": _maps = new List<string> (){
-                "woosterSquare_01","woosterSquare_02","woosterSquare_03",
-            }; break;
-        }
-
-        string _ret = _maps [Random.Range (0, _maps.Count)];
-        return _ret;
-    }
-
     public mapDetails get_map_details (string _name) {
-        _name = is_map_random_and_get_rand_map (_name);
         mapDetails _new = new mapDetails (_name);
-        
+
         switch (_name) {
-            case "map-vic-1": _new = WoosterSquare1.I.get_map_details (_new); break;
-            case "map-vic-2": _new = WoosterSquare1.I.get_map_details (_new); break;
-            case "map-vic-3": _new = WoosterSquare1.I.get_map_details (_new); break;
+            // Wooster Square 1
+            case "map-vic-1": case "map-vic-2": case "map-vic-3": 
+            case "woosterSquare_rand":
+                _new = get_map_details_wooster_square_1 (_new);
+                break;
 
-            case "woosterSquare_01": _new = WoosterSquare1.I.get_map_details (_new); break;
-            case "woosterSquare_02": _new = WoosterSquare1.I.get_map_details (_new); break;
-            case "woosterSquare_03": _new = WoosterSquare1.I.get_map_details (_new); break;
+            case "training-grounds":
+                _new = get_map_details_training_grounds (_new);
+                break;
 
-            case "newHaven_caleb01": _new = WoosterSquare1.I.get_map_details (_new); break;
-            case "newHaven_caleb02": _new = WoosterSquare1.I.get_map_details (_new); break;
         }
 
         return _new;
+    }
+
+    public mapDetails get_map_details_training_grounds (mapDetails _new){
+        _new.size = new Vector2 (18, 18);
+
+        _new.pointList.Add ("playerSpawn", new Vector2 (0, 0));
+        _new.pointList.Add ("playerLounge", new Vector2 (-500, -500));
+
+        _new.mapObj = GameObject.Instantiate (goMap_trainingGrounds, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+        SceneManager.MoveGameObjectToScene(_new.mapObj, SceneManager.GetSceneByName("Game"));
+
+        ContMap.I.create_map_objs = create_map_objs;
+
+        return _new;
+    }
+    public mapDetails get_map_details_wooster_square_1 (mapDetails _new){
+        _new.size = new Vector2 (18, 18);
+
+        _new.pointList.Add ("playerSpawn", new Vector2 (0, 0));
+        _new.pointList.Add ("playerLounge", new Vector2 (-500, -500));
+
+        switch (Random.Range (0, 3)) {
+            case 0: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
+            case 1: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare2, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
+            case 2: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare3, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
+            default:_new.mapObj = GameObject.Instantiate (goMap_woosterSquare4, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
+        }
+        SceneManager.MoveGameObjectToScene(_new.mapObj, SceneManager.GetSceneByName("Game"));
+
+        ContMap.I.create_map_objs = create_map_objs;
+
+        return _new;
+    }
+
+    public void create_map_objs (){
+        
     }
 }

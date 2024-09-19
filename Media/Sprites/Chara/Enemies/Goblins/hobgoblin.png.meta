@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d890019227b01d54aa0a2045e1a75686
+guid: 92221040957b3ef0ca63783b00b7887c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,19 +81,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hogoblin_0
+      name: hobgoblin_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 793338652f3e39e4aa3e82ee2f8ebf26
-      internalID: 1210397969
+      spriteID: 2c8c1826ebf85c168af65c1597a78b4f
+      internalID: -597651723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hogoblin_1
+      name: hobgoblin_1
       rect:
         serializedVersion: 2
         x: 250
@@ -145,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80d0fb1550ad8a247b3598d01f90e145
-      internalID: -2066075561
+      spriteID: 4fb7318973fa6e5dc80262fa36cea789
+      internalID: -2122683108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hogoblin_2
+      name: hobgoblin_2
       rect:
         serializedVersion: 2
         x: 0
@@ -166,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7834c4e8eeab7744f812f73148467c48
-      internalID: 1274459042
+      spriteID: 348e5bb95137acb70a81075e959e62aa
+      internalID: 2046886075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hogoblin_3
+      name: hobgoblin_3
       rect:
         serializedVersion: 2
         x: 250
@@ -187,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e43f0c9b00a110c45957011238430a2b
-      internalID: -2090475540
+      spriteID: eabf5ee9cb16f96b79cd943d60b88be4
+      internalID: -649694217
       vertices: []
       indices: 
       edges: []
@@ -204,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hogoblin_0: 1210397969
-      hogoblin_1: -2066075561
-      hogoblin_2: 1274459042
-      hogoblin_3: -2090475540
+      hobgoblin_0: -597651723
+      hobgoblin_1: -2122683108
+      hobgoblin_2: 2046886075
+      hobgoblin_3: -649694217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -13,17 +13,20 @@ public class InGameAI : MonoBehaviour {
     public Vector2 goPos;
 
     public virtual void on_start (){
-        inGameObj = gameObject.GetComponent <InGameObject> ();
+        // Should be empty on this script
+        // Ok to put codes when overriding from another script. Check AI_Assassin.cs.
     }
 
     public virtual void on_ready (){
-        
+        // The above statement applies here too
     }
 
     void Update (){
         if (Game.I.isPaused) return;
 
         if (!isStart) {
+            inGameObj = gameObject.GetComponent <InGameObject> ();
+
             on_start ();
             isStart = true;
         }
