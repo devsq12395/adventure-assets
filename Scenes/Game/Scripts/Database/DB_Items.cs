@@ -5,13 +5,71 @@ using UnityEngine;
 public class DB_Items : MonoBehaviour {
 
     /*
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
         2024/08/11 - As of New Horizons v.0.3, this script is unused
+
+
+
+
+
+
+
+
+
+
+
+
+
     */
 
     public static DB_Items I;
 	public void Awake(){ I = this; }
 
     public Sprite dummy, test1, testSword;
+
+    /*
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        2024/08/11 - As of New Horizons v.0.3, this script is unused
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    */
 
     public struct Item {
         public string name, nameUI, equipType;

@@ -79,7 +79,7 @@ public class DB_Missions : MonoBehaviour {
 
             case "vincenzo-1": 
                 _new.speaker = "Boss Vincenzo";
-                _new.desc = "Rossi Family members are spotted selling narcotics on our turf. Knock out their leader, Luca the Terror, and they will run back to where they came from!";
+                _new.desc = "Rossi Family members are spotted selling narcotics on our turf. Knock out their attack leader, and they will run back to where they came from!";
                 _new.sprite = "vincenzo";
                 _new.rewards = "300 Gold";
 
@@ -105,6 +105,10 @@ public class DB_Missions : MonoBehaviour {
                 _new.sprite = "anastasia";
                 _new.rewards = "500 Gold";
 
+                _new.gameOverSpk_nameFail = "Alfred";
+                _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
+                _new.gameOverSpk_imgFail = "kazuya";
+
                 _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
@@ -116,8 +120,12 @@ public class DB_Missions : MonoBehaviour {
             case "beatrice-1": 
                 _new.speaker = "Captain Beatrice";
                 _new.desc = "Let's spar and see if you have what it takes to survive the upcoming war of the families here in New Haven.";
-                _new.sprite = "anastasia";
+                _new.sprite = "beatrice";
                 _new.rewards = "700 Gold";
+
+                _new.gameOverSpk_nameFail = "Captain Beatrice";
+                _new.gameOverSpk_textFail = "Not bad, but you could use some more training. Come back when you are stronger.";
+                _new.gameOverSpk_imgFail = "beatrice";
 
                 _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
@@ -133,6 +141,10 @@ public class DB_Missions : MonoBehaviour {
                 _new.sprite = "tommy";
                 _new.rewards = "700 Gold";
 
+                _new.gameOverSpk_nameFail = "Alfred";
+                _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
+                _new.gameOverSpk_imgFail = "kazuya";
+
                 _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
@@ -143,9 +155,13 @@ public class DB_Missions : MonoBehaviour {
 
             case "anthony-1": 
                 _new.speaker = "Anthony";
-                _new.desc = "Let's spar and see if you have what it takes to survive the war of the families here in New Haven.";
-                _new.sprite = "beatrice";
+                _new.desc = "War Shredders are spotted nearby. Help me get rid of them and I'll pay you nicely.";
+                _new.sprite = "npc-man-1";
                 _new.rewards = "500 Gold";
+
+                _new.gameOverSpk_nameFail = "Alfred";
+                _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
+                _new.gameOverSpk_imgFail = "kazuya";
 
                 _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});

@@ -80,7 +80,7 @@ public class Car : MonoBehaviour
 
     private void TryMoveToNextNode(Vector2 direction)
     {
-        if (curNode == null || curNode.nextNodes.Count == 0)
+        if (curNode == null || curNode.nextNodes.Count == 0 || isMoving)
             return;
 
         // Find the next node in the desired direction

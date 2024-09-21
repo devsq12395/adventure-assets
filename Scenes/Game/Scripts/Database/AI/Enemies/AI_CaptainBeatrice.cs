@@ -6,11 +6,23 @@ public class AI_CaptainBeatrice : InGameAI {
 
     private int moveCount = 0;
     private int currentMove = 0;
+    private int dashSlashCount = 0;  // To keep track of the number of slashes in DashAndSlash
+    private bool isDashing = false;  // To handle dash movement without coroutine
+    private string dashDirection = "";
+    private float dashSpeed = 10f;  // Adjust as needed
+    private float dashDuration = 0.5f;  // Duration for each dash segment
+    private Vector3 dashTarget;
 
     public override void on_update() {
         ContObj.I.face_player(inGameObj);
         
         stateTime += Time.deltaTime;
+
+        // Handle dashing movement if the boss is in the dashing state
+        if (isDashing) {
+            HandleDash();
+            return;  // Skip the rest of the logic during dashing
+        }
 
         if (state == 0) {
             if (stateTime >= 5f) {
@@ -58,9 +70,8 @@ public class AI_CaptainBeatrice : InGameAI {
             moveCount++;
         } else if (moveCount == 1) {
             if (stateTime >= 1f) {
-                StartCoroutine(DashAndSlash("right", 4, topLeft.x, bottomRight.x));
-                moveCount++;
-                stateTime = 0; // Reset stateTime after starting coroutine
+                StartDash("right", topLeft.x, bottomRight.x);
+                stateTime = 0;
             }
         } else if (moveCount == 2) {
             if (stateTime >= 2f) {
@@ -71,9 +82,8 @@ public class AI_CaptainBeatrice : InGameAI {
             }
         } else if (moveCount == 3) {
             if (stateTime >= 1f) {
-                StartCoroutine(DashAndSlash("left", 4, bottomRight.x, topLeft.x));
-                moveCount++;
-                stateTime = 0; // Reset stateTime after starting coroutine
+                StartDash("left", bottomRight.x, topLeft.x);
+                stateTime = 0;
             }
         } else if (moveCount == 4) {
             if (stateTime >= 2f) {
@@ -120,30 +130,34 @@ public class AI_CaptainBeatrice : InGameAI {
         }
     }
 
-    private IEnumerator DashAndSlash(string direction, int slashes, float minX, float maxX) {
-        InGameObject _ownerComp = gameObject.GetComponent<InGameObject>();
-        Vector3 dashDirection = (direction == "left") ? Vector3.left : Vector3.right;
-        float dashSpeed = 10f; // Adjust as needed
-        float dashDuration = 0.5f; // Duration for each dash segment
+    // Refactored Dash and Slash logic without Coroutine
+    private void StartDash(string direction, float minX, float maxX) {
+        dashDirection = direction;
+        dashTarget = (direction == "left") ? Vector3.left : Vector3.right;
+        isDashing = true;
+        dashSlashCount = 0;  // Start fresh
+    }
 
-        for (int i = 0; i < slashes; i++) {
+    private void HandleDash() {
+        if (dashSlashCount < 4) {
+            // Perform dash and slash
             ContObj.I.use_skill_active(inGameObj, "captain-beatrice-slash");
 
-            // Perform dash
             float elapsedTime = 0f;
             while (elapsedTime < dashDuration) {
-                Vector3 newPosition = gameObject.transform.position + dashDirection * dashSpeed * Time.deltaTime;
+                Vector3 newPosition = gameObject.transform.position + dashTarget * dashSpeed * Time.deltaTime;
                 if (newPosition.x < minX || newPosition.x > maxX) {
                     break; // Stop if 3 units before the edge is reached
                 }
                 gameObject.transform.position = newPosition;
                 elapsedTime += Time.deltaTime;
-                yield return null;
             }
-        }
 
-        // Ensure moveCount and stateTime are reset correctly after dash
-        moveCount++;
-        stateTime = 0;
+            dashSlashCount++;
+            stateTime = 0; // Reset stateTime after each dash and slash
+        } else {
+            isDashing = false;  // Finish dashing
+            moveCount++;
+        }
     }
 }

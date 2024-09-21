@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class AI_AssassinCaptain : InGameAI {
+public class AI_GoblinMage : InGameAI {
 
     // Public variables for customization
-    public float skillInterval;
     public float moveChangeInterval;
 
     // Internal state variables
@@ -11,12 +10,14 @@ public class AI_AssassinCaptain : InGameAI {
     private float moveTimer = 0f;
     private Vector2 targetPos;
 
+    public int moveNum;
+
     public override void on_start() {
         // Initialize default values
-        skillInterval = 3f; // Time between skill usages
         moveChangeInterval = 2f; // Time between changing movement target
-        actionTimer = 0f;
+        actionTimer = 5f;
         moveTimer = 0f;
+        moveNum = 1;
 
         // Set an initial random movement target
         targetPos = get_random_position();
@@ -40,15 +41,24 @@ public class AI_AssassinCaptain : InGameAI {
         }
 
         // If enough time has passed, use a random skill
-        if (actionTimer >= skillInterval) {
-            use_random_skill(); // Use a random skill from the list
-            actionTimer = 0f; // Reset action timer
+        if (actionTimer <= 0) {
+            use_random_skill(); 
+        } else {
+            actionTimer -= Time.deltaTime;
         }
     }
 
     // Helper method to use a random skill
     private void use_random_skill() {
-        ContObj.I.use_skill_active(inGameObj, "random-shuriken");
+        if (moveNum <= 3) {
+            ContObj.I.use_skill_active(inGameObj, "fireball-shotgun");
+            actionTimer = (moveNum <= 2) ? 1f : 3f;
+        } else if (moveNum) {
+            ContObj.I.use_skill_active(inGameObj, "fire-orbs");
+            actionTimer = 10f;
+        }
+
+        moveNum++;
     }
 
     // Helper method to get a random position within the map bounds

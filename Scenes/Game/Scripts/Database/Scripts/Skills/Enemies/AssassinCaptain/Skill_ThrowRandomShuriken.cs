@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Skill_ThrowRandomShuriken : SkillTrig {
+    
+    public override void use_active (){
+        if (!use_check()) return;
+        
+        InGameObject _ownerComp = gameObject.GetComponent <InGameObject> ();
+        InGameObject _p = ContPlayer.I.player;
+        Vector2 _pPos = _p.gameObject.transform.position;
+
+        ContObj.I.change_velocity (_ownerComp, new Vector2 (0, 0));
+        _ownerComp.isAtk = true;
+        _ownerComp.toAnim = 1;
+
+        create_missile (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos));
+    }
+
+    private void create_missile (InGameObject _ownerComp, float _ang){
+        InGameObject _p = ContPlayer.I.player;
+        Vector2 _pPos = _p.gameObject.transform.position;
+
+        switch (Random.Range (0, 3)) {
+            case 0:
+                create_missile_spin (_ownerComp, 0);
+                break;
+
+            default:
+                create_missile_regular (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos));
+                create_missile_regular (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos) + 25);
+                create_missile_regular (_ownerComp, Calculator.I.get_ang_from_2_points_deg (gameObject.transform.position, _pPos) - 25);
+                break;
+        }
+    }
+
+    private void create_missile_regular (InGameObject _ownerComp, float _ang){
+        GameObject _missile = ContObj.I.create_obj ("shuriken", gameObject.transform.position, _ownerComp.owner);
+        InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
+
+        ContObj.I.const_move_ang_set (_missileComp, _ang, _missileComp.speed);
+
+        _missileComp.controllerID = _ownerComp.id;
+    }
+
+    private void create_missile_spin (InGameObject _ownerComp, float _ang){
+        GameObject _missile = ContObj.I.create_obj ("shuriken-spin", gameObject.transform.position, _ownerComp.owner);
+        InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
+
+        _missileComp.controllerID = _ownerComp.id;
+    }
+}

@@ -18,13 +18,13 @@ public class DB_Objects : MonoBehaviour {
     public GameObject hero;
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, slimeOrange, mobster, slimeKing, giantSlime,
         lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
-        centurion, victorianSoldier, mafiaBoss, assassin, assassinCaptain, goblin, goblinMage, hobgoblin;
+        centurion, victorianSoldier, mafiaBoss, assassin, assassinCaptain, goblin, goblinMage, hobgoblin, fireSpirit;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
         bulletTommy, bulletMobster, bulletEmbraced, bulletVictorianSoldier, fireWave, blueWave, slashShredder, prismDroneMissile,
-        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken;
+        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken, shurikenSpiral;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -89,6 +89,7 @@ public class DB_Objects : MonoBehaviour {
             case "goblin":            _refObj = goblin; break;
             case "goblin-mage":            _refObj = goblinMage; break;
             case "hobgoblin":            _refObj = hobgoblin; break;
+            case "fire-spirit":            _refObj = fireSpirit; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -117,6 +118,7 @@ public class DB_Objects : MonoBehaviour {
             case "mafia-punch":             _refObj = mafiaPunch; break;
             case "mafia-gun-shot":             _refObj = mafiaGunShot; break;
             case "shuriken":             _refObj = shuriken; break;
+            case "shuriken-spin":             _refObj = shurikenSpiral; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;
