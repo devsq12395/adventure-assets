@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 512110213563582338}
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
+  - component: {fileID: 4146418825200161287}
+  - component: {fileID: -4739476872377309224}
   m_Layer: 0
   m_Name: goblin
   m_TagString: Untagged
@@ -100,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 589ca52d8471998d5962497ba4aa09f9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 63259021ebfa77b7cabb25b63d9e4551, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -330,3 +332,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptTag: collider
   hitIDs: 
+--- !u!114 &4146418825200161287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7df5c782099b545bb6c8acc5641371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: attack
+  skillName: attack
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: bullet-mobster
+  muzzleObj1: muzzle-1
+  muzzleObj2: muzzle-2
+--- !u!114 &-4739476872377309224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abcafade4a0ca34b860e21d8e82dc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGameObj: {fileID: 0}
+  isStart: 0
+  isReady: 0
+  state: 0
+  stateTime: 0
+  goPos: {x: 0, y: 0}

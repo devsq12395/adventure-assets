@@ -26,7 +26,7 @@ public class AI_GoblinMage : InGameAI {
 
     public override void on_update() {
         // Update timers
-        actionTimer += Time.deltaTime;
+        actionTimer -= Time.deltaTime;
         moveTimer += Time.deltaTime;
 
         // Check if it's time to change the movement target
@@ -49,13 +49,14 @@ public class AI_GoblinMage : InGameAI {
     }
 
     // Helper method to use a random skill
-    private void use_random_skill() {
+    private void use_random_skill() { Debug.Log ("use");
         if (moveNum <= 3) {
             ContObj.I.use_skill_active(inGameObj, "fireball-shotgun");
             actionTimer = (moveNum <= 2) ? 1f : 3f;
-        } else if (moveNum) {
+        } else {
             ContObj.I.use_skill_active(inGameObj, "fire-orbs");
             actionTimer = 10f;
+            moveNum = 0;
         }
 
         moveNum++;

@@ -9,6 +9,7 @@ public class Skill_RandomFireball : SkillTrig {
     public override void use_active (){
         if (!use_check()) return;
 
+        InGameObject _ownerComp = gameObject.GetComponent <InGameObject> ();
         create_missile (_ownerComp, Random.Range (0, 360));
     }
 

@@ -7,6 +7,7 @@ public class Spiral : MonoBehaviour
 
     private float angle = 0f; // Current angle for the spiral movement
     private Vector3 spawnPosition; // The position where the object spawns
+    private float totalDistanceTraveled = 0f; // Accumulated distance traveled
 
     void Start()
     {
@@ -15,14 +16,14 @@ public class Spiral : MonoBehaviour
 
     void Update()
     {
-        // Calculate the amount of distance traveled in the spiral per frame
-        float distanceTraveled = speed * Time.deltaTime;
+        // Increment the total distance traveled based on speed and time
+        totalDistanceTraveled += speed * Time.deltaTime;
 
         // Increment the angle based on angular speed
         angle += angularSpeed * Time.deltaTime;
 
-        // Update the current radius to ensure constant speed
-        float currentRadius = distanceTraveled / (Mathf.Deg2Rad * angularSpeed);
+        // Update the radius using the total distance traveled
+        float currentRadius = totalDistanceTraveled;
 
         // Calculate the new position using polar coordinates
         float x = spawnPosition.x + currentRadius * Mathf.Cos(angle * Mathf.Deg2Rad);

@@ -49,5 +49,6 @@ public class Skill_ThrowRandomShuriken : SkillTrig {
         InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
 
         _missileComp.controllerID = _ownerComp.id;
+        _missileComp.timedLife = 3;
     }
 }

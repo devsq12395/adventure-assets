@@ -4,9 +4,11 @@ public class AI_FireSpirit : InGameAI {
 
     // Internal state variables
     private float actionTimer = 0f;
+    private float skillInterval;
 
     public override void on_start() {
         actionTimer = 0f;
+        skillInterval = 4f;
     }
 
     public override void on_update() {

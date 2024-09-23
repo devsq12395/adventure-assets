@@ -140,6 +140,10 @@ public class AI_CaptainBeatrice : InGameAI {
 
     private void HandleDash() {
         if (dashSlashCount < 4) {
+            Vector2 mapSize = ContMap.I.details.size;
+            float minX = mapSize.x + 3;
+            float maxX = mapSize.x - 3;
+
             // Perform dash and slash
             ContObj.I.use_skill_active(inGameObj, "captain-beatrice-slash");
 

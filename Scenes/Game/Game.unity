@@ -5362,6 +5362,7 @@ MonoBehaviour:
   goblin: {fileID: 4690657366656991979, guid: da1949d4efdc85b82ae8f25752be787c, type: 3}
   goblinMage: {fileID: 4069129335015200978, guid: 201da77aab0d57c5ca8b41828e8f6c19, type: 3}
   hobgoblin: {fileID: 5399359786492145966, guid: b8a4eae89c8100d5bbe6de303ef8fb68, type: 3}
+  fireSpirit: {fileID: 1035227436549338006, guid: 71a761847ff083c428762fbdd8567393, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
@@ -5389,6 +5390,7 @@ MonoBehaviour:
   mafiaGunShot: {fileID: 0}
   shuriken: {fileID: 809725171871969701, guid: ae1e408e175a6a9498a56a4abf5fd5a7, type: 3}
   shurikenSpiral: {fileID: 3959961270230524954, guid: 53c9b2da1ca37bef8ab13d9086e145b4, type: 3}
+  fireball: {fileID: 1679871306197174086, guid: 07ad771b9cbfcd845ba93050ff62d044, type: 3}
   explosion1: {fileID: 1401509844482372538, guid: 27184bd0ec3267a4ba95990debf08eba, type: 3}
   explosion2: {fileID: 7377904376478507447, guid: 6f6c76db710f16b4e9216024f4b55c21, type: 3}
   explosion3: {fileID: 8620740922000547619, guid: 651d929cf2acc7948b5751e38568c570, type: 3}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &809725171871969701
+--- !u!1 &1035227436549338006
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7223008501012630018}
-  - component: {fileID: 497724127679811540}
-  - component: {fileID: 897336292337503500}
-  - component: {fileID: 4634471259003635071}
-  - component: {fileID: 2999344139651958792}
-  - component: {fileID: 6094938090771953334}
-  - component: {fileID: 7188128449878200901}
+  - component: {fileID: 3449852711622404243}
+  - component: {fileID: 4285312575896348591}
+  - component: {fileID: 6965932383036007790}
+  - component: {fileID: 2028920175294631315}
+  - component: {fileID: 6249897842130288745}
   m_Layer: 0
-  m_Name: shuriken
+  m_Name: fire-spirit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7223008501012630018
+--- !u!4 &3449852711622404243
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809725171871969701}
+  m_GameObject: {fileID: 1035227436549338006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8597107, y: -0.12774411, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 3.7, y: -1.58, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &497724127679811540
+--- !u!212 &4285312575896348591
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809725171871969701}
+  m_GameObject: {fileID: 1035227436549338006}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,131 +76,47 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 950a9e54ee8e3704882921001ef860e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52090c6bee95eeb4db87a3dcfd494a96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.9, y: 4.93}
+  m_Size: {x: 1.32, y: 2.35}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &897336292337503500
+--- !u!114 &6965932383036007790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809725171871969701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c2ca0a7c15415145a3a4f80a856294e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationRate: 1080
---- !u!61 &4634471259003635071
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809725171871969701}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.04416275, y: 0.16192949}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9, y: 4.93}
-    newSize: {x: 1.9, y: 4.93}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0461888, y: 4.1939564}
-  m_EdgeRadius: 0
---- !u!50 &2999344139651958792
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809725171871969701}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &6094938090771953334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809725171871969701}
+  m_GameObject: {fileID: 1035227436549338006}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d1a6e5b6f7a0ef489fa41f463cfed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: shuriken
-  nameUI: Shuriken
-  type: missile
+  name: fire-spirit
+  nameUI: 
+  type: 
   owner: 0
   id: 0
-  hp: 1
+  hp: 0
   hpMax: 0
   mp: 0
   mpMax: 0
   mpRegen: 0
   armor: 0
-  hitDam: 2
+  hitDam: 0
   onHitSFX: 
   tags:
-  - missile
-  - blade
-  speed: 0.12
+  - dummy
+  - spirit
+  - invulnerable
+  speed: 0
   attachScaleMultiplier: 1
   zPos: 0
   skill1: {fileID: 0}
@@ -251,7 +165,7 @@ MonoBehaviour:
   instMov_mode: 
   isRunning: 0
   isAtk: 0
-  isInvul: 0
+  isInvul: 1
   isDash: 0
   knockDrag: 0
   timedLife: 0
@@ -262,18 +176,40 @@ MonoBehaviour:
   skills: []
   barHP: {fileID: 0}
   barSta: {fileID: 0}
---- !u!114 &7188128449878200901
+--- !u!114 &2028920175294631315
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809725171871969701}
+  m_GameObject: {fileID: 1035227436549338006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b270b4610beed64da38fa13f24ae058, type: 3}
+  m_Script: {fileID: 11500000, guid: 34528fec0abff044aa67383eeae80fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptTag: collider
-  hitIDs: 
-  destroyOnHit: 1
+  inGameObj: {fileID: 0}
+  isStart: 0
+  isReady: 0
+  state: 0
+  stateTime: 0
+  goPos: {x: 0, y: 0}
+--- !u!114 &6249897842130288745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035227436549338006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2662246650eeb48a9ec243a0f3eace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: random-fireball
+  skillName: random-fireball
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: fireball

@@ -24,7 +24,7 @@ public class DB_Objects : MonoBehaviour {
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
         bulletTommy, bulletMobster, bulletEmbraced, bulletVictorianSoldier, fireWave, blueWave, slashShredder, prismDroneMissile,
-        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken, shurikenSpiral;
+        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken, shurikenSpiral, fireball;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -119,6 +119,7 @@ public class DB_Objects : MonoBehaviour {
             case "mafia-gun-shot":             _refObj = mafiaGunShot; break;
             case "shuriken":             _refObj = shuriken; break;
             case "shuriken-spin":             _refObj = shurikenSpiral; break;
+            case "fireball":             _refObj = fireball; break;
 
             // Effects
             case "explosion1":              _refObj = explosion1; break;
