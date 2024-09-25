@@ -32,6 +32,7 @@ public class SaveHandler : MonoBehaviour {
 
             ZPlayerPrefs.SetString("missionCur", "");
             ZPlayerPrefs.SetString("missionCurPool", "");
+            PlayerPrefs.SetString("missionDiff", "");
 
             ZPlayerPrefs.SetString("missionCurPool.vic", "vic-1");
             ZPlayerPrefs.SetString("missionCurPool.vincenzo", "vincenzo-1");

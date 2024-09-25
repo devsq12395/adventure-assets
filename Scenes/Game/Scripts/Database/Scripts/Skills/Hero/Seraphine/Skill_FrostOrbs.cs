@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill_FireOrbs : SkillTrig
+public class Skill_FrostOrbs : SkillTrig
 {
     public string missileObj; // The fire spirit prefab
     public float radius = 2f; // Distance from the owner at which fire spirits should spawn

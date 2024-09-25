@@ -12,12 +12,13 @@ public class ContEffect : MonoBehaviour
     private List<GameObject> objectPool = new List<GameObject>();
     private Sprite circleSprite;
 
-    void Start()
-    {
+    void Start() {
         circleSprite = CreateCircleSprite(128, 128);
     }
 
-    void Update() { }
+    void Update() { 
+
+    }
 
     public GameObject create_effect(string _name, Vector2 _pos)
     {
@@ -41,6 +42,11 @@ public class ContEffect : MonoBehaviour
                 instance = GetPooledObject();
                 instance.GetComponent<SpriteRenderer>().sprite = circleSprite;
                 instance.transform.localScale = new Vector3(circleDiameter, circleDiameter, 1f);
+
+                Color color;
+                if (ColorUtility.TryParseHtmlString("#" + gameObjectString, out color)) {
+                    instance.GetComponent<SpriteRenderer>().color = color;
+                }
             }
             else
             {
@@ -55,18 +61,22 @@ public class ContEffect : MonoBehaviour
             Vector2 targetPosition = startPosition + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * targetDistance;
 
             // Tween position
-            instance.transform.DOMove(targetPosition, tweenDur).OnComplete(() => ReturnToPool(instance));
+            instance.transform.DOMove(targetPosition, tweenDur).OnComplete(() => ReturnToPool(instance)).SetUpdate(true);
 
             // Tween scale from 1 to 0
-            instance.transform.DOScale(Vector3.zero, tweenDur);
+            instance.transform.DOScale(Vector3.zero, tweenDur).SetUpdate(true);
 
             // Tween alpha from 1 to 0.5
             SpriteRenderer sr = instance.GetComponent<SpriteRenderer>();
             if (sr != null)
             {
-                sr.DOFade(0.5f, tweenDur);
+                sr.DOFade(0.5f, tweenDur).SetUpdate(true);
             }
         }
+    }
+
+    public void effect_tweens(){
+
     }
 
     private bool IsHexColor(string str)

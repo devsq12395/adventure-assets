@@ -28,10 +28,14 @@ public class SpinAroundObject : MonoBehaviour
     {
         // Rotate the object around the target based on the orbit speed
         OrbitAroundTarget();
+
+        if (!target) {
+            Destroy (gameObject);
+        }
     }
 
     // Set the initial position based on the input angle and distance
-    private void SetInitialPosition()
+    public void SetInitialPosition()
     {
         float x = Mathf.Cos(currentAngle) * orbitDistance;
         float y = Mathf.Sin(currentAngle) * orbitDistance;
@@ -39,7 +43,7 @@ public class SpinAroundObject : MonoBehaviour
     }
 
     // Rotate the object around the target
-    private void OrbitAroundTarget()
+    public void OrbitAroundTarget()
     {
         // Increase the angle over time based on the orbit speed
         currentAngle += orbitSpeed * Time.deltaTime * Mathf.Deg2Rad;

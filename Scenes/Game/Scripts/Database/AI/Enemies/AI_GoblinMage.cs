@@ -22,6 +22,7 @@ public class AI_GoblinMage : InGameAI {
         // Set an initial random movement target
         targetPos = get_random_position();
         ContObj.I.move_walk_to_pos(inGameObj, targetPos);
+        ContObj.I.change_facing (inGameObj, ((gameObject.transform.position.x > targetPos.x) ? "left" : "right"));
     }
 
     public override void on_update() {
@@ -52,10 +53,10 @@ public class AI_GoblinMage : InGameAI {
     private void use_random_skill() { Debug.Log ("use");
         if (moveNum <= 3) {
             ContObj.I.use_skill_active(inGameObj, "fireball-shotgun");
-            actionTimer = (moveNum <= 2) ? 1f : 3f;
+            actionTimer = (moveNum <= 2) ? 2f : 7f;
         } else {
             ContObj.I.use_skill_active(inGameObj, "fire-orbs");
-            actionTimer = 10f;
+            actionTimer = 15f;
             moveNum = 0;
         }
 

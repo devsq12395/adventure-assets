@@ -14,6 +14,15 @@ public class ContDamage : MonoBehaviour {
     public void damage(InGameObject _atk, InGameObject _def, int _damOrig, List<string> _extraTags_atk) {
         if (!DB_Conditions.I.dam_condition(_atk, _def)) return;
 
+        if (_atk.summonedBy > 0) {
+            InGameObject _objOwner = ContObj.I.get_obj_with_id (_atk.summonedBy);
+            if (_objOwner) {
+                _atk = _objOwner;
+            } else {
+                return;
+            }
+        }
+
         int _dam = _damOrig;
 
         _dam = check_other_effects(_atk, _def, _dam, _extraTags_atk);
@@ -98,7 +107,7 @@ public class ContDamage : MonoBehaviour {
         }
         
         // Dam Text UI
-        GameUI_InGameTxt.I.create_ingame_txt ($"{_dam.ToString ()}!", _def.gameObject.transform.position, 2f);
+        GameUI_InGameTxt.I.create_ingame_txt ($"{_dam.ToString ()}", _def.gameObject.transform.position, 2f);
 
         // Color change
         ContObj.I.change_color (_def, Color.red, 0.1f);

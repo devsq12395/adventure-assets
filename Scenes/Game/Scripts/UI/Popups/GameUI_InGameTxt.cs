@@ -79,12 +79,14 @@ public class GameUI_InGameTxt : MonoBehaviour {
         if (_txt != "Critical!") {
             _newTxtUI.transform.localScale = Vector3.zero;
             _newTxtUI.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.1f).OnComplete(() => {
-                _newTxtUI.transform.DOScale(Vector3.zero, 2f);
+                _newTxtUI.transform.DOScale(new Vector3(0.75f, 0.75f, 0.75f), 2f);
             });
         }
 
-        _newTxtUI.DOFade(0f, _dur);
-        _newTxtUI.rectTransform.DOAnchorPosY(_newTxtUI.rectTransform.anchoredPosition.y + 30f, _dur);
+        _newTxtUI.DOFade(1f, _dur - _dur * 0.75f).OnComplete(()=>{
+            _newTxtUI.DOFade(0f, _dur - _dur * 0.25f);
+        });
+        _newTxtUI.rectTransform.DOAnchorPosY(_newTxtUI.rectTransform.anchoredPosition.y + 9f, _dur).SetUpdate (true);
 
         InGameTxt _new = new InGameTxt(_go, _newTxtUI, _txt, _dur, _pos);
         txtList.Add(_new);
@@ -104,29 +106,23 @@ public class GameUI_InGameTxt : MonoBehaviour {
     }
 
     public void update_all_txts() {
-        InGameTxt _item;
         for (int i = txtList.Count - 1; i >= 0; i--) {
-            _item = txtList[i];
+            InGameTxt _item = txtList[i];
             _item.dur -= Time.deltaTime;
 
-            // Text Position
-            _item.curPos = new Vector2(_item.curPos.x, _item.curPos.y + 0.03f);
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(new Vector3(txtList[i].curPos.x, txtList[i].curPos.y, 0f));
-            Vector2 uiPos;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                txtList[i].txtUI.rectTransform.parent as RectTransform,
-                screenPos,
-                Camera.main,
-                out uiPos);
-            txtList[i].txtUI.rectTransform.anchoredPosition = uiPos;
+            // Move text up over time
+            Vector2 newPos = _item.txtUI.rectTransform.anchoredPosition;
+            newPos.y += 0.03f; // Adjust the speed of movement here
+            _item.txtUI.rectTransform.anchoredPosition = newPos;
 
-            // Duration
+            // Check if the text has expired
             if (_item.dur <= 0) {
-                Destroy(txtList[i].go);
+                Destroy(_item.go);
                 txtList.RemoveAt(i);
             } else {
-                txtList[i] = _item;
+                txtList[i] = _item; // Update the list with the modified text
             }
         }
     }
+
 }

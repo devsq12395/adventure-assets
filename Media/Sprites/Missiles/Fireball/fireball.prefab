@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5000502599847924628}
   - component: {fileID: 7267540447322539997}
   - component: {fileID: 5633889643470632037}
+  - component: {fileID: -2425153042197978154}
   m_Layer: 0
   m_Name: fireball
   m_TagString: Untagged
@@ -120,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2249417, y: 0.034026146}
+  m_Offset: {x: 1.1235139, y: 0.034026146}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1720648, y: 0.80584335}
+  m_Size: {x: 1.1816707, y: 0.80584335}
   m_EdgeRadius: 0
 --- !u!50 &5000502599847924628
 Rigidbody2D:
@@ -147,7 +148,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -189,14 +190,14 @@ MonoBehaviour:
   - fire
   - magic
   - missile
-  speed: 0.2
+  speed: 0.1
   attachScaleMultiplier: 1
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
   anim: {fileID: 0}
   hasAnim: 0
-  isRotate: 0
+  isRotate: 1
   toAnim: 0
   renderer: {fileID: 0}
   rb: {fileID: 0}
@@ -264,3 +265,21 @@ MonoBehaviour:
   scriptTag: collider
   hitIDs: 
   destroyOnHit: 1
+--- !u!114 &-2425153042197978154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679871306197174086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b71ebe42fa0e24aa8d5f98e7b89225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorHex: FFB70B
+  spawnAmount: 1
+  circleDiameter: 0.5
+  tweenDur: 0.5
+  targetDist: 1.5
+  spawnIntervalTarg: 0.15

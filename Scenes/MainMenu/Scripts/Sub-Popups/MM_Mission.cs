@@ -17,7 +17,7 @@ public class MM_Mission : MonoBehaviour {
     public TextMeshProUGUI title, desc, desc2;
     public Image port;
 
-    public string missionID;
+    public string missionID, txtDiff, txtDiffDesc;
     public Missions missionsData;
 
     public void Awake () {

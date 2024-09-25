@@ -138,4 +138,12 @@ public class Calculator : MonoBehaviour {
 
         return idBuilder.ToString();
     }
+
+    public Vector2 get_offset_from_angle_and_distance(float angle, float distance) {
+        float x = distance * Mathf.Cos(angle * Mathf.Deg2Rad);
+        float y = distance * Mathf.Sin(angle * Mathf.Deg2Rad);
+        
+        return new Vector2(x, y);
+    }
+
 }

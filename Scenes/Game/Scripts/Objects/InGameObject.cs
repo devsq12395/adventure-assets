@@ -78,6 +78,7 @@ public class InGameObject : MonoBehaviour {
     public int controllerID;
     public List<int> hitUnitsID;
     public float colorChangeDur;
+    public int summonedBy;
 
     // Buffs
     public List <ContBuffs.buff> buffs;

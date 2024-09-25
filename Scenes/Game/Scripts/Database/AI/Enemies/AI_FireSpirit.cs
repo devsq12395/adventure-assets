@@ -8,7 +8,7 @@ public class AI_FireSpirit : InGameAI {
 
     public override void on_start() {
         actionTimer = 0f;
-        skillInterval = 4f;
+        skillInterval = 1f;
     }
 
     public override void on_update() {
@@ -16,6 +16,8 @@ public class AI_FireSpirit : InGameAI {
         if (actionTimer >= skillInterval) {
             use_random_skill(); // Use a random skill from the list
             actionTimer = 0f; // Reset action timer
+        } else {
+            actionTimer += Time.deltaTime;
         }
     }
 

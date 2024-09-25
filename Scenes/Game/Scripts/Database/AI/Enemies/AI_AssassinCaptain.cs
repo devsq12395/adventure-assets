@@ -21,6 +21,7 @@ public class AI_AssassinCaptain : InGameAI {
         // Set an initial random movement target
         targetPos = get_random_position();
         ContObj.I.move_walk_to_pos(inGameObj, targetPos);
+        ContObj.I.change_facing (inGameObj, ((gameObject.transform.position.x > targetPos.x) ? "left" : "right"));
     }
 
     public override void on_update() {
