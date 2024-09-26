@@ -24,7 +24,7 @@ public class ContPlayer : MonoBehaviour {
 
         sta = 10;
         staMax = 10;
-        staReturnCount = 0.75f;
+        staReturnCount = 0.25f;
         staReturnAmount = 0.05f;
     }
     

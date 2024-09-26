@@ -94,8 +94,8 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("goblin", 1);
-				_waves[0].Add ("goblin-mage", 1);
+				_waves[0].Add ("assassin", 1);
+				_waves[0].Add ("assassin-captain", 1);
 
 				break;
 		}
