@@ -15,7 +15,7 @@ public class MM_Char : MonoBehaviour {
     public List<Button> btnTabs;
 
     public Image i_port, i_sprite;
-    public TextMeshProUGUI t_name, t_desc, t_bio, t_skill1, t_skill2;
+    public TextMeshProUGUI t_name, t_desc, t_bio, t_skill1, t_skill2, t_statsCombat, t_statsOther;
     public List<TextMeshProUGUI> t_equips;
     public List<Image> i_equips;
 
@@ -28,22 +28,38 @@ public class MM_Char : MonoBehaviour {
 
     }
 
-    public void set_show (bool _isShow, string _char){
-        go.SetActive (_isShow);
+    public void set_show(bool _isShow, string _char) {
+        go.SetActive(_isShow);
         curChar = _char;
-        change_tab (0);
+        change_tab(0);
 
-        DB_Chars.CharData _charData = DB_Chars.I.get_char_data (_char);
+        DB_Chars.CharData _charData = DB_Chars.I.get_char_data(_char);
         t_name.text = _charData.nameUI;
         t_desc.text = _charData.desc;
-        i_port.sprite = Sprites.I.get_sprite (_charData.imgPort);
-        i_sprite.sprite = Sprites.I.get_sprite ($"{_charData.imgPort}-sprite");
+        i_port.sprite = Sprites.I.get_sprite(_charData.imgPort);
+        i_sprite.sprite = Sprites.I.get_sprite($"{_charData.imgPort}-sprite");
 
         t_bio.text = _charData.bioInfo;
         t_skill1.text = _charData.bioSkill1;
         t_skill2.text = _charData.bioSkill2;
 
-        set_equips ();
+        t_statsCombat.text = $"HP: {StatCalc.I.get_stat (_char, "hp")}\n" +
+                             $"Attack: {StatCalc.I.get_stat (_char, "attack")}\n" +
+                             $"Range: {StatCalc.I.get_stat (_char, "range")}\n" +
+                             $"Skill: {StatCalc.I.get_stat (_char, "skill")}\n" +
+                             $"Speed: {StatCalc.I.get_stat (_char, "speed")}\n" +
+                             $"Armor: {StatCalc.I.get_stat (_char, "armor")}\n" +
+                             $"Crit Rate: {StatCalc.I.get_stat (_char, "crit-rate")}%\n" +
+                             $"Crit Dam: {StatCalc.I.get_stat (_char, "crit-dam")}%";
+
+        t_statsOther.text = $"Science: {StatCalc.I.get_stat (_char, "science")}\n" +
+                            $"Magic: {StatCalc.I.get_stat (_char, "magic")}\n" +
+                            $"Driving: {StatCalc.I.get_stat (_char, "driving")}\n" +
+                            $"Espionage: {StatCalc.I.get_stat (_char, "espionage")}\n" +
+                            $"Computers: {StatCalc.I.get_stat (_char, "computers")}\n" +
+                            $"Repair: {StatCalc.I.get_stat (_char, "repair")}\n" +
+                            $"Luck: {StatCalc.I.get_stat (_char, "luck")}";
+        set_equips();
     }
 
     public void hide (){set_show (false, "");}

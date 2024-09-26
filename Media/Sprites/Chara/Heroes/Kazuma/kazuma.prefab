@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 3922680902651258387}
   - component: {fileID: 4945165037160708548}
   - component: {fileID: 2605826196825012150}
-  - component: {fileID: 5298731509610596715}
   - component: {fileID: 4745171374470850773}
   m_Layer: 0
   m_Name: kazuma
@@ -289,7 +288,10 @@ MonoBehaviour:
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
+  constMovAng_dur: 0
+  constMovAng_dist: 0
   propellDist: 0
+  constMovAng_movTarget: {x: 0, y: 0}
   propellType: 
   propellFirstPos: {x: 0, y: 0}
   constMovDir_isOn: 0
@@ -312,7 +314,11 @@ MonoBehaviour:
   range: 0
   controllerID: 0
   hitUnitsID: 
+  colorChangeDur: 0
+  summonedBy: 0
   skills: []
+  barHP: {fileID: 0}
+  barSta: {fileID: 0}
 --- !u!114 &3922680902651258387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
+  hitIDs: 
 --- !u!114 &4945165037160708548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +352,8 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
+  dashing: 0
+  afterimage: {fileID: 0}
 --- !u!114 &2605826196825012150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,29 +374,6 @@ MonoBehaviour:
   cd: 0
   missileObj: slash-kazuma
   soundToPlay: swish
---- !u!114 &5298731509610596715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570637198022245372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f10a9ce6b65fc9b47ab524ad8446aeec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evtTrigger: update
-  evtName: flame-dash
-  RANGE_AOE: 1.5
-  RANGE_FINAL_KNOCK: 0
-  AOE_KNOCK: 2
-  SPEED_KNOCK: 0.25
-  DIST_KNOCK: 3
-  DAM: 3
-  DAM_PER_SKILL: 1
-  hitIDs: 
-  isUsingSkill: 0
 --- !u!114 &4745171374470850773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,3 +393,14 @@ MonoBehaviour:
   cdMax: 5
   cd: 0
   missileObj: swish
+  frontSlashObj: alfred-burning-slash
+  explodeSlashObj: alfred-explode-slash
+  RANGE_AOE: 1.5
+  RANGE_FINAL_KNOCK: 0
+  AOE_KNOCK: 2
+  SPEED_KNOCK: 0.25
+  DIST_KNOCK: 3
+  DAM: 3
+  DAM_PER_SKILL: 1
+  hitIDs: 
+  isUsingSkill: 0

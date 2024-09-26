@@ -1666,8 +1666,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -195.2}
-  m_SizeDelta: {x: 611.81, y: 160.9}
+  m_AnchoredPosition: {x: 0, y: 206}
+  m_SizeDelta: {x: 611.81, y: 77.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268992396
 MonoBehaviour:
@@ -1682,15 +1682,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.34901962}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 67134ed5b8dba2040b322a9937d2cd3d, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3084,8 +3084,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5391,6 +5391,7 @@ MonoBehaviour:
   shuriken: {fileID: 809725171871969701, guid: ae1e408e175a6a9498a56a4abf5fd5a7, type: 3}
   shurikenSpiral: {fileID: 3959961270230524954, guid: 53c9b2da1ca37bef8ab13d9086e145b4, type: 3}
   fireball: {fileID: 1679871306197174086, guid: 07ad771b9cbfcd845ba93050ff62d044, type: 3}
+  alfredExplodeSlash: {fileID: 5850191904774540969, guid: 80113b4bc827ed04ea785ad7ac100371, type: 3}
   explosion1: {fileID: 1401509844482372538, guid: 27184bd0ec3267a4ba95990debf08eba, type: 3}
   explosion2: {fileID: 7377904376478507447, guid: 6f6c76db710f16b4e9216024f4b55c21, type: 3}
   explosion3: {fileID: 8620740922000547619, guid: 651d929cf2acc7948b5751e38568c570, type: 3}
@@ -5410,6 +5411,8 @@ MonoBehaviour:
   gooGreen: {fileID: 7046848548638446943, guid: 69541152d3944684cbdab765504466bc, type: 3}
   gooBlue: {fileID: 46395772836881525, guid: 2e37c44350de44048be8599508eed339, type: 3}
   magicSparkSeraphine: {fileID: 5387428618249927088, guid: 7b47fc56680058a48b44863f8dee2f8e, type: 3}
+  smokeExpand: {fileID: 2404041283328034655, guid: 0458966a43a0ed940b6818cd58e646c6, type: 3}
+  alfredBurningSlash: {fileID: 231988742202556157, guid: 08d57bbf1fbe3ac4cb2c1d587b6829bc, type: 3}
   buf_burn: {fileID: 8100014777820684788, guid: 932449129c027b348ba8b2719f25438d, type: 3}
   buf_bindingChains: {fileID: 4245185834599824400, guid: 2374b86ef40e8c14986599794e514d4d, type: 3}
   buf_voidSphereGrounded: {fileID: 0}
@@ -11589,8 +11592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -172, y: 6.3}
-  m_SizeDelta: {x: 156.02, y: 83.11}
+  m_AnchoredPosition: {x: -155.99, y: -0.0000095367}
+  m_SizeDelta: {x: 124, y: 66.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1710013475
 GameObject:

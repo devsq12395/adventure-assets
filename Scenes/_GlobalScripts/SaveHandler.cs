@@ -41,7 +41,7 @@ public class SaveHandler : MonoBehaviour {
             ZPlayerPrefs.SetString("missionCurPool.mill-river-ives", "mill-river-ives");
             ZPlayerPrefs.SetString("missionCurPool.field-1", "field-1-1");
 
-            PlayerPrefs.SetInt("combat-tut-state", 1);
+            PlayerPrefs.SetInt("combat-tut-state", 0);
 
             PlayerPrefs.SetInt("areasState.new-haven", 1);
             PlayerPrefs.SetInt("areasState.wooster-square-2", 1);

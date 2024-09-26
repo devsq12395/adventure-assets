@@ -5,7 +5,6 @@ public class ExpandAndSpin : MonoBehaviour
 {
     // Tween parameters
     public float expansionDuration = 2f; // Duration for expansion
-    public float expansionScale = 2f; // Target scale for expansion
     
     public float spinDuration = 3f; // Duration for spinning
     public float spinSpeed = 360f; // Rotation in degrees per second
@@ -14,13 +13,19 @@ public class ExpandAndSpin : MonoBehaviour
 
     private void Start()
     {
+        // Store the original scale
+        Vector3 originalScale = transform.localScale;
+
+        // Set the scale to 0 initially
+        transform.localScale = Vector3.zero;
+
         // Create a sequence to chain tweens
         Sequence sequence = DOTween.Sequence();
 
-        // Expansion tween
+        // Expansion tween: expand from scale 0 to the original scale
         if (expansionDuration > 0)
         {
-            sequence.Join(transform.DOScale(expansionScale, expansionDuration).SetEase(Ease.OutQuad));
+            sequence.Join(transform.DOScale(originalScale, expansionDuration).SetEase(Ease.OutQuad));
         }
 
         // Spin tween (infinite rotation for specified duration)

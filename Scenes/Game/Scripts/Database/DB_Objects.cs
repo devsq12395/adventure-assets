@@ -24,12 +24,12 @@ public class DB_Objects : MonoBehaviour {
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
         bulletTommy, bulletMobster, bulletEmbraced, bulletVictorianSoldier, fireWave, blueWave, slashShredder, prismDroneMissile,
-        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken, shurikenSpiral, fireball;
+        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken, shurikenSpiral, fireball, alfredExplodeSlash;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
     public GameObject explosion2, explosion3, damTxt, explosion1_mini, molotovEfct, bindChainExp1, bindChainExp2, voidSphereHit, voidSphereCast, frostWaveHit, 
-        frostWaveCast, moveSmoke, moveSmokeSpawner, muzzle1, muzzle2, gooGreen, gooBlue, magicSparkSeraphine;
+        frostWaveCast, moveSmoke, moveSmokeSpawner, muzzle1, muzzle2, gooGreen, gooBlue, magicSparkSeraphine, smokeExpand, alfredBurningSlash;
 
     [Header("----- Buffs -----")]
     public GameObject buf_burn;
@@ -120,8 +120,9 @@ public class DB_Objects : MonoBehaviour {
             case "shuriken":             _refObj = shuriken; break;
             case "shuriken-spin":             _refObj = shurikenSpiral; break;
             case "fireball":             _refObj = fireball; break;
+            case "alfred-explode-slash":             _refObj = alfredExplodeSlash; break;
 
-            // Effects
+            // Effects 
             case "explosion1":              _refObj = explosion1; break;
             case "explosion1_mini":         _refObj = explosion1_mini; break;
             case "explosion2":              _refObj = explosion2; break;
@@ -140,6 +141,8 @@ public class DB_Objects : MonoBehaviour {
             case "goo-green":             _refObj = gooGreen; break;
             case "goo-blue":             _refObj = gooBlue; break;
             case "magic-spark-seraphine":             _refObj = magicSparkSeraphine; break;
+            case "smoke-expand":             _refObj = smokeExpand; break;
+            case "alfred-burning-slash":             _refObj = alfredBurningSlash; break;
                 
             case "damTxt":                  _refObj = damTxt; break;
                 

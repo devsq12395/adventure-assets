@@ -7805,7 +7805,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1517545880}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MM_Inv2, Assembly-CSharp
         m_MethodName: btn_action
         m_Mode: 1
@@ -8487,7 +8487,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1517545880}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MM_Inv2, Assembly-CSharp
         m_MethodName: btn_change_page
         m_Mode: 3
@@ -14716,6 +14716,8 @@ MonoBehaviour:
   desc2: {fileID: 1752057839}
   port: {fileID: 1537272388}
   missionID: 
+  txtDiff: 
+  txtDiffDesc: 
   missionsData: {fileID: 11400000, guid: 9819000f33f7f9f41bc23525fad64c76, type: 2}
 --- !u!1 &1025770839
 GameObject:
@@ -15982,7 +15984,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1517545880}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MM_Inv2, Assembly-CSharp
         m_MethodName: btn_change_page
         m_Mode: 3
@@ -21320,7 +21322,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1517545878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaf0d6b8d660e334297ee5a011c72b57, type: 3}
+  m_Script: {fileID: 11500000, guid: 508967141989a9048ada11f0ebcf51f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   go: {fileID: 449171913}
@@ -21329,7 +21331,7 @@ MonoBehaviour:
   imgWindow: {fileID: 565676235}
   imgWindow_itemInfo: {fileID: 533942205}
   i_item: {fileID: 746409962}
-  t_title: {fileID: 605850972}
+  t_title: {fileID: 1366759051}
   t_itemName: {fileID: 1366759051}
   t_itemDesc: {fileID: 839459543}
   t_gold: {fileID: 754989754}
@@ -22397,7 +22399,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1517545880}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MM_Inv2, Assembly-CSharp
         m_MethodName: show
         m_Mode: 5
@@ -23702,6 +23704,8 @@ MonoBehaviour:
   t_bio: {fileID: 1721767340}
   t_skill1: {fileID: 511136673}
   t_skill2: {fileID: 519832479}
+  t_statsCombat: {fileID: 161867662}
+  t_statsOther: {fileID: 2089849102}
   t_equips:
   - {fileID: 320458769}
   - {fileID: 1340782834}

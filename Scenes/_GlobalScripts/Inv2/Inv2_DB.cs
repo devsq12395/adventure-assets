@@ -23,6 +23,7 @@ public class Inv2_DB : MonoBehaviour {
         public Sprite sprite;
 
         public int bonusHP, bonusATK, bonusRange, bonusSkill, bonusSpeed, bonusArmor, bonusCritRate, bonusCritDam;
+        public int bonusScience, bonusMagic, bonusDriving, bonusEspionage, bonusComputers, bonusRepair, bonusLuck;
 
         public ItemData (string _name){
             nameUI="";desc="";equipTo="";
@@ -31,6 +32,7 @@ public class Inv2_DB : MonoBehaviour {
             tags=new List<string>();
 
             bonusHP=0;bonusATK=0;bonusRange=0;bonusSkill=0;bonusSpeed=0;bonusArmor=0;bonusCritRate=0;bonusCritDam=0;
+            bonusScience=0;bonusMagic=0;bonusDriving=0;bonusEspionage=0;bonusComputers=0;bonusRepair=0;bonusLuck=0;
             sprite = Sprites.I.get_sprite ("empty");
         }
     }
@@ -48,6 +50,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.stackable = false;
 
                     _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
                 case "basic-gun":
                     _new.nameUI="Basic Gun";
@@ -58,6 +61,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.stackable = false;
 
                     _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
                 case "bb-gun":
                     _new.nameUI="BB Gun";
@@ -68,6 +72,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.stackable = false;
 
                     _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
 
                 case "gold":
@@ -79,6 +84,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.stackable = false;
 
                     _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
             }
             itemDataCache[_name] = _new;
