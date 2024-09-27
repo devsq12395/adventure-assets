@@ -45,10 +45,10 @@ public class MM_Char : MonoBehaviour {
 
         t_statsCombat.text = $"HP: {StatCalc.I.get_stat (_char, "hp")}\n" +
                              $"Attack: {StatCalc.I.get_stat (_char, "attack")}\n" +
-                             $"Range: {StatCalc.I.get_stat (_char, "range")}\n" +
+                             //$"Range: {StatCalc.I.get_stat (_char, "range")}\n" +
                              $"Skill: {StatCalc.I.get_stat (_char, "skill")}\n" +
-                             $"Speed: {StatCalc.I.get_stat (_char, "speed")}\n" +
-                             $"Armor: {StatCalc.I.get_stat (_char, "armor")}\n" +
+                             //$"Speed: {StatCalc.I.get_stat (_char, "speed")}\n" +
+                             //$"Armor: {StatCalc.I.get_stat (_char, "armor")}\n" +
                              $"Crit Rate: {StatCalc.I.get_stat (_char, "crit-rate")}%\n" +
                              $"Crit Dam: {StatCalc.I.get_stat (_char, "crit-dam")}%";
 

@@ -41,8 +41,8 @@ public class DB_Chars : MonoBehaviour {
                 _new.desc = "A skilled gunman from Florida seeking his fortunes on the road. His experiences in war-torn Florida gave Tommy a good skillset, making him adept at shooting, driving and espionage.";
                 _new.imgPort="tommy";
                 _new.equipWeapon="gun";
-                _new.statHP = 8; _new.statAtk = 1; _new.statRange = 4; 
-                _new.statSkill = 1; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 10; _new.statCritDam = 120;
+                _new.statHP = 80; _new.statAtk = 10; _new.statRange = 4; 
+                _new.statSkill = 15; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 10; _new.statCritDam = 120;
                 _new.statScience = 4; _new.statMagic = 1; _new.statDriving = 7; 
                 _new.statEspionage = 4; _new.statComputers = 5; _new.statRepair = 5; _new.statLuck = 3;
                 _new.goldCost = 0;
@@ -56,7 +56,8 @@ public class DB_Chars : MonoBehaviour {
                 _new.desc = "An adventurer who is very skilled with swords, and Tommy's best buddy.";
                 _new.imgPort="kazuma";
                 _new.equipWeapon="sword";
-                _new.statHP = 10; _new.statAtk = 2; _new.statRange = 3; _new.statSkill = 1; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 15; _new.statCritDam = 140;
+                _new.statHP = 100; _new.statAtk = 10; _new.statRange = 3; 
+                _new.statSkill = 15; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 15; _new.statCritDam = 140;
                 _new.statScience = 3; _new.statMagic = 2; _new.statDriving = 5; 
                 _new.statEspionage = 2; _new.statComputers = 4; _new.statRepair = 4; _new.statLuck = 5;
                 _new.goldCost = 0;
@@ -70,7 +71,8 @@ public class DB_Chars : MonoBehaviour {
                 _new.desc = "";
                 _new.imgPort="anastasia";
                 _new.equipWeapon="sword";
-                _new.statHP = 8; _new.statAtk = 2; _new.statRange = 3; _new.statSkill = 1; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 15; _new.statCritDam = 150;
+                _new.statHP = 80; _new.statAtk = 12; _new.statRange = 3; 
+                _new.statSkill = 12; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 15; _new.statCritDam = 150;
                 _new.statScience = 5; _new.statMagic = 5; _new.statDriving = 2; 
                 _new.statEspionage = 2; _new.statComputers = 3; _new.statRepair = 3; _new.statLuck = 3;
                 _new.goldCost = 500;
@@ -84,7 +86,8 @@ public class DB_Chars : MonoBehaviour {
                 _new.desc = "";
                 _new.imgPort="sylphine";
                 _new.equipWeapon="staff";
-                _new.statHP = 6; _new.statAtk = 1; _new.statRange = 6; _new.statSkill = 2; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 15; _new.statCritDam = 140;
+                _new.statHP = 70; _new.statAtk = 8; _new.statRange = 6; 
+                _new.statSkill = 20; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 15; _new.statCritDam = 140;
                 _new.statScience = 7; _new.statMagic = 8; _new.statDriving = 2; 
                 _new.statEspionage = 2; _new.statComputers = 5; _new.statRepair = 5; _new.statLuck = 2;
                 _new.goldCost = 500;

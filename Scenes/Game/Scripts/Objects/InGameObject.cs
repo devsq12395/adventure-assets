@@ -17,7 +17,7 @@ public class InGameObject : MonoBehaviour {
 
     // Settable in Unity
     public int hp, hpMax, mp, mpMax, mpRegen, armor;
-    public int hitDam;
+    public int dam, skill, hitDam;
     public string onHitSFX;
     public List<string> tags;
     public float speed, attachScaleMultiplier = 1;

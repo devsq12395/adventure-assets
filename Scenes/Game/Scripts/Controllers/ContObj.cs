@@ -25,7 +25,7 @@ public class ContObj : MonoBehaviour {
         _comp.mp = 0;
 
         _comp.statHP                    = StatCalc.I.get_stat (_name, "hp");
-        _comp.statAttack                = StatCalc.I.get_stat (_name, "attack"); Debug.Log ($"{_name}, {_comp.statAttack}");
+        _comp.statAttack                = StatCalc.I.get_stat (_name, "attack");
         _comp.statRange                 = StatCalc.I.get_stat (_name, "range");
         _comp.statSkill                 = StatCalc.I.get_stat (_name, "skill");
         _comp.statSpeed                 = StatCalc.I.get_stat (_name, "speed");
@@ -36,6 +36,8 @@ public class ContObj : MonoBehaviour {
         _comp.hpMax = _comp.statHP;
         _comp.hp = _comp.statHP;
         _comp.armor = _comp.statArmor;
+        _comp.dam = _comp.statAttack;
+        _comp.skill = _comp.statSkill;
         _comp.speed = 6 + (_comp.statSpeed * 0.25f);
     }
 

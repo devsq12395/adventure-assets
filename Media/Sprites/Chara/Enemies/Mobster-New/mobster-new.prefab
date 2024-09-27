@@ -247,12 +247,14 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 7
-  hpMax: 7
+  hp: 100
+  hpMax: 100
   mp: 0
   mpMax: 0
   mpRegen: 0
   armor: 0
+  dam: 10
+  skill: 0
   hitDam: 1
   onHitSFX: 
   tags:
@@ -287,7 +289,10 @@ MonoBehaviour:
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
+  constMovAng_dur: 0
+  constMovAng_dist: 0
   propellDist: 0
+  constMovAng_movTarget: {x: 0, y: 0}
   propellType: 
   propellFirstPos: {x: 0, y: 0}
   constMovDir_isOn: 0
@@ -310,7 +315,11 @@ MonoBehaviour:
   range: 0
   controllerID: 0
   hitUnitsID: 
+  colorChangeDur: 0
+  summonedBy: 0
   skills: []
+  barHP: {fileID: 0}
+  barSta: {fileID: 0}
 --- !u!114 &4427413014661215766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
+  hitIDs: 
 --- !u!114 &5642029956574259330
 MonoBehaviour:
   m_ObjectHideFlags: 0
