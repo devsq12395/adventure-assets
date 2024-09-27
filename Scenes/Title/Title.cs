@@ -12,6 +12,8 @@ public class Title : MonoBehaviour {
 
     public GameObject curtainGo;
     public RectTransform curtainRect;
+    public TextMeshProUGUI tSound, tMusic;
+    
     private string curtainState;
     public float targetX;
 
@@ -25,6 +27,21 @@ public class Title : MonoBehaviour {
 
     void Update() {
         
+    }
+
+    public void btn_sound (){
+        SoundHandler.I.soundOn = !SoundHandler.I.soundOn;
+        tSound.text = $"Sound: {(SoundHandler.I.soundOn ? "ON" : "OFF")}";
+    }
+
+    public void btn_music (){
+        SoundHandler.I.musicOn = !SoundHandler.I.musicOn;
+        if (SoundHandler.I.musicOn) {
+            SoundHandler.I.resume_bgm ();
+        } else {
+            SoundHandler.I.stop_bgm ();
+        }
+        tMusic.text = $"Music: {(SoundHandler.I.musicOn ? "ON" : "OFF")}";
     }
 
     public void move_curtain() {
