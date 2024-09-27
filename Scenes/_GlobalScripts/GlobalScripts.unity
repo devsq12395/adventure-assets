@@ -189,6 +189,10 @@ MonoBehaviour:
   npcWoman2: {fileID: 21300000, guid: 4fc7b109d3fd38540a4c8a8198009be0, type: 3}
   npcWoman3: {fileID: 21300000, guid: 73ec52664a19cdb499f8170b7ca21050, type: 3}
   vincenzo: {fileID: 21300000, guid: 86ed830d56d8ec543af76ea540787537, type: 3}
+  giantSlime: {fileID: 159474490, guid: 9091763755217d8ec9292cc81d41e156, type: 3}
+  assassinCaptain: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
+  hobgoblin: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
+  mafiaCaptain: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
   icnHighway: {fileID: 21300000, guid: e40407a46bdc8a541b8f95eb918dd58e, type: 3}
   icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   itmBasicSword: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}

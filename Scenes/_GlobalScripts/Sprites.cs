@@ -8,7 +8,7 @@ public class Sprites : MonoBehaviour {
 
     public Sprite dummy;
 
-    [Header("----- Portraits for Player Chars -----")]
+    [Header("----- Portraits: Player -----")]
     public Sprite empty, tommy;
     public Sprite brad, anastasia, seraphine, miguel, anthony, beatrice;
 
@@ -17,9 +17,10 @@ public class Sprites : MonoBehaviour {
     public Sprite bradSprite, anastasiaSprite, seraphineSprite;
 
 
-    [Header("----- Portraits: NPC -----")]
+    [Header("----- Portraits: NPC / Bosses -----")]
     public Sprite vic;
     public Sprite npcMan1, npcMan2, npcMan3, npcMan4, npcWoman1, npcWoman2, npcWoman3, vincenzo;
+    public Sprite giantSlime, assassinCaptain, hobgoblin, mafiaCaptain;
 
     [Header("----- Icons: Other -----")]
     public Sprite icnHighway;
@@ -62,11 +63,17 @@ public class Sprites : MonoBehaviour {
             { "npc-woman-3", npcWoman3 },
             { "vincenzo", vincenzo },
             { "beatrice", beatrice },
+            { "captain-beatrice", beatrice },
             { "vic", vic },
             { "icn-highway", icnHighway },
             { "icn-item", icnItem },
             { "btn-locked", btnLocked },
             { "empty-icon", empty },
+
+            { "giant-slime", giantSlime },
+            { "assassin-captain", assassinCaptain },
+            { "hobgoblin", hobgoblin },
+            { "mafia-captain", mafiaCaptain },
 
             { "hp-bar", hpBar },
             { "hp-bar-base", hpBarBase },

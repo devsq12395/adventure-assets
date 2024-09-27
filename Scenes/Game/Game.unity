@@ -13490,6 +13490,9 @@ MonoBehaviour:
   go_bossHP: {fileID: 697046908}
   go_arrowSkill: {fileID: 105726374}
   i_port: {fileID: 1507465979}
+  i_portShadow: {fileID: 1302994651}
+  i_portBoss: {fileID: 950151851}
+  i_portBossShadow: {fileID: 142371555}
   i_HPMain: {fileID: 778343539}
   i_StaMain: {fileID: 1369611302}
   iBossMain: {fileID: 1869456347}

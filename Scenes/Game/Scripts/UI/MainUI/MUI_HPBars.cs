@@ -10,7 +10,7 @@ public class MUI_HPBars : MonoBehaviour
     public void Awake() { I = this; }
 
     public GameObject go_bossHP, go_arrowSkill;
-    public Image i_port, i_HPMain, i_StaMain, iBossMain, i_CDPanel1, i_CDPanel2;
+    public Image i_port, i_portShadow, i_portBoss, i_portBossShadow, i_HPMain, i_StaMain, iBossMain, i_CDPanel1, i_CDPanel2;
     public TextMeshProUGUI t_name, t_hp, t_mp, t_bossName, t_cdSkill1, t_cdSkill2;
     public Sprite i_skillNotReady, i_skillReady;
 
@@ -24,6 +24,7 @@ public class MUI_HPBars : MonoBehaviour
         DB_Chars.CharData _data = DB_Chars.I.get_char_data(_charName);
         t_name.text = _data.nameUI;
         i_port.sprite = Sprites.I.get_sprite(_data.imgPort);
+        i_portShadow.sprite = Sprites.I.get_sprite(_data.imgPort);
     }
 
     public void update_bars() {
@@ -59,6 +60,8 @@ public class MUI_HPBars : MonoBehaviour
         go_bossHP.SetActive(true);
         boss = _boss;
         t_bossName.text = _boss.nameUI;
+        i_portBoss.sprite = Sprites.I.get_sprite(_boss.name);
+        i_portBossShadow.sprite = Sprites.I.get_sprite(_boss.name);
     }
 
     // Helper function to set the fill amount of an Image
