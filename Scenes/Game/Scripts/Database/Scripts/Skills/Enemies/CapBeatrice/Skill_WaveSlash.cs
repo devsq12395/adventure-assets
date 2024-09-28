@@ -25,6 +25,7 @@ public class Skill_WaveSlash : SkillTrig {
         InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
 
         ContObj.I.const_move_ang_set (_missileComp, _ang, _missileComp.speed);
+        _missileComp.hitDam = _ownerComp.skill;
 
         _missileComp.controllerID = _ownerComp.id;
     }

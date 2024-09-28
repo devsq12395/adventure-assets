@@ -113,6 +113,7 @@ public class Skill_ElectricSlash : SkillTrig {
     private InGameObject create_missile(InGameObject _ownerComp, float _ang) {
         GameObject _missile = ContObj.I.create_obj(explodeSlashObj, gameObject.transform.position, _ownerComp.owner);
         InGameObject _missileComp = _missile.GetComponent<InGameObject>();
+        _missileComp.hitDam = _ownerComp.skill;
 
         ContObj.I.const_move_ang_set(_missileComp, _ang, _missileComp.speed);
 

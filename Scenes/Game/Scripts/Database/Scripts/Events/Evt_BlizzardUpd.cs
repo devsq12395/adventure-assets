@@ -33,7 +33,7 @@ public class Evt_BlizzardUpd : EvtTrig {
         foreach (InGameObject _o in _objs) {
             if (!DB_Conditions.I.dam_condition (_owner, _o)) continue;
 
-            ContDamage.I.damage (_owner, _o, 1 + StatCalc.I.get_stat (_owner.name, "skill"), _dummy.tags);
+            ContDamage.I.damage (_owner, _o, _owner.skill, _dummy.tags);
             ContEffect.I.create_effect ("explosion3", _o.transform.position);
             Debug.Log ("dam");
         }

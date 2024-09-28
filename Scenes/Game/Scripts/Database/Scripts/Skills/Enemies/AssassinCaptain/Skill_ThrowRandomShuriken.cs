@@ -38,6 +38,7 @@ public class Skill_ThrowRandomShuriken : SkillTrig {
     private void create_missile_regular (InGameObject _ownerComp, float _ang){
         GameObject _missile = ContObj.I.create_obj ("shuriken", gameObject.transform.position, _ownerComp.owner);
         InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
+        _missileComp.hitDam = _ownerComp.dam;
 
         ContObj.I.const_move_ang_set (_missileComp, _ang, _missileComp.speed);
 
@@ -47,6 +48,7 @@ public class Skill_ThrowRandomShuriken : SkillTrig {
     private void create_missile_spin (InGameObject _ownerComp, float _ang){
         GameObject _missile = ContObj.I.create_obj ("shuriken-spin", gameObject.transform.position, _ownerComp.owner);
         InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
+        _missileComp.hitDam = _ownerComp.dam;
 
         _missileComp.controllerID = _ownerComp.id;
         _missileComp.timedLife = 3;

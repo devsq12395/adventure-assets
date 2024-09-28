@@ -15,6 +15,7 @@ public class Skill_DefEnemyAtk : SkillTrig {
         InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
 
         _missileComp.controllerID = _ownerComp.id;
+        _missileComp.hitDam = _ownerComp.dam;
 
         ContObj.I.change_velocity (_ownerComp, new Vector2 (0, 0));
         _ownerComp.isAtk = true;

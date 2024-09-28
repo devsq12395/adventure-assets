@@ -52,7 +52,7 @@ public class Evt_GiantSlimeDashUpd : EvtTrig {
         foreach (InGameObject _o in _objs) {
             if (!DB_Conditions.I.dam_condition (_owner, _o) || hitIDs.Contains (_o.id)) continue;
 
-            ContDamage.I.damage (_owner, _o, DAM + DAM_PER_SKILL * _owner.statSkill, new List<string>(){"electric"});
+            ContDamage.I.damage (_owner, _o, _owner.skill, new List<string>(){"electric"});
             ContObj.I.instant_move_upd_start_dist (_o, Calculator.I.get_ang_from_2_points_deg (_pos, _o.transform.position), SPEED_KNOCK, DIST_KNOCK);
             ContEffect.I.create_effect ("explosion1", _o.transform.position);
             hitIDs.Add (_o.id);

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ColTrig_VoidSphere : ColTrig {
     
-    public int dam;
     public List<string> damTags;
     
     public override void on_hit_enemy (InGameObject _hit){
@@ -15,7 +14,7 @@ public class ColTrig_VoidSphere : ColTrig {
                         _owner = ContObj.I.get_obj_with_id (_this.controllerID);
 
         ContEffect.I.create_effect ("explosion2", gameObject.transform.position);
-        ContDamage.I.damage (_owner, _hit, dam, damTags);
+        ContDamage.I.damage (_owner, _hit, _owner.skill, damTags);
         ContBuffs.I.add_buff (_hit, "void-sphere");
         ContBuffs.I.add_buff (_hit, "void-sphere-grounded");
 
