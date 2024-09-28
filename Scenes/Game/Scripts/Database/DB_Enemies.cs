@@ -96,7 +96,8 @@ public class DB_Enemies : MonoBehaviour {
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("orc", 4);
 
-				_waves[1].Add ("axe-arm-azar", 4);
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("axe-arm-azar", 1);
 
 				break;
 		}

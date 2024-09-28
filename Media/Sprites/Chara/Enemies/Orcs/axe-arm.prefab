@@ -16,8 +16,10 @@ GameObject:
   - component: {fileID: 512110213563582338}
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
-  - component: {fileID: 5238501108211133430}
-  - component: {fileID: 3388707968229960030}
+  - component: {fileID: -495513041158042147}
+  - component: {fileID: 3776455963408086568}
+  - component: {fileID: 2493614986779530202}
+  - component: {fileID: 3621445098101678797}
   m_Layer: 0
   m_Name: axe-arm
   m_TagString: Untagged
@@ -254,13 +256,14 @@ MonoBehaviour:
   mpRegen: 0
   armor: 0
   dam: 25
-  skill: 40
+  skill: 20
   hitDam: 10
   onHitSFX: 
   tags:
   - orc
   - blade
   - gun
+  - boss
   speed: 4
   attachScaleMultiplier: 1
   zPos: 0
@@ -336,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptTag: collider
   hitIDs: 
---- !u!114 &5238501108211133430
+--- !u!114 &-495513041158042147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,29 +348,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfc95331fafb74ad094e3d05b77b551a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inGameObj: {fileID: 0}
-  isStart: 0
-  isReady: 0
-  state: 0
-  stateTime: 0
-  goPos: {x: 0, y: 0}
-  shurikenThrowInterval: 0
-  shurikenThrowCount: 0
-  moveDuration: 0
-  evadeDistance: 0
---- !u!114 &3388707968229960030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690657366656991979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
+  m_Script: {fileID: 11500000, guid: bb7df5c782099b545bb6c8acc5641371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: attack
@@ -376,4 +357,71 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: shuriken
+  missileObj: bullet-mobster
+  muzzleObj1: muzzle-1
+  muzzleObj2: muzzle-2
+--- !u!114 &3776455963408086568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71115dd1311e6622aaaf9084cdc83ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: random-shuriken
+  skillName: random-shuriken
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+--- !u!114 &2493614986779530202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c329fd244a690b3a0b41926403c98955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: charge
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: 
+  DIST: 3
+  hitIDs: 
+  isUsingSkill: 0
+  RANGE_AOE: 3
+  SPEED_KNOCK: 3
+  DIST_KNOCK: 3
+--- !u!114 &3621445098101678797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690657366656991979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e43f00f35eb92666b47e4be4c73f003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGameObj: {fileID: 0}
+  isStart: 0
+  isReady: 0
+  state: 0
+  stateTime: 0
+  goPos: {x: 0, y: 0}
+  chargeInterval: 20
+  randomSkillInterval: 5
+  moveSpeed: 2
+  attackInterval: 0.75
