@@ -26379,7 +26379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 621639996}
   goUIMove: {fileID: 365616600}
-  goUIEnter: {fileID: 0}
+  goUIEnter: {fileID: 101133431}
   showEnter: 0
 --- !u!1 &1821466566
 GameObject:

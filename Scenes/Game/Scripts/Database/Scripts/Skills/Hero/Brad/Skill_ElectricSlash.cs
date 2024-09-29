@@ -15,12 +15,14 @@ public class Skill_ElectricSlash : SkillTrig {
     public bool isUsingSkill = false;
 
     private float DIST_PER_EXPLOSION_EFFECT, curDistExpEffect;
-    
+
     private GameObject slashInstance; // Store the front slash instance
     private InGameObject ownerComp; // Cache the owner component for reuse
-    
+    private BoxCollider2D boxCollider; // Cache the BoxCollider2D
+
     public override void on_start (){
         hitIDs = new List<int>();
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
     }
 
     public override void use_active (){
@@ -46,6 +48,11 @@ public class Skill_ElectricSlash : SkillTrig {
 
         // Create the front slash object in front of the owner
         create_front_slash(ownerComp);
+
+        // Disable BoxCollider2D if it's not a trigger
+        if (boxCollider != null && !boxCollider.isTrigger) {
+            boxCollider.enabled = false;
+        }
 
         isUsingSkill = true;
     }
@@ -96,6 +103,11 @@ public class Skill_ElectricSlash : SkillTrig {
             if (slashInstance != null) {
                 Destroy(slashInstance);
                 slashInstance = null;
+            }
+
+            // Re-enable BoxCollider2D after the dash ends
+            if (boxCollider != null) {
+                boxCollider.enabled = true;
             }
         }
     }
@@ -155,5 +167,4 @@ public class Skill_ElectricSlash : SkillTrig {
         // Update the slashInstance's rotation to match the dash direction
         slashInstance.transform.rotation = Quaternion.Euler(0, 0, dashAngle);
     }
-
 }

@@ -16,7 +16,7 @@ public class DB_Missions : MonoBehaviour {
         public string gameOverSpk_name, gameOverSpk_text, gameOverSpk_img;
         public string gameOverSpk_nameFail, gameOverSpk_textFail, gameOverSpk_imgFail;
 
-        public List<int> goldReward;
+        public int goldReward;
 
     	public MissionData (string _name){
     		name = _name; speaker = ""; desc = ""; sprite = ""; rewards = "";
@@ -76,7 +76,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_imgFail = "kazuya";
 
     			_new.enemies.AddRange (new string[]{"tutorial", "slime-2"});
-    			_new.maps.AddRange (new string[]{"map-tutorial", "woosterSquare_rand"});
+    			_new.maps.AddRange (new string[]{"map-tutorial", "map-wooster-square-3"});
     			_new.unlocksArea.AddRange (new string[]{"to-wooster-square-2"});
     			_new.missionsSet.AddRange (new string[]{"vic->vic-2"});
     			_new.activitySet.AddRange (new string[]{"dialog-with-vic->2"});
@@ -99,7 +99,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_imgFail = "kazuya";
 
                 _new.enemies.AddRange (new string[]{"mafia-1", "assassin-1", "mafia-2"});
-                _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand", "woosterSquare_rand"});
+                _new.maps.AddRange (new string[]{"map-wooster-square-3", "map-wooster-square-2", "map-wooster-square-4"});
                 _new.unlocksArea.AddRange (new string[]{"to-wooster-square-3"});
                 _new.missionsSet.AddRange (new string[]{"vincenzo->vincenzo-2"});
                 _new.activitySet.AddRange (new string[]{"dialog-with-vincenzo->2"});
@@ -145,7 +145,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_imgFail = "beatrice";
 
                 _new.enemies.AddRange (new string[]{"beatrice-1"});
-                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.maps.AddRange (new string[]{"map-wooster-square-1"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"beatrice->beatrice-2"});
                 _new.activitySet.AddRange (new string[]{"dialog-with-beatrice->8"});

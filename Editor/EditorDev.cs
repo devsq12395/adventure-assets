@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEditor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 public class EditorDev : EditorWindow {
 
-    private string itemName = "", toMission = "", toMenuMap = "";
+    private string itemName = "", toMission = "", toMenuMap = "", gainGold = "";
 
     [MenuItem("Window/Dev Tools")]
     public static void ShowWindow() {
@@ -46,6 +47,11 @@ public class EditorDev : EditorWindow {
         if (GUILayout.Button("Give")) {
             Inv2.I.add_item(itemName);
             Debug.Log($"Item {itemName} is added.");
+        }
+
+        gainGold = EditorGUILayout.TextField("Gain Gold:", gainGold);
+        if (GUILayout.Button("Gain Gold")) {
+            ZPlayerPrefs.SetInt("gold", Convert.ToInt32(gainGold));
         }
 
         EditorGUILayout.LabelField("Shortcuts", EditorStyles.boldLabel);

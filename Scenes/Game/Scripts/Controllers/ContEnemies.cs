@@ -74,7 +74,6 @@ public class ContEnemies : MonoBehaviour {
 
 	    Dictionary<string, int> rewards = new Dictionary<string, int>();
 
-	    List<int> _goldRewards = DB_Missions.I.get_possible_gold_rewards(enemiesType);
 	    int _goldReward = _misData.goldReward;
 
 	    rewards.Add("gold", _goldReward);

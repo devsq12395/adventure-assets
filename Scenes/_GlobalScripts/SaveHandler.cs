@@ -14,7 +14,7 @@ public class SaveHandler : MonoBehaviour {
 
         check_save ();
 
-        DEV_AUTO_RESET = true;
+        DEV_AUTO_RESET = false;
     }
 
     public bool DEV_AUTO_RESET;
@@ -27,6 +27,8 @@ public class SaveHandler : MonoBehaviour {
         if (DEV_AUTO_RESET) reset_all_saves ();
 
         if (ZPlayerPrefs.GetInt("0.3") == 0) {
+            ZPlayerPrefs.SetInt("0.3", 1);
+
             ZPlayerPrefs.SetInt("gold", 0);
             ZPlayerPrefs.SetString("date", "jan-2225");
 

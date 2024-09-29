@@ -19,13 +19,7 @@ public class TestMap1 : MonoBehaviour {
         _new.mapObj = GameObject.Instantiate (goMap, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
         SceneManager.MoveGameObjectToScene(_new.mapObj, SceneManager.GetSceneByName("Game"));
 
-        ContMap.I.create_map_objs = create_map_objs;
-
         return _new;
-    }
-
-    public void create_map_objs (){
-        
     }
 
 }

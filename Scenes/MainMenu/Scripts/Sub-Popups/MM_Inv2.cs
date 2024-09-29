@@ -63,7 +63,7 @@ public class MM_Inv2 : MonoBehaviour {
         	case "shop": 
         		itemsSet = Inv2.I.generate_item_set ( Inv2_DB.I.get_shop_items_sold (itemSet) );
 
-        		goBtnAction.SetActive (false);
+        		goBtnAction.SetActive (true);
         		t_action.text = "Buy";
         		break;
         }
@@ -173,6 +173,11 @@ public class MM_Inv2 : MonoBehaviour {
 			case "equip":
 				Inv2.I.set_item_equip (itemSel, MM_Char.I.curChar);
 				MMCont_Dialog.I.create_dialog ("change-equip-success");
+				break;
+			case "buy":
+				Inv2.I.add_item (itemSel);
+				
+				MMCont_Dialog.I.create_dialog ("buy-success");
 				break;
 		}
 	}

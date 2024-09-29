@@ -69,7 +69,7 @@ public class MM_Map : MonoBehaviour {
 
             //////////// CHANGE MAP
             case "to-wooster-square-2":
-                //if (PlayerPrefs.GetInt("areasState.to-wooster-square-2") == 1) {
+                if (PlayerPrefs.GetInt("areasState.to-wooster-square-2") == 1) {
                     ZPlayerPrefs.SetString("main-menu-map", "wooster-square-2");
 
                     // Set start node
@@ -79,10 +79,12 @@ public class MM_Map : MonoBehaviour {
                     }
 
                     MainMenu.I.move_curtain ("changeMap");
-                //}
+                } else {
+                    MMCont_Dialog.I.create_dialog ("dialog-area-locked");
+                }
                 break;
             case "to-wooster-square-3":
-                //if (PlayerPrefs.GetInt("areasState.to-wooster-square-3") == 1) {
+                if (PlayerPrefs.GetInt("areasState.to-wooster-square-3") == 1) {
                     ZPlayerPrefs.SetString("main-menu-map", "wooster-square-3");
 
                     // Set start node
@@ -91,7 +93,9 @@ public class MM_Map : MonoBehaviour {
                     }
 
                     MainMenu.I.move_curtain ("changeMap");
-                //}
+                } else {
+                    MMCont_Dialog.I.create_dialog ("dialog-area-locked");
+                }
                 break;
 
             //////////// DIALOG

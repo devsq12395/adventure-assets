@@ -33,7 +33,23 @@ public class DB_Maps : MonoBehaviour {
                 _new = get_map_details_generic (_new);
                 _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
                 break;
-            case "map-vic-2": case "map-vic-3": 
+            case "map-wooster-square-1": 
+                _new = get_map_details_generic (_new);
+                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                break;
+            case "map-wooster-square-2": 
+                _new = get_map_details_generic (_new);
+                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                break;
+            case "map-wooster-square-3": 
+                _new = get_map_details_generic (_new);
+                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                break;
+            case "map-wooster-square-4": 
+                _new = get_map_details_generic (_new);
+                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                break;
+            
             case "woosterSquare_rand":
                 _new = get_map_details_generic (_new);
                 switch (Random.Range (0, 3)) {
@@ -60,8 +76,6 @@ public class DB_Maps : MonoBehaviour {
         _new.pointList.Add ("playerSpawn", new Vector2 (0, 0));
         _new.pointList.Add ("playerLounge", new Vector2 (-500, -500));
 
-        ContMap.I.create_map_objs = create_map_objs;
-
         return _new;
     }
     public mapDetails get_map_details_training_grounds (mapDetails _new){
@@ -73,12 +87,6 @@ public class DB_Maps : MonoBehaviour {
         _new.mapObj = GameObject.Instantiate (goMap_trainingGrounds, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
         SceneManager.MoveGameObjectToScene(_new.mapObj, SceneManager.GetSceneByName("Game"));
 
-        ContMap.I.create_map_objs = create_map_objs;
-
         return _new;
-    }
-
-    public void create_map_objs (){
-        
     }
 }
