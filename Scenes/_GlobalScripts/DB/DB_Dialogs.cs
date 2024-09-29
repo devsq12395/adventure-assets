@@ -120,6 +120,7 @@ public class DB_Dialogs : MonoBehaviour {
 				    _new.isTweenOut = "1";
 				    _new.inputEmptyContinue = "";
 				    _new.isMini = "1";
+				    
 				    _new.inputScaler_enable = "0";
 				    _new.posX = 0;
 				    _new.posY = 0;
@@ -471,7 +472,7 @@ public class DB_Dialogs : MonoBehaviour {
 				    break;
 
 				case "dialog-field-1":
-				    _new.name = "Axe-Arm Azar";
+				    _new.name = "Gun-Arm Azar";
 				    _new.desc = "I heard the vampire lady who cut my arm is spotted here. Once I see her, she's dead!";
 				    _new.portImg = "azar";
 				    _new.isTweenOut = "0";
@@ -539,7 +540,7 @@ public class DB_Dialogs : MonoBehaviour {
 				    break;
 
 				case "dialog-field-5":
-				    _new.name = "Axe-Arm Azar";
+				    _new.name = "Gun-Arm Azar";
 				    _new.desc = "Anastasia, the vampire lady. Today, you will pay for what you did to my arm! Get her boys!";
 				    _new.portImg = "orc-1";
 				    _new.isTweenOut = "1";

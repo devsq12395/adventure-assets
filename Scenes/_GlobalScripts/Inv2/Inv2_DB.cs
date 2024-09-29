@@ -41,28 +41,92 @@ public class Inv2_DB : MonoBehaviour {
         if (!itemDataCache.TryGetValue(_name, out var _existingItemData)) {
             ItemData _new = new ItemData (_name);
             switch (_name) {
-                case "basic-sword":
-                    _new.nameUI="Basic Sword";
-                    _new.desc="Made of basic iron. Enough for self defense.";
+                case "iron-sword":
+                    _new.nameUI="Iron Sword";
+                    _new.desc="+10 Damage\nA cheaply forged sword. Enough for basic self-defense.";
                     _new.equipTo="weapon";
                     _new.tags.AddRange(new List<string> { "weapon", "sword" });
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.cost = 100;
                     _new.stackable = false;
 
                     _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                     _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
-                case "basic-gun":
-                    _new.nameUI="Basic Gun";
-                    _new.desc="Crudely made pistol. Recommended for travelers with no money.";
+                case "homemade-gun":
+                    _new.nameUI="Homemade Gun";
+                    _new.desc="+10 Damage\nCrudely made pistol. Recommended for travelers with no money.";
                     _new.equipTo="weapon";
                     _new.tags.AddRange(new List<string> { "weapon", "gun" });
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.cost = 100;
                     _new.stackable = false;
 
                     _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                     _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
+                case "leather-jacket":
+                    _new.nameUI="Leather Jacket";
+                    _new.desc="+20 HP\nA jacket thick enough to block most attacks.";
+                    _new.equipTo="armor";
+                    _new.tags.AddRange(new List<string> { "armor", "jacket" });
+                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.cost = 150;
+                    _new.stackable = false;
+
+                    _new.bonusHP=20;_new.bonusATK=0;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
+                    break;
+                case "fake-crossovers":
+                    _new.nameUI="Fake Crossovers";
+                    _new.desc="+10 skill\nAn imitation of a popular shoe model.";
+                    _new.equipTo="boots";
+                    _new.tags.AddRange(new List<string> { "boots", "shoes", "sports" });
+                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.cost = 250;
+                    _new.stackable = false;
+
+                    _new.bonusHP=20;_new.bonusATK=0;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
+                    break;
+
+                case "magic-stick":
+                    _new.nameUI="Magic Stick";
+                    _new.desc="+5 Damage\n+15 skill\nA long stick imbued with mana.";
+                    _new.equipTo="weapon";
+                    _new.tags.AddRange(new List<string> { "weapon", "staff"});
+                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.cost = 300;
+                    _new.stackable = false;
+
+                    _new.bonusHP=0;_new.bonusATK=5;_new.bonusRange=0;_new.bonusSkill=15;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
+                    break;
+                case "ring-of-burning-scourge":
+                    _new.nameUI="Ring of Burning Scourge";
+                    _new.desc="+15% damage to damages tagged fire\n+30% damage to enemies tagged plant\n\nSpecifically designed to make forest clearing easy.";
+                    _new.equipTo="accessory";
+                    _new.tags.AddRange(new List<string> { "ring", "accessory"});
+                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.cost = 400;
+                    _new.stackable = false;
+
+                    _new.bonusHP=0;_new.bonusATK=0;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
+                    break;
+                case "gloves-of-pro-driving":
+                    _new.nameUI="Gloves of Pro Driving";
+                    _new.desc="+1 to Driving\n\nThey say it improves your driving skills, but it's just a pair of gloves.";
+                    _new.equipTo="accessory";
+                    _new.tags.AddRange(new List<string> { "gloves", "accessory"});
+                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.cost = 50;
+                    _new.stackable = false;
+
+                    _new.bonusHP=0;_new.bonusATK=0;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=1;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
+                    break;
+
                 case "bb-gun":
                     _new.nameUI="BB Gun";
                     _new.desc="A gun that shoots small plastic pellets.";
@@ -71,7 +135,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
                     _new.stackable = false;
 
-                    _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusHP=0;_new.bonusATK=0;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                     _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
 
@@ -99,10 +163,10 @@ public class Inv2_DB : MonoBehaviour {
 
         switch (_shopName) {
             case "bryans-armory": 
-                _new.AddRange (new string[] { "basic-sword" });
+                _new.AddRange (new string[] { "iron-sword", "homemade-gun", "leather-jacket", "fake-crossovers" });
                 break;
             case "michelle-shop": 
-                _new.AddRange (new string[] { "basic-sword" });
+                _new.AddRange (new string[] { "magic-stick", "ring-of-burning-scourge", "gloves-of-pro-driving" });
                 break;
         }
 

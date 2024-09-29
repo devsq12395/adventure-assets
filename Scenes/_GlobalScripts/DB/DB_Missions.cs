@@ -16,11 +16,15 @@ public class DB_Missions : MonoBehaviour {
         public string gameOverSpk_name, gameOverSpk_text, gameOverSpk_img;
         public string gameOverSpk_nameFail, gameOverSpk_textFail, gameOverSpk_imgFail;
 
+        public List<int> goldReward;
+
     	public MissionData (string _name){
     		name = _name; speaker = ""; desc = ""; sprite = ""; rewards = "";
             gameOverSpk_name = ""; gameOverSpk_text = ""; gameOverSpk_img = "";
             gameOverSpk_nameFail = ""; gameOverSpk_textFail = ""; gameOverSpk_imgFail = "";
     		
+            goldReward = 0;
+
             enemies = new List<string> ();
     		maps = new List<string> ();
     		unlocksArea = new List<string> ();
@@ -38,6 +42,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.desc = "";
                 _new.sprite = "";
                 _new.rewards = "";
+                _new.goldReward = 0;
 
                 _new.gameOverSpk_name = "";
                 _new.gameOverSpk_text = "";
@@ -60,6 +65,7 @@ public class DB_Missions : MonoBehaviour {
     			_new.desc = "Some slimes are spotted here in Wooster Square. Word is a Giant Slime is with them too.\n\nShould be easy for you to deal with. This is a chance for you to gain respect around here.";
     			_new.sprite = "vic";
     			_new.rewards = "200 Gold";
+                _new.goldReward = 200;
 
                 _new.gameOverSpk_name = "Vic";
                 _new.gameOverSpk_text = "Well done! Boss Vincenzo will be pleased. You should meet with him at Luppino Family Cafe.";
@@ -69,8 +75,8 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "kazuya";
 
-    			_new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
-    			_new.maps.AddRange (new string[]{"map-vic-1", "map-vic-2", "map-vic-3"});
+    			_new.enemies.AddRange (new string[]{"tutorial", "slime-2"});
+    			_new.maps.AddRange (new string[]{"map-tutorial", "woosterSquare_rand"});
     			_new.unlocksArea.AddRange (new string[]{"to-wooster-square-2"});
     			_new.missionsSet.AddRange (new string[]{"vic->vic-2"});
     			_new.activitySet.AddRange (new string[]{"dialog-with-vic->2"});
@@ -82,6 +88,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.desc = "Rossi Family members are spotted selling narcotics on our turf. Knock out their attack leader, and they will run back to where they came from!";
                 _new.sprite = "vincenzo";
                 _new.rewards = "300 Gold";
+                _new.goldReward = 300;
 
                 _new.gameOverSpk_name = "Boss Vincenzo";
                 _new.gameOverSpk_text = "Well done! Boss Vincenzo will be pleased. You should meet with him at Luppino Family Cafe.";
@@ -91,8 +98,8 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "kazuya";
 
-                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
-                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.enemies.AddRange (new string[]{"mafia-1", "assassin-1", "mafia-2"});
+                _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand", "woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{"to-wooster-square-3"});
                 _new.missionsSet.AddRange (new string[]{"vincenzo->vincenzo-2"});
                 _new.activitySet.AddRange (new string[]{"dialog-with-vincenzo->2"});
@@ -101,16 +108,21 @@ public class DB_Missions : MonoBehaviour {
 
             case "field-1": 
                 _new.speaker = "Anastasia";
-                _new.desc = "We're up against Axe-Arm Azar, leader of the BloodAxe Gang. I suspect he is behind a terrorist attack here in New Haven. Let's knock him our and get some answers.l";
+                _new.desc = "We're up against Gun-Arm Azar, leader of the BloodAxe Gang. I suspect he is behind a terrorist attack here in New Haven. Let's knock him our and get some answers.";
                 _new.sprite = "anastasia";
                 _new.rewards = "500 Gold";
+                _new.goldReward = 500;
+
+                _new.gameOverSpk_name = "Anastasia";
+                _new.gameOverSpk_text = "Tsk, they got away. No matter, they won't get that far with their injuries.";
+                _new.gameOverSpk_img = "anastasia";
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "kazuya";
 
-                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
-                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.enemies.AddRange (new string[]{"goblin-1", "orc-1"});
+                _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"field-1->field-1-2"});
                 _new.activitySet.AddRange (new string[]{});
@@ -122,12 +134,17 @@ public class DB_Missions : MonoBehaviour {
                 _new.desc = "Let's spar and see if you have what it takes to survive the upcoming war of the families here in New Haven.";
                 _new.sprite = "beatrice";
                 _new.rewards = "700 Gold";
+                _new.goldReward = 700;
+
+                _new.gameOverSpk_name = "Captain Beatrice";
+                _new.gameOverSpk_text = "Excellent fight! New Haven could use more fighters like you who will fight on the side of justice.";
+                _new.gameOverSpk_img = "beatrice";
 
                 _new.gameOverSpk_nameFail = "Captain Beatrice";
                 _new.gameOverSpk_textFail = "Not bad, but you could use some more training. Come back when you are stronger.";
                 _new.gameOverSpk_imgFail = "beatrice";
 
-                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
+                _new.enemies.AddRange (new string[]{"beatrice-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"beatrice->beatrice-2"});
@@ -139,16 +156,17 @@ public class DB_Missions : MonoBehaviour {
                 _new.speaker = "Tommy";
                 _new.desc = "I heard there are a lot of monsters in this forest. Sounds like a good place to train.";
                 _new.sprite = "tommy";
-                _new.rewards = "700 Gold";
+                _new.rewards = "200 Gold";
+                _new.goldReward = 200;
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "kazuya";
 
-                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
-                _new.maps.AddRange (new string[]{"woosterSquare_rand"});
+                _new.enemies.AddRange (new string[]{"cursed-forest", "cursed-forest", "cursed-forest"});
+                _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand", "woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
-                _new.missionsSet.AddRange (new string[]{"beatrice->beatrice-2"});
+                _new.missionsSet.AddRange (new string[]{});
                 _new.activitySet.AddRange (new string[]{});
 
                 break;
@@ -158,6 +176,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.desc = "War Shredders are spotted nearby. Help me get rid of them and I'll pay you nicely.";
                 _new.sprite = "npc-man-1";
                 _new.rewards = "500 Gold";
+                _new.goldReward = 500;
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";

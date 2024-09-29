@@ -169,6 +169,7 @@ public class ContObj : MonoBehaviour {
     }
 
     public void change_facing (InGameObject _obj, string _facing){
+        if (_obj.facing == _facing) return;
         _obj.facing = _facing;
 
         Vector2 _curScale = _obj.gameObject.transform.localScale;

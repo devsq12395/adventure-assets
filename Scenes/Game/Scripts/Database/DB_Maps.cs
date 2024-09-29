@@ -29,9 +29,20 @@ public class DB_Maps : MonoBehaviour {
 
         switch (_name) {
             // Wooster Square 1
-            case "map-vic-1": case "map-vic-2": case "map-vic-3": 
+            case "map-tutorial": 
+                _new = get_map_details_generic (_new);
+                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                break;
+            case "map-vic-2": case "map-vic-3": 
             case "woosterSquare_rand":
-                _new = get_map_details_wooster_square_1 (_new);
+                _new = get_map_details_generic (_new);
+                switch (Random.Range (0, 3)) {
+                    case 0: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;  break;
+                    case 1: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare2, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
+                    case 2: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare3, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
+                    default:_new.mapObj = GameObject.Instantiate (goMap_woosterSquare4, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
+                }
+                SceneManager.MoveGameObjectToScene(_new.mapObj, SceneManager.GetSceneByName("Game"));
                 break;
 
             case "training-grounds":
@@ -43,6 +54,16 @@ public class DB_Maps : MonoBehaviour {
         return _new;
     }
 
+    public mapDetails get_map_details_generic (mapDetails _new){
+        _new.size = new Vector2 (18, 18);
+
+        _new.pointList.Add ("playerSpawn", new Vector2 (0, 0));
+        _new.pointList.Add ("playerLounge", new Vector2 (-500, -500));
+
+        ContMap.I.create_map_objs = create_map_objs;
+
+        return _new;
+    }
     public mapDetails get_map_details_training_grounds (mapDetails _new){
         _new.size = new Vector2 (18, 18);
 
@@ -50,24 +71,6 @@ public class DB_Maps : MonoBehaviour {
         _new.pointList.Add ("playerLounge", new Vector2 (-500, -500));
 
         _new.mapObj = GameObject.Instantiate (goMap_trainingGrounds, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
-        SceneManager.MoveGameObjectToScene(_new.mapObj, SceneManager.GetSceneByName("Game"));
-
-        ContMap.I.create_map_objs = create_map_objs;
-
-        return _new;
-    }
-    public mapDetails get_map_details_wooster_square_1 (mapDetails _new){
-        _new.size = new Vector2 (18, 18);
-
-        _new.pointList.Add ("playerSpawn", new Vector2 (0, 0));
-        _new.pointList.Add ("playerLounge", new Vector2 (-500, -500));
-
-        switch (Random.Range (0, 3)) {
-            case 0: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
-            case 1: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare2, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
-            case 2: _new.mapObj = GameObject.Instantiate (goMap_woosterSquare3, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
-            default:_new.mapObj = GameObject.Instantiate (goMap_woosterSquare4, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; break;
-        }
         SceneManager.MoveGameObjectToScene(_new.mapObj, SceneManager.GetSceneByName("Game"));
 
         ContMap.I.create_map_objs = create_map_objs;

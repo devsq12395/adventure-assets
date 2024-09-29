@@ -6,14 +6,16 @@ using UnityEngine;
 public class Skill_GiantSlimeDash : SkillTrig {
 
     public string missileObj;
-    public float DIST = 6f;
 
     public List<int> hitIDs;
 
     public bool isUsingSkill = false;
 
+    public float DIST = 6f;
     public float RANGE_AOE, SPEED_KNOCK, DIST_KNOCK;
     private float DIST_PER_EXPLOSION_EFFECT, curDistExpEffect;
+
+    public Afterimage afterimage;
 
     public override void on_start (){
         hitIDs = new List<int>();
@@ -31,6 +33,7 @@ public class Skill_GiantSlimeDash : SkillTrig {
         ContObj.I.instant_move_upd_start_dist (_ownerComp, Calculator.I.get_ang_from_2_points_deg (_pos, _pPos), 0.5f, DIST, "enemy-dash");
 
         isUsingSkill = true; 
+        afterimage = gameObject.AddComponent<Afterimage>();
     }
 
     public override void on_update() {
@@ -55,6 +58,7 @@ public class Skill_GiantSlimeDash : SkillTrig {
             hitIDs.Clear();
 
             ContEffect.I.create_effect ("smoke-expand", gameObject.transform.position);
+            Destroy (afterimage);
         }
     }
 

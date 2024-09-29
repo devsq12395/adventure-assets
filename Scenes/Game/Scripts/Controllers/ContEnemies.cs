@@ -69,10 +69,13 @@ public class ContEnemies : MonoBehaviour {
 	}
 
 	public Dictionary<string, int> generate_and_give_rewards() {
+		string _curMission = ZPlayerPrefs.GetString("missionCur");
+		DB_Missions.MissionData _misData = DB_Missions.I.get_mission_data (_curMission);
+
 	    Dictionary<string, int> rewards = new Dictionary<string, int>();
 
-	    List<int> _goldRewards = DB_Enemies.I.get_possible_gold_rewards(enemiesType);
-	    int _goldReward = _goldRewards[Random.Range(0, _goldRewards.Count)];
+	    List<int> _goldRewards = DB_Missions.I.get_possible_gold_rewards(enemiesType);
+	    int _goldReward = _misData.goldReward;
 
 	    rewards.Add("gold", _goldReward);
 	    SaveHandler.I.gain_gold(_goldReward);

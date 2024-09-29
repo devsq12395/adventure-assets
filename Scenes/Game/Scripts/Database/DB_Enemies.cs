@@ -15,23 +15,43 @@ public class DB_Enemies : MonoBehaviour {
 		return false;
 	}
 
-	public List<Dictionary<string, int>> get_list_of_main_waves (string _enemiesType){
-		List<Dictionary<string, int>> _ret = new List<Dictionary<string, int>> ();
-
-		switch (_enemiesType) {
-			case "training-grounds": _ret = training_grounds (_ret); break;
-
-			case "enem-vic-1": _ret = vic_1_main_wave (_ret); break;
-			case "enem-vic-2": _ret = vic_2_main_wave (_ret); break;
-			case "enem-vic-3": _ret = vic_3_main_wave (_ret); break;
-
-			case "anthony-1": _ret = anthony_1_main_wave (_ret); break;
-
-			case "mill-river-1": _ret = mill_river_1_main_wave (_ret); break;
-		}
-
-		return _ret;
+	public string get_random_wave(string _enemiesType) {
+	    switch (_enemiesType) {
+	        case "cursed-forest":
+	            // Return a random wave from the cursed-forest enemies list
+	            string[] cursedForestEnemies = { "slime-1", "slime-2", "orc-1", "goblin-1" };
+	            Random rand = new Random();
+	            return cursedForestEnemies[rand.Next(cursedForestEnemies.Length)];
+	    }
+	    return _enemiesType;
 	}
+
+	public List<Dictionary<string, int>> get_list_of_main_waves(string _enemiesType) {
+	    _enemiesType = get_random_wave(_enemiesType);
+	    List<Dictionary<string, int>> _ret = new List<Dictionary<string, int>>();
+
+	    switch (_enemiesType) {
+	        case "training-grounds": _ret = training_grounds(_ret); break;
+	        case "tutorial": _ret = tutorial_waves(_ret); break;
+	        case "slime-1": _ret = slime_1_waves(_ret); break;
+	        case "slime-2": _ret = slime_2_waves(_ret); break;
+	        case "mafia-1": _ret = mafia_1_waves(_ret); break;
+	        case "mafia-2": _ret = mafia_2_waves(_ret); break;
+	        case "assassin-1": _ret = assassin_1_waves(_ret); break;
+	        case "goblin-1": _ret = goblin_1_waves(_ret); break;
+	        case "orc-1": _ret = orc_1_waves(_ret); break;
+	        case "beatrice-1": _ret = beatrice_1_waves(_ret); break;
+	        
+	        case "enem-vic-1": _ret = vic_1_main_wave(_ret); break;
+	        case "enem-vic-2": _ret = vic_2_main_wave(_ret); break;
+	        case "enem-vic-3": _ret = vic_3_main_wave(_ret); break;
+	        case "anthony-1": _ret = anthony_1_main_wave(_ret); break;
+	        case "mill-river-1": _ret = mill_river_1_main_wave(_ret); break;
+	    }
+
+	    return _ret;
+	}
+
 
 	public Dictionary<string, int> get_reward_chance (string _enemiesType){
 		Dictionary<string, int> _ret = new Dictionary<string, int> ();
@@ -44,22 +64,6 @@ public class DB_Enemies : MonoBehaviour {
 			case "anthony-1": _ret = anthony_1_reward_chance (_ret); break;
 
 			case "mill-river-1": _ret = mill_river_1_reward_chance (_ret); break;
-		}
-
-		return _ret;
-	}
-
-	public List<int> get_possible_gold_rewards (string _enemiesType) {
-		List<int> _ret = new List<int>();
-
-		switch (_enemiesType) {
-			case "enem-vic-1": _ret.AddRange (new int[]{200}); break;
-			case "enem-vic-2": _ret.AddRange (new int[]{300}); break;
-			case "enem-vic-3": _ret.AddRange (new int[]{500}); break;
-
-			case "anthony-1": _ret.AddRange (new int[]{500}); break;
-
-			case "mill-river-1":_ret.AddRange (new int[]{200,300,400,500}); break;
 		}
 
 		return _ret;
@@ -94,17 +98,200 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("orc", 4);
-
-				_waves.Add (new Dictionary<string, int>());
-				_waves[1].Add ("axe-arm-azar", 1);
+				_waves[0].Add ("hobgoblin", 1);
 
 				break;
 		}
 		
 		return _waves;
 	}
-	private List<Dictionary<string, int>> vic_1_main_wave (List<Dictionary<string, int>> _ret){
+	private List<Dictionary<string, int>> slime_1_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("slime-blue", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("slime-blue", 2);
+				_waves[1].Add ("goblin", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("slime-blue", 3);
+				_waves[2].Add ("goblin-mage", 1);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("giant-slime", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> slime_2_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("slime-blue", 2);
+				_waves[0].Add ("goblin", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("slime-blue", 3);
+				_waves[1].Add ("goblin-mage", 1);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("hobgoblin", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> mafia_1_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("mobster", 1);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("mobster", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("slime-blue", 2);
+				_waves[2].Add ("mobster", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("mafia-captain", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> mafia_2_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("mobster", 3);
+				_waves[2].Add ("slime-blue", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("orc", 3);
+				_waves[1].Add ("assassin", 3);;
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("mafia-captain", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> assassin_1_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("assassin", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("assassin-captain", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> goblin_1_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("goblin", 5);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("goblin", 3);
+				_waves[1].Add ("goblin-mage", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("hobgoblin", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> orc_1_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("orc", 2);
+				_waves[0].Add ("goblin", 3);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("orc", 5);
+				_waves[1].Add ("goblin-mage", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("axe-arm-azar", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> beatrice_1_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("victorian-soldier", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("mobster", 2);
+				_waves[1].Add ("victorian-soldier", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("mobster", 2);
+				_waves[2].Add ("victorian-soldier", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[3].Add ("cap-beatrice", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> tutorial_waves (List<Dictionary<string, int>> _ret){
 		//int chance = Random.Range (0, 3);
 		int chance = 0;
 		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
