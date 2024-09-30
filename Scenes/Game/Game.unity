@@ -5425,8 +5425,8 @@ MonoBehaviour:
   goblinMage: {fileID: 4069129335015200978, guid: 201da77aab0d57c5ca8b41828e8f6c19, type: 3}
   hobgoblin: {fileID: 5399359786492145966, guid: b8a4eae89c8100d5bbe6de303ef8fb68, type: 3}
   fireSpirit: {fileID: 1035227436549338006, guid: 71a761847ff083c428762fbdd8567393, type: 3}
-  orc: {fileID: 0}
-  axeArmAzar: {fileID: 0}
+  orc: {fileID: 4690657366656991979, guid: dcc466932049a69408f62cdb95af17eb, type: 3}
+  axeArmAzar: {fileID: 4690657366656991979, guid: ce105175ab9d9b24e911b580b06723a3, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
@@ -11943,9 +11943,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd466092e06c2544b037118f4595e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goMap_woosterSquare1: {fileID: 3890178404968358513, guid: 496a0fcca43461a8eba1514f29c89a55, type: 3}
-  goMap_woosterSquare2: {fileID: 7123560994823808095, guid: 8b927a2ef118cd04abd210005c5722e3, type: 3}
-  goMap_woosterSquare3: {fileID: 6186003181524603497, guid: b60c0a351bc6f0142a20a53016b89cd1, type: 3}
+  goMap_woosterSquare1: {fileID: 6186003181524603497, guid: b60c0a351bc6f0142a20a53016b89cd1, type: 3}
+  goMap_woosterSquare2: {fileID: 3890178404968358513, guid: 496a0fcca43461a8eba1514f29c89a55, type: 3}
+  goMap_woosterSquare3: {fileID: 7123560994823808095, guid: 8b927a2ef118cd04abd210005c5722e3, type: 3}
   goMap_woosterSquare4: {fileID: 7052941939691805757, guid: 3294f45eda41b204c967cc5f8948701d, type: 3}
   goMap_trainingGrounds: {fileID: 1583650307375049623, guid: b1d2312686365679caae6c2ed5cf514d, type: 3}
 --- !u!114 &1727020071

@@ -15,9 +15,15 @@ public class Skill_ElectricSlash : SkillTrig {
     public bool isUsingSkill = false;
 
     private float DIST_PER_EXPLOSION_EFFECT, curDistExpEffect;
-    
+
     private GameObject slashInstance; // Store the front slash instance
     private InGameObject ownerComp; // Cache the owner component for reuse
+    private BoxCollider2D boxCollider; // Cache the BoxCollider2D
+
+    public override void on_start (){
+        hitIDs = new List<int>();
+        boxCollider = gameObject.GetComponent<BoxCollider2D>();
+    }
 
     public override void use_active (){
         if (!use_check()) return;
@@ -42,6 +48,11 @@ public class Skill_ElectricSlash : SkillTrig {
 
         // Create the front slash object in front of the owner
         create_front_slash(ownerComp);
+
+        // Disable BoxCollider2D if it's not a trigger
+        if (boxCollider != null && !boxCollider.isTrigger) {
+            boxCollider.enabled = false;
+        }
 
         isUsingSkill = true;
     }
@@ -93,6 +104,11 @@ public class Skill_ElectricSlash : SkillTrig {
                 Destroy(slashInstance);
                 slashInstance = null;
             }
+
+            // Re-enable BoxCollider2D after the dash ends
+            if (boxCollider != null) {
+                boxCollider.enabled = true;
+            }
         }
     }
 
@@ -103,7 +119,7 @@ public class Skill_ElectricSlash : SkillTrig {
         foreach (InGameObject _o in _objs) {
             if (!DB_Conditions.I.dam_condition(_owner, _o) || hitIDs.Contains(_o.id)) continue;
 
-            ContDamage.I.damage(_owner, _o, DAM + DAM_PER_SKILL * _owner.statSkill, new List<string> { "electric" });
+            ContDamage.I.damage(_owner, _o, _owner.skill, new List<string> { "electric" });
             ContObj.I.instant_move_upd_start_dist(_o, Calculator.I.get_ang_from_2_points_deg(_pos, _o.transform.position), SPEED_KNOCK, DIST_KNOCK);
             ContEffect.I.create_effect("explosion1", _o.transform.position);
             hitIDs.Add(_o.id);
@@ -151,5 +167,4 @@ public class Skill_ElectricSlash : SkillTrig {
         // Update the slashInstance's rotation to match the dash direction
         slashInstance.transform.rotation = Quaternion.Euler(0, 0, dashAngle);
     }
-
 }

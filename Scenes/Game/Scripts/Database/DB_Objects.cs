@@ -73,7 +73,7 @@ public class DB_Objects : MonoBehaviour {
             case "mobster":            _refObj = mobster; break;
             case "slime-king":            _refObj = slimeKing; break;
             case "giant-slime":            _refObj = giantSlime; break;
-            case "luca-the-terror":            _refObj = lucaTheTerror; break;
+            case "mafia-captain":            _refObj = lucaTheTerror; break;
             case "embraced-infantry":            _refObj = embracedInfantry; break;
             case "embraced-mage":            _refObj = embracedMage; break;
             case "prism-drone":            _refObj = prismDrone; break;

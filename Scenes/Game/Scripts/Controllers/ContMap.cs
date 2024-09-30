@@ -12,7 +12,6 @@ public class ContMap : MonoBehaviour
     public Dictionary<string, Vector2> pointList;
 
     public delegate void create_map();
-    public create_map create_map_objs { get; set; }
 
     public void setup_map()
     {
@@ -29,8 +28,6 @@ public class ContMap : MonoBehaviour
         pointList = details.pointList;
 
         ContEnemies.I.setup(_data.enemies[curMapLvl]);
-
-        create_map_objs();
 
         // Create a border around the map
         CreateMapBorder(details.size.x, details.size.y);

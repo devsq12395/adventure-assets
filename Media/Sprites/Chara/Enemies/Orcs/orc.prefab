@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5024090433382915677}
   - component: {fileID: 4427413014661215766}
   - component: {fileID: 5238501108211133430}
-  - component: {fileID: 3388707968229960030}
+  - component: {fileID: -7918301838467125630}
   m_Layer: 0
   m_Name: orc
   m_TagString: Untagged
@@ -357,7 +357,7 @@ MonoBehaviour:
   shurikenThrowCount: 0
   moveDuration: 0
   evadeDistance: 0
---- !u!114 &3388707968229960030
+--- !u!114 &-7918301838467125630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4690657366656991979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeef1101bb86db43ae63134af3659e7, type: 3}
+  m_Script: {fileID: 11500000, guid: bb7df5c782099b545bb6c8acc5641371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: attack
@@ -375,4 +375,6 @@ MonoBehaviour:
   mc: 0
   cdMax: 0.5
   cd: 0
-  missileObj: shuriken
+  missileObj: bullet-mobster
+  muzzleObj1: muzzle-1
+  muzzleObj2: muzzle-2

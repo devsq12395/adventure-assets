@@ -58,6 +58,9 @@ public class Car : MonoBehaviour
             MM_TutKey.I.show_one("enter", false);
             return;
         }
+        if (MainMenu.I.check_if_a_popup_is_showing ()) {
+            return;
+        }
 
         // Check for input and move to the corresponding node
         if (Input.GetKeyDown(KeyCode.W)) { TryMoveToNextNode(Vector2.up); }

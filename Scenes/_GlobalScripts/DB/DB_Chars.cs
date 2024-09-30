@@ -63,8 +63,8 @@ public class DB_Chars : MonoBehaviour {
                 _new.goldCost = 0;
 
                 _new.bioInfo = "Attack Weapon: Sword\nAttack Tags: Sword, Physical\n\n\nCharacter Tags: Human, Swordsman";
-                _new.bioSkill1 = "";
-                _new.bioSkill2 = "";
+                _new.bioSkill1 = "Burning Slash: Slashes forward, dealing skill damage to enemies hit then unleashes a ring of attacks in the end.\n\nTags: fire, magic";
+                _new.bioSkill2 = "Destroyer Slash: Unleashes a flame wave. Dealing skill * 3 damage.\n\nTags: fire, magic";
                 break;
             case "anastasia":
                 _new.nameUI="Anastasia";
@@ -77,9 +77,9 @@ public class DB_Chars : MonoBehaviour {
                 _new.statEspionage = 2; _new.statComputers = 3; _new.statRepair = 3; _new.statLuck = 3;
                 _new.goldCost = 500;
 
-                _new.bioInfo = "";
-                _new.bioSkill1 = "";
-                _new.bioSkill2 = "";
+                _new.bioInfo = "Attack Weapon: Sword\nAttack Tags: sword, magic\n\n\nCharacter Tags: Human, Vampire, Swordsman";
+                _new.bioSkill1 = "Binding Chains: Binds nearby enemies in chains. Dealing skill damage and making enemies immobile.\n\nTags: Magic";
+                _new.bioSkill2 = "Void Sphere: Unleashes a powerful void orb. Dealing skill * 3 damage.\n\nTags: Void, Magic";
                 break;
             case "sylphine":
                 _new.nameUI="Sylphine";
@@ -92,9 +92,9 @@ public class DB_Chars : MonoBehaviour {
                 _new.statEspionage = 2; _new.statComputers = 5; _new.statRepair = 5; _new.statLuck = 2;
                 _new.goldCost = 500;
 
-                _new.bioInfo = "";
-                _new.bioSkill1 = "";
-                _new.bioSkill2 = "";
+                _new.bioInfo = "Attack Weapon: Staff\nAttaack Tags: ice, magic\n\n\nCharacter Tags: human, mage, new yale";
+                _new.bioSkill1 = "Torrent: Unleashes a sequence of strong torrents, dealing skill damage over time.\n\nTags: magic, water";
+                _new.bioSkill2 = "Frost Orbs: Creates 4 Frost Orbs that shoots ice shards, dealing damage per hit.\n\nTags: ice, magic";
                 break;
         }
 

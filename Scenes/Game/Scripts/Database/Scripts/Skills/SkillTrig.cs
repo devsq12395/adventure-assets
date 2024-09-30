@@ -13,8 +13,16 @@ public class SkillTrig : MonoBehaviour {
     public int mc;
     public float cdMax = 0.5f, cd;
 
+    void Start (){
+        on_start ();
+    }
+
     void Update (){
         on_update ();
+    }
+
+    public virtual void on_start (){
+        
     }
 
     public virtual void use_active (){
