@@ -183,14 +183,14 @@ public class DB_Enemies : MonoBehaviour {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("mobster", 3);
-				_waves[2].Add ("slime-blue", 2);
+				_waves[0].Add ("slime-blue", 2);
 
 				_waves.Add (new Dictionary<string, int>());
 				_waves[1].Add ("orc", 3);
 				_waves[1].Add ("assassin", 3);;
 
 				_waves.Add (new Dictionary<string, int>());
-				_waves[3].Add ("mafia-captain", 1);
+				_waves[2].Add ("mafia-captain", 1);
 
 				break;
 		}

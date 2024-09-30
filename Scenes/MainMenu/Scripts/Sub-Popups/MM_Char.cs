@@ -88,7 +88,6 @@ public class MM_Char : MonoBehaviour {
                 return equipType == _itemData.equipTo;
             });
 
-            Debug.Log (_index); 
             if (_index != -1) {
                 Debug.Log ($"{_itemData.nameUI}");
                 t_equips[_index].text = _itemData.nameUI; 

@@ -49,9 +49,9 @@ public class EditorDev : EditorWindow {
             Debug.Log($"Item {itemName} is added.");
         }
 
-        gainGold = EditorGUILayout.TextField("Gain Gold:", gainGold);
+        gainGold = EditorGUILayout.TextField("Gain Gold (only works on overworld):", gainGold);
         if (GUILayout.Button("Gain Gold")) {
-            ZPlayerPrefs.SetInt("gold", Convert.ToInt32(gainGold));
+            MainMenu.I.update_gold(Convert.ToInt32(gainGold));
         }
 
         EditorGUILayout.LabelField("Shortcuts", EditorStyles.boldLabel);

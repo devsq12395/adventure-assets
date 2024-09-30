@@ -804,10 +804,10 @@ public class DB_Dialogs : MonoBehaviour {
 			    _new.inputScaler_enable = "0";
 			    _new.posX = 0;
 			    _new.posY = 0;
-			    _new.input1 = new InputData("", "");
+			    _new.input1 = new InputData("back", "Back");
 			    _new.input2 = new InputData("", "");
 			    _new.input3 = new InputData("", "");
-			    _new.input4 = new InputData("back", "Back");
+			    _new.input4 = new InputData("", "");
 			    _new.inputTxtBox = new InputData("", "");
 			    break;
 

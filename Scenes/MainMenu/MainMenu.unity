@@ -7805,7 +7805,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1517545880}
         m_TargetAssemblyTypeName: MM_Inv2, Assembly-CSharp
         m_MethodName: btn_action
         m_Mode: 1
@@ -7817,7 +7817,7 @@ MonoBehaviour:
           m_StringArgument: inventory
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 25262260}
+      - m_Target: {fileID: 627446958}
         m_TargetAssemblyTypeName: CustomButton, Assembly-CSharp
         m_MethodName: play_click
         m_Mode: 1
@@ -22497,7 +22497,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1517545880}
         m_TargetAssemblyTypeName: MM_Inv2, Assembly-CSharp
         m_MethodName: show
         m_Mode: 5

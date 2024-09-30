@@ -68,6 +68,9 @@ public class MM_Inv2 : MonoBehaviour {
         		break;
         }
 
+        int _gold = ZPlayerPrefs.GetInt ("gold");
+        t_gold.text = $"Your Gold: {_gold}";
+
         itemSel = new Inv2.Item ("empty", 0, 0, "");
         setup_page ();
         change_item_sel (itemSel);
@@ -155,7 +158,7 @@ public class MM_Inv2 : MonoBehaviour {
 
 	public void update_gold (int _newGold){
 		if (go.activeSelf) {
-			t_gold.text = $"Gold: {_newGold}";
+			t_gold.text = $"Your Gold: {_newGold}";
 		}
 	}
 
@@ -169,15 +172,23 @@ public class MM_Inv2 : MonoBehaviour {
 	public void btn_action (){
 		if (itemSel.name == "empty") return;
 
+		int gold = ZPlayerPrefs.GetInt("gold");
+		Inv2_DB.ItemData _itemInfo = Inv2_DB.I.get_item_data (itemSel.name);
+
 		switch (mode){
 			case "equip":
 				Inv2.I.set_item_equip (itemSel, MM_Char.I.curChar);
 				MMCont_Dialog.I.create_dialog ("change-equip-success");
 				break;
-			case "buy":
-				Inv2.I.add_item (itemSel);
-				
-				MMCont_Dialog.I.create_dialog ("buy-success");
+			case "buy": case "shop":
+				if (gold >= _itemInfo.cost) {
+					Inv2.I.add_item (itemSel.name);
+					MainMenu.I.update_gold (-_itemInfo.cost);
+					
+					MMCont_Dialog.I.create_dialog ("buy-success");
+				} else {
+					MMCont_Dialog.I.create_dialog ("buy-not-enough-gold");
+				}
 				break;
 		}
 	}
