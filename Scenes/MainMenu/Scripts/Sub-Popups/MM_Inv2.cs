@@ -15,7 +15,7 @@ public class MM_Inv2 : MonoBehaviour {
 	public RectTransform imgWindow, imgWindow_itemInfo; // Add this for controlling the y position
 
 	public Image i_item;
-	public TextMeshProUGUI t_title, t_itemName, t_itemDesc, t_gold, t_page, t_action;
+	public TextMeshProUGUI t_title, t_itemName, t_itemDetails, t_itemDesc, t_gold, t_page, t_action;
 
 	public List<Button> itemsBTN;
 	public List<Inv2.Item> itemsShow, itemsSet;
@@ -43,7 +43,7 @@ public class MM_Inv2 : MonoBehaviour {
         imgWindow.DOAnchorPosX(263.7f, 0.2f).SetEase(Ease.OutSine);
         canvasGroup.DOFade(1f, 0.2f);
 
-        imgWindow_itemInfo.anchoredPosition = new Vector2(230f, 0);
+        imgWindow_itemInfo.anchoredPosition = new Vector2(300f, 0);
         isItemInfoShow = false;
 
         mode = _itemSetMode;
@@ -81,7 +81,7 @@ public class MM_Inv2 : MonoBehaviour {
 
     public void hide (){
     	imgWindow.DOAnchorPosX(-300f, 0.2f).SetEase(Ease.OutSine);
-    	imgWindow_itemInfo.DOAnchorPosX(230f, 0.2f).SetEase(Ease.OutSine);
+    	imgWindow_itemInfo.DOAnchorPosX(300f, 0.2f).SetEase(Ease.OutSine);
         canvasGroup.DOFade(0f, 0.2f).OnComplete(() => go.SetActive(false));
     }
 
@@ -130,6 +130,7 @@ public class MM_Inv2 : MonoBehaviour {
 	    if (_item.name == "empty") {
 	    	// Clear out UI on first open - This section will be used on first open only
 	        t_itemName.text = "";
+	        t_itemDetails.text = "";
 	        t_itemDesc.text = "";
 	        i_item.sprite = Sprites.I.get_sprite("empty");
 
@@ -137,12 +138,13 @@ public class MM_Inv2 : MonoBehaviour {
 	    } else {
 	    	if (!isItemInfoShow){
 	    		isItemInfoShow = true;
-	    		imgWindow_itemInfo.DOAnchorPosX(-184.5f, 0.2f).SetEase(Ease.OutSine);
+	    		imgWindow_itemInfo.DOAnchorPosX(-266.3f, 0.2f).SetEase(Ease.OutSine);
 	    	}
 
 	        Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(_item.name);
 
 	        t_itemName.text = _data.nameUI;
+	        t_itemDetails.text = _data.details;
 	        t_itemDesc.text = _data.desc;
 	        i_item.sprite = _data.sprite;
 

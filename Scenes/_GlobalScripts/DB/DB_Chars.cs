@@ -23,6 +23,8 @@ public class DB_Chars : MonoBehaviour {
         public int statScience, statMagic, statDriving, statEspionage, statComputers, statRepair, statLuck;
         public int goldCost;
 
+        public List<string> tags;
+
         public CharData (string _name){
             name = _name;
             nameUI="";desc="";imgPort="";equipWeapon="";
@@ -30,6 +32,8 @@ public class DB_Chars : MonoBehaviour {
             statHP = 0; statAtk = 0; statRange = 0; statSkill = 0; statSpeed = 0;statArmor = 0; statCritRate = 0; statCritDam = 0;
             statScience = 0; statMagic = 0; statDriving = 0; statEspionage = 0; statComputers = 0; statRepair = 0; statLuck = 0;
             goldCost=0;
+
+            tags = new List<string>();
         }
     }
 
@@ -46,8 +50,9 @@ public class DB_Chars : MonoBehaviour {
                 _new.statScience = 4; _new.statMagic = 1; _new.statDriving = 7; 
                 _new.statEspionage = 4; _new.statComputers = 5; _new.statRepair = 5; _new.statLuck = 3;
                 _new.goldCost = 0;
+                _new.tags.AddRange (new string[] {"hero", "human", "gunslinger"});
 
-                _new.bioInfo = "Attack Weapon: Gun\nAttack Tags: Gun, Physical\n\n\nCharacter Tags: Human, Gunslinger";
+                _new.bioInfo = "Attack Weapon: Gun\nAttack Tags: Gun, Physical\n\n\nCharacter Tags: Hero, Human, Gunslinger";
                 _new.bioSkill1 = "Plasma Shotgun: Fires 3 plasma waves that deals damage in their path.\n\nTags: Electric";
                 _new.bioSkill2 = "Overcharge: The next 10 attacks will deal 400% damage and will make Tommy's attacks Electric.";
                 break;
@@ -56,13 +61,14 @@ public class DB_Chars : MonoBehaviour {
                 _new.desc = "An adventurer who is very skilled with swords, and Tommy's best buddy.";
                 _new.imgPort="kazuma";
                 _new.equipWeapon="sword";
-                _new.statHP = 100; _new.statAtk = 10; _new.statRange = 3; 
+                _new.statHP = 100; _new.statAtk = 10; _new.statRange = 2; 
                 _new.statSkill = 15; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 15; _new.statCritDam = 140;
                 _new.statScience = 3; _new.statMagic = 2; _new.statDriving = 5; 
                 _new.statEspionage = 2; _new.statComputers = 4; _new.statRepair = 4; _new.statLuck = 5;
                 _new.goldCost = 0;
+                _new.tags.AddRange (new string[] {"hero", "human", "swordsman"});
 
-                _new.bioInfo = "Attack Weapon: Sword\nAttack Tags: Sword, Physical\n\n\nCharacter Tags: Human, Swordsman";
+                _new.bioInfo = "Attack Weapon: Sword\nAttack Tags: Sword, Physical\n\n\nCharacter Tags: Hero, Human, Swordsman";
                 _new.bioSkill1 = "Burning Slash: Slashes forward, dealing skill damage to enemies hit then unleashes a ring of attacks in the end.\n\nTags: fire, magic";
                 _new.bioSkill2 = "Destroyer Slash: Unleashes a flame wave. Dealing skill * 3 damage.\n\nTags: fire, magic";
                 break;
@@ -71,13 +77,14 @@ public class DB_Chars : MonoBehaviour {
                 _new.desc = "";
                 _new.imgPort="anastasia";
                 _new.equipWeapon="sword";
-                _new.statHP = 80; _new.statAtk = 12; _new.statRange = 3; 
+                _new.statHP = 80; _new.statAtk = 12; _new.statRange = 2; 
                 _new.statSkill = 12; _new.statSpeed = 1; _new.statArmor = 0; _new.statCritRate = 15; _new.statCritDam = 150;
                 _new.statScience = 5; _new.statMagic = 5; _new.statDriving = 2; 
                 _new.statEspionage = 2; _new.statComputers = 3; _new.statRepair = 3; _new.statLuck = 3;
                 _new.goldCost = 500;
+                _new.tags.AddRange (new string[] {"hero", "human", "gunslinger", "vampire"});
 
-                _new.bioInfo = "Attack Weapon: Sword\nAttack Tags: sword, magic\n\n\nCharacter Tags: Human, Vampire, Swordsman";
+                _new.bioInfo = "Attack Weapon: Sword\nAttack Tags: sword, magic\n\n\nCharacter Tags: Hero, Human, Vampire, Swordsman";
                 _new.bioSkill1 = "Binding Chains: Binds nearby enemies in chains. Dealing skill damage and making enemies immobile.\n\nTags: Magic";
                 _new.bioSkill2 = "Void Sphere: Unleashes a powerful void orb. Dealing skill * 3 damage.\n\nTags: Void, Magic";
                 break;
@@ -91,8 +98,9 @@ public class DB_Chars : MonoBehaviour {
                 _new.statScience = 7; _new.statMagic = 8; _new.statDriving = 2; 
                 _new.statEspionage = 2; _new.statComputers = 5; _new.statRepair = 5; _new.statLuck = 2;
                 _new.goldCost = 500;
+                _new.tags.AddRange (new string[] {"hero", "human", "mage", "new yale"});
 
-                _new.bioInfo = "Attack Weapon: Staff\nAttaack Tags: ice, magic\n\n\nCharacter Tags: human, mage, new yale";
+                _new.bioInfo = "Attack Weapon: Staff\nAttaack Tags: ice, magic\n\n\nCharacter Tags: hero, human, mage, new yale";
                 _new.bioSkill1 = "Torrent: Unleashes a sequence of strong torrents, dealing skill damage over time.\n\nTags: magic, water";
                 _new.bioSkill2 = "Frost Orbs: Creates 4 Frost Orbs that shoots ice shards, dealing damage per hit.\n\nTags: ice, magic";
                 break;

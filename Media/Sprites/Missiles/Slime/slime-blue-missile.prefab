@@ -139,6 +139,8 @@ MonoBehaviour:
   mpMax: 0
   mpRegen: 0
   armor: 0
+  dam: 0
+  skill: 0
   hitDam: 1
   onHitSFX: explosion1_mini
   tags:
@@ -201,6 +203,7 @@ MonoBehaviour:
   controllerID: 0
   hitUnitsID: 
   colorChangeDur: 0
+  summonedBy: 0
   skills: []
   barHP: {fileID: 0}
   barSta: {fileID: 0}
@@ -276,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b71ebe42fa0e24aa8d5f98e7b89225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorHex: goo-blue
+  colorHex: 00BBFF
   spawnAmount: 3
   circleDiameter: 1
   tweenDur: 0.5

@@ -19,7 +19,7 @@ public class ColTrig_ShotgunWave : ColTrig {
                         _owner = ContObj.I.get_obj_with_id (_this.controllerID);
 
         ContEffect.I.create_effect ("explosion2", gameObject.transform.position);
-        ContDamage.I.damage (_owner, _hit, DAM + DAM_PER_SKILL * _owner.statSkill, damTags);
+        ContDamage.I.damage (_owner, _hit, _owner.skill, damTags);
 
         hitIDs.Add (_hit.id);
     }

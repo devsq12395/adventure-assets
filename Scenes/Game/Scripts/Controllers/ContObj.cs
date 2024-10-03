@@ -19,20 +19,30 @@ public class ContObj : MonoBehaviour {
     }
 
     // Create
-    private void on_create_set_obj_stats (InGameObject _comp, string _name){
-        if (!_comp.tags.Contains ("hero")) return;
+    private void on_create_set_obj_stats(InGameObject _comp, string _name) {
+        if (!_comp.tags.Contains("hero")) return;
 
         _comp.mp = 0;
 
-        _comp.statHP                    = StatCalc.I.get_stat (_name, "hp");
-        _comp.statAttack                = StatCalc.I.get_stat (_name, "attack");
-        _comp.statRange                 = StatCalc.I.get_stat (_name, "range");
-        _comp.statSkill                 = StatCalc.I.get_stat (_name, "skill");
-        _comp.statSpeed                 = StatCalc.I.get_stat (_name, "speed");
-        _comp.statArmor                 = StatCalc.I.get_stat (_name, "armor");
-        _comp.statCritRate              = StatCalc.I.get_stat (_name, "crit-rate");
-        _comp.statCritDam               = StatCalc.I.get_stat (_name, "crit-dam");
+        // Get all character stats at once
+        Dictionary<string, int> _charStats = StatCalc.I.get_all_stats_of_char(_name);
+        DB_Chars.CharData _charData = DB_Chars.I.get_char_data(_name);
 
+        // Set stats from the dictionary
+        _comp.statHP = _charStats["hp"];
+        _comp.statAttack = _charStats["attack"];
+        _comp.statRange = _charStats["range"];
+        _comp.statSkill = _charStats["skill"];
+        _comp.statSpeed = _charStats["speed"];
+        _comp.statArmor = _charStats["armor"];
+        _comp.statCritRate = _charStats["crit-rate"];
+        _comp.statCritDam = _charStats["crit-dam"];
+
+        // Clear and set tags (ensure this is appropriate based on your implementation)
+        _comp.tags.Clear();
+        _comp.tags.AddRange(_charData.tags); 
+
+        // Set max HP and other combat-related properties
         _comp.hpMax = _comp.statHP;
         _comp.hp = _comp.statHP;
         _comp.armor = _comp.statArmor;

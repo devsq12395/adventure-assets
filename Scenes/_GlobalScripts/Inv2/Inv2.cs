@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -36,61 +35,90 @@ public class Inv2 : MonoBehaviour {
     public void add_item(string _itemName, int _stack = 1) {
         Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_itemName);
 
-        if (get_has_item (_itemName) && _data.stackable){
+        if (get_has_item (_itemName) && _data.stackable) {
             Item _item = get_item_from_name (_itemName);
             _item.stack += _stack;
         } else {
-            Item newItem = new Item (_itemName, _stack, Random.Range (1000, 10000000), "");
-            items.Add (newItem);
+            Item newItem = new Item(_itemName, _stack, Random.Range(1000, 10000000), "");
+            items.Add(newItem);
         }
 
         save_items();
     }
 
-    public Item get_item_from_id (int id) {
-        load_items ();
-        return items.FirstOrDefault(item => item.ID == id);
+    public Item get_item_from_id(int id) {
+        load_items();
+        for (int i = 0; i < items.Count; i++) {
+            if (items[i].ID == id) {
+                return items[i];
+            }
+        }
+        return default(Item); // or handle the case where the item isn't found
     }
-    public Item get_item_from_name (string name) {
-        load_items ();
-        return items.FirstOrDefault(item => item.name == name);
+
+    public Item get_item_from_name(string name) {
+        load_items();
+        for (int i = 0; i < items.Count; i++) {
+            if (items[i].name == name) {
+                return items[i];
+            }
+        }
+        return default(Item); // or handle the case where the item isn't found
     }
-    public bool get_has_item (string name){
-        load_items ();
-        return items.Any(item => item.name == name);
+
+    public bool get_has_item(string name) {
+        load_items();
+        for (int i = 0; i < items.Count; i++) {
+            if (items[i].name == name) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public List<Item> get_items_in_page(int _page, int _itemsPerPage, List<Item> _itemSet) {
         load_items();
-        List<Item> itemsInPage = _itemSet.Skip((_page - 1) * _itemsPerPage).Take(_itemsPerPage).ToList();
+        List<Item> itemsInPage = new List<Item>();
+        int startIndex = (_page - 1) * _itemsPerPage;
+        int endIndex = startIndex + _itemsPerPage;
+
+        for (int i = startIndex; i < endIndex && i < _itemSet.Count; i++) {
+            itemsInPage.Add(_itemSet[i]);
+        }
+
         return itemsInPage;
     }
 
     public int get_max_pages(int _itemsPerPage) {
-        load_items ();
-        int _ret = Mathf.CeilToInt((float)items.Count / _itemsPerPage);
+        load_items();
+        int totalItems = items.Count;
+        int _ret = Mathf.CeilToInt((float)totalItems / _itemsPerPage);
         if (_ret < 1) _ret = 1;
         return _ret;
     }
 
     public void remove_item(int id) {
-        Item? item = get_item_from_id(id);
-        if (item.HasValue) {
-            items.Remove(item.Value);
-            save_items();
+        load_items();
+        for (int i = 0; i < items.Count; i++) {
+            if (items[i].ID == id) {
+                items.RemoveAt(i);
+                save_items();
+                return;
+            }
         }
     }
 
     public List<Item> get_items_with_tag(string _tag) {
-        // This needs to change
         List<Item> _ret = new List<Item>();
-        items.ForEach ((_item) => {
-            Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
-            if (_data.tags.Contains (_tag)) {
-                _ret.Add (_item);
+        for (int i = 0; i < items.Count; i++) {
+            Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(items[i].name);
+            for (int j = 0; j < _data.tags.Count; j++) {
+                if (_data.tags[j] == _tag) {
+                    _ret.Add(items[i]);
+                    break;
+                }
             }
-        });
-
+        }
         return _ret;
     }
 
@@ -106,7 +134,6 @@ public class Inv2 : MonoBehaviour {
     }
 
     public void load_items() {
-        // Called from SaveHandler.Awake
         items.Clear();
         int itemCount = ZPlayerPrefs.GetInt("ItemCount", 0);
         for (int i = 0; i < itemCount; i++) {
@@ -119,74 +146,69 @@ public class Inv2 : MonoBehaviour {
         }
     }
 
-    /*
-        FOR SHOPS
-    */
-    public List<Item> generate_item_set (List<string> _itemNames) {
-        List<Item> _ret = new List<Item> ();
-        _itemNames.ForEach ((_itemName) => {
-            _ret.Add (new Item (_itemName, 1, Random.Range (1000, 10000000), ""));
-        });
-
+    public List<Item> generate_item_set(List<string> _itemNames) {
+        List<Item> _ret = new List<Item>();
+        for (int i = 0; i < _itemNames.Count; i++) {
+            _ret.Add(new Item(_itemNames[i], 1, Random.Range(1000, 10000000), ""));
+        }
         return _ret;
     }
 
-    /*
-        FOR EQUIP
-    */
-    public List<Item> get_equipped_items (string _charName){
+    public List<Item> get_equipped_items(string _charName) {
         load_items();
-        return items.Where(item => item.equippedBy == _charName).ToList();
+        List<Item> equippedItems = new List<Item>();
+        for (int i = 0; i < items.Count; i++) {
+            if (items[i].equippedBy == _charName) {
+                equippedItems.Add(items[i]);
+            }
+        }
+        return equippedItems;
     }
 
     public void set_item_equip(Item _item, string _charName) {
         List<Item> equippedItems = get_equipped_items(_charName);
 
-        // Find the item to change based on the equip slot (e.g., weapon, armor)
         bool hasOldEquip = false;
-        Item _toChange = equippedItems.FirstOrDefault((item) => {
+        Item _toChange = default(Item);
+        for (int i = 0; i < equippedItems.Count; i++) {
             Inv2_DB.ItemData _dataToSet = Inv2_DB.I.get_item_data(_item.name);
-            Inv2_DB.ItemData _dataToChange = Inv2_DB.I.get_item_data(item.name);
-            hasOldEquip = _dataToSet.equipTo == _dataToChange.equipTo;
-            return hasOldEquip;
-        });
-
-        if (hasOldEquip) {
-            // Clear the equipped status of the current item
-            _toChange.equippedBy = "";
-
-            // Find the index of the current equipped item in the inventory and update it
-            int toChangeIndex = Inv2.I.items.FindIndex(item => item.name == _toChange.name && item.equippedBy == _charName);
-            if (toChangeIndex != -1) {
-                Inv2.I.items[toChangeIndex] = _toChange;
+            Inv2_DB.ItemData _dataToChange = Inv2_DB.I.get_item_data(equippedItems[i].name);
+            if (_dataToSet.equipTo == _dataToChange.equipTo) {
+                _toChange = equippedItems[i];
+                hasOldEquip = true;
+                break;
             }
         }
 
-        // Equip the new item
+        if (hasOldEquip) {
+            _toChange.equippedBy = "";
+            for (int i = 0; i < items.Count; i++) {
+                if (items[i].name == _toChange.name && items[i].equippedBy == _charName) {
+                    items[i] = _toChange;
+                    break;
+                }
+            }
+        }
+
         _item.equippedBy = _charName;
         Debug.Log($"{_item.name} equipped by {_item.equippedBy}");
 
-        // Find the index of the new item in the inventory and update it
-        int itemIndex = Inv2.I.items.FindIndex(item => item.name == _item.name && item.equippedBy == "");
-        if (itemIndex != -1) {
-            Inv2.I.items[itemIndex] = _item;
+        for (int i = 0; i < items.Count; i++) {
+            if (items[i].name == _item.name && items[i].equippedBy == "") {
+                items[i] = _item;
+                break;
+            }
         }
 
-        // Save the updated inventory
         save_items();
     }
 
-    /*
-        EXTRAS
-    */
-    public void log_all_items (){
-        Debug.Log ("///////////////// LOGGING ALL ITEMS ////////////////////////");
-
-        items.ForEach ((item) => {
-            Inv2_DB.ItemData _itemData = Inv2_DB.I.get_item_data (item.name);
-            Debug.Log ($"{item.name}, {_itemData.equipTo}, {item.equippedBy}");
-        });
-
-        Debug.Log ("///////////////// ALL ITEMS LOGGED ////////////////////////");
+    public void log_all_items() {
+        Debug.Log("///////////////// LOGGING ALL ITEMS ////////////////////////");
+        for (int i = 0; i < items.Count; i++) {
+            Inv2_DB.ItemData _itemData = Inv2_DB.I.get_item_data(items[i].name);
+            Debug.Log($"{items[i].name}, {_itemData.equipTo}, {items[i].equippedBy}");
+        }
+        Debug.Log("///////////////// ALL ITEMS LOGGED ////////////////////////");
     }
 }
