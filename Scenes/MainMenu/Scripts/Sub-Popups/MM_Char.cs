@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -8,7 +7,7 @@ using DG.Tweening;
 
 public class MM_Char : MonoBehaviour {
     public static MM_Char I;
-	public void Awake(){ I = this; }
+    public void Awake() { I = this; }
 
     public GameObject go;
     public List<GameObject> goWindows;
@@ -24,7 +23,7 @@ public class MM_Char : MonoBehaviour {
     public int curTabIndex;
     public string curChar;
 
-    public void setup (){
+    public void setup () {
 
     }
 
@@ -33,6 +32,7 @@ public class MM_Char : MonoBehaviour {
         curChar = _char;
         change_tab(0);
 
+        // Fetch character data
         DB_Chars.CharData _charData = DB_Chars.I.get_char_data(_char);
         t_name.text = _charData.nameUI;
         t_desc.text = _charData.desc;
@@ -43,66 +43,84 @@ public class MM_Char : MonoBehaviour {
         t_skill1.text = _charData.bioSkill1;
         t_skill2.text = _charData.bioSkill2;
 
-        t_statsCombat.text = $"HP: {StatCalc.I.get_stat (_char, "hp")}\n" +
-                             $"Attack: {StatCalc.I.get_stat (_char, "attack")}\n" +
-                             //$"Range: {StatCalc.I.get_stat (_char, "range")}\n" +
-                             $"Skill: {StatCalc.I.get_stat (_char, "skill")}\n" +
-                             //$"Speed: {StatCalc.I.get_stat (_char, "speed")}\n" +
-                             //$"Armor: {StatCalc.I.get_stat (_char, "armor")}\n" +
-                             $"Crit Rate: {StatCalc.I.get_stat (_char, "crit-rate")}%\n" +
-                             $"Crit Dam: {StatCalc.I.get_stat (_char, "crit-dam")}%";
+        // Use cached stats from _charStats
+        Dictionary<string, int> _charStats = StatCalc.I.get_all_stats_of_char(_char);
 
-        t_statsOther.text = $"Science: {StatCalc.I.get_stat (_char, "science")}\n" +
-                            $"Magic: {StatCalc.I.get_stat (_char, "magic")}\n" +
-                            $"Driving: {StatCalc.I.get_stat (_char, "driving")}\n" +
-                            $"Espionage: {StatCalc.I.get_stat (_char, "espionage")}\n" +
-                            $"Computers: {StatCalc.I.get_stat (_char, "computers")}\n" +
-                            $"Repair: {StatCalc.I.get_stat (_char, "repair")}\n" +
-                            $"Luck: {StatCalc.I.get_stat (_char, "luck")}";
+        // Access stats from the dictionary instead of calling get_stat multiple times
+        t_statsCombat.text = $"HP: {(_charStats.ContainsKey("hp") ? _charStats["hp"] : 0)}\n" +
+                             $"Attack: {(_charStats.ContainsKey("attack") ? _charStats["attack"] : 0)}\n" +
+                             $"Skill: {(_charStats.ContainsKey("skill") ? _charStats["skill"] : 0)}\n" +
+                             $"Crit Rate: {(_charStats.ContainsKey("crit-rate") ? _charStats["crit-rate"] : 0)}%\n" +
+                             $"Crit Dam: {(_charStats.ContainsKey("crit-dam") ? _charStats["crit-dam"] : 0)}%";
+
+        t_statsOther.text = $"Science: {(_charStats.ContainsKey("science") ? _charStats["science"] : 0)}\n" +
+                            $"Magic: {(_charStats.ContainsKey("magic") ? _charStats["magic"] : 0)}\n" +
+                            $"Driving: {(_charStats.ContainsKey("driving") ? _charStats["driving"] : 0)}\n" +
+                            $"Espionage: {(_charStats.ContainsKey("espionage") ? _charStats["espionage"] : 0)}\n" +
+                            $"Computers: {(_charStats.ContainsKey("computers") ? _charStats["computers"] : 0)}\n" +
+                            $"Repair: {(_charStats.ContainsKey("repair") ? _charStats["repair"] : 0)}\n" +
+                            $"Luck: {(_charStats.ContainsKey("luck") ? _charStats["luck"] : 0)}";
+
         set_equips();
     }
 
-    public void hide (){set_show (false, "");}
+    public void hide () { set_show(false, ""); }
 
-    public void change_tab (int _ind){
+    public void change_tab(int _ind) {
         curTabIndex = _ind;
-        goWindows.ForEach ((window) => window.SetActive (false));
-        btnTabs.ForEach ((tab) => tab.image.sprite = i_tabUnselected);
+        // Manual loop to replace ForEach for goWindows
+        for (int i = 0; i < goWindows.Count; i++) {
+            goWindows[i].SetActive(false);
+        }
+        // Manual loop to replace ForEach for btnTabs
+        for (int i = 0; i < btnTabs.Count; i++) {
+            btnTabs[i].image.sprite = i_tabUnselected;
+        }
 
-        goWindows [_ind].SetActive (true);
-        btnTabs [_ind].image.sprite = i_tabSelected;
+        goWindows[_ind].SetActive(true);
+        btnTabs[_ind].image.sprite = i_tabSelected;
     }
 
     public void set_equips() {
-        t_equips.ForEach((txt) => txt.text = "Empty");
-        i_equips.ForEach((img) => img.sprite = Sprites.I.get_sprite("empty"));
+        // Manual loop to replace ForEach for t_equips
+        for (int i = 0; i < t_equips.Count; i++) {
+            t_equips[i].text = "Empty";
+        }
+        // Manual loop to replace ForEach for i_equips
+        for (int i = 0; i < i_equips.Count; i++) {
+            i_equips[i].sprite = Sprites.I.get_sprite("empty");
+        }
 
         List<string> equipStrList = Inv2.I.equipStrList;
         List<Inv2.Item> equippedItems = Inv2.I.get_equipped_items(curChar);
 
-        equippedItems.ForEach((item) => {
+        // Manual loop to replace ForEach for equippedItems
+        for (int i = 0; i < equippedItems.Count; i++) {
+            Inv2.Item item = equippedItems[i];
             Inv2_DB.ItemData _itemData = Inv2_DB.I.get_item_data(item.name);
-            
-            int _index = equipStrList.FindIndex(equipType => {
-                Debug.Log ($"{equipType}, {_itemData.equipTo}");
-                return equipType == _itemData.equipTo;
-            });
+
+            // Manually find the index (replacing FindIndex)
+            int _index = -1;
+            for (int j = 0; j < equipStrList.Count; j++) {
+                if (equipStrList[j] == _itemData.equipTo) {
+                    _index = j;
+                    break;
+                }
+            }
 
             if (_index != -1) {
-                Debug.Log ($"{_itemData.nameUI}");
-                t_equips[_index].text = _itemData.nameUI; 
+                t_equips[_index].text = _itemData.nameUI;
                 i_equips[_index].sprite = _itemData.sprite;
             }
-        });
+        }
     }
 
-    public void btn_equip (int _ind){
-
-        MM_Inv2.I.itemSet = Inv2.I.equipStrList [_ind];
+    public void btn_equip (int _ind) {
+        MM_Inv2.I.itemSet = Inv2.I.equipStrList[_ind];
         if (MM_Inv2.I.itemSet == "weapon") {
-            DB_Chars.CharData _charData = DB_Chars.I.get_char_data (curChar);
+            DB_Chars.CharData _charData = DB_Chars.I.get_char_data(curChar);
             MM_Inv2.I.itemSet = _charData.equipWeapon;
         }
-        MM_Inv2.I.show ("equip");
+        MM_Inv2.I.show("equip");
     }
 }

@@ -15,21 +15,28 @@ public class Skill_ElectricSlash : SkillTrig {
     public bool isUsingSkill = false;
 
     private float DIST_PER_EXPLOSION_EFFECT, curDistExpEffect;
-
+    
     private GameObject slashInstance; // Store the front slash instance
     private InGameObject ownerComp; // Cache the owner component for reuse
     private BoxCollider2D boxCollider; // Cache the BoxCollider2D
+    
+    // New variables for dash
+    public float dashDuration; // Duration of the dash
+    private float dashTimer; // Timer to track dash progress
+    public float dashSpeed; // Speed of the dash
 
     public override void on_start (){
         hitIDs = new List<int>();
         boxCollider = gameObject.GetComponent<BoxCollider2D>();
+
+        dashDuration = 0.5f;
+        dashTimer = 0f;
+        dashSpeed = 22f;
     }
 
     public override void use_active (){
         if (!use_check()) return;
-        
-        float DIST = 6f;
-        
+
         ownerComp = gameObject.GetComponent<InGameObject>();
         if (!DB_Conditions.I.can_move(ownerComp)) return;
 
@@ -38,11 +45,12 @@ public class Skill_ElectricSlash : SkillTrig {
         // Determine the owner's facing direction and movement
         dashAngle = Calculator.I.get_ang_from_point_and_mouse(_pos);
         ContObj.I.change_facing(ownerComp, (Calculator.I.is_mouse_left_of_object(ownerComp) ? "left" : "right"));
-        ContObj.I.instant_move_upd_start_dist(ownerComp, dashAngle, 0.5f, 9f, "electric-slash");
-        InGameCamera.I.point_to_target();
+        
+        // Start the dash timer
+        dashTimer = 0f;
 
+        // Buff and effects
         ContBuffs.I.add_buff(ownerComp, "invulnerable"); // 0.5s default duration
-
         SoundHandler.I.play_sfx("dash");
         MUI_Overlay.I.show_overlay("zoom");
 
@@ -78,37 +86,48 @@ public class Skill_ElectricSlash : SkillTrig {
             update_front_slash_position(_owner);
         }
 
-        // End the slash skill if the movement is finished
-        if (_owner.instMov_mode != "electric-slash") {
-            isUsingSkill = false;
-            hitIDs.Clear();
+        // Dash movement logic
+        dashTimer += Time.deltaTime;
+        if (dashTimer < dashDuration) {
+            // Move the owner in the direction of the dash
+            Vector2 dashDirection = new Vector2(Mathf.Cos(dashAngle * Mathf.Deg2Rad), Mathf.Sin(dashAngle * Mathf.Deg2Rad));
+            _owner.transform.position += (Vector3)(dashDirection * dashSpeed * Time.deltaTime);
+        } else {
+            // End the slash skill if the dash duration is over
+            EndSlashSkill(_owner);
+        }
+    }
 
-            ContEffect.I.create_effect ("smoke-expand", gameObject.transform.position);
+    private void EndSlashSkill(InGameObject _owner) {
+        isUsingSkill = false;
+        hitIDs.Clear();
 
-            // Apply final knockback to units in the area
-            List<InGameObject> _objs = ContObj.I.get_objs_in_area(_pos, RANGE_FINAL_KNOCK);
-            foreach (InGameObject _o in _objs) {
-                if (!DB_Conditions.I.dam_condition(_owner, _o)) continue;
+        ContEffect.I.create_effect("smoke-expand", gameObject.transform.position);
 
-                ContObj.I.instant_move_upd_start_dist(_o, Calculator.I.get_ang_from_2_points_deg(_pos, _o.transform.position), SPEED_KNOCK, DIST_KNOCK);
-            }
+        // Apply final knockback to units in the area
+        Vector2 _pos = _owner.transform.position;
+        List<InGameObject> _objs = ContObj.I.get_objs_in_area(_pos, RANGE_FINAL_KNOCK);
+        foreach (InGameObject _o in _objs) {
+            if (!DB_Conditions.I.dam_condition(_owner, _o)) continue;
 
-            // Create missiles
-            for (var i = 0; i < 8; i++) {
-                InGameObject _missile = create_missile(ownerComp, 45 * i);
-                _missile.timedLife = 0.4f;
-            }
+            ContObj.I.instant_move_upd_start_dist(_o, Calculator.I.get_ang_from_2_points_deg(_pos, _o.transform.position), SPEED_KNOCK, DIST_KNOCK);
+        }
 
-            // Destroy the front slash object
-            if (slashInstance != null) {
-                Destroy(slashInstance);
-                slashInstance = null;
-            }
+        // Create missiles
+        for (var i = 0; i < 8; i++) {
+            InGameObject _missile = create_missile(ownerComp, 45 * i);
+            _missile.timedLife = 0.4f;
+        }
 
-            // Re-enable BoxCollider2D after the dash ends
-            if (boxCollider != null) {
-                boxCollider.enabled = true;
-            }
+        // Destroy the front slash object
+        if (slashInstance != null) {
+            Destroy(slashInstance);
+            slashInstance = null;
+        }
+
+        // Re-enable BoxCollider2D after the dash ends
+        if (boxCollider != null) {
+            boxCollider.enabled = true;
         }
     }
 
@@ -132,7 +151,6 @@ public class Skill_ElectricSlash : SkillTrig {
         _missileComp.hitDam = _ownerComp.skill;
 
         ContObj.I.const_move_ang_set(_missileComp, _ang, _missileComp.speed);
-
         _missileComp.controllerID = _ownerComp.id;
 
         return _missileComp;

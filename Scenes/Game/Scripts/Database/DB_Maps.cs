@@ -39,15 +39,15 @@ public class DB_Maps : MonoBehaviour {
                 break;
             case "map-wooster-square-2": 
                 _new = get_map_details_generic (_new);
-                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare2, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
                 break;
             case "map-wooster-square-3": 
                 _new = get_map_details_generic (_new);
-                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare3, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
                 break;
             case "map-wooster-square-4": 
                 _new = get_map_details_generic (_new);
-                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                _new.mapObj = GameObject.Instantiate (goMap_woosterSquare4, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
                 break;
             
             case "woosterSquare_rand":

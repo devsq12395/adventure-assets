@@ -43,7 +43,7 @@ public class Transition_Game : MonoBehaviour {
     }
 
     private void move_curtain() {
-        float speed = 1f;
+        float speed = 1.75f;
 
         curtainRect.DOAnchorPosX(targetX, speed).OnComplete(() => curtain_move_end());
     }

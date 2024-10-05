@@ -16,7 +16,7 @@ public class Inv2_DB : MonoBehaviour {
     private Dictionary<string, ItemData> itemDataCache = new Dictionary<string, ItemData>();
 
     public struct ItemData {
-        public string nameUI, desc, equipTo;
+        public string nameUI, desc, details, equipTo;
         public int cost, stackMax;
         public bool stackable;
         public List<string> tags;
@@ -26,7 +26,7 @@ public class Inv2_DB : MonoBehaviour {
         public int bonusScience, bonusMagic, bonusDriving, bonusEspionage, bonusComputers, bonusRepair, bonusLuck;
 
         public ItemData (string _name){
-            nameUI="";desc="";equipTo="";
+            nameUI="";desc="";details="";equipTo="";
             cost=0;stackMax=9999;
             stackable=false;
             tags=new List<string>();
@@ -44,30 +44,33 @@ public class Inv2_DB : MonoBehaviour {
                 case "iron-sword":
                     _new.nameUI="Iron Sword";
                     _new.desc="+10 Damage\nA cheaply forged sword. Enough for basic self-defense.";
+                    _new.details="Cost: 100 Gold\nTags: weapon, sword";
                     _new.equipTo="weapon";
                     _new.tags.AddRange(new List<string> { "weapon", "sword" });
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
                     _new.cost = 100;
                     _new.stackable = false;
 
-                    _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusHP=0;_new.bonusATK=10;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                     _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
                 case "homemade-gun":
                     _new.nameUI="Homemade Gun";
                     _new.desc="+10 Damage\nCrudely made pistol. Recommended for travelers with no money.";
+                    _new.details="Cost: 100 Gold\nTags: weapon, gun";
                     _new.equipTo="weapon";
                     _new.tags.AddRange(new List<string> { "weapon", "gun" });
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
                     _new.cost = 100;
                     _new.stackable = false;
 
-                    _new.bonusHP=0;_new.bonusATK=1;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusHP=0;_new.bonusATK=10;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                     _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
                 case "leather-jacket":
                     _new.nameUI="Leather Jacket";
                     _new.desc="+20 HP\nA jacket thick enough to block most attacks.";
+                    _new.details="Cost: 150 Gold\nTags: armor, jacket";
                     _new.equipTo="armor";
                     _new.tags.AddRange(new List<string> { "armor", "jacket" });
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
@@ -80,19 +83,21 @@ public class Inv2_DB : MonoBehaviour {
                 case "fake-crossovers":
                     _new.nameUI="Fake Crossovers";
                     _new.desc="+10 skill\nAn imitation of a popular shoe model.";
+                    _new.details="Cost: 250 Gold\nTags: boots, shoes, sports";
                     _new.equipTo="boots";
                     _new.tags.AddRange(new List<string> { "boots", "shoes", "sports" });
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
                     _new.cost = 250;
                     _new.stackable = false;
 
-                    _new.bonusHP=20;_new.bonusATK=0;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
+                    _new.bonusHP=0;_new.bonusATK=0;_new.bonusRange=0;_new.bonusSkill=10;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                     _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
 
                 case "magic-stick":
                     _new.nameUI="Magic Stick";
                     _new.desc="+5 Damage\n+15 skill\nA long stick imbued with mana.";
+                    _new.details="Cost: 300 Gold\nTags: weapon, staff";
                     _new.equipTo="weapon";
                     _new.tags.AddRange(new List<string> { "weapon", "staff"});
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
@@ -105,8 +110,9 @@ public class Inv2_DB : MonoBehaviour {
                 case "ring-of-burning-scourge":
                     _new.nameUI="Ring of Burning Scourge";
                     _new.desc="+15% damage to damages tagged fire\n+30% damage to enemies tagged plant\n\nSpecifically designed to make forest clearing easy.";
+                    _new.details="Cost: 400 Gold\nTags: ring, accessory, fire, enchanted";
                     _new.equipTo="accessory";
-                    _new.tags.AddRange(new List<string> { "ring", "accessory"});
+                    _new.tags.AddRange(new List<string> { "ring", "accessory", "fire", "enchanted"});
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
                     _new.cost = 400;
                     _new.stackable = false;
@@ -117,8 +123,9 @@ public class Inv2_DB : MonoBehaviour {
                 case "gloves-of-pro-driving":
                     _new.nameUI="Gloves of Pro Driving";
                     _new.desc="+1 to Driving\n\nThey say it improves your driving skills, but it's just a pair of gloves.";
+                    _new.details="Cost: 50 Gold\nTags: gloves, accessory, driving";
                     _new.equipTo="accessory";
-                    _new.tags.AddRange(new List<string> { "gloves", "accessory"});
+                    _new.tags.AddRange(new List<string> { "gloves", "accessory", "driving"});
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
                     _new.cost = 50;
                     _new.stackable = false;
@@ -130,9 +137,11 @@ public class Inv2_DB : MonoBehaviour {
                 case "bb-gun":
                     _new.nameUI="BB Gun";
                     _new.desc="A gun that shoots small plastic pellets.";
+                    _new.details="";
                     _new.equipTo="weapon";
                     _new.tags.AddRange(new List<string> { "weapon", "gun" });
                     _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.cost = 50;
                     _new.stackable = false;
 
                     _new.bonusHP=0;_new.bonusATK=0;_new.bonusRange=0;_new.bonusSkill=0;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
@@ -142,8 +151,10 @@ public class Inv2_DB : MonoBehaviour {
                 case "gold":
                     _new.nameUI="Gold";
                     _new.desc="";
+                    _new.details="";
                     _new.equipTo="";
                     _new.tags.AddRange(new List<string> { "weapon", "gun" });
+                    _new.cost=0;
                     _new.sprite = Sprites.I.get_sprite ("itm-gold");
                     _new.stackable = false;
 

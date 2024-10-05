@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 4072382378056382313}
   - component: {fileID: -2353655394758298456}
   m_Layer: 0
-  m_Name: luca-the-terror-new
+  m_Name: mobster-leader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,8 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1a6e5b6f7a0ef489fa41f463cfed01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: luca-the-terror
-  nameUI: Luca the Terror
+  name: mobster-leader
+  nameUI: Mobster Leader
   type: unit
   owner: 0
   id: 0
@@ -380,7 +380,13 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
+  hitIDs: 
+  isUsingSkill: 0
   DIST: 6
+  RANGE_AOE: 0
+  SPEED_KNOCK: 0
+  DIST_KNOCK: 0
+  afterimage: {fileID: 0}
 --- !u!114 &2303976454598103485
 MonoBehaviour:
   m_ObjectHideFlags: 0

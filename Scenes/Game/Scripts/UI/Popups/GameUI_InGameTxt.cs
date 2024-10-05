@@ -9,7 +9,7 @@ public class GameUI_InGameTxt : MonoBehaviour {
     public static GameUI_InGameTxt I;
     public void Awake() { I = this; }
 
-    public GameObject goCanvas;
+    public GameObject goCanvas; // Canvas set to World Space
 
     public struct InGameTxt {
         public GameObject go;
@@ -48,34 +48,40 @@ public class GameUI_InGameTxt : MonoBehaviour {
     }
 
     public GameObject create_ingame_txt(string _txt, Vector2 _pos, float _dur) {
+        // Ensure position is valid
         _pos = check_if_pos_used(_pos);
 
+        // Spawn the damage text game object
         GameObject _go = DB_Objects.I.get_game_obj("damTxt");
-        _go.transform.position = _pos;
-        _go.transform.SetParent(goCanvas.transform);
 
+        // Make the text a child of the canvas (which is set to World Space)
+        _go.transform.SetParent(goCanvas.transform, false);
+
+        // Set the world position of the text
+        _go.transform.position = new Vector2 (_pos.x, _pos.y + 2);
+
+        // Adjust scale for readability in World Space
         Canvas _canvas = _go.transform.Find("Canvas").GetComponent<Canvas>();
-        _canvas.worldCamera = Camera.main;
-        _canvas.sortingOrder = 1;
+        _canvas.transform.localScale = new Vector3(22f, 22f, 1f); // Adjust scale if needed for visibility
 
+        // Get the TextMeshProUGUI component
         TextMeshProUGUI _newTxtUI = _canvas.transform.Find("DamTxt").GetComponent<TextMeshProUGUI>();
 
-        // Set text color to yellow if the text is "Critical!"
+        // Customize text appearance (color, size, etc.)
         if (_txt == "Critical!") {
             _newTxtUI.color = Color.yellow;
         }
-
-        // Set the text scale to 1.5 times its original size
+        _newTxtUI.fontSize = 2; // Font size appropriate for World Space
         _newTxtUI.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 
         // Enable and set the outline properties
         _newTxtUI.fontMaterial.EnableKeyword("OUTLINE_ON");
-        _newTxtUI.outlineWidth = 0.2f; // Adjust the width as needed
+        _newTxtUI.outlineWidth = 0.2f;
         _newTxtUI.gameObject.SetActive(false);
-        _newTxtUI.fontSharedMaterial.SetColor("_OutlineColor", Color.black); // Set outline color to black
+        _newTxtUI.fontSharedMaterial.SetColor("_OutlineColor", Color.black);
         _newTxtUI.gameObject.SetActive(true);
 
-        // Animate the text: scale and position tweens
+        // Animate the text (only for non-critical texts)
         if (_txt != "Critical!") {
             _newTxtUI.transform.localScale = Vector3.zero;
             _newTxtUI.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.1f).OnComplete(() => {
@@ -83,11 +89,14 @@ public class GameUI_InGameTxt : MonoBehaviour {
             });
         }
 
-        _newTxtUI.DOFade(1f, _dur - _dur * 0.75f).OnComplete(()=>{
+        _newTxtUI.DOFade(1f, _dur - _dur * 0.75f).OnComplete(() => {
             _newTxtUI.DOFade(0f, _dur - _dur * 0.25f);
         });
-        _newTxtUI.rectTransform.DOAnchorPosY(_newTxtUI.rectTransform.anchoredPosition.y + 9f, _dur).SetUpdate (true);
 
+        // Animate movement upwards in world space
+        _newTxtUI.rectTransform.DOAnchorPosY(_newTxtUI.rectTransform.anchoredPosition.y + 9f, _dur).SetUpdate(true);
+
+        // Add new InGameTxt to the list
         InGameTxt _new = new InGameTxt(_go, _newTxtUI, _txt, _dur, _pos);
         txtList.Add(_new);
 
@@ -110,10 +119,10 @@ public class GameUI_InGameTxt : MonoBehaviour {
             InGameTxt _item = txtList[i];
             _item.dur -= Time.deltaTime;
 
-            // Move text up over time
-            Vector2 newPos = _item.txtUI.rectTransform.anchoredPosition;
+            // Move text up over time in world space
+            Vector3 newPos = _item.go.transform.position;
             newPos.y += 0.03f; // Adjust the speed of movement here
-            _item.txtUI.rectTransform.anchoredPosition = newPos;
+            _item.go.transform.position = newPos;
 
             // Check if the text has expired
             if (_item.dur <= 0) {
@@ -124,5 +133,4 @@ public class GameUI_InGameTxt : MonoBehaviour {
             }
         }
     }
-
 }

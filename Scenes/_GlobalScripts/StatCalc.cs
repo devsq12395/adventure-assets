@@ -5,56 +5,79 @@ using UnityEngine;
 public class StatCalc : MonoBehaviour {
 
     public static StatCalc I;
-    public void Awake(){ I = this; }
+    public void Awake() { I = this; }
 
-    public int get_stat (string _charName, string _stat) {
-        List<Inv2.Item> itemsEquipped = Inv2.I.get_equipped_items (_charName);
-        int _ret = 0;
+    // Cache dictionary for character stats
+    private Dictionary<string, Dictionary<string, int>> characterStatsCache = new Dictionary<string, Dictionary<string, int>>();
 
-        DB_Chars.CharData _charData = DB_Chars.I.get_char_data (_charName);
-
-        switch (_stat) {
-            case "hp":                      _ret += _charData.statHP; break;
-            case "attack":                  _ret += _charData.statAtk; break;
-            case "range":                   _ret += _charData.statRange; break;
-            case "skill":                   _ret += _charData.statSkill; break;
-            case "speed":                   _ret += _charData.statSpeed; break;
-            case "armor":                   _ret += _charData.statArmor; break;
-            case "crit-rate":               _ret += _charData.statCritRate; break;
-            case "crit-dam":                _ret += _charData.statCritDam; break;
-
-            case "science":                _ret += _charData.statScience; break;
-            case "magic":                _ret += _charData.statMagic; break;
-            case "driving":                _ret += _charData.statDriving; break;
-            case "espionage":                _ret += _charData.statEspionage; break;
-            case "computers":                _ret += _charData.statComputers; break;
-            case "repair":                _ret += _charData.statRepair; break;
-            case "luck":                _ret += _charData.statLuck; break;
+    // Get the stat of a specific character
+    public int get_stat(string _charName, string _stat) {
+        if (characterStatsCache.ContainsKey(_charName) && characterStatsCache[_charName].ContainsKey(_stat)) {
+            return characterStatsCache[_charName][_stat];
         }
 
-        itemsEquipped.ForEach ((_item) => {
-            Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data (_item.name);
+        // If not in cache, calculate all stats and store them
+        Dictionary<string, int> allStats = get_all_stats_of_char(_charName);
+        if (allStats.ContainsKey(_stat)) {
+            return allStats[_stat];
+        }
 
-            switch (_stat) {
-                case "hp":                      _ret += _data.bonusHP; break;
-                case "attack":                  _ret += _data.bonusATK; break;
-                case "range":                   _ret += _data.bonusRange; break;
-                case "skill":                   _ret += _data.bonusSkill; break;
-                case "speed":                   _ret += _data.bonusSpeed; break;
-                case "armor":                   _ret += _data.bonusArmor; break;
-                case "crit-rate":               _ret += _data.bonusCritRate; break;
-                case "crit-dam":                _ret += _data.bonusCritDam; break;
+        return 0; // Default value if the stat is not found
+    }
 
-                case "science":                _ret += _data.bonusScience; break;
-            case "magic":                _ret += _data.bonusMagic; break;
-            case "driving":                _ret += _data.bonusDriving; break;
-            case "espionage":                _ret += _data.bonusEspionage; break;
-            case "computers":                _ret += _data.bonusComputers; break;
-            case "repair":                _ret += _data.bonusRepair; break;
-            case "luck":                _ret += _data.bonusLuck; break;
-            }
-        });
+    // Method to calculate and cache all stats of a character
+    public Dictionary<string, int> get_all_stats_of_char(string _charName) {
+        if (characterStatsCache.ContainsKey(_charName)) {
+            return characterStatsCache[_charName]; // Return cached stats if they already exist
+        }
 
-        return _ret;
+        Dictionary<string, int> stats = new Dictionary<string, int>();
+
+        DB_Chars.CharData _charData = DB_Chars.I.get_char_data(_charName);
+        List<Inv2.Item> itemsEquipped = Inv2.I.get_equipped_items(_charName);
+
+        // Calculate base stats and add to the dictionary
+        stats["hp"] = _charData.statHP;
+        stats["attack"] = _charData.statAtk;
+        stats["range"] = _charData.statRange;
+        stats["skill"] = _charData.statSkill;
+        stats["speed"] = _charData.statSpeed;
+        stats["armor"] = _charData.statArmor;
+        stats["crit-rate"] = _charData.statCritRate;
+        stats["crit-dam"] = _charData.statCritDam;
+        stats["science"] = _charData.statScience;
+        stats["magic"] = _charData.statMagic;
+        stats["driving"] = _charData.statDriving;
+        stats["espionage"] = _charData.statEspionage;
+        stats["computers"] = _charData.statComputers;
+        stats["repair"] = _charData.statRepair;
+        stats["luck"] = _charData.statLuck;
+
+        // Add bonuses from equipped items
+        for (int i = 0; i < itemsEquipped.Count; i++) {
+            Inv2.Item _item = itemsEquipped[i];
+            Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(_item.name);
+
+            stats["hp"] += _data.bonusHP;
+            stats["attack"] += _data.bonusATK;
+            stats["range"] += _data.bonusRange;
+            stats["skill"] += _data.bonusSkill;
+            stats["speed"] += _data.bonusSpeed;
+            stats["armor"] += _data.bonusArmor;
+            stats["crit-rate"] += _data.bonusCritRate;
+            stats["crit-dam"] += _data.bonusCritDam;
+            stats["science"] += _data.bonusScience;
+            stats["magic"] += _data.bonusMagic;
+            stats["driving"] += _data.bonusDriving;
+            stats["espionage"] += _data.bonusEspionage;
+            stats["computers"] += _data.bonusComputers;
+            stats["repair"] += _data.bonusRepair;
+            stats["luck"] += _data.bonusLuck;
+        }
+
+        // Cache the calculated stats for future use
+        characterStatsCache[_charName] = stats;
+
+        return stats;
     }
 }
