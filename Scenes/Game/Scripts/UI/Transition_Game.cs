@@ -26,7 +26,7 @@ public class Transition_Game : MonoBehaviour {
 
         Vector2 _curtainPos;
         switch (_state) {
-            case "gameStart":
+            case "gameStart": Debug.Log ("game start");
                 _curtainPos = new Vector2(0, curtainRect.anchoredPosition.y);
                 targetX = Screen.width + curtainRect.rect.width / 2;
                 break;
