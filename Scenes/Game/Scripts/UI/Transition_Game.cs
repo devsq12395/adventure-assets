@@ -19,6 +19,7 @@ public class Transition_Game : MonoBehaviour {
     void Start() {
         curtainGo.SetActive(true);
         change_state("gameStart", 0, curtainRect.anchoredPosition.y);
+        
     }
 
     public void change_state(string _state, float _curtainPosX = 0, float _curtainPosY = 0) {
@@ -26,7 +27,7 @@ public class Transition_Game : MonoBehaviour {
 
         Vector2 _curtainPos;
         switch (_state) {
-            case "gameStart": Debug.Log ("game start");
+            case "gameStart":
                 _curtainPos = new Vector2(0, curtainRect.anchoredPosition.y);
                 targetX = Screen.width + curtainRect.rect.width / 2;
                 break;
