@@ -15,6 +15,13 @@ public class ContMap : MonoBehaviour
 
     public void setup_map()
     {
+        Grid[] allGrids = FindObjectsOfType<Grid>();
+        foreach (Grid gridObject in allGrids) {
+            if (gridObject != null){
+                Destroy(gridObject.gameObject);
+            }
+        }
+
         string _mission = ZPlayerPrefs.GetString("missionCur");
         DB_Missions.MissionData _data = DB_Missions.I.get_mission_data (_mission);
         List<string> _maps = _data.maps;
