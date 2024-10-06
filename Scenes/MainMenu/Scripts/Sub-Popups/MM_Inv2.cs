@@ -14,6 +14,9 @@ public class MM_Inv2 : MonoBehaviour {
 	public CanvasGroup canvasGroup; // Add this for controlling alpha
 	public RectTransform imgWindow, imgWindow_itemInfo; // Add this for controlling the y position
 
+	public Image img_window1, img_window2;
+	public Sprite spr_invWin1, spr_invWin2, spr_shopWin1, spr_shopWin2;
+
 	public Image i_item;
 	public TextMeshProUGUI t_title, t_itemName, t_itemDetails, t_itemDesc, t_gold, t_page, t_action;
 
@@ -51,17 +54,23 @@ public class MM_Inv2 : MonoBehaviour {
         switch (_itemSetMode) {
         	case "inventory": 
         		itemsSet = Inv2.I.items; 
+        		img_window1.sprite = spr_invWin1;
+        		img_window2.sprite = spr_invWin2;
 
         		goBtnAction.SetActive (false);
         		break;
         	case "equip": 
         		itemsSet = Inv2.I.get_items_with_tag ( itemSet );
+        		img_window1.sprite = spr_invWin1;
+        		img_window2.sprite = spr_invWin2;
 
         		goBtnAction.SetActive (true);
         		t_action.text = "Equip";
         		break;
         	case "shop": 
         		itemsSet = Inv2.I.generate_item_set ( Inv2_DB.I.get_shop_items_sold (itemSet) );
+        		img_window1.sprite = spr_shopWin1;
+        		img_window2.sprite = spr_shopWin2;
 
         		goBtnAction.SetActive (true);
         		t_action.text = "Buy";
