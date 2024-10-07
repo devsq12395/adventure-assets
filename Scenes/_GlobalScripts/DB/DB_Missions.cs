@@ -99,7 +99,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_imgFail = "kazuya";
 
                 _new.enemies.AddRange (new string[]{"mafia-1", "assassin-1", "mafia-2"});
-                _new.maps.AddRange (new string[]{"map-wooster-square-3", "map-wooster-square-2", "map-wooster-square-4"});
+                _new.maps.AddRange (new string[]{"map-wooster-square-4", "map-wooster-square-3", "map-wooster-square-1"});
                 _new.unlocksArea.AddRange (new string[]{"to-wooster-square-3"});
                 _new.missionsSet.AddRange (new string[]{"vincenzo->vincenzo-2"});
                 _new.activitySet.AddRange (new string[]{"dialog-with-vincenzo->2"});
