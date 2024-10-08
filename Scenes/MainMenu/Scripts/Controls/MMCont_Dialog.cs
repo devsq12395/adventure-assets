@@ -16,6 +16,28 @@ public class MMCont_Dialog : MonoBehaviour {
 	*/
 	public void input (MiniDialog _dialog, string _id){
 		switch (_id) {
+
+			// On 0.3 above, the default of this will call set_dialog (_dialog, _id), preventing repetition. <- Only works for Continuation Dialogs.
+			// For New Dialogs (where the old one is set to be destroyed so you need to create a new one), you will find the case statement for this above the default.
+
+			// This is how I simplified the generic dialogs since 0.2
+			case "show-dialog-field-1": set_dialog (_dialog, "dialog-field-1"); break;
+			case "show-dialog-field-2": set_dialog (_dialog, "dialog-field-2"); break;
+			case "show-dialog-field-3": set_dialog (_dialog, "dialog-field-3"); break;
+			case "show-dialog-field-4": set_dialog (_dialog, "dialog-field-4"); break;
+			case "show-dialog-field-5": set_dialog (_dialog, "dialog-field-5"); break;
+			case "show-dialog-field-6": set_dialog (_dialog, "dialog-field-6"); break;
+			case "start-mission-field-1": MM_Mission.I.show ("field-1"); break;
+
+			case "show-dialog-beatrice-1": set_dialog (_dialog, "dialog-beatrice-1"); break;
+			case "show-dialog-beatrice-2": set_dialog (_dialog, "dialog-beatrice-2"); break;
+			case "show-dialog-beatrice-3": set_dialog (_dialog, "dialog-beatrice-3"); break;
+			case "show-dialog-beatrice-4": set_dialog (_dialog, "dialog-beatrice-4"); break;
+			case "show-dialog-beatrice-5": set_dialog (_dialog, "dialog-beatrice-5"); break;
+			case "show-dialog-beatrice-6": set_dialog (_dialog, "dialog-beatrice-6"); break;
+			case "show-dialog-beatrice-7": set_dialog (_dialog, "dialog-beatrice-7"); break;
+			case "start-mission-beatrice-1": MM_Mission.I.show ("beatrice-1"); break;
+
 			// Dialogs
 			case "show-intro-2": show_intro_2 (_dialog); break;
 			case "show-dialog-vic-2": show_dialog_vic_2 (_dialog); break;
@@ -48,23 +70,6 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "show-dialog-vincenzo-5": show_dialog_vincenzo_5 (_dialog); break;
 			case "show-dialog-vincenzo-6": show_dialog_vincenzo_6 (_dialog); break;
 			case "start-mission-vincenzo-1": start_mission_vincenzo_1 (); break;
-
-			case "show-dialog-field-1": set_dialog (_dialog, "dialog-field-1"); break;
-			case "show-dialog-field-2": set_dialog (_dialog, "dialog-field-2"); break;
-			case "show-dialog-field-3": set_dialog (_dialog, "dialog-field-3"); break;
-			case "show-dialog-field-4": set_dialog (_dialog, "dialog-field-4"); break;
-			case "show-dialog-field-5": set_dialog (_dialog, "dialog-field-5"); break;
-			case "show-dialog-field-6": set_dialog (_dialog, "dialog-field-6"); break;
-			case "start-mission-field-1": MM_Mission.I.show ("field-1"); break;
-
-			case "show-dialog-beatrice-1": set_dialog (_dialog, "dialog-beatrice-1"); break;
-			case "show-dialog-beatrice-2": set_dialog (_dialog, "dialog-beatrice-2"); break;
-			case "show-dialog-beatrice-3": set_dialog (_dialog, "dialog-beatrice-3"); break;
-			case "show-dialog-beatrice-4": set_dialog (_dialog, "dialog-beatrice-4"); break;
-			case "show-dialog-beatrice-5": set_dialog (_dialog, "dialog-beatrice-5"); break;
-			case "show-dialog-beatrice-6": set_dialog (_dialog, "dialog-beatrice-6"); break;
-			case "show-dialog-beatrice-7": set_dialog (_dialog, "dialog-beatrice-7"); break;
-			case "start-mission-beatrice-1": MM_Mission.I.show ("beatrice-1"); break;
 
 			case "start-mission-vic-1": start_mission_vic_1 (); break;
 			case "start-mission-vic-2": start_mission_vic_2 (); break;
@@ -110,11 +115,16 @@ public class MMCont_Dialog : MonoBehaviour {
 			case "back-craft-success": btn_backCraftSuccess (_dialog); break;
 			case "close-inventory-after-equip": callback_close_inventory_after_equip (_dialog); break;
 
-			case "back": btn_back (_dialog); break;
+			case "back": case "shopCancel": btn_back (_dialog); break;
+
+			// New Dialogs
+			case "old-tavern-stories": case "old-tavern-stories-new-haven-1": case "old-tavern-stories-4-families-1": case "the-old-tavern-close-stories":
+				create_dialog (_id);
+				break;
 			
-			// Default
+			// Default - Continuation Dialog
 			default:
-				
+				set_dialog (_dialog, _id);
 				break;
 		}
 	}
@@ -124,7 +134,6 @@ public class MMCont_Dialog : MonoBehaviour {
 	*/
 	public MiniDialog create_dialog (string _dialogID){
 		DB_Dialogs.DialogData _data = DB_Dialogs.I.get_dialog_data (_dialogID);
-		string _json = $"dialogs.{_dialogID}";
 		bool _isMini = _data.isMini == "1";
 
 		GameObject _new = Instantiate (_isMini ? goDialogMini : goDialog, goCanvas.transform);

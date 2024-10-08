@@ -113,21 +113,12 @@ public class DB_Dialogs : MonoBehaviour {
 			    _new.inputTxtBox = new InputData("", "");
 			    break;
 
-			case "the-old-tavern":
-			    _new.name = "Bartender";
-			    _new.desc = "The tavern today is so merry! Which drink do you want, mister?";
-			    _new.portImg = "npc-woman-2";
-			    _new.isTweenOut = "1";
-			    _new.inputEmptyContinue = "";
-			    _new.isMini = "0";
-			    _new.inputScaler_enable = "0";
-			    _new.posX = 0;
-			    _new.posY = 0;
-			    _new.input1 = new InputData("recruit-anastasia-1", "Recruit Anastasia");
-			    _new.input2 = new InputData("recruit-sylphine-1", "Recruit Sylphine");
-			    _new.input3 = new InputData("shopCancel", "Nevermind");
-			    _new.input4 = new InputData("", "");
-			    _new.inputTxtBox = new InputData("", "");
+			case "the-old-tavern": case "the-old-tavern-close-stories":
+			case "old-tavern-stories":
+			case "old-tavern-stories-new-haven-1":case "old-tavern-stories-new-haven-2":case "old-tavern-stories-new-haven-3":case "old-tavern-stories-new-haven-4":
+			case "old-tavern-stories-4-families-1":case "old-tavern-stories-4-families-2":case "old-tavern-stories-4-families-3":case "old-tavern-stories-4-families-4":
+			case "old-tavern-stories-end":
+			    _new = DB_Dialogs_TheOldTavern.I.get_dialog_data (_dialogId, _new);
 			    break;
 
 			case "buy-success":

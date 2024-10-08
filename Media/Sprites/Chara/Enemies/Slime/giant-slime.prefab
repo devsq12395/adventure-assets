@@ -374,12 +374,13 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
-  DIST: 3
   hitIDs: 
   isUsingSkill: 0
+  DIST: 3
   RANGE_AOE: 3
   SPEED_KNOCK: 3
-  DIST_KNOCK: 3
+  DIST_KNOCK: 5
+  afterimage: {fileID: 0}
 --- !u!114 &2344721810868922758
 MonoBehaviour:
   m_ObjectHideFlags: 0
