@@ -2,120 +2,101 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MM_BG : MonoBehaviour
+public class FlagScroller : MonoBehaviour
 {
-    public Image imagePrefab;  // Assign a prefab of the UI Image (flag or game title) from the Inspector
-    public Canvas canvas;  // Reference to the Canvas in which the images will be created
+    public GameObject flagPrefab;  // Prefab of the flag
+    public Canvas parentCanvas;  // Assign this in the editor (the canvas where the flag canvases will be added as children)
+    private List<Canvas> canvases = new List<Canvas>();  // List to store the flag canvases
+    private float canvasWidth;  // Width of each flag canvas
 
-    private List<Image> imageInstances = new List<Image>();
-    private int rows;  // Number of rows
-    private int columns;  // Number of columns
-    private float spacingX;  // Horizontal spacing between images
-    private float spacingY;  // Vertical spacing between images
-    private float scrollSpeed;  // Speed of horizontal scrolling
-    private float batchWidth;  // Width of a single batch
-    private int batchesCount;  // Number of batches to create
+    public int rows;  // Number of rows in each flag canvas
+    public int columns;  // Number of columns in each flag canvas
+    public float spacingX;  // Horizontal spacing between flags
+    public float spacingY;  // Vertical spacing between flags
+    public float scrollSpeed;  // Speed of scrolling
+
+    public float xOffset;  // Horizontal offset for positioning
+    public float yOffset;  // Vertical offset for positioning
 
     void Start()
     {
-        // Set the number of rows, columns, spacing, and scroll speed
-        rows = 3;  // Number of rows
-        columns = 6;  // Number of columns
+        // Initialize variables directly in Start
+        rows = 11;  // Number of rows
+        columns = 4;  // Number of columns
+        spacingX = 300f;  // Horizontal spacing
+        spacingY = 150f;  // Vertical spacing
+        scrollSpeed = 50f;  // Scrolling speed
 
-        // Calculate spacing based on screen size
-        spacingX = Screen.width / (columns + 1);  // Dynamic horizontal spacing based on screen width
-        spacingY = Screen.height / (rows + 1);    // Dynamic vertical spacing based on screen height
-        scrollSpeed = 2.0f;  // Speed of horizontal scrolling
+        xOffset = 0f;  // Initial X offset
+        yOffset = 500f;  // Initial Y offset
 
-        // Calculate the total width of one batch
-        batchWidth = columns * spacingX;
-        batchesCount = 2;  // Number of batches to create
-
-        // Create the initial batches of images
-        CreateInitialBatches();
-    }
-
-    void CreateInitialBatches()
-    {
-        // Create two batches of images
-        for (int batch = 0; batch < batchesCount; batch++)
+        // Create two flag canvases for seamless scrolling
+        for (int i = 0; i < 5; i++)
         {
-            for (int row = 0; row < rows; row++)
-            {
-                for (int col = 0; col < columns; col++)
-                {
-                    if ((row + col) % 2 == 0) // Alternate flags
-                    {
-                        Image image = Instantiate(imagePrefab, canvas.transform);
-                        RectTransform imageRect = image.GetComponent<RectTransform>();
-
-                        // Set the anchor and pivot to top-left for proper positioning
-                        imageRect.anchorMin = new Vector2(0, 1);
-                        imageRect.anchorMax = new Vector2(0, 1);
-                        imageRect.pivot = new Vector2(0, 1);
-
-                        // Calculate the position based on screen size and batch index
-                        Vector2 position = new Vector2(col * spacingX + (batch * batchWidth), -row * spacingY);  // Shift based on batch index
-                        imageRect.anchoredPosition = position;
-
-                        // Add the image to the list for scrolling
-                        imageInstances.Add(image);
-                    }
-                }
-            }
+            CreateCanvas(i);
         }
     }
 
-    void Update()
+    // Creates a flag canvas dynamically and fills it with flags in a diagonal pattern
+    void CreateCanvas(int index)
     {
-        // Scroll the images horizontally
-        foreach (Image image in imageInstances)
-        {
-            RectTransform imageRect = image.GetComponent<RectTransform>();
+        // Dynamically create a new Canvas GameObject
+        GameObject newCanvasObj = new GameObject("FlagCanvas" + index);
+        Canvas newCanvas = newCanvasObj.AddComponent<Canvas>();
+        newCanvas.renderMode = RenderMode.WorldSpace;  // Keep WorldSpace so it can be a child of the parent canvas
+        newCanvasObj.AddComponent<CanvasScaler>();  // Add a CanvasScaler for scaling UI elements
+        newCanvasObj.AddComponent<GraphicRaycaster>();  // Add a GraphicRaycaster for UI interactions
 
-            // Move the image to the left based on scrollSpeed
-            imageRect.anchoredPosition += Vector2.left * scrollSpeed * Time.deltaTime * 100;
+        // Set the parent to the defined parentCanvas in the editor
+        newCanvas.transform.SetParent(parentCanvas.transform, false);
 
-            // Check if the first column of the first batch has gone off-screen
-            if (imageRect.anchoredPosition.x < -spacingX)
-            {
-                // Reset the position to the right side just outside the visible area
-                float yPos = imageRect.anchoredPosition.y;  // Maintain the Y position
-                imageRect.anchoredPosition = new Vector2((batchesCount * batchWidth) + spacingX, yPos);
-            }
-        }
+        // Position the new canvas to the right of the previous canvas (based on index)
+        RectTransform canvasRect = newCanvas.GetComponent<RectTransform>();
+        canvasWidth = columns * spacingX;  // Calculate canvas width based on column count and spacing
+        canvasRect.sizeDelta = new Vector2(canvasWidth, parentCanvas.GetComponent<RectTransform>().rect.height);  // Set canvas size
+        canvasRect.anchoredPosition = new Vector2(index * canvasWidth + xOffset, yOffset);  // Position the canvas with offset
 
-        // Check if we need to instantiate a new batch of images
-        if (imageInstances.Count > 0 && imageInstances[0].GetComponent<RectTransform>().anchoredPosition.x < -spacingX)
-        {
-            CreateNewBatch();
-        }
-    }
-
-    void CreateNewBatch()
-    {
-        // Create a new batch of images positioned just behind the last visible batch
+        // Fill the canvas with flags in a diagonal pattern
         for (int row = 0; row < rows; row++)
         {
             for (int col = 0; col < columns; col++)
             {
-                if ((row + col) % 2 == 0) // Alternate flags
+                // Diagonal pattern logic: Place a flag when (row + col) is even
+                if ((row + col) % 2 == 0)
                 {
-                    Image image = Instantiate(imagePrefab, canvas.transform);
-                    RectTransform imageRect = image.GetComponent<RectTransform>();
+                    // Instantiate flag prefab inside the canvas
+                    GameObject flag = Instantiate(flagPrefab, newCanvas.transform);
+                    RectTransform flagRect = flag.GetComponent<RectTransform>();
 
-                    // Set the anchor and pivot to top-left for proper positioning
-                    imageRect.anchorMin = new Vector2(0, 1);
-                    imageRect.anchorMax = new Vector2(0, 1);
-                    imageRect.pivot = new Vector2(0, 1);
-
-                    // Calculate the position just behind the last visible batch
-                    Vector2 position = new Vector2(batchesCount * batchWidth + (col * spacingX), -row * spacingY);
-                    imageRect.anchoredPosition = position;
-
-                    // Add the image to the list for scrolling
-                    imageInstances.Add(image);
+                    // Set position of the flag based on row and column (Diagonal arrangement)
+                    Vector2 position = new Vector2(col * spacingX, -row * spacingY);
+                    flagRect.anchoredPosition = position;
                 }
+            }
+        }
+
+        // Add the new canvas to the list of canvases
+        canvases.Add(newCanvas);
+    }
+
+    void Update()
+    {
+        // Scroll each canvas to the left
+        foreach (Canvas canvas in canvases)
+        {
+            RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+            canvasRect.anchoredPosition += Vector2.left * scrollSpeed * Time.deltaTime;
+
+            // Check if the canvas has gone off the screen (left side)
+            if (canvasRect.anchoredPosition.x < -canvasWidth * 2)
+            {
+                // Reposition the canvas to the right of the last canvas
+                RectTransform lastCanvasRect = canvases[canvases.Count - 1].GetComponent<RectTransform>();
+                canvasRect.anchoredPosition = new Vector2(lastCanvasRect.anchoredPosition.x + canvasWidth, yOffset);
+
+                // Move the canvas to the end of the list to keep the scrolling order
+                canvases.Remove(canvas);
+                canvases.Add(canvas);
             }
         }
     }

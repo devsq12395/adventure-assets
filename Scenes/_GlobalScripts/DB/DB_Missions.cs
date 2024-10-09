@@ -91,15 +91,15 @@ public class DB_Missions : MonoBehaviour {
                 _new.goldReward = 300;
 
                 _new.gameOverSpk_name = "Boss Vincenzo";
-                _new.gameOverSpk_text = "Well done! Boss Vincenzo will be pleased. You should meet with him at Luppino Family Cafe.";
-                _new.gameOverSpk_img = "vic";
+                _new.gameOverSpk_text = "Nice work! That will show those Rossi thugs who they're messing with. I think you should meet Captain Beatrice. Tell her I sent you.";
+                _new.gameOverSpk_img = "vincenzo";
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "kazuya";
 
-                _new.enemies.AddRange (new string[]{"mafia-1", "assassin-1", "mafia-2"});
-                _new.maps.AddRange (new string[]{"map-wooster-square-4", "map-wooster-square-3", "map-wooster-square-1"});
+                _new.enemies.AddRange (new string[]{"mafia-1", "mafia-2"});
+                _new.maps.AddRange (new string[]{"map-wooster-square-4", "map-wooster-square-3"});
                 _new.unlocksArea.AddRange (new string[]{"to-wooster-square-3"});
                 _new.missionsSet.AddRange (new string[]{"vincenzo->vincenzo-2"});
                 _new.activitySet.AddRange (new string[]{"dialog-with-vincenzo->2"});

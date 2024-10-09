@@ -227,7 +227,7 @@ public class DB_Dialogs : MonoBehaviour {
 			case "wooster-square-house-4":
 			    _new.name = "Man";
 			    _new.desc = "I think a war between the families will erupt soon.";
-			    _new.portImg = "npc-man-2";
+			    _new.portImg = "npc-man-1";
 			    _new.isTweenOut = "1";
 			    _new.inputEmptyContinue = "";
 			    _new.isMini = "0";
