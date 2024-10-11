@@ -45,6 +45,10 @@ public class SkillTrig : MonoBehaviour {
 
         ContDamage.I.lose_mp (_igo, mc);
         cd = cdMax;
+
+        if (scriptTag == "ult") {
+            if (_igo.ultPerc < 100) return false;
+        }
         return true;
     }
 }

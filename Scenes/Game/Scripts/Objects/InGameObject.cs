@@ -23,6 +23,8 @@ public class InGameObject : MonoBehaviour {
     public float speed, attachScaleMultiplier = 1;
     
     [Header("------ NON-EDITABLE PARTS ------")]
+    public int ultPerc;
+
     public float zPos;
     public SkillTrig skill1, skill2;
 

@@ -38,12 +38,20 @@ public class Car : MonoBehaviour
     {
         isStarted = true;
         string curNodeName = PlayerPrefs.GetString("start-node");
+        find_and_set_node (curNodeName);
 
+        if (!curNode) {
+            find_and_set_node ("1");
+        }
+    }
+
+    public void find_and_set_node (string curNodeName){
         // Find the node with the given name in ContMap.I.nodes
         foreach (Node node in MM_Map.I.nodes)
         {
             if (node.name == curNodeName)
             {
+                Debug.Log ($"set curNode to {curNodeName}");
                 curNode = node;
                 transform.position = curNode.transform.position;
                 break;

@@ -39,53 +39,26 @@ public class MM_Craft : MonoBehaviour {
 
 		switch (type) {
 			case "item":
-				tName.text = JsonReading.I.read ("items", $"items.{_name}.name-ui");
-				tDesc.text = JsonReading.I.read ("items", $"items.{_name}.desc");
-				tWindowTitle.text = "Crafting";
-				tBtnText.text = "Craft";
-
-				_goldReq = $"{JsonReading.I.get_str ("gold")}: {JsonReading.I.read ("items", $"items.{_name}.cost")}";
-				_itemReq = string.Join ("\n", JsonReading.I.read ("items", $"items.{_name}.requires").Split(',').Select((_req) => {
-					string[] _values = _req.Split ('%');
-					itemReqs.Add (_values [1], int.Parse (_values [0]));
-					return $"{JsonReading.I.read ("items", $"items.{_values [1]}.name-ui")} x{_values [0]}";
-				}));
-
-				tRequires.text = $"{JsonReading.I.get_str ("requires")}:\n{_goldReq}\n{_itemReq}";
-
-				goldCost = int.Parse (JsonReading.I.read ("items", $"items.{_name}.cost"));
-
-				iPort.sprite = Sprites.I.get_sprite ("icn-item");
+				// Need to create one that will use Inv2.cs, when you need it
 				break;
 			case "char":
 				tWindowTitle.text = "Recruit Character";
 				tBtnText.text = "Recruit";
 
-				if (JsonSaving.I.load ("pool").Split (',').Contains (_name)) {
+				DB_Chars.CharData _charData = DB_Chars.I.get_char_data (_name);
+
+				if (ZPlayerPrefs.GetInt ($"charUnlocked.{_name}") == 1) {
 					go.SetActive (false);					
 					MMCont_Dialog.I.create_dialog ("hero-recruited");
 					return;
 				}
 
-				string _charName = JsonReading.I.get_str ($"{_name}-name");
+				tName.text = _charData.nameUI;
+				tDesc.text = _charData.desc;
 
-				tName.text = _charName;
-				tDesc.text = JsonReading.I.read ("chars", $"chars.{_name}.bio.info");
+				goldCost = _charData.goldCost;
 
-				goldCost = int.Parse (JsonReading.I.read ("chars", $"chars.{_name}.gold-cost"));
-
-				_goldReq = $"{JsonReading.I.get_str ("gold")}: {goldCost.ToString ()}";
-				string _charReqs = JsonReading.I.read ("chars", $"chars.{_name}.requires");
-
-				_itemReq = (_charReqs.Length <= 1) ? "" : 
-					string.Join ("\n", _charReqs.Split(',').Select((_req) => {
-						string[] _values = _req.ToString ().Split ('%');
-
-						itemReqs.Add (_values [1], int.Parse (_values [0]));
-						return $"{JsonReading.I.read ("items", $"items.{_values [1]}.name-ui")} x{_values [0]}";
-					}));
-
-				tRequires.text = $"{JsonReading.I.get_str ("requires")}:\n{_goldReq}\n{_itemReq}";
+				_goldReq = $"Recruit Cost: {goldCost.ToString ()}";
 				iPort.sprite = Sprites.I.get_sprite (_name);
 
 				break;
@@ -93,7 +66,7 @@ public class MM_Craft : MonoBehaviour {
 	}
 
 	public void craft (){
-		int _playerGold = int.Parse (JsonSaving.I.load ("gold"));
+		int _playerGold = ZPlayerPrefs.GetInt ("gold");
 		MM_Inventory.Item _itemInLoop;
 		Dictionary<MM_Inventory.Item, int> _items = new Dictionary<MM_Inventory.Item, int> ();
 
@@ -102,39 +75,14 @@ public class MM_Craft : MonoBehaviour {
 			return;
 		}
 
-		foreach (var _reqs in itemReqs) {
-			if (!MM_Inventory.I.has_item_from_inv (_reqs.Key)) {
-				MMCont_Dialog.I.create_dialog ("buy-not-enough-reqs");
-				return;
-			} else {
-				_itemInLoop = MM_Inventory.I.get_item_from_inv (_reqs.Key);
-				if (_itemInLoop.stack < _reqs.Value) {
-					MMCont_Dialog.I.create_dialog ("buy-not-enough-reqs");
-					return;
-				} else {
-					_items.Add (_itemInLoop, _reqs.Value);
-				}
-			}
-		}
-		if (goldCost > _playerGold) {
-			MMCont_Dialog.I.create_dialog ("buy-not-enough-reqs");
-			return;
-		}
+		SaveHandler.I.gain_gold (-goldCost);
 
-		MainMenu.I.update_gold (-goldCost);
-		foreach (var _item in _items) {
-			MM_Inventory.I.remove_stack (_item.Key, _item.Value);
-		}
 		switch (type) {
 			case "item":
-				MM_Inventory.I.add_item (item, 1);
-				MMCont_Dialog.I.create_dialog ("buy-craft-success");
-				SoundHandler.I.play_sfx ("buying");
+				// Need to create one that will use Inv2.cs, when you need it
 				break;
 			case "char":
-				List<string> _chars = JsonSaving.I.load ("pool").Split (',').ToList ();
-				_chars.Add (item);
-				JsonSaving.I.save ("pool", string.Join (',', _chars.ToArray()));
+				ZPlayerPrefs.SetInt ($"charUnlocked.{item}", 1);
 				MMCont_Dialog.I.create_dialog ("buy-recruit-success");
 				SoundHandler.I.play_sfx ("buying");
 				break;

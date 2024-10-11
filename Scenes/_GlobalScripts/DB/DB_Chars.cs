@@ -42,7 +42,7 @@ public class DB_Chars : MonoBehaviour {
         switch (_name) {
             case "tommy":
                 _new.nameUI="Tommy";
-                _new.desc = "A skilled gunman from Florida seeking his fortunes on the road. His experiences in war-torn Florida gave Tommy a good skillset, making him adept at shooting, driving and espionage.";
+                _new.desc = "A skilled gunman from Florida seeking his fortunes on the road. His experiences in the criminal underworld gave Tommy a good skillset, making him adept at shooting, driving and espionage.";
                 _new.imgPort="tommy";
                 _new.equipWeapon="gun";
                 _new.statHP = 80; _new.statAtk = 10; _new.statRange = 4; 

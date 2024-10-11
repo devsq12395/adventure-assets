@@ -8,6 +8,9 @@ public class Node : MonoBehaviour {
     [Header("Name of the node. Should be unique")]
     public string name;
 
+    [Header("Is random event node")]
+    public bool isRandomEvent;
+
     [Header("The area's function when entering this node with the ENTER key")]
     [Header("Will be used by MM_Map.I.select_node, as main value")]
     public string function;

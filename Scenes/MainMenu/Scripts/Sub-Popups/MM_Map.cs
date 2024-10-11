@@ -52,7 +52,7 @@ public class MM_Map : MonoBehaviour {
         Destroy (map);
     }
 
-    public void select_node (string _type, string _val){ Debug.Log ($"{_type}, {_val}");
+    public void select_node (string _type, string _val){ 
         switch (_type) {
             //////////// GENERICS
             case "mission": MM_Mission.I.show (_val); break;
@@ -133,10 +133,11 @@ public class MM_Map : MonoBehaviour {
                 break;
 
             case "field-1":
-                int _house1_unlockedAnastasia = PlayerPrefs.GetInt ("charUnlocked.anastasia");
+                int _house1_unlockedAnastasia = ZPlayerPrefs.GetInt ("charUnlocked.anastasia");
                 string _statusField1 = ZPlayerPrefs.GetString("missionCurPool.field-1");
 
                 if (_statusField1 == "field-1-1"){
+                    Debug.Log ($"_house1_unlockedAnastasia = {_house1_unlockedAnastasia}");
                     MMCont_Dialog.I.create_dialog ((_house1_unlockedAnastasia == 0) ? "dialog-field-1" : "dialog-field-3");
                 } else {
                     MMCont_Dialog.I.create_dialog ("dialog-field-6");
