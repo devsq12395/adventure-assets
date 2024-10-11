@@ -27,7 +27,9 @@ public class Sprites : MonoBehaviour {
     public Sprite icnItem;
 
     [Header("----- Items -----")]
-    public Sprite itmBasicSword, itmGold;
+    public Sprite itmGold;
+    public Sprite itmBasicSword, itmHomemadeGun, itmLeatherJacket, itmFakeCrossovers, itmMagicStick, itmPendantOfBurningScourge, 
+        itmGlovesOfProDriving;
 
     [Header("----- UI -----")]
     public Sprite btnLocked;
@@ -81,6 +83,12 @@ public class Sprites : MonoBehaviour {
             { "sta-bar-base", staBarBase },
 
             { "itm-basic-sword", itmBasicSword },
+            { "itm-homemade-gun", itmHomemadeGun },
+            { "itm-leather-jacket", itmLeatherJacket },
+            { "itm-fake-crossovers", itmFakeCrossovers },
+            { "itm-magic-stick", itmMagicStick },
+            { "itm-pendant-of-burning-scourge", itmPendantOfBurningScourge },
+            { "itm-gloves-of-pro-driving", itmGlovesOfProDriving },
             { "itm-gold", itmGold },
         };
     }

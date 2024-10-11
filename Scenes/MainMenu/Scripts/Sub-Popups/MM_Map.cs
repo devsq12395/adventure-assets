@@ -112,23 +112,28 @@ public class MM_Map : MonoBehaviour {
 
             case "dialog-vincenzo":
                 int _statusVincenzoDialog = PlayerPrefs.GetInt ("activity.dialog-with-vincenzo");
+                Debug.Log (_statusVincenzoDialog);
 
-                switch (_statusVincenzoDialog) {
-                    case 0: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-1"); break;
-                    case 5: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-5"); break;
-
-                    case 6: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-6"); break;
+                if (_statusVincenzoDialog < 5) {
+                    MMCont_Dialog.I.create_dialog ("dialog-vincenzo-1");
+                } else {
+                    switch (_statusVincenzoDialog) {
+                        case 5: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-5"); break;
+                        case 6: MMCont_Dialog.I.create_dialog ("dialog-vincenzo-6"); break;
+                    }
                 }
                 break;
 
             case "dialog-beatrice":
                 int _statusBeatriceDialog = PlayerPrefs.GetInt ("activity.dialog-with-beatrice");
 
-                switch (_statusBeatriceDialog) {
-                    case 0: MMCont_Dialog.I.create_dialog ("dialog-beatrice-1"); break;
-                    case 5: MMCont_Dialog.I.create_dialog ("dialog-beatrice-5"); break;
-
-                    case 8: MMCont_Dialog.I.create_dialog ("dialog-beatrice-8"); break;
+                if (_statusBeatriceDialog < 5) {
+                    MMCont_Dialog.I.create_dialog ("dialog-beatrice-1");
+                } else {
+                    switch (_statusBeatriceDialog) {
+                        case 5: MMCont_Dialog.I.create_dialog ("dialog-beatrice-5"); break;
+                        case 8: MMCont_Dialog.I.create_dialog ("dialog-beatrice-8"); break;
+                    }
                 }
                 break;
 

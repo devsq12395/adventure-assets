@@ -60,6 +60,8 @@ public class MM_Inv2 : MonoBehaviour {
         		goBtnAction.SetActive (false);
         		break;
         	case "equip": 
+        		if (itemSet == "accessory1" || itemSet == "accessory2") itemSet = "accessory";
+        		
         		itemsSet = Inv2.I.get_items_with_tag ( itemSet );
         		img_window1.sprite = spr_invWin1;
         		img_window2.sprite = spr_invWin2;
@@ -103,12 +105,19 @@ public class MM_Inv2 : MonoBehaviour {
 	    itemsShow.ForEach((_item) => {
 	        Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(_item.name);
 	        itemsBTN[_curInd].image.sprite = _data.sprite;
+
+	        Image _equippedPort = itemsBTN[_curInd].gameObject.transform.Find("EquippedPort").GetComponent<Image>();
+	        _equippedPort.sprite = Sprites.I.get_sprite (_item.equippedBy);
+
 	        _curInd++;
 	    });
 
 	    // Disable buttons with no items
 	    for (int _ind = itemsShow.Count; _ind < itemsBTN.Count; _ind++) {
 	        itemsBTN[_ind].image.sprite = Sprites.I.get_sprite("empty");
+
+	        Image _equippedPort = itemsBTN[_ind].gameObject.transform.Find("EquippedPort").GetComponent<Image>();
+	        _equippedPort.sprite = Sprites.I.get_sprite ("");
 	    }
 
 	    t_page.text = $"{page}/{pageMax}";
@@ -151,6 +160,11 @@ public class MM_Inv2 : MonoBehaviour {
 	    	}
 
 	        Inv2_DB.ItemData _data = Inv2_DB.I.get_item_data(_item.name);
+
+	        if (_item.equippedBy != ""){
+	        	DB_Chars.CharData _equippedData = DB_Chars.I.get_char_data (_item.equippedBy);
+	        	_data.desc += $"\n\nCurrently Equipped to: {_equippedData.nameUI}";
+	        }
 
 	        t_itemName.text = _data.nameUI;
 	        t_itemDetails.text = _data.details;

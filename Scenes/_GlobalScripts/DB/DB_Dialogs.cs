@@ -132,7 +132,7 @@ public class DB_Dialogs : MonoBehaviour {
 			    _new.inputScaler_enable = "0";
 			    _new.posX = 0;
 			    _new.posY = 0;
-			    _new.input1 = new InputData("close-inventory-after-equip", "Back");
+			    _new.input1 = new InputData("back", "Back");
 			    _new.input2 = new InputData("", "");
 			    _new.input3 = new InputData("", "");
 			    _new.input4 = new InputData("=", "");
@@ -142,7 +142,7 @@ public class DB_Dialogs : MonoBehaviour {
 			case "wooster-square-house-1":
 			    _new.name = "Old Man";
 			    _new.desc = "Our nation of Victoria was founded by the great heroes who defeated the Demon Lord 150 years ago.";
-			    _new.portImg = "npc-man-2";
+			    _new.portImg = "npc-woman-1";
 			    _new.isTweenOut = "0";
 			    _new.inputEmptyContinue = "wooster-square-house-2";
 			    _new.isMini = "0";
@@ -193,7 +193,7 @@ public class DB_Dialogs : MonoBehaviour {
 			case "wooster-square-house-2":
 			    _new.name = "Old Man";
 			    _new.desc = "We honor their legacy every day.";
-			    _new.portImg = "npc-man-2";
+			    _new.portImg = "npc-woman-1";
 			    _new.isTweenOut = "1";
 			    _new.inputEmptyContinue = "";
 			    _new.isMini = "0";

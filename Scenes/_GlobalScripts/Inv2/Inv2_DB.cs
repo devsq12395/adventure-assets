@@ -60,7 +60,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.details="Cost: 100 Gold\nTags: weapon, gun";
                     _new.equipTo="weapon";
                     _new.tags.AddRange(new List<string> { "weapon", "gun" });
-                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.sprite = Sprites.I.get_sprite ("itm-homemade-gun");
                     _new.cost = 100;
                     _new.stackable = false;
 
@@ -73,7 +73,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.details="Cost: 150 Gold\nTags: armor, jacket";
                     _new.equipTo="armor";
                     _new.tags.AddRange(new List<string> { "armor", "jacket" });
-                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.sprite = Sprites.I.get_sprite ("itm-leather-jacket");
                     _new.cost = 150;
                     _new.stackable = false;
 
@@ -86,7 +86,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.details="Cost: 250 Gold\nTags: boots, shoes, sports";
                     _new.equipTo="boots";
                     _new.tags.AddRange(new List<string> { "boots", "shoes", "sports" });
-                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.sprite = Sprites.I.get_sprite ("itm-fake-crossovers");
                     _new.cost = 250;
                     _new.stackable = false;
 
@@ -100,20 +100,20 @@ public class Inv2_DB : MonoBehaviour {
                     _new.details="Cost: 300 Gold\nTags: weapon, staff";
                     _new.equipTo="weapon";
                     _new.tags.AddRange(new List<string> { "weapon", "staff"});
-                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.sprite = Sprites.I.get_sprite ("itm-magic-stick");
                     _new.cost = 300;
                     _new.stackable = false;
 
                     _new.bonusHP=0;_new.bonusATK=5;_new.bonusRange=0;_new.bonusSkill=15;_new.bonusSpeed=0;_new.bonusArmor=0;_new.bonusCritRate=0;_new.bonusCritDam=0;
                     _new.bonusScience=0;_new.bonusMagic=0;_new.bonusDriving=0;_new.bonusEspionage=0;_new.bonusComputers=0;_new.bonusRepair=0;_new.bonusLuck=0;
                     break;
-                case "ring-of-burning-scourge":
-                    _new.nameUI="Ring of Burning Scourge";
+                case "pendant-of-burning-scourge": case "ring-of-burning-scourge":
+                    _new.nameUI="Pendant of Burning Scourge";
                     _new.desc="+15% damage to damages tagged fire\n+30% damage to enemies tagged plant\n\nSpecifically designed to make forest clearing easy.";
                     _new.details="Cost: 400 Gold\nTags: ring, accessory, fire, enchanted";
                     _new.equipTo="accessory";
                     _new.tags.AddRange(new List<string> { "ring", "accessory", "fire", "enchanted"});
-                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.sprite = Sprites.I.get_sprite ("itm-pendant-of-burning-scourge");
                     _new.cost = 400;
                     _new.stackable = false;
 
@@ -126,7 +126,7 @@ public class Inv2_DB : MonoBehaviour {
                     _new.details="Cost: 50 Gold\nTags: gloves, accessory, driving";
                     _new.equipTo="accessory";
                     _new.tags.AddRange(new List<string> { "gloves", "accessory", "driving"});
-                    _new.sprite = Sprites.I.get_sprite ("itm-basic-sword");
+                    _new.sprite = Sprites.I.get_sprite ("itm-gloves-of-pro-driving");
                     _new.cost = 50;
                     _new.stackable = false;
 
@@ -177,7 +177,7 @@ public class Inv2_DB : MonoBehaviour {
                 _new.AddRange (new string[] { "iron-sword", "homemade-gun", "leather-jacket", "fake-crossovers" });
                 break;
             case "michelle-shop": 
-                _new.AddRange (new string[] { "magic-stick", "ring-of-burning-scourge", "gloves-of-pro-driving" });
+                _new.AddRange (new string[] { "magic-stick", "pendant-of-burning-scourge", "gloves-of-pro-driving" });
                 break;
         }
 

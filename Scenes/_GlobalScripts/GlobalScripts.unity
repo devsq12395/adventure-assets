@@ -195,8 +195,14 @@ MonoBehaviour:
   mafiaCaptain: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
   icnHighway: {fileID: 21300000, guid: e40407a46bdc8a541b8f95eb918dd58e, type: 3}
   icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
-  itmBasicSword: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   itmGold: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
+  itmBasicSword: {fileID: 21300000, guid: fe81a083d9e80d94c9b22e8458d93ff9, type: 3}
+  itmHomemadeGun: {fileID: 21300000, guid: dc3a54ddb262e3947b4e1f0fe0ed273e, type: 3}
+  itmLeatherJacket: {fileID: 21300000, guid: ec334e148fecacd40bd528fe44913320, type: 3}
+  itmFakeCrossovers: {fileID: 21300000, guid: 7b9e8d369e216bf4ebe780f25f0c5b1f, type: 3}
+  itmMagicStick: {fileID: 21300000, guid: a5d1b06e6a7e73f4aa740f63bf8d4c86, type: 3}
+  itmPendantOfBurningScourge: {fileID: 21300000, guid: b21b8cbb04f709a41b2e716192881dbd, type: 3}
+  itmGlovesOfProDriving: {fileID: 21300000, guid: 9a4a49aff88aef84a80b158fc24147a6, type: 3}
   btnLocked: {fileID: 21300000, guid: afd56857a2f956f4a9196939426055c0, type: 3}
   hpBar: {fileID: 21300000, guid: fe7851e2ef3d00b458f3c60d34face47, type: 3}
   hpBarBase: {fileID: 21300000, guid: 7010e518b27d4ca4b86a9234f7f97ff9, type: 3}

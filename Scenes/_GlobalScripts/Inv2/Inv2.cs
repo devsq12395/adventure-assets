@@ -170,6 +170,7 @@ public class Inv2 : MonoBehaviour {
 
         bool hasOldEquip = false;
         Item _toChange = default(Item);
+        // Find if an item is already equipped in the equip slot of _item
         for (int i = 0; i < equippedItems.Count; i++) {
             Inv2_DB.ItemData _dataToSet = Inv2_DB.I.get_item_data(_item.name);
             Inv2_DB.ItemData _dataToChange = Inv2_DB.I.get_item_data(equippedItems[i].name);
@@ -180,10 +181,11 @@ public class Inv2 : MonoBehaviour {
             }
         }
 
+        // If there is, unequip
         if (hasOldEquip) {
             _toChange.equippedBy = "";
             for (int i = 0; i < items.Count; i++) {
-                if (items[i].name == _toChange.name && items[i].equippedBy == _charName) {
+                if (items[i].ID == _toChange.ID) {
                     items[i] = _toChange;
                     break;
                 }
@@ -191,10 +193,9 @@ public class Inv2 : MonoBehaviour {
         }
 
         _item.equippedBy = _charName;
-        Debug.Log($"{_item.name} equipped by {_item.equippedBy}");
 
         for (int i = 0; i < items.Count; i++) {
-            if (items[i].name == _item.name && items[i].equippedBy == "") {
+            if (items[i].ID == _item.ID) {
                 items[i] = _item;
                 break;
             }

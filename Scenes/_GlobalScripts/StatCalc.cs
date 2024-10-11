@@ -36,6 +36,10 @@ public class StatCalc : MonoBehaviour {
         DB_Chars.CharData _charData = DB_Chars.I.get_char_data(_charName);
         List<Inv2.Item> itemsEquipped = Inv2.I.get_equipped_items(_charName);
 
+        foreach (Inv2.Item _itemLoop in itemsEquipped) {
+            Debug.Log ($"{_itemLoop.name}, equipped to {_itemLoop.equippedBy}");
+        }
+
         // Calculate base stats and add to the dictionary
         stats["hp"] = _charData.statHP;
         stats["attack"] = _charData.statAtk;
