@@ -3,11 +3,11 @@ using UnityEngine;
 public class AI_AxeArmAzar : InGameAI {
 
     // Public variables for customization
-    public float randomSkillInterval = 5f;
-    public float moveSpeed = 2f; // Slow movement speed
-    public float attackInterval = 0.75f; // Interval between attacks
-    public float chargeInterval = 1f; // Interval between charges
-    public int chargeSequenceCount = 2; // Number of times to charge in a sequence
+    public float randomSkillInterval;
+    public float moveSpeed; // Slow movement speed
+    public float attackInterval; // Interval between attacks
+    public float chargeInterval; // Interval between charges
+    public int chargeSequenceCount; // Number of times to charge in a sequence
 
     private float randomSkillTimer = 0f;
 
@@ -23,6 +23,11 @@ public class AI_AxeArmAzar : InGameAI {
     public override void on_start() {
         // Initialize timers
         randomSkillTimer = 0f;
+        randomSkillInterval = 1.5f;
+        moveSpeed = 2;
+        attackInterval = 0.75f;
+        chargeInterval = 2f;
+        chargeSequenceCount = 2;
         isUsingAttackSkill = false;
         isUsingChargeSkill = false; // Initialize as not using charge sequence
         attackCount = 0;

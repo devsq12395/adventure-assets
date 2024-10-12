@@ -54,7 +54,7 @@ public class DB_Chars : MonoBehaviour {
 
                 _new.bioInfo = "Attack Weapon: Gun\nAttack Tags: Gun, Physical\n\n\nCharacter Tags: Hero, Human, Gunslinger";
                 _new.bioSkill1 = "Plasma Shotgun: Fires 3 plasma waves that deals damage in their path.\n\nTags: Electric";
-                _new.bioSkill2 = "Overcharge: The next 10 attacks will deal 400% damage and will make Tommy's attacks Electric.";
+                _new.bioSkill2 = "Overcharge: The next 7 attacks will deal attack and skill damage and will make Tommy's attacks Electric.";
                 break;
             case "kazuma":
                 _new.nameUI="Alfred";
@@ -70,7 +70,7 @@ public class DB_Chars : MonoBehaviour {
 
                 _new.bioInfo = "Attack Weapon: Sword\nAttack Tags: Sword, Physical\n\n\nCharacter Tags: Hero, Human, Swordsman";
                 _new.bioSkill1 = "Burning Slash: Slashes forward, dealing skill damage to enemies hit then unleashes a ring of attacks in the end.\n\nTags: fire, magic";
-                _new.bioSkill2 = "Destroyer Slash: Unleashes a flame wave. Dealing skill * 3 damage.\n\nTags: fire, magic";
+                _new.bioSkill2 = "Destroyer Slash: Unleashes a flame wave. Dealing skill * 3 damage for each wave.\n\nTags: fire, magic";
                 break;
             case "anastasia":
                 _new.nameUI="Anastasia";

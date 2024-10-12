@@ -76,6 +76,11 @@ public class ContDamage : MonoBehaviour {
         if (_def.mp > _def.mpMax) _def.mp = _def.mpMax;
     }
 
+    public void gain_ult (InGameObject _def, int _ult) {
+        _def.ultPerc += _ult;
+        if (_def.ultPerc > 100) _def.ultPerc = 100;
+    }
+
     public void kill (InGameObject _def){
         ContBuffs.I.remove_all_buffs (_def);
         ContObj.I.evt_on_death (_def);
@@ -130,6 +135,13 @@ public class ContDamage : MonoBehaviour {
 
         // Armor
         _dam -= _def.armor;
+
+        // Gain ult
+        if (_atk.tags.Contains ("hero")) { 
+            gain_ult (_atk, 4);
+        } else if (_def.tags.Contains ("hero")) {
+            gain_ult (_atk, 2);
+        }
 
         return _dam;
     }

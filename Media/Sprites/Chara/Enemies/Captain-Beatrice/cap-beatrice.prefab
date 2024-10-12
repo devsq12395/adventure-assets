@@ -256,7 +256,7 @@ MonoBehaviour:
   mpRegen: 0
   armor: 0
   dam: 10
-  skill: 0
+  skill: 10
   hitDam: 10
   onHitSFX: 
   tags:
@@ -264,6 +264,7 @@ MonoBehaviour:
   - boss
   speed: 4
   attachScaleMultiplier: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}

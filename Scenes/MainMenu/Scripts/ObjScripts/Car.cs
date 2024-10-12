@@ -17,6 +17,10 @@ public class Car : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;  // Reference to the SpriteRenderer
 
+    private Vector3 targetPosition;  // Target position for movement
+    private Vector3 moveDirection;  // Direction of movement
+    private Node nextNode;  // The next node to move to
+
     private void Awake()
     {
         I = this;
@@ -31,27 +35,42 @@ public class Car : MonoBehaviour
 
     private void Update()
     {
-        HandleInput();
+        if (isMoving)
+        {
+            // Check if a popup is showing; pause movement if true
+            if (MainMenu.I.check_if_a_popup_is_showing())
+            {
+                return;  // Pause the movement
+            }
+
+            MoveCar();  // Continue the movement
+        }
+        else
+        {
+            HandleInput();  // Handle user input when not moving
+        }
     }
 
     public void setup()
     {
         isStarted = true;
         string curNodeName = PlayerPrefs.GetString("start-node");
-        find_and_set_node (curNodeName);
+        find_and_set_node(curNodeName);
 
-        if (!curNode) {
-            find_and_set_node ("1");
+        if (!curNode)
+        {
+            find_and_set_node("1");
         }
     }
 
-    public void find_and_set_node (string curNodeName){
+    public void find_and_set_node(string curNodeName)
+    {
         // Find the node with the given name in ContMap.I.nodes
         foreach (Node node in MM_Map.I.nodes)
         {
             if (node.name == curNodeName)
             {
-                Debug.Log ($"set curNode to {curNodeName}");
+                Debug.Log($"set curNode to {curNodeName}");
                 curNode = node;
                 transform.position = curNode.transform.position;
                 break;
@@ -61,14 +80,7 @@ public class Car : MonoBehaviour
 
     private void HandleInput()
     {
-        if (isMoving)
-        {
-            MM_TutKey.I.show_one("enter", false);
-            return;
-        }
-        if (MainMenu.I.check_if_a_popup_is_showing ()) {
-            return;
-        }
+        if (MainMenu.I.check_if_a_popup_is_showing()) return;  // Prevent input when a popup is showing
 
         // Check for input and move to the corresponding node
         if (Input.GetKeyDown(KeyCode.W)) { TryMoveToNextNode(Vector2.up); }
@@ -91,11 +103,11 @@ public class Car : MonoBehaviour
         if (curNode == null || curNode.nextNodes.Count == 0 || isMoving) return;
 
         // Find the next node in the desired direction
-        Node nextNode = FindNextNode(direction);
+        nextNode = FindNextNode(direction);
         if (nextNode != null)
         {
             Debug.Log("moving to node");
-            StartCoroutine(MoveToNode(nextNode));
+            PrepareForMovement(nextNode);
         }
     }
 
@@ -125,20 +137,17 @@ public class Car : MonoBehaviour
         return closestNode;
     }
 
-    private IEnumerator MoveToNode(Node nextNode)
+    private void PrepareForMovement(Node nextNode)
     {
         isMoving = true;
 
         if (curNode.nodeBubble) { curNode.nodeBubble.hide(); }
 
-        Vector3 startPosition = transform.position;
-        Vector3 targetPosition = nextNode.transform.position;
-        float elapsedTime = 0f;
-        float journeyLength = Vector3.Distance(startPosition, targetPosition);
+        targetPosition = nextNode.transform.position;
+        moveDirection = (targetPosition - transform.position).normalized;
 
         // Calculate the angle to rotate towards the next node
-        Vector2 direction = (targetPosition - startPosition).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg - 90;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         // Play engine sound
@@ -148,14 +157,26 @@ public class Car : MonoBehaviour
             audioSource.loop = true;
             audioSource.Play();
         }
+    }
 
-        while (elapsedTime < journeyLength / moveSpeed)
+    private void MoveCar()
+    {
+        // Calculate the distance to the target node
+        float distanceToTarget = Vector3.Distance(transform.position, targetPosition);
+
+        // Move the car incrementally
+        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+
+        // Check if the car has reached or overshot the target
+        if (Vector3.Distance(transform.position, targetPosition) >= distanceToTarget)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, (elapsedTime * moveSpeed) / journeyLength);
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            CompleteMovement();
         }
+    }
 
+    private void CompleteMovement()
+    {
+        // Snap to target position
         transform.position = targetPosition;
         curNode = nextNode;
         isMoving = false;

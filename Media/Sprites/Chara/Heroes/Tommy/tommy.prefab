@@ -19,6 +19,8 @@ GameObject:
   - component: {fileID: 970973860029378288}
   - component: {fileID: 188102392388792281}
   - component: {fileID: -5106326729033209083}
+  - component: {fileID: 5471973551694075441}
+  - component: {fileID: -1704851133942992761}
   m_Layer: 0
   m_Name: tommy
   m_TagString: Untagged
@@ -254,12 +256,15 @@ MonoBehaviour:
   mpMax: 10
   mpRegen: 0
   armor: 0
+  dam: 0
+  skill: 0
   hitDam: 0
   onHitSFX: 
   tags:
   - hero
   speed: 6
   attachScaleMultiplier: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
@@ -288,7 +293,10 @@ MonoBehaviour:
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
+  constMovAng_dur: 0
+  constMovAng_dist: 0
   propellDist: 0
+  constMovAng_movTarget: {x: 0, y: 0}
   propellType: 
   propellFirstPos: {x: 0, y: 0}
   constMovDir_isOn: 0
@@ -311,7 +319,11 @@ MonoBehaviour:
   range: 0
   controllerID: 0
   hitUnitsID: 
+  colorChangeDur: 0
+  summonedBy: 0
   skills: []
+  barHP: {fileID: 0}
+  barSta: {fileID: 0}
 --- !u!114 &1734063162558475760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
+  hitIDs: 
 --- !u!114 &970973860029378288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +357,8 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
+  dashing: 0
+  afterimage: {fileID: 0}
 --- !u!114 &188102392388792281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,3 +400,44 @@ MonoBehaviour:
   muzzleObj1: muzzle-1
   muzzleObj2: muzzle-2
   soundToPlay: pistol
+--- !u!114 &5471973551694075441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734063162558475763}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d60f694986b0ef6db3e0ce31a2d052a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: skill
+  skillName: attack
+  skillSlot: mouse1
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: tommy-super-atk
+  muzzleObj1: muzzle-1
+  muzzleObj2: muzzle-2
+  soundToPlay: plasma-shotgun
+  shots: 0
+--- !u!114 &-1704851133942992761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734063162558475763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c653e3df5e600f6bf622961d509f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: ult
+  skillName: overcharge
+  skillSlot: Skill2
+  mc: 0
+  cdMax: 0.5
+  cd: 0

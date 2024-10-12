@@ -42,6 +42,7 @@ public class DB_Enemies : MonoBehaviour {
 	        case "goblin-1": _ret = goblin_1_waves(_ret); break;
 	        case "orc-1": _ret = orc_1_waves(_ret); break;
 	        case "beatrice-1": _ret = beatrice_1_waves(_ret); break;
+	        case "war-shredder-1": _ret = war_shredder_1_waves(_ret); break;
 	    }
 
 	    return _ret;
@@ -91,7 +92,7 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("hobgoblin", 1);
+				_waves[0].Add ("mafia-captain", 1);
 
 				break;
 		}
@@ -281,6 +282,28 @@ public class DB_Enemies : MonoBehaviour {
 
 				_waves.Add (new Dictionary<string, int>());
 				_waves[3].Add ("cap-beatrice", 1);
+
+				break;
+		}
+		
+		return _waves;
+	}
+	private List<Dictionary<string, int>> war_shredder_1_waves (List<Dictionary<string, int>> _ret){
+		//int chance = Random.Range (0, 3);
+		int chance = 0;
+		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+
+		switch (chance) {
+			case 0:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("war-shredder", 4);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[1].Add ("goblin", 4);
+				_waves[1].Add ("war-shredder", 2);
+
+				_waves.Add (new Dictionary<string, int>());
+				_waves[2].Add ("alpha-war-shredder", 1);
 
 				break;
 		}

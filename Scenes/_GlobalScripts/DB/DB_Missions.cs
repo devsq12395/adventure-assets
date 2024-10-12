@@ -159,6 +159,10 @@ public class DB_Missions : MonoBehaviour {
                 _new.rewards = "200 Gold";
                 _new.goldReward = 200;
 
+                _new.gameOverSpk_name = "Tommy";
+                _new.gameOverSpk_text = "Excellent fighting, everyone!";
+                _new.gameOverSpk_img = "tommy";
+
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "kazuya";
@@ -178,11 +182,15 @@ public class DB_Missions : MonoBehaviour {
                 _new.rewards = "500 Gold";
                 _new.goldReward = 500;
 
+                _new.gameOverSpk_name = "Anthony";
+                _new.gameOverSpk_text = "Nice work! I hope those war shredders don't come back.";
+                _new.gameOverSpk_img = "npc-man-1";
+
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "kazuya";
 
-                _new.enemies.AddRange (new string[]{"enem-vic-1", "enem-vic-2", "enem-vic-3"});
+                _new.enemies.AddRange (new string[]{"war-shredder-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"anthony->anthony-2"});

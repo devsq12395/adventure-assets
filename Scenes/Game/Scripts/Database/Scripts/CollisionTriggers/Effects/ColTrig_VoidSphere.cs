@@ -14,7 +14,7 @@ public class ColTrig_VoidSphere : ColTrig {
                         _owner = ContObj.I.get_obj_with_id (_this.controllerID);
 
         ContEffect.I.create_effect ("explosion2", gameObject.transform.position);
-        ContDamage.I.damage (_owner, _hit, _owner.skill, damTags);
+        ContDamage.I.damage (_owner, _hit, (int)((float)_owner.skill * 2.5f), damTags);
         ContBuffs.I.add_buff (_hit, "void-sphere");
         ContBuffs.I.add_buff (_hit, "void-sphere-grounded");
 

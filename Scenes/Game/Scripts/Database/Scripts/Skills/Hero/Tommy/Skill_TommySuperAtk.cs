@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill_GunShoot : SkillTrig
+public class Skill_TommySuperAtk : SkillTrig
 {
     public string missileObj, muzzleObj1, muzzleObj2, soundToPlay;
+
+    public int shots;
 
     public override void use_active()
     {
@@ -27,7 +29,7 @@ public class Skill_GunShoot : SkillTrig
 
         if (_ownerComp.tags.Contains("hero"))
         {
-            _missileComp.hitDam = _ownerComp.dam;
+            _missileComp.hitDam = _ownerComp.dam + _ownerComp.skill;
             _missileComp.range = _ownerComp.statRange * 4;
         }
 
@@ -53,6 +55,21 @@ public class Skill_GunShoot : SkillTrig
             muzzle2.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
-        Debug.Log($"{muzzleObj1}, {muzzleObj2}");
+        shots++;
+        if (shots > 7) {
+            shots = 0;
+
+            Skill_GunShoot gunShootComp = _ownerComp.GetComponent<Skill_GunShoot>();
+            if (gunShootComp != null) {
+                gunShootComp.enabled = true;
+                gunShootComp.skillSlot = "mouse1";
+            }
+
+            Skill_TommySuperAtk superAtkComp = _ownerComp.GetComponent<Skill_TommySuperAtk>();
+            if (superAtkComp != null) {
+                superAtkComp.enabled = false;
+                superAtkComp.skillSlot = "mouse1-off";
+            }
+        }
     }
 }

@@ -20,7 +20,7 @@ public class Skill_DefaultAtk : SkillTrig {
         InGameObject _missileComp = _missile.GetComponent <InGameObject> ();
 
         if (_ownerComp.tags.Contains ("hero")) {
-            _missileComp.hitDam = _ownerComp.statAttack;
+            _missileComp.hitDam = _ownerComp.dam;
             _missileComp.range = _ownerComp.statRange * 4;
         } 
         else {

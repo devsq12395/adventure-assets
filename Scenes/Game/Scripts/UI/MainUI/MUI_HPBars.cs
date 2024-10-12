@@ -50,7 +50,7 @@ public class MUI_HPBars : MonoBehaviour
         i_CDPanel1.color = (skillReady) ? Color.red : Color.green;
         go_arrowSkill.SetActive (!skillReady);
 
-        bool ultReady = _pla.ultPerc < 100;
+        bool ultReady = _pla.ultPerc >= 100;
         i_CDPanel2.color = (ultReady) ? Color.red : Color.green;
         go_arrowUlt.SetActive (ultReady);
 

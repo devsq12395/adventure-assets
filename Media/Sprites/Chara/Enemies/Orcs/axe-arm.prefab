@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: axe-arm-azar
-  nameUI: Axe-Arm Azar
+  nameUI: Gun-Arm Azar
   type: unit
   owner: 0
   id: 0
@@ -266,6 +266,7 @@ MonoBehaviour:
   - boss
   speed: 4
   attachScaleMultiplier: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
@@ -401,10 +402,11 @@ MonoBehaviour:
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}
-  chargeInterval: 20
   randomSkillInterval: 5
   moveSpeed: 2
   attackInterval: 0.75
+  chargeInterval: 20
+  chargeSequenceCount: 2
 --- !u!114 &9003258214400166592
 MonoBehaviour:
   m_ObjectHideFlags: 0

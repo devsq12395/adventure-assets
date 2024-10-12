@@ -59,6 +59,7 @@ public class SaveHandler : MonoBehaviour {
             PlayerPrefs.SetInt("areasState.east-st-2-ives", 0);
             PlayerPrefs.SetInt("areasState.to-wooster-square-2", 0);
             PlayerPrefs.SetInt("areasState.to-wooster-square-3", 0);
+            PlayerPrefs.SetInt("areasState.to-wooster-square-4", 0);
 
             PlayerPrefs.SetInt("activity.dialog-with-vic", 0);
             PlayerPrefs.SetInt("activity.dialog-with-vincenzo", 0);

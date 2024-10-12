@@ -12,10 +12,21 @@ public class AI_LucaTheTerror : InGameAI {
     private bool isCharging = false; // Indicates if Luca is currently charging
     private float chargeCooldownTimer = 0f; // Tracks cooldown for the charge ability
     private ObjGlitter objGlitterComponent;
+    private int shootCount;
+
+    private Vector3 randomMoveTarget;
+    private float randomSkillTimer, randomSkillInterval, shootInterval;
+
+    private bool isMovingToRandomPoint = false;
+
+    // Channeling effect control
+    private float channelingElapsedTime = 0f;
+    private float nextEffectTime = 0f; // Time when the next effect will occur
 
     private void Start() {
         // Initialize the ObjGlitter component
         objGlitterComponent = gameObject.GetComponent<ObjGlitter>();
+        randomSkillInterval = 2f;
     }
 
     // Function to initialize constants
@@ -37,92 +48,88 @@ public class AI_LucaTheTerror : InGameAI {
 
         ContObj.I.face_player(inGameObj);
 
-        stateTime += Time.deltaTime;
-        if (isChanneling || isCharging) return;
+        // Handle channeling without coroutine
+        if (isChanneling) {
+            HandleChanneling();
+            return;
+        }
 
-        // Constant movement towards the player
-        move_towards_player(_pPos);
+        if (isMovingToRandomPoint) {
+            MoveToRandomPoint();
+        } else {
+            SetRandomMoveTarget();
+        }
 
-        if (state == 0) {
-            if (stateTime >= 3.5f) {
-                stateTime = 0;
-                state = 1;
-            }
-        } else if (state == 1) {
-            if (Calculator.I.get_dist_from_2_points(gameObject.transform.position, _pPos) <= 7f || 
-                stateTime >= 1f) {
-                ContObj.I.move_walk_to_pos_stop(inGameObj);
-
-                stateTime = 0;
-                state = 2;
-            }
-        } else if (state <= 7) {
-            if (stateTime >= 0.25f) {
+        if (shootCount > 0) {
+            shootInterval += Time.deltaTime;
+            if (shootInterval >= 0.5f) {
                 ContObj.I.use_skill_active(inGameObj, "attack");
-
-                stateTime = 0;
-                state++;
+                shootCount--;
+                shootInterval = 0;
+                randomSkillTimer = 0;
             }
-        } else if (state == 8) {
-            int _randMove = Random.Range(0, 4); // Adding charge as a new random move (0, 1, 2, 3)
+        }
 
-            ContObj.I.move_walk_to_pos_stop(inGameObj);
-            if (_randMove == 0 || _randMove == 1) {
-                isChanneling = true;
-                StartCoroutine(ChannelingEffect(_randMove));
-            } else if (_randMove == 2) {
-                ContObj.I.use_skill_active(inGameObj, "luca-teleport");
-                state = 9;
-            } else if (_randMove == 3 && chargeCooldownTimer <= 0) {
-                use_charge(); // Trigger the charge move
+        randomSkillTimer += Time.deltaTime;
+        if (randomSkillTimer >= randomSkillInterval) {
+            int _randomMove = Random.Range (0, 4);
+
+            switch (_randomMove) {
+                case 0:     
+                    ContObj.I.use_skill_active(inGameObj, "attack");
+                    shootCount = 7;
+                    break;
+                case 1: 
+                    ContObj.I.use_skill_active(inGameObj, "luca-teleport");
+                    break;
+                case 2:
+                    ContObj.I.use_skill_active(inGameObj, "charge");
+                    break;
+                default:
+                    StartChanneling();
+                    break;
             }
-        } else if (state == 9) {
-            ContObj.I.move_walk_to_pos(inGameObj, _pPos);
-            ContObj.I.change_facing(inGameObj, ((gameObject.transform.position.x > _pPos.x) ? "left" : "right"));
 
-            stateTime = 0;
-            state = 0;
+            randomSkillTimer = 0;
         }
     }
 
-    // Method for constant movement towards the player
-    private void move_towards_player(Vector2 playerPos) {
-        if (!isChanneling && !isCharging) {
-            Vector2 currentPos = gameObject.transform.position;
+    // Function to handle the channeling process
+    private void HandleChanneling() {
+        channelingElapsedTime += Time.deltaTime;
 
-            // Calculate direction towards the player
-            Vector2 directionToPlayer = (playerPos - currentPos).normalized;
+        // Spawn effects at intervals
+        if (channelingElapsedTime >= nextEffectTime) {
+            ContEffect.I.create_effect("explosion2", gameObject.transform.position);
+            nextEffectTime += effectInterval; // Set time for the next effect
+        }
 
-            // Move towards the player slowly
-            Vector2 newPos = currentPos + directionToPlayer * moveSpeed;
-            ContObj.I.move_walk_to_pos(inGameObj, newPos);
-
-            // Change facing direction based on movement
-            ContObj.I.change_facing(inGameObj, currentPos.x > playerPos.x ? "left" : "right");
+        // Check if channeling is done
+        if (channelingElapsedTime >= channelingTime) {
+            PerformPostChannelingMove();
+            isChanneling = false;
+            channelingElapsedTime = 0f; // Reset channeling time
+            nextEffectTime = 0f; // Reset effect interval timer
         }
     }
 
-    // Coroutine to handle the channeling effect
-    private IEnumerator ChannelingEffect(int move) {
+    // Function to initiate channeling
+    private void StartChanneling() {
+        isChanneling = true;
+        channelingElapsedTime = 0f;
+        nextEffectTime = 0f; // Start the effect immediately
+
         // Enable ObjGlitter component
         if (objGlitterComponent != null) {
             objGlitterComponent.enabled = true;
         }
+    }
 
-        float elapsedTime = 0f;
-
-        while (elapsedTime < channelingTime) {
-            // Create effect every effectInterval
-            ContEffect.I.create_effect("explosion2", gameObject.transform.position);
-
-            yield return new WaitForSeconds(effectInterval);
-            elapsedTime += effectInterval;
-        }
-
-        // Perform the skill after channeling
-        if (move == 0) {
+    // Function to perform a move after channeling is done
+    private void PerformPostChannelingMove() {
+        if (Random.Range (0, 100) <= 50) {
             ContObj.I.use_skill_active(inGameObj, "luca-flame-wave");
-        } else if (move == 1) {
+        } else {
             ContObj.I.use_skill_active(inGameObj, "luca-spread");
         }
 
@@ -130,42 +137,21 @@ public class AI_LucaTheTerror : InGameAI {
         if (objGlitterComponent != null) {
             objGlitterComponent.enabled = false;
         }
-
-        isChanneling = false;
-        state = 9;
     }
 
-    // Method to trigger the "charge" move
-    private void use_charge() {
-        isCharging = true;
-        ContObj.I.use_skill_active(inGameObj, "charge");
-        chargeCooldownTimer = chargeCooldown; // Set the cooldown for the next charge
-
-        // Move faster for the duration of the charge
-        StartCoroutine(HandleChargeMovement());
+    private void SetRandomMoveTarget() {
+        Vector2 mapSize = ContMap.I.details.size;
+        randomMoveTarget = new Vector3(Random.Range(3, mapSize.x - 3), Random.Range(3, mapSize.y - 3), 0);
+        isMovingToRandomPoint = true;
     }
 
-    // Coroutine to handle the charge movement duration
-    private IEnumerator HandleChargeMovement() {
-        float chargeDuration = 1.5f; // Duration of the charge movement
-        float chargeSpeedMultiplier = 3f; // Speed multiplier during charge
-        float elapsedTime = 0f;
+    private void MoveToRandomPoint() {
+        Vector3 direction = (randomMoveTarget - transform.position).normalized;
+        Vector3 newPos = transform.position + direction * moveSpeed;
+        ContObj.I.move_walk_to_pos(inGameObj, newPos);
 
-        while (elapsedTime < chargeDuration) {
-            InGameObject _p = ContPlayer.I.player;
-            Vector2 _pPos = _p.gameObject.transform.position;
-            Vector2 currentPos = gameObject.transform.position;
-            Vector2 directionToPlayer = (currentPos - _pPos).normalized;
-
-            // Move at increased speed during the charge
-            Vector2 newPos = currentPos + directionToPlayer * moveSpeed * chargeSpeedMultiplier * Time.deltaTime;
-            ContObj.I.move_walk_to_pos(inGameObj, newPos);
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
+        if (Vector3.Distance(transform.position, randomMoveTarget) < 2f) {
+            isMovingToRandomPoint = false;
         }
-
-        isCharging = false;
-        state = 9; // Continue with normal movement or actions after charge
     }
 }

@@ -248,8 +248,8 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 900
-  hpMax: 900
+  hp: 1200
+  hpMax: 1200
   mp: 0
   mpMax: 0
   mpRegen: 0
@@ -266,6 +266,7 @@ MonoBehaviour:
   - throw
   speed: 4
   attachScaleMultiplier: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}

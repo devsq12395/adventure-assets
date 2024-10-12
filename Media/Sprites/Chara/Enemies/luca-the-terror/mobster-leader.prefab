@@ -253,14 +253,14 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 1600
-  hpMax: 1600
+  hp: 1000
+  hpMax: 1000
   mp: 0
   mpMax: 0
   mpRegen: 0
   armor: 0
   dam: 10
-  skill: 10
+  skill: 15
   hitDam: 1
   onHitSFX: 
   tags:
@@ -268,6 +268,7 @@ MonoBehaviour:
   - human
   speed: 4
   attachScaleMultiplier: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
@@ -359,8 +360,6 @@ MonoBehaviour:
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}
-  channelingTime: 2
-  effectInterval: 0.5
 --- !u!114 &-6495577247532642833
 MonoBehaviour:
   m_ObjectHideFlags: 0

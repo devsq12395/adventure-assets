@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4945165037160708548}
   - component: {fileID: 2605826196825012150}
   - component: {fileID: 4745171374470850773}
+  - component: {fileID: -2069726942746624720}
   m_Layer: 0
   m_Name: kazuma
   m_TagString: Untagged
@@ -254,12 +255,15 @@ MonoBehaviour:
   mpMax: 10
   mpRegen: 0
   armor: 0
+  dam: 0
+  skill: 0
   hitDam: 0
   onHitSFX: 
   tags:
   - hero
   speed: 6
   attachScaleMultiplier: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
@@ -404,3 +408,24 @@ MonoBehaviour:
   DAM_PER_SKILL: 1
   hitIDs: 
   isUsingSkill: 0
+  dashDuration: 0
+  dashSpeed: 0
+--- !u!114 &-2069726942746624720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570637198022245372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1356150057644c7b867befa54c875a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: ult
+  skillName: destroyer-slash
+  skillSlot: Skill2
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: destroyer-slash

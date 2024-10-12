@@ -6,43 +6,64 @@ public class AI_CaptainBeatrice : InGameAI {
 
     private int moveCount = 0;
     private int currentMove = 0;
-    private int dashSlashCount = 0;  // To keep track of the number of slashes in DashAndSlash
-    private bool isDashing = false;  // To handle dash movement without coroutine
+    private int dashSlashCount = 0;
+    private bool isDashSlashing = false;
     private string dashDirection = "";
-    private float dashSpeed = 10f;  // Adjust as needed
-    private float dashDuration = 0.5f;  // Duration for each dash segment
+    private float dashSpeed;
     private Vector3 dashTarget;
 
-    public override void on_update() {
-        ContObj.I.face_player(inGameObj);
-        
-        stateTime += Time.deltaTime;
+    // Random movement variables
+    private Vector3 randomMoveTarget;
+    private float moveSpeed = 5f;
+    private bool isMovingToRandomPoint = false;
 
-        // Handle dashing movement if the boss is in the dashing state
-        if (isDashing) {
-            HandleDash();
-            return;  // Skip the rest of the logic during dashing
-        }
+    private float randomSkillTimer, randomSkillInterval;
+    private int dashSlashStartCount = 0;
 
-        if (state == 0) {
-            if (stateTime >= 5f) {
-                PerformNextMove();
-                stateTime = 0;
-            }
-        } else if (state == 1) {
-            PerformMove1();
-        } else if (state == 2) {
-            PerformMove2();
-        } else if (state == 3) {
-            PerformMove3();
-        }
+    public Afterimage afterimage;
+
+    public override void on_start () {
+        randomSkillInterval = 1f;
+        dashSpeed = 20f;
     }
 
-    private void PerformNextMove() {
-        moveCount = 0;
-        currentMove = (currentMove % 3) + 1; // Cycle through moves 1, 2, and 3
-        state = currentMove;
-        stateTime = 0;
+    public override void on_update() {
+        stateTime += Time.deltaTime;
+
+        if (isDashSlashing) {
+            HandleDash();
+            return;
+        }
+
+        InGameObject player = ContPlayer.I.player;
+        Vector2 playerPos = player.gameObject.transform.position;
+        ContObj.I.face_player(inGameObj);
+
+        if (isMovingToRandomPoint) {
+            MoveToRandomPoint();
+        } else {
+            SetRandomMoveTarget();
+        }
+
+        if (state > 0) return;
+
+        randomSkillTimer += Time.deltaTime;
+        if (randomSkillTimer >= randomSkillInterval) {
+            if (dashSlashStartCount < 5) {
+                int _randomMove = Random.Range (0, 2);
+
+                switch (_randomMove) {
+                    case 0:     PerformMove1(); break;
+                    default:    PerformMove3(); break;
+                }
+
+                randomSkillTimer = 0;
+                dashSlashStartCount++;
+            } else {
+                PerformMove2 ();
+                dashSlashStartCount = 0;
+            }
+        }
     }
 
     private void PerformMove1() {
@@ -58,60 +79,18 @@ public class AI_CaptainBeatrice : InGameAI {
         }
     }
 
-    private void PerformMove2() {
+    private void PerformMove2() { Debug.Log ("move 2");
         Vector2 mapSize = ContMap.I.details.size;
-        Vector2 topLeft = new Vector2(3, mapSize.y - 3); // 3 units before the edge
-        Vector2 bottomRight = new Vector2(mapSize.x - 3, 3); // 3 units before the edge
-
-        if (moveCount == 0) {
-            SetTeleportTarget(new Vector2(3, Random.Range(3, mapSize.y - 3))); // Random y position
-            ContObj.I.use_skill_active(inGameObj, "captain-beatrice-teleport");
-            stateTime = 0;
-            moveCount++;
-        } else if (moveCount == 1) {
-            if (stateTime >= 1f) {
-                StartDash("right", topLeft.x, bottomRight.x);
-                stateTime = 0;
-            }
-        } else if (moveCount == 2) {
-            if (stateTime >= 2f) {
-                SetTeleportTarget(new Vector2(mapSize.x - 3, Random.Range(3, mapSize.y - 3))); // Random y position
-                ContObj.I.use_skill_active(inGameObj, "captain-beatrice-teleport");
-                stateTime = 0;
-                moveCount++;
-            }
-        } else if (moveCount == 3) {
-            if (stateTime >= 1f) {
-                StartDash("left", bottomRight.x, topLeft.x);
-                stateTime = 0;
-            }
-        } else if (moveCount == 4) {
-            if (stateTime >= 2f) {
-                Vector2 randomPoint = new Vector2(
-                    Random.Range(3, mapSize.x - 3),
-                    Random.Range(3, mapSize.y - 3)
-                );
-                SetTeleportTarget(randomPoint);
-                ContObj.I.use_skill_active(inGameObj, "captain-beatrice-teleport");
-                state = 0;
-                moveCount = 0;
-                stateTime = 0; // Reset stateTime after finishing move
-            }
-        }
+        StartDash("right", mapSize.x - 3, 3);
+        afterimage = gameObject.AddComponent<Afterimage>();
     }
 
     private void PerformMove3() {
-        Vector2 mapSize = ContMap.I.details.size;
-
         if (moveCount < 3) {
             if (stateTime >= 1.5f) {
-                Vector2 randomPoint = new Vector2(
-                    Random.Range(3, mapSize.x - 3),
-                    Random.Range(3, mapSize.y - 3)
-                );
+                Vector2 randomPoint = new Vector2(Random.Range(3, ContMap.I.details.size.x - 3), Random.Range(3, ContMap.I.details.size.y - 3));
                 SetTeleportTarget(randomPoint);
                 ContObj.I.use_skill_active(inGameObj, "captain-beatrice-teleport");
-
                 ContObj.I.use_skill_active(inGameObj, "captain-beatrice-slash");
                 stateTime = 0;
                 moveCount++;
@@ -119,7 +98,7 @@ public class AI_CaptainBeatrice : InGameAI {
         } else {
             state = 0;
             moveCount = 0;
-            stateTime = 0; // Reset stateTime after finishing move
+            stateTime = 0;
         }
     }
 
@@ -130,38 +109,49 @@ public class AI_CaptainBeatrice : InGameAI {
         }
     }
 
-    // Refactored Dash and Slash logic without Coroutine
     private void StartDash(string direction, float minX, float maxX) {
         dashDirection = direction;
         dashTarget = (direction == "left") ? Vector3.left : Vector3.right;
-        isDashing = true;
-        dashSlashCount = 0;  // Start fresh
+        isDashSlashing = true;
+        dashSlashCount = 0;
     }
 
     private void HandleDash() {
-        if (dashSlashCount < 4) {
+        if (dashSlashCount < 2) {
             Vector2 mapSize = ContMap.I.details.size;
-            float minX = mapSize.x + 3;
+            float minX = -mapSize.x + 3;
             float maxX = mapSize.x - 3;
 
-            // Perform dash and slash
-            ContObj.I.use_skill_active(inGameObj, "captain-beatrice-slash");
-
-            float elapsedTime = 0f;
-            while (elapsedTime < dashDuration) {
-                Vector3 newPosition = gameObject.transform.position + dashTarget * dashSpeed * Time.deltaTime;
-                if (newPosition.x < minX || newPosition.x > maxX) {
-                    break; // Stop if 3 units before the edge is reached
-                }
-                gameObject.transform.position = newPosition;
-                elapsedTime += Time.deltaTime;
+            Vector3 newPosition = gameObject.transform.position + dashTarget * dashSpeed * Time.deltaTime;
+            if ((dashDirection == "left" && newPosition.x < minX) || (dashDirection == "right" && newPosition.x > maxX)) {
+                ContObj.I.use_skill_active(inGameObj, "captain-beatrice-slash");
+                dashDirection = (dashDirection == "left") ? "right" : "left";
+                dashTarget = (dashDirection == "left") ? Vector3.left : Vector3.right;
+                dashSlashCount++;
             }
+            gameObject.transform.position = newPosition;
 
-            dashSlashCount++;
-            stateTime = 0; // Reset stateTime after each dash and slash
         } else {
-            isDashing = false;  // Finish dashing
+            isDashSlashing = false;  // Finish dashing
+            Destroy (afterimage);
             moveCount++;
+        }
+    }
+
+    private void SetRandomMoveTarget() {
+        Vector2 mapSize = ContMap.I.details.size;
+        randomMoveTarget = new Vector3(Random.Range(3, mapSize.x - 3), Random.Range(3, mapSize.y - 3), 0);
+        isMovingToRandomPoint = true;
+    }
+
+    private void MoveToRandomPoint() {
+        Vector3 direction = (randomMoveTarget - transform.position).normalized;
+        Vector3 newPos = transform.position + direction * moveSpeed;
+        ContObj.I.move_walk_to_pos(inGameObj, newPos);
+
+        if (Vector3.Distance(transform.position, randomMoveTarget) < 2f) {
+            isMovingToRandomPoint = false;
+            stateTime = 0;
         }
     }
 }

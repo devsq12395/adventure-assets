@@ -97,6 +97,21 @@ public class MM_Map : MonoBehaviour {
                     MMCont_Dialog.I.create_dialog ("dialog-area-locked");
                 }
                 break;
+            case "to-wooster-square-4":
+                if (PlayerPrefs.GetInt("areasState.to-wooster-square-4") == 1) {
+                    // Commented out for 0.3 demo
+                    // ZPlayerPrefs.SetString("main-menu-map", "wooster-square-4");
+
+                    // // Set start node
+                    // switch (_val) {
+                    //     case "entry-1": PlayerPrefs.SetString("start-node", "1"); break;
+                    // }
+
+                    // MainMenu.I.move_curtain ("changeMap");
+                } else {
+                    MMCont_Dialog.I.create_dialog ("dialog-area-locked");
+                }
+                break;
 
             //////////// DIALOG
             case "dialog-vic":
