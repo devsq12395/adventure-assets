@@ -29,7 +29,7 @@ public class SaveHandler : MonoBehaviour {
         if (ZPlayerPrefs.GetInt("0.3") == 0) {
             ZPlayerPrefs.SetInt("0.3", 1);
 
-            ZPlayerPrefs.SetInt("gold", 0);
+            ZPlayerPrefs.SetInt("gold", 1000);
             ZPlayerPrefs.SetString("date", "jan-2225");
 
             ZPlayerPrefs.SetString("missionCur", "");

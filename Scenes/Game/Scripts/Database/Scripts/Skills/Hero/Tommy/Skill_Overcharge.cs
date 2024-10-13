@@ -23,5 +23,10 @@ public class Skill_Overcharge : SkillTrig
             superAtkComp.enabled = true;
             superAtkComp.skillSlot = "mouse1";
         }
+
+        ContEffect.I.create_effect ("smoke-expand", gameObject.transform.position);
+        ContEffect.I.create_effect ("magic-spark-seraphine", gameObject.transform.position);
+        MUI_Overlay.I.show_overlay ("ult");
+        SoundHandler.I.play_sfx ("magic");
     }
 }

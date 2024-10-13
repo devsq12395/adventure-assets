@@ -1324,8 +1324,8 @@ RectTransform:
   m_Children:
   - {fileID: 929295089}
   - {fileID: 420802417}
-  - {fileID: 1732874656}
   - {fileID: 1399672878}
+  - {fileID: 1732874656}
   - {fileID: 697046909}
   - {fileID: 1463443437}
   - {fileID: 188078333}
@@ -4542,6 +4542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i_blood: {fileID: 1227546084}
   i_zoom: {fileID: 715592830}
+  i_ult: {fileID: 1959545835}
 --- !u!1 &674634176
 GameObject:
   m_ObjectHideFlags: 0
@@ -5681,6 +5682,7 @@ MonoBehaviour:
   fireSpirit: {fileID: 1035227436549338006, guid: 71a761847ff083c428762fbdd8567393, type: 3}
   orc: {fileID: 4690657366656991979, guid: dcc466932049a69408f62cdb95af17eb, type: 3}
   axeArmAzar: {fileID: 4690657366656991979, guid: ce105175ab9d9b24e911b580b06723a3, type: 3}
+  frostOrb: {fileID: 4277177062754300290, guid: 429e321fdb2100349a1517f53994ac1a, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
@@ -5712,6 +5714,7 @@ MonoBehaviour:
   alfredExplodeSlash: {fileID: 5850191904774540969, guid: 80113b4bc827ed04ea785ad7ac100371, type: 3}
   tommySuperAtk: {fileID: 6781197039557131184, guid: a212e02e2a8386518a5c6d982c33d3af, type: 3}
   destroyerSlash: {fileID: 6781197039557131184, guid: 73c3b241c8070d078b10c81eee1dec88, type: 3}
+  frostOrbMissile: {fileID: 0}
   explosion1: {fileID: 1401509844482372538, guid: 27184bd0ec3267a4ba95990debf08eba, type: 3}
   explosion2: {fileID: 7377904376478507447, guid: 6f6c76db710f16b4e9216024f4b55c21, type: 3}
   explosion3: {fileID: 8620740922000547619, guid: 651d929cf2acc7948b5751e38568c570, type: 3}
@@ -12558,6 +12561,7 @@ RectTransform:
   m_Children:
   - {fileID: 1227546082}
   - {fileID: 715592832}
+  - {fileID: 1959545834}
   m_Father: {fileID: 183814454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -13993,6 +13997,7 @@ MonoBehaviour:
   goReward: {fileID: 295937754}
   imgWindow: {fileID: 99408116}
   imgSpkPort: {fileID: 2112213343}
+  imgSpkPortShadow: {fileID: 650240379}
   imgWin: {fileID: 21300000, guid: 10e3e9b95f18e6e4389a5c40665348b7, type: 3}
   imgLose: {fileID: 21300000, guid: f710880dd073a734c98847ee81a6c70d, type: 3}
   tSpkName: {fileID: 355044202}
@@ -14212,6 +14217,81 @@ MonoBehaviour:
   i_skillNotReady: {fileID: 0}
   i_skillReady: {fileID: 0}
   boss: {fileID: 0}
+--- !u!1 &1959545833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1959545834}
+  - component: {fileID: 1959545836}
+  - component: {fileID: 1959545835}
+  m_Layer: 5
+  m_Name: OV_Ult
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1959545834
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959545833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 13.18, y: 7.64, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1732874656}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1959545835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959545833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f97e3479cbeb9f844800ad79c7dba92d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1959545836
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959545833}
+  m_CullTransparentMesh: 1
 --- !u!1 &1961170968
 GameObject:
   m_ObjectHideFlags: 0

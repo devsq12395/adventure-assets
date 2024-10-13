@@ -6,11 +6,8 @@ public class AI_LucaTheTerror : InGameAI {
     private float channelingTime; // Duration for channeling effect
     private float effectInterval; // Interval between effect spawns
     private float moveSpeed; // Speed for constant movement
-    private float chargeCooldown; // Cooldown time for the charge ability
 
     private bool isChanneling = false;
-    private bool isCharging = false; // Indicates if Luca is currently charging
-    private float chargeCooldownTimer = 0f; // Tracks cooldown for the charge ability
     private ObjGlitter objGlitterComponent;
     private int shootCount;
 
@@ -34,17 +31,11 @@ public class AI_LucaTheTerror : InGameAI {
         channelingTime = 2f; // Duration for channeling effect
         effectInterval = 0.25f; // Interval between effect spawns
         moveSpeed = 2f; // Speed for constant movement
-        chargeCooldown = 10f; // Cooldown for charge ability
     }
 
     public override void on_update() {
         InGameObject _p = ContPlayer.I.player;
         Vector2 _pPos = _p.gameObject.transform.position;
-
-        // Update charge cooldown timer
-        if (chargeCooldownTimer > 0) {
-            chargeCooldownTimer -= Time.deltaTime;
-        }
 
         ContObj.I.face_player(inGameObj);
 

@@ -25,5 +25,11 @@ public class Skill_VoidSphere : SkillTrig {
         _msl.timedLife = 1.5f;
 
         _msl.controllerID = _ownerComp.id;
+
+        SoundHandler.I.play_sfx("dash");
+        SoundHandler.I.play_sfx("magic");
+        ContEffect.I.create_effect ("smoke-expand", gameObject.transform.position);
+        ContEffect.I.create_effect ("magic-spark-seraphine", gameObject.transform.position);
+        MUI_Overlay.I.show_overlay ("ult");
     }
 }

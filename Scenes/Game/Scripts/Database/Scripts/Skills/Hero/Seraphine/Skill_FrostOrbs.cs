@@ -12,6 +12,8 @@ public class Skill_FrostOrbs : SkillTrig
         InGameObject _ownerComp = gameObject.GetComponent <InGameObject> ();
         Vector3 ownerPosition = gameObject.transform.position; // The position of the script owner
 
+        _ownerComp.ultPerc = 0;
+
         for (int i = 0; i < 4; i++)
         {
             // Calculate the angle for each fire spirit (90 degrees apart)
@@ -31,5 +33,11 @@ public class Skill_FrostOrbs : SkillTrig
 
             _fireSpirit.GetComponent<InGameObject>().timedLife = 7f;
         }
+
+        SoundHandler.I.play_sfx("dash");
+        SoundHandler.I.play_sfx("magic");
+        ContEffect.I.create_effect ("smoke-expand", gameObject.transform.position);
+        ContEffect.I.create_effect ("magic-spark-seraphine", gameObject.transform.position);
+        MUI_Overlay.I.show_overlay ("ult");
     }
 }

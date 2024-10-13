@@ -11,7 +11,7 @@ public class GameUI_GameOver : MonoBehaviour {
 	public void Awake(){ I = this; }
 
 	public GameObject go, goImg, goReward;
-	public Image imgWindow, imgSpkPort;
+	public Image imgWindow, imgSpkPort, imgSpkPortShadow;
 
 	public Sprite imgWin, imgLose;
 
@@ -62,10 +62,12 @@ public class GameUI_GameOver : MonoBehaviour {
         	}
 
         	imgSpkPort.sprite = Sprites.I.get_sprite (_missionData.gameOverSpk_img);
+        	imgSpkPortShadow.sprite = Sprites.I.get_sprite (_missionData.gameOverSpk_img);
 	        tSpkName.text = _missionData.gameOverSpk_name;
 	        tSpkTxt.text = _missionData.gameOverSpk_text;
         } else {
         	imgSpkPort.sprite = Sprites.I.get_sprite (_missionData.gameOverSpk_imgFail);
+        	imgSpkPortShadow.sprite = Sprites.I.get_sprite (_missionData.gameOverSpk_imgFail);
 	        tSpkName.text = _missionData.gameOverSpk_nameFail;
 	        tSpkTxt.text = _missionData.gameOverSpk_textFail;
         }

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 9180770538312301350}
   - component: {fileID: 9180770538312301349}
   - component: {fileID: 2335255245064927584}
+  - component: {fileID: 228302369398823851}
   m_Layer: 0
   m_Name: seraphine
   m_TagString: Untagged
@@ -254,12 +255,16 @@ MonoBehaviour:
   mpMax: 10
   mpRegen: 0
   armor: 0
+  dam: 0
+  skill: 0
   hitDam: 0
   onHitSFX: 
   tags:
   - hero
   speed: 6
   attachScaleMultiplier: 1
+  hpBarScaleX: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
@@ -288,7 +293,10 @@ MonoBehaviour:
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
+  constMovAng_dur: 0
+  constMovAng_dist: 0
   propellDist: 0
+  constMovAng_movTarget: {x: 0, y: 0}
   propellType: 
   propellFirstPos: {x: 0, y: 0}
   constMovDir_isOn: 0
@@ -311,7 +319,11 @@ MonoBehaviour:
   range: 0
   controllerID: 0
   hitUnitsID: 
+  colorChangeDur: 0
+  summonedBy: 0
   skills: []
+  barHP: {fileID: 0}
+  barSta: {fileID: 0}
 --- !u!114 &9180770538312301371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptTag: collider
+  hitIDs: 
 --- !u!114 &9180770538312301350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +357,8 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: 
+  dashing: 0
+  afterimage: {fileID: 0}
 --- !u!114 &9180770538312301349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,3 +397,23 @@ MonoBehaviour:
   mc: 0
   cdMax: 12
   cd: 0.5
+--- !u!114 &228302369398823851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9180770538312301372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cf1cf08fa95b3ac8a9340f16f14dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptTag: ult
+  skillName: frost-orbs
+  skillSlot: Skill2
+  mc: 0
+  cdMax: 0.5
+  cd: 0
+  missileObj: frost-orb
+  radius: 2

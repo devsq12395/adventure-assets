@@ -138,9 +138,9 @@ public class ContDamage : MonoBehaviour {
 
         // Gain ult
         if (_atk.tags.Contains ("hero")) { 
-            gain_ult (_atk, 4);
+            gain_ult (_atk, 5);
         } else if (_def.tags.Contains ("hero")) {
-            gain_ult (_atk, 2);
+            gain_ult (_def, 3);
         }
 
         return _dam;

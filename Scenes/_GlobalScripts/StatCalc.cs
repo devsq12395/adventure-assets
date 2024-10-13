@@ -10,6 +10,9 @@ public class StatCalc : MonoBehaviour {
     // Cache dictionary for character stats
     private Dictionary<string, Dictionary<string, int>> characterStatsCache = new Dictionary<string, Dictionary<string, int>>();
 
+    private float cacheClearInterval = 2f; // Clear cache every 2 seconds
+    private float lastCacheClearTime;
+
     // Get the stat of a specific character
     public int get_stat(string _charName, string _stat) {
         if (characterStatsCache.ContainsKey(_charName) && characterStatsCache[_charName].ContainsKey(_stat)) {
@@ -23,6 +26,18 @@ public class StatCalc : MonoBehaviour {
         }
 
         return 0; // Default value if the stat is not found
+    }
+
+    void Update() {
+        // Check if 2 seconds have passed since the last cache clear
+        if (Time.time - lastCacheClearTime > cacheClearInterval) {
+            ClearCache();
+            lastCacheClearTime = Time.time; // Update the last cache clear time
+        }
+    }
+
+    private void ClearCache() {
+        characterStatsCache.Clear();
     }
 
     // Method to calculate and cache all stats of a character

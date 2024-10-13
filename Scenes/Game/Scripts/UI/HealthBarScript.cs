@@ -8,31 +8,48 @@ public class HealthBarScript : MonoBehaviour
     private Image healthBarBaseImage;
     private Canvas healthBarCanvas;
 
-    public string mode;
     public bool isReady;
+    public string mode;
+
+    private float baseScaleMultiplier = 1.25f; // Increase the size by 25%
 
     private void Awake() {
         unitStats = GetComponentInParent<InGameObject>();
     }
 
-    public void Setup (string _mode){
+    public void Setup(string _mode) {
         if (unitStats == null) return;
         if (unitStats.type != "unit") return;
 
         // Ensure the health bar has a canvas
-        CreateCanvasIfNeeded();
         mode = _mode;
+        CreateCanvasIfNeeded();
+
+        // X-axis scale multiplier based on unitStats.hpBarScaleX
+        float scaleMultiplierX = unitStats.hpBarScaleX > 0 ? unitStats.hpBarScaleX : 1f;
 
         // Create the health bar and its base
-        switch (mode) {
+        switch (_mode) {
             case "health":
-                healthBarBaseImage = CreateHpBar("hp-bar-base", new Vector2(1.5f, 1.75f), new Vector2(0, 1f));
-                healthBarImage = CreateHpBar("hp-bar", new Vector2(1.5f, 1.75f), new Vector2(0, 1f));
+                healthBarBaseImage = CreateBar("hp-bar-base", 
+                    new Vector2(1.5f * baseScaleMultiplier, 1.75f * baseScaleMultiplier), 
+                    new Vector2(0, 1.75f), 
+                    scaleMultiplierX);
+                healthBarImage = CreateBar("hp-bar", 
+                    new Vector2(1.5f * baseScaleMultiplier, 1.75f * baseScaleMultiplier), 
+                    new Vector2(0, 1.75f), 
+                    scaleMultiplierX);
                 break;
 
             case "stamina":
-                healthBarBaseImage = CreateHpBar("sta-bar-base", new Vector2(1.5f, 1.25f), new Vector2(0, 0.9f));
-                healthBarImage = CreateHpBar("sta-bar", new Vector2(1.5f, 1.25f), new Vector2(0, 0.9f));
+                healthBarBaseImage = CreateBar("sta-bar-base", 
+                    new Vector2(1.5f * baseScaleMultiplier, 1.25f * baseScaleMultiplier), 
+                    new Vector2(0, 1.25f), 
+                    scaleMultiplierX); // Positioned below health bar
+                healthBarImage = CreateBar("sta-bar", 
+                    new Vector2(1.5f * baseScaleMultiplier, 1.25f * baseScaleMultiplier), 
+                    new Vector2(0, 1.25f), 
+                    scaleMultiplierX); // Positioned below health bar
                 break;
         }
 
@@ -43,13 +60,12 @@ public class HealthBarScript : MonoBehaviour
         // Check if there's already a Canvas in the parent hierarchy
         healthBarCanvas = GetComponentInParent<Canvas>();
 
-        if (healthBarCanvas == null)
-        {
+        if (healthBarCanvas == null) {
             // Create a new Canvas if none exists
             GameObject canvasObj = new GameObject("HealthBarCanvas");
             canvasObj.transform.SetParent(transform);
             healthBarCanvas = canvasObj.AddComponent<Canvas>();
-            healthBarCanvas.renderMode = RenderMode.WorldSpace; // Set to World Space if you want it to stay with the unit
+            healthBarCanvas.renderMode = RenderMode.WorldSpace; // Set to World Space to stay with the unit
             healthBarCanvas.sortingLayerName = "hp-bars";
             healthBarCanvas.sortingOrder = 2; 
 
@@ -64,46 +80,44 @@ public class HealthBarScript : MonoBehaviour
         }
     }
 
-    private Image CreateHpBar(string spriteName, Vector2 size, Vector2 anchorPos) {
-        GameObject healthBarObj = new GameObject(spriteName);
-        healthBarObj.transform.SetParent(healthBarCanvas.transform);
+    private Image CreateBar(string spriteName, Vector2 size, Vector2 anchorPos, float scaleMultiplierX) {
+        GameObject barObj = new GameObject(spriteName);
+        barObj.transform.SetParent(healthBarCanvas.transform);
 
-        RectTransform rectTransform = healthBarObj.AddComponent<RectTransform>();
-        rectTransform.anchorMin = new Vector2(0.5f, 1.5f);
-        rectTransform.anchorMax = new Vector2(0.5f, 1.5f);
-        rectTransform.pivot = new Vector2(0.5f, 1);
+        RectTransform rectTransform = barObj.AddComponent<RectTransform>();
+        rectTransform.anchorMin = new Vector2(0.5f, 1f);
+        rectTransform.anchorMax = new Vector2(0.5f, 1f);
+        rectTransform.pivot = new Vector2(0.5f, 1f);
         rectTransform.anchoredPosition = anchorPos;
 
-        Image hpBarImage = healthBarObj.AddComponent<Image>();
-        hpBarImage.sprite = Sprites.I.get_sprite(spriteName);
+        Image barImage = barObj.AddComponent<Image>();
+        barImage.sprite = Sprites.I.get_sprite(spriteName);
 
-        rectTransform.sizeDelta = size;
-        hpBarImage.type = Image.Type.Filled;
-        hpBarImage.fillMethod = Image.FillMethod.Horizontal;
-        hpBarImage.fillOrigin = (int)Image.OriginHorizontal.Right;
+        rectTransform.sizeDelta = size * new Vector2(scaleMultiplierX, 1); // Only apply scaleMultiplierX to the X axis
+        barImage.type = Image.Type.Filled;
+        barImage.fillMethod = Image.FillMethod.Horizontal;
+        barImage.fillOrigin = (int)Image.OriginHorizontal.Right;
 
-        return hpBarImage;
+        return barImage;
     }
 
     private void Update() {
         if (!isReady) return;
 
-        float scaleX;
         if (unitStats != null && healthBarImage != null) {
             switch (mode) {
                 case "health":
                     healthBarImage.fillAmount = (float)unitStats.hp / unitStats.hpMax;
-                    scaleX = ((unitStats.facing == "left") ? 1.5f : -1.5f);
-                    healthBarCanvas.transform.localScale = new Vector3(scaleX, 1.75f, 1);
                     break;
 
                 case "stamina":
                     healthBarImage.fillAmount = (float)ContPlayer.I.sta / ContPlayer.I.staMax;
-                    scaleX = ((unitStats.facing == "left") ? 1.5f : -1.5f);
-                    healthBarCanvas.transform.localScale = new Vector3(scaleX, 1.25f, 1);
                     break;
             }
 
+            // Adjust the scale based on the facing direction
+            float scaleX = (unitStats.facing == "left") ? 1f : -1f;
+            healthBarCanvas.transform.localScale = new Vector3(scaleX, healthBarCanvas.transform.localScale.y, healthBarCanvas.transform.localScale.z);
         }
     }
 }

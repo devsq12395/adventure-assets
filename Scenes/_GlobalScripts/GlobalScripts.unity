@@ -195,7 +195,7 @@ MonoBehaviour:
   mafiaCaptain: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
   icnHighway: {fileID: 21300000, guid: e40407a46bdc8a541b8f95eb918dd58e, type: 3}
   icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
-  itmGold: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
+  itmGold: {fileID: 21300000, guid: 9bdf991719930ec499be4f43d5947a59, type: 3}
   itmBasicSword: {fileID: 21300000, guid: fe81a083d9e80d94c9b22e8458d93ff9, type: 3}
   itmHomemadeGun: {fileID: 21300000, guid: dc3a54ddb262e3947b4e1f0fe0ed273e, type: 3}
   itmLeatherJacket: {fileID: 21300000, guid: ec334e148fecacd40bd528fe44913320, type: 3}

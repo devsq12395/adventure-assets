@@ -61,6 +61,8 @@ public class MM_Craft : MonoBehaviour {
 				_goldReq = $"Recruit Cost: {goldCost.ToString ()}";
 				iPort.sprite = Sprites.I.get_sprite (_name);
 
+				tRequires.text = _goldReq;
+
 				break;
 		}
 	}

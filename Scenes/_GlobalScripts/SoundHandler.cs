@@ -119,7 +119,7 @@ public class SoundHandler : MonoBehaviour
         {
             lastBgm = _music;
             return;
-        } else if (_music == lastBgm) {
+        } else if (_music == lastBgm && _music != "game") {
             return;
         }
         audioSource.Stop();

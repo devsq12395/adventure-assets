@@ -17,7 +17,7 @@ public class ColTrig_DestroyerSlash : ColTrig {
                         _owner = ContObj.I.get_obj_with_id (_this.controllerID);
 
         ContEffect.I.create_effect ("explosion1", gameObject.transform.position);
-        ContDamage.I.damage (_owner, _hit, _owner.skill * 3, damTags);
+        ContDamage.I.damage (_owner, _hit, (int)((float)_owner.skill * 1.5f), damTags);
 
         hitIDs.Add (_hit.id);
     }

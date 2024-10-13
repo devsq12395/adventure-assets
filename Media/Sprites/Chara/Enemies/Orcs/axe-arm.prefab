@@ -266,6 +266,7 @@ MonoBehaviour:
   - boss
   speed: 4
   attachScaleMultiplier: 1
+  hpBarScaleX: 1.5
   ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}

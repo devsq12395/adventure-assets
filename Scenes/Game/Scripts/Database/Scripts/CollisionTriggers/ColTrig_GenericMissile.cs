@@ -17,6 +17,7 @@ public class ColTrig_GenericMissile : ColTrig {
         if (_this.summonedBy > 0) {
             InGameObject _summoner = ContObj.I.get_obj_with_id (_this.summonedBy);
             _this.hitDam = _summoner.skill;
+            Debug.Log (_this.hitDam);
         }
 
         ContDamage.I.damage (_owner, _hit, _this.hitDam, _this.tags);

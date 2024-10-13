@@ -268,6 +268,7 @@ MonoBehaviour:
   - human
   speed: 4
   attachScaleMultiplier: 1
+  hpBarScaleX: 1.5
   ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
@@ -372,8 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c329fd244a690b3a0b41926403c98955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptTag: skill
-  skillName: luca-dash
+  scriptTag: charge
+  skillName: charge
   skillSlot: mouse1
   mc: 0
   cdMax: 0.5

@@ -9,7 +9,7 @@ public class MUI_Overlay : MonoBehaviour
 {
     public static MUI_Overlay I;
 
-    public Image i_blood, i_zoom;
+    public Image i_blood, i_zoom, i_ult;
 
     private void Awake()
     {
@@ -18,6 +18,7 @@ public class MUI_Overlay : MonoBehaviour
         // Ensure the images have a CanvasGroup component for alpha control
         AddCanvasGroup(i_blood);
         AddCanvasGroup(i_zoom);
+        AddCanvasGroup(i_ult);
     }
 
     private void AddCanvasGroup(Image image)
@@ -34,12 +35,9 @@ public class MUI_Overlay : MonoBehaviour
 
         switch (_name)
         {
-            case "blood":
-                targetImage = i_blood;
-                break;
-            case "zoom":
-                targetImage = i_zoom;
-                break;
+            case "blood": targetImage = i_blood; break;
+            case "zoom": targetImage = i_zoom; break;
+            case "ult": targetImage = i_ult; break;
         }
 
         if (targetImage != null)
@@ -50,8 +48,8 @@ public class MUI_Overlay : MonoBehaviour
 
             // Sequence to handle the tweening effect
             Sequence sequence = DOTween.Sequence();
-            sequence.Append(canvasGroup.DOFade(0.7f, 0.15f))
-                    .Append(canvasGroup.DOFade(0f, 0.6f))
+            sequence.Append(canvasGroup.DOFade(0.9f, 0.2f))
+                    .Append(canvasGroup.DOFade(0f, 0.8f))
                     .OnComplete(() => targetImage.gameObject.SetActive(false));  // Deactivate after the sequence
         }
     }

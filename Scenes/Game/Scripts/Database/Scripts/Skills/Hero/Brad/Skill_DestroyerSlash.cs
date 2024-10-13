@@ -22,9 +22,10 @@ public class Skill_DestroyerSlash : SkillTrig {
         create_missile (_ownerComp, Calculator.I.get_ang_from_point_and_mouse (gameObject.transform.position) - 25);
 
         SoundHandler.I.play_sfx("dash");
+        SoundHandler.I.play_sfx("magic");
         ContEffect.I.create_effect ("smoke-expand", gameObject.transform.position);
-
-        MUI_Overlay.I.show_overlay ("zoom");
+        ContEffect.I.create_effect ("bindChainExp1", gameObject.transform.position);
+        MUI_Overlay.I.show_overlay ("ult");
     }
 
     private void create_missile (InGameObject _ownerComp, float _ang){

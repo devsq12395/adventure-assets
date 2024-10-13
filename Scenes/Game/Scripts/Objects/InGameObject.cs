@@ -21,6 +21,7 @@ public class InGameObject : MonoBehaviour {
     public string onHitSFX;
     public List<string> tags;
     public float speed, attachScaleMultiplier = 1;
+    public float hpBarScaleX = 1;
     
     [Header("------ NON-EDITABLE PARTS ------")]
     public int ultPerc;

@@ -18,13 +18,15 @@ public class DB_Objects : MonoBehaviour {
     public GameObject hero;
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, slimeOrange, mobster, slimeKing, giantSlime,
         lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
-        centurion, victorianSoldier, mafiaBoss, assassin, assassinCaptain, goblin, goblinMage, hobgoblin, fireSpirit, orc, axeArmAzar;
+        centurion, victorianSoldier, mafiaBoss, assassin, assassinCaptain, goblin, goblinMage, hobgoblin, fireSpirit, orc, axeArmAzar,
+        frostOrb;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
         bulletTommy, bulletMobster, bulletEmbraced, bulletVictorianSoldier, fireWave, blueWave, slashShredder, prismDroneMissile,
-        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken, shurikenSpiral, fireball, alfredExplodeSlash, tommySuperAtk, destroyerSlash;
+        centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken, shurikenSpiral, fireball, alfredExplodeSlash, 
+        tommySuperAtk, destroyerSlash, frostOrbMissile;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -92,6 +94,7 @@ public class DB_Objects : MonoBehaviour {
             case "fire-spirit":            _refObj = fireSpirit; break;
             case "orc":            _refObj = orc; break;
             case "axe-arm-azar":            _refObj = axeArmAzar; break;
+            case "frost-orb":            _refObj = frostOrb; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -125,6 +128,7 @@ public class DB_Objects : MonoBehaviour {
             case "alfred-explode-slash":             _refObj = alfredExplodeSlash; break;
             case "tommy-super-atk":             _refObj = tommySuperAtk; break;
             case "destroyer-slash":             _refObj = destroyerSlash; break;
+            case "frost-orb-missile":            _refObj = frostOrbMissile; break;
 
             // Effects 
             case "explosion1":              _refObj = explosion1; break;
