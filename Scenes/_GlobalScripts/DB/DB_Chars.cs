@@ -74,7 +74,7 @@ public class DB_Chars : MonoBehaviour {
                 break;
             case "anastasia":
                 _new.nameUI="Anastasia";
-                _new.desc = "";
+                _new.desc = "Daughter of a wealthy noble family who are experts in vampiric magic. She aims to cleanse New Haven from the rampant crime wave and corruption.";
                 _new.imgPort="anastasia";
                 _new.equipWeapon="sword";
                 _new.statHP = 80; _new.statAtk = 12; _new.statRange = 2; 
@@ -90,7 +90,7 @@ public class DB_Chars : MonoBehaviour {
                 break;
             case "sylphine":
                 _new.nameUI="Sylphine";
-                _new.desc = "";
+                _new.desc = "She came all the way from Europe to study magic in New Yale University. Sylphine is a high ranking ice mage, taking up battlemage courses and involved in several field research on ice magic.";
                 _new.imgPort="sylphine";
                 _new.equipWeapon="staff";
                 _new.statHP = 70; _new.statAtk = 8; _new.statRange = 6; 
@@ -102,7 +102,7 @@ public class DB_Chars : MonoBehaviour {
 
                 _new.bioInfo = "Attack Weapon: Staff\nAttaack Tags: ice, magic\n\n\nCharacter Tags: hero, human, mage, new yale";
                 _new.bioSkill1 = "Torrent: Unleashes a sequence of strong torrents, dealing skill damage over time.\n\nTags: magic, water";
-                _new.bioSkill2 = "Frost Orbs: Creates 4 Frost Orbs that shoots ice shards, dealing damage per hit.\n\nTags: ice, magic";
+                _new.bioSkill2 = "Frost Orbs: Creates 4 Frost Orbs that shoots ice shards, dealing skill damage per hit.\n\nTags: ice, magic";
                 break;
         }
 

@@ -140,7 +140,7 @@ public class DB_Dialogs : MonoBehaviour {
 			    break;
 
 			case "wooster-square-house-1":
-			    _new.name = "Old Man";
+			    _new.name = "Woman";
 			    _new.desc = "Our nation of Victoria was founded by the great heroes who defeated the Demon Lord 150 years ago.";
 			    _new.portImg = "npc-woman-1";
 			    _new.isTweenOut = "0";
@@ -191,7 +191,7 @@ public class DB_Dialogs : MonoBehaviour {
 			    break;
 
 			case "wooster-square-house-2":
-			    _new.name = "Old Man";
+			    _new.name = "Woman";
 			    _new.desc = "We honor their legacy every day.";
 			    _new.portImg = "npc-woman-1";
 			    _new.isTweenOut = "1";
@@ -550,7 +550,7 @@ public class DB_Dialogs : MonoBehaviour {
 			case "dialog-field-5":
 			    _new.name = "Gun-Arm Azar";
 			    _new.desc = "Anastasia, the vampire lady. Today, you will pay for what you did to my arm! Get her boys!";
-			    _new.portImg = "orc-1";
+			    _new.portImg = "azar";
 			    _new.isTweenOut = "1";
 			    _new.inputEmptyContinue = "show-dialog-field-4";
 			    _new.isMini = "0";
@@ -1025,7 +1025,7 @@ public class DB_Dialogs : MonoBehaviour {
 
 			case "recruit-anastasia-2":
 			    _new.name = "Anastasia";
-			    _new.desc = "I'm Anastasia. Like you, I came from afar.";
+			    _new.desc = "I'm Anastasia Volkov, from a family with deep roots here in New Haven. Our family has been involved in the city's affairs for generations.";
 			    _new.portImg = "anastasia";
 			    _new.isTweenOut = "0";
 			    _new.inputEmptyContinue = "recruit-anastasia-3";
@@ -1042,7 +1042,7 @@ public class DB_Dialogs : MonoBehaviour {
 
 			case "recruit-anastasia-3":
 			    _new.name = "Anastasia";
-			    _new.desc = "If you're looking for strong companions, I'm available. For a price, of course.";
+			    _new.desc = "I'm actually interested in joining you. I believe your journey will only become more intriguing that I just have to witness it.";
 			    _new.portImg = "anastasia";
 			    _new.isTweenOut = "1";
 			    _new.inputEmptyContinue = "";

@@ -193,6 +193,8 @@ MonoBehaviour:
   assassinCaptain: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
   hobgoblin: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
   mafiaCaptain: {fileID: 21300000, guid: 87e00fb74c3b947488baa76678b75a3c, type: 3}
+  orc1: {fileID: 21300000, guid: b099e9d8572a8bc41985a3f3e6fb8b5c, type: 3}
+  gunArmAzar: {fileID: 21300000, guid: 2448adb8a98e1db4fa0fc7ad9b2c90ef, type: 3}
   icnHighway: {fileID: 21300000, guid: e40407a46bdc8a541b8f95eb918dd58e, type: 3}
   icnItem: {fileID: 21300000, guid: 20c3ba0bd3fa1ad4682802dda777a7f6, type: 3}
   itmGold: {fileID: 21300000, guid: 9bdf991719930ec499be4f43d5947a59, type: 3}

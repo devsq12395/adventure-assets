@@ -31,7 +31,7 @@ public class Skill_FrostOrbs : SkillTrig
             spinScript.initialAngle = angle;
             spinScript.SetInitialPosition ();
 
-            _fireSpirit.GetComponent<InGameObject>().timedLife = 7f;
+            _fireSpirit.GetComponent<InGameObject>().timedLife = 11f;
         }
 
         SoundHandler.I.play_sfx("dash");

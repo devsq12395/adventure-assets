@@ -78,8 +78,9 @@ public class MM_Party : MonoBehaviour {
 
             partyBtns [i].port.gameObject.SetActive (_name != "");
             if (_name != "") {
-                partyBtns [i].port.sprite = Sprites.I.get_sprite (_name);
-                partyBtns [i].name.text = MM_Strings.I.get_str ($"{_name}-name");
+                DB_Chars.CharData _charData = DB_Chars.I.get_char_data (_name);
+                partyBtns [i].port.sprite = Sprites.I.get_sprite (_charData.imgPort);
+                partyBtns [i].name.text = _charData.nameUI;
                 partyBtns [i].lvl.text = "";
             }
         }

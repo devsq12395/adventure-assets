@@ -294,8 +294,6 @@ public class ContObj : MonoBehaviour {
 
         if (hit.collider != null && !hit.collider.isTrigger && hit.collider.gameObject != _obj.gameObject)
         {
-            Debug.Log("Obstacle detected: " + hit.collider.gameObject.name);
-
             Vector2 avoidanceDir = new Vector2(-direction.y, direction.x); // Perpendicular direction
             float newAngle = Mathf.Atan2(avoidanceDir.y, avoidanceDir.x) * Mathf.Rad2Deg;
 

@@ -143,6 +143,14 @@ public class ContDamage : MonoBehaviour {
             gain_ult (_def, 3);
         }
 
+        // Pendant of Burning Scourge
+        if (_atk.equipItems ["pendant"] == "pendant-of-burning-scourge") {
+            _dam += (int)((float)_damOrig * 0.15f);
+            if (_def.tags.Contains ("plant")) {
+                _dam += (int)((float)_damOrig * 0.3f);
+            }
+        }
+
         return _dam;
     }
     

@@ -29,7 +29,7 @@ public class Inv2 : MonoBehaviour {
 
     public void Awake (){
         I = this;
-        equipStrList = new List<string>(){"weapon", "armor", "boots", "accessory1", "accessory2"};
+        equipStrList = new List<string>(){"weapon", "armor", "boots", "pendant", "armlet"};
     }
 
     public void add_item(string _itemName, int _stack = 1) {
@@ -117,6 +117,19 @@ public class Inv2 : MonoBehaviour {
                     _ret.Add(items[i]);
                     break;
                 }
+            }
+        }
+        return _ret;
+    }
+
+    public string get_item_name_in_equipped_slot (string _slot, string _charName){
+        List<Inv2.Item> itemsEquipped = Inv2.I.get_equipped_items(_charName);
+        string _ret = "";
+        for (int i = 0; i < itemsEquipped.Count; i++) {
+            Inv2_DB.ItemData _itemData = Inv2_DB.I.get_item_data (itemsEquipped[i].name);
+            if (_itemData.equipTo == _slot) {
+                _ret = itemsEquipped[i].name;
+                break;
             }
         }
         return _ret;

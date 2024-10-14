@@ -20,7 +20,7 @@ public class Sprites : MonoBehaviour {
     [Header("----- Portraits: NPC / Bosses -----")]
     public Sprite vic;
     public Sprite npcMan1, npcMan2, npcMan3, npcMan4, npcWoman1, npcWoman2, npcWoman3, vincenzo;
-    public Sprite giantSlime, assassinCaptain, hobgoblin, mafiaCaptain;
+    public Sprite giantSlime, assassinCaptain, hobgoblin, mafiaCaptain, orc1, gunArmAzar;
 
     [Header("----- Icons: Other -----")]
     public Sprite icnHighway;
@@ -47,6 +47,7 @@ public class Sprites : MonoBehaviour {
             { "tommy", tommy },
             { "brad", brad },
             { "kazuma", brad }, // Shared sprite
+            { "alfred", brad }, // Shared sprite
             { "anastasia", anastasia },
             { "seraphine", seraphine },
             { "sylphine", seraphine }, // Shared sprite
@@ -76,6 +77,8 @@ public class Sprites : MonoBehaviour {
             { "assassin-captain", assassinCaptain },
             { "hobgoblin", hobgoblin },
             { "mafia-captain", mafiaCaptain },
+            { "orc-1", orc1 },
+            { "azar", gunArmAzar },
 
             { "hp-bar", hpBar },
             { "hp-bar-base", hpBarBase },

@@ -60,8 +60,6 @@ public class MM_Inv2 : MonoBehaviour {
         		goBtnAction.SetActive (false);
         		break;
         	case "equip": 
-        		if (itemSet == "accessory1" || itemSet == "accessory2") itemSet = "accessory";
-        		
         		itemsSet = Inv2.I.get_items_with_tag ( itemSet );
         		img_window1.sprite = spr_invWin1;
         		img_window2.sprite = spr_invWin2;

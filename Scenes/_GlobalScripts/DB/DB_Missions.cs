@@ -50,7 +50,7 @@ public class DB_Missions : MonoBehaviour {
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
-                _new.gameOverSpk_imgFail = "kazuya";
+                _new.gameOverSpk_imgFail = "alfred";
 
                 _new.enemies.AddRange (new string[]{"training-grounds"});
                 _new.maps.AddRange (new string[]{"training-grounds"});
@@ -73,7 +73,7 @@ public class DB_Missions : MonoBehaviour {
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
-                _new.gameOverSpk_imgFail = "kazuya";
+                _new.gameOverSpk_imgFail = "alfred";
 
     			_new.enemies.AddRange (new string[]{"tutorial", "slime-2"});
     			_new.maps.AddRange (new string[]{"map-tutorial", "map-wooster-square-3"});
@@ -96,7 +96,7 @@ public class DB_Missions : MonoBehaviour {
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
-                _new.gameOverSpk_imgFail = "kazuya";
+                _new.gameOverSpk_imgFail = "alfred";
 
                 _new.enemies.AddRange (new string[]{"mafia-1", "mafia-2"});
                 _new.maps.AddRange (new string[]{"map-wooster-square-4", "map-wooster-square-3"});
@@ -119,7 +119,7 @@ public class DB_Missions : MonoBehaviour {
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
-                _new.gameOverSpk_imgFail = "kazuya";
+                _new.gameOverSpk_imgFail = "alfred";
 
                 _new.enemies.AddRange (new string[]{"goblin-1", "orc-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand"});
@@ -165,7 +165,7 @@ public class DB_Missions : MonoBehaviour {
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
-                _new.gameOverSpk_imgFail = "kazuya";
+                _new.gameOverSpk_imgFail = "alfred";
 
                 _new.enemies.AddRange (new string[]{"cursed-forest", "cursed-forest", "cursed-forest"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand", "woosterSquare_rand"});
@@ -188,7 +188,7 @@ public class DB_Missions : MonoBehaviour {
 
                 _new.gameOverSpk_nameFail = "Alfred";
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
-                _new.gameOverSpk_imgFail = "kazuya";
+                _new.gameOverSpk_imgFail = "alfred";
 
                 _new.enemies.AddRange (new string[]{"war-shredder-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});

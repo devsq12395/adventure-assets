@@ -99,12 +99,13 @@ public class MM_ChangeParty : MonoBehaviour {
 
         for (int i = 0; i < mainLineup.Count; i++) {
             _name = strList_lineup [i];
+            DB_Chars.CharData _charData = DB_Chars.I.get_char_data (_name);
 
             if (_name != "") {
                 setup_button (
                     mainLineup [i], 
-                    Sprites.I.get_sprite (_name),
-                    MM_Strings.I.get_str ($"{_name}-name"),
+                    Sprites.I.get_sprite (_charData.imgPort),
+                    _charData.nameUI,
                     ""
                 );
             } else {
@@ -172,11 +173,12 @@ public class MM_ChangeParty : MonoBehaviour {
 
         strList_lineup [lineupSel] = strList_heroPool [_ind];
         string _name = strList_lineup [lineupSel];
+        DB_Chars.CharData _charData = DB_Chars.I.get_char_data (_name);
 
         setup_button (
             mainLineup [lineupSel],
-            Sprites.I.get_sprite (_name),
-            MM_Strings.I.get_str ($"{_name}-name"),
+            Sprites.I.get_sprite (_charData.imgPort),
+            _charData.nameUI,
             ""
         );
 

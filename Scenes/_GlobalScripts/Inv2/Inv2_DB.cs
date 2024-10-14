@@ -110,9 +110,9 @@ public class Inv2_DB : MonoBehaviour {
                 case "pendant-of-burning-scourge": case "ring-of-burning-scourge":
                     _new.nameUI="Pendant of Burning Scourge";
                     _new.desc="+15% damage to damages tagged fire\n+30% damage to enemies tagged plant\n\nSpecifically designed to make forest clearing easy.";
-                    _new.details="Cost: 400 Gold\nTags: ring, accessory, fire, enchanted";
-                    _new.equipTo="accessory";
-                    _new.tags.AddRange(new List<string> { "ring", "accessory", "fire", "enchanted"});
+                    _new.details="Cost: 400 Gold\nTags: pendant, fire, enchanted";
+                    _new.equipTo="pendant";
+                    _new.tags.AddRange(new List<string> { "pendant", "fire", "enchanted"});
                     _new.sprite = Sprites.I.get_sprite ("itm-pendant-of-burning-scourge");
                     _new.cost = 400;
                     _new.stackable = false;
@@ -123,9 +123,9 @@ public class Inv2_DB : MonoBehaviour {
                 case "gloves-of-pro-driving":
                     _new.nameUI="Gloves of Pro Driving";
                     _new.desc="+1 to Driving\n\nThey say it improves your driving skills, but it's just a pair of gloves.";
-                    _new.details="Cost: 50 Gold\nTags: gloves, accessory, driving";
-                    _new.equipTo="accessory";
-                    _new.tags.AddRange(new List<string> { "gloves", "accessory", "driving"});
+                    _new.details="Cost: 50 Gold\nTags: gloves, armlet, driving";
+                    _new.equipTo="armlet";
+                    _new.tags.AddRange(new List<string> { "gloves", "armlet", "driving"});
                     _new.sprite = Sprites.I.get_sprite ("itm-gloves-of-pro-driving");
                     _new.cost = 50;
                     _new.stackable = false;

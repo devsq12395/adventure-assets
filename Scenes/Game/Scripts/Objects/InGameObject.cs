@@ -41,6 +41,7 @@ public class InGameObject : MonoBehaviour {
 
     // Stats
     public int statHP, statMP, statAttack, statRange, statSkill, statSpeed, statArmor, statCritRate, statCritDam;
+    public Dictionary<string, string> equipItems;
 
     // Movement
     public Vector2 curPos = new Vector2 (0, 0);
@@ -97,6 +98,17 @@ public class InGameObject : MonoBehaviour {
 
         buffs = new List<ContBuffs.buff> ();
         skills = new List<SkillTrig> ();
+
+        equipItems = new Dictionary<string, string>();
+        if (tags.Contains("hero")) {
+            foreach (string equipSlot in Inv2.I.equipStrList) {
+                equipItems[equipSlot] = Inv2.I.get_item_name_in_equipped_slot (equipSlot, name);
+            }
+        } else {
+            foreach (string equipSlot in Inv2.I.equipStrList) {
+                equipItems[equipSlot] = "";
+            }
+        }
 
         rb = GetComponent <Rigidbody2D> ();
         anim = GetComponent <Animator> ();
