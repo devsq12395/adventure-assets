@@ -88,6 +88,11 @@ public class Calculator : MonoBehaviour {
         return Vector2.Distance (_p1, _p2);
     }
 
+    public float get_dist_from_player (Vector2 _p1){
+        InGameObject _player = ContPlayer.I.player;
+        return get_dist_from_2_points (_p1, _player.gameObject.transform.position);
+    }
+
     public Vector2 get_next_point_in_direction (Vector2 position, float angle, float distance, bool checkMapBounds = true) {
         float angleRad = angle * Mathf.Deg2Rad;
         Vector2 nextPoint = new Vector2(position.x + Mathf.Cos(angleRad) * distance, position.y + Mathf.Sin(angleRad) * distance);

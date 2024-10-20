@@ -5,7 +5,7 @@ using UnityEngine;
 public class InGameAI : MonoBehaviour {
 
     public InGameObject inGameObj;
-    public bool isStart, isReady;
+    public bool isStart, isReady, isActivated;
 
     public int state = 0;
     public float stateTime = 0f;
@@ -21,6 +21,10 @@ public class InGameAI : MonoBehaviour {
         // The above statement applies here too
     }
 
+    public virtual void on_update (){
+
+    }
+
     void Update (){
         if (Game.I.isPaused) return;
 
@@ -34,11 +38,17 @@ public class InGameAI : MonoBehaviour {
             on_ready ();
             isReady = true;
         }
+        if (!isActivated) {
+            check_if_player_nearby ();
+            return;
+        }
 
         on_update ();
     }
 
-    public virtual void on_update (){
-
+    public void check_if_player_nearby (){
+        if (Calculator.I.get_dist_from_player (gameObject.transform.position) <= 10) {
+            isActivated = true;
+        }
     }
 }
