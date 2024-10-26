@@ -10,12 +10,16 @@ public class DB_Maps : MonoBehaviour {
 
     public GameObject goMap_woosterSquare1, goMap_woosterSquare2, goMap_woosterSquare3, goMap_woosterSquare4, goMap_trainingGrounds;
 
+    public float SIZE_PER_PIECE; // Assuming each map piece is a square
+
     public struct mapDetails {
+        SIZE_PER_PIECE = 50;
+
         public string name, biome;
         public Dictionary<string, Vector2> pointList;
         public GameObject mapObj;
         public Vector2 size;
-        public int mapObjMatrix_sizeX, mapObjMatrix_sizeY;
+        public int mapObjMatrix_sizeX, mapObjMatrix_sizeY; // How many pieces per map in a coordinate
 
         public mapDetails (string _name){
             pointList = new Dictionary<string, Vector2> ();
@@ -30,10 +34,13 @@ public class DB_Maps : MonoBehaviour {
     public struct mapObject {
         public GameObject go;
         public int sizeX, sizeY;
+        public List<List<bool>> sizeMatrix;
 
         public mapObject (GameObject _go){
             go = _go;
             sizeX = 1; sizeY = 1;
+
+            sizeMatrix = new List<List<bool>>();
         }
     }
 
@@ -72,10 +79,24 @@ public class DB_Maps : MonoBehaviour {
     public mapObject get_map_game_object (string _name) {
         mapObject _new = new mapObject(null);
 
+        mapDetails details = ContMap.I.details;
+        for(int i = 0; i < details.mapObjMatrix_sizeX; i++) {
+            List<bool> toAdd = new List<bool>();
+
+            for(int i = 0; i < details.mapObjMatrix_sizeY; i++) {
+                toAdd.Add (false);
+            }
+
+            _new.sizeMatrix.Add (toAdd);
+        }
+
         switch (_name) {
             case "map-wooster-square-1": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
                 _new.sizeX = 1; _new.sizeY = 3;
+
+                _new[0][0] = true;
+                _new[0][0] = true;
                 break;
             case "map-wooster-square-2": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare2, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 

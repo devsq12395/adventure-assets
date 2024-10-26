@@ -43,6 +43,8 @@ public class ContMap : MonoBehaviour
         List<string> _mapGameObjectNames = DB_Maps.I.get_map_game_object (biome);
         List<List<bool>> _mapMatrix = new List<List<bool>>();
 
+        float SIZE_PER_PIECE = DB_Maps.I.SIZE_PER_PIECE;
+
         // (0, 0) will be the uppermost part of the matrix
         // Remember that _mapMatrix works this way: _mapMatrix [Y][X]
         Vector2 _curPos = new Vector2 (0, 0);
@@ -54,8 +56,12 @@ public class ContMap : MonoBehaviour
 
                 DB_Maps.mapObject _mapObj = DB_Maps.I.get_map_game_object (_newGameObj);
 
-                _mapObj.go.transform.position = new Vector2 ();
-                // Set _mapMatrix value here depending on the size of the added _mapObj
+                _mapObj.go.transform.position = new Vector2 (
+                    ((SIZE_PER_PIECE * mapObjMatrix_sizeX) / 2) - (SIZE_PER_PIECE / 2),
+                    ((SIZE_PER_PIECE * mapObjMatrix_sizeY) / 2) - (SIZE_PER_PIECE / 2)
+                );
+                
+                
             }
 
             // Check next position
