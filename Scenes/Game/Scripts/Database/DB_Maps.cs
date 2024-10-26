@@ -13,8 +13,6 @@ public class DB_Maps : MonoBehaviour {
     public float SIZE_PER_PIECE; // Assuming each map piece is a square
 
     public struct mapDetails {
-        SIZE_PER_PIECE = 50;
-
         public string name, biome;
         public Dictionary<string, Vector2> pointList;
         public GameObject mapObj;
@@ -33,15 +31,17 @@ public class DB_Maps : MonoBehaviour {
 
     public struct mapObject {
         public GameObject go;
-        public int sizeX, sizeY;
-        public List<List<bool>> sizeMatrix;
+        public string nextMap_down, nextMap_right;
 
         public mapObject (GameObject _go){
             go = _go;
-            sizeX = 1; sizeY = 1;
-
-            sizeMatrix = new List<List<bool>>();
+            nextMap_down = "";
+            nextMap_right = "";
         }
+    }
+
+    void Start (){
+        SIZE_PER_PIECE = 50; // Also set on ContMap.cs for now
     }
 
     public mapDetails get_map_details (string _name) {
@@ -70,7 +70,7 @@ public class DB_Maps : MonoBehaviour {
         List<string> _new = new List<string>();
         switch (_biome){
             case "wooster-square":
-                _new.AddRange (new string []{"map-wooster-square-1","map-wooster-square-2","map-wooster-square-3","map-wooster-square-4"});
+                _new.AddRange (new string []{"map-wooster-square-1"});
                 break;
         }
         return _new;
@@ -80,40 +80,27 @@ public class DB_Maps : MonoBehaviour {
         mapObject _new = new mapObject(null);
 
         mapDetails details = ContMap.I.details;
-        for(int i = 0; i < details.mapObjMatrix_sizeX; i++) {
-            List<bool> toAdd = new List<bool>();
-
-            for(int i = 0; i < details.mapObjMatrix_sizeY; i++) {
-                toAdd.Add (false);
-            }
-
-            _new.sizeMatrix.Add (toAdd);
-        }
 
         switch (_name) {
             case "map-wooster-square-1": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-                _new.sizeX = 1; _new.sizeY = 3;
-
-                _new[0][0] = true;
-                _new[0][0] = true;
+                _new.nextMap_down = "map-wooster-square-2";
                 break;
             case "map-wooster-square-2": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare2, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-                _new.sizeX = 1; _new.sizeY = 1;
+                _new.nextMap_down = "map-wooster-square-3";
                 break;
             case "map-wooster-square-3": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare3, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-                _new.sizeX = 1; _new.sizeY = 1;
+                _new.nextMap_down = "map-wooster-square-4";
                 break;
             case "map-wooster-square-4": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare4, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-                _new.sizeX = 1; _new.sizeY = 1;
                 break;
 
         }
 
-        SceneManager.MoveGameObjectToScene(_new, SceneManager.GetSceneByName("Game"));
+        SceneManager.MoveGameObjectToScene(_new.go, SceneManager.GetSceneByName("Game"));
         return _new;
     }
 

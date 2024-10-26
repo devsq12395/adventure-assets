@@ -14,6 +14,8 @@ public class ContMap : MonoBehaviour
     private List<GameObject> maps;
 
     public void setup_map() {
+        DB_Maps.I.SIZE_PER_PIECE = 50;
+
         Grid[] allGrids = FindObjectsOfType<Grid>();
         foreach (Grid gridObject in allGrids) {
             if (gridObject != null){
@@ -39,34 +41,73 @@ public class ContMap : MonoBehaviour
         create_map_objects (details.biome);
     }
 
-    public void create_map_objects (string biome){
-        List<string> _mapGameObjectNames = DB_Maps.I.get_map_game_object (biome);
+    public void create_map_objects(string biome) {
+        // Fetch map object names for the specified biome
+        List<string> _mapGameObjectNames = DB_Maps.I.get_map_lists(biome);
         List<List<bool>> _mapMatrix = new List<List<bool>>();
 
         float SIZE_PER_PIECE = DB_Maps.I.SIZE_PER_PIECE;
+        
+        // Calculate the offset so the center of the map is at (0, 0)
+        float offsetX = (details.mapObjMatrix_sizeX - 1) / 2f * SIZE_PER_PIECE;
+        float offsetY = (details.mapObjMatrix_sizeY - 1) / 2f * SIZE_PER_PIECE;
+        
+        // Initialize the map matrix
+        for (int y = 0; y < details.mapObjMatrix_sizeY; y++) {
+            List<bool> row = new List<bool>();
+            for (int x = 0; x < details.mapObjMatrix_sizeX; x++) {
+                row.Add(false); // Initialize all positions as empty
+            }
+            _mapMatrix.Add(row);
+        }
 
-        // (0, 0) will be the uppermost part of the matrix
-        // Remember that _mapMatrix works this way: _mapMatrix [Y][X]
-        Vector2 _curPos = new Vector2 (0, 0);
+        Vector2 _curPos = Vector2.zero;
 
-        while (_curPos.y <= details.mapObjMatrix_sizeY){
-            // Add a tile to current position if empty
-            if (!_mapMatrix [_curPos.y][_curPos.x]) {
-                string _newGameObj = _mapGameObjectNames [Random.Range (0, _mapGameObjectNames.Count)];
+        while (_curPos.y < details.mapObjMatrix_sizeY) {
+            if (!_mapMatrix[(int)_curPos.y][(int)_curPos.x]) {
+                // Randomly select and place a new map object
+                string _newGameObj = _mapGameObjectNames[Random.Range(0, _mapGameObjectNames.Count)];
+                DB_Maps.mapObject _mapObj = DB_Maps.I.get_map_game_object(_newGameObj);
 
-                DB_Maps.mapObject _mapObj = DB_Maps.I.get_map_game_object (_newGameObj);
-
-                _mapObj.go.transform.position = new Vector2 (
-                    ((SIZE_PER_PIECE * mapObjMatrix_sizeX) / 2) - (SIZE_PER_PIECE / 2),
-                    ((SIZE_PER_PIECE * mapObjMatrix_sizeY) / 2) - (SIZE_PER_PIECE / 2)
+                _mapObj.go.transform.position = new Vector2(
+                    _curPos.x * SIZE_PER_PIECE - offsetX,
+                    _curPos.y * SIZE_PER_PIECE - offsetY
                 );
                 
-                
+                // Mark the position as occupied in the matrix
+                _mapMatrix[(int)_curPos.y][(int)_curPos.x] = true;
+
+                // Place down-connected object if defined and within bounds
+                if (!string.IsNullOrEmpty(_mapObj.nextMap_down) && _curPos.y + 1 < details.mapObjMatrix_sizeY) {
+                    string _newGameObjDown = _mapObj.nextMap_down;
+                    DB_Maps.mapObject _mapObjDown = DB_Maps.I.get_map_game_object(_newGameObjDown);
+
+                    _mapObjDown.go.transform.position = new Vector2(
+                        _curPos.x * SIZE_PER_PIECE - offsetX,
+                        (_curPos.y + 1) * SIZE_PER_PIECE - offsetY
+                    );
+
+                    _mapMatrix[(int)_curPos.y + 1][(int)_curPos.x] = true;
+                }
+
+                // Place right-connected object if defined and within bounds
+                if (!string.IsNullOrEmpty(_mapObj.nextMap_right) && _curPos.x + 1 < details.mapObjMatrix_sizeX) {
+                    string _newGameObjRight = _mapObj.nextMap_right;
+                    DB_Maps.mapObject _mapObjRight = DB_Maps.I.get_map_game_object(_newGameObjRight);
+
+                    _mapObjRight.go.transform.position = new Vector2(
+                        (_curPos.x + 1) * SIZE_PER_PIECE - offsetX,
+                        _curPos.y * SIZE_PER_PIECE - offsetY
+                    );
+
+                    _mapMatrix[(int)_curPos.y][(int)_curPos.x + 1] = true;
+                }
             }
 
-            // Check next position
+            // Move to the next position in the matrix
             _curPos.x++;
-            if (_curPos.x > details.mapObjMatrix_sizeX) {
+            if (_curPos.x >= details.mapObjMatrix_sizeX) {
+                _curPos.x = 0;
                 _curPos.y++;
             }
         }

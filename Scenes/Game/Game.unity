@@ -12503,9 +12503,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goMap_woosterSquare1: {fileID: 6186003181524603497, guid: b60c0a351bc6f0142a20a53016b89cd1, type: 3}
   goMap_woosterSquare2: {fileID: 3890178404968358513, guid: 496a0fcca43461a8eba1514f29c89a55, type: 3}
-  goMap_woosterSquare3: {fileID: 7123560994823808095, guid: 8b927a2ef118cd04abd210005c5722e3, type: 3}
+  goMap_woosterSquare3: {fileID: 6186003181524603497, guid: b60c0a351bc6f0142a20a53016b89cd1, type: 3}
   goMap_woosterSquare4: {fileID: 7052941939691805757, guid: 3294f45eda41b204c967cc5f8948701d, type: 3}
   goMap_trainingGrounds: {fileID: 1583650307375049623, guid: b1d2312686365679caae6c2ed5cf514d, type: 3}
+  SIZE_PER_PIECE: 0
 --- !u!114 &1727020071
 MonoBehaviour:
   m_ObjectHideFlags: 0
