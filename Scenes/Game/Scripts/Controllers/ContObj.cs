@@ -132,7 +132,12 @@ public class ContObj : MonoBehaviour {
         evt_on_update (_obj);
         timed_life_update (_obj);
 
-        _obj.gameObject.transform.position = new Vector3 (_obj.curPos.x, _obj.curPos.y, _obj.zPos);
+        // Calculate the zPos based on the curPos.y relative to the details.size.y
+        float normalizedY = (_obj.curPos.y + ContMap.I.details.size.y) / (2 * ContMap.I.details.size.y);
+        _obj.zPos = Mathf.Lerp(-9, -1, normalizedY);
+
+        // Set the position of the gameObject
+        _obj.gameObject.transform.position = new Vector3(_obj.curPos.x, _obj.curPos.y, _obj.zPos);
 
         update_render (_obj);
     }

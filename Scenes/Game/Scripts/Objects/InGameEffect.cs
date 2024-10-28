@@ -59,7 +59,8 @@ public class InGameEffect : MonoBehaviour
         // Calc Z-Pos
         if (renderer.enabled) {
             Vector3 _pos = gameObject.transform.position;
-            zPos = (_pos.y - 103) / 100;
+            float normalizedY = (_pos.y - 0.1f + ContMap.I.details.size.y) / (2 * ContMap.I.details.size.y);
+            zPos = Mathf.Lerp(-9, -1, normalizedY);
             _pos.z = zPos;
             gameObject.transform.position = _pos;
         }
