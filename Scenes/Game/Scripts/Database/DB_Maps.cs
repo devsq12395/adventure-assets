@@ -41,7 +41,7 @@ public class DB_Maps : MonoBehaviour {
     }
 
     void Start (){
-        SIZE_PER_PIECE = 50; // Also set on ContMap.cs for now
+        SIZE_PER_PIECE = 100; // Also set on ContMap.cs for now
     }
 
     public mapDetails get_map_details (string _name) {
@@ -70,7 +70,7 @@ public class DB_Maps : MonoBehaviour {
         List<string> _new = new List<string>();
         switch (_biome){
             case "wooster-square":
-                _new.AddRange (new string []{"map-wooster-square-1"});
+                _new.AddRange (new string []{"map-wooster-square-1", "map-wooster-square-2"});
                 break;
         }
         return _new;
@@ -84,18 +84,13 @@ public class DB_Maps : MonoBehaviour {
         switch (_name) {
             case "map-wooster-square-1": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-                _new.nextMap_down = "map-wooster-square-2";
                 break;
             case "map-wooster-square-2": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare2, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-                _new.nextMap_down = "map-wooster-square-3";
+                _new.nextMap_right = "map-wooster-square-3";
                 break;
             case "map-wooster-square-3": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare3, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-                _new.nextMap_down = "map-wooster-square-4";
-                break;
-            case "map-wooster-square-4": 
-                _new.go = GameObject.Instantiate (goMap_woosterSquare4, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
                 break;
 
         }
@@ -105,7 +100,7 @@ public class DB_Maps : MonoBehaviour {
     }
 
     public mapDetails get_map_details_generic (mapDetails _new){
-        _new.size = new Vector2 (18, 18);
+        _new.size = new Vector2 (250, 250);
         
         _new.biome = "wooster-square";
         _new.mapObjMatrix_sizeX = 5; _new.mapObjMatrix_sizeY = 5;
@@ -115,8 +110,8 @@ public class DB_Maps : MonoBehaviour {
 
         return _new;
     }
-    public mapDetails get_map_details_training_grounds (mapDetails _new){
-        _new.size = new Vector2 (18, 18);
+    public mapDetails get_map_details_training_grounds (mapDetails _new){ 
+        _new.size = new Vector2 (250, 250);
 
         _new.biome = "wooster-square";
         _new.mapObjMatrix_sizeX = 5; _new.mapObjMatrix_sizeY = 5;
