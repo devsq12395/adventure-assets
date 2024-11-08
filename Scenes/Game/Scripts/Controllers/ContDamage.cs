@@ -129,7 +129,7 @@ public class ContDamage : MonoBehaviour {
             int _critRate = Random.Range (0, 100);
             if (_critRate <= _atk.statCritRate) { 
                 _dam += _dam * (_atk.statCritDam / 100) + 2;
-                GameUI_InGameTxt.I.create_ingame_txt ("Critical!", _def.gameObject.transform.position, 2f);
+                GameUI_InGameTxt.I.create_ingame_txt ("Critical!", _def.gameObject.transform.position, 2f, Color.yellow);
             }
         }
 

@@ -47,7 +47,7 @@ public class GameUI_InGameTxt : MonoBehaviour {
         posUsed.Clear();
     }
 
-    public GameObject create_ingame_txt(string _txt, Vector2 _pos, float _dur) {
+    public GameObject create_ingame_txt(string _txt, Vector2 _pos, float _dur, Color _color = default(Color)) {
         // Ensure position is valid
         _pos = check_if_pos_used(_pos);
 
@@ -68,9 +68,7 @@ public class GameUI_InGameTxt : MonoBehaviour {
         TextMeshProUGUI _newTxtUI = _canvas.transform.Find("DamTxt").GetComponent<TextMeshProUGUI>();
 
         // Customize text appearance (color, size, etc.)
-        if (_txt == "Critical!") {
-            _newTxtUI.color = Color.yellow;
-        }
+        _newTxtUI.color = _color;
         _newTxtUI.fontSize = 2; // Font size appropriate for World Space
         _newTxtUI.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 
