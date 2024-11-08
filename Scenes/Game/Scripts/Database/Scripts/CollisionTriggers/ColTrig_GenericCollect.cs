@@ -16,7 +16,8 @@ public class ColTrig_GenericCollect : ColTrig {
 
         switch (_this.name){
             case "gold-1":
-                
+
+                GameUI_InGameTxt.I.create_ingame_txt ($"{_dam.ToString ()}", _def.gameObject.transform.position, 2f);
                 break;
         }
 
