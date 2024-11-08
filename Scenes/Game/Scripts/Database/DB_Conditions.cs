@@ -35,7 +35,14 @@ public class DB_Conditions : MonoBehaviour {
     }
     
     public bool coll_cond_missile (InGameObject _obj) {
-        if (_obj.type == "missile" || _obj.type == "effect")                                 
+        if (_obj.type == "missile" || _obj.type == "effect" || _obj.type == "collect")                                 
+            return false;
+        
+        return true;
+    }
+
+    public bool coll_cond_collect (InGameObject _obj) {
+        if (_obj.type == "missile" || _obj.type == "effect" || _obj.type == "collect")
             return false;
         
         return true;
