@@ -5683,6 +5683,7 @@ MonoBehaviour:
   orc: {fileID: 4690657366656991979, guid: dcc466932049a69408f62cdb95af17eb, type: 3}
   axeArmAzar: {fileID: 4690657366656991979, guid: ce105175ab9d9b24e911b580b06723a3, type: 3}
   frostOrb: {fileID: 4277177062754300290, guid: 429e321fdb2100349a1517f53994ac1a, type: 3}
+  barrel: {fileID: 5870176776088024450, guid: 5ca95b64b346b3740b4fcec9c46be9ac, type: 3}
   testMissile1: {fileID: 8274141280276392475, guid: daa88e297d0e2aa4782c7a45c65adabb, type: 3}
   beam1: {fileID: 6781197039557131184, guid: ecd29ac84a87cb74a9cc3097cd37e47c, type: 3}
   beam1Placeholder: {fileID: 6781197039557131184, guid: 352688fc5fae70d7591f3e36a2f5106d, type: 3}
@@ -5739,6 +5740,8 @@ MonoBehaviour:
   buf_burn: {fileID: 8100014777820684788, guid: 932449129c027b348ba8b2719f25438d, type: 3}
   buf_bindingChains: {fileID: 4245185834599824400, guid: 2374b86ef40e8c14986599794e514d4d, type: 3}
   buf_voidSphereGrounded: {fileID: 0}
+  colCoin: {fileID: 2195697179193257774, guid: ae18c69130ef1f14f8ce47139ad4a25a, type: 3}
+  colCoinPack: {fileID: 863801285440337733, guid: 4019adb723910874184658aa92fa8bc4, type: 3}
   blizzardDummy: {fileID: 6915202875573056070, guid: 55157f454b960c641acef66c7e509592, type: 3}
 --- !u!1 &785261407
 GameObject:

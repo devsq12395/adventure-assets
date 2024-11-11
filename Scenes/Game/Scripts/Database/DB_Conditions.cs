@@ -28,8 +28,8 @@ public class DB_Conditions : MonoBehaviour {
     }
 
     public bool coll_cond (InGameObject _obj) {
-        if (_obj.isInvul)                                           return false;
-        if (ContBuffs.I.get_has_buff (_obj, "invulnerable"))          return false;
+        if (_obj.isInvul && _obj.type != "collect")                     return false;
+        if (ContBuffs.I.get_has_buff (_obj, "invulnerable"))            return false;
 
         return true;
     }

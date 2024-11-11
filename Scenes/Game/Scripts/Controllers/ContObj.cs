@@ -77,8 +77,16 @@ public class ContObj : MonoBehaviour {
         on_create_set_boss (_comp);
         on_create_set_missile (_comp);
 
-        _comp.barHP = _obj.AddComponent<HealthBarScript>();
-        _comp.barHP.Setup ("health");
+        if (_comp.type != "collect"){
+            _comp.barHP = _obj.AddComponent<HealthBarScript>();
+            _comp.barHP.Setup ("health");
+        }
+
+        // On spawn events
+        List<EvtTrig> _evts = get_evts_with_trigger_name (_comp, "spawn");
+        foreach (EvtTrig _evt in _evts) {
+            _evt.use ();
+        }
 
         return _obj;
     }

@@ -112,7 +112,7 @@ public class ContDamage : MonoBehaviour {
         }
         
         // Dam Text UI
-        GameUI_InGameTxt.I.create_ingame_txt ($"{_dam.ToString ()}", _def.gameObject.transform.position, 2f);
+        GameUI_InGameTxt.I.create_ingame_txt ($"{_dam.ToString ()}", _def.gameObject.transform.position, 2f, Color.white);
 
         // Color change
         ContObj.I.change_color (_def, Color.red, 0.1f);

@@ -19,7 +19,7 @@ public class DB_Objects : MonoBehaviour {
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, slimeOrange, mobster, slimeKing, giantSlime,
         lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
         centurion, victorianSoldier, mafiaBoss, assassin, assassinCaptain, goblin, goblinMage, hobgoblin, fireSpirit, orc, axeArmAzar,
-        frostOrb;
+        frostOrb, barrel;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
@@ -36,6 +36,10 @@ public class DB_Objects : MonoBehaviour {
     [Header("----- Buffs -----")]
     public GameObject buf_burn;
     public GameObject buf_bindingChains, buf_voidSphereGrounded;
+
+    [Header("----- Collectibles -----")]
+    public GameObject colCoin;
+    public GameObject colCoinPack;
 
     [Header("----- Dummies -----")]
     public GameObject blizzardDummy;
@@ -95,6 +99,7 @@ public class DB_Objects : MonoBehaviour {
             case "orc":            _refObj = orc; break;
             case "axe-arm-azar":            _refObj = axeArmAzar; break;
             case "frost-orb":            _refObj = frostOrb; break;
+            case "barrel":            _refObj = barrel; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -158,6 +163,10 @@ public class DB_Objects : MonoBehaviour {
             case "buffAtch_burn":                       _refObj = buf_burn; break;
             case "buffAtch_binding-chains":             _refObj = buf_bindingChains; break;
             case "buffAtch_void-sphere-grounded":             _refObj = buf_voidSphereGrounded; break;
+
+            // Collectibles
+            case "coin":                       _refObj = colCoin; break;
+            case "coin-pack":                       _refObj = colCoinPack; break;
 
             // Dummies
             case "blizzardDummy":             _refObj = blizzardDummy; break;

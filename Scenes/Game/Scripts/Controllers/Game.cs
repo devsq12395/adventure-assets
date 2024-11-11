@@ -27,6 +27,9 @@ public class Game : MonoBehaviour {
         gameReady = true;
 
         SoundHandler.I.play_bgm ("game");
+
+        ContObj.I.create_obj ("barrel", new Vector2 (-1, -1), 2);
+        ContObj.I.create_obj ("barrel", new Vector2 (-1, -2), 2);
     }
 
     void Update() {

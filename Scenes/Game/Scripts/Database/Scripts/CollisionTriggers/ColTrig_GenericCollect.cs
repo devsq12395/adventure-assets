@@ -8,7 +8,7 @@ public class ColTrig_GenericCollect : ColTrig {
 
     public string collectType, storage1, storage2, storage3;
 
-    public override void on_hit_ally (InGameObject _hit){
+    public override void on_hit_ally (InGameObject _hit){ Debug.Log ("collect");
         if (!DB_Conditions.I.coll_cond_collect (_hit) && !hitIDs.Contains (_hit.id)) return;
 
         InGameObject    _this = GetComponent <InGameObject> (),
