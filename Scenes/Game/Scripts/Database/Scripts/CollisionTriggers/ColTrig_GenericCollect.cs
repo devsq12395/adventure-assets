@@ -21,7 +21,7 @@ public class ColTrig_GenericCollect : ColTrig {
             case "gold":
                 int.TryParse (storage1, out intStorage1);
                 SaveHandler.I.gain_gold (intStorage1);
-                GameUI_InGameTxt.I.create_ingame_txt ($"+{intStorage1}", _hit.gameObject.transform.position, 2f, new Color(1.0f, 0.84f, 0.0f));
+                GameUI_InGameTxt.I.create_ingame_txt ($"+{intStorage1} Gold", _hit.gameObject.transform.position, 2f, new Color(1.0f, 0.84f, 0.0f));
                 break;
         }
 
