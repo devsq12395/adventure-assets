@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -105,12 +104,6 @@ public class EditorDev : EditorWindow
                 GameObject newPrefab = new GameObject(obj.name);
                 SpriteRenderer spriteRenderer = newPrefab.AddComponent<SpriteRenderer>();
                 spriteRenderer.sprite = (Sprite)obj;
-
-                // Add your specific components and set them here
-                // For example:
-                // newPrefab.AddComponent<CustomComponent>();
-                // CustomComponent _comp = newPrefab.GetComponent<CustomComponent>();
-                // _comp.property = value;
 
                 newPrefab.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
                 Rigidbody2D rb2d = newPrefab.AddComponent<Rigidbody2D>();
