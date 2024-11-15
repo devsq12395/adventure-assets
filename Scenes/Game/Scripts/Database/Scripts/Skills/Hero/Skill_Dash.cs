@@ -35,7 +35,7 @@ public class Skill_Dash : SkillTrig {
             SoundHandler.I.play_sfx("dash-smoke");
         }
 
-        ContObj.I.set_jump (_ownerComp, 3, 0.25f);
+        ContObj.I.set_jump (_ownerComp, 3, 0.15f);
     }
 
     public override void on_update (){
