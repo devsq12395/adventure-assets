@@ -115,9 +115,6 @@ public class ContObj : MonoBehaviour {
     public void update_obj (InGameObject _obj){
         if (Game.I.isPaused) return;
 
-        _obj.curPos.x = _obj.gameObject.transform.position.x;
-        _obj.curPos.y = _obj.gameObject.transform.position.y;
-
         calc_z_pos (_obj);
 
         input_move_update (_obj);
@@ -126,6 +123,8 @@ public class ContObj : MonoBehaviour {
         move_walk_to_pos_update (_obj);
         instant_move_upd_update (_obj);
         move_bounds (_obj);
+
+        jump_update (_obj);
 
         check_anim (_obj);
         color_obj_dur (_obj);
@@ -145,7 +144,11 @@ public class ContObj : MonoBehaviour {
         _obj.zPos = Mathf.Lerp(-9, -1, normalizedY);
 
         // Set the position of the gameObject
-        _obj.gameObject.transform.position = new Vector3(_obj.curPos.x, _obj.curPos.y, _obj.zPos);
+        _obj.gameObject.transform.position = new Vector3(
+            _obj.curPos.x, 
+            _obj.curPos.y + _obj.jumpHeight, 
+            _obj.zPos
+        );
 
         update_render (_obj);
     }
@@ -322,10 +325,6 @@ public class ContObj : MonoBehaviour {
             _obj.moveToPos_isOn = false;
         }
     }
-
-
-
-
 
     public void const_mov_ang_with_dur (InGameObject _obj, float _ang, float _dur){
 
@@ -519,6 +518,45 @@ public class ContObj : MonoBehaviour {
             if (_obj.instMov_dist <= 0) {
                 _obj.instMov_isOn = false;
                 _obj.instMov_mode = "";
+            }
+        }
+    }
+
+    // Jump
+    public void set_jump(InGameObject _obj, float _height, float _toMaxHeightDur) {
+        if (!_obj.isJumping)
+        {
+            _obj.jumpTargetHeight = _height;
+            _obj.jumpDuration = _toMaxHeightDur;
+            _obj.jumpStartTime = Time.time;
+            _obj.isJumping = true;
+        }
+    }
+
+    private void jump_update(InGameObject _obj) {
+        if (_obj.isJumping)
+        {
+            float elapsedTime = Time.time - _obj.jumpStartTime;
+            float halfDuration = _obj.jumpDuration / 2; // Half duration for both ascending and descending
+
+            if (elapsedTime < _obj.jumpDuration)
+            {
+                if (elapsedTime < halfDuration) // Ascending phase
+                {
+                    float progress = elapsedTime / halfDuration;
+                    _obj.jumpHeight = Mathf.Lerp(0, _obj.jumpTargetHeight, progress);
+                }
+                else // Descending phase
+                {
+                    float fallElapsedTime = elapsedTime - halfDuration;
+                    float fallProgress = fallElapsedTime / halfDuration;
+                    _obj.jumpHeight = Mathf.Lerp(_obj.jumpTargetHeight, 0, fallProgress);
+                }
+            }
+            else // End of jump
+            {
+                _obj.jumpHeight = 0;
+                _obj.isJumping = false;
             }
         }
     }

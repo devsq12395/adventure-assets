@@ -27,6 +27,10 @@ public class InGameObject : MonoBehaviour {
     public float zPos;
     public SkillTrig skill1, skill2;
 
+    // Jump
+    public float jumpHeight, jumpTargetHeight, jumpDuration, jumpStartTime;
+    public bool isJumping, isFalling;
+
     // Animation
     public Animator anim;
     public bool hasAnim;
@@ -93,7 +97,6 @@ public class InGameObject : MonoBehaviour {
 
     [Header("Shadow Settings")]
     private Vector2 shadowOffset;
-    private Vector2 shadowScaleMultiplier;
     private Color shadowColor;
 
     private GameObject shadow; // The shadow object
@@ -128,12 +131,10 @@ public class InGameObject : MonoBehaviour {
         ContObj.I.set_default_skills(this);
 
         // Set shadow variables
-        shadowOffset = new Vector2(0f, -0.15f); // Offset to adjust shadow position
-        shadowScaleMultiplier = new Vector2(1.8f, 0.5f); // Scale multiplier for shadow
         shadowColor = new Color(0, 0, 0, 0.4f); // Darker shadow color for visibility
 
         // Find the shadow child object
-        Transform shadowTransform = transform.Find("Shadow");
+        Transform shadowTransform = transform.Find("shadow");
         if (shadowTransform != null) {
             shadow = shadowTransform.gameObject;
             shadowRenderer = shadow.GetComponent<SpriteRenderer>();
@@ -141,8 +142,7 @@ public class InGameObject : MonoBehaviour {
             if (shadowRenderer != null) {
                 // Apply initial color and scale settings
                 shadowRenderer.color = shadowColor;
-                shadow.transform.localPosition = shadowOffset;
-                UpdateShadowScale();
+                shadowOffset = shadow.transform.localPosition; // Offset to adjust shadow position
             } else {
                 Debug.LogWarning("Shadow GameObject is missing a SpriteRenderer component.");
             }
@@ -151,6 +151,8 @@ public class InGameObject : MonoBehaviour {
         }
 
         InvokeRepeating("update_every_10th_ms", 0.5f, 0.1f);
+
+        curPos = gameObject.transform.position;
     }
 
     void Update() {
@@ -160,19 +162,13 @@ public class InGameObject : MonoBehaviour {
 
     private void UpdateShadowPositionAndScale() {
         if (shadow != null) {
-            // Update shadow position and scale based on the game object's scale
-            shadow.transform.localPosition = shadowOffset;
-            UpdateShadowScale();
+            // Update shadow position and scale based on the game object's scale and jumpHeight
+            shadow.transform.localPosition = new Vector2 (
+                shadowOffset.x,
+                shadowOffset.y - jumpHeight
+            );
+            Debug.Log (shadowOffset.y - jumpHeight);
         }
-    }
-
-    private void UpdateShadowScale() {
-        // Scale the shadow based on the game object's current scale and the shadowScaleMultiplier
-        Vector2 scaledShadowSize = new Vector2(
-            transform.localScale.x * shadowScaleMultiplier.x,
-            transform.localScale.y * shadowScaleMultiplier.y
-        );
-        shadow.transform.localScale = scaledShadowSize;
     }
 
     private void update_every_10th_ms() {
