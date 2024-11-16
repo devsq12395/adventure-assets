@@ -44,10 +44,10 @@ public class DB_Maps : MonoBehaviour {
         SIZE_PER_PIECE = 100; // Also set on ContMap.cs for now
     }
 
-    public mapDetails get_map_details (string _name) {
-        mapDetails _new = new mapDetails (_name);
+    public mapDetails get_map_details (string _mapName) {
+        mapDetails _new = new mapDetails (_mapName);
 
-        switch (_name) {
+        switch (_mapName) {
             // Wooster Square 1
             case "map-tutorial": case "map-wooster-square-1": case "map-wooster-square-2": case "map-wooster-square-3": case "map-wooster-square-4": 
                 _new = get_map_details_generic (_new);

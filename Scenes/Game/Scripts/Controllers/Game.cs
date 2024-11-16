@@ -9,20 +9,21 @@ public class Game : MonoBehaviour {
     
     public bool gameReady = false, isPaused = false;
 
-    public float checkEnemyCounter = 1f;
-
     void Start() {
         // Setups
         MUI_CharPane.I.setup ();
-        ContMap.I.setup_map ();
+        string _mapName = ContMap.I.setup_map ();
         ContPlayer.I.setup_player ();
         GameUI_InGameTxt.I.setup ();
         ContItem.I.setup ();
         MUI_HPBars.I.setup ();
         MUI_Tutorial.I.setup ();
 
-        FightCountdown.I.setup ();
-        FightCountdown.I.start_count ("start");
+        // Disabled fight countdown, not needed anymore for now
+        //FightCountdown.I.setup ();
+        //FightCountdown.I.start_count ("start");
+
+        ContEnemies.I.spawn_enemies_per_map_piece();
         
         gameReady = true;
 
@@ -40,12 +41,6 @@ public class Game : MonoBehaviour {
         MUI_HPBars.I.update_bars ();
         MUI_CharPane.I.update ();
         ContEnemies.I.update_arrows ();
-
-        checkEnemyCounter -= Time.deltaTime;
-        if (checkEnemyCounter <= 0) {
-            checkEnemyCounter = 1;
-            ContDamage.I.check_enemy_count ();
-        }
     }
 
     public void pause_game (){

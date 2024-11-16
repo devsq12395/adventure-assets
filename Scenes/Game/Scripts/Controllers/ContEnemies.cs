@@ -23,7 +23,6 @@ public class ContEnemies : MonoBehaviour {
 
 	public int enemyCount, curWave;
 
-	public List<Dictionary<string, int>> mainWaves;
 	public Dictionary<string, int> rewardChance;
 
 	public string enemiesType;
@@ -31,37 +30,36 @@ public class ContEnemies : MonoBehaviour {
 	public void setup (string _enemiesType){
 		enemiesType = _enemiesType;
 
-		mainWaves = DB_Enemies.I.get_list_of_main_waves (_enemiesType);
 		rewardChance = DB_Enemies.I.get_reward_chance (_enemiesType);
 	}
 
-	public void spawn_enemies (){
-		Dictionary<string, int> _wave = mainWaves [0];
+	public void spawn_enemies_per_map_piece (){
+		string _mission = ZPlayerPrefs.GetString("missionCur");
+		List<Dictionary<string, int>> _groups = DB_Enemies.I.get_enemy_group (_mission);
 
-		foreach (var _waveData in _wave){
-			bool _isSwarm = DB_Enemies.I.is_enemy_swarm (_waveData.Key);
+		List<GameObject> _maps = ContMap.I.maps;
+		foreach (var _map in _maps) {
+			foreach (var _waveData in _groups){
+				if (!DB_Enemies.I.check_special_spawn (_waveData.Key)) {
+					for (int i = 0; i < _waveData.Value; i++) {
+						Vector2 _rand = get_spawn_point_from_center_of_input (_map.transform.position);
 
-			if (!DB_Enemies.I.check_special_spawn (_waveData.Key)) {
-				Vector2 _rand = get_spawn_point ();
-
-				for (int i = 0; i < _waveData.Value; i++) {
-					_rand = get_spawn_point ();
-
-		            ContObj.I.create_obj_spawner (_waveData.Key, _rand, 2);
-		            enemyCount++;
+			            ContObj.I.create_obj_spawner (_waveData.Key, _rand, 2);
+			            enemyCount++;
+					}
 				}
-			}
-        }
+	        }
+		}
 	}
 
-	private Vector2 get_spawn_point() {
+	private Vector2 get_spawn_point_from_center_of_input(Vector3 _pos) {
 	    Vector2 randomPoint;
 	    float maxDistance = 7f;
 
 	    do {
 	        randomPoint = new Vector2(
-	            Random.Range(-ContMap.I.details.size.x, ContMap.I.details.size.x),
-	            Random.Range(-ContMap.I.details.size.y, ContMap.I.details.size.y)
+	            _pos.x + Random.Range(-25, 25),
+	            _pos.y + Random.Range(-25, 25)
 	        );
 	    } while (Vector2.Distance(randomPoint, ContPlayer.I.player.gameObject.transform.position) <= maxDistance);
 
@@ -95,32 +93,21 @@ public class ContEnemies : MonoBehaviour {
 	    return rewards;
 	}
 
+	public void trigger_boss_kill (){
+		GameUI_GameOver.I.show (
+            "success",
+            generate_and_give_rewards ()
+        );
+        GameUI_GameOver.I.on_victory ();
+	}
 
-	public void start_next_wave (){
-		mainWaves.RemoveAt (0);
+	public void trigger_next_area (){
+		// Check if there are more maps for this mission
+		int curMapLvl = PlayerPrefs.GetInt ("cur-map-lvl");
+		string _curMission = ZPlayerPrefs.GetString("missionCur");
+		DB_Missions.MissionData _misData = DB_Missions.I.get_mission_data (_curMission);
 
-		if (mainWaves.Count > 0) {
-			// MUI_Announcement.I.show ("More enemies are coming!");
-			spawn_enemies ();
-		} else {
-			// Check if there are more maps for this mission
-			int curMapLvl = PlayerPrefs.GetInt ("cur-map-lvl");
-			string _curMission = ZPlayerPrefs.GetString("missionCur");
-			DB_Missions.MissionData _misData = DB_Missions.I.get_mission_data (_curMission);
-
-			curMapLvl++;
-
-			if (curMapLvl >= _misData.enemies.Count) {
-				GameUI_GameOver.I.show (
-	                "success",
-	                generate_and_give_rewards ()
-	            );
-	            GameUI_GameOver.I.on_victory ();
-			} else {
-				PlayerPrefs.SetInt ("cur-map-lvl", curMapLvl);
-				FightCountdown.I.start_count ("end");
-			}
-		}
+		curMapLvl++;
 	}
 
 	/*

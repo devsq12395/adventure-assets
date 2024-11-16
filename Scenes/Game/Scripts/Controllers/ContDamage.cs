@@ -179,12 +179,10 @@ public class ContDamage : MonoBehaviour {
     private bool before_kill_events (InGameObject _atk, InGameObject _def){
         bool _isKill = true;
         
-        // Check enemy count
+        // Check boss kill
         if (_def.owner == 2 && _def.type == "unit") {
             if (_def.tags.Contains ("boss")) {
-                ContEnemies.I.start_next_wave ();
-            } else {
-                check_enemy_count ();
+                ContEnemies.I.trigger_boss_kill ();
             }
         }
 
@@ -214,21 +212,6 @@ public class ContDamage : MonoBehaviour {
     /*
         Event functions
     */
-    public void check_enemy_count (){
-        GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-        int enemyCount = 0;
-
-        foreach (GameObject obj in allObjects) {
-            InGameObject inGameObject = obj.GetComponent<InGameObject>();
-            if (inGameObject != null && inGameObject.owner == 2 && inGameObject.type == "unit") {
-                enemyCount++;
-            }
-        };
-        
-        if (enemyCount <= 0 && FightCountdown.I.countdownComplete) {
-            ContEnemies.I.start_next_wave ();
-        }
-    }
     private bool check_game_over (){
         List<InGameObject> pList = ContPlayer.I.players;
 

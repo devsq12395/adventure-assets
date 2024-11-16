@@ -14,7 +14,7 @@ public class ContMap : MonoBehaviour
     private List<GameObject> maps;
     private List<List<bool>> _mapMatrix; // Define _mapMatrix here
 
-    public void setup_map() {
+    public string setup_map() {
         DB_Maps.I.SIZE_PER_PIECE = 100;
 
         Grid[] allGrids = FindObjectsOfType<Grid>();
@@ -43,6 +43,8 @@ public class ContMap : MonoBehaviour
 
         // Create the map game objects
         create_map_objects(details.biome);
+
+        return _curMap;
     }
 
     private void InitializeMapMatrix(int width, int height) {

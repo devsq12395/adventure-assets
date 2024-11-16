@@ -16,7 +16,7 @@ public class DB_Enemies : MonoBehaviour {
 		return false;
 	}
 
-	public string get_random_wave(string _enemiesType) {
+	public string get_random_group(string _enemiesType) {
 	    switch (_enemiesType) {
 	        case "cursed-forest":
 	            // Return a random wave from the cursed-forest enemies list
@@ -27,11 +27,14 @@ public class DB_Enemies : MonoBehaviour {
 	    return _enemiesType;
 	}
 
-	public List<Dictionary<string, int>> get_list_of_main_waves(string _enemiesType) {
+	public List<Dictionary<string, int>> get_enemy_group(string _mission) {
 	    _enemiesType = get_random_wave(_enemiesType);
 	    List<Dictionary<string, int>> _ret = new List<Dictionary<string, int>>();
 
-	    switch (_enemiesType) {
+	    DB_Missions.MissionData _missionData = DB_Missions.I.get_mission_data (_mission);
+	    string _randomEnemyGroup = _missionData.enemies [Random.Range (0, _missionData.enemies.Count)];
+
+	    switch (_randomEnemyGroup) {
 	        case "training-grounds": _ret = training_grounds(_ret); break;
 	        case "tutorial": _ret = tutorial_waves(_ret); break;
 	        case "slime-1": _ret = slime_1_waves(_ret); break;
