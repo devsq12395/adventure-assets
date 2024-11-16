@@ -11,7 +11,7 @@ public class ContMap : MonoBehaviour
     public DB_Maps.mapDetails details;
     public Dictionary<string, Vector2> pointList;
 
-    private List<GameObject> maps;
+    public List<GameObject> maps;
     private List<List<bool>> _mapMatrix; // Define _mapMatrix here
 
     public string setup_map() {

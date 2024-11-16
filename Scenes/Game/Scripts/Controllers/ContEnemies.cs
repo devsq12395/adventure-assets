@@ -39,7 +39,9 @@ public class ContEnemies : MonoBehaviour {
 
 		List<GameObject> _maps = ContMap.I.maps;
 		foreach (var _map in _maps) {
-			foreach (var _waveData in _groups){
+			Dictionary<string, int> _randGroup = _groups [UnityEngine.Random.Range (0, _groups.Count)];
+
+			foreach (var _waveData in _randGroup){
 				if (!DB_Enemies.I.check_special_spawn (_waveData.Key)) {
 					for (int i = 0; i < _waveData.Value; i++) {
 						Vector2 _rand = get_spawn_point_from_center_of_input (_map.transform.position);

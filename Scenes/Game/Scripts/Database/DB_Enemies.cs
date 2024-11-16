@@ -28,11 +28,10 @@ public class DB_Enemies : MonoBehaviour {
 	}
 
 	public List<Dictionary<string, int>> get_enemy_group(string _mission) {
-	    _enemiesType = get_random_wave(_enemiesType);
 	    List<Dictionary<string, int>> _ret = new List<Dictionary<string, int>>();
 
 	    DB_Missions.MissionData _missionData = DB_Missions.I.get_mission_data (_mission);
-	    string _randomEnemyGroup = _missionData.enemies [Random.Range (0, _missionData.enemies.Count)];
+	    string _randomEnemyGroup = _missionData.enemies [UnityEngine.Random.Range (0, _missionData.enemies.Count)];
 
 	    switch (_randomEnemyGroup) {
 	        case "training-grounds": _ret = training_grounds(_ret); break;

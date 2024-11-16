@@ -85,7 +85,7 @@ public class FightCountdown : MonoBehaviour {
         go.SetActive(false);
         countdownComplete = true;
 
-        ContEnemies.I.spawn_enemies();
+        // Put codes when countdown ends here
 
         if (PlayerPrefs.GetInt("combat-tut-state") == 0) {
             MUI_Tutorial.I.show("move");
