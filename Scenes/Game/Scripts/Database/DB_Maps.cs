@@ -72,6 +72,9 @@ public class DB_Maps : MonoBehaviour {
             case "wooster-square":
                 _new.AddRange (new string []{"map-wooster-square-1", "map-wooster-square-2"});
                 break;
+            case "training-grounds":
+                _new.AddRange (new string []{"map-wooster-square-1", "map-wooster-square-2"});
+                break;
         }
         return _new;
     }
