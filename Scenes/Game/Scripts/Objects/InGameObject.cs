@@ -167,7 +167,6 @@ public class InGameObject : MonoBehaviour {
                 shadowOffset.x,
                 shadowOffset.y - jumpHeight
             );
-            Debug.Log (shadowOffset.y - jumpHeight);
         }
     }
 

@@ -85,6 +85,8 @@ public class ContMap : MonoBehaviour
 
                 // Place any connected objects, marking those slots as well
                 PlaceConnectedObject(_mapObj, _curPos, offsetX, offsetY, SIZE_PER_PIECE);
+
+                maps.Add (_mapObj.go);
             }
 
             // Move to the next position
