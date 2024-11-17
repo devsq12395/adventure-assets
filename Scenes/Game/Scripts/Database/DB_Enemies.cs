@@ -77,7 +77,6 @@ public class DB_Enemies : MonoBehaviour {
 	                ContObj.I.create_obj_spawner(_waveName, new Vector2(x, 0 + 3), 2);
 	                ContObj.I.create_obj_spawner(_waveName, new Vector2(0, x + 3), 2);
 	            }
-	            ContEnemies.I.enemyCount += 4;
 	            
 	            _isSpecialSpawn = true;
 	            break;

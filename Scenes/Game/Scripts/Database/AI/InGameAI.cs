@@ -47,7 +47,7 @@ public class InGameAI : MonoBehaviour {
     }
 
     public void check_if_player_nearby (){
-        if (Calculator.I.get_dist_from_player (gameObject.transform.position) <= 10) {
+        if (Calculator.I.get_dist_from_player (gameObject.transform.position) <= 17) {
             isActivated = true;
         }
     }

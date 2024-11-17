@@ -24,6 +24,7 @@ public class Game : MonoBehaviour {
         //FightCountdown.I.start_count ("start");
 
         ContEnemies.I.spawn_enemies_per_map_piece();
+        ContCollectibles.I.spawn_collectible_per_map_piece();
         
         gameReady = true;
 

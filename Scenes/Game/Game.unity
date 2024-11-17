@@ -1941,6 +1941,7 @@ GameObject:
   - component: {fileID: 274338063}
   - component: {fileID: 274338064}
   - component: {fileID: 274338065}
+  - component: {fileID: 274338066}
   m_Layer: 0
   m_Name: CONTROLLERS
   m_TagString: Untagged
@@ -2072,6 +2073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 0}
+  maps: []
 --- !u!114 &274338065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2084,12 +2086,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2435aac77630f91a1125e78427e1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: 0
-  curWave: 0
   enemiesType: 
   arrowPrefab: {fileID: 5697805185979158616, guid: 7702928c304370f419a15fdc870ab231, type: 3}
   mainCamera: {fileID: 519420031}
   arrowOffset: 20
+--- !u!114 &274338066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274338055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627198fb05019064491c4dbe02b45927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &295937754
 GameObject:
   m_ObjectHideFlags: 0
@@ -5218,7 +5230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameReady: 0
   isPaused: 0
-  checkEnemyCounter: 1
 --- !u!1 &740289025
 GameObject:
   m_ObjectHideFlags: 0
