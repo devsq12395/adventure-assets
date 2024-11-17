@@ -17,6 +17,8 @@ public class FightCountdown : MonoBehaviour {
 
     public void setup() {
         go.SetActive(false);
+        txtCountdown.text = "";
+        txtSub.text = "";
     }
 
     public void start_count(string _mode) {

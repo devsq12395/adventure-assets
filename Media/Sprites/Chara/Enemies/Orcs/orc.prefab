@@ -248,8 +248,8 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 220
-  hpMax: 220
+  hp: 140
+  hpMax: 140
   mp: 0
   mpMax: 0
   mpRegen: 0
@@ -268,6 +268,12 @@ MonoBehaviour:
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
+  jumpHeight: 0
+  jumpTargetHeight: 0
+  jumpDuration: 0
+  jumpStartTime: 0
+  isJumping: 0
+  isFalling: 0
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 0

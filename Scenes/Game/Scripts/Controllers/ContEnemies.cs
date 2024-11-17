@@ -44,8 +44,8 @@ public class ContEnemies : MonoBehaviour {
 
 	    do {
 	        randomPoint = new Vector2(
-	            _pos.x + Random.Range(-25, 25),
-	            _pos.y + Random.Range(-25, 25)
+	            _pos.x + Random.Range(-50, 50),
+	            _pos.y + Random.Range(-50, 50)
 	        );
 	    } while (Vector2.Distance(randomPoint, ContPlayer.I.player.gameObject.transform.position) <= maxDistance);
 

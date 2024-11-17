@@ -8,9 +8,8 @@ public class GameConstants : MonoBehaviour {
 	public void Awake(){ I = this; }
 
     /*
-        REMEMBER = THIS IS SUPPOSED TO BE SET AT UNITY EDITOR
-
-        Use as GameConstants.YOUR_CONST, not GameConstants.I.YOUR_CONST
+        Can be set here
+        Script is attached in SCRIPTS/_GLOBAL_SCRIPTS
     */
 
     public const float COLL_DUR = 0.75f;

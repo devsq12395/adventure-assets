@@ -184,17 +184,27 @@ MonoBehaviour:
   mpMax: 0
   mpRegen: 0
   armor: 0
+  dam: 0
+  skill: 0
   hitDam: 1
   onHitSFX: 
   tags:
   - fire
   - magic
   - missile
-  speed: 0.1
+  speed: 0.25
   attachScaleMultiplier: 1
+  hpBarScaleX: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
+  jumpHeight: 0
+  jumpTargetHeight: 0
+  jumpDuration: 0
+  jumpStartTime: 0
+  isJumping: 0
+  isFalling: 0
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 1
@@ -243,10 +253,11 @@ MonoBehaviour:
   isDash: 0
   knockDrag: 0
   timedLife: 0
-  range: 0
+  range: 7
   controllerID: 0
   hitUnitsID: 
   colorChangeDur: 0
+  summonedBy: 0
   skills: []
   barHP: {fileID: 0}
   barSta: {fileID: 0}

@@ -247,8 +247,8 @@ MonoBehaviour:
   type: unit
   owner: 0
   id: 0
-  hp: 150
-  hpMax: 150
+  hp: 60
+  hpMax: 60
   mp: 0
   mpMax: 0
   mpRegen: 0
@@ -261,9 +261,17 @@ MonoBehaviour:
   - human
   speed: 4
   attachScaleMultiplier: 1
+  hpBarScaleX: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
+  jumpHeight: 0
+  jumpTargetHeight: 0
+  jumpDuration: 0
+  jumpStartTime: 0
+  isJumping: 0
+  isFalling: 0
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 0
@@ -368,6 +376,7 @@ MonoBehaviour:
   inGameObj: {fileID: 0}
   isStart: 0
   isReady: 0
+  isActivated: 0
   state: 0
   stateTime: 0
   goPos: {x: 0, y: 0}

@@ -50,14 +50,11 @@ public class InGameEffect : MonoBehaviour
     }
 
     private void update_render (){
-        if (Vector2.Distance(transform.position, Camera.main.transform.position) > GameConstants.RENDER_DIST) {
-            renderer.enabled = false;
-        } else {
-            renderer.enabled = true;
-        }
+        bool _isActive = Vector2.Distance(transform.position, Camera.main.transform.position) <= GameConstants.RENDER_DIST;
+        gameObject.SetActive (_isActive);
 
         // Calc Z-Pos
-        if (renderer.enabled) {
+        if (_isActive) {
             Vector3 _pos = gameObject.transform.position;
             float normalizedY = (_pos.y - 0.1f + ContMap.I.details.size.y) / (2 * ContMap.I.details.size.y);
             zPos = Mathf.Lerp(-9, -1, normalizedY);

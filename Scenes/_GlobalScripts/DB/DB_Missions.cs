@@ -75,7 +75,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-    			_new.enemies.AddRange (new string[]{"tutorial", "slime-2"});
+    			_new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2"});
     			_new.maps.AddRange (new string[]{"map-tutorial", "map-wooster-square-3"});
     			_new.unlocksArea.AddRange (new string[]{"to-wooster-square-2"});
     			_new.missionsSet.AddRange (new string[]{"vic->vic-2"});
@@ -98,7 +98,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-                _new.enemies.AddRange (new string[]{"mafia-1", "mafia-2"});
+                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1"});
                 _new.maps.AddRange (new string[]{"map-wooster-square-4", "map-wooster-square-3"});
                 _new.unlocksArea.AddRange (new string[]{"to-wooster-square-3"});
                 _new.missionsSet.AddRange (new string[]{"vincenzo->vincenzo-2"});
@@ -121,7 +121,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-                _new.enemies.AddRange (new string[]{"goblin-1", "orc-1"});
+                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1", "orc-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"field-1->field-1-2"});
@@ -144,7 +144,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "Not bad, but you could use some more training. Come back when you are stronger.";
                 _new.gameOverSpk_imgFail = "beatrice";
 
-                _new.enemies.AddRange (new string[]{"beatrice-1"});
+                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1"});
                 _new.maps.AddRange (new string[]{"map-wooster-square-1"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"beatrice->beatrice-2"});
@@ -167,7 +167,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-                _new.enemies.AddRange (new string[]{"cursed-forest", "cursed-forest", "cursed-forest"});
+                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1", "orc-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand", "woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{});
@@ -190,7 +190,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-                _new.enemies.AddRange (new string[]{"war-shredder-1"});
+                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1", "war-shredder-1", "war-shredder-1", "war-shredder-1", "war-shredder-1", "war-shredder-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"anthony->anthony-2"});

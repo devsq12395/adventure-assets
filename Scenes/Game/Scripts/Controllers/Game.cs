@@ -20,7 +20,7 @@ public class Game : MonoBehaviour {
         MUI_Tutorial.I.setup ();
 
         // Disabled fight countdown, not needed anymore for now
-        //FightCountdown.I.setup ();
+        FightCountdown.I.setup ();
         //FightCountdown.I.start_count ("start");
 
         ContEnemies.I.spawn_enemies_per_map_piece();

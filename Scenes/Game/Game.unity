@@ -4706,6 +4706,7 @@ GameObject:
   - component: {fileID: 674634177}
   - component: {fileID: 674634179}
   - component: {fileID: 674634178}
+  - component: {fileID: 674634180}
   m_Layer: 0
   m_Name: _GLOBAL_SCRIPTS
   m_TagString: Untagged
@@ -4754,6 +4755,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   login: 
   OVERWRITE: 0
+--- !u!114 &674634180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674634176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6be92acc23a2a54e9b119f5a98e6bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697046908
 GameObject:
   m_ObjectHideFlags: 0
