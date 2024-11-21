@@ -49,11 +49,14 @@ public class InGameEffect : MonoBehaviour
         Destroy (gameObject);
     }
 
-    private void update_render (){
+    private void update_render() {
         bool _isActive = Vector2.Distance(transform.position, Camera.main.transform.position) <= GameConstants.RENDER_DIST;
-        gameObject.SetActive (_isActive);
 
-        // Calc Z-Pos
+        Renderer renderer = gameObject.GetComponent<Renderer>();
+        if (renderer != null) {
+            renderer.enabled = _isActive;
+        }
+
         if (_isActive) {
             Vector3 _pos = gameObject.transform.position;
             float normalizedY = (_pos.y - 0.1f + ContMap.I.details.size.y) / (2 * ContMap.I.details.size.y);

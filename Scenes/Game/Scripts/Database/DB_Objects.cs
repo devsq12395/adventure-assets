@@ -19,14 +19,14 @@ public class DB_Objects : MonoBehaviour {
     public GameObject samurai, greenSlime, orcShaman, kitsune, kitsuneBoss, slimeRed, slimeBlue, slimeOrange, mobster, slimeKing, giantSlime,
         lucaTheTerror, embracedInfantry, embracedMage, prismDrone, warShredder, alphaWarShredder, captainCharles, captainBeatrice,
         centurion, victorianSoldier, mafiaBoss, assassin, assassinCaptain, goblin, goblinMage, hobgoblin, fireSpirit, orc, axeArmAzar,
-        frostOrb, barrel;
+        frostOrb, barrel, skeletonAxethrower;
 
     [Header("----- Missiles -----")]
     public GameObject testMissile1;
     public GameObject beam1, beam1Placeholder, kitsuneMissile, molotovMsl, voidSphere, iceMissile01, shotgun, slimeBlueMissile, slimeGreenMissile, slashKazuma, flameWave,
         bulletTommy, bulletMobster, bulletEmbraced, bulletVictorianSoldier, fireWave, blueWave, slashShredder, prismDroneMissile,
         centurionMissile, beatriceMissile, lucaTyphoon, mafiaPunch, mafiaGunShot, shuriken, shurikenSpiral, fireball, alfredExplodeSlash, 
-        tommySuperAtk, destroyerSlash, frostOrbMissile;
+        tommySuperAtk, destroyerSlash, frostOrbMissile, axeSkeleton;
 
     [Header("----- Effects -----")]
     public GameObject explosion1;
@@ -100,6 +100,7 @@ public class DB_Objects : MonoBehaviour {
             case "axe-arm-azar":            _refObj = axeArmAzar; break;
             case "frost-orb":            _refObj = frostOrb; break;
             case "barrel":            _refObj = barrel; break;
+            case "skeleton-axethrower":            _refObj = skeletonAxethrower; break;
 
             // Missiles
             case "testMissile1":            _refObj = testMissile1; break;
@@ -134,6 +135,7 @@ public class DB_Objects : MonoBehaviour {
             case "tommy-super-atk":             _refObj = tommySuperAtk; break;
             case "destroyer-slash":             _refObj = destroyerSlash; break;
             case "frost-orb-missile":            _refObj = frostOrbMissile; break;
+            case "axe-skeleton":            _refObj = axeSkeleton; break;
 
             // Effects 
             case "explosion1":              _refObj = explosion1; break;
