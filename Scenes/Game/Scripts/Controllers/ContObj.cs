@@ -209,11 +209,8 @@ public class ContObj : MonoBehaviour {
     }
 
     private void update_render (InGameObject _obj){
-        if (_obj.type != "missile"){
-            _obj.gameObject.SetActive (Vector2.Distance(_obj.gameObject.transform.position, Camera.main.transform.position) <= GameConstants.RENDER_DIST);
-        } else {
-            _obj.gameObject.GetComponent<Renderer>().enabled = Vector2.Distance(_obj.gameObject.transform.position, Camera.main.transform.position) > GameConstants.RENDER_DIST;
-        }
+        _obj.gameObject.GetComponent<Renderer>().enabled = 
+            Vector2.Distance(_obj.gameObject.transform.position, ContPlayer.I.player.transform.position) <= 35f;
     }
 
     public void change_color (InGameObject _obj, Color _color, float _dur) {

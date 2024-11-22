@@ -52,7 +52,5 @@ public class Skill_GunShoot : SkillTrig
             muzzle1.transform.rotation = Quaternion.Euler(0, 180, 0);
             muzzle2.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-
-        Debug.Log($"{muzzleObj1}, {muzzleObj2}");
     }
 }

@@ -23,7 +23,6 @@ public class Game : MonoBehaviour {
         FightCountdown.I.setup ();
         //FightCountdown.I.start_count ("start");
 
-        ContEnemies.I.spawn_enemies_per_map_piece();
         ContCollectibles.I.spawn_collectible_per_map_piece();
         
         gameReady = true;
@@ -42,6 +41,7 @@ public class Game : MonoBehaviour {
         MUI_HPBars.I.update_bars ();
         MUI_CharPane.I.update ();
         ContEnemies.I.update_arrows ();
+        ContEnemies.I.check_spawn_enemies ();
     }
 
     public void pause_game (){

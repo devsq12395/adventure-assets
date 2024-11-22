@@ -50,7 +50,7 @@ public class InGameEffect : MonoBehaviour
     }
 
     private void update_render() {
-        bool _isActive = Vector2.Distance(transform.position, Camera.main.transform.position) <= GameConstants.RENDER_DIST;
+        bool _isActive = Vector2.Distance(transform.position, ContPlayer.I.player.transform.position) <= 35f;
 
         Renderer renderer = gameObject.GetComponent<Renderer>();
         if (renderer != null) {

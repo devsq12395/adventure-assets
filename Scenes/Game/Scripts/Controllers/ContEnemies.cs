@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,24 +18,74 @@ public class ContEnemies : MonoBehaviour {
 		rewardChance = DB_Enemies.I.get_reward_chance (_enemiesType);
 	}
 
-	public void spawn_enemies_per_map_piece (){
-		string _mission = ZPlayerPrefs.GetString("missionCur");
-		List<Dictionary<string, int>> _groups = DB_Enemies.I.get_enemy_group (_mission);
+	private float spawnDelayTimer = 0f;
+    private const float spawnDelay = 5f;
 
-		List<GameObject> _maps = ContMap.I.maps;
-		foreach (var _map in _maps) {
-			Dictionary<string, int> _randGroup = _groups [UnityEngine.Random.Range (0, _groups.Count)];
+	public void check_spawn_enemies() {
+        if (check_enemy_numbers_nearby() <= 3) {
+            spawnDelayTimer += Time.deltaTime;
+            if (spawnDelayTimer >= spawnDelay) {
+                spawn_enemies_nearby();
+                spawnDelayTimer = 0f;
+            }
+        } else {
+            spawnDelayTimer = 0f;
+        }
+    }
 
-			foreach (var _waveData in _randGroup){
-				if (!DB_Enemies.I.check_special_spawn (_waveData.Key)) {
-					for (int i = 0; i < _waveData.Value; i++) {
-						Vector2 _rand = get_spawn_point_from_center_of_input (_map.transform.position);
-			            ContObj.I.create_obj_spawner (_waveData.Key, _rand, 2);
-					}
-				}
-	        }
-		}
-	}
+	public int check_enemy_numbers_nearby () {
+        int enemyCount = 0;
+        Vector2 playerPosition = ContPlayer.I.player.transform.position;
+
+        // Find all game objects with InGameObject component
+        InGameObject[] allObjects = FindObjectsOfType<InGameObject>();
+
+        foreach (var obj in allObjects) {
+            // Check if the object is an enemy
+            if (obj.owner != ContPlayer.I.player.owner && obj.type == "unit") {
+                float distance = Vector2.Distance(obj.transform.position, playerPosition);
+                if (distance <= 40f) {
+                    enemyCount++;
+                }
+            }
+        }
+
+        return enemyCount;
+    }
+
+	public void spawn_enemies_nearby() {
+        string _mission = ZPlayerPrefs.GetString("missionCur");
+        List<Dictionary<string, int>> _groups = DB_Enemies.I.get_enemy_group(_mission);
+
+        List<GameObject> _maps = ContMap.I.maps;
+        foreach (var _map in _maps) {
+            Dictionary<string, int> _randGroup = _groups[UnityEngine.Random.Range(0, _groups.Count)];
+
+            foreach (var _waveData in _randGroup) {
+                if (!DB_Enemies.I.check_special_spawn(_waveData.Key)) {
+                    for (int i = 0; i < _waveData.Value; i++) {
+                        Vector2 _rand = get_spawn_point_away_from_camera();
+                        ContObj.I.create_obj (_waveData.Key, _rand, 2);
+                    }
+                }
+            }
+        }
+    }
+
+	private Vector2 get_spawn_point_away_from_camera() {
+        Vector2 cameraPosition = Camera.main.transform.position;
+        Vector2 spawnPosition;
+        float maxDistance = 15f; // Example max distance from camera
+
+        do {
+            spawnPosition = new Vector2(
+                cameraPosition.x + Random.Range(-25, 25),
+                cameraPosition.y + Random.Range(-25, 25)
+            );
+        } while (Vector2.Distance(spawnPosition, cameraPosition) < maxDistance);
+
+        return spawnPosition;
+    }
 
 	private Vector2 get_spawn_point_from_center_of_input(Vector3 _pos) {
 	    Vector2 randomPoint;

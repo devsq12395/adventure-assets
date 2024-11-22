@@ -21,7 +21,7 @@ public class Mortar : MonoBehaviour {
 
         // Use DOTween to synchronize the jump and movement duration
         transform.DOMove(targetPoint, duration).SetEase(Ease.Linear);
-        ContObj.I.set_jump(inGameObject, targetPoint.y, duration);
+        ContObj.I.set_jump(inGameObject, 3, duration);
     }
 
     void Update() {

@@ -29,8 +29,6 @@ public class Skill_AxeSkeleton : SkillTrig {
 
         ContObj.I.change_facing(_ownerComp, ((_targetPos.x < gameObject.transform.position.x) ? "left" : "right"));
 
-        ContObj.I.const_move_ang_set(_missileComp, _ang, _missileComp.speed);
-
         Mortar mortar = _missile.GetComponent<Mortar>();
         mortar.targetPoint = targetPoint;
     }
