@@ -20,16 +20,19 @@ public class ContEnemies : MonoBehaviour {
 
 	private float spawnDelayTimer = 0f;
     private const float spawnDelay = 5f;
+    private bool isSpawning = false;
 
 	public void check_spawn_enemies() {
-        if (check_enemy_numbers_nearby() <= 3) {
+        if (check_enemy_numbers_nearby() <= 3 && !isSpawning) {
+            isSpawning = true;
+        } else if (isSpawning) {
             spawnDelayTimer += Time.deltaTime;
+
             if (spawnDelayTimer >= spawnDelay) {
                 spawn_enemies_nearby();
                 spawnDelayTimer = 0f;
+                isSpawning = false;
             }
-        } else {
-            spawnDelayTimer = 0f;
         }
     }
 
@@ -42,7 +45,7 @@ public class ContEnemies : MonoBehaviour {
 
         foreach (var obj in allObjects) {
             // Check if the object is an enemy
-            if (obj.owner != ContPlayer.I.player.owner && obj.type == "unit") {
+            if (obj.owner != ContPlayer.I.player.owner && obj.type == "unit" && !obj.tags.Contains("container")) {
                 float distance = Vector2.Distance(obj.transform.position, playerPosition);
                 if (distance <= 40f) {
                     enemyCount++;
@@ -58,15 +61,13 @@ public class ContEnemies : MonoBehaviour {
         List<Dictionary<string, int>> _groups = DB_Enemies.I.get_enemy_group(_mission);
 
         List<GameObject> _maps = ContMap.I.maps;
-        foreach (var _map in _maps) {
-            Dictionary<string, int> _randGroup = _groups[UnityEngine.Random.Range(0, _groups.Count)];
+        Dictionary<string, int> _randGroup = _groups[UnityEngine.Random.Range(0, _groups.Count)];
 
-            foreach (var _waveData in _randGroup) {
-                if (!DB_Enemies.I.check_special_spawn(_waveData.Key)) {
-                    for (int i = 0; i < _waveData.Value; i++) {
-                        Vector2 _rand = get_spawn_point_away_from_camera();
-                        ContObj.I.create_obj (_waveData.Key, _rand, 2);
-                    }
+        foreach (var _waveData in _randGroup) {
+            if (!DB_Enemies.I.check_special_spawn(_waveData.Key)) {
+                for (int i = 0; i < _waveData.Value; i++) {
+                    Vector2 _rand = get_spawn_point_away_from_camera();
+                    ContObj.I.create_obj (_waveData.Key, _rand, 2);
                 }
             }
         }

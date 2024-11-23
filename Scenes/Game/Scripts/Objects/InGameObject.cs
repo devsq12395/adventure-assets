@@ -53,6 +53,7 @@ public class InGameObject : MonoBehaviour {
     public bool isWalk;
     public Vector2 walkTargPos = new Vector2(0, 0);
     public bool checkBorder = true;
+    public bool forcedMovement = false; // If true, will not be moved by any functions on ContObj.cs
 
     // Move to ang
     public bool constMovAng_isOn = false;

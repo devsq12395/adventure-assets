@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skill_AxeSkeleton : SkillTrig {
 
     public string missileObj;
-    public Vector3 targetPoint;
+    public Vector2 targetPoint;
     
     public override void use_active() {
         if (!use_check()) return;
@@ -18,18 +18,22 @@ public class Skill_AxeSkeleton : SkillTrig {
         _missileComp.controllerID = _ownerComp.id;
         _missileComp.hitDam = _ownerComp.dam;
 
-        ContObj.I.change_velocity(_ownerComp, Vector2.zero);
+        ContObj.I.change_velocity(_ownerComp, Vector2.zero); 
         _ownerComp.isAtk = true;
         _ownerComp.toAnim = 1;
 
+        Vector3 playerPos = ContPlayer.I.player.gameObject.transform.position;
+        Vector2 randomOffset = UnityEngine.Random.insideUnitCircle * 2f;
+        targetPoint = playerPos;
+
         Vector2 _misPos = gameObject.transform.position,
-                _targetPos = targetPoint,
+                _targetPos = targetPoint + new Vector2(randomOffset.x, randomOffset.y),    
                 _dir = _targetPos - _misPos;
         float _ang = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
 
         ContObj.I.change_facing(_ownerComp, ((_targetPos.x < gameObject.transform.position.x) ? "left" : "right"));
 
         Mortar mortar = _missile.GetComponent<Mortar>();
-        mortar.targetPoint = targetPoint;
+        mortar.set_target_point(_targetPos, 6);
     }
 }

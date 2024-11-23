@@ -5,6 +5,6 @@ public class SpinObject : MonoBehaviour
     public float rotationRate = 90f;
 
     void Update() {
-        transform.Rotate(Vector3.forward, rotationRate * Time.deltaTime);
+        transform.localRotation *= Quaternion.Euler(Vector3.forward * rotationRate * Time.deltaTime);
     }
 }

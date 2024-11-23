@@ -117,12 +117,14 @@ public class ContObj : MonoBehaviour {
 
         calc_z_pos (_obj);
 
-        input_move_update (_obj);
-        const_move_ang_update (_obj);
-        const_move_dir_update (_obj);
-        move_walk_to_pos_update (_obj);
-        instant_move_upd_update (_obj);
-        move_bounds (_obj);
+        if (!_obj.forcedMovement) {
+            input_move_update (_obj);
+            const_move_ang_update (_obj);
+            const_move_dir_update (_obj);
+            move_walk_to_pos_update (_obj);
+            instant_move_upd_update (_obj);
+            move_bounds (_obj);
+        }
 
         jump_update (_obj);
 
@@ -139,16 +141,28 @@ public class ContObj : MonoBehaviour {
         evt_on_update (_obj);
         timed_life_update (_obj);
 
-        // Calculate the zPos based on the curPos.y relative to the details.size.y
-        float normalizedY = (_obj.curPos.y + ContMap.I.details.size.y) / (2 * ContMap.I.details.size.y);
-        _obj.zPos = Mathf.Lerp(-9, -1, normalizedY);
-
         // Set the position of the gameObject
-        _obj.gameObject.transform.position = new Vector3(
-            _obj.curPos.x, 
-            _obj.curPos.y + _obj.jumpHeight, 
-            _obj.zPos
-        );
+        if (!_obj.forcedMovement) {
+            // Calculate the zPos based on the curPos.y relative to the details.size.y
+            float normalizedY = (_obj.curPos.y + ContMap.I.details.size.y) / (2 * ContMap.I.details.size.y);
+            _obj.zPos = Mathf.Lerp(-9, -1, normalizedY);
+        
+            _obj.gameObject.transform.position = new Vector3(
+                _obj.curPos.x, 
+                _obj.curPos.y + _obj.jumpHeight, 
+                _obj.zPos
+            );
+        } else {
+            // Calculate the zPos based on the curPos.y relative to the details.size.y
+            float normalizedY = (_obj.transform.position.y + ContMap.I.details.size.y) / (2 * ContMap.I.details.size.y);
+            _obj.zPos = Mathf.Lerp(-9, -1, normalizedY);
+            
+            _obj.gameObject.transform.position = new Vector3(
+                _obj.transform.position.x, 
+                _obj.transform.position.y + _obj.jumpHeight, 
+                _obj.zPos
+            );
+        }
 
         update_render (_obj);
     }
@@ -209,8 +223,10 @@ public class ContObj : MonoBehaviour {
     }
 
     private void update_render (InGameObject _obj){
-        _obj.gameObject.GetComponent<Renderer>().enabled = 
-            Vector2.Distance(_obj.gameObject.transform.position, ContPlayer.I.player.transform.position) <= 35f;
+        Renderer _renderer = _obj.gameObject.GetComponent<Renderer>();
+        if (_renderer == null) return;
+        
+        _renderer.enabled = Vector2.Distance(_obj.gameObject.transform.position, ContPlayer.I.player.transform.position) <= 35f;
     }
 
     public void change_color (InGameObject _obj, Color _color, float _dur) {

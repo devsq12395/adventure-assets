@@ -7,31 +7,20 @@ public class Mortar : MonoBehaviour {
     public Vector3 targetPoint;
     private InGameObject inGameObject;
 
-    void Start() {
+    private float tweenDuration = 1;
+
+    public void set_target_point(Vector3 _targetPoint, float _height) {
         inGameObject = GetComponent<InGameObject>();
-        if (inGameObject == null) {
-            Debug.LogError("InGameObject component is missing.");
-            enabled = false;
-            return;
-        }
-
-        // Calculate the duration based on the distance to the target point
-        float distance = Vector3.Distance(transform.position, targetPoint);
-        float duration = distance / inGameObject.speed;
-
-        // Use DOTween to synchronize the jump and movement duration
-        transform.DOMove(targetPoint, duration).SetEase(Ease.Linear);
-        ContObj.I.set_jump(inGameObject, 3, duration);
+        
+        targetPoint = _targetPoint;
+        transform.DOMove(targetPoint, tweenDuration).SetEase(Ease.Linear).OnComplete(target_reached);
+        ContObj.I.set_jump(inGameObject, _height, tweenDuration);
     }
 
-    void Update() {
-        if (inGameObject == null) return;
-
-        // Check if the object has reached the target point
-        if (Vector3.Distance(transform.position, targetPoint) <= 0.1f) {
-            DealDamageToNearbyEnemies();
-            enabled = false; // Disable the script once the target is reached and damage is dealt
-        }
+    private void target_reached() {
+        Debug.Log("Mortar has reached the target point.");
+        DealDamageToNearbyEnemies();
+        Destroy(gameObject);
     }
 
     void DealDamageToNearbyEnemies() {
