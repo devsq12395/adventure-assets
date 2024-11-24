@@ -28,7 +28,7 @@ public class AI_SkeletonAxethrower : InGameAI {
         Vector2 currentPos = transform.position;
         float distanceToPlayer = Vector2.Distance(currentPos, playerPos);
 
-        if (distanceToPlayer > 10f) {
+        if (distanceToPlayer > 18f) {
             // Move towards the player
             ContObj.I.move_walk_to_pos(inGameObj, playerPos);
             ContObj.I.change_facing(inGameObj, (currentPos.x > playerPos.x) ? "left" : "right");

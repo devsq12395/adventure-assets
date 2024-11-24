@@ -6,33 +6,42 @@ using DG.Tweening;
 public class Mortar : MonoBehaviour {
     public Vector3 targetPoint;
     private InGameObject inGameObject;
+    private GameObject crosshair;
 
-    private float tweenDuration = 1;
-
-    public void set_target_point(Vector3 _targetPoint, float _height) {
+    public void set_target_point(Vector3 _targetPoint, float _height, float _duration) {
         inGameObject = GetComponent<InGameObject>();
         
         targetPoint = _targetPoint;
-        transform.DOMove(targetPoint, tweenDuration).SetEase(Ease.Linear).OnComplete(target_reached);
-        ContObj.I.set_jump(inGameObject, _height, tweenDuration);
+        transform.DOMove(targetPoint, _duration).SetEase(Ease.Linear).OnComplete(target_reached);
+        ContObj.I.set_jump(inGameObject, _height, _duration);
+    }
+
+    public void set_crosshair(GameObject _crosshair) {
+        crosshair = _crosshair;
     }
 
     private void target_reached() {
-        Debug.Log("Mortar has reached the target point.");
+        SoundHandler.I.play_sfx ("explosion");
         DealDamageToNearbyEnemies();
+
+        if (crosshair != null) Destroy(crosshair);
         Destroy(gameObject);
     }
 
     void DealDamageToNearbyEnemies() {
         // Define the radius for detecting nearby enemies
         float damageRadius = 5.0f; // Adjust as needed
+        ContEffect.I.create_effect ("explosion1", gameObject.transform.position);
 
-        Collider[] hitColliders = Physics.OverlapSphere(targetPoint, damageRadius);
-        foreach (var hitCollider in hitColliders) {
-            InGameObject enemy = hitCollider.GetComponent<InGameObject>();
-            if (enemy != null && enemy.owner != inGameObject.owner) {
-                // Deal damage using ContDamage.I.damage
-                ContDamage.I.damage(inGameObject, enemy, inGameObject.hitDam, new List<string>());
+        InGameObject[] allObjects = FindObjectsOfType<InGameObject>();
+        foreach (var enemy in allObjects) {
+            if (enemy.owner != inGameObject.owner) {
+                float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                if (distance <= damageRadius) {
+                    // Deal damage using ContDamage.I.damage
+                    Debug.Log("Dealing damage to " + enemy.name);
+                    ContDamage.I.damage(inGameObject, enemy, inGameObject.hitDam, new List<string>());
+                }
             }
         }
     }

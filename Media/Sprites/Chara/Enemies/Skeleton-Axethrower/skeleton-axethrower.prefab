@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3177540116895966474}
@@ -297,6 +297,7 @@ MonoBehaviour:
   isWalk: 0
   walkTargPos: {x: 0, y: 0}
   checkBorder: 1
+  forcedMovement: 0
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
@@ -364,7 +365,7 @@ MonoBehaviour:
   cdMax: 0.5
   cd: 0
   missileObj: axe-skeleton
-  targetPoint: {x: 0, y: 0, z: 0}
+  targetPoint: {x: 0, y: 0}
 --- !u!114 &4252137258530405752
 MonoBehaviour:
   m_ObjectHideFlags: 0

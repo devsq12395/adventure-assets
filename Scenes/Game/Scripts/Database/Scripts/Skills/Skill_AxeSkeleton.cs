@@ -33,7 +33,11 @@ public class Skill_AxeSkeleton : SkillTrig {
 
         ContObj.I.change_facing(_ownerComp, ((_targetPos.x < gameObject.transform.position.x) ? "left" : "right"));
 
+        GameObject crosshair = ContEffect.I.create_effect("skeleton-axe-crosshair", _targetPos);
+        
         Mortar mortar = _missile.GetComponent<Mortar>();
-        mortar.set_target_point(_targetPos, 6);
+        _missileComp.hitDam = _ownerComp.dam;
+        mortar.set_target_point(_targetPos, 6, 1.25f);
+        mortar.set_crosshair(crosshair);
     }
 }
