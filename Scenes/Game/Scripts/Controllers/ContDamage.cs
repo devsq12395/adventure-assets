@@ -143,6 +143,11 @@ public class ContDamage : MonoBehaviour {
             gain_ult (_def, 3);
         }
 
+        // Combo
+        if (_def.owner == 1 && _def.tags.Contains ("hero")) {
+            ContScore.I.remove_combo ();
+        }
+
         // Pendant of Burning Scourge
         if (_atk.equipItems ["pendant"] == "pendant-of-burning-scourge") {
             _dam += (int)((float)_damOrig * 0.15f);
@@ -189,6 +194,15 @@ public class ContDamage : MonoBehaviour {
         // Codes that require an attacker goes here
         if (_atk != null) {
             
+            // Player triggers
+            if (_atk.owner == 1) {
+                // Combo and score
+                if (_def.type == "unit" && _def.owner == 2 && !_def.tags.Contains ("container")) {
+                    ContScore.I.add_combo (1);
+                    ContScore.I.add_score (10);
+                }
+            }
+
         }
 
         if (_def.tags.Contains ("hero") && _def.owner == 1) if (check_game_over ()) _isKill = false;
@@ -212,7 +226,7 @@ public class ContDamage : MonoBehaviour {
     /*
         Event functions
     */
-    private bool check_game_over (){
+    private bool check_game_over (){// Check game over
         List<InGameObject> pList = ContPlayer.I.players;
 
         // Check game over

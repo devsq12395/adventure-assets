@@ -86,9 +86,8 @@ public class DB_Enemies : MonoBehaviour {
 	}
 
 	private List<Dictionary<string, int>> training_grounds (List<Dictionary<string, int>> _ret){
-		//int chance = UnityEngine.Random.Range (0, 3);
+		int chance = UnityEngine.Random.Range (0, 3);
 		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
-		int chance = 0;
 
 		switch (chance) {
 			case 0:
@@ -96,19 +95,19 @@ public class DB_Enemies : MonoBehaviour {
 				_waves[0].Add ("skeleton-axethrower", 8);
 
 				break;
-			// case 1:
-			// 	_waves.Add (new Dictionary<string, int>());
-			// 	_waves[0].Add ("slime-blue", 7);
-			// 	_waves[0].Add ("goblin", 5);
-			// 	_waves[0].Add ("goblin-mage", 1);
+			case 1:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("slime-blue", 7);
+				_waves[0].Add ("goblin", 5);
+				_waves[0].Add ("goblin-mage", 1);
 
-			// 	break;
-			// default:
-			// 	_waves.Add (new Dictionary<string, int>());
-			// 	_waves[0].Add ("slime-blue", 10);
-			// 	_waves[0].Add ("goblin", 9);
+				break;
+			default:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("slime-blue", 10);
+				_waves[0].Add ("goblin", 9);
 
-			// 	break;
+				break;
 		}
 		
 		return _waves;

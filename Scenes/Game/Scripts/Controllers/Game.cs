@@ -18,11 +18,7 @@ public class Game : MonoBehaviour {
         ContItem.I.setup ();
         MUI_HPBars.I.setup ();
         MUI_Tutorial.I.setup ();
-
-        // Disabled fight countdown, not needed anymore for now
-        FightCountdown.I.setup ();
-        //FightCountdown.I.start_count ("start");
-
+        ContScore.I.setup ();
         ContCollectibles.I.spawn_collectible_per_map_piece();
         
         gameReady = true;
