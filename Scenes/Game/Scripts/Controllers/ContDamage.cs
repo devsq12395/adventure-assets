@@ -183,13 +183,6 @@ public class ContDamage : MonoBehaviour {
 
     private bool before_kill_events (InGameObject _atk, InGameObject _def){
         bool _isKill = true;
-        
-        // Check boss kill
-        if (_def.owner == 2 && _def.type == "unit") {
-            if (_def.tags.Contains ("boss")) {
-                ContEnemies.I.trigger_boss_kill ();
-            }
-        }
 
         // Codes that require an attacker goes here
         if (_atk != null) {

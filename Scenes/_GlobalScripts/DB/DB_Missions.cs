@@ -16,12 +16,15 @@ public class DB_Missions : MonoBehaviour {
         public string gameOverSpk_name, gameOverSpk_text, gameOverSpk_img;
         public string gameOverSpk_nameFail, gameOverSpk_textFail, gameOverSpk_imgFail;
 
+        public string objective, mainMap;
+
         public int goldReward;
 
     	public MissionData (string _name){
     		name = _name; speaker = ""; desc = ""; sprite = ""; rewards = "";
             gameOverSpk_name = ""; gameOverSpk_text = ""; gameOverSpk_img = "";
             gameOverSpk_nameFail = ""; gameOverSpk_textFail = ""; gameOverSpk_imgFail = "";
+            objective = ""; mainMap = "";
     		
             goldReward = 0;
 
@@ -43,6 +46,9 @@ public class DB_Missions : MonoBehaviour {
                 _new.sprite = "";
                 _new.rewards = "";
                 _new.goldReward = 0;
+
+                _new.objective = "Kill the boss";
+                _new.mainMap = "map-main-training-grounds";
 
                 _new.gameOverSpk_name = "";
                 _new.gameOverSpk_text = "";

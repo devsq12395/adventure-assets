@@ -8,7 +8,8 @@ public class DB_Maps : MonoBehaviour {
     public static DB_Maps I;
 	public void Awake(){ I = this; }
 
-    public GameObject goMap_woosterSquare1, goMap_woosterSquare2, goMap_woosterSquare3, goMap_woosterSquare4, goMap_trainingGrounds;
+    public GameObject goMap_woosterSquare1, goMap_woosterSquare2, goMap_woosterSquare3, goMap_woosterSquare4, goMap_trainingGrounds,
+        goMap_mainTrainingGrounds;
 
     public float SIZE_PER_PIECE; // Assuming each map piece is a square
 
@@ -85,6 +86,10 @@ public class DB_Maps : MonoBehaviour {
         mapDetails details = ContMap.I.details;
 
         switch (_name) {
+            case "map-main-training-grounds": 
+                _new.go = GameObject.Instantiate (goMap_mainTrainingGrounds, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+                break;
+
             case "map-wooster-square-1": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
                 break;
@@ -109,7 +114,7 @@ public class DB_Maps : MonoBehaviour {
         _new.mapObjMatrix_sizeX = 5; _new.mapObjMatrix_sizeY = 5;
 
         _new.pointList.Add ("playerSpawn", new Vector2 (0, 0));
-        _new.pointList.Add ("playerLounge", new Vector2 (-5000, -5000));
+        _new.pointList.Add ("playerLounge", new Vector2 (-10000, -10000));
 
         return _new;
     }
@@ -120,7 +125,7 @@ public class DB_Maps : MonoBehaviour {
         _new.mapObjMatrix_sizeX = 5; _new.mapObjMatrix_sizeY = 5;
 
         _new.pointList.Add ("playerSpawn", new Vector2 (0, 0));
-        _new.pointList.Add ("playerLounge", new Vector2 (-5000, -5000));
+        _new.pointList.Add ("playerLounge", new Vector2 (-10000, -10000));
 
         return _new;
     }

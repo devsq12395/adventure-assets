@@ -42,7 +42,7 @@ public class ContMap : MonoBehaviour
         CreateMapBorder(details.size.x, details.size.y);
 
         // Create the map game objects
-        create_map_objects(details.biome);
+        create_map_objects(details.biome, _data);
 
         return _curMap;
     }
@@ -58,7 +58,7 @@ public class ContMap : MonoBehaviour
         }
     }
 
-    public void create_map_objects(string biome) {
+    public void create_map_objects(string biome, DB_Missions.MissionData _data) {
         List<string> _mapGameObjectNames = DB_Maps.I.get_map_lists(biome);
         float SIZE_PER_PIECE = DB_Maps.I.SIZE_PER_PIECE;
 
@@ -67,6 +67,19 @@ public class ContMap : MonoBehaviour
         float offsetY = (details.mapObjMatrix_sizeY - 1) / 2f * SIZE_PER_PIECE;
 
         Vector2 _curPos = new Vector2(0, 0);  // Start at top-left
+
+        // Add the main map to the top right of the matrix
+        string mainMap = _data.mainMap;
+        Debug.Log($"Main map: {mainMap}");
+        DB_Maps.mapObject mainMapObject = DB_Maps.I.get_map_game_object(mainMap);
+        mainMapObject.go.transform.position = new Vector2(
+            ((details.mapObjMatrix_sizeX - 1) * SIZE_PER_PIECE) - offsetX,
+            ((details.mapObjMatrix_sizeY - 1) * SIZE_PER_PIECE) - offsetY
+        );
+        _mapMatrix[details.mapObjMatrix_sizeY - 1][details.mapObjMatrix_sizeX - 1] = true;
+        Debug.Log($"Main map position: {mainMapObject.go.transform.position}");
+        Debug.Log($"Main map matrix: {_mapMatrix[details.mapObjMatrix_sizeY - 1][details.mapObjMatrix_sizeX - 1]}");
+        maps.Add(mainMapObject.go);
 
         while (_curPos.y < details.mapObjMatrix_sizeY) {
             // Check if the slot is already occupied
@@ -144,5 +157,9 @@ public class ContMap : MonoBehaviour
     public void change_map(string _map) {
         PlayerPrefs.SetString("map", _map);
         Transition_Game.I.change_state("toNextMap");
+    }
+
+    private void AddMapToMatrix(string mapName, int x, int y) {
+        // TO DO: implement the logic to add the map to the matrix
     }
 }

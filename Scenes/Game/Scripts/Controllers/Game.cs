@@ -20,6 +20,10 @@ public class Game : MonoBehaviour {
         MUI_Tutorial.I.setup ();
         ContScore.I.setup ();
         ContCollectibles.I.spawn_collectible_per_map_piece();
+
+        string _mission = ZPlayerPrefs.GetString("missionCur");
+        DB_Missions.MissionData _data = DB_Missions.I.get_mission_data(_mission);
+        ContObjective.I.setup_and_set_starting_objective (_data.objective);
         
         gameReady = true;
 
