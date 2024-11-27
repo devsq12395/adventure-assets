@@ -39,5 +39,6 @@ public class Skill_AxeSkeleton : SkillTrig {
         _missileComp.hitDam = _ownerComp.dam;
         mortar.set_target_point(_targetPos, 6, 1.25f);
         mortar.set_crosshair(crosshair);
+        mortar.damageRadius = 1.5f;
     }
 }

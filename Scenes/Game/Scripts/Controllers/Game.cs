@@ -29,8 +29,7 @@ public class Game : MonoBehaviour {
 
         SoundHandler.I.play_bgm ("game");
 
-        ContObj.I.create_obj ("barrel", new Vector2 (-1, -1), 2);
-        ContObj.I.create_obj ("barrel", new Vector2 (-1, -2), 2);
+        MUI_HPBars.I.find_boss_on_start ();
     }
 
     void Update() {

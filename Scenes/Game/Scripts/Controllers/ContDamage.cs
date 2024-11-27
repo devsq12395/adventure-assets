@@ -121,8 +121,8 @@ public class ContDamage : MonoBehaviour {
         SoundHandler.I.play_sfx ("big-hit");
     }
 
-    private int check_other_effects (InGameObject _atk, InGameObject _def, int _damOrig, List<string> _tags){
-        int _dam = _damOrig;
+    private int check_other_effects (InGameObject _atk, InGameObject _def, int _dam, List<string> _tags){
+        int _damOrig = _dam;
 
         // Crit rate and dam
         if (_atk.tags.Contains ("hero")) { 
@@ -155,6 +155,17 @@ public class ContDamage : MonoBehaviour {
                 _dam += (int)((float)_damOrig * 0.3f);
             }
         }
+
+        // Add knockback effect using ForcedMove
+        var forcedMoves = _def.gameObject.GetComponents<ForcedMove>();
+        foreach (var fm in forcedMoves) {
+            if (fm.moveName == "hitKnockback") {
+                Destroy(fm);
+            }
+        }
+
+        var knockback = _def.gameObject.AddComponent<ForcedMove>();
+        knockback.setup_forced_move(1.0f, 0.2f, 180.0f, ForcedMove.MoveMode.Knockback, "hitKnockback");
 
         return _dam;
     }

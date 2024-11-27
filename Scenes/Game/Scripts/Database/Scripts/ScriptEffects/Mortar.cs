@@ -8,6 +8,8 @@ public class Mortar : MonoBehaviour {
     private InGameObject inGameObject;
     private GameObject crosshair;
 
+    public float damageRadius;
+
     public void set_target_point(Vector3 _targetPoint, float _height, float _duration) {
         inGameObject = GetComponent<InGameObject>();
         
@@ -30,13 +32,12 @@ public class Mortar : MonoBehaviour {
 
     void DealDamageToNearbyEnemies() {
         // Define the radius for detecting nearby enemies
-        float damageRadius = 5.0f; // Adjust as needed
         ContEffect.I.create_effect ("explosion1", gameObject.transform.position);
 
         InGameObject[] allObjects = FindObjectsOfType<InGameObject>();
         foreach (var enemy in allObjects) {
             if (enemy.owner != inGameObject.owner) {
-                float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                float distance = Vector2.Distance(transform.position, enemy.transform.position);
                 if (distance <= damageRadius) {
                     // Deal damage using ContDamage.I.damage
                     Debug.Log("Dealing damage to " + enemy.name);

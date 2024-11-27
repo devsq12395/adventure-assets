@@ -44,7 +44,7 @@ public class InGameAI : MonoBehaviour {
         check_if_player_nearby ();
         if (!isActivated) {
             inactiveTime += Time.deltaTime;
-            if (inactiveTime >= 15f) {
+            if (inactiveTime >= 15f && !inGameObj.tags.Contains("boss")) {
                 Destroy(gameObject);
             }
             return;

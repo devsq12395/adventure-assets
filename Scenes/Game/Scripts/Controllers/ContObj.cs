@@ -124,6 +124,7 @@ public class ContObj : MonoBehaviour {
             move_walk_to_pos_update (_obj);
             instant_move_upd_update (_obj);
             move_bounds (_obj);
+            forced_move_update (_obj);
         }
 
         jump_update (_obj);
@@ -465,6 +466,16 @@ public class ContObj : MonoBehaviour {
         else if (_obj.curPos.x < -_xL)          _obj.curPos.x = -_xL + 0.1f;
         if (_obj.curPos.y > _yL)                _obj.curPos.y = _yL - 0.1f;
         else if (_obj.curPos.y < -_yL)          _obj.curPos.y = -_yL + 0.1f;
+    }
+
+    public void forced_move_update (InGameObject _obj){
+        var forcedMoves = _obj.GetComponents<ForcedMove>();
+        foreach (var forcedMove in forcedMoves) {
+            forcedMove.update_pos();
+            if (forcedMove.elapsedTime >= forcedMove.duration && forcedMove.duration > 0) {
+                Destroy(forcedMove);
+            }
+        }
     }
 
     public void move_instant (InGameObject _obj, Vector2 _pos) {

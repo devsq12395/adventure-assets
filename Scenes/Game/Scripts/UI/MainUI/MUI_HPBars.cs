@@ -57,6 +57,26 @@ public class MUI_HPBars : MonoBehaviour
         if (boss != null) {
             float hpScaleBoss = (float)boss.hp / (float)boss.hpMax;
             set_bar_fill(iBossMain, hpScaleBoss);
+            show_boss_hp_bar ();
+        }
+    }
+
+    public void find_boss_on_start (){
+        InGameObject[] allObjects = FindObjectsOfType<InGameObject>();
+        foreach (var obj in allObjects) {
+            if (obj.tags.Contains("boss")) {
+                set_boss(obj);
+                break;
+            }
+        }
+    }
+
+    public void show_boss_hp_bar (){
+        if (boss != null) {
+            InGameObject player = ContPlayer.I.player;
+            float distance = Vector2.Distance(boss.transform.position, player.transform.position);
+            Debug.Log("Distance to boss: " + distance);
+            go_bossHP.SetActive(distance <= 24f);
         }
     }
 
