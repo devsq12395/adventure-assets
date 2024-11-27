@@ -14,9 +14,27 @@ public class MUI_HPBars : MonoBehaviour
     public TextMeshProUGUI t_name, t_hp, t_mp, t_bossName, t_cdSkill1, t_cdSkill2;
     public Sprite i_skillNotReady, i_skillReady;
 
+    // Add fields for the white bars
+    [SerializeField] private Image i_HPWhite;
+    [SerializeField] private Image i_StaWhite;
+    [SerializeField] private Image i_UltWhite;
+
     public InGameObject boss;
 
     public void setup() {
+        // Instantiate white bars for HP, Stamina, and Ultimate
+        i_HPWhite = Instantiate(i_HPMain, i_HPMain.transform.parent);
+        i_HPWhite.color = new Color(1f, 1f, 1f, 0.5f); // Semi-transparent white
+        i_HPWhite.transform.SetSiblingIndex(i_HPMain.transform.GetSiblingIndex() - 1);
+
+        i_StaWhite = Instantiate(i_StaMain, i_StaMain.transform.parent);
+        i_StaWhite.color = new Color(1f, 1f, 1f, 0.5f);
+        i_StaWhite.transform.SetSiblingIndex(i_StaMain.transform.GetSiblingIndex() - 1);
+
+        i_UltWhite = Instantiate(i_UltMain, i_UltMain.transform.parent);
+        i_UltWhite.color = new Color(1f, 1f, 1f, 0.5f);
+        i_UltWhite.transform.SetSiblingIndex(i_UltMain.transform.GetSiblingIndex() - 1);
+
         set_char(ContPlayer.I.players[0].name);
     }
 
@@ -27,19 +45,51 @@ public class MUI_HPBars : MonoBehaviour
         i_portShadow.sprite = Sprites.I.get_sprite(_data.imgPort);
     }
 
+    private float tweenDuration = 0.5f;
+    private float hpTweenDelay = 0.8f;
+    private float hpTweenElapsed = 0f;
+    private float hpTargetFill;
+    private bool hpTweening = false;
+
+    private float prevHpScale = -1f;
+    private float prevStaScale = -1f;
+    private float prevUltScale = -1f;
+
+    private void Start() {
+    }
+
     public void update_bars() {
         InGameObject _pla = ContPlayer.I.player;
 
         if (!_pla) return;
 
-        float   hpScale = (float)_pla.hp / (float)_pla.hpMax,
+        float hpScale = (float)_pla.hp / (float)_pla.hpMax,
                 staScale = (float)ContPlayer.I.sta / (float)ContPlayer.I.staMax,
                 ultScale = (float)_pla.ultPerc / 100;
 
-        // Update the HP and MP bars using fillAmount
-        set_bar_fill(i_HPMain, hpScale);
-        set_bar_fill(i_StaMain, staScale);
-        set_bar_fill(i_UltMain, ultScale);
+        Debug.Log($"update_bars called: hpScale={hpScale}, staScale={staScale}, ultScale={ultScale}");
+
+        // Trigger tween only if the value has changed
+        if (Mathf.Abs(hpScale - prevHpScale) > 0.01f) {
+            i_HPMain.fillAmount = hpScale;
+            Debug.Log($"HP bar updated: {i_HPMain.fillAmount}");
+            hpTargetFill = hpScale;
+            hpTweenElapsed = 0f;
+            hpTweening = true;
+            prevHpScale = hpScale;
+        }
+
+        if (Mathf.Abs(staScale - prevStaScale) > 0.01f) {
+            i_StaMain.fillAmount = staScale;
+            Debug.Log($"Stamina bar updated: {i_StaMain.fillAmount}");
+            prevStaScale = staScale;
+        }
+
+        if (Mathf.Abs(ultScale - prevUltScale) > 0.01f) {
+            i_UltMain.fillAmount = ultScale;
+            Debug.Log($"Ultimate bar updated: {i_UltMain.fillAmount}");
+            prevUltScale = ultScale;
+        }
 
         t_hp.text = $"{_pla.hp} / {_pla.hpMax}";
 
@@ -57,7 +107,18 @@ public class MUI_HPBars : MonoBehaviour
         if (boss != null) {
             float hpScaleBoss = (float)boss.hp / (float)boss.hpMax;
             set_bar_fill(iBossMain, hpScaleBoss);
-            show_boss_hp_bar ();
+            show_boss_hp_bar();
+        }
+
+        if (hpTweening) {
+            hpTweenElapsed += Time.deltaTime;
+            if (hpTweenElapsed >= hpTweenDelay) {
+                i_HPWhite.fillAmount = Mathf.Lerp(i_HPWhite.fillAmount, hpTargetFill, Time.deltaTime / tweenDuration);
+                if (Mathf.Abs(i_HPWhite.fillAmount - hpTargetFill) < 0.01f) {
+                    i_HPWhite.fillAmount = hpTargetFill;
+                    hpTweening = false;
+                }
+            }
         }
     }
 
@@ -75,7 +136,6 @@ public class MUI_HPBars : MonoBehaviour
         if (boss != null) {
             InGameObject player = ContPlayer.I.player;
             float distance = Vector2.Distance(boss.transform.position, player.transform.position);
-            Debug.Log("Distance to boss: " + distance);
             go_bossHP.SetActive(distance <= 24f);
         }
     }
