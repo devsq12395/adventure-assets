@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5046663819602180682}
   - component: {fileID: 112625326819698443}
-  - component: {fileID: 6456304657713263090}
-  - component: {fileID: 1451103007103325007}
   - component: {fileID: 3772282681243962628}
   - component: {fileID: -4402926073992862887}
+  - component: {fileID: 7670793261426283466}
   m_Layer: 0
   m_Name: coin-pack
   m_TagString: Untagged
@@ -89,143 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6456304657713263090
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863801285440337733}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00000011920929, y: 0.0038665235}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.08, y: 1.4}
-    newSize: {x: 2.31, y: 1.95}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.072674, y: 1.4628029}
-  m_EdgeRadius: 0
---- !u!114 &1451103007103325007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863801285440337733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1a6e5b6f7a0ef489fa41f463cfed01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: coin-pack
-  nameUI: 
-  type: collect
-  owner: 0
-  id: 0
-  hp: 1
-  hpMax: 1
-  mp: 1
-  mpMax: 1
-  mpRegen: 0
-  armor: 0
-  dam: 0
-  skill: 0
-  hitDam: 0
-  onHitSFX: 
-  tags:
-  - collectible
-  speed: 0
-  attachScaleMultiplier: 1
-  hpBarScaleX: 1
-  ultPerc: 0
-  zPos: 0
-  skill1: {fileID: 0}
-  skill2: {fileID: 0}
-  anim: {fileID: 0}
-  hasAnim: 0
-  isRotate: 0
-  toAnim: 0
-  renderer: {fileID: 0}
-  rb: {fileID: 0}
-  statHP: 0
-  statMP: 0
-  statAttack: 0
-  statRange: 0
-  statSkill: 0
-  statSpeed: 0
-  statArmor: 0
-  statCritRate: 0
-  statCritDam: 0
-  curPos: {x: 0, y: 0}
-  movInput: {x: 0, y: 0}
-  nxtPos: {x: 0, y: 0}
-  facing: 
-  isWalk: 0
-  walkTargPos: {x: 0, y: 0}
-  checkBorder: 1
-  constMovAng_isOn: 0
-  constMovAng_spd: 0
-  constMovAng_ang: 0
-  constMovAng_dur: 0
-  constMovAng_dist: 0
-  propellDist: 0
-  constMovAng_movTarget: {x: 0, y: 0}
-  propellType: 
-  propellFirstPos: {x: 0, y: 0}
-  constMovDir_isOn: 0
-  constMovDir_spd: 0
-  constMovDir_dir: {x: 0, y: 0}
-  moveToPos_isOn: 0
-  moveToPos_pos: {x: 0, y: 0}
-  instMov_isOn: 0
-  instMov_ang: 0
-  instMov_spd: 0
-  instMov_dur: 0
-  instMov_dist: 0
-  instMov_mode: 
-  isRunning: 0
-  isAtk: 0
-  isInvul: 1
-  isDash: 0
-  knockDrag: 0
-  timedLife: 0
-  range: 0
-  controllerID: 0
-  hitUnitsID: 
-  colorChangeDur: 0
-  summonedBy: 0
-  skills: []
-  barHP: {fileID: 0}
-  barSta: {fileID: 0}
 --- !u!114 &3772282681243962628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +134,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7670793261426283466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863801285440337733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b88e3c653697fc4897939aa0df632db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: collectible
+  timeLimit: 0
+  zPos: 0
+  tween_popOut_dur: 0
 --- !u!1001 &1542900579056887953
 PrefabInstance:
   m_ObjectHideFlags: 0

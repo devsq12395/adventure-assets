@@ -15581,6 +15581,9 @@ MonoBehaviour:
   t_cdSkill2: {fileID: 1097185830}
   i_skillNotReady: {fileID: 0}
   i_skillReady: {fileID: 0}
+  i_HPWhite: {fileID: 0}
+  i_StaWhite: {fileID: 0}
+  i_UltWhite: {fileID: 0}
   boss: {fileID: 0}
 --- !u!1 &1959545833
 GameObject:
@@ -16392,6 +16395,12 @@ MonoBehaviour:
   tComboRatingExpand: {fileID: 0}
   I_ComboRating: {fileID: 1593697092}
   I_ComboRating2: {fileID: 0}
+  iGood: {fileID: 21300000, guid: c6ebb4912efc93d4ba65945a89a7db5e, type: 3}
+  iNice: {fileID: 21300000, guid: 6cb48555793654c4b8e997714bacddae, type: 3}
+  iExcellent: {fileID: 21300000, guid: fc6bcbb6071d8b641810886fdb4de06f, type: 3}
+  iSuper: {fileID: 21300000, guid: 24de38b88355bb04fa84b7917b001816, type: 3}
+  iExtreme: {fileID: 21300000, guid: 4f2c1031230d8fc4eb5d6adf2a96c818, type: 3}
+  iUnstoppable: {fileID: 21300000, guid: 848f3f671139c654283fe928c83cfe4d, type: 3}
   combo: 0
   comboRating: 0
   score: 0

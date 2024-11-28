@@ -8,13 +8,10 @@ public class ColTrig_GenericCollect : ColTrig {
 
     public string collectType, storage1, storage2, storage3;
 
-    public override void on_hit_ally (InGameObject _hit){ Debug.Log ("collect");
+    public override void on_hit_collectible (InGameObject _hit){
         if (!DB_Conditions.I.coll_cond_collect (_hit) && !hitIDs.Contains (_hit.id)) return;
 
-        InGameObject    _this = GetComponent <InGameObject> (),
-                        _owner = ContObj.I.get_obj_with_id (_this.controllerID);
-
-        ContEffect.I.create_effect (_this.onHitSFX, _this.gameObject.transform.position);
+        InGameObject _this = GetComponent <InGameObject> ();
 
         int intStorage1, intStorage2, intStorage3;
         switch (collectType){

@@ -15,7 +15,7 @@ public class ContScore : MonoBehaviour {
     public TextMeshProUGUI tScoreExpand, tComboExpand, tComboRatingExpand;
 
     public Image I_ComboRating, I_ComboRating2;
-    public Image iGood, iNice, iExcellent, iSuper, iExtreme, iUnstoppable;
+    public Sprite iGood, iNice, iExcellent, iSuper, iExtreme, iUnstoppable;
 
     public int combo, comboRating, score, level;
     public Dictionary<int, string> comboRatings;
@@ -143,7 +143,7 @@ public class ContScore : MonoBehaviour {
             // Add a fade-in effect to the expanding combo rating text
             tComboRatingExpand.DOFade(1, 0.5f);
 
-            // Trigger I_ComboRating and I_ComboRating2 only if a new combo rating is achieved
+            // Trigger I_ComboRating and I_ComboRating2 only if a new combo rating is achieved\
             if (maxKey > previousMaxComboKey) {
                 previousMaxComboKey = maxKey;
 
@@ -171,17 +171,17 @@ public class ContScore : MonoBehaviour {
             if (comboKey >= key) {
                 switch (key) {
                     case 5:
-                        return iGood.sprite;
+                        return iGood;
                     case 10:
-                        return iNice.sprite;
+                        return iNice;
                     case 15:
-                        return iExcellent.sprite;
+                        return iExcellent;
                     case 20:
-                        return iSuper.sprite;
+                        return iSuper;
                     case 25:
-                        return iExtreme.sprite;
+                        return iExtreme;
                     case 30:
-                        return iUnstoppable.sprite;
+                        return iUnstoppable;
                 }
             }
         }
@@ -190,6 +190,7 @@ public class ContScore : MonoBehaviour {
 
     public void remove_combo() {
         combo = 0;
+        previousMaxComboKey = 0;
         tCombo.text = "";
         tCombo.text = "";
         tComboRating.text = "";

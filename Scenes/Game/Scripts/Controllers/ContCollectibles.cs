@@ -23,8 +23,7 @@ public class ContCollectibles : MonoBehaviour {
 
 			for (int i = 0; i <= _toSpawnCount; i++) {
 				Vector2 _rand = get_spawn_point_from_center_of_input (_map.transform.position);
-				Debug.Log ($"spawning {_randCollectible} at {_rand.x}, {_rand.y}");
-	            ContObj.I.create_obj (_randCollectible, _rand, 2);
+				ContObj.I.create_obj (_randCollectible, _rand, 2);
 			}
 		}
 	}

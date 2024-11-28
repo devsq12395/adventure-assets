@@ -63,29 +63,50 @@ public class ContObj : MonoBehaviour {
         if (_comp.timedLife <= 0)  _comp.timedLife = 10;
     }
 
-    public GameObject create_obj (string _name, Vector2 _pos, int _player) {
-        GameObject _obj = DB_Objects.I.get_game_obj (_name);
-        InGameObject _comp = _obj.GetComponent <InGameObject>();
+    public GameObject create_obj(string _name, Vector2 _pos, int _player) {
+        GameObject _obj = DB_Objects.I.get_game_obj(_name);
+        InGameObject _comp = _obj.GetComponent<InGameObject>();
 
-        if (!_comp) Debug.Log ($"WARNING: InGameObject not found for spawned object {_name}");
+        if (!_comp) Debug.Log($"WARNING: InGameObject not found for spawned object {_name}");
+
+        if (_comp.type == "unit") {
+            float radius = 0.5f;
+            float searchStep = 0.5f;
+            int maxAttempts = 10;
+            bool positionFound = false;
+
+            for (int attempt = 0; attempt < maxAttempts && !positionFound; attempt++) {
+                for (float x = -attempt * searchStep; x <= attempt * searchStep; x += searchStep) {
+                    for (float y = -attempt * searchStep; y <= attempt * searchStep; y += searchStep) {
+                        Vector2 testPos = _pos + new Vector2(x, y);
+                        if (Physics2D.OverlapCircle(testPos, radius) == null) {
+                            _pos = testPos;
+                            positionFound = true;
+                            break;
+                        }
+                    }
+                    if (positionFound) break;
+                }
+            }
+        }
+
         _obj.transform.position = _pos;
         _comp.owner = _player;
-        on_create_set_obj_stats (_comp, _name);
-        
-        set_default_skills (_comp);
-        setup_events (_comp);
-        on_create_set_boss (_comp);
-        on_create_set_missile (_comp);
+        on_create_set_obj_stats(_comp, _name);
+        set_default_skills(_comp);
+        setup_events(_comp);
+        on_create_set_boss(_comp);
+        on_create_set_missile(_comp);
 
-        if (_comp.type != "collect"){
+        if (_comp.type != "collect") {
             _comp.barHP = _obj.AddComponent<HealthBarScript>();
-            _comp.barHP.Setup ("health");
+            _comp.barHP.Setup("health");
         }
 
         // On spawn events
-        List<EvtTrig> _evts = get_evts_with_trigger_name (_comp, "spawn");
+        List<EvtTrig> _evts = get_evts_with_trigger_name(_comp, "spawn");
         foreach (EvtTrig _evt in _evts) {
-            _evt.use ();
+            _evt.use();
         }
 
         return _obj;
@@ -288,16 +309,32 @@ public class ContObj : MonoBehaviour {
         _obj.isWalk = (_obj.movInput.x != 0 || _obj.movInput.y != 0);
     }
 
-    public void input_move_update (InGameObject _obj){
-        if (!_obj.isWalk || !DB_Conditions.I.can_move (_obj)) return;
+    public void input_move_update(InGameObject _obj) {
+        if (!_obj.isWalk || !DB_Conditions.I.can_move(_obj)) return;
+
+        Vector2 direction = new Vector2(_obj.movInput.x, _obj.movInput.y).normalized;
+        float distance = 1f;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(_obj.gameObject.transform.position, direction, distance);
+
+        bool blocked = false;
+        foreach (var hit in hits) {
+            if (hit.collider != null && hit.collider.gameObject != _obj.gameObject) {
+                blocked = true;
+                break;
+            }
+        }
+
+        if (blocked) {
+            return;
+        }
 
         _obj.nxtPos.x = _obj.movInput.x * 100;
         _obj.nxtPos.y = _obj.movInput.y * 100;
 
         _obj.walkTargPos.x = _obj.gameObject.transform.position.x + _obj.nxtPos.x;
         _obj.walkTargPos.y = _obj.gameObject.transform.position.y + _obj.nxtPos.y;
-        _obj.curPos = Vector2.MoveTowards (_obj.curPos, _obj.walkTargPos, _obj.speed * Time.deltaTime);
-        InGameCamera.I.point_to_target ();
+        _obj.curPos = Vector2.MoveTowards(_obj.curPos, _obj.walkTargPos, _obj.speed * Time.deltaTime);
+        InGameCamera.I.point_to_target();
     }
 
     public void move_walk_to_pos(InGameObject _obj, Vector2 _dir) {
@@ -320,10 +357,17 @@ public class ContObj : MonoBehaviour {
         Debug.DrawRay(currentPos, direction * rayDistance, Color.red);
         Debug.DrawLine(currentPos, targetPos, Color.green);
 
-        RaycastHit2D hit = Physics2D.Raycast(currentPos, direction, rayDistance);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(currentPos, direction, rayDistance);
 
-        if (hit.collider != null && !hit.collider.isTrigger && hit.collider.gameObject != _obj.gameObject)
-        {
+        bool blocked = false;
+        foreach (var hit in hits) {
+            if (hit.collider != null && !hit.collider.isTrigger && hit.collider.gameObject != _obj.gameObject) {
+                blocked = true;
+                break;
+            }
+        }
+
+        if (blocked) {
             Vector2 avoidanceDir = new Vector2(-direction.y, direction.x); // Perpendicular direction
             float newAngle = Mathf.Atan2(avoidanceDir.y, avoidanceDir.x) * Mathf.Rad2Deg;
 
@@ -334,8 +378,7 @@ public class ContObj : MonoBehaviour {
 
         _obj.curPos = Vector2.MoveTowards(currentPos, currentPos + direction, _obj.speed * Time.deltaTime);
 
-        if (Calculator.I.get_dist_from_2_points(_obj.moveToPos_pos, _obj.curPos) <= 0.1f)
-        {
+        if (Calculator.I.get_dist_from_2_points(_obj.moveToPos_pos, _obj.curPos) <= 0.1f) {
             _obj.moveToPos_isOn = false;
         }
     }

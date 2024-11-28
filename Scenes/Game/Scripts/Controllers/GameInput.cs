@@ -34,12 +34,10 @@ public class GameInput : MonoBehaviour {
         }
         
         if (Input.GetButtonDown ("Inventory")) GameUI_Inv.I.show ("check");
-
-        // if (Input.GetButtonDown ("Items1"))
     }
 
     public void mouse_input (){
-        mouseClicked = Input.GetMouseButtonDown (0);
+        mouseClicked = Input.GetMouseButton (0);
 
         if (mouseClicked) {
             ContPlayer.I.use_skill ("mouse1");

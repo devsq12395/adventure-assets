@@ -20,12 +20,17 @@ public class ContEffect : MonoBehaviour
 
     }
 
+    public void update_effect (InGameEffect _obj){
+
+    }
+
     public GameObject create_effect(string _name, Vector2 _pos)
     {
         GameObject _obj = DB_Objects.I.get_game_obj(_name);
-        InGameObject _comp = _obj.GetComponent<InGameObject>();
+        InGameEffect _comp = _obj.GetComponent<InGameEffect>();
 
         _obj.transform.position = new Vector3(_pos.x, _pos.y, -9);
+        _comp.curPos = _obj.transform.position;
 
         return _obj;
     }
@@ -55,21 +60,28 @@ public class ContEffect : MonoBehaviour
 
             // Set the initial position
             instance.transform.position = new Vector3(startPosition.x, startPosition.y, -9);
+            InGameEffect _comp = instance.GetComponent<InGameEffect>();
+            if (_comp != null) {
+                _comp.curPos = instance.transform.position;
+            }
 
             // Calculate random angle and target position
             float angle = Random.Range(0f, 360f);
             Vector2 targetPosition = startPosition + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * targetDistance;
 
-            // Tween position
-            instance.transform.DOMove(targetPosition, tweenDur).OnComplete(() => ReturnToPool(instance)).SetUpdate(true);
+            // Tween curPos
+            if (_comp != null) {
+                DOTween.To(() => _comp.curPos, x => _comp.curPos = x, new Vector3(targetPosition.x, targetPosition.y, -9), tweenDur)
+                    .OnComplete(() => ReturnToPool(instance))
+                    .SetUpdate(true);
+            }
 
             // Tween scale from 1 to 0
             instance.transform.DOScale(Vector3.zero, tweenDur).SetUpdate(true);
 
             // Tween alpha from 1 to 0.5
             SpriteRenderer sr = instance.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
+            if (sr != null) {
                 sr.DOFade(0.5f, tweenDur).SetUpdate(true);
             }
         }

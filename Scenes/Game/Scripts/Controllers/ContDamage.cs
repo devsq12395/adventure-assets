@@ -157,15 +157,11 @@ public class ContDamage : MonoBehaviour {
         }
 
         // Add knockback effect using ForcedMove
-        var forcedMoves = _def.gameObject.GetComponents<ForcedMove>();
-        foreach (var fm in forcedMoves) {
-            if (fm.moveName == "hitKnockback") {
-                Destroy(fm);
-            }
-        }
+        Vector3 _knockDirection = _def.transform.position - _atk.transform.position;
+        float _knockAngle = Mathf.Atan2(_knockDirection.y, _knockDirection.x) * Mathf.Rad2Deg;
 
-        var knockback = _def.gameObject.AddComponent<ForcedMove>();
-        knockback.setup_forced_move(1.0f, 0.2f, 180.0f, ForcedMove.MoveMode.Knockback, "hitKnockback");
+        var _knockback = _def.gameObject.AddComponent<ForcedMove>();
+        _knockback.setup_forced_move(1.0f, 0.2f, _knockAngle, ForcedMove.MoveMode.Knockback, "hitKnockback");
 
         return _dam;
     }

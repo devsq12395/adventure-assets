@@ -27,4 +27,8 @@ public class ColTrig : MonoBehaviour {
     public virtual void on_hit_ally (InGameObject _hit) {
         
     }
+
+    public virtual void on_hit_collectible (InGameObject _hit) {
+        
+    }
 }

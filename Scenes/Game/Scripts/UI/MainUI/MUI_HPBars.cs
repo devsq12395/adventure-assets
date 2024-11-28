@@ -25,15 +25,15 @@ public class MUI_HPBars : MonoBehaviour
         // Instantiate white bars for HP, Stamina, and Ultimate
         i_HPWhite = Instantiate(i_HPMain, i_HPMain.transform.parent);
         i_HPWhite.color = new Color(1f, 1f, 1f, 0.5f); // Semi-transparent white
-        i_HPWhite.transform.SetSiblingIndex(i_HPMain.transform.GetSiblingIndex() - 1);
+        i_HPWhite.transform.SetSiblingIndex(0);
 
         i_StaWhite = Instantiate(i_StaMain, i_StaMain.transform.parent);
         i_StaWhite.color = new Color(1f, 1f, 1f, 0.5f);
-        i_StaWhite.transform.SetSiblingIndex(i_StaMain.transform.GetSiblingIndex() - 1);
+        i_StaWhite.transform.SetSiblingIndex(0);
 
         i_UltWhite = Instantiate(i_UltMain, i_UltMain.transform.parent);
         i_UltWhite.color = new Color(1f, 1f, 1f, 0.5f);
-        i_UltWhite.transform.SetSiblingIndex(i_UltMain.transform.GetSiblingIndex() - 1);
+        i_UltWhite.transform.SetSiblingIndex(0);
 
         set_char(ContPlayer.I.players[0].name);
     }
@@ -67,12 +67,9 @@ public class MUI_HPBars : MonoBehaviour
                 staScale = (float)ContPlayer.I.sta / (float)ContPlayer.I.staMax,
                 ultScale = (float)_pla.ultPerc / 100;
 
-        Debug.Log($"update_bars called: hpScale={hpScale}, staScale={staScale}, ultScale={ultScale}");
-
         // Trigger tween only if the value has changed
         if (Mathf.Abs(hpScale - prevHpScale) > 0.01f) {
             i_HPMain.fillAmount = hpScale;
-            Debug.Log($"HP bar updated: {i_HPMain.fillAmount}");
             hpTargetFill = hpScale;
             hpTweenElapsed = 0f;
             hpTweening = true;
@@ -81,13 +78,11 @@ public class MUI_HPBars : MonoBehaviour
 
         if (Mathf.Abs(staScale - prevStaScale) > 0.01f) {
             i_StaMain.fillAmount = staScale;
-            Debug.Log($"Stamina bar updated: {i_StaMain.fillAmount}");
             prevStaScale = staScale;
         }
 
         if (Mathf.Abs(ultScale - prevUltScale) > 0.01f) {
             i_UltMain.fillAmount = ultScale;
-            Debug.Log($"Ultimate bar updated: {i_UltMain.fillAmount}");
             prevUltScale = ultScale;
         }
 
@@ -107,6 +102,7 @@ public class MUI_HPBars : MonoBehaviour
         if (boss != null) {
             float hpScaleBoss = (float)boss.hp / (float)boss.hpMax;
             set_bar_fill(iBossMain, hpScaleBoss);
+            iBossMain.transform.SetSiblingIndex(0);  // Set boss HP bar behind all siblings
             show_boss_hp_bar();
         }
 

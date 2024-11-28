@@ -39,8 +39,6 @@ public class Mortar : MonoBehaviour {
             if (enemy.owner != inGameObject.owner) {
                 float distance = Vector2.Distance(transform.position, enemy.transform.position);
                 if (distance <= damageRadius) {
-                    // Deal damage using ContDamage.I.damage
-                    Debug.Log("Dealing damage to " + enemy.name);
                     ContDamage.I.damage(inGameObject, enemy, inGameObject.hitDam, new List<string>());
                 }
             }
