@@ -17,7 +17,8 @@ public class ContObjective : MonoBehaviour {
     }
 
     public void set_objective(string objective){
-        objectiveText.text = objective;
+        // Disabled for now
+        objectiveText.text = "";
     }
 
 }

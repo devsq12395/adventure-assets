@@ -36,7 +36,7 @@ public class Compass : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             // Position the compass image
-            float radius = 400f; // Adjust based on your UI design
+            float radius = 350f; // Adjust based on your UI design
             Vector2 position = new Vector2(radius * Mathf.Cos(angle * Mathf.Deg2Rad), radius * Mathf.Sin(angle * Mathf.Deg2Rad));
             iCompass.rectTransform.anchoredPosition = position;
 
