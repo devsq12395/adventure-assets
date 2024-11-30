@@ -9,7 +9,8 @@ public class DB_Maps : MonoBehaviour {
 	public void Awake(){ I = this; }
 
     public GameObject goMap_woosterSquare1, goMap_woosterSquare2, goMap_woosterSquare3, goMap_woosterSquare4, goMap_trainingGrounds,
-        goMap_mainTrainingGrounds;
+        goMap_mainTrainingGrounds, goMap_mainVic1, goMap_mainVincenzo1, goMap_mainAnastasia1, goMap_mainBeatrice1, goMap_mainAnthony1,
+        goMap_mainCursedForest;
 
     public float SIZE_PER_PIECE; // Assuming each map piece is a square
 
@@ -58,9 +59,7 @@ public class DB_Maps : MonoBehaviour {
                 _new = get_map_details_generic (_new);
                 break;
 
-            case "training-grounds":
-                _new = get_map_details_training_grounds (_new);
-                break;
+            case "training-grounds": _new = get_map_details_training_grounds (_new); break;
 
         }
 
@@ -86,10 +85,16 @@ public class DB_Maps : MonoBehaviour {
         mapDetails details = ContMap.I.details;
 
         switch (_name) {
-            case "map-main-training-grounds": 
-                _new.go = GameObject.Instantiate (goMap_mainTrainingGrounds, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-                break;
+            // Boss pieces
+            case "map-main-training-grounds": _new.go = GameObject.Instantiate (goMap_mainTrainingGrounds, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;  break;
+            case "map-main-vic-1": _new.go = GameObject.Instantiate (goMap_mainVic1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;  break;
+            case "map-main-vincenzo-1": _new.go = GameObject.Instantiate (goMap_mainVincenzo1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;  break;
+            case "map-main-anastasia-1": _new.go = GameObject.Instantiate (goMap_mainAnastasia1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;  break;
+            case "map-main-beatrice-1": _new.go = GameObject.Instantiate (goMap_mainBeatrice1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;  break;
+            case "map-main-anthony-1": _new.go = GameObject.Instantiate (goMap_mainAnthony1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;  break;
+            case "map-main-cursed-forest": _new.go = GameObject.Instantiate (goMap_mainCursedForest, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;  break;
 
+            // Main pieces
             case "map-wooster-square-1": 
                 _new.go = GameObject.Instantiate (goMap_woosterSquare1, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
                 break;

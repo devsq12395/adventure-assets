@@ -17,7 +17,7 @@ public class Skill_ElectricSlash : SkillTrig {
     private float DIST_PER_EXPLOSION_EFFECT, curDistExpEffect;
     
     private GameObject slashInstance; // Store the front slash instance
-    private InGameObject ownerComp; // Cache the owner component for reuse
+    private InGameObject ownerComp, slashInstanceComp; // Cache the owner component for reuse
     private BoxCollider2D boxCollider; // Cache the BoxCollider2D
     
     // New variables for dash
@@ -69,7 +69,7 @@ public class Skill_ElectricSlash : SkillTrig {
         if (!isUsingSkill) return;
 
         InGameObject _owner = GetComponent<InGameObject>();
-        Vector2 _pos = _owner.transform.position;
+        Vector2 _pos = _owner.curPos;
 
         // Handle damage to nearby units
         dam_nearby_units(_owner);
@@ -91,7 +91,7 @@ public class Skill_ElectricSlash : SkillTrig {
         if (dashTimer < dashDuration) {
             // Move the owner in the direction of the dash
             Vector2 dashDirection = new Vector2(Mathf.Cos(dashAngle * Mathf.Deg2Rad), Mathf.Sin(dashAngle * Mathf.Deg2Rad));
-            _owner.transform.position += (Vector3)(dashDirection * dashSpeed * Time.deltaTime);
+            _owner.curPos += (dashDirection * dashSpeed * Time.deltaTime);
         } else {
             // End the slash skill if the dash duration is over
             EndSlashSkill(_owner);
@@ -166,23 +166,24 @@ public class Skill_ElectricSlash : SkillTrig {
 
         // Create the slash object at the calculated position
         slashInstance = ContObj.I.create_obj(frontSlashObj, slashPos, _ownerComp.owner);
+        slashInstanceComp = slashInstance.GetComponent<InGameObject>();
 
         // Set the slashInstance's rotation to match the dash angle
-        slashInstance.transform.rotation = Quaternion.Euler(0, 0, dashAngle);
+        slashInstanceComp.transform.rotation = Quaternion.Euler(0, 0, dashAngle);
     }
 
     // Update the position of the front slash to follow the owner
     private void update_front_slash_position(InGameObject _ownerComp) {
-        Vector2 ownerPos = _ownerComp.transform.position;
+        Vector2 ownerPos = _ownerComp.curPos;
 
         // Maintain a fixed distance in front of the owner
         Vector2 offset = Calculator.I.get_offset_from_angle_and_distance(dashAngle, 1.5f);
         Vector2 slashPos = ownerPos + offset;
 
         // Update the slash's position
-        slashInstance.transform.position = slashPos;
+        slashInstanceComp.curPos = slashPos;
 
         // Update the slashInstance's rotation to match the dash direction
-        slashInstance.transform.rotation = Quaternion.Euler(0, 0, dashAngle);
+        slashInstanceComp.transform.rotation = Quaternion.Euler(0, 0, dashAngle);
     }
 }

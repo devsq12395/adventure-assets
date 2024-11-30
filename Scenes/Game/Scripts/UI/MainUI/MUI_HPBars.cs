@@ -118,14 +118,19 @@ public class MUI_HPBars : MonoBehaviour
         }
     }
 
-    public void find_boss_on_start (){
+    public InGameObject find_boss_on_start (){
         InGameObject[] allObjects = FindObjectsOfType<InGameObject>();
+        InGameObject boss = null;
+
         foreach (var obj in allObjects) {
             if (obj.tags.Contains("boss")) {
                 set_boss(obj);
+                boss = obj;
                 break;
             }
         }
+
+        return boss;
     }
 
     public void show_boss_hp_bar (){

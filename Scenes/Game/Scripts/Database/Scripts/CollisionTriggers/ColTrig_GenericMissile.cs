@@ -14,7 +14,7 @@ public class ColTrig_GenericMissile : ColTrig {
 
         ContEffect.I.create_effect (_this.onHitSFX, _this.gameObject.transform.position);
 
-        if (_owner.summonedBy > 0) {
+        if (_owner && _owner.summonedBy > 0) {
             InGameObject _summoner = ContObj.I.get_obj_with_id (_owner.summonedBy);
             _this.hitDam = _summoner.skill;
         }

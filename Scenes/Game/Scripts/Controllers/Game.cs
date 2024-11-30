@@ -29,7 +29,8 @@ public class Game : MonoBehaviour {
 
         SoundHandler.I.play_bgm ("game");
 
-        MUI_HPBars.I.find_boss_on_start ();
+        InGameObject boss = MUI_HPBars.I.find_boss_on_start ();
+        Compass.I.setup_boss (boss.gameObject);
     }
 
     void Update() {

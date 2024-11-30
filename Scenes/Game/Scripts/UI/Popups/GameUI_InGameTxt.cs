@@ -69,7 +69,7 @@ public class GameUI_InGameTxt : MonoBehaviour {
 
         // Customize text appearance (color, size, etc.)
         _newTxtUI.color = _color;
-        _newTxtUI.fontSize = 2; // Font size appropriate for World Space
+        _newTxtUI.fontSize = 1; // Font size appropriate for World Space
         _newTxtUI.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 
         // Enable and set the outline properties
@@ -92,7 +92,7 @@ public class GameUI_InGameTxt : MonoBehaviour {
         });
 
         // Animate movement upwards in world space
-        _newTxtUI.rectTransform.DOAnchorPosY(_newTxtUI.rectTransform.anchoredPosition.y + 9f, _dur).SetUpdate(true);
+        _newTxtUI.rectTransform.DOAnchorPosY(_newTxtUI.rectTransform.anchoredPosition.y + 4f, _dur).SetUpdate(true);
 
         // Add new InGameTxt to the list
         InGameTxt _new = new InGameTxt(_go, _newTxtUI, _txt, _dur, _pos);

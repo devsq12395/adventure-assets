@@ -69,7 +69,7 @@ public class ContObj : MonoBehaviour {
 
         if (!_comp) Debug.Log($"WARNING: InGameObject not found for spawned object {_name}");
 
-        if (_comp.type == "unit") {
+        if (_comp.type == "unit" && !_comp.tags.Contains("dummy")) {
             float radius = 0.5f;
             float searchStep = 0.5f;
             int maxAttempts = 10;

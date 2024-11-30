@@ -132,7 +132,7 @@ public class InGameEffect : MonoBehaviour
     }
 
     // Jump
-    public void SetJump(float height, float duration) { Debug.Log ("SetJump");
+    public void SetJump(float height, float duration) {
         if (!isJumping) {
             jumpTargetHeight = height;
             jumpDuration = duration;

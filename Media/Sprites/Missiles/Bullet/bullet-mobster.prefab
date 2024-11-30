@@ -181,6 +181,7 @@ MonoBehaviour:
   isWalk: 0
   walkTargPos: {x: 0, y: 0}
   checkBorder: 1
+  forcedMovement: 0
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
@@ -207,7 +208,7 @@ MonoBehaviour:
   isDash: 0
   knockDrag: 0
   timedLife: 0
-  range: 8
+  range: 20
   controllerID: 0
   hitUnitsID: 
   colorChangeDur: 0

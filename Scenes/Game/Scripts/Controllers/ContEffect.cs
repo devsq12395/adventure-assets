@@ -29,8 +29,10 @@ public class ContEffect : MonoBehaviour
         GameObject _obj = DB_Objects.I.get_game_obj(_name);
         InGameEffect _comp = _obj.GetComponent<InGameEffect>();
 
-        _obj.transform.position = new Vector3(_pos.x, _pos.y, -9);
-        _comp.curPos = _obj.transform.position;
+        if (_comp) {
+            _obj.transform.position = new Vector3(_pos.x, _pos.y, -9);
+            _comp.curPos = _obj.transform.position;
+        }
 
         return _obj;
     }

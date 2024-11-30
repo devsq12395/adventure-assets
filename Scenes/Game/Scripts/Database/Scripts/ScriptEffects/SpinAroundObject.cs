@@ -22,6 +22,10 @@ public class SpinAroundObject : MonoBehaviour
         // Convert the initial angle to radians and set the initial position
         currentAngle = initialAngle * Mathf.Deg2Rad;
         SetInitialPosition();
+
+        if (!target) {
+            Destroy (this);
+        }
     }
 
     void Update()
@@ -37,14 +41,20 @@ public class SpinAroundObject : MonoBehaviour
     // Set the initial position based on the input angle and distance
     public void SetInitialPosition()
     {
+        InGameObject _ownerComp = gameObject.GetComponent <InGameObject>(),
+            targetComp = target.GetComponent <InGameObject> ();
+        
         float x = Mathf.Cos(currentAngle) * orbitDistance;
         float y = Mathf.Sin(currentAngle) * orbitDistance;
-        transform.position = new Vector3(target.position.x + x, target.position.y + y, transform.position.z);
+        _ownerComp.curPos = new Vector2(targetComp.curPos.x + x, targetComp.curPos.y + y);
     }
 
     // Rotate the object around the target
     public void OrbitAroundTarget()
     {
+        InGameObject _ownerComp = gameObject.GetComponent <InGameObject> (),
+            targetComp = target.GetComponent <InGameObject> ();
+        
         // Increase the angle over time based on the orbit speed
         currentAngle += orbitSpeed * Time.deltaTime * Mathf.Deg2Rad;
 
@@ -53,6 +63,6 @@ public class SpinAroundObject : MonoBehaviour
         float y = Mathf.Sin(currentAngle) * orbitDistance;
 
         // Set the position of the object
-        transform.position = new Vector3(target.position.x + x, target.position.y + y, transform.position.z);
+        _ownerComp.curPos = new Vector2(targetComp.curPos.x + x, targetComp.curPos.y + y);
     }
 }

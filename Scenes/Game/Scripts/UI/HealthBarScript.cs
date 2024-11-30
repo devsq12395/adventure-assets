@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class HealthBarScript : MonoBehaviour
 {
@@ -13,6 +14,14 @@ public class HealthBarScript : MonoBehaviour
 
     private float baseScaleMultiplier = 1.25f; // Increase the size by 25%
 
+    private float targetHealth;
+    private Vector3 originalLocalPosition;
+
+    private float previousHealth;
+
+    private float lerpSpeed = 5f; // Cache lerp speed
+    private Color currentColor = Color.white; // Cache current color
+
     private void Awake() {
         unitStats = GetComponentInParent<InGameObject>();
     }
@@ -25,6 +34,13 @@ public class HealthBarScript : MonoBehaviour
         mode = _mode;
         CreateCanvasIfNeeded();
 
+        // Initialize targetHealth to the current health percentage
+        if (_mode == "health") {
+            targetHealth = (float)unitStats.hp / unitStats.hpMax;
+        } else if (_mode == "stamina") {
+            targetHealth = (float)ContPlayer.I.sta / ContPlayer.I.staMax;
+        }
+
         // X-axis scale multiplier based on unitStats.hpBarScaleX
         float scaleMultiplierX = unitStats.hpBarScaleX > 0 ? unitStats.hpBarScaleX : 1f;
 
@@ -32,25 +48,29 @@ public class HealthBarScript : MonoBehaviour
         switch (_mode) {
             case "health":
                 healthBarBaseImage = CreateBar("hp-bar-base", 
-                    new Vector2(1.5f * baseScaleMultiplier, 1.75f * baseScaleMultiplier), 
+                    new Vector2(1.5f * baseScaleMultiplier, 1.25f * baseScaleMultiplier), 
                     new Vector2(0, 1.75f), 
                     scaleMultiplierX);
                 healthBarImage = CreateBar("hp-bar", 
-                    new Vector2(1.5f * baseScaleMultiplier, 1.75f * baseScaleMultiplier), 
+                    new Vector2(1.5f * baseScaleMultiplier, 1.25f * baseScaleMultiplier), 
                     new Vector2(0, 1.75f), 
                     scaleMultiplierX);
                 break;
 
             case "stamina":
                 healthBarBaseImage = CreateBar("sta-bar-base", 
-                    new Vector2(1.5f * baseScaleMultiplier, 1.25f * baseScaleMultiplier), 
+                    new Vector2(1.5f * baseScaleMultiplier, 1f * baseScaleMultiplier), 
                     new Vector2(0, 1.25f), 
                     scaleMultiplierX); // Positioned below health bar
                 healthBarImage = CreateBar("sta-bar", 
-                    new Vector2(1.5f * baseScaleMultiplier, 1.25f * baseScaleMultiplier), 
+                    new Vector2(1.5f * baseScaleMultiplier, 1f * baseScaleMultiplier), 
                     new Vector2(0, 1.25f), 
-                    scaleMultiplierX); // Positioned below health bar
+                    scaleMultiplierX);
                 break;
+        }
+
+        if (healthBarImage != null) {
+            originalLocalPosition = healthBarImage.transform.localPosition;
         }
 
         isReady = true;
@@ -102,22 +122,42 @@ public class HealthBarScript : MonoBehaviour
     }
 
     private void Update() {
-        if (!isReady) return;
+        if (!isReady || unitStats == null || healthBarImage == null || healthBarBaseImage == null) return;
 
-        if (unitStats != null && healthBarImage != null) {
-            switch (mode) {
-                case "health":
-                    healthBarImage.fillAmount = (float)unitStats.hp / unitStats.hpMax;
-                    break;
-
-                case "stamina":
-                    healthBarImage.fillAmount = (float)ContPlayer.I.sta / ContPlayer.I.staMax;
-                    break;
-            }
-
-            // Adjust the scale based on the facing direction
-            float scaleX = (unitStats.facing == "left") ? 1f : -1f;
-            healthBarCanvas.transform.localScale = new Vector3(scaleX, healthBarCanvas.transform.localScale.y, healthBarCanvas.transform.localScale.z);
+        float currentPercentage;
+        if (mode == "health") {
+            currentPercentage = (float)unitStats.hp / unitStats.hpMax;
+        } else if (mode == "stamina") {
+            currentPercentage = (float)ContPlayer.I.sta / ContPlayer.I.staMax;
+        } else {
+            return;
         }
+
+        if (Mathf.Abs(currentPercentage - previousHealth) > Mathf.Epsilon) {
+            targetHealth = currentPercentage;
+            previousHealth = currentPercentage;
+        }
+
+        // Smooth transition
+        float currentFill = healthBarImage.fillAmount;
+        float lerpFactor = Time.deltaTime * lerpSpeed;
+        healthBarImage.fillAmount = Mathf.Lerp(currentFill, targetHealth, lerpFactor);
+
+        // Color pulsing effect for health bar
+        if (mode == "health" && targetHealth < 0.3f) {
+            float t = Mathf.Sin(Time.time * 5f) * 0.5f + 0.5f; // Oscillates between 0 and 1
+            Color targetColor = Color.Lerp(Color.white, new Color(1f, 0.6f, 0.6f, 1f), t);
+            if (currentColor != targetColor) {
+                healthBarImage.color = targetColor;
+                currentColor = targetColor;
+            }
+        } else if (currentColor != Color.white) {
+            healthBarImage.color = Color.white;
+            currentColor = Color.white;
+        }
+
+        // Adjust the scale based on the facing direction
+        float scaleX = (unitStats.facing == "left") ? 1f : -1f;
+        healthBarCanvas.transform.localScale = new Vector3(scaleX, healthBarCanvas.transform.localScale.y, healthBarCanvas.transform.localScale.z);
     }
 }

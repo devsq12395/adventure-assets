@@ -11,9 +11,13 @@ public class ColTrig_GenericEnemy : ColTrig {
         ContEffect.I.create_effect (_this.onHitSFX, _hit.gameObject.transform.position);
         ContDamage.I.damage (_this, _hit, _this.hitDam, _this.tags);
 
-        // Propell player on hit
-        float _ang = Calculator.I.get_ang_from_2_points_rad (gameObject.gameObject.transform.position, _hit.transform.position) * Mathf.Rad2Deg;
-        ContObj.I.propell_to_angle (_hit, _ang, 15f, 1f, 5f, "knocked");
+        // Calculate knockback direction and angle
+        Vector3 knockDirection = _hit.transform.position - transform.position;
+        float knockAngle = Mathf.Atan2(knockDirection.y, knockDirection.x) * Mathf.Rad2Deg;
+
+        // Add knockback effect using ForcedMove
+        ForcedMove knockback = _hit.gameObject.AddComponent<ForcedMove>();
+        knockback.setup_forced_move(15.0f, 1f, knockAngle, ForcedMove.MoveMode.Knockback, "meleeKnockback");
     }
 
     public override void on_hit_ally (InGameObject _hit){

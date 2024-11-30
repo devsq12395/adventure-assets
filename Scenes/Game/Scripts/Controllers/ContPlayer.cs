@@ -71,15 +71,17 @@ public class ContPlayer : MonoBehaviour {
     public void change_char (int _cI){
         if (!DB_Conditions.I.can_change_char (_cI)) return;
         
-        Vector2 _posPl = player.gameObject.transform.position,
+        Vector2 _posPl = player.curPos,
                 _pos = new Vector2 (_posPl.x, _posPl.y);
         player.checkBorder = false;
-        player.gameObject.transform.position = ContMap.I.pointList ["playerLounge"];
+        player.curPos = ContMap.I.pointList ["playerLounge"];
+        player.transform.position = ContMap.I.pointList ["playerLounge"];
         player.isInvul = true;
         
         pla_curSel = _cI;
         player = players [_cI];
-        player.gameObject.transform.position = _pos;
+        player.curPos = _pos;
+        player.transform.position = _pos;
         player.checkBorder = true;
         player.isInvul = false;
         

@@ -146,6 +146,7 @@ public class ContScore : MonoBehaviour {
             // Trigger I_ComboRating and I_ComboRating2 only if a new combo rating is achieved\
             if (maxKey > previousMaxComboKey) {
                 previousMaxComboKey = maxKey;
+                SoundHandler.I.play_sfx ("combo-get");
 
                 // Show I_ComboRating with scale and alpha tween
                 I_ComboRating.sprite = GetComboRatingSprite(maxKey); // Assume this method gets the correct sprite

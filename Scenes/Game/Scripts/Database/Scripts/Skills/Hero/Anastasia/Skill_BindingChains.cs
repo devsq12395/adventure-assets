@@ -22,7 +22,7 @@ public class Skill_BindingChains : SkillTrig {
 
             ContEffect.I.create_effect ("bindChainExp1", _o.gameObject.transform.position);
             ContBuffs.I.add_buff (_o, "binding-chains");
-            GameUI_InGameTxt.I.create_ingame_txt ("Binded!", _o.gameObject.transform.position, 2f);
+            GameUI_InGameTxt.I.create_ingame_txt ("Binded!", _o.gameObject.transform.position, 2f, Color.yellow);
             ContDamage.I.damage (_owner, _o, _owner.skill, damTags);
 
             SoundHandler.I.play_sfx ("magic");

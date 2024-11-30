@@ -14,7 +14,7 @@ public class SoundHandler : MonoBehaviour
     public AudioClip[] bgmGame;
 
     public AudioClip bubble, buying, chat, click, explosion, gain, ice, laser, magic, plasmaShotgun, swish, swoosh, torrent, win, zap,
-        bigHit, dash, dashSmoke, pistol;
+        bigHit, dash, dashSmoke, pistol, goldGet, comboGet;
 
     public bool soundOn, musicOn;
 
@@ -85,6 +85,8 @@ public class SoundHandler : MonoBehaviour
             case "dash": clipToPlay = dash; break;
             case "dash-smoke": clipToPlay = dashSmoke; break;
             case "pistol": clipToPlay = pistol; break;
+            case "gold-get": clipToPlay = goldGet; break;
+            case "combo-get": clipToPlay = comboGet; break;
         }
 
         if (clipToPlay != null)

@@ -35,16 +35,10 @@ public class DB_Enemies : MonoBehaviour {
 
 	    switch (_randomEnemyGroup) {
 	        case "training-grounds": _ret = training_grounds(_ret); break;
-	        case "tutorial": _ret = tutorial_waves(_ret); break;
-	        case "slime-1": _ret = slime_1_waves(_ret); break;
-	        case "slime-2": _ret = slime_2_waves(_ret); break;
-	        case "mafia-1": _ret = mafia_1_waves(_ret); break;
-	        case "mafia-2": _ret = mafia_2_waves(_ret); break;
-	        case "assassin-1": _ret = assassin_1_waves(_ret); break;
-	        case "goblin-1": _ret = goblin_1_waves(_ret); break;
-	        case "orc-1": _ret = orc_1_waves(_ret); break;
-	        case "beatrice-1": _ret = beatrice_1_waves(_ret); break;
-	        case "war-shredder-1": _ret = war_shredder_1_waves(_ret); break;
+	        case "slime-lvl-1": _ret = slime_lvl_1_waves(_ret); break;
+	        case "mafia-lvl-1": _ret = mafia_lvl_1_waves(_ret); break;
+			case "orc-lvl-1": _ret = orc_lvl_1_waves(_ret); break;
+			case "war-shredder-lvl-1": _ret = war_shredder_lvl_1_waves(_ret); break;
 	    }
 
 	    return _ret;
@@ -69,18 +63,18 @@ public class DB_Enemies : MonoBehaviour {
 
 	public bool check_special_spawn (string _waveName){
 		bool _isSpecialSpawn = false;
-		switch (_waveName) {
-			case "slime-orange":
-	            int[] offsets = { -6, 6 };
+		// switch (_waveName) {
+		// 	case "slime-orange":
+	    //         int[] offsets = { -6, 6 };
 
-	            foreach (int x in offsets) {
-	                ContObj.I.create_obj_spawner(_waveName, new Vector2(x, 0 + 3), 2);
-	                ContObj.I.create_obj_spawner(_waveName, new Vector2(0, x + 3), 2);
-	            }
+	    //         foreach (int x in offsets) {
+	    //             ContObj.I.create_obj_spawner(_waveName, new Vector2(x, 0 + 3), 2);
+	    //             ContObj.I.create_obj_spawner(_waveName, new Vector2(0, x + 3), 2);
+	    //         }
 	            
-	            _isSpecialSpawn = true;
-	            break;
-		}
+	    //         _isSpecialSpawn = true;
+	    //         break;
+		// }
 
 		return _isSpecialSpawn;
 	}
@@ -92,62 +86,71 @@ public class DB_Enemies : MonoBehaviour {
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("skeleton-axethrower", 8);
+				_waves[0].Add ("slime-blue", 7);
+				_waves[0].Add ("slime-orange", 15);
+				_waves[0].Add ("goblin", 5);
+				_waves[0].Add ("goblin-mage", 1);
+				_waves[0].Add ("skeleton-axethrower", 3);
 
 				break;
 			case 1:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-blue", 7);
-				_waves[0].Add ("goblin", 5);
-				_waves[0].Add ("goblin-mage", 1);
+				_waves[0].Add ("slime-blue", 10);
+				_waves[0].Add ("slime-orange", 5);
+				_waves[0].Add ("orc", 3);
+				_waves[0].Add ("skeleton-axethrower", 3);
 
 				break;
 			default:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("slime-blue", 10);
-				_waves[0].Add ("goblin", 9);
+				_waves[0].Add ("slime-orange", 15);
+				_waves[0].Add ("goblin", 6);
+				_waves[0].Add ("goblin-mage", 1);
+				_waves[0].Add ("war-shredder", 3);
 
 				break;
 		}
-		
+
 		return _waves;
 	}
-	private List<Dictionary<string, int>> slime_1_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
+	private List<Dictionary<string, int>> slime_lvl_1_waves (List<Dictionary<string, int>> _ret){
+		int chance = UnityEngine.Random.Range (0, 3);
 		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
 
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("slime-blue", 7);
+				_waves[0].Add ("slime-orange", 15);
 				_waves[0].Add ("goblin", 5);
 				_waves[0].Add ("goblin-mage", 1);
+				_waves[0].Add ("skeleton-axethrower", 3);
 
 				break;
-		}
-		
-		return _waves;
-	}
-	private List<Dictionary<string, int>> slime_2_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
-		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
-
-		switch (chance) {
-			case 0:
+			case 1:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("slime-blue", 10);
-				_waves[0].Add ("goblin", 9);
+				_waves[0].Add ("slime-orange", 5);
+				_waves[0].Add ("orc", 3);
+				_waves[0].Add ("skeleton-axethrower", 3);
+
+				break;
+			default:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("slime-blue", 10);
+				_waves[0].Add ("slime-orange", 15);
+				_waves[0].Add ("goblin", 6);
+				_waves[0].Add ("goblin-mage", 1);
+				_waves[0].Add ("war-shredder", 3);
 
 				break;
 		}
 		
 		return _waves;
 	}
-	private List<Dictionary<string, int>> mafia_1_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
+	private List<Dictionary<string, int>> mafia_lvl_1_waves (List<Dictionary<string, int>> _ret){
+		int chance = UnityEngine.Random.Range (0, 3);
 		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
 
 		switch (chance) {
@@ -155,60 +158,48 @@ public class DB_Enemies : MonoBehaviour {
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("mobster", 7);
 				_waves[0].Add ("assassin", 3);
-				_waves[0].Add ("slime-blue", 4);
-				_waves[0].Add ("goblin-mage", 1);
+				_waves[0].Add ("slime-orange", 15);
 
 				break;
-		}
-		
-		return _waves;
-	}
-	private List<Dictionary<string, int>> mafia_2_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
-		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
-
-		switch (chance) {
-			case 0:
+			case 1:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("mobster", 2);
-				_waves[0].Add ("assassin", 3);
-				_waves[0].Add ("slime-blue", 4);
-				_waves[0].Add ("orc", 7);
+				_waves[0].Add ("mobster", 11);
+				_waves[0].Add ("skeleton-axethrower", 5);
+				_waves[0].Add ("slime-orange", 15);
 
 				break;
-		}
-		
-		return _waves;
-	}
-	private List<Dictionary<string, int>> assassin_1_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
-		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
-
-		switch (chance) {
-			case 0:
+			default:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("mobster", 2);
-				_waves[0].Add ("assassin", 3);
-				_waves[0].Add ("slime-blue", 4);
-				_waves[0].Add ("orc", 7);
-				_waves[0].Add ("goblin-mage", 1);
+				_waves[0].Add ("mobster", 11);
+				_waves[0].Add ("orc", 4);
+				_waves[0].Add ("goblin", 4);
+				_waves[0].Add ("slime-orange", 10);
+				_waves[0].Add ("war-shredder", 3);
 
 				break;
 		}
 		
 		return _waves;
 	}
-	private List<Dictionary<string, int>> goblin_1_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
+	private List<Dictionary<string, int>> orc_lvl_1_waves (List<Dictionary<string, int>> _ret){
+		int chance = UnityEngine.Random.Range (0, 2);
 		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
 
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
 				_waves[0].Add ("goblin", 9);
+				_waves[0].Add ("orc", 5);
+				_waves[0].Add ("slime-orange", 5);
+				_waves[0].Add ("goblin-mage", 2);
+
+				break;
+			default:
+				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("goblin", 9);
+				_waves[0].Add ("skeleton-axethrower", 5);
+				_waves[0].Add ("slime-orange", 10);
+				_waves[0].Add ("war-shredder", 3);
 				_waves[0].Add ("goblin-mage", 1);
 
 				break;
@@ -216,61 +207,25 @@ public class DB_Enemies : MonoBehaviour {
 		
 		return _waves;
 	}
-	private List<Dictionary<string, int>> orc_1_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
+	private List<Dictionary<string, int>> war_shredder_lvl_1_waves (List<Dictionary<string, int>> _ret){
+		int chance = UnityEngine.Random.Range (0, 2);
 		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
 
 		switch (chance) {
 			case 0:
 				_waves.Add (new Dictionary<string, int>());
+				_waves[0].Add ("goblin", 9);
 				_waves[0].Add ("orc", 5);
-				_waves[0].Add ("goblin", 5);
+				_waves[0].Add ("slime-orange", 5);
+				_waves[0].Add ("war-shredder", 10);
 
 				break;
-		}
-		
-		return _waves;
-	}
-	private List<Dictionary<string, int>> beatrice_1_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
-		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
-
-		switch (chance) {
-			case 0:
+			default:
 				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("victorian-soldier", 8);
-
-				break;
-		}
-		
-		return _waves;
-	}
-	private List<Dictionary<string, int>> war_shredder_1_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
-		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
-
-		switch (chance) {
-			case 0:
-				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("war-shredder", 7);
-
-				break;
-		}
-		
-		return _waves;
-	}
-	private List<Dictionary<string, int>> tutorial_waves (List<Dictionary<string, int>> _ret){
-		//int chance = Random.Range (0, 3);
-		int chance = 0;
-		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
-
-		switch (chance) {
-			case 0:
-				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-orange", 1);
+				_waves[0].Add ("goblin", 9);
+				_waves[0].Add ("skeleton-axethrower", 5);
+				_waves[0].Add ("war-shredder", 10);
+				_waves[0].Add ("goblin-mage", 1);
 
 				break;
 		}

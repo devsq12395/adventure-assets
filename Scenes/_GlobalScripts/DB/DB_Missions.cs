@@ -73,6 +73,9 @@ public class DB_Missions : MonoBehaviour {
     			_new.rewards = "200 Gold";
                 _new.goldReward = 200;
 
+                _new.objective = "Defeat the Giant Slime";
+                _new.mainMap = "map-main-vic-1";
+
                 _new.gameOverSpk_name = "Vic";
                 _new.gameOverSpk_text = "Well done! Boss Vincenzo will be pleased. You should meet with him at Luppino Family Cafe.";
                 _new.gameOverSpk_img = "vic";
@@ -81,7 +84,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-    			_new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2"});
+    			_new.enemies.AddRange (new string[]{"slime-lvl-1"});
     			_new.maps.AddRange (new string[]{"map-tutorial", "map-wooster-square-3"});
     			_new.unlocksArea.AddRange (new string[]{"to-wooster-square-2"});
     			_new.missionsSet.AddRange (new string[]{"vic->vic-2"});
@@ -96,6 +99,9 @@ public class DB_Missions : MonoBehaviour {
                 _new.rewards = "300 Gold";
                 _new.goldReward = 300;
 
+                _new.objective = "Defeat the Mobster Leader";
+                _new.mainMap = "map-main-vincenzo-1";
+
                 _new.gameOverSpk_name = "Boss Vincenzo";
                 _new.gameOverSpk_text = "Nice work! That will show those Rossi thugs who they're messing with. I think you should meet Captain Beatrice. Tell her I sent you.";
                 _new.gameOverSpk_img = "vincenzo";
@@ -104,7 +110,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1"});
+                _new.enemies.AddRange (new string[]{"slime-lvl-1", "mafia-lvl-1"});
                 _new.maps.AddRange (new string[]{"map-wooster-square-4", "map-wooster-square-3"});
                 _new.unlocksArea.AddRange (new string[]{"to-wooster-square-3"});
                 _new.missionsSet.AddRange (new string[]{"vincenzo->vincenzo-2"});
@@ -119,6 +125,9 @@ public class DB_Missions : MonoBehaviour {
                 _new.rewards = "500 Gold";
                 _new.goldReward = 500;
 
+                _new.objective = "Defeat Gun-Arm Azar";
+                _new.mainMap = "map-main-anastasia-1";
+
                 _new.gameOverSpk_name = "Anastasia";
                 _new.gameOverSpk_text = "Tsk, they got away. No matter, they won't get that far with their injuries.";
                 _new.gameOverSpk_img = "anastasia";
@@ -127,7 +136,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1", "orc-1"});
+                _new.enemies.AddRange (new string[]{"slime-lvl-1", "orc-lvl-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"field-1->field-1-2"});
@@ -142,6 +151,9 @@ public class DB_Missions : MonoBehaviour {
                 _new.rewards = "700 Gold";
                 _new.goldReward = 700;
 
+                _new.objective = "Defeat Captain Beatrice";
+                _new.mainMap = "map-main-beatrice-1";
+
                 _new.gameOverSpk_name = "Captain Beatrice";
                 _new.gameOverSpk_text = "Excellent fight! New Haven could use more fighters like you who will fight on the side of justice.";
                 _new.gameOverSpk_img = "beatrice";
@@ -150,7 +162,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "Not bad, but you could use some more training. Come back when you are stronger.";
                 _new.gameOverSpk_imgFail = "beatrice";
 
-                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1"});
+                _new.enemies.AddRange (new string[]{"slime-lvl-1", "mafia-lvl-1"});
                 _new.maps.AddRange (new string[]{"map-wooster-square-1"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"beatrice->beatrice-2"});
@@ -165,6 +177,9 @@ public class DB_Missions : MonoBehaviour {
                 _new.rewards = "200 Gold";
                 _new.goldReward = 200;
 
+                _new.objective = "Defeat the Hobgoblin";
+                _new.mainMap = "map-main-cursed-forest";
+
                 _new.gameOverSpk_name = "Tommy";
                 _new.gameOverSpk_text = "Excellent fighting, everyone!";
                 _new.gameOverSpk_img = "tommy";
@@ -173,7 +188,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1", "orc-1"});
+                _new.enemies.AddRange (new string[]{"slime-lvl-1", "mafia-lvl-1", "orc-lvl-1", "war-shredder-lvl-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand", "woosterSquare_rand", "woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{});
@@ -188,6 +203,9 @@ public class DB_Missions : MonoBehaviour {
                 _new.rewards = "500 Gold";
                 _new.goldReward = 500;
 
+                _new.objective = "Defeat the Alpha War Shredder";
+                _new.mainMap = "map-main-anthony-1";
+
                 _new.gameOverSpk_name = "Anthony";
                 _new.gameOverSpk_text = "Nice work! I hope those war shredders don't come back.";
                 _new.gameOverSpk_img = "npc-man-1";
@@ -196,7 +214,7 @@ public class DB_Missions : MonoBehaviour {
                 _new.gameOverSpk_textFail = "They're too strong! Let's retreat for now and fight another day.";
                 _new.gameOverSpk_imgFail = "alfred";
 
-                _new.enemies.AddRange (new string[]{"slime-1", "slime-2", "mafia-1", "mafia-2", "assassin-1", "goblin-1", "war-shredder-1", "war-shredder-1", "war-shredder-1", "war-shredder-1", "war-shredder-1"});
+                _new.enemies.AddRange (new string[]{"war-shredder-lvl-1"});
                 _new.maps.AddRange (new string[]{"woosterSquare_rand"});
                 _new.unlocksArea.AddRange (new string[]{});
                 _new.missionsSet.AddRange (new string[]{"anthony->anthony-2"});

@@ -13,21 +13,6 @@ public class InGameTilemap : MonoBehaviour
         // Get the TilemapRenderer from the child GameObject
         tilemapRenderer = GetComponentInChildren<TilemapRenderer>();
         renderDistance = 100f;
-        
-        // Reference to the player transform
-        if (ContPlayer.I != null && ContPlayer.I.player != null)
-        {
-            playerTransform = ContPlayer.I.player.transform;
-        }
-        else
-        {
-            Debug.LogError("ContPlayer or player reference is missing! Ensure the player is initialized.");
-        }
-
-        if (tilemapRenderer == null)
-        {
-            Debug.LogError("TilemapRenderer not found! Make sure the script is attached to a GameObject with a TilemapRenderer.");
-        }
     }
 
     void Update()
@@ -44,8 +29,10 @@ public class InGameTilemap : MonoBehaviour
 
     private bool IsPlayerWithinRenderDistance()
     {
+        if (!ContPlayer.I.player || ContPlayer.I.player == null) return false;
+        
         // Calculate the distance between the player and the tilemap
-        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        float distanceToPlayer = Vector2.Distance(transform.position, ContPlayer.I.player.transform.position);
 
         // Check if the distance is within the render distance
         return distanceToPlayer <= renderDistance;

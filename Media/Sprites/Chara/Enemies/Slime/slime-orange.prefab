@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5088230177923938553}
   - component: {fileID: 107781289186458147}
   - component: {fileID: 1264154644165700884}
+  - component: {fileID: -7135022499550507714}
   m_Layer: 0
   m_Name: slime-orange
   m_TagString: Untagged
@@ -253,14 +254,22 @@ MonoBehaviour:
   armor: 0
   dam: 0
   skill: 0
-  hitDam: 1
+  hitDam: 10
   onHitSFX: 
   tags: []
   speed: 4
   attachScaleMultiplier: 1
+  hpBarScaleX: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
+  jumpHeight: 0
+  jumpTargetHeight: 0
+  jumpDuration: 0
+  jumpStartTime: 0
+  isJumping: 0
+  isFalling: 0
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 0
@@ -283,6 +292,7 @@ MonoBehaviour:
   isWalk: 0
   walkTargPos: {x: 0, y: 0}
   checkBorder: 1
+  forcedMovement: 0
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
@@ -331,3 +341,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptTag: collider
   hitIDs: 
+--- !u!114 &-7135022499550507714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4917938084647442157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0818f69b7fc31454cb6ca8414e4313c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGameObj: {fileID: 0}
+  isStart: 0
+  isReady: 0
+  isActivated: 0
+  state: 0
+  stateTime: 0
+  goPos: {x: 0, y: 0}

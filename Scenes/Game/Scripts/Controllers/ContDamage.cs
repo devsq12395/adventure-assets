@@ -221,6 +221,20 @@ public class ContDamage : MonoBehaviour {
                 }
             }
         }
+
+        // Bounty
+        if (_def.owner == 2) {
+            for (int i = 0; i < UnityEngine.Random.Range(0, 4); i++) {
+                GameObject coinEffect = ContEffect.I.create_effect("coin", _def.gameObject.transform.position);
+                InGameEffect coinInGameEffect = coinEffect.GetComponent<InGameEffect>();
+
+                // Apply random knockback
+                var coinKnockback = coinEffect.AddComponent<ForcedMoveEffect>();
+                float randomAngle = Random.Range(0f, 360f);
+                coinKnockback.setup_forced_move(Random.Range(3f, 6f), 1f, randomAngle, "knockback", "spawnKnockback");
+                if (coinInGameEffect) coinInGameEffect.SetJump(2.5f, 0.5f);
+            }
+        }
     }
 
     /*

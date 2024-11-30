@@ -468,6 +468,8 @@ MonoBehaviour:
   dash: {fileID: 8300000, guid: ec1339d170756d444a82d4c9c5b5eaee, type: 3}
   dashSmoke: {fileID: 8300000, guid: edaa62f050ba660479154dc4c19064cb, type: 3}
   pistol: {fileID: 8300000, guid: abe855939a9153f44a15c01e501a0048, type: 3}
+  goldGet: {fileID: 8300000, guid: cf3549617cfff4b49a249d453ed4931c, type: 3}
+  comboGet: {fileID: 8300000, guid: 76f00c117aaed2c4682ee64463a438df, type: 3}
   soundOn: 0
   musicOn: 0
 --- !u!1 &857805401

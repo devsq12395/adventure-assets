@@ -4,6 +4,7 @@ public class Cloud : MonoBehaviour
 {
     private float moveSpeed;
     private float mapSizeX;
+    private const float destroyDistance = 50f;
 
     void Start()
     {
@@ -12,9 +13,16 @@ public class Cloud : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+        InGameEffect inGameEffect = GetComponent<InGameEffect>();
+        inGameEffect.curPos += Vector3.right * moveSpeed * Time.deltaTime;
 
-        if (transform.position.x > ContMap.I.details.size.x || transform.position.x < -ContMap.I.details.size.x)
+        if (inGameEffect.curPos.x > ContMap.I.details.size.x || inGameEffect.curPos.x < -ContMap.I.details.size.x)
+        {
+            Destroy(gameObject);
+        }
+
+        InGameObject inGameObject = ContPlayer.I.player;
+        if (Vector2.Distance(inGameObject.transform.position, inGameEffect.curPos) > destroyDistance)
         {
             Destroy(gameObject);
         }
