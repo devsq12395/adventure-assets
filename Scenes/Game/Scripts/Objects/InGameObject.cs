@@ -105,6 +105,9 @@ public class InGameObject : MonoBehaviour {
 
     void Start() {
         renderer = GetComponent<Renderer>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        hasAnim = (anim != null);
 
         // Initialize components
         buffs = new List<ContBuffs.buff>();
@@ -121,10 +124,6 @@ public class InGameObject : MonoBehaviour {
                 equipItems[equipSlot] = "";
             }
         }
-
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        hasAnim = (anim != null);
 
         // Set ID and default skills
         id = ContObj.I.curID;

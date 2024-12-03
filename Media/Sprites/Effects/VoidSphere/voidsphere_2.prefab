@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 70dfbd1145825d04b9dd926a47fa116b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -142,10 +142,17 @@ MonoBehaviour:
   - missile
   speed: 0.08
   attachScaleMultiplier: 1
+  hpBarScaleX: 1
   ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
+  jumpHeight: 0
+  jumpTargetHeight: 0
+  jumpDuration: 0
+  jumpStartTime: 0
+  isJumping: 0
+  isFalling: 0
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 0
@@ -168,6 +175,7 @@ MonoBehaviour:
   isWalk: 0
   walkTargPos: {x: 0, y: 0}
   checkBorder: 1
+  forcedMovement: 0
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0

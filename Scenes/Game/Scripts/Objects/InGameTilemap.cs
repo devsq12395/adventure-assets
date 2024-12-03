@@ -17,7 +17,7 @@ public class InGameTilemap : MonoBehaviour
 
     void Update()
     {
-        if (tilemapRenderer != null && playerTransform != null)
+        if (tilemapRenderer != null)
         {
             bool _visible = IsPlayerWithinRenderDistance();
             if (tilemapRenderer.enabled != _visible)

@@ -102,6 +102,12 @@ MonoBehaviour:
   timeLimit: 0
   zPos: 0
   tween_popOut_dur: 0
+  curPos: {x: 0, y: 0, z: 0}
+  jumpHeight: 0
+  jumpTargetHeight: 0
+  jumpDuration: 0
+  jumpStartTime: 0
+  isJumping: 0
 --- !u!114 &2835492442546507922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expansionDuration: 2
-  expansionScale: 2
   spinDuration: 3
   spinSpeed: 360
   fadeDuration: 1.5

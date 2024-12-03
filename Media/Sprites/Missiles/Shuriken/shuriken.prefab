@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 70dfbd1145825d04b9dd926a47fa116b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,7 +138,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9, y: 4.93}
+    oldSize: {x: 4.75, y: 4.93}
     newSize: {x: 1.9, y: 4.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -197,6 +197,8 @@ MonoBehaviour:
   mpMax: 0
   mpRegen: 0
   armor: 0
+  dam: 0
+  skill: 0
   hitDam: 2
   onHitSFX: 
   tags:
@@ -204,9 +206,17 @@ MonoBehaviour:
   - blade
   speed: 0.12
   attachScaleMultiplier: 1
+  hpBarScaleX: 1
+  ultPerc: 0
   zPos: 0
   skill1: {fileID: 0}
   skill2: {fileID: 0}
+  jumpHeight: 0
+  jumpTargetHeight: 0
+  jumpDuration: 0
+  jumpStartTime: 0
+  isJumping: 0
+  isFalling: 0
   anim: {fileID: 0}
   hasAnim: 0
   isRotate: 0
@@ -229,6 +239,7 @@ MonoBehaviour:
   isWalk: 0
   walkTargPos: {x: 0, y: 0}
   checkBorder: 1
+  forcedMovement: 0
   constMovAng_isOn: 0
   constMovAng_spd: 0
   constMovAng_ang: 0
@@ -259,6 +270,7 @@ MonoBehaviour:
   controllerID: 0
   hitUnitsID: 
   colorChangeDur: 0
+  summonedBy: 0
   skills: []
   barHP: {fileID: 0}
   barSta: {fileID: 0}

@@ -81,7 +81,9 @@ public class InGameEffect : MonoBehaviour
         }
 
         update_render();
-        forced_move_update();
+        if (mode != "doodad") {
+            forced_move_update();
+        }
 
         UpdateShadowPositionAndScale();
         if (isJumping) {

@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class DB_Objects : MonoBehaviour {
 
-    public static DB_Objects I;
-	public void Awake(){ I = this; }
+    public static DB_Objects I;    
+    private Dictionary<string, GameObject> objectMap;
+
+    public void Awake(){
+        I = this;
+        InitializeObjectMap();
+    }
 
     public GameObject dummy;
 
@@ -45,147 +50,197 @@ public class DB_Objects : MonoBehaviour {
     [Header("----- Dummies -----")]
     public GameObject blizzardDummy;
 
+    private void InitializeObjectMap() {
+         objectMap = new Dictionary<string, GameObject> {
+            { "hero", hero },
+            { "samurai", samurai },
+            { "tommy", tommy },
+            { "kazuma", kazuma },
+            { "kazuya", kazuma },
+            { "seraphine", seraphine },
+            { "sylphine", seraphine },
+            { "anastasia", anastasia },
+            { "miguel", miguel },
+            { "anthony", anthony },
+            { "greenSlime", greenSlime },
+            { "orcShaman", orcShaman },
+            { "orc-shaman", orcShaman },
+            { "kitsune", kitsune },
+            { "kitsuneBoss", kitsuneBoss },
+            { "kitsune-boss", kitsuneBoss },
+            { "slimeRed", slimeRed },
+            { "slime-red", slimeRed },
+            { "slimeBlue", slimeBlue },
+            { "slime-blue", slimeBlue },
+            { "slimeOrange", slimeOrange },
+            { "slime-orange", slimeOrange },
+            { "mobster", mobster },
+            { "slimeKing", slimeKing },
+            { "slime-king", slimeKing },
+            { "giantSlime", giantSlime },
+            { "giant-slime", giantSlime },
+            { "lucaTheTerror", lucaTheTerror },
+            { "mafia-captain", lucaTheTerror },
+            { "embracedInfantry", embracedInfantry },
+            { "embraced-infantry", embracedInfantry },
+            { "embracedMage", embracedMage },
+            { "embraced-mage", embracedMage },
+            { "prismDrone", prismDrone },
+            { "prism-drone", prismDrone },
+            { "warShredder", warShredder },
+            { "war-shredder", warShredder },
+            { "alphaWarShredder", alphaWarShredder },
+            { "alpha-war-shredder", alphaWarShredder },
+            { "captainCharles", captainCharles },
+            { "captain-charles", captainCharles },
+            { "captainBeatrice", captainBeatrice },
+            { "cap-beatrice", captainBeatrice },
+            { "centurion", centurion },
+            { "victorianSoldier", victorianSoldier },
+            { "victorian-soldier", victorianSoldier },
+            { "mafiaBoss", mafiaBoss },
+            { "mafia-boss", mafiaBoss },
+            { "assassin", assassin },
+            { "assassinCaptain", assassinCaptain },
+            { "assassin-captain", assassinCaptain },
+            { "goblin", goblin },
+            { "goblinMage", goblinMage },
+            { "goblin-mage", goblinMage },
+            { "hobgoblin", hobgoblin },
+            { "fireSpirit", fireSpirit },
+            { "fire-spirit", fireSpirit },
+            { "orc", orc },
+            { "axeArmAzar", axeArmAzar },
+            { "axe-arm-azar", axeArmAzar },
+            { "frostOrb", frostOrb },
+            { "frost-orb", frostOrb },
+            { "barrel", barrel },
+            { "skeletonAxethrower", skeletonAxethrower },
+            { "skeleton-axethrower", skeletonAxethrower },
+            { "testMissile1", testMissile1 },
+            { "SampleAssist_Missile", testMissile1 },
+            { "beam1", beam1 },
+            { "beam1Placeholder", beam1Placeholder },
+            { "beam-1-placeholder", beam1Placeholder },
+            { "kitsuneMissile", kitsuneMissile },
+            { "molotovMsl", molotovMsl },
+            { "voidSphere", voidSphere },
+            { "iceMissile01", iceMissile01 },
+            { "shotgun", shotgun },
+            { "slimeBlueMissile", slimeBlueMissile },
+            { "slime-blue-missile", slimeBlueMissile },
+            { "slimeGreenMissile", slimeGreenMissile },
+            { "slime-green-missile", slimeGreenMissile },
+            { "slashKazuma", slashKazuma },
+            { "slash-kazuma", slashKazuma },
+            { "flameWave", flameWave },
+            { "flame-wave", flameWave },
+            { "fireWave", flameWave },
+            { "fire-wave", flameWave },
+            { "bulletTommy", bulletTommy },
+            { "bullet-tommy", bulletTommy },
+            { "bulletMobster", bulletMobster },
+            { "bullet-mobster", bulletMobster },
+            { "bulletEmbraced", bulletEmbraced },
+            { "bullet-embraced", bulletEmbraced },
+            { "bulletVictorianSoldier", bulletVictorianSoldier },
+            { "bullet-victorian-soldier", bulletVictorianSoldier },
+            { "blueWave", blueWave },
+            { "blue-wave", blueWave },
+            { "slashShredder", slashShredder },
+            { "slash-shredder", slashShredder },
+            { "prismDroneMissile", prismDroneMissile },
+            { "prism-drone-missile", prismDroneMissile },
+            { "centurionMissile", centurionMissile },
+            { "centurion-missile", centurionMissile },
+            { "beatriceMissile", beatriceMissile },
+            { "beatrice-missile", beatriceMissile },
+            { "lucaTyphoon", lucaTyphoon },
+            { "luca-typhoon", lucaTyphoon },
+            { "mafiaPunch", mafiaPunch },
+            { "mafia-punch", mafiaPunch },
+            { "mafiaGunShot", mafiaGunShot },
+            { "mafia-gun-shot", mafiaGunShot },
+            { "shuriken", shuriken },
+            { "shurikenSpiral", shurikenSpiral },
+            { "shuriken-spin", shurikenSpiral },
+            { "fireball", fireball },
+            { "alfredExplodeSlash", alfredExplodeSlash },
+            { "alfred-explode-slash", alfredExplodeSlash },
+            { "tommySuperAtk", tommySuperAtk },
+            { "tommy-super-atk", tommySuperAtk },
+            { "destroyerSlash", destroyerSlash },
+            { "destroyer-slash", destroyerSlash },
+            { "frostOrbMissile", frostOrbMissile },
+            { "frost-orb-missile", frostOrbMissile },
+            { "axeSkeleton", axeSkeleton },
+            { "axe-skeleton", axeSkeleton },
+            { "explosion1", explosion1 },
+            { "explosion2", explosion2 },
+            { "explosion3", explosion3 },
+            { "damTxt", damTxt },
+            { "explosion1_mini", explosion1_mini },
+            { "molotovEfct", molotovEfct },
+            { "bindChainExp1", bindChainExp1 },
+            { "bindChainExp2", bindChainExp2 },
+            { "voidSphereHit", voidSphereHit },
+            { "voidSphereCast", voidSphereCast },
+            { "frostWaveHit", frostWaveHit },
+            { "frostWaveCast", frostWaveCast },
+            { "moveSmoke", moveSmoke },
+            { "move-smoke", moveSmoke },
+            { "moveSmokeSpawner", moveSmokeSpawner },
+            { "move-smoke-spawner", moveSmokeSpawner },
+            { "muzzle1", muzzle1 },
+            { "muzzle-1", muzzle1 },
+            { "muzzle2", muzzle2 },
+            { "muzzle-2", muzzle2 },
+            { "gooGreen", gooGreen },
+            { "goo-green", gooGreen },
+            { "gooBlue", gooBlue },
+            { "goo-blue", gooBlue },
+            { "magicSparkSeraphine", magicSparkSeraphine },
+            { "magic-spark-seraphine", magicSparkSeraphine },
+            { "smokeExpand", smokeExpand },
+            { "smoke-expand", smokeExpand },
+            { "alfredBurningSlash", alfredBurningSlash },
+            { "alfred-burning-slash", alfredBurningSlash },
+            { "crosshairSkeletonAxe", crosshairSkeletonAxe },
+            { "skeleton-axe-crosshair", crosshairSkeletonAxe },
+            { "cloud1", cloud1 },
+            { "cloud2", cloud2 },
+            { "cloud3", cloud3 },
+            { "cloud4", cloud4 },
+            { "cloud5", cloud5 },
+            { "buf_burn", buf_burn },
+            { "buffAtch_burn", buf_burn },
+            { "buf_bindingChains", buf_bindingChains },
+            { "buffAtch_binding-chains", buf_bindingChains },
+            { "buf_voidSphereGrounded", buf_voidSphereGrounded },
+            { "buffAtch_void-sphere-grounded", buf_voidSphereGrounded },
+            { "colCoin", colCoin },
+            { "coin", colCoin },
+            { "colCoinPack", colCoinPack },
+            { "coin-pack", colCoinPack },
+            { "blizzardDummy", blizzardDummy }
+        };
+    }
+
+    public GameObject get_game_obj(string _name) {
+        if (objectMap.TryGetValue(_name, out GameObject obj)) {
+            GameObject _retVal = GameObject.Instantiate(obj, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
+            SceneManager.MoveGameObjectToScene(_retVal, SceneManager.GetSceneByName("Game"));
+            return _retVal;
+        }
+        Debug.LogWarning($"GameObject with name {_name} not found.");
+        return null;
+    }
+
     void Start() {
         
     }
 
     void Update() {
         
-    }
-
-    public GameObject get_game_obj (string _name) {
-        GameObject _refObj = GameObject.Instantiate(dummy, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
-        Destroy (_refObj);
-        
-        switch (_name) {
-            // Player
-            case "hero":                    _refObj = hero; break;
-            case "samurai":                 _refObj = samurai; break;
-
-            case "tommy":                   _refObj = tommy; break;
-            case "kazuma":                    _refObj = kazuma; break;
-            case "seraphine":case "sylphine":               _refObj = seraphine; break;
-            case "anastasia":               _refObj = anastasia; break;
-            case "miguel":                  _refObj = miguel; break;
-            case "anthony":                 _refObj = anthony; break;
-
-            // Enemies
-            case "greenSlime":              _refObj = greenSlime; break;
-            case "orc-shaman":               _refObj = orcShaman; break;
-            case "kitsune":                 _refObj = kitsune; break;
-            case "kitsune-boss":            _refObj = kitsuneBoss; break;
-            case "slime-red":            _refObj = slimeRed; break;
-            case "slime-blue":            _refObj = slimeBlue; break;
-            case "slime-orange":            _refObj = slimeOrange; break;
-            case "mobster":            _refObj = mobster; break;
-            case "slime-king":            _refObj = slimeKing; break;
-            case "giant-slime":            _refObj = giantSlime; break;
-            case "mafia-captain":            _refObj = lucaTheTerror; break;
-            case "embraced-infantry":            _refObj = embracedInfantry; break;
-            case "embraced-mage":            _refObj = embracedMage; break;
-            case "prism-drone":            _refObj = prismDrone; break;
-            case "war-shredder":            _refObj = warShredder; break;
-            case "alpha-war-shredder":            _refObj = alphaWarShredder; break;
-            case "captain-charles":            _refObj = captainCharles; break;
-            case "cap-beatrice":            _refObj = captainBeatrice; break;
-            case "victorian-soldier":            _refObj = victorianSoldier; break;
-            case "centurion":            _refObj = centurion; break;
-            case "mafia-boss":            _refObj = mafiaBoss; break;
-            case "assassin":            _refObj = assassin; break;
-            case "assassin-captain":            _refObj = assassinCaptain; break;
-            case "goblin":            _refObj = goblin; break;
-            case "goblin-mage":            _refObj = goblinMage; break;
-            case "hobgoblin":            _refObj = hobgoblin; break;
-            case "fire-spirit":            _refObj = fireSpirit; break;
-            case "orc":            _refObj = orc; break;
-            case "axe-arm-azar":            _refObj = axeArmAzar; break;
-            case "frost-orb":            _refObj = frostOrb; break;
-            case "barrel":            _refObj = barrel; break;
-            case "skeleton-axethrower":            _refObj = skeletonAxethrower; break;
-
-            // Missiles
-            case "testMissile1":            _refObj = testMissile1; break;
-            case "SampleAssist_Missile":    _refObj = testMissile1; break;
-            case "beam1":                   _refObj = beam1; break;
-            case "beam-1-placeholder":        _refObj = beam1Placeholder; break;
-            case "kitsuneMissile":          _refObj = kitsuneMissile; break;
-            case "molotovMsl":              _refObj = molotovMsl; break;
-            case "voidSphere":              _refObj = voidSphere; break;
-            case "iceMissile01":              _refObj = iceMissile01; break;
-            case "shotgun":                 _refObj = shotgun; break;
-            case "slime-blue-missile":                 _refObj = slimeBlueMissile; break;
-            case "slime-green-missile":                 _refObj = slimeGreenMissile; break;
-            case "slash-kazuma":                 _refObj = slashKazuma; break;
-            case "flame-wave":case "fire-wave":                 _refObj = flameWave; break;
-            case "bullet-tommy":                 _refObj = bulletTommy; break;
-            case "bullet-mobster":                 _refObj = bulletMobster; break;
-            case "bullet-embraced":                 _refObj = bulletEmbraced; break;
-            case "bullet-victorian-soldier":                 _refObj = bulletVictorianSoldier; break;
-            case "blue-wave":                 _refObj = blueWave; break;
-            case "slash-shredder":                 _refObj = slashShredder; break;
-            case "prism-drone-missile":             _refObj = prismDroneMissile; break;
-            case "centurion-missile":             _refObj = centurionMissile; break;
-            case "beatrice-missile":             _refObj = beatriceMissile; break;
-            case "luca-typhoon":             _refObj = lucaTyphoon; break;
-            case "mafia-punch":             _refObj = mafiaPunch; break;
-            case "mafia-gun-shot":             _refObj = mafiaGunShot; break;
-            case "shuriken":             _refObj = shuriken; break;
-            case "shuriken-spin":             _refObj = shurikenSpiral; break;
-            case "fireball":             _refObj = fireball; break;
-            case "alfred-explode-slash":             _refObj = alfredExplodeSlash; break;
-            case "tommy-super-atk":             _refObj = tommySuperAtk; break;
-            case "destroyer-slash":             _refObj = destroyerSlash; break;
-            case "frost-orb-missile":            _refObj = frostOrbMissile; break;
-            case "axe-skeleton":            _refObj = axeSkeleton; break;
-
-            // Effects 
-            case "explosion1":              _refObj = explosion1; break;
-            case "explosion1_mini":         _refObj = explosion1_mini; break;
-            case "explosion2":              _refObj = explosion2; break;
-            case "explosion3":         _refObj = explosion3; break;
-            case "molotovEfct":             _refObj = molotovEfct; break;
-            case "bindChainExp1":             _refObj = bindChainExp1; break;
-            case "bindChainExp2":             _refObj = bindChainExp2; break;
-            case "voidSphereHit":             _refObj = voidSphereHit; break;
-            case "voidSphereCast":             _refObj = voidSphereCast; break;
-            case "frostWaveHit":             _refObj = frostWaveHit; break;
-            case "frostWaveCast":             _refObj = frostWaveCast; break;
-            case "move-smoke":             _refObj = moveSmoke; break;
-            case "move-smoke-spawner":             _refObj = moveSmokeSpawner; break;
-            case "muzzle-1":             _refObj = muzzle1; break;
-            case "muzzle-2":             _refObj = muzzle2; break;
-            case "goo-green":             _refObj = gooGreen; break;
-            case "goo-blue":             _refObj = gooBlue; break;
-            case "magic-spark-seraphine":             _refObj = magicSparkSeraphine; break;
-            case "smoke-expand":             _refObj = smokeExpand; break;
-            case "alfred-burning-slash":             _refObj = alfredBurningSlash; break;
-            case "skeleton-axe-crosshair":             _refObj = crosshairSkeletonAxe; break;
-
-            case "cloud1":             _refObj = cloud1; break;
-            case "cloud2":             _refObj = cloud2; break;
-            case "cloud3":             _refObj = cloud3; break;
-            case "cloud4":             _refObj = cloud4; break;
-            case "cloud5":             _refObj = cloud5; break;
-                
-            case "damTxt":                  _refObj = damTxt; break;
-                
-            // Buffs
-            case "buffAtch_burn":                       _refObj = buf_burn; break;
-            case "buffAtch_binding-chains":             _refObj = buf_bindingChains; break;
-            case "buffAtch_void-sphere-grounded":             _refObj = buf_voidSphereGrounded; break;
-
-            // Collectibles
-            case "coin":                       _refObj = colCoin; break;
-            case "coin-pack":                       _refObj = colCoinPack; break;
-
-            // Dummies
-            case "blizzardDummy":             _refObj = blizzardDummy; break;
-
-            default: _refObj = dummy; break;
-        }
-
-        GameObject _retVal = GameObject.Instantiate(_refObj, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject; 
-        SceneManager.MoveGameObjectToScene(_retVal, SceneManager.GetSceneByName("Game"));
-        return _retVal;
     }
 }

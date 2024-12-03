@@ -68,7 +68,9 @@ public class ContBuffs : MonoBehaviour {
         buff _new = DB_Buffs.I.get_buff_data (_buffName);
         _new.owner = _targ;
         _targ.buffs.Add (_new);
-        _new.attach.transform.localScale *= _targ.attachScaleMultiplier;
+        if (_new.attach != null){
+            _new.attach.transform.localScale *= _targ.attachScaleMultiplier;
+        }
 
         DB_Buffs.I.calc_buff_speed_bonus (_targ);
     }

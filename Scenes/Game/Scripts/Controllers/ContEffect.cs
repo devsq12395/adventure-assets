@@ -47,8 +47,9 @@ public class ContEffect : MonoBehaviour
             if (IsHexColor(gameObjectString))
             {
                 instance = GetPooledObject();
-                instance.GetComponent<SpriteRenderer>().sprite = circleSprite;
+                instance.transform.position = new Vector3(startPosition.x, startPosition.y, -9);
                 instance.transform.localScale = new Vector3(circleDiameter, circleDiameter, 1f);
+                instance.GetComponent<SpriteRenderer>().sprite = circleSprite;
 
                 Color color;
                 if (ColorUtility.TryParseHtmlString("#" + gameObjectString, out color)) {
@@ -61,7 +62,6 @@ public class ContEffect : MonoBehaviour
             }
 
             // Set the initial position
-            instance.transform.position = new Vector3(startPosition.x, startPosition.y, -9);
             InGameEffect _comp = instance.GetComponent<InGameEffect>();
             if (_comp != null) {
                 _comp.curPos = instance.transform.position;

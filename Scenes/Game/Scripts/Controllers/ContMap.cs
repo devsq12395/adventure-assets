@@ -70,15 +70,12 @@ public class ContMap : MonoBehaviour
 
         // Add the main map to the top right of the matrix
         string mainMap = _data.mainMap;
-        Debug.Log($"Main map: {mainMap}");
         DB_Maps.mapObject mainMapObject = DB_Maps.I.get_map_game_object(mainMap);
         mainMapObject.go.transform.position = new Vector2(
             ((details.mapObjMatrix_sizeX - 1) * SIZE_PER_PIECE) - offsetX,
             ((details.mapObjMatrix_sizeY - 1) * SIZE_PER_PIECE) - offsetY
         );
         _mapMatrix[details.mapObjMatrix_sizeY - 1][details.mapObjMatrix_sizeX - 1] = true;
-        Debug.Log($"Main map position: {mainMapObject.go.transform.position}");
-        Debug.Log($"Main map matrix: {_mapMatrix[details.mapObjMatrix_sizeY - 1][details.mapObjMatrix_sizeX - 1]}");
         maps.Add(mainMapObject.go);
 
         while (_curPos.y < details.mapObjMatrix_sizeY) {
