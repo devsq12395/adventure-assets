@@ -28,6 +28,8 @@ public class InGameEffect : MonoBehaviour
 
     public Vector3 curPos; // Changed to Vector3 to store z position as well
 
+    public bool isActive = true;
+
     // Jump fields
     public float jumpHeight, jumpTargetHeight, jumpDuration, jumpStartTime;
     public bool isJumping;
@@ -37,7 +39,17 @@ public class InGameEffect : MonoBehaviour
     private SpriteRenderer shadowRenderer;
     private Vector2 shadowOffset;
     private Color shadowColor = new Color(0, 0, 0, 0.4f);
-    
+
+    public static List<InGameEffect> allEffects = new List<InGameEffect>();
+
+    void Awake() {
+        allEffects.Add(this);
+    }
+
+    void OnDestroy() {
+        allEffects.Remove(this);
+    }
+
     void Start() {
         renderer = GetComponent<Renderer>();
 
@@ -67,6 +79,9 @@ public class InGameEffect : MonoBehaviour
             }
         }
 
+        update_render();
+        if (!isActive) return;
+
         if (mode == "collectible" && !isJumping) {
             InGameObject player = ContPlayer.I.player;
             float distanceToPlayer = Vector2.Distance(curPos, (Vector2)player.transform.position);
@@ -80,7 +95,6 @@ public class InGameEffect : MonoBehaviour
             }
         }
 
-        update_render();
         if (mode != "doodad") {
             forced_move_update();
         }
@@ -97,13 +111,6 @@ public class InGameEffect : MonoBehaviour
     }
 
     private void update_render() {
-        bool _isActive = Vector2.Distance(transform.position, ContPlayer.I.player.transform.position) <= 35f;
-
-        Renderer renderer = gameObject.GetComponent<Renderer>();
-        if (renderer != null) {
-            renderer.enabled = _isActive;
-        }
-
         Vector3 _pos = curPos;
         float normalizedY = (_pos.y - 0.1f + ContMap.I.details.size.y) / (2 * ContMap.I.details.size.y);
         zPos = Mathf.Lerp(-9, -1, normalizedY);

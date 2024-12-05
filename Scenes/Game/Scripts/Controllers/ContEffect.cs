@@ -16,8 +16,11 @@ public class ContEffect : MonoBehaviour
         circleSprite = CreateCircleSprite(128, 128);
     }
 
-    void Update() { 
-
+    void Update() {
+        foreach (InGameEffect effect in InGameEffect.allEffects) {
+            bool isActive = Vector2.Distance(effect.gameObject.transform.position, ContPlayer.I.player.transform.position) <= 35f;
+            effect.gameObject.SetActive(isActive);
+        }
     }
 
     public void update_effect (InGameEffect _obj){

@@ -257,7 +257,7 @@ MonoBehaviour:
   hitDam: 10
   onHitSFX: 
   tags: []
-  speed: 4
+  speed: 2
   attachScaleMultiplier: 1
   hpBarScaleX: 1
   ultPerc: 0

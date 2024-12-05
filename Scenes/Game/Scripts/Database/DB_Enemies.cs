@@ -81,28 +81,27 @@ public class DB_Enemies : MonoBehaviour {
 
 	private List<Dictionary<string, int>> training_grounds (List<Dictionary<string, int>> _ret){
 		int chance = UnityEngine.Random.Range (0, 3);
-		List<Dictionary<string, int>> _waves = new List<Dictionary<string, int>> ();
+		List<Dictionary<string, int>> _levels = new List<Dictionary<string, int>> ();
 
 		switch (chance) {
 			case 0:
-				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-blue", 7);
-				_waves[0].Add ("slime-orange", 15);
-				_waves[0].Add ("goblin", 5);
-				_waves[0].Add ("goblin-mage", 1);
-				_waves[0].Add ("skeleton-axethrower", 3);
+				_levels.Add (new Dictionary<string, int>());
+				_levels[0].Add ("slime-blue", 3);
+				_levels[0].Add ("slime-orange", 5);
+				_levels[0].Add ("goblin", 3);
+				_levels[0].Add ("skeleton-axethrower", 1);
 
 				break;
 			case 1:
-				_waves.Add (new Dictionary<string, int>());
-				_waves[0].Add ("slime-blue", 10);
-				_waves[0].Add ("slime-orange", 5);
-				_waves[0].Add ("orc", 3);
-				_waves[0].Add ("skeleton-axethrower", 3);
+				_levels.Add (new Dictionary<string, int>());
+				_levels[1].Add ("slime-blue", 5);
+				_levels[1].Add ("slime-orange", 10);
+				_levels[1].Add ("orc", 3);
+				_levels[1].Add ("skeleton-axethrower", 3);
 
 				break;
 			default:
-				_waves.Add (new Dictionary<string, int>());
+				_levels.Add (new Dictionary<string, int>());
 				_waves[0].Add ("slime-blue", 10);
 				_waves[0].Add ("slime-orange", 15);
 				_waves[0].Add ("goblin", 6);

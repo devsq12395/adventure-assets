@@ -15,7 +15,7 @@ public class MasterScene : MonoBehaviour {
         change_main_scene ("Title");
 
         Application.targetFrameRate = 60;
-        QualitySettings.vSyncCount = 0;
+        // QualitySettings.vSyncCount = 0;
     }
 
     void Update(){

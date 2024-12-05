@@ -6575,9 +6575,9 @@ MonoBehaviour:
   alfredBurningSlash: {fileID: 231988742202556157, guid: 08d57bbf1fbe3ac4cb2c1d587b6829bc, type: 3}
   crosshairSkeletonAxe: {fileID: 4643394262246100943}
   cloud1: {fileID: 4958324652821633807, guid: 78d7b1b2601aeec4288c5ac13d146181, type: 3}
-  cloud2: {fileID: 4958324652821633807, guid: 78d7b1b2601aeec4288c5ac13d146181, type: 3}
-  cloud3: {fileID: 4958324652821633807, guid: 78d7b1b2601aeec4288c5ac13d146181, type: 3}
-  cloud4: {fileID: 4958324652821633807, guid: 78d7b1b2601aeec4288c5ac13d146181, type: 3}
+  cloud2: {fileID: 421727210234525599, guid: 669e911d9a4cf674f9fe1961ac41c339, type: 3}
+  cloud3: {fileID: 5731840658685068597, guid: 22636693f8076324782c3bcc7b92051c, type: 3}
+  cloud4: {fileID: 5112289392126332997, guid: 63919d77e089e5a47899a8dd4eea035e, type: 3}
   cloud5: {fileID: 4958324652821633807, guid: 78d7b1b2601aeec4288c5ac13d146181, type: 3}
   buf_burn: {fileID: 8100014777820684788, guid: 932449129c027b348ba8b2719f25438d, type: 3}
   buf_bindingChains: {fileID: 4245185834599824400, guid: 2374b86ef40e8c14986599794e514d4d, type: 3}

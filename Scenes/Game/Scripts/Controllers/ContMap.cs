@@ -70,13 +70,15 @@ public class ContMap : MonoBehaviour
 
         // Add the main map to the top right of the matrix
         string mainMap = _data.mainMap;
-        DB_Maps.mapObject mainMapObject = DB_Maps.I.get_map_game_object(mainMap);
-        mainMapObject.go.transform.position = new Vector2(
-            ((details.mapObjMatrix_sizeX - 1) * SIZE_PER_PIECE) - offsetX,
-            ((details.mapObjMatrix_sizeY - 1) * SIZE_PER_PIECE) - offsetY
-        );
-        _mapMatrix[details.mapObjMatrix_sizeY - 1][details.mapObjMatrix_sizeX - 1] = true;
-        maps.Add(mainMapObject.go);
+        if (mainMap != ""){
+            DB_Maps.mapObject mainMapObject = DB_Maps.I.get_map_game_object(mainMap);
+            mainMapObject.go.transform.position = new Vector2(
+                ((details.mapObjMatrix_sizeX - 1) * SIZE_PER_PIECE) - offsetX,
+                ((details.mapObjMatrix_sizeY - 1) * SIZE_PER_PIECE) - offsetY
+            );
+            _mapMatrix[details.mapObjMatrix_sizeY - 1][details.mapObjMatrix_sizeX - 1] = true;
+            maps.Add(mainMapObject.go);
+        }
 
         while (_curPos.y < details.mapObjMatrix_sizeY) {
             // Check if the slot is already occupied

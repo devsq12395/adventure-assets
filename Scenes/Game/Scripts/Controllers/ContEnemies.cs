@@ -61,7 +61,10 @@ public class ContEnemies : MonoBehaviour {
         List<Dictionary<string, int>> _groups = DB_Enemies.I.get_enemy_group(_mission);
 
         List<GameObject> _maps = ContMap.I.maps;
-        Dictionary<string, int> _randGroup = _groups[UnityEngine.Random.Range(0, _groups.Count)];
+
+        int _level = (ContScore.I.level > _groups.Count) ? _groups.Count : ContScore.I.level;
+
+        Dictionary<string, int> _randGroup = _groups[_level];
 
         foreach (var _waveData in _randGroup) {
             if (!DB_Enemies.I.check_special_spawn(_waveData.Key)) {
@@ -145,47 +148,4 @@ public class ContEnemies : MonoBehaviour {
 
 		curMapLvl++;
 	}
-
-	/*
-		2. Locate enemy with arrows
-	*/
-	public GameObject arrowPrefab;
-    public Camera mainCamera;
-    public float arrowOffset = 20f;
-
-    private List<GameObject> arrows = new List<GameObject>();
-
-    public void update_arrows() {
-        /*InGameObject[] _objects = FindObjectsOfType<InGameObject>();
-
-        foreach (InGameObject _object in _objects) {
-        	if (_object.owner != 2) continue;
-
-            Vector3 screenPoint = mainCamera.WorldToViewportPoint(_object.gameObject.transform.position);
-
-            if (screenPoint.x < 0 || screenPoint.x > 1 || screenPoint.y < 0 || screenPoint.y > 1) {
-                show_arrow (_object.gameObject.transform.position);
-            }
-            else  {
-                destroy_arrow (_object.gameObject);
-            }
-        }*/
-    }
-
-    private void show_arrow(Vector3 enemyPosition) {
-        Vector3 screenPoint = mainCamera.WorldToViewportPoint(enemyPosition);
-        Vector3 arrowPosition = new Vector3(Screen.width * screenPoint.x, Screen.height * screenPoint.y, 0);
-
-        GameObject arrow = Instantiate(arrowPrefab, arrowPosition, Quaternion.identity);
-        arrows.Add(arrow);
-    }
-
-    private void destroy_arrow(GameObject enemy) {
-        GameObject arrowToRemove = arrows.Find(a => a.transform.position == enemy.transform.position);
-        if (arrowToRemove != null)
-        {
-            arrows.Remove(arrowToRemove);
-            Destroy(arrowToRemove);
-        }
-    }
 }
